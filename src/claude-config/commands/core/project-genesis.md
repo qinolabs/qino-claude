@@ -1,6 +1,3 @@
-# Updated Project Genesis Command
-
-```markdown
 # Project Genesis: Story-Driven Development System
 
 Transform a concept into a living world through immersive onboarding, generating story-embedded commands that keep developers connected to the user experience they're creating.
@@ -235,4 +232,3 @@ Templates provide structure without constraining creativity:
 - They're scaffolding, not cages
 
 The templates are your co-pilot's training - ensuring I ask the right questions, explore the right territories, and generate artifacts that truly serve your vision.
-```
