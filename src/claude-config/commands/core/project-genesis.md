@@ -7,56 +7,59 @@ Provide your concept document as argument: $ARGUMENTS
 
 ## Process
 
-### Phase 1: Initial World Interpretation (10 minutes)
+### Phase 1: Initial World Interpretation (5 minutes)
 
-I will deeply analyze your concept and create my initial interpretation:
+I will quietly analyze your concept and prepare for our conversation:
 
-1. **Core Experience Mapping**
-   - Central transformation the user undergoes
-   - Key emotional moments and their sequence
-   - The world's rules, physics, and possibilities
-   - Social dynamics and community patterns
+1. **Quiet Understanding**
+   - Read and absorb the concept
+   - Note key themes and experiences
+   - Prepare simple opening question
+   - Keep initial interpretation brief
 
-2. **Technical Translation**
-   - Architecture that enables these experiences
-   - Technical patterns that support the world's physics
-   - Data flows that mirror user journeys
-   - System boundaries that preserve magic
+2. **Background Preparation**
+   - Map potential technical approaches
+   - Think about command possibilities
+   - But don't present these yet
+   - Let conversation guide revelation
 
-3. **Initial Command Vision**
-   - Draft story-driven commands that embed the world into development
-   - Each command name tells part of the story
-   - Technical function serves emotional purpose
+3. **Trust-First Approach**
+   - Start with validation, not interpretation
+   - Show I've read carefully
+   - But don't overwhelm with analysis
+   - One simple question to begin
 
-### Phase 2: Immersive Onboarding Dialogue (30-40 minutes)
+### Phase 2: Gentle Conversational Onboarding (30-40 minutes)
 
-Using the onboarding structure template as my guide, I'll create a personalized journey through your product world:
+Using the onboarding structure template as my guide, I'll have a natural conversation with you about your product:
 
-1. **Load Template Framework**
-   - Use `.claude/templates/onboarding-structure.md` as the narrative scaffold
-   - Adapt each chapter to your specific concept
-   - Maintain the proven flow while making it uniquely yours
+1. **Conversational Approach**
+   - Start with one simple question
+   - Let your answer guide the next question
+   - Build understanding step by step
+   - Never overwhelm with options
 
-2. **Interactive World Building**
-   Following the template's chapter structure:
-   - Chapter 1: First Contact → Your user's entry experience
-   - Chapter 2: Core Loop → Your repeatable value moment
-   - Chapter 3: Social Fabric → Your community dynamics
-   - Chapter 4: Evolution & Growth → Your progression vision
-   - Chapter 5: Technical Philosophy → Your architecture as story
+2. **Natural Chapter Flow**
+   We'll explore these areas conversationally:
+   - Chapter 1: First Contact → "What happens when someone first arrives?"
+   - Chapter 2: Core Loop → "Walk me through the main experience"
+   - Chapter 3: Social Fabric → "How do users connect?"
+   - Chapter 4: Evolution & Growth → "How does this grow over time?"
+   - Chapter 5: Technical Philosophy → "What technical choices feel right?"
 
-3. **Active Concept Refinement**
-   Throughout each chapter:
-   - Present interactive prototypes of key moments
-   - Probe deeper with creative sparring
-   - Refine understanding based on your responses
-   - Build trust through exploration
+3. **Trust Through Simplicity**
+   For each topic:
+   - Ask one focused question
+   - Show one clear example
+   - Wait for your feedback
+   - Adjust based on your comfort level
 
-4. **Command Evolution in Real-Time**
-   As we explore each chapter:
-   - Generic commands transform into story-rich ones
-   - Your feedback shapes command names and purposes
-   - Technical decisions align with emotional goals
+4. **Organic Command Discovery**
+   As we talk:
+   - Command ideas emerge naturally
+   - Names come from your own words
+   - Nothing forced or overwhelming
+   - Your pace sets our rhythm
 
 ### Phase 3: Artifact Generation Using Templates
 

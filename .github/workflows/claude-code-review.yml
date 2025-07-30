@@ -42,14 +42,30 @@ jobs:
           
           # Direct prompt for automated review (no @claude mention needed)
           direct_prompt: |
-            Please review this pull request and provide feedback on:
-            - Code quality and best practices
-            - Potential bugs or issues
-            - Performance considerations
-            - Security concerns
-            - Test coverage
+            Please review this Story-Driven Development system PR with focus on:
             
-            Be constructive and helpful in your feedback.
+            **Narrative Consistency**
+            - Do command names tell a compelling story about the user experience?
+            - Are technical implementations aligned with emotional goals?
+            - Does the change maintain connection to the core vision?
+            
+            **Template Quality**
+            - Are templates structured to guide without constraining?
+            - Do they capture both technical and experiential aspects?
+            - Will they produce meaningful, story-embedded outputs?
+            
+            **Vision Protection**
+            - Does this change risk feature creep or vision drift?
+            - Are there adequate guardrails to maintain focus?
+            - How does it serve the transformation promise?
+            
+            **Documentation & Examples**
+            - Are examples evocative and inspiring?
+            - Does documentation maintain the narrative voice?
+            - Will future developers understand the "why" behind decisions?
+            
+            Remember: This system helps developers build experiences, not just features.
+            Be constructive and consider how changes affect the developer's connection to their users.
 
           # Optional: Use sticky comments to make Claude reuse the same comment on subsequent pushes to the same PR
           # use_sticky_comment: true
