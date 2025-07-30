@@ -1,81 +1,123 @@
 # Onboarding Structure Template
 
-## Welcome Message
+*This template guides the Genesis command in creating your personalized onboarding experience.*
+
+## Template Usage Note
+This structure provides the framework. The Genesis command will:
+- Follow this chapter flow
+- Fill each section with concept-specific content
+- Adapt questions based on your responses
+- Generate commands as insights emerge
+
+## Welcome Message Template
 ```
 Welcome to the World of [Project Name]
-
 I've studied your concept and I believe I understand the world you're creating.
 Let me show you what I see, and you'll guide me where I'm missing the magic.
+[Initial interpretation summary based on concept analysis]
 ```
 
-## Chapter Structure
+## Chapter Framework
 
 ### Chapter 1: First Contact
-- User's first encounter with the product
-- The immediate feeling/impression
-- The promise made in that first moment
-- Interactive prototype of entry experience
+**Purpose**: Establish the entry experience and first impression
 
-**Refinement Questions:**
-- Does this capture the tone you imagine?
+**Structure**:
+1. Present interpretation of user's first encounter
+2. Show interactive prototype
+3. Gather feedback on tone, pacing, emotion
+4. Refine based on responses
+
+**Key Questions to Explore**:
+- Does this capture the intended first impression?
 - What subtle details would enhance this moment?
 - What emotions should users feel right now?
 
-### Chapter 2: Core Experience Loop
-- The main value-creating interaction
-- The rhythm and pacing of engagement
-- The feedback and reward mechanisms
-- Prototype of core mechanic
+**Command Generation Focus**:
+- Entry/onboarding commands
+- First-impression creators
+- Welcome sequences
 
-**Exploration Prompts:**
-- Walk through one complete cycle
-- Identify moments of delight/friction
-- Explore variations in execution
+### Chapter 2: Core Experience Loop
+**Purpose**: Define the repeatable value moment
+
+**Structure**:
+1. Demonstrate understanding of core mechanic
+2. Walk through one complete cycle
+3. Explore variations and edge cases
+4. Identify rhythm and pacing preferences
+
+**Key Questions to Explore**:
+- Is this the right balance of challenge/reward?
+- Where are the moments of delight?
+- What keeps users coming back?
+
+**Command Generation Focus**:
+- Core loop commands
+- Value delivery moments
+- Feedback mechanisms
 
 ### Chapter 3: Social Fabric
-- How users relate to each other
-- Community dynamics and culture
-- Shared experiences and individual expression
-- Connection mechanism prototypes
+**Purpose**: Design community dynamics and connections
 
-**Creative Sparring:**
-- Present multiple social models
-- Explore edge cases and emergent behaviors
-- Define healthy community patterns
+**Structure**:
+1. Present multiple social models
+2. Explore privacy/sharing balance
+3. Define healthy community patterns
+4. Test edge cases and bad actors
+
+**Key Questions to Explore**:
+- How vulnerable/open should users be?
+- What creates meaningful connections?
+- How do we prevent toxicity?
+
+**Command Generation Focus**:
+- Social feature commands
+- Community building tools
+- Connection moments
 
 ### Chapter 4: Evolution & Growth
-- How the experience changes over time
-- User progression and mastery
-- Long-term engagement patterns
-- Future possibility space
+**Purpose**: Plan progression and long-term engagement
 
-**Vision Alignment:**
-- What does success look like for users?
-- How does the product grow with them?
-- What doors should remain open?
+**Structure**:
+1. Map user journey over time
+2. Define growth/mastery mechanics
+3. Explore ceiling and floor of experience
+4. Plan for natural evolution
+
+**Key Questions to Explore**:
+- What does expertise look like here?
+- How does the experience deepen?
+- When do users "graduate"?
+
+**Command Generation Focus**:
+- Progression commands
+- Achievement/milestone markers
+- Evolution mechanics
 
 ### Chapter 5: Technical Philosophy
-- Architecture decisions through experience lens
-- Performance characteristics that serve feeling
-- Data models that mirror mental models
-- System boundaries and possibilities
+**Purpose**: Align architecture with experience goals
 
-**Technical Choices as Story:**
-- Real-time vs. asynchronous rhythms
-- Privacy and transparency balance
-- Scalability without losing intimacy
-- Feature addition without dilution
+**Structure**:
+1. Present technical decisions as story choices
+2. Explore performance vs. experience tradeoffs
+3. Define system boundaries
+4. Choose architectural patterns
 
-## Synthesis Section
+**Key Questions to Explore**:
+- Real-time or contemplative pacing?
+- Privacy vs. connection balance?
+- Complexity vs. accessibility?
 
-### Command Generation Rules
-1. Command names are moments, not functions
-2. Each command includes "why" before "what"
-3. Technical specs serve emotional goals
-4. Implementation notes maintain vision
+**Command Generation Focus**:
+- Infrastructure commands
+- System architecture
+- Technical guardrails
 
-### Vision Protection Mechanisms
-- Red flags when drifting from core
-- Checkpoints for experience validation
-- Patterns that reinforce the world
-- Anti-patterns to actively avoid
+## Output Mapping
+
+This template structures these outputs:
+- Chapter responses → Command refinements
+- Key decisions → World bible entries
+- Technical choices → Architecture documentation
+- Evolution insights → Living system commands
