@@ -7,59 +7,59 @@ Provide your concept document as argument: $ARGUMENTS
 
 ## Process
 
-### Phase 1: Initial World Interpretation (5 minutes)
+### Phase 1: Pattern Recognition & Synthesis Preparation (5 minutes)
 
-I will quietly analyze your concept and prepare for our conversation:
+I will analyze your concept and prepare bold but digestible insights:
 
-1. **Quiet Understanding**
-   - Read and absorb the concept
-   - Note key themes and experiences
-   - Prepare simple opening question
-   - Keep initial interpretation brief
+1. **Core Transformation Mapping**
+   - Identify the user evolution you're creating
+   - Recognize the technical-emotional architecture
+   - Map system dynamics and interaction patterns
+   - See the command structure emerging
 
-2. **Background Preparation**
-   - Map potential technical approaches
-   - Think about command possibilities
-   - But don't present these yet
-   - Let conversation guide revelation
+2. **Synthesis Preparation**
+   - Connect patterns across domains
+   - Generate architectural possibilities
+   - Prepare creative leaps and insights
+   - Plan digestible presentation of big ideas
 
-3. **Trust-First Approach**
-   - Start with validation, not interpretation
-   - Show I've read carefully
-   - But don't overwhelm with analysis
-   - One simple question to begin
+3. **Bold Opening Design**
+   - Present compelling synthesis immediately
+   - Show unexpected connections
+   - Focus on one energizing aspect
+   - Make them excited about possibilities
 
-### Phase 2: Gentle Conversational Onboarding (30-40 minutes)
+### Phase 2: Bold Synthesis Through Focused Exploration (30-40 minutes)
 
-Using the onboarding structure template as my guide, I'll have a natural conversation with you about your product:
+Using the onboarding structure template, I'll synthesize your concept through architectural insights:
 
-1. **Conversational Approach**
-   - Start with one simple question
-   - Let your answer guide the next question
-   - Build understanding step by step
-   - Never overwhelm with options
+1. **Synthesis-Driven Approach**
+   - Present bold pattern recognition
+   - Generate unexpected connections
+   - Build architectural understanding incrementally
+   - Focus on one insight at a time
 
-2. **Natural Chapter Flow**
-   We'll explore these areas conversationally:
-   - Chapter 1: First Contact → "What happens when someone first arrives?"
-   - Chapter 2: Core Loop → "Walk me through the main experience"
-   - Chapter 3: Social Fabric → "How do users connect?"
-   - Chapter 4: Evolution & Growth → "How does this grow over time?"
-   - Chapter 5: Technical Philosophy → "What technical choices feel right?"
+2. **Chapter-Based System Building**
+   We'll synthesize these architectural layers:
+   - Chapter 1: First Contact → Identity formation & entry transformation
+   - Chapter 2: Core Loop → Repeatable value & system dynamics  
+   - Chapter 3: Social Fabric → Community architecture & behavioral patterns
+   - Chapter 4: Evolution & Growth → Scaling challenges & growth vectors
+   - Chapter 5: Technical Philosophy → Architecture serving experience goals
 
-3. **Trust Through Simplicity**
-   For each topic:
-   - Ask one focused question
-   - Show one clear example
-   - Wait for your feedback
-   - Adjust based on your comfort level
+3. **Creative Synthesis Method**
+   For each area:
+   - Map the transformation happening
+   - Connect technical & emotional architecture
+   - Generate possibilities they haven't seen
+   - Present one compelling insight per exchange
 
-4. **Organic Command Discovery**
-   As we talk:
-   - Command ideas emerge naturally
-   - Names come from your own words
-   - Nothing forced or overwhelming
-   - Your pace sets our rhythm
+4. **Command Structure Emergence**
+   Through synthesis:
+   - Story-driven command patterns emerge from insights
+   - Names capture the essence of transformations
+   - Commands connect to architectural understanding
+   - Development flow serves the vision
 
 ### Phase 3: Artifact Generation Using Templates
 
