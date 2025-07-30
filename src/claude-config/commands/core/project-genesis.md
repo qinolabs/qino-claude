@@ -1,6 +1,3 @@
-# Updated Project Genesis Command
-
-```markdown
 # Project Genesis: Story-Driven Development System
 
 Transform a concept into a living world through immersive onboarding, generating story-embedded commands that keep developers connected to the user experience they're creating.
@@ -36,7 +33,7 @@ I will deeply analyze your concept and create my initial interpretation:
 Using the onboarding structure template as my guide, I'll create a personalized journey through your product world:
 
 1. **Load Template Framework**
-   - Use `.claude/templates/onboarding-structure.md` as the narrative scaffold
+   - Use `src/claude-config/templates/onboarding-structure.md` as the narrative scaffold
    - Adapt each chapter to your specific concept
    - Maintain the proven flow while making it uniquely yours
 
@@ -66,7 +63,7 @@ Using the onboarding structure template as my guide, I'll create a personalized 
 Transform our onboarding insights into a complete development environment:
 
 1. **World Bible Creation**
-   Using `.claude/templates/world-bible-template.md`:
+   Using `src/claude-config/templates/world-bible-template.md`:
    ```
    .claude/world-bible/
    ├── [project]-bible.md      # Core vision document
@@ -77,7 +74,7 @@ Transform our onboarding insights into a complete development environment:
    ```
 
 2. **Command Library Generation**
-   Using `.claude/templates/command-story-template.md` for each command:
+   Using `src/claude-config/templates/command-story-template.md` for each command:
    ```
    .claude/commands/[project]/
    ├── journey/               # Commands that trace user arc
@@ -235,4 +232,3 @@ Templates provide structure without constraining creativity:
 - They're scaffolding, not cages
 
 The templates are your co-pilot's training - ensuring I ask the right questions, explore the right territories, and generate artifacts that truly serve your vision.
-```

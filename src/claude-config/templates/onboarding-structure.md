@@ -12,8 +12,10 @@ This structure provides the framework. The Genesis command will:
 ## Welcome Message Template
 ```
 Welcome to the World of [Project Name]
+
 I've studied your concept and I believe I understand the world you're creating.
 Let me show you what I see, and you'll guide me where I'm missing the magic.
+
 [Initial interpretation summary based on concept analysis]
 ```
 
