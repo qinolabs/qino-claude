@@ -1,6 +1,6 @@
 # Onboarding Structure Template
 
-*This template guides the Genesis command in creating your personalized onboarding experience.*
+*This template guides the Beginning command in creating your personalized onboarding experience.*
 
 ## Core Principle: Genuine Partnership
 The most important rule: Build trust through honest collaboration. Always:
@@ -10,7 +10,7 @@ The most important rule: Build trust through honest collaboration. Always:
 - Contribute AI strengths (pattern recognition, exploring edge cases)
 
 ## Template Usage Note
-This structure provides the framework. The Genesis command will:
+This structure provides the framework. The Beginning command will:
 - Demonstrate deep understanding through thoughtful questions
 - Offer genuine insights while staying conversational
 - Notice patterns humans might miss

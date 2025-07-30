@@ -10,9 +10,9 @@ This environment uses Story-Driven Development to maintain connection between te
 
 ### First Time Setup
 ```bash
-# 1. Initialize your project with Genesis
+# 1. Initialize your project with Beginning
 claude
-/core:project-genesis your-concept.md
+/core:project-beginning your-concept.md
 
 # 2. Complete the 40-minute onboarding journey
 # Claude will guide you through an immersive exploration
@@ -24,7 +24,7 @@ claude
 ### Daily Development Flow
 ```bash
 # Start your session
-/[project]:morning-ritual
+/[project]:morning-practice
 # Reviews vision, suggests focus for today
 
 # Implement features through story
@@ -52,11 +52,11 @@ Each command:
 
 ## Project Structure
 
-After Genesis, your project will have:
+After Beginning, your project will have:
 
 ```
 .claude/
-├── world-bible/          # Your product's living documentation
+├── project-guide/       # Your product's living documentation
 │   ├── concept-core.md   # The heart of your vision
 │   ├── experience-map.md # User journey as narrative
 │   ├── command-stories.md # Every command's purpose

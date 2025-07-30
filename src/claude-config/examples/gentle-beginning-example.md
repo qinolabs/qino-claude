@@ -1,4 +1,4 @@
-# Example: Gentle Genesis Implementation
+# Example: Gentle Beginning Implementation
 
 This shows how the new conversational approach works in practice, using Vibe Check as an example.
 
@@ -124,4 +124,4 @@ Developer: Yes! I love that command name. Let's do it.
 5. **Think Ahead**: "This makes onboarding trickier" helps them prepare
 6. **Complement Human Thinking**: Add what they might miss, not what they already know
 
-This approach transforms Genesis from either overwhelming or passive into a genuine partnership where AI strengths complement human creativity.
+This approach transforms Beginning from either overwhelming or passive into a genuine partnership where AI strengths complement human creativity.

@@ -1,4 +1,4 @@
-# Project Genesis: Story-Driven Development System
+# Project Beginning: Story-Driven Development System
 
 Transform a concept into a living world through immersive onboarding, generating story-embedded commands that keep developers connected to the user experience they're creating.
 
@@ -65,11 +65,11 @@ Using the onboarding structure template as my guide, I'll have a natural convers
 
 Transform our onboarding insights into a complete development environment:
 
-1. **World Bible Creation**
-   Using `.claude/templates/world-bible-template.md`:
+1. **Project Guide Creation**
+   Using `.claude/templates/project-guide-template.md`:
    ```
-   .claude/world-bible/
-   ├── [project]-bible.md      # Core vision document
+   .claude/project-guide/
+   ├── [project]-guide.md      # Core vision document
    ├── experience-map.md       # User journey narrative
    ├── command-stories.md      # All commands with their stories
    ├── tech-philosophy.md      # Architecture serving experience
@@ -96,7 +96,7 @@ Transform our onboarding insights into a complete development environment:
 
 3. **Workflow Integration**
    Generate development flow commands:
-   - Morning ritual command for vision alignment
+   - Morning practice command for vision alignment
    - Vision check command for drift detection
    - Moment creation command for new experiences
 
@@ -118,7 +118,7 @@ This command leverages three core templates:
      * Vision Protection: Drift warnings and reinforcements
    - Each generated command follows this structure
 
-3. **World Bible Template** (`world-bible-template.md`)
+3. **Project Guide Template** (`project-guide-template.md`)
    - Structures your living documentation:
      * Core Concept: Heart of your vision
      * Experience Architecture: Journey design
@@ -169,7 +169,7 @@ Configure ongoing evolution:
    - `/[project]:community-wisdom` - Learn from user behavior
 
 3. **Rhythm Commands**
-   - `/[project]:morning-ritual` - Start each day aligned
+   - `/[project]:morning-practice` - Start each day aligned
    - `/[project]:milestone-reflection` - Major checkpoint reviews
    - `/[project]:season-planning` - Long-term vision work
 
@@ -179,8 +179,8 @@ Complete development environment with:
 
 ```
 .claude/
-├── world-bible/
-│   ├── [project]-bible.md         # Living vision document
+├── project-guide/
+│   ├── [project]-guide.md         # Living vision document
 │   ├── experience-map.md          # User journey as narrative
 │   ├── command-stories.md         # Every command's purpose
 │   ├── tech-philosophy.md         # Architecture decisions
@@ -192,7 +192,7 @@ Complete development environment with:
 │       ├── world/                 # System building
 │       └── vision/                # Protection & evolution
 ├── onboarding/
-│   └── [project]-genesis-log.md   # Record of our journey
+│   └── [project]-beginning-log.md   # Record of our journey
 └── workflows/
     └── [project]-flow.md          # Daily development rhythm
 ```
@@ -202,7 +202,7 @@ Complete development environment with:
 ```bash
 # First run
 claude
-/core:project-genesis my-concept.md
+/core:project-beginning my-concept.md
 
 # Claude guides through immersive onboarding
 # ~40 minutes of exploration and refinement
@@ -212,14 +212,14 @@ claude
 /[project]:first-moment
 
 # Daily flow
-/[project]:morning-ritual
+/[project]:morning-practice
 /[project]:implement-moment "user-delight-x"
 /[project]:vision-check
 ```
 
 ## Success Metrics
 
-The Genesis process succeeds when:
+The beginning process succeeds when:
 - Every command name makes you smile
 - Technical work feels purposeful
 - You can't wait to build the first moment

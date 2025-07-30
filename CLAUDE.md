@@ -12,7 +12,7 @@ The codebase is organized around templates and commands that create a living dev
 
 ### Core Components
 
-1. **Genesis Command** (`src/claude-config/commands/core/project-genesis.md`)
+1. **Beginning Command** (`src/claude-config/commands/core/project-beginning.md`)
    - The primary entry point for new projects
    - Creates complete story-driven development environments through interactive onboarding
    - Generates project-specific commands based on concept analysis
@@ -20,15 +20,15 @@ The codebase is organized around templates and commands that create a living dev
 2. **Template System** (`src/claude-config/templates/`)
    - `onboarding-structure.md`: Chapter-based exploration framework for concepts
    - `command-story-template.md`: Structure for every generated command
-   - `world-bible-template.md`: Living vision documentation
+   - `project-guide-template.md`: Living vision documentation
    - `workflow-template.md`: Daily development rhythm commands
 
 3. **Generated Output Structure**
    ```
    .claude/
-   ├── world-bible/         # Living vision documentation
+   ├── project-guide/      # Living vision documentation
    ├── commands/[project]/  # Story-driven commands
-   ├── onboarding/         # Genesis journey records
+   ├── onboarding/         # Beginning journey records
    └── workflows/          # Development rhythm commands
    ```
 
@@ -36,17 +36,17 @@ The codebase is organized around templates and commands that create a living dev
 
 Since this is a command generation system rather than a traditional codebase, there are no standard build/test commands. Instead:
 
-### Running Genesis
+### Running Beginning
 ```bash
 claude
-/core:project-genesis your-concept.md
+/core:project-beginning your-concept.md
 ```
 
 ### Key Concepts
 
 1. **Story-Driven Commands**: Commands are named and structured around user experiences (e.g., `/project:first-moment`, `/project:revelation`) rather than technical operations
 
-2. **World Bible**: Living documentation that captures the vision, experience architecture, and command narratives
+2. **Project Guide**: Living documentation that captures the vision, experience architecture, and command narratives
 
 3. **Vision Protection**: Built-in mechanisms to prevent drift from the original product vision
 
@@ -56,9 +56,9 @@ claude
 
 When modifying templates:
 - Templates provide structure, not content
-- Genesis fills templates with concept-specific insights
+- Beginning fills templates with concept-specific insights
 - Each template maps to specific output artifacts
-- Changes to templates affect all future Genesis runs
+- Changes to templates affect all future Beginning runs
 
 ## Philosophy
 
