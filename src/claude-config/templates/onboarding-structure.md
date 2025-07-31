@@ -11,7 +11,7 @@ Be genuinely AI - synthesize patterns, generate possibilities, connect domains. 
 - **Create collaborative momentum**: Use connection phrases to transform questioning into exploration
 
 ## Template Usage Note
-This structure enables bold yet digestible synthesis. The Beginning command will:
+This structure enables bold yet digestible synthesis. The Init command will:
 - **Map the transformation**: Identify the core user evolution you're creating
 - **Synthesize the system**: Connect technical architecture to emotional goals
 - **Generate command vision**: See the story-driven development structure
@@ -85,10 +85,10 @@ Use these patterns to create collaborative momentum and reduce "missing out" anx
 - "At scale, this becomes [system evolution prediction]"
 - "The architectural challenge: [technical constraint] vs [experience goal]"
 
-**Core Loop Commands**:
-- "This is your `/project:[core-loop-name]` - the repeatable magic"
-- "You'll need commands for: [flow state], [entry moment], [completion feeling]"
-- Generate command ecosystem that supports the experience architecture
+**Build Command Vision**:
+- "Your `/project:build` command will understand these patterns"
+- "It will guide creation of [specific experience elements]"
+- "The build process embeds [vision element] naturally"
 
 ### Chapter 3: Social Fabric
 **Purpose**: Design community dynamics and connections
@@ -125,19 +125,25 @@ Use these patterns to create collaborative momentum and reduce "missing out" anx
 - "The architectural risk: [technical challenge] could constrain [experience goal]"
 - "Future opportunities: [specific possibilities] based on the foundation you're building"
 
-**Evolution Command Architecture**:
-- "Vision protection commands: `/project:[drift-detection]`, `/project:[core-reconnection]`"
-- "Growth commands: `/project:[expansion-point]`, `/project:[scale-challenge]`"
-- "Evolution tracking: `/project:[insight-capture]`, `/project:[direction-choice]`"
+**Evolution Integration**:
+- "Your `/project:evolve` command will capture these insights"
+- "Vision protection happens through `/project:build` intelligence"
+- "Natural growth through contextual suggestions"
 
-### Chapter 5: Technical Philosophy
-**Purpose**: Align architecture with experience goals
+### Chapter 5: Technical Philosophy & Architecture Baseline
+**Purpose**: Align architecture with experience goals and establish complexity boundaries
 
 **Architecture Synthesis**:
 1. "The technical architecture that serves your vision: [specific stack/approach]"
 2. "Tradeoff analysis: [choice A] optimizes for [goal] but constrains [other goal]"
 3. "Your [instinct] aligns with [architectural principle] - here's why it works"
-4. "Alternative consideration: [option] might better serve [specific aspect]"
+4. "Let's establish your complexity budget: How simple do you want to stay?"
+
+**Complexity Baseline**:
+- "Given your goals, I recommend starting with complexity level [X/10]"
+- "This means saying no to [specific temptations] early on"
+- "But leaves room for [specific growth] when needed"
+- "Your architecture sweet spot: [description of balance]"
 
 **Technical-Experience Synthesis**:
 - "The [interaction mechanic] needs [specific technical implementation] to feel [desired emotion]"
@@ -148,7 +154,8 @@ Use these patterns to create collaborative momentum and reduce "missing out" anx
 **Development Experience Design**:
 - "Your architecture creates [specific developer experience]"
 - "Code structure as value embedding: [how organization reflects vision]"
-- "The story-driven command structure guides technical decisions toward [outcome]"
+- "The 5 core commands guide technical decisions toward [outcome]"
+- "Vision lives in the tools, not in separate rituals"
 
 ## Conversation Flow Examples
 

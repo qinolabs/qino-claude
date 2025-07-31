@@ -12,54 +12,53 @@ The codebase is organized around templates and commands that create a living dev
 
 ### Core Components
 
-1. **Beginning Command** (`src/claude-config/commands/core/project-beginning.md`)
+1. **Init Command** (`src/claude-config/commands/core/project-init.md`)
    - The primary entry point for new projects
-   - Creates complete story-driven development environments through interactive onboarding
-   - Generates project-specific commands based on concept analysis
+   - Creates streamlined development environments through focused exploration
+   - Generates just 5 core commands with progressive disclosure
 
 2. **Template System** (`src/claude-config/templates/`)
-   - `onboarding-structure.md`: Chapter-based exploration framework for concepts
-   - `command-story-template.md`: Structure for every generated command
-   - `project-guide-template.md`: Living vision documentation
-   - `workflow-template.md`: Daily development rhythm commands
+   - `onboarding-structure.md`: Chapter-based exploration framework
+   - `core-commands-template.md`: Generates the 5 essential commands
+   - `smart-build-template.md`: Adaptive build command behavior
+   - `project-guide-simplified.md`: Single consolidated guide
 
 3. **Generated Output Structure**
    ```
    .claude/
-   ├── project-guide/      # Living vision documentation
-   ├── commands/[project]/  # Story-driven commands
-   ├── onboarding/         # Beginning journey records
-   └── workflows/          # Development rhythm commands
+   ├── [project]-guide.md   # Single comprehensive guide
+   ├── commands/[project]/  # Just 5 core commands
+   └── init-log.md         # Exploration record
    ```
 
 ## Development Commands
 
 Since this is a command generation system rather than a traditional codebase, there are no standard build/test commands. Instead:
 
-### Running Beginning
+### Running Init
 ```bash
 claude
-/core:project-beginning your-concept.md
+/core:project-init your-concept.md
 ```
 
 ### Key Concepts
 
-1. **Story-Driven Commands**: Commands are named and structured around user experiences (e.g., `/project:first-moment`, `/project:revelation`) rather than technical operations
+1. **Streamlined Commands**: Just 5 core commands (start, build, check, evolve, help) with intelligent context awareness
 
-2. **Project Guide**: Living documentation that captures the vision, experience architecture, and command narratives
+2. **Embedded Vision Protection**: Build command naturally integrates alignment checks without interrupting flow
 
-3. **Vision Protection**: Built-in mechanisms to prevent drift from the original product vision
+3. **Progressive Disclosure**: Start simple, reveal complexity only when needed
 
-4. **Interactive Onboarding**: ~40-minute guided exploration that transforms concepts into development environments
+4. **Focused Exploration**: ~20-30 minute guided session that captures essentials without overwhelm
 
 ## Working with Templates
 
 When modifying templates:
 - Templates provide structure, not content
-- Beginning fills templates with concept-specific insights
+- Init fills templates with concept-specific insights
 - Each template maps to specific output artifacts
-- Changes to templates affect all future Beginning runs
+- Changes to templates affect all future init runs
 
 ## Philosophy
 
-This system believes that developers build better when they stay connected to the user experience they're creating. Every technical decision serves an emotional goal, and the tools themselves embed this connection.
+This system believes that developers build better when they stay connected to the user experience they're creating. Vision protection happens naturally through intelligent tooling, not through rituals or interruptions.
