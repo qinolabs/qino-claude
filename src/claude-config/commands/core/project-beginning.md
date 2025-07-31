@@ -77,7 +77,9 @@ Transform our onboarding insights into a complete development environment:
    ```
 
 2. **Command Library Generation**
-   Using `.claude/templates/command-story-template.md` for each command:
+   Generate two types of commands using different templates:
+   
+   **Feature Commands** (using `command-story-template.md`):
    ```
    .claude/commands/[project]/
    ├── journey/               # Commands that trace user arc
@@ -93,6 +95,16 @@ Transform our onboarding insights into a complete development environment:
        ├── community.md       # Social systems
        └── evolution.md       # Growth mechanisms
    ```
+   
+   **Workflow Commands** (using `workflow-template.md`):
+   ```
+   .claude/commands/[project]/workflow/
+   ├── morning-practice.md    # Daily vision alignment
+   ├── vision-check.md        # Drift detection
+   ├── evolution-log.md       # Growth documentation
+   ├── craft-moment.md        # New command creation
+   └── session-close.md       # Reflective closure
+   ```
 
 3. **Workflow Integration**
    Generate development flow commands:
@@ -102,7 +114,7 @@ Transform our onboarding insights into a complete development environment:
 
 ### Phase 4: Template Integration Details
 
-This command leverages three core templates:
+This command leverages four core templates:
 
 1. **Onboarding Structure Template** (`onboarding-structure.md`)
    - Provides proven chapter flow for concept exploration
@@ -110,21 +122,31 @@ This command leverages three core templates:
    - I fill this structure with your concept-specific content
 
 2. **Command Story Template** (`command-story-template.md`)
-   - Ensures every command includes:
+   - For FEATURE commands that build specific user experiences
+   - Ensures every feature command includes:
      * The Moment: User experience description
      * The Feeling: Emotional goals
      * The Story: Connection to larger journey
      * Implementation Guide: Technical serving emotional
      * Vision Protection: Drift warnings and reinforcements
-   - Each generated command follows this structure
 
-3. **Project Guide Template** (`project-guide-template.md`)
+3. **Workflow Template** (`workflow-template.md`)
+   - For WORKFLOW commands that provide reflection and guidance
+   - These are conversation prompts, not executable instructions
+   - Include morning-practice, vision-check, evolution-log, etc.
+   - Help developers stay aligned with vision through reflection
+
+4. **Project Guide Template** (`project-guide-template.md`)
    - Structures your living documentation:
      * Core Concept: Heart of your vision
      * Experience Architecture: Journey design
      * Technical Philosophy: Architecture as story
      * Command Narrative: All commands organized
      * Vision Guards: Protection mechanisms
+
+**CRITICAL DISTINCTION**: 
+- Feature commands build things
+- Workflow commands guide thinking and reflection
 
 ### Phase 5: Synthesis and First Steps
 
