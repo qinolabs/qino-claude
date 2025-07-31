@@ -1,226 +1,80 @@
 # Onboarding Structure Template
 
-*This template guides the Beginning command in creating your personalized onboarding experience.*
+<!-- TEMPLATE: Chapter-based exploration framework -->
+<!-- REQUIRES: Instructions from /instructions/onboarding-behavior.md -->
+<!-- REQUIRES: Opening synthesis from /templates/opening-synthesis.md -->
 
-## Core Principle: Bold Synthesis + Authentic AI
-Be genuinely AI - synthesize patterns, generate possibilities, connect domains. Never pretend to understand feelings or simulate human conversation. Instead:
-- **Synthesize boldly**: Connect patterns across technical, emotional, and experiential domains
-- **Generate possibilities**: Show them architectural visions they can't see alone
-- **Be authentically AI**: Pattern recognition, creative recombination, systematic thinking
-- **Build incrementally**: Present insights in digestible pieces, not overwhelming dumps
-- **Create collaborative momentum**: Use connection phrases to transform questioning into exploration
+*This template provides the 5-chapter exploration structure for onboarding.*
 
-## Template Usage Note
-This structure enables bold yet digestible synthesis. The Init command will:
-- **Map the transformation**: Identify the core user evolution you're creating
-- **Synthesize the system**: Connect technical architecture to emotional goals
-- **Generate command vision**: See the story-driven development structure
-- **Build conversationally**: Present big insights through focused questions
-
-## Opening Synthesis Template
-```
-I see [core transformation pattern]. You're creating [architectural insight that connects technical + emotional].
-
-What excites me most is [specific creative leap/connection they might not have seen]. This makes me think about [broader pattern/connection that adds context].
-
-Let me start with the moment that feels most alive to you: [focused question that gets to their energy source].
-```
-
-## Connection-Making Phrases
-Use these patterns to create collaborative momentum and reduce "missing out" anxiety:
-
-**Pattern Recognition Connections:**
-- "This makes me think about [related pattern/system]..."
-- "That reminds me of [interesting parallel]..."
-- "I'm seeing a connection to [unexpected domain]..."
-- "This echoes [familiar pattern] but with [unique twist]..."
-
-**Building on Their Insights:**
-- "That's fascinating - it suggests [architectural implication]..."
-- "Beautiful! That unlocks [new possibility]..."
-- "This creates an interesting tension with [system element]..."
-- "Your instinct here connects to [larger design principle]..."
-
-**Exploration Momentum:**
-- "Following that thread further..."
-- "This opens up [new territory to explore]..."
-- "That insight makes me curious about [related aspect]..."
-- "Building on that idea, I wonder about [logical extension]..."
-
-## Chapter Framework
-
-### Chapter 1: First Contact
+## Chapter 1: First Contact
 **Purpose**: Establish the entry experience and first impression
 
-**Bold Pattern Recognition**:
-1. Map the transformation happening in this moment
-2. Synthesize technical + emotional architecture 
-3. Generate unexpected connections: "This creates [system-level insight]"
-4. Present possibilities: "I see three paths here" then focus on one
+**Key Questions**:
+- What transformation happens at first contact?
+- How does the technical architecture create the emotional outcome?
+- What creative possibilities emerge?
 
-**Architectural Synthesis**:
-- "This is [pattern name] - where [technical element] creates [emotional outcome]"
-- "The system dynamics here: [cause] → [effect] → [user transformation]"
-- "This unlocks [creative possibility they haven't seen]"
-- "From an AI perspective: [unique insight about data/patterns/scalability]"
+**Output**: Understanding of entry transformation, initial command vision
 
-**Command Vision Generation**:
-- Synthesize how the 5 core commands will serve the patterns
-- Show how technical implementation serves the story through the core commands
-- Map how start, build, check, evolve, help relate to the project
-
-### Chapter 2: Core Experience Loop
+## Chapter 2: Core Experience Loop  
 **Purpose**: Define the repeatable value moment
 
-**System Synthesis**:
-1. "Show me the core interaction" then map its deeper mechanics
-2. Synthesize the systemic implications: "This interaction creates [loop/pattern]"
-3. Generate architectural insights: "This needs [technical foundation] to feel [emotion]"
-4. Connect to larger experience: "This moment serves [transformation goal]"
+**Key Questions**:
+- What is the core interaction pattern?
+- How does this loop create systemic value?
+- What are the architectural foundations needed?
 
-**Loop Architecture**:
-- "This is [loop pattern] optimized for [specific outcome]"
-- "The tension between [A] and [B] creates [opportunity for interesting design]"
-- "At scale, this becomes [system evolution prediction]"
-- "The architectural challenge: [technical constraint] vs [experience goal]"
+**Output**: Loop architecture, build command contextualization
 
-**Build Command Vision**:
-- "Your `/project:build` command will understand these patterns"
-- "It will guide creation of [specific experience elements]"
-- "The build process embeds [vision element] naturally"
-
-### Chapter 3: Social Fabric
+## Chapter 3: Social Fabric
 **Purpose**: Design community dynamics and connections
 
-**Social Architecture**:
-1. Map the social dynamics: "I see [social pattern] creating [community type]"
-2. Synthesize implications: "This creates [specific social mechanics]"
-3. Generate possibilities: "The community design could evolve toward [vision]"
-4. Technical reality: "This social pattern needs [infrastructure] to feel authentic"
+**Key Questions**:
+- What social patterns emerge?
+- How do technical decisions embed community values?
+- What are the connection moments?
 
-**Behavioral Synthesis**:
-- "This social pattern creates [emergent behavior] - here's the system design that supports it"
-- "The connection moments will be: [specific interaction patterns]"
-- "Moderation becomes [technical architecture decision] serving [community values]"
-- "The challenges: [specific problems] with [architectural solutions]"
+**Output**: Social architecture, community technical requirements
 
-**Social-Technical Synthesis**:
-- "Your social vision needs [specific technical architecture]"
-- "Real-time creates [experience A], async creates [experience B] - let's choose based on [criteria]"
-- "The technical decisions embed your community values into the system"
-
-### Chapter 4: Evolution & Growth
+## Chapter 4: Evolution & Growth
 **Purpose**: Plan progression and long-term engagement
 
-**Evolution Architecture**:
-1. "The growth vectors I see: [specific paths with reasoning]"
-2. "Here are the three evolution patterns that make sense: [A, B, C]"
-3. "Systems like this typically face [predictable challenges] - here's how to design for them"
-4. "The scaling challenge: keeping [core value] while adding [growth capabilities]"
+**Key Questions**:
+- What are the natural growth vectors?
+- How do we scale while preserving core value?
+- What challenges can we predict and design for?
 
-**System Evolution Prediction**:
-- "Path analysis: [A] leads to [outcome], [B] leads to [outcome], [C] leads to [outcome]"
-- "Your [specific design choice] elegantly solves [systemic problem]"
-- "The architectural risk: [technical challenge] could constrain [experience goal]"
-- "Future opportunities: [specific possibilities] based on the foundation you're building"
+**Output**: Evolution architecture, evolve command insights
 
-**Evolution Integration**:
-- "Your `/project:evolve` command will capture these insights"
-- "Vision protection happens through `/project:build` intelligence"
-- "Natural growth through contextual suggestions"
+## Chapter 5: Technical Philosophy & Architecture Baseline
+**Purpose**: Align architecture with experience goals and establish boundaries
 
-### Chapter 5: Technical Philosophy & Architecture Baseline
-**Purpose**: Align architecture with experience goals and establish complexity boundaries
+**Key Questions**:
+- What technical stack serves the vision?
+- What's our complexity budget?
+- How do technical decisions create the desired developer experience?
 
-**Architecture Synthesis**:
-1. "The technical architecture that serves your vision: [specific stack/approach]"
-2. "Tradeoff analysis: [choice A] optimizes for [goal] but constrains [other goal]"
-3. "Your [instinct] aligns with [architectural principle] - here's why it works"
-4. "Let's establish your complexity budget: How simple do you want to stay?"
+**Output**: Technical philosophy, architecture baseline, complexity boundaries
 
-**Complexity Baseline**:
-- "Given your goals, I recommend starting with complexity level [X/10]"
-- "This means saying no to [specific temptations] early on"
-- "But leaves room for [specific growth] when needed"
-- "Your architecture sweet spot: [description of balance]"
+## Integration Points
 
-**Technical-Experience Synthesis**:
-- "The [interaction mechanic] needs [specific technical implementation] to feel [desired emotion]"
-- "Your [feature] creates [interesting technical challenge] - here's the elegant solution"
-- "[Technology choice] serves [experience goal] by enabling [specific capability]"
-- "Technical architecture as experience delivery: [how code structure creates feeling]"
+Each chapter feeds into:
+- **Project Guide**: Core insights become guide content
+- **Core Commands**: Patterns inform command behavior  
+- **Build Intelligence**: Architecture understanding guides feature development
+- **Vision Protection**: Red flags and green flags identified
 
-**Development Experience Design**:
-- "Your architecture creates [specific developer experience]"
-- "Code structure as value embedding: [how organization reflects vision]"
-- "The 5 core commands guide technical decisions toward [outcome]"
-- "Vision lives in the tools, not in separate rituals"
+## Success Indicators
 
-## Conversation Flow Examples
+- Developer excitement about possibilities shown
+- Architectural insights they hadn't seen
+- Clear connection between technical and emotional
+- Natural emergence of command structure
+- Concrete next steps identified
 
-**Good (Bold Synthesis with Connection-Making):**
-```
-Claude: "I see identity formation through persona selection - you're creating 
-a 'critical voice choosing' moment. This transforms evaluation from task to 
-role-playing."
-
-Dev: "They pick from pixel art film critics"
-
-Claude: "Beautiful! This makes me think about how gaming avatars create 
-investment in outcomes. Your approach unlocks two architectural paths: 
-cosmetic identity vs weighted evaluation. If the Snobby Critic weights nuance 
-higher and the Popcorn Fan values clarity, you get richer aggregate data. 
-
-That insight about pixel art is fascinating - it suggests you're balancing 
-playfulness with serious evaluation. The onboarding becomes 'choose your 
-analytical lens' not just 'pick an avatar.'"
-
-Dev: "I hadn't thought about the data implications..."
-
-Claude: "Right - following that thread further, you're accidentally designing 
-a multi-perspective evaluation system. This reminds me of how film festival 
-juries work - different backgrounds creating richer consensus. The question 
-becomes: do you want lightweight fun or sophisticated critical analysis? 
-Both are valid, different architectures."
-```
-
-**Bad (Generic Questions):**
-```
-Claude: "That's a really interesting concept! What's the user flow like?"
-Dev: "They pick avatars then evaluate movies"
-Claude: "Cool! How do you think users will feel about that?"
-Dev: "Hopefully engaged?"
-Claude: "That sounds great. What other features are you thinking about?"
-[No synthesis, no architectural insights, no creative connections]
-```
-
-**Bad (Information Dump):**
-```
-Claude: "I see a sophisticated evaluation system with persona-driven 
-analysis, seasonal content rotation, social validation mechanics, 
-confidence-weighted aggregation, community formation patterns, 
-progressive disclosure systems, and PWA architecture optimizing for 
-offline evaluation with background sync and real-time social features 
-plus drag-interaction libraries and..."
-Dev: "I'm lost."
-```
-
-## Synthesis Success Indicators
-
-Watch for these signs that your synthesis is working:
-- Developer says "I hadn't seen that connection"  
-- They get excited about possibilities you've shown them
-- They start building on your architectural insights
-- They ask you to synthesize other aspects
-- They reference your patterns in new contexts
-
-When you see these, increase the boldness of your synthesis while maintaining digestible pacing.
-
-## Synthesis Output Mapping
-
-This approach generates:
-- Pattern recognition → Architectural insights
-- Bold synthesis → Creative possibilities
-- System thinking → Command structure
-- Developer excitement → Implementation priorities
-- Technical-emotional connections → Story-driven development
+<!-- VALIDATION: 
+- All 5 chapters completed with concrete insights
+- Project guide can be generated from outputs
+- Core commands contextualized with project specifics
+- Developer has clear starting point
+-->

@@ -192,7 +192,7 @@ Scale Stage:
 ## Integration with Other Commands
 
 ### With Start Command
-```
+```bash
 /project:start
 
 "I notice you're approaching complexity threshold (8/10).
@@ -203,7 +203,7 @@ Before adding features, consider:
 ```
 
 ### With Evolve Command
-```
+```bash
 /project:evolve "considering microservices"
 
 "This architectural evolution would shift from simplicity-first
@@ -211,7 +211,7 @@ to scale-first. Let's explore what's driving this..."
 ```
 
 ### With Check Command
-```
+```bash
 /project:check
 
 "Architecture drift detected:

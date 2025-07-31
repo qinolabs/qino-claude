@@ -48,7 +48,7 @@ I will analyze your concept and prepare bold but digestible insights:
 
 ### Phase 2: Focused Exploration (20-30 minutes)
 
-Using the onboarding structure template, I'll synthesize your concept through architectural insights:
+Following the onboarding behavior instructions in `/instructions/onboarding-behavior.md`, I'll synthesize your concept through architectural insights using the templates in `/templates/`:
 
 1. **Synthesis-Driven Approach**
    - Present bold pattern recognition

@@ -19,7 +19,7 @@ Since this is your first feature, I'll:
 3. Ensure it captures the [core feeling] we discussed
 
 Here's how we'll build it..."
-```
+```bash
 
 ### 2. Aligned Feature Build
 ```bash
@@ -32,7 +32,7 @@ This aligns with your vision of [relevant aspect].
 Using your established patterns from [previous work].
 
 Let's build it..."
-```
+```bash
 
 ### 3. Potential Drift Detection
 ```bash
@@ -48,7 +48,7 @@ How do you see this fitting?
 a) It's a natural evolution because...
 b) Let's find a different approach
 c) Tell me more about your thinking"
-```
+```bash
 
 ### 4. Technical Guidance
 ```bash
@@ -63,7 +63,7 @@ Based on your architecture, focusing on:
 
 Your [core user experience] requires [specific performance characteristic].
 Let's ensure optimization serves this..."
-```
+```bash
 
 ## Context Awareness
 

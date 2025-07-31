@@ -17,13 +17,18 @@ The codebase is organized around templates and commands that create a living dev
    - Creates streamlined development environments through focused exploration
    - Generates just 5 core commands with progressive disclosure
 
-2. **Template System** (`src/claude-config/templates/`)
+2. **Instruction System** (`src/claude-config/instructions/`)
+   - `onboarding-behavior.md`: How Claude should conduct the onboarding experience
+   - Communication patterns, synthesis techniques, conversation flow
+
+3. **Template System** (`src/claude-config/templates/`)
+   - `opening-synthesis.md`: Initial synthesis template
    - `onboarding-structure.md`: Chapter-based exploration framework
    - `core-commands-template.md`: Generates the 5 essential commands
    - `smart-build-template.md`: Adaptive build command behavior
    - `project-guide-simplified.md`: Single consolidated guide
 
-3. **Generated Output Structure**
+4. **Generated Output Structure**
    ```
    .claude/
    ├── [project]-guide.md   # Single comprehensive guide

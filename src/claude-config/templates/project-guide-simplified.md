@@ -1,73 +1,98 @@
 # Project Guide Template (Simplified)
 
+<!-- TEMPLATE: Single consolidated guide generated after onboarding -->
+<!-- REQUIRES: PROJECT_NAME, VISION_ONE_LINE, CORE_EXPERIENCE, TECH_STACK, COMPLEXITY_BUDGET from onboarding -->
+
 *Single consolidated guide that captures everything important without overwhelming.*
 
-# [Project] Development Guide
+# {{PROJECT_NAME}} Development Guide
 
 ## Vision in One Line
-[The essential truth about what you're building]
+{{VISION_ONE_LINE}}
 
 ## What We're Building
-[2-3 paragraphs capturing the core experience and why it matters]
+{{CORE_EXPERIENCE_DESCRIPTION}}
 
 ## Core Experience Architecture
 
 ### The User Journey
-[Simple narrative of how users experience your product]
+{{USER_JOURNEY_NARRATIVE}}
 
 ### Key Moments
-1. **First Contact**: [How users discover and enter]
-2. **Core Value**: [The repeatable experience that matters]
-3. **Growth**: [How users deepen engagement]
+1. **First Contact**: {{FIRST_CONTACT_EXPERIENCE}}
+2. **Core Value**: {{CORE_VALUE_MOMENT}}
+3. **Growth**: {{ENGAGEMENT_DEEPENING}}
 
 ## Technical Philosophy
-[How architecture serves the experience - 1 paragraph]
+{{TECHNICAL_PHILOSOPHY}}
 
 ### Architecture Baseline
-- **Core Stack**: [Primary technologies chosen]
-- **Complexity Budget**: [X/10] - [What this means]
-- **Boundaries**: [What we'll say no to]
-- **Growth Path**: [How we'll add complexity when needed]
+- **Core Stack**: {{TECH_STACK}}
+- **Complexity Budget**: {{COMPLEXITY_BUDGET}}/10 - {{COMPLEXITY_MEANING}}
+- **Boundaries**: {{TECH_BOUNDARIES}}
+- **Growth Path**: {{COMPLEXITY_GROWTH_PATH}}
 
 ### Guiding Principles
-- [Principle 1]: [Why it matters]
-- [Principle 2]: [Why it matters]
-- [Principle 3]: [Why it matters]
+- {{PRINCIPLE_1}}: {{PRINCIPLE_1_REASON}}
+- {{PRINCIPLE_2}}: {{PRINCIPLE_2_REASON}}
+- {{PRINCIPLE_3}}: {{PRINCIPLE_3_REASON}}
 
 ## Command Reference
 
 ### Getting Started
-- `/[project]:start` - Intelligent next step guidance
-- `/[project]:build "feature"` - Build with embedded vision
-- `/[project]:help "question"` - Natural language assistance
+- `/{{PROJECT_NAME}}:start` - Intelligent next step guidance
+- `/{{PROJECT_NAME}}:build "feature"` - Build with embedded vision
+- `/{{PROJECT_NAME}}:help "question"` - Natural language assistance
 
 ### When Needed
-- `/[project]:check` - Quick vision alignment
-- `/[project]:evolve "insight"` - Update vision with learnings
+- `/{{PROJECT_NAME}}:check` - Quick vision alignment
+- `/{{PROJECT_NAME}}:evolve "insight"` - Update vision with learnings
 
 ## Vision Protection
 
 ### Green Flags (You're on track when...)
-- [Specific indicator 1]
-- [Specific indicator 2]
-- [Specific indicator 3]
+- {{GREEN_FLAG_1}}
+- {{GREEN_FLAG_2}}
+- {{GREEN_FLAG_3}}
 
 ### Red Flags (Watch out for...)
-- [Drift pattern 1]
-- [Drift pattern 2]
-- [Drift pattern 3]
+- {{RED_FLAG_1}}
+- {{RED_FLAG_2}}
+- {{RED_FLAG_3}}
 
 ## Quick Reference
 
 ### Building Features
-Always ask: "Does this serve [core value]?"
+Always ask: "Does this serve {{CORE_VALUE}}?"
 
 ### Making Decisions
-Default to: [Primary principle from philosophy]
+Default to: {{PRIMARY_PRINCIPLE}}
 
 ### When Stuck
-Run: `/[project]:start` for contextual guidance
+Run: `/{{PROJECT_NAME}}:start` for contextual guidance
 
 ---
 
-*This guide evolves with your project. Update it through `/[project]:evolve`*
+*This guide evolves with your project. Update it through `/{{PROJECT_NAME}}:evolve`*
+
+<!-- PLACEHOLDERS:
+{{PROJECT_NAME}} - Project namespace
+{{VISION_ONE_LINE}} - Essential truth about the product
+{{CORE_EXPERIENCE_DESCRIPTION}} - 2-3 paragraphs about what you're building
+{{USER_JOURNEY_NARRATIVE}} - Simple story of user experience
+{{FIRST_CONTACT_EXPERIENCE}} - How users discover and enter
+{{CORE_VALUE_MOMENT}} - The repeatable experience that matters
+{{ENGAGEMENT_DEEPENING}} - How users deepen engagement
+{{TECHNICAL_PHILOSOPHY}} - How architecture serves experience
+{{TECH_STACK}} - Primary technologies chosen
+{{COMPLEXITY_BUDGET}} - Complexity level 1-10
+{{COMPLEXITY_MEANING}} - What the complexity budget means
+{{TECH_BOUNDARIES}} - What you'll say no to
+{{COMPLEXITY_GROWTH_PATH}} - How you'll add complexity when needed
+{{PRINCIPLE_1}}, {{PRINCIPLE_2}}, {{PRINCIPLE_3}} - Guiding principles
+{{PRINCIPLE_1_REASON}}, etc. - Why each principle matters
+{{GREEN_FLAG_1}}, etc. - Signs you're on track
+{{RED_FLAG_1}}, etc. - Warning signs of drift
+{{CORE_VALUE}} - Primary value proposition
+{{PRIMARY_PRINCIPLE}} - Main decision-making principle
+-->
