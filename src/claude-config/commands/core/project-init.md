@@ -3,7 +3,24 @@
 Transform your concept into a focused development environment through guided exploration, generating just the commands you need to build with vision.
 
 ## Usage
-Provide your concept document as argument: $ARGUMENTS
+
+**One command handles everything:**
+
+```bash
+# Single concept - works anywhere
+/core:project-init my-concept.md
+
+# Multiple concepts - auto-detects monorepo intent  
+/core:project-init concept1.md concept2.md concept3.md
+
+# Folder of concepts
+/core:project-init concepts/
+```
+
+**Always creates namespaced commands:**
+- `auth-service.md` → `/auth:build`, `/auth:start`, etc.
+- `user-dashboard.md` → `/dashboard:build`, `/dashboard:start`, etc.
+- Works the same whether you have 1 concept or 10
 
 ## Process
 
@@ -90,34 +107,47 @@ Generate a minimal, powerful development environment:
    - Start command provides contextual guidance
    - No interrupting rituals or practices
 
-### Phase 4: New Template System
+### Phase 4: Unified Output Structure
 
-This command uses streamlined templates:
+Always creates consistent structure:
 
-1. **Onboarding Structure** (`onboarding-structure.md`)
-   - Proven exploration flow
-   - Focused on essentials
-   - Quicker, more directed
+```
+.claude/
+├── concepts/
+│   └── [concept]-guide.md    # One guide per concept
+├── commands/
+│   └── [namespace]/          # One namespace per concept
+│       ├── start.md
+│       ├── build.md
+│       ├── check.md
+│       ├── evolve.md
+│       └── help.md
+└── init-log.md
+```
 
-2. **Core Commands Template** (`core-commands-template.md`)
-   - Generates exactly 5 commands
-   - Each command is multi-purpose
-   - Progressive disclosure built in
+**Single concept example:**
+```
+my-app/.claude/
+├── concepts/dashboard-guide.md
+├── commands/dashboard/
+└── init-log.md
 
-3. **Smart Build Template** (`smart-build-template.md`)
-   - Shows how build command adapts
-   - Embeds vision naturally
-   - No separate reflection needed
+# Usage: /dashboard:start, /dashboard:build
+```
 
-4. **Simplified Project Guide** (`project-guide-simplified.md`)
-   - One document with everything
-   - Clear, actionable, concise
-   - Easy to reference while building
+**Multiple concepts example:**
+```
+.claude/
+├── concepts/
+│   ├── auth-guide.md
+│   └── dashboard-guide.md
+├── commands/
+│   ├── auth/
+│   └── dashboard/
+└── init-log.md
 
-5. **Evolve Dialogue Template** (`evolve-dialogue-template.md`)
-   - Creates creative exploration space
-   - Handles vision evolution naturally
-   - Explores tension between current and emerging
+# Usage: /auth:build, /dashboard:build
+```
 
 ### Phase 5: Clear Next Steps
 
@@ -135,9 +165,9 @@ This command uses streamlined templates:
    - Technical principles serving experience
    - Red flags for vision drift
 
-3. **Your Only Starting Point**
+3. **Your Starting Point**
    ```bash
-   /[project]:start
+   /[namespace]:start
    
    # This intelligent command will:
    # - Analyze your context
@@ -167,39 +197,37 @@ The system grows with you:
 
 ## Output Structure
 
-Complete development environment with:
+Consistent structure for any number of concepts:
 
 ```
 .claude/
-├── [project]-guide.md        # Complete vision and reference
+├── concepts/
+│   └── [concept]-guide.md    # Complete vision per concept
 ├── commands/
-│   └── [project]/
-│       ├── start.md          # Your intelligent guide
+│   └── [namespace]/          # Commands per concept
+│       ├── start.md          # Intelligent guide
 │       ├── build.md          # Development with vision
 │       ├── check.md          # Alignment verification
 │       ├── evolve.md         # Vision growth
 │       └── help.md           # Natural language support
-└── init-log.md               # Record of our exploration
+└── init-log.md               # Record of exploration
 ```
 
-## Usage Example
+## Usage Examples
 
 ```bash
-# Initialize project
-claude
-/core:project-init my-concept.md
+# Single concept
+/core:project-init dashboard.md
+# → Creates /dashboard:start, /dashboard:build, etc.
 
-# Claude guides through focused exploration
-# ~20-30 minutes of essential discovery
-# Generates streamlined environment
+# Multiple concepts  
+/core:project-init auth.md dashboard.md orders.md
+# → Creates /auth:build, /dashboard:build, /orders:build
 
-# Start building
-/[project]:start
-
-# Natural development flow
-/[project]:build "user authentication"
-/[project]:build "landing page"
-# Vision protection happens automatically
+# Works anywhere - standalone or monorepo
+cd apps/my-new-app
+/core:project-init my-app.md
+# → Creates my-new-app/.claude/ with /myapp:build
 ```
 
 ## Success Metrics
