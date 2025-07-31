@@ -65,10 +65,9 @@ Use these patterns to create collaborative momentum and reduce "missing out" anx
 - "From an AI perspective: [unique insight about data/patterns/scalability]"
 
 **Command Vision Generation**:
-- Synthesize the story-driven command structure from the patterns
-- Generate evocative command names: `/project:[moment-that-captures-essence]`
-- Show how technical implementation serves the story
-- Map command relationships and flow
+- Synthesize how the 5 core commands will serve the patterns
+- Show how technical implementation serves the story through the core commands
+- Map how start, build, check, evolve, help relate to the project
 
 ### Chapter 2: Core Experience Loop
 **Purpose**: Define the repeatable value moment

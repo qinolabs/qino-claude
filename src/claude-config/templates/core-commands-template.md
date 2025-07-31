@@ -137,7 +137,6 @@ Start only shows these 5 commands. As developers use them:
 - Build command learns patterns
 - Check command tracks drift tendencies
 - Help command builds knowledge base
-- More specific commands can be suggested when truly needed
 
 ## No Separate Workflows
 

@@ -71,12 +71,11 @@ Using the onboarding structure template, I'll synthesize your concept through ar
    - Generate possibilities they haven't seen
    - Present one compelling insight per exchange
 
-4. **Command Structure Emergence**
+4. **Core Command Contextualization**
    Through synthesis:
-   - Story-driven command patterns emerge from insights
-   - Names capture the essence of transformations
-   - Commands connect to architectural understanding
-   - Development flow serves the vision
+   - The 5 core commands (start, build, check, evolve, help) are contextualized with insights
+   - Command behavior connects to architectural understanding
+   - Development flow serves the vision through the established commands
 
 ### Phase 3: Streamlined Artifact Generation
 
@@ -153,7 +152,7 @@ my-app/.claude/
 
 1. **Command Calibration**
    Based on onboarding insights:
-   - Refine command names for maximum story impact
+   - Customize the 5 core commands with project-specific context
    - Add specific implementation notes from discussions
    - Include warnings about discovered edge cases
    - Embed excitement from breakthrough moments
@@ -173,7 +172,7 @@ my-app/.claude/
    # - Analyze your context
    # - Suggest the perfect first step
    # - Guide you naturally forward
-   # - Reveal other commands as needed
+   # - Direct you to the right core command
    ```
 
 ### Phase 6: Intelligent Evolution
