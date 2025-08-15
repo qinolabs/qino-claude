@@ -10,60 +10,64 @@ This environment uses Story-Driven Development to maintain connection between te
 
 ### First Time Setup
 ```bash
-# 1. Initialize your project with Beginning
+# 1. Initialize your project
 claude
-/core:project-beginning your-concept.md
+/core:project-init your-concept.md
 
-# 2. Complete the 40-minute onboarding journey
-# Claude will guide you through an immersive exploration
+# 2. Complete the 20-30 minute onboarding journey
+# Claude will immediately guide you through focused exploration
 
 # 3. Your first command will be provided at the end
-/[your-project]:[first-moment]
+/[your-project]:start
 ```
 
 ### Daily Development Flow
 ```bash
 # Start your session
-/[project]:morning-practice
-# Reviews vision, suggests focus for today
+/[project]:start
+# Analyzes context and suggests next steps
 
-# Implement features through story
-/[project]:[moment-name]
-# Each command reminds you why you're building
+# Build features with vision
+/[project]:build "what you want to create"
+# Implements with embedded vision protection
 
-# Check alignment
-/[project]:vision-check
-# Ensures you're still serving the core experience
+# Check alignment when needed
+/[project]:check
+# Quick verification you're on track
 ```
 
-## Understanding Story-Driven Commands
+## Core Commands
 
-Commands in this system aren't just functions - they're moments in your user's journey:
+After initialization, you'll have 5 streamlined commands:
 
-- `/project:dawn` - Not just "startup", but the beginning of something
-- `/project:revelation` - Not just "display result", but a moment of discovery
-- `/project:connection` - Not just "add friend", but forming a bond
+- `/project:start` - Intelligent context-aware guidance
+- `/project:build` - Main development with embedded vision
+- `/project:check` - Quick alignment verification
+- `/project:evolve` - Creative vision exploration
+- `/project:help` - Natural language fallback
 
 Each command:
-1. Describes the user moment
-2. Defines the feeling goal
-3. Provides implementation guidance
-4. Protects the vision
+1. Understands your project's vision
+2. Provides contextual guidance
+3. Protects alignment naturally
+4. Evolves with your understanding
 
 ## Project Structure
 
-After Beginning, your project will have:
+After initialization, your project will have:
 
 ```
 .claude/
-├── project-guide/       # Your product's living documentation
-│   ├── concept-core.md   # The heart of your vision
-│   ├── experience-map.md # User journey as narrative
-│   ├── command-stories.md # Every command's purpose
-│   └── evolution-log.md  # How vision grows
+├── concepts/
+│   └── [project]-guide.md  # Complete vision and insights
 ├── commands/
-│   └── [project]/        # Your story-driven commands
-└── templates/            # For extending the system
+│   └── [project]/          # Your 5 core commands
+│       ├── start.md
+│       ├── build.md
+│       ├── check.md
+│       ├── evolve.md
+│       └── help.md
+└── init-log.md             # Record of your exploration
 ```
 
 ## Philosophy

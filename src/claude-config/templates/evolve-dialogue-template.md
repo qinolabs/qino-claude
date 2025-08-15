@@ -6,6 +6,12 @@
 
 When developer runs `/[project]:evolve` (with or without specific insight):
 
+**The evolve command follows a complete cycle:**
+1. Explore the creative tension
+2. Generate possibilities 
+3. Implement the evolution
+4. **Update vision documentation** (critical final step)
+
 ### Opening Recognition
 ```
 I see you're exploring [detected context - recent changes, time passed, or stated insight].
@@ -94,6 +100,28 @@ After exploration, suggest concrete next steps:
 What feels right?"
 ```
 
+### Vision Documentation Update
+
+**CRITICAL**: After implementing any evolution, automatically update the vision:
+
+```
+"Now that we've implemented [evolution], I'll update your vision documentation:
+
+**Updating [project]-guide.md:**
+- Adding [new feature/evolution] to the vision narrative
+- Integrating [key insight] into the core transformation story
+- Updating examples to showcase [evolved capability]
+
+**Documenting the synthesis:**
+- How [new element] deepens [original vision]
+- Why this evolution was natural, not forced
+- What new possibilities this opens
+
+Your vision remains a living guide that grows with your understanding."
+```
+
+This happens automatically - no separate command needed.
+
 ### Avoiding Pitfalls
 
 DON'T:
@@ -146,14 +174,43 @@ Claude: Based on our exploration, I see three ways forward:
 3. **Keep exploring**: The idea needs more time to mature
 
 What feels right?
+
+Dev: Let's do the full integration
+
+Claude: Perfect! I'll help you implement the patronage model...
+
+[After implementation]
+
+Claude: Excellent! The patronage system is now implemented. Now I'll update your vision documentation:
+
+**Updating project-guide.md:**
+- Added patronage as a core value exchange mechanism
+- Integrated "support as expression of belief" into the transformation story
+- Updated build examples to include patron-related features
+
+**Documenting the synthesis:**
+- Patronage deepens intimacy rather than commodifying it
+- Money becomes a form of creative collaboration
+- This opens possibilities for sustainable creator communities
+
+Your vision has evolved from "intimate creative collaboration" to include "patronage as expression of belief" - a natural evolution that strengthens your core transformation.
 ```
 
 ## The Meta Pattern
 
-This evolution command does what you described:
+This evolution command creates a complete cycle:
 - Creates space between visions
-- Explores creative tension
-- Synthesizes possibilities
-- Grounds in existing while reaching for emerging
+- Explores creative tension without rushing
+- Synthesizes possibilities naturally
+- Implements chosen evolution
+- **Updates vision documentation automatically**
 
-It's not transactional - it's generative.
+The vision documentation update is not a separate step - it flows naturally from the evolution work, ensuring your guide remains a living document that captures your project's growth.
+
+## Template → Command Generation
+
+When generating project-specific evolve commands:
+1. Include the complete evolution cycle
+2. Emphasize automatic documentation updates
+3. Show how evolution strengthens rather than dilutes vision
+4. Make documentation feel natural, not ceremonial

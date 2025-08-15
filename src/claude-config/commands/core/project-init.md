@@ -22,11 +22,15 @@ Transform your concept into a focused development environment through guided exp
 - `user-dashboard.md` → `/dashboard:build`, `/dashboard:start`, etc.
 - Works the same whether you have 1 concept or 10
 
+## Execution Instructions
+
+**IMPORTANT**: After reading the concept file(s), IMMEDIATELY begin the onboarding process. Do not wait for further instruction. Start with the opening synthesis and guide the developer through the conversational exploration described below.
+
 ## Process
 
 ### Phase 1: Pattern Recognition & Synthesis Preparation (5 minutes)
 
-I will analyze your concept and prepare bold but digestible insights:
+After reading the concept, immediately analyze it and prepare bold but digestible insights:
 
 1. **Core Transformation Mapping**
    - Identify the user evolution you're creating
@@ -48,7 +52,7 @@ I will analyze your concept and prepare bold but digestible insights:
 
 ### Phase 2: Focused Exploration (20-30 minutes)
 
-Following the onboarding behavior instructions in `/instructions/onboarding-behavior.md`, I'll synthesize your concept through architectural insights using the templates in `/templates/`:
+**BEGIN IMMEDIATELY**: Start the conversational onboarding now. Use the opening synthesis template to present your first insight, then guide through the 5 chapters. Follow the onboarding behavior instructions in `/instructions/onboarding-behavior.md` and synthesize the concept through architectural insights using the templates in `/templates/`:
 
 1. **Synthesis-Driven Approach**
    - Present bold pattern recognition
@@ -108,28 +112,35 @@ Generate a minimal, powerful development environment:
 
 ### Phase 4: Unified Output Structure
 
-Always creates consistent structure:
+Always creates the same structure, designed to scale from single project to monorepo:
 
 ```
 .claude/
 ├── concepts/
-│   └── [concept]-guide.md    # One guide per concept
+│   └── [namespace]-guide.md  # One guide per concept/namespace
 ├── commands/
-│   └── [namespace]/          # One namespace per concept
+│   └── [namespace]/          # One folder per concept/namespace
 │       ├── start.md
 │       ├── build.md
 │       ├── check.md
 │       ├── evolve.md
 │       └── help.md
-└── init-log.md
+└── init-logs/
+    └── [namespace]-init.md   # One init log per concept/namespace
 ```
+
+**IMPORTANT**: This structure is identical whether you have 1 concept or 100. A single project can seamlessly grow into a monorepo without restructuring.
 
 **Single concept example:**
 ```
-my-app/.claude/
-├── concepts/dashboard-guide.md
-├── commands/dashboard/
-└── init-log.md
+.claude/
+├── concepts/
+│   └── dashboard-guide.md
+├── commands/
+│   └── dashboard/
+│       └── [5 commands]
+└── init-logs/
+    └── dashboard-init.md
 
 # Usage: /dashboard:start, /dashboard:build
 ```
@@ -139,14 +150,25 @@ my-app/.claude/
 .claude/
 ├── concepts/
 │   ├── auth-guide.md
-│   └── dashboard-guide.md
+│   ├── dashboard-guide.md
+│   └── payment-guide.md
 ├── commands/
 │   ├── auth/
-│   └── dashboard/
-└── init-log.md
+│   ├── dashboard/
+│   └── payment/
+└── init-logs/
+    ├── auth-init.md
+    ├── dashboard-init.md
+    └── payment-init.md
 
-# Usage: /auth:build, /dashboard:build
+# Usage: /auth:build, /dashboard:build, /payment:build
 ```
+
+**Key Principles:**
+- Each concept gets its own init log in `init-logs/[namespace]-init.md`
+- Structure is identical for 1 or N concepts
+- Can start with one concept and add more without restructuring
+- Everything stays organized in `.claude/` directory
 
 ### Phase 5: Clear Next Steps
 
@@ -196,12 +218,12 @@ The system grows with you:
 
 ## Output Structure
 
-Consistent structure for any number of concepts:
+Consistent, scalable structure for any number of concepts:
 
 ```
 .claude/
 ├── concepts/
-│   └── [concept]-guide.md    # Complete vision per concept
+│   └── [namespace]-guide.md  # Complete vision per concept
 ├── commands/
 │   └── [namespace]/          # Commands per concept
 │       ├── start.md          # Intelligent guide
@@ -209,7 +231,8 @@ Consistent structure for any number of concepts:
 │       ├── check.md          # Alignment verification
 │       ├── evolve.md         # Vision growth
 │       └── help.md           # Natural language support
-└── init-log.md               # Record of exploration
+└── init-logs/
+    └── [namespace]-init.md   # Exploration record per concept
 ```
 
 ## Usage Examples
