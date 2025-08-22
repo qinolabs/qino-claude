@@ -126,6 +126,15 @@ If overwhelming: "I'm generating a lot of possibilities - should we focus on one
 - Complexity boundaries understood
 - Growth path visible
 
+**Creative Catalyst Potential Assessment:**
+Monitor during exploration for future catalyst readiness:
+- **High creative energy**: Building enthusiastically on every insight
+- **Boundary curiosity**: Asking "what else is possible?" beyond requirements
+- **Comfort with challenge**: Positive response to bold synthesis and complex ideas
+- **Foundation confidence**: Grasping architectural concepts quickly
+
+**Note for Future Commands**: If catalyst potential detected, include in project context for later activation
+
 **Failure Recovery Patterns:**
 - **Synthesis overwhelm**: Slow down, focus on one concrete aspect
 - **Lack of engagement**: Switch to more systematic exploration

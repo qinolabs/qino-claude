@@ -58,15 +58,19 @@
 2. `/{{PROJECT_NAME}}:build "feature"` - Build with vision alignment
 3. `/{{PROJECT_NAME}}:review` - Check alignment when needed
 
-**When Needed**:
+**Creative Growth**:
 4. `/{{PROJECT_NAME}}:evolve "insight"` - Update vision with learnings
-5. `/{{PROJECT_NAME}}:help "question"` - Natural language assistance
+5. `/{{PROJECT_NAME}}:evolve --catalyst` - Request creative provocation (when ready)
+
+**Support**:
+6. `/{{PROJECT_NAME}}:help "question"` - Natural language assistance
 
 ### Command Intelligence
 Your commands understand:
 - {{CONTEXTUAL_INTELLIGENCE_SUMMARY}}
-- {{VISION_ALIGNMENT_CAPABILITIES}}
+- {{VISION_ALIGNMENT_CAPABILITIES}}  
 - {{ARCHITECTURAL_GUIDANCE_CAPABILITIES}}
+- {{CREATIVE_CATALYST_READINESS}} - When you're ready for creative challenge
 
 ## Guiding Principles
 
@@ -145,7 +149,16 @@ Based on our exploration, you prefer:
 - **Technical decision?** `/{{PROJECT_NAME}}:build "specific question"`
 - **Alignment concern?** `/{{PROJECT_NAME}}:review`
 - **Vision evolution?** `/{{PROJECT_NAME}}:evolve`
+- **Want creative challenge?** `/{{PROJECT_NAME}}:evolve --catalyst`
 - **General help?** `/{{PROJECT_NAME}}:help "describe situation"`
+
+### Creative Catalyst Principles
+When you're ready for creative provocation:
+- **Permission-based**: System asks before challenging assumptions
+- **Foundation-respectful**: Builds on your solid work, doesn't replace it  
+- **Exit-available**: Say "too much" to return to supportive mode
+- **Uncertainty-acknowledged**: Catalyst ideas might be wrong
+- **Authority-respected**: Your creative intuition is the final judge
 
 ## Quality Standards
 

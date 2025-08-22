@@ -8,15 +8,13 @@ This directory contains the refactored metaprogramming system for qino-claude wi
 src/claude-config/
 ├── instructions/          # How Claude should behave
 │   └── onboarding-behavior.md
-├── templates/            # What Claude should generate
-│   ├── opening-synthesis.md
-│   ├── chapter-framework.md
-│   ├── onboarding-structure.md
-│   ├── core-commands-template.md
-│   ├── project-guide-simplified.md
-│   ├── smart-build-template.md
-│   ├── architecture-aware-build.md
-│   └── evolve-dialogue-template.md
+├── templates/            # What Claude should generate (streamlined)
+│   ├── onboarding-flow.md         # Complete exploration process
+│   ├── command-generation.md      # Intelligent command creation
+│   ├── decision-patterns.md       # Architectural intelligence library
+│   ├── project-guide.md           # Consolidated project reference
+│   └── deprecated/                # Previous template system
+│       └── [8 legacy templates]
 ├── examples/             # Sample outputs and demonstrations
 │   ├── gentle-beginning-example.md
 │   └── monorepo-setup.md
@@ -81,44 +79,44 @@ All templates use consistent placeholder format:
 
 1. **Entry**: `/core:project-init` reads concept files
 2. **Instructions**: Loads behavior from `/instructions/onboarding-behavior.md`
-3. **Templates**: Uses atomic templates to generate content:
-   - `opening-synthesis.md` → Initial synthesis
-   - `onboarding-structure.md` → Chapter framework
-   - `core-commands-template.md` → 5 core commands
-   - `project-guide-simplified.md` → Consolidated guide
-4. **Output**: Structured `.claude/` directory with commands and guides
+3. **Templates**: Uses streamlined 4-template system:
+   - `onboarding-flow.md` → Complete 20-30 minute exploration process
+   - `command-generation.md` → 5 intelligent commands with creative catalyst
+   - `project-guide.md` → Consolidated project reference  
+   - `decision-patterns.md` → Architectural intelligence library (used throughout)
+4. **Output**: Structured `.claude/` directory with vision-aware commands and guides
 
-## Benefits of This Structure
+## Benefits of Streamlined Structure
 
-### ✅ Clear Separation
-- Instructions vs templates vs examples are obvious
-- No more confusion about what Claude should do vs generate
+### ✅ Focused System (4 vs 8 templates)
+- 50% reduction in maintenance complexity
+- Clear single purpose per template
+- No overlapping responsibilities
+- Linear execution flow
 
-### ✅ Atomic Templates
-- Each template is self-contained
-- No recursive dependencies
-- Easy to test and debug
+### ✅ Enhanced Intelligence  
+- Consolidated architectural decision patterns
+- Creative catalyst capabilities when ready
+- Contextual awareness across all commands
+- Communication adaptation for different personalities
 
-### ✅ Consistent Placeholders
-- Standard `{{VARIABLE}}` format
-- Clear documentation of required inputs
-- Predictable template filling
+### ✅ Preserved Transformation
+- Complete 20-30 minute holistic onboarding maintained
+- Bold synthesis and pattern recognition enhanced
+- Vision protection embedded naturally in commands
+- Progressive disclosure from foundation to creative catalyst
 
-### ✅ Maintainable
-- Easy to update individual components
-- Clear validation criteria
-- Obvious error sources
+### ✅ Improved Accessibility
+- Multiple communication styles supported
+- Cultural sensitivity and failure recovery
+- Permission-based creative provocation
+- Easy exits and natural language fallbacks
 
-## Migration Notes
+## Evolution Notes
 
-**Before**: Mixed instruction/template content caused:
-- Claude confusion about behavior vs generation
-- Recursive template dependencies
-- Unpredictable output
-- Hard to debug failures
+**Previous System (8 templates)**: Overlapping complex templates with unclear dependencies
+**Current System (4 templates)**: Streamlined flow with concentrated intelligence
+**Key Improvement**: All architectural intelligence consolidated into `decision-patterns.md` library
+**Creative Enhancement**: Added creative catalyst mode with permission-based activation
 
-**After**: Clean separation enables:
-- Reliable execution every time
-- Easy maintenance and updates
-- Clear debugging when issues arise
-- Consistent output structure
+The system now scales from supportive guidance to transformative creative catalyst based on developer readiness and explicit consent.

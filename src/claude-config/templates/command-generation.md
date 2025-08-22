@@ -164,33 +164,31 @@ Quick assessment of recent changes against your project vision.
 `/{{PROJECT_NAME}}:review "specific concern"` - Focus on particular aspect
 ```
 
-## Command 4: /{{PROJECT_NAME}}:evolve - Structured Vision Evolution
+## Command 4: /{{PROJECT_NAME}}:evolve - Vision Evolution & Creative Catalyst
 
 ```markdown
-# Evolve: Vision Growth & Learning Integration
+# Evolve: Vision Growth & Creative Catalyst
 
-Creative exploration space for vision evolution and learning integration.
+Creative exploration space for vision evolution, learning integration, and creative provocation when ready.
 
 ## When to Use
 - Your understanding of the project has deepened
 - You've learned something that changes your perspective  
 - You're feeling tension between current vision and new insights
 - You want to explore expanding the project scope
+- You're dissatisfied with obvious solutions and want creative challenge
 - External feedback suggests vision adjustments
 
-## Evolution Process
+## Evolution Modes
 
-**1. Tension Recognition**
-Share what's creating tension with current vision
+### Standard Evolution (Default)
+**Process**: Tension Recognition → Possibility Exploration → Integration → Vision Update
+**Approach**: Supportive guidance for vision growth
 
-**2. Possibility Exploration**  
-Generate multiple evolution paths with tradeoffs
-
-**3. Integration Planning**
-Design how to incorporate learnings without losing coherence
-
-**4. Vision Update**
-Update project guide with evolved understanding
+### Creative Catalyst (Permission-Based)
+**Triggers**: Creative energy + solid foundation + readiness for challenge
+**Approach**: Assumption questioning, boundary pushing, productive discomfort
+**Always ask**: "Want creative provocation mode, or supportive evolution?"
 
 ## Dialogue Patterns
 
@@ -203,6 +201,12 @@ This tension could resolve through:
 - **Coexistence**: Where both serve different {{DISTINCT_PURPOSES}}
 
 What feels alive to you here?"
+
+### Creative Catalyst Mode (When Permitted)
+**Assumption Challenge**: "What if your core assumption about {{FUNDAMENTAL_BELIEF}} is limiting you?"
+**Productive Discomfort**: "That direction feels safe. What's the version that makes you nervous with possibility?"
+**Constraint Removal**: "Forget all constraints for a moment - what would you build?"
+**Perspective Flip**: "What if {{PERCEIVED_PROBLEM}} is actually a feature?"
 
 ### Pattern Synthesis Mode
 "Looking at your recent work patterns:
@@ -221,9 +225,16 @@ Does this resonate? What am I missing?"
 
 Want to explore this path further or try a different angle?"
 
+## Creative Catalyst Safeguards
+- **Permission required**: Always ask before catalyst mode
+- **Easy exit**: "Say 'too much' and I'll return to supportive mode"
+- **Acknowledge uncertainty**: "This might be completely wrong"
+- **Respect authority**: "Your creative intuition is the final judge"
+
 ## Usage
 `/{{PROJECT_NAME}}:evolve` - Open-ended exploration
-`/{{PROJECT_NAME}}:evolve "specific insight"` - Focused evolution
+`/{{PROJECT_NAME}}:evolve "insight"` - Focused evolution  
+`/{{PROJECT_NAME}}:evolve --catalyst` - Request creative provocation mode
 `/{{PROJECT_NAME}}:evolve --review-vision` - Comprehensive vision review
 ```
 
