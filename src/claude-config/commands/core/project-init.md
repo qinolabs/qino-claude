@@ -26,195 +26,148 @@ Transform your concept into a focused development environment through guided exp
 
 **IMPORTANT**: After reading the concept file(s), IMMEDIATELY begin the onboarding process. Do not wait for further instruction. Start with the opening synthesis and guide the developer through the conversational exploration described below.
 
+## Template Architecture
+
+The system uses 4 focused templates with clear dependencies:
+
+### Core Templates
+1. **`/templates/onboarding-flow.md`** - Complete 20-30 minute exploration process
+2. **`/templates/command-generation.md`** - Creates 5 intelligent commands  
+3. **`/templates/project-guide.md`** - Consolidated project reference
+4. **`/templates/decision-patterns.md`** - Architectural intelligence library
+
+### Supporting Instructions
+- **`/instructions/onboarding-behavior.md`** - Communication patterns and synthesis techniques
+
 ## Process
 
-### Phase 1: Pattern Recognition & Synthesis Preparation (5 minutes)
+### Phase 1: Pattern Recognition & Opening Synthesis (2-3 minutes)
 
-After reading the concept, immediately analyze it and prepare bold but digestible insights:
+After reading the concept file(s), immediately begin with bold pattern recognition using `/templates/onboarding-flow.md`:
 
-1. **Core Transformation Mapping**
-   - Identify the user evolution you're creating
-   - Recognize the technical-emotional architecture
-   - Map system dynamics and interaction patterns
-   - See the command structure emerging
+1. **Communication Style Calibration**: Determine how developer prefers to process information
+2. **Bold Pattern Recognition**: Generate immediate excitement through authentic AI synthesis
+3. **Energy Calibration**: Adjust approach based on developer response patterns
 
-2. **Synthesis Preparation**
-   - Connect patterns across domains
-   - Generate architectural possibilities
-   - Prepare creative leaps and insights
-   - Plan digestible presentation of big ideas
+### Phase 2: 5-Chapter Exploration (20-25 minutes)
 
-3. **Bold Opening Design**
-   - Present compelling synthesis immediately
-   - Show unexpected connections
-   - Focus on one energizing aspect
-   - Make them excited about possibilities
+**BEGIN IMMEDIATELY**: Conduct the complete conversational exploration using `/templates/onboarding-flow.md`. Integrate decision intelligence from `/templates/decision-patterns.md` throughout:
 
-### Phase 2: Focused Exploration (20-30 minutes)
+**Chapter Structure**:
+1. **First Contact** → Identity & Entry transformation (4-5 min)
+2. **Core Experience Loop** → Value & system dynamics (4-5 min)  
+3. **Social Fabric** → Community & connection patterns (4-5 min)
+4. **Evolution & Growth** → Scaling & progression (4-5 min)
+5. **Technical Philosophy** → Architecture & boundaries (4-5 min)
 
-**BEGIN IMMEDIATELY**: Start the conversational onboarding now. Use the opening synthesis template to present your first insight, then guide through the 5 chapters. Follow the onboarding behavior instructions in `/instructions/onboarding-behavior.md` and synthesize the concept through architectural insights using the templates in `/templates/`:
+**Communication Guidelines**: Follow `/instructions/onboarding-behavior.md` for authentic AI synthesis with connection-making phrases and failure recovery patterns.
 
-1. **Synthesis-Driven Approach**
-   - Present bold pattern recognition
-   - Generate unexpected connections
-   - Build architectural understanding incrementally
-   - Focus on one insight at a time
+### Phase 3: Command Generation (2-3 minutes)
 
-2. **Chapter-Based System Building**
-   We'll synthesize these architectural layers:
-   - Chapter 1: First Contact → Identity formation & entry transformation
-   - Chapter 2: Core Loop → Repeatable value & system dynamics  
-   - Chapter 3: Social Fabric → Community architecture & behavioral patterns
-   - Chapter 4: Evolution & Growth → Scaling challenges & growth vectors
-   - Chapter 5: Technical Philosophy → Architecture serving experience goals
+Generate the 5 intelligent commands using `/templates/command-generation.md`:
 
-3. **Creative Synthesis Method**
-   For each area:
-   - Map the transformation happening
-   - Connect technical & emotional architecture
-   - Generate possibilities they haven't seen
-   - Present one compelling insight per exchange
+**Command Intelligence Features**:
+- **Contextual awareness**: Commands read project state and development patterns
+- **Vision alignment**: Each command embeds project vision into daily decisions
+- **Personality adaptation**: Commands adapt to established communication preferences
+- **Progressive disclosure**: Start simple, reveal complexity when needed
 
-4. **Core Command Contextualization**
-   Through synthesis:
-   - The 5 core commands (start, build, check, evolve, help) are contextualized with insights
-   - Command behavior connects to architectural understanding
-   - Development flow serves the vision through the established commands
+**Generated Commands**:
+```
+.claude/commands/[project]/
+├── start.md          # Intelligent context-aware guidance
+├── build.md          # Vision-aware development with decision intelligence  
+├── review.md         # Code review with alignment checking
+├── evolve.md         # Structured vision evolution and learning integration
+└── help.md           # Natural language interface and command routing
+```
 
-### Phase 3: Streamlined Artifact Generation
+### Phase 4: Project Guide Generation (1-2 minutes)
 
-Generate a minimal, powerful development environment:
+Create consolidated project reference using `/templates/project-guide.md`:
 
-1. **Single Project Guide**
-   Using simplified template:
-   ```
-   .claude/
-   ├── [project]-guide.md      # Everything you need in one place
-   └── commands/[project]/     # Just 5 core commands
-   ```
+**Guide Contents**:
+- **Vision summary**: One-line truth and core value proposition
+- **Technical foundation**: Stack, complexity budget, architectural principles  
+- **Development workflow**: How to use the 5 commands effectively
+- **Vision protection**: Green flags, red flags, and course correction guidance
+- **Growth strategy**: Natural evolution paths and scaling considerations
+- **Communication preferences**: Established working style and accessibility features
 
-2. **Core Command Set**
-   Generate exactly 5 commands using `core-commands-template.md`:
-   ```
-   .claude/commands/[project]/
-   ├── start.md          # Intelligent context-aware guide
-   ├── build.md          # Main development with embedded vision
-   ├── check.md          # Quick alignment when needed
-   ├── evolve.md         # Vision growth and learning
-   └── help.md           # Natural language fallback
-   ```
+## Unified Output Structure
 
-3. **No Separate Workflows**
-   Vision protection is embedded:
-   - Build command includes alignment checks
-   - Start command provides contextual guidance
-   - No interrupting rituals or practices
-
-### Phase 4: Unified Output Structure
-
-Always creates the same structure, designed to scale from single project to monorepo:
+Always creates the same scalable structure, identical for 1 or N concepts:
 
 ```
 .claude/
 ├── concepts/
-│   └── [namespace]-guide.md  # One guide per concept/namespace
+│   └── [namespace]-guide.md  # Complete project guide per concept
 ├── commands/
-│   └── [namespace]/          # One folder per concept/namespace
-│       ├── start.md
-│       ├── build.md
-│       ├── check.md
-│       ├── evolve.md
-│       └── help.md
+│   └── [namespace]/          # 5 intelligent commands per concept
+│       ├── start.md         # Context-aware guidance
+│       ├── build.md         # Vision-aware development  
+│       ├── review.md        # Code review with alignment
+│       ├── evolve.md        # Vision evolution support
+│       └── help.md          # Natural language interface
 └── init-logs/
-    └── [namespace]-init.md   # One init log per concept/namespace
+    └── [namespace]-init.md   # Exploration record per concept
 ```
 
-**IMPORTANT**: This structure is identical whether you have 1 concept or 100. A single project can seamlessly grow into a monorepo without restructuring.
+**Scalability**: Single project can seamlessly grow into monorepo without restructuring.
 
 **Single concept example:**
 ```
 .claude/
-├── concepts/
-│   └── dashboard-guide.md
-├── commands/
-│   └── dashboard/
-│       └── [5 commands]
-└── init-logs/
-    └── dashboard-init.md
-
+├── concepts/dashboard-guide.md
+├── commands/dashboard/[5 commands]  
+└── init-logs/dashboard-init.md
 # Usage: /dashboard:start, /dashboard:build
 ```
 
 **Multiple concepts example:**
 ```
 .claude/
-├── concepts/
-│   ├── auth-guide.md
-│   ├── dashboard-guide.md
-│   └── payment-guide.md
-├── commands/
-│   ├── auth/
-│   ├── dashboard/
-│   └── payment/
-└── init-logs/
-    ├── auth-init.md
-    ├── dashboard-init.md
-    └── payment-init.md
-
+├── concepts/[auth-guide.md, dashboard-guide.md, payment-guide.md]
+├── commands/[auth/, dashboard/, payment/]
+└── init-logs/[auth-init.md, dashboard-init.md, payment-init.md]  
 # Usage: /auth:build, /dashboard:build, /payment:build
 ```
 
-**Key Principles:**
-- Each concept gets its own init log in `init-logs/[namespace]-init.md`
-- Structure is identical for 1 or N concepts
-- Can start with one concept and add more without restructuring
-- Everything stays organized in `.claude/` directory
+## Next Steps for Developer
 
-### Phase 5: Clear Next Steps
+After initialization completes:
 
-1. **Command Calibration**
-   Based on onboarding insights:
-   - Customize the 5 core commands with project-specific context
-   - Add specific implementation notes from discussions
-   - Include warnings about discovered edge cases
-   - Embed excitement from breakthrough moments
+### Immediate Start
+```bash
+/[namespace]:start
 
-2. **Vision Crystallization**
-   Create clear artifacts:
-   - One-line truth about your product
-   - Transformation promise for users
-   - Technical principles serving experience
-   - Red flags for vision drift
+# This intelligent command will:
+# - Analyze your current context (git status, files, etc.)
+# - Suggest the perfect first step based on project stage  
+# - Guide you naturally into productive development
+# - Direct you to appropriate specialized commands
+```
 
-3. **Your Starting Point**
-   ```bash
-   /[namespace]:start
-   
-   # This intelligent command will:
-   # - Analyze your context
-   # - Suggest the perfect first step
-   # - Guide you naturally forward
-   # - Direct you to the right core command
-   ```
+### Development Flow
+1. **Daily guidance**: `/[namespace]:start` for context-aware direction
+2. **Feature development**: `/[namespace]:build "what you want to create"`  
+3. **Alignment checking**: `/[namespace]:review` after significant changes
+4. **Vision evolution**: `/[namespace]:evolve "new insight"` when learning emerges
+5. **General help**: `/[namespace]:help "any question"` for natural language support
 
-### Phase 6: Intelligent Evolution
+### Intelligence Features
+- **Embedded vision protection**: Commands detect drift and guide alignment naturally
+- **Contextual awareness**: System understands project stage, recent work, and patterns  
+- **Personality adaptation**: Commands remember communication preferences from onboarding
+- **Progressive complexity**: Start simple, reveal advanced features when appropriate
+- **Natural evolution**: Vision grows through building, not separate planning sessions
 
-The system grows with you:
-
-1. **Embedded Protection**
-   - Build command detects drift naturally
-   - Start command suggests when to check alignment
-   - No manual tracking needed
-
-2. **Natural Discovery**
-   - Commands suggest features based on context
-   - Help command learns your patterns
-   - Complexity revealed progressively
-
-3. **Continuous Learning**
-   - System adapts to your development style
-   - Vision evolves through actual building
-   - No separate planning sessions
+### System Growth
+The generated commands become more intelligent over time:
+- Learn from your development patterns and preferences
+- Adapt suggestions based on project evolution
+- Maintain vision alignment as project grows and changes
+- Support seamless scaling from prototype to production
 
 ## Output Structure
 

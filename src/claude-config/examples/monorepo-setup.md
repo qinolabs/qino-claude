@@ -28,10 +28,18 @@ Always creates the same structure:
 │   ├── auth/                  # One namespace per concept
 │   │   ├── start.md
 │   │   ├── build.md
-│   │   └── ...
+│   │   ├── check.md
+│   │   ├── evolve.md
+│   │   └── help.md
 │   └── dashboard/
-│       └── ...
-└── init-log.md
+│       ├── start.md
+│       ├── build.md
+│       ├── check.md
+│       ├── evolve.md
+│       └── help.md
+└── init-logs/
+    ├── auth-init.md           # One init log per concept
+    └── dashboard-init.md
 ```
 
 ## Examples
