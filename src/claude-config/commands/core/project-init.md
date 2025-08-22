@@ -2,25 +2,107 @@
 
 Transform your concept into a focused development environment through guided exploration, generating just the commands you need to build with vision.
 
-## Usage
+## How to Use This System
 
-**One command handles everything:**
+### Step 1: Setup Your Project
+1. **Copy claude-config**: Paste the entire `src/claude-config/` folder into your new project
+2. **Write your concept**: Create a markdown file describing your project idea (see examples below)
+3. **Run initialization**: Use Claude Code to run the init command
+
+### Step 2: Create Your Concept File
+Create a simple markdown file describing your project. Examples:
+
+**Simple Project (`my-app.md`):**
+```markdown
+# Social Recipe Sharing App
+
+An app where home cooks can share family recipes with stories and photos. 
+Think Instagram but for recipes with your grandmother's secret ingredients.
+
+Users can:
+- Upload recipes with personal stories
+- Follow favorite home cooks
+- Save recipes to collections
+- Rate and comment on dishes they've tried
+
+The vibe should be warm and personal, not clinical like typical recipe sites.
+```
+
+**SaaS Project (`analytics-tool.md`):**
+```markdown
+# Privacy-First Analytics Dashboard
+
+A simple analytics tool for small businesses who want to understand their customers without invasive tracking.
+
+Core features:
+- Website traffic insights without cookies
+- Customer behavior patterns (respectful)
+- Simple, actionable reports
+- One-click compliance with privacy laws
+
+Target: Small business owners who care about privacy but need data to make decisions.
+```
+
+### Step 3: Run Initialization
 
 ```bash
-# Single concept - works anywhere
-/core:project-init my-concept.md
+# Single project
+/core:project-init my-app.md
 
-# Multiple concepts - auto-detects monorepo intent  
-/core:project-init concept1.md concept2.md concept3.md
+# Multiple projects (monorepo)  
+/core:project-init auth-service.md user-dashboard.md analytics.md
 
 # Folder of concepts
 /core:project-init concepts/
 ```
 
-**Always creates namespaced commands:**
-- `auth-service.md` → `/auth:build`, `/auth:start`, etc.
-- `user-dashboard.md` → `/dashboard:build`, `/dashboard:start`, etc.
-- Works the same whether you have 1 concept or 10
+### Step 4: Experience the 20-30 Minute Onboarding
+- Claude will immediately start a guided exploration
+- No additional setup needed - just respond naturally
+- The conversation will crystallize your concept into actionable development guidance
+
+### Step 5: Use Your Generated Commands
+
+**Your namespaced commands will be created:**
+- `my-app.md` → `/myapp:start`, `/myapp:build`, `/myapp:review`, `/myapp:evolve`, `/myapp:help`
+- Each command understands your specific project vision and constraints
+
+**Daily development flow:**
+1. `/myapp:start` - Get contextual guidance for where you are
+2. `/myapp:build "feature"` - Build features with vision alignment
+3. `/myapp:review` - Check alignment after changes
+4. `/myapp:evolve` - Update vision as you learn (includes creative catalyst when ready)
+5. `/myapp:help` - Natural language support for anything
+
+## What Gets Created
+
+**File structure after initialization:**
+```
+your-project/
+├── src/claude-config/        # The system (you pasted this)
+├── .claude/                  # Generated for your project
+│   ├── concepts/
+│   │   └── myapp-guide.md    # Complete project reference
+│   ├── commands/
+│   │   └── myapp/            # Your 5 intelligent commands
+│   │       ├── start.md
+│   │       ├── build.md
+│   │       ├── review.md
+│   │       ├── evolve.md
+│   │       └── help.md
+│   └── init-logs/
+│       └── myapp-init.md     # Record of your onboarding session
+```
+
+## Key Benefits
+
+**Vision-Aware Development**: Your commands understand and protect your original vision while you build
+
+**Intelligent Context**: Commands read your project state, recent work, and development patterns
+
+**Creative Catalyst**: When you're ready, the system can challenge assumptions and push creative boundaries (permission-based)
+
+**Scales Seamlessly**: Works identically for single projects or complex monorepos
 
 ## Execution Instructions
 

@@ -8,17 +8,30 @@ This environment uses Story-Driven Development to maintain connection between te
 
 ## Getting Started
 
+**📖 [Complete Getting Started Guide →](src/claude-config/GETTING_STARTED.md)**
+
+### Quick Start
+1. **Copy system**: Paste `src/claude-config/` into your project
+2. **Write concept**: Create `my-idea.md` describing your project  
+3. **Run init**: `/core:project-init my-idea.md`
+4. **Experience onboarding**: 20-30 minute guided exploration
+5. **Start building**: Use your generated `/myidea:*` commands
+
 ### First Time Setup
 ```bash
-# 1. Initialize your project
+# 1. Copy the claude-config system to your project
+cp -r src/claude-config/ /path/to/your-project/
+
+# 2. Create your concept file (see getting started guide for examples)
+# my-app.md
+
+# 3. Initialize with Claude Code
 claude
-/core:project-init your-concept.md
+/core:project-init my-app.md
 
-# 2. Complete the 20-30 minute onboarding journey
-# Claude will immediately guide you through focused exploration
-
-# 3. Your first command will be provided at the end
-/[your-project]:start
+# 4. Experience the transformative onboarding
+# 5. Start using your generated commands
+/myapp:start
 ```
 
 ### Daily Development Flow
@@ -27,24 +40,28 @@ claude
 /[project]:start
 # Analyzes context and suggests next steps
 
-# Build features with vision
+# Build features with vision alignment
 /[project]:build "what you want to create"
 # Implements with embedded vision protection
 
 # Check alignment when needed
-/[project]:check
-# Quick verification you're on track
+/[project]:review
+# Code review with vision context
+
+# Evolve your vision as you learn
+/[project]:evolve
+# Update understanding, includes creative catalyst when ready
 ```
 
 ## Core Commands
 
 After initialization, you'll have 5 streamlined commands:
 
-- `/project:start` - Intelligent context-aware guidance
-- `/project:build` - Main development with embedded vision
-- `/project:check` - Quick alignment verification
-- `/project:evolve` - Creative vision exploration
-- `/project:help` - Natural language fallback
+- `/project:start` - Intelligent context-aware guidance  
+- `/project:build` - Vision-aware development with decision intelligence
+- `/project:review` - Code review with alignment checking
+- `/project:evolve` - Vision evolution & creative catalyst (permission-based)
+- `/project:help` - Natural language interface and command routing
 
 Each command:
 1. Understands your project's vision
