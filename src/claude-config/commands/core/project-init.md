@@ -46,14 +46,7 @@ Target: Small business owners who care about privacy but need data to make decis
 ### Step 3: Run Initialization
 
 ```bash
-# Single project
 /core:project-init my-app.md
-
-# Multiple projects (monorepo)  
-/core:project-init auth-service.md user-dashboard.md analytics.md
-
-# Folder of concepts
-/core:project-init concepts/
 ```
 
 ### Step 4: Experience the 20-30 Minute Onboarding
@@ -90,6 +83,7 @@ your-project/
 │   │       ├── review.md
 │   │       ├── evolve.md
 │   │       └── help.md
+│   ├── iteration.md          # Current iteration focus (auto-created)
 │   └── init-logs/
 │       └── myapp-init.md     # Record of your onboarding session
 ```
@@ -113,19 +107,19 @@ your-project/
 The system uses 4 focused templates with clear dependencies:
 
 ### Core Templates
-1. **`/templates/onboarding-flow.md`** - Complete 20-30 minute exploration process
-2. **`/templates/command-generation.md`** - Creates 5 intelligent commands  
-3. **`/templates/project-guide.md`** - Consolidated project reference
-4. **`/templates/decision-patterns.md`** - Architectural intelligence library
+1. **`/templates/exploration-process.md`** - Complete 20-30 minute exploration process
+2. **`/templates/commands-template.md`** - Creates 5 intelligent commands  
+3. **`/templates/guide-template.md`** - Consolidated project reference
+4. **`/templates/intelligence-library.md`** - Architectural intelligence library
 
 ### Supporting Instructions
-- **`/instructions/onboarding-behavior.md`** - Communication patterns and synthesis techniques
+- **`/instructions/exploration-behavior.md`** - Communication patterns and synthesis techniques
 
 ## Process
 
 ### Phase 1: Pattern Recognition & Opening Synthesis (2-3 minutes)
 
-After reading the concept file(s), immediately begin with bold pattern recognition using `/templates/onboarding-flow.md`:
+After reading the concept file(s), immediately begin with bold pattern recognition using `/templates/exploration-process.md`:
 
 1. **Communication Style Calibration**: Determine how developer prefers to process information
 2. **Bold Pattern Recognition**: Generate immediate excitement through authentic AI synthesis
@@ -133,7 +127,7 @@ After reading the concept file(s), immediately begin with bold pattern recogniti
 
 ### Phase 2: 5-Chapter Exploration (20-25 minutes)
 
-**BEGIN IMMEDIATELY**: Conduct the complete conversational exploration using `/templates/onboarding-flow.md`. Integrate decision intelligence from `/templates/decision-patterns.md` throughout:
+**BEGIN IMMEDIATELY**: Conduct the complete conversational exploration using `/templates/exploration-process.md`. Integrate decision intelligence from `/templates/intelligence-library.md` throughout:
 
 **Chapter Structure**:
 1. **First Contact** → Identity & Entry transformation (4-5 min)
@@ -142,11 +136,11 @@ After reading the concept file(s), immediately begin with bold pattern recogniti
 4. **Evolution & Growth** → Scaling & progression (4-5 min)
 5. **Technical Philosophy** → Architecture & boundaries (4-5 min)
 
-**Communication Guidelines**: Follow `/instructions/onboarding-behavior.md` for authentic AI synthesis with connection-making phrases and failure recovery patterns.
+**Communication Guidelines**: Follow `/instructions/exploration-behavior.md` for authentic AI synthesis with connection-making phrases and failure recovery patterns.
 
 ### Phase 3: Command Generation (2-3 minutes)
 
-Generate the 5 intelligent commands using `/templates/command-generation.md`:
+Generate the 5 intelligent commands using `/templates/commands-template.md`:
 
 **Command Intelligence Features**:
 - **Contextual awareness**: Commands read project state and development patterns
@@ -166,7 +160,7 @@ Generate the 5 intelligent commands using `/templates/command-generation.md`:
 
 ### Phase 4: Project Guide Generation (1-2 minutes)
 
-Create consolidated project reference using `/templates/project-guide.md`:
+Create consolidated project reference using `/templates/guide-template.md`:
 
 **Guide Contents**:
 - **Vision summary**: One-line truth and core value proposition
@@ -178,7 +172,7 @@ Create consolidated project reference using `/templates/project-guide.md`:
 
 ## Unified Output Structure
 
-Always creates the same scalable structure, identical for 1 or N concepts:
+Always creates the same consistent structure:
 
 ```
 .claude/
@@ -195,24 +189,21 @@ Always creates the same scalable structure, identical for 1 or N concepts:
     └── [namespace]-init.md   # Exploration record per concept
 ```
 
-**Scalability**: Single project can seamlessly grow into monorepo without restructuring.
+**Note**: For monorepos with multiple projects, run init separately for each project in its respective directory.
 
-**Single concept example:**
+**Example output:**
 ```
 .claude/
-├── concepts/dashboard-guide.md
-├── commands/dashboard/[5 commands]  
-└── init-logs/dashboard-init.md
-# Usage: /dashboard:start, /dashboard:build
-```
+├── concepts/recipe-app-guide.md
+├── commands/recipe-app/
+│   ├── start.md
+│   ├── build.md
+│   ├── review.md
+│   ├── evolve.md
+│   └── help.md
+└── init-logs/recipe-app-init.md
 
-**Multiple concepts example:**
-```
-.claude/
-├── concepts/[auth-guide.md, dashboard-guide.md, payment-guide.md]
-├── commands/[auth/, dashboard/, payment/]
-└── init-logs/[auth-init.md, dashboard-init.md, payment-init.md]  
-# Usage: /auth:build, /dashboard:build, /payment:build
+# Usage: /recipe-app:start, /recipe-app:build, etc.
 ```
 
 ## Next Steps for Developer
@@ -240,6 +231,7 @@ After initialization completes:
 ### Intelligence Features
 - **Embedded vision protection**: Commands detect drift and guide alignment naturally
 - **Contextual awareness**: System understands project stage, recent work, and patterns  
+- **Iteration intelligence**: Tracks development focus and suggests natural next steps
 - **Personality adaptation**: Commands remember communication preferences from onboarding
 - **Progressive complexity**: Start simple, reveal advanced features when appropriate
 - **Natural evolution**: Vision grows through building, not separate planning sessions
@@ -273,18 +265,14 @@ Consistent, scalable structure for any number of concepts:
 ## Usage Examples
 
 ```bash
-# Single concept
-/core:project-init dashboard.md
-# → Creates /dashboard:start, /dashboard:build, etc.
+# Initialize a project
+/core:project-init recipe-app.md
+# → Creates /recipe-app:start, /recipe-app:build, etc.
 
-# Multiple concepts  
-/core:project-init auth.md dashboard.md orders.md
-# → Creates /auth:build, /dashboard:build, /orders:build
-
-# Works anywhere - standalone or monorepo
-cd apps/my-new-app
-/core:project-init my-app.md
-# → Creates my-new-app/.claude/ with /myapp:build
+# Works in any directory
+cd apps/my-storefront
+/core:project-init storefront.md
+# → Creates .claude/ with /storefront:* commands
 ```
 
 ## Success Metrics
@@ -299,6 +287,8 @@ The init process succeeds when:
 ## Philosophy
 
 **Less is More**: Start with 5 commands, not 50. Complexity emerges from use, not planning.
+
+**Iterative by Default**: Development naturally flows through cycles of learning, building, and evolution. Commands recognize these rhythms without forcing process.
 
 **Embedded Guidance**: Vision protection happens while building, not through separate rituals.
 

@@ -7,17 +7,15 @@ This directory contains the refactored metaprogramming system for qino-claude wi
 ```
 src/claude-config/
 ├── instructions/          # How Claude should behave
-│   └── onboarding-behavior.md
+│   └── exploration-behavior.md
 ├── templates/            # What Claude should generate (streamlined)
-│   ├── onboarding-flow.md         # Complete exploration process
-│   ├── command-generation.md      # Intelligent command creation
-│   ├── decision-patterns.md       # Architectural intelligence library
-│   ├── project-guide.md           # Consolidated project reference
-│   └── deprecated/                # Previous template system
-│       └── [8 legacy templates]
+│   ├── exploration-process.md     # Complete exploration process
+│   ├── commands-template.md       # Intelligent command creation
+│   ├── intelligence-library.md    # Architectural intelligence library
+│   ├── iteration-template.md      # Living iteration context
+│   └── guide-template.md          # Consolidated project reference
 ├── examples/             # Sample outputs and demonstrations
-│   ├── gentle-beginning-example.md
-│   └── monorepo-setup.md
+│   └── exploration-example.md
 └── commands/core/        # Entry point commands
     └── project-init.md
 ```
@@ -71,19 +69,20 @@ Files that show **sample outputs** and usage patterns:
 
 All templates use consistent placeholder format:
 - `{{VARIABLE_NAME}}` - Required input from previous steps
-- `{{PROJECT_NAME}}` - Project namespace (e.g., "dashboard", "auth")
+- `{{PROJECT_NAME}}` - Project namespace (e.g., "recipe-app", "admin-portal")
 - `{{VISION_SUMMARY}}` - Core vision from onboarding
 - Clear documentation of all placeholders at template end
 
 ## Execution Flow
 
 1. **Entry**: `/core:project-init` reads concept files
-2. **Instructions**: Loads behavior from `/instructions/onboarding-behavior.md`
-3. **Templates**: Uses streamlined 4-template system:
-   - `onboarding-flow.md` → Complete 20-30 minute exploration process
-   - `command-generation.md` → 5 intelligent commands with creative catalyst
-   - `project-guide.md` → Consolidated project reference  
-   - `decision-patterns.md` → Architectural intelligence library (used throughout)
+2. **Instructions**: Loads behavior from `/instructions/exploration-behavior.md`
+3. **Templates**: Uses streamlined 5-template system:
+   - `exploration-process.md` → Complete 20-30 minute exploration process
+   - `commands-template.md` → 5 intelligent commands with creative catalyst
+   - `guide-template.md` → Consolidated project reference  
+   - `intelligence-library.md` → Architectural intelligence library (used throughout)
+   - `iteration-template.md` → Living iteration context that evolves
 4. **Output**: Structured `.claude/` directory with vision-aware commands and guides
 
 ## Benefits of Streamlined Structure

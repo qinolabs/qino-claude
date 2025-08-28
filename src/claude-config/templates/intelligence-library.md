@@ -6,6 +6,21 @@
 
 *Central repository of decision frameworks, dialogue patterns, and architectural intelligence.*
 
+## Iteration Intelligence
+
+### Natural Iteration Recognition
+Commands detect iteration boundaries through:
+- **Feature Cohesion**: When a set of features forms a complete experience
+- **Learning Accumulation**: When insights need integration before proceeding
+- **Energy Shifts**: When development focus naturally transitions
+- **Code Stability**: When patterns reach natural equilibrium
+
+### Iteration Wisdom
+- **Learn**: Each iteration reveals something unexpected
+- **Build**: Code quality improves through iterations, not perfection attempts
+- **Feedback**: Real usage shapes the next iteration
+- **Evolve**: Architecture emerges gracefully, isn't forced
+
 ## Architectural Decision Framework
 
 ### Complexity Scoring System

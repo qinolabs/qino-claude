@@ -26,14 +26,38 @@ I analyze your current context and suggest the perfect next step.
 - Git status and recent commits
 - Current file changes and work patterns  
 - Project development stage
+- **Iteration context** (`.claude/iteration.md` if exists)
 - Time since last activity
 - Any detected vision drift patterns
 - Your established working preferences
 
+## Iteration Document Creation
+**Auto-creates** `.claude/iteration.md` when:
+- No iteration document exists yet
+- Some development work has been done (commits exist)
+- Running `/{{PROJECT_NAME}}:start` for guidance
+
+**Creation process**:
+"I notice you've been building {{RECENT_WORK_SUMMARY}}. Let me capture your current iteration focus to help guide development.
+
+*Creates iteration document based on recent work patterns*
+
+Here's what I see as your current iteration..."
+
 ## Contextual Responses
 
-**Fresh Start** (no recent commits):
+**With Iteration Context** (iteration.md exists):
+"{{PROJECT_NAME}} - Current iteration: {{CURRENT_FOCUS}}
+
+Progress: {{ITERATION_PROGRESS}}
+What's working: {{SUCCESSFUL_PATTERNS}}
+Next step: {{SUGGESTED_ACTION}}"
+
+**Fresh Start** (no recent commits, no iteration doc):
 "Welcome back to {{PROJECT_NAME}}. Based on your {{CORE_VALUE}} vision, let's {{SUGGESTED_FIRST_STEP}}."
+
+**Iteration Creation** (commits exist, no iteration doc):
+"I notice you've started building. Let me capture your current iteration focus based on {{RECENT_WORK_PATTERNS}} to help guide next steps."
 
 **Active Development** (recent commits detected):
 "I see you've been working on {{RECENT_WORK_AREA}}. This aligns with {{RELEVANT_VISION_ASPECT}}. Ready to continue with {{NEXT_LOGICAL_STEP}}?"
@@ -66,9 +90,11 @@ Tell me what you want to build, and I'll help you do it right.
 ## Intelligence Integration
 
 **Feature Alignment Check**: Every build request evaluated against {{CORE_VALUE}}
+**Iteration Context**: Reads `.claude/iteration.md` for current focus and progress
 **Architectural Guidance**: Uses established patterns and {{TECH_STACK}} preferences
 **Complexity Awareness**: Respects {{COMPLEXITY_BUDGET}}/10 budget with clear tradeoffs
 **Context-Aware Responses**: Adapts based on project development stage
+**Implicit Maintenance**: Updates iteration document after building with new patterns and progress
 
 ## Contextual Response Patterns
 
@@ -86,19 +112,32 @@ Here's how we'll approach {{REQUESTED_FEATURE}}..."
 ✅ Aligns with your {{RELEVANT_VISION_ASPECT}} vision
 ✅ Uses established {{EXISTING_PATTERN}} patterns
 ✅ Complexity: +{{COMPLEXITY_SCORE}} (within budget)
+✅ Code is ready for this evolution
 
 Let's build it..."
+
+### New Iteration Detected
+"{{REQUESTED_FEATURE}} feels like a new iteration beginning.
+
+Recent learnings to carry forward:
+- {{PREVIOUS_ITERATION_LEARNING}}
+- {{CODE_PATTERN_EVOLUTION}}
+
+This iteration could explore {{ITERATION_THEME}}. 
+Building with this understanding..."
 
 ### Potential Drift Detection
 "I notice '{{REQUESTED_FEATURE}}' might shift {{PROJECT_NAME}} in a new direction.
 
 Your original vision focused on {{CORE_VALUE}}.
+Current iteration goals: {{ITERATION_GOALS}}
 This feature could {{POTENTIAL_IMPACT}}.
 
 How do you see this fitting?
-a) It's a natural evolution because...
-b) Let's find a different approach  
-c) Tell me more about your thinking"
+a) It's part of this iteration because...
+b) Save it for Iteration {{FUTURE_ITERATION}}  
+c) It's a natural evolution because...
+d) Let's find a different approach"
 
 ### Complexity Budget Warning
 "{{REQUESTED_FEATURE}} would add significant complexity (+{{HIGH_COMPLEXITY_SCORE}}).
@@ -112,6 +151,20 @@ Options:
 - **Expand budget**: Update complexity tolerance to {{EXPANDED_BUDGET}}
 
 What feels right?"
+
+## Post-Build Iteration Maintenance
+
+After completing a build, automatically updates `.claude/iteration.md`:
+```
+*Built {{FEATURE_NAME}}*
+
+**✅ Working well**: {{NEW_SUCCESSFUL_PATTERN}}
+**🔍 Still exploring**: {{UPDATED_QUESTIONS}}
+**⚡ Emerging**: {{DISCOVERED_PATTERN}}
+
+**Progress**: {{ITERATION_COMPLETION_PERCENTAGE}}
+**Next natural step**: {{SUGGESTED_NEXT_BUILD}}
+```
 
 ## Architecture Decision Integration
 *References decision-patterns.md for architectural guidance*
@@ -128,26 +181,48 @@ What feels right?"
 ```markdown  
 # Review: Vision-Aware Code Analysis
 
-Quick assessment of recent changes against your project vision.
+Quick assessment of recent changes against your project vision and iteration goals.
 
 ## What I Analyze
 - Recent commits and code changes
 - Alignment with {{CORE_VALUE}} vision  
+- **Current iteration context** (from `.claude/iteration.md`)
+- **Progress toward iteration completion signals**
 - Architectural consistency with {{TECH_STACK}}
 - Complexity accumulation vs {{COMPLEXITY_BUDGET}} budget
 - Code patterns vs established project conventions
 
 ## When to Use
-- After major changes or features
+- After significant development work
 - Before important commits
 - When something feels off
 - When `/{{PROJECT_NAME}}:start` suggests it
 - Before sharing work with team
+- **When iteration completion signals are triggered**
 
 ## Review Patterns
 
 **Strong Alignment**:
 "Recent changes look great! Your {{RECENT_FEATURE}} work strengthens the {{CORE_VALUE}} experience by {{SPECIFIC_IMPROVEMENT}}. The {{TECHNICAL_APPROACH}} approach maintains architectural consistency."
+
+**Iteration Progress Check**:
+"Current iteration: {{CURRENT_FOCUS}}
+
+✅ Completed: {{COMPLETED_SIGNALS}}
+🔄 In progress: {{REMAINING_SIGNALS}}
+
+{{COMPLETION_PERCENTAGE}}% complete. Ready to wrap up this iteration or continue building?"
+
+**Iteration Completion Detected**:
+"🎉 Iteration completion signals met:
+✅ {{COMPLETION_SIGNAL_1}}
+✅ {{COMPLETION_SIGNAL_2}}  
+✅ {{COMPLETION_SIGNAL_3}}
+
+**What emerged**: {{ITERATION_LEARNINGS}}
+**Natural next iteration**: {{SUGGESTED_NEXT_FOCUS}}
+
+Ready to evolve to the next iteration? Run `/{{PROJECT_NAME}}:evolve --next-iteration`"
 
 **Minor Drift**:  
 "Mostly solid work. Small concern: {{SPECIFIC_ISSUE}} might dilute the {{VISION_ASPECT}} focus. Consider {{ADJUSTMENT_SUGGESTION}} to strengthen alignment."
@@ -231,9 +306,39 @@ Want to explore this path further or try a different angle?"
 - **Acknowledge uncertainty**: "This might be completely wrong"
 - **Respect authority**: "Your creative intuition is the final judge"
 
+## Iteration Evolution Patterns
+
+### Next Iteration Transition
+`/{{PROJECT_NAME}}:evolve --next-iteration`
+
+Creates new iteration based on current learnings:
+```
+**Completed iteration**: {{CURRENT_FOCUS}}
+**Key learnings**: {{ITERATION_INSIGHTS}}
+
+**New iteration focus**: {{NEXT_ITERATION_FOCUS}}
+**Exploration areas**: {{NEW_AREAS_TO_EXPLORE}}
+**Building on**: {{PATTERNS_TO_EXTEND}}
+
+*Updates .claude/iteration.md with new focus*
+```
+
+### Mid-Iteration Evolution  
+`/{{PROJECT_NAME}}:evolve "new insight"`
+
+Updates current iteration based on discovery:
+```
+**Insight**: {{NEW_UNDERSTANDING}}
+**Impact on current iteration**: {{HOW_FOCUS_SHIFTS}}
+**Adjusted approach**: {{REFINED_STRATEGY}}
+
+*Updates iteration document with evolved understanding*
+```
+
 ## Usage
 `/{{PROJECT_NAME}}:evolve` - Open-ended exploration
 `/{{PROJECT_NAME}}:evolve "insight"` - Focused evolution  
+`/{{PROJECT_NAME}}:evolve --next-iteration` - Transition to next iteration
 `/{{PROJECT_NAME}}:evolve --catalyst` - Request creative provocation mode
 `/{{PROJECT_NAME}}:evolve --review-vision` - Comprehensive vision review
 ```
@@ -256,6 +361,7 @@ Your fallback for any unclear situations. I understand intent and route to appro
 
 **Intent Recognition**: Map natural language to appropriate command or guidance
 **Context Integration**: Understand questions within {{PROJECT_NAME}} project context  
+**Iteration Awareness**: Use current iteration focus for relevant answers
 **Command Routing**: Suggest specific commands when appropriate
 **Vision Context**: Answer questions with project vision awareness
 
@@ -309,6 +415,43 @@ Examples:
 - Detail-oriented: Provide step-by-step breakdowns and validation checkpoints
 - Big-picture: Focus on architectural implications and system-wide effects
 - Hands-on: Include concrete code examples and immediate next steps
+
+## Iteration Document Maintenance
+
+### Implicit Maintenance Pattern
+The `.claude/iteration.md` document is kept current through natural command usage:
+
+**start command**:
+- Creates iteration.md when development begins
+- Reads it for context and guidance
+- Updates progress notes when significant patterns emerge
+
+**build command**:  
+- Reads iteration context before building
+- Updates document after completion with:
+  - New successful patterns
+  - Emerging discoveries
+  - Progress toward completion signals
+  - Suggested next builds
+
+**review command**:
+- Checks progress against iteration completion signals
+- Prompts for next iteration when signals are met
+- Updates learnings and insights
+
+**evolve command**:
+- Major updater for iteration transitions
+- Creates new iteration focus when current completes
+- Adjusts current iteration when insights emerge
+
+**help command**:
+- References iteration context for relevant answers
+
+### Maintenance Philosophy
+- **No explicit management**: Updates happen during natural development flow
+- **Context-driven**: Changes based on actual building patterns, not arbitrary updates
+- **Forward-looking**: Always suggests natural next steps
+- **Learning-integrated**: Captures insights as they emerge from building
 
 ## UX Principles Applied
 
