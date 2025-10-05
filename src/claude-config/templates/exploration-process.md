@@ -2,7 +2,7 @@
 
 <!-- TEMPLATE: Unified conversational exploration process -->
 <!-- USED BY: project-init.md Phase 2 -->
-<!-- REQUIRES: concept file input, instructions from onboarding-behavior.md -->
+<!-- REQUIRES: concept file input, instructions from exploration-behavior.md -->
 
 *This template guides the complete 20-30 minute transformative exploration process.*
 
@@ -91,7 +91,7 @@ If overwhelming: "I'm generating a lot of possibilities - should we focus on one
 - "Technical decisions embed {{EXPERIENCE_VALUES}} into the system"
 
 **Decision Framework Integration:**
-- Reference architectural decision patterns from decision-patterns.md
+- Reference architectural decision patterns from intelligence-library.md
 - Apply complexity scoring to major architectural choices
 - Establish technical boundaries and growth paths
 

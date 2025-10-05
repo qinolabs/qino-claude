@@ -1,7 +1,7 @@
 # Decision Intelligence Library
 
 <!-- LIBRARY: Concentrated architectural and dialogue intelligence for all commands -->
-<!-- USED BY: onboarding-flow.md, command-generation.md -->
+<!-- USED BY: exploration-process.md, commands-template.md -->
 <!-- CONSOLIDATES: architecture-aware-build.md, smart-build-template.md, evolve-dialogue-template.md -->
 
 *Central repository of decision frameworks, dialogue patterns, and architectural intelligence.*

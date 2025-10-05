@@ -10,14 +10,15 @@ src/claude-config/
 │   └── exploration-behavior.md
 ├── templates/            # What Claude should generate (streamlined)
 │   ├── exploration-process.md     # Complete exploration process
-│   ├── commands-template.md       # Intelligent command creation
+│   ├── commands-template.md       # Lightweight command creation
 │   ├── intelligence-library.md    # Architectural intelligence library
-│   ├── iteration-template.md      # Living iteration context
+│   ├── iteration-framework-template.md  # Development roadmap framework
 │   └── guide-template.md          # Consolidated project reference
 ├── examples/             # Sample outputs and demonstrations
 │   └── exploration-example.md
 └── commands/core/        # Entry point commands
-    └── project-init.md
+    ├── project-init.md      # Create new project environments
+    └── update-commands.md   # Refresh all app commands with latest templates
 ```
 
 ## Content Type Conventions
@@ -67,11 +68,10 @@ Files that show **sample outputs** and usage patterns:
 
 ## Placeholder Conventions
 
-All templates use consistent placeholder format:
-- `{{VARIABLE_NAME}}` - Required input from previous steps
-- `{{PROJECT_NAME}}` - Project namespace (e.g., "recipe-app", "admin-portal")
-- `{{VISION_SUMMARY}}` - Core vision from onboarding
-- Clear documentation of all placeholders at template end
+Templates use minimal placeholder format for lightweight commands:
+- `{{PROJECT_NAME}}` - Project namespace for file paths and command naming
+- Commands read context dynamically from files rather than embedding static content
+- Context files: `.claude/concepts/{{PROJECT_NAME}}-guide.md`, `.claude/iterations/{{PROJECT_NAME}}-iterations.md`, `.claude/init-logs/{{PROJECT_NAME}}-init.md`
 
 ## Execution Flow
 
@@ -79,43 +79,38 @@ All templates use consistent placeholder format:
 2. **Instructions**: Loads behavior from `/instructions/exploration-behavior.md`
 3. **Templates**: Uses streamlined 5-template system:
    - `exploration-process.md` → Complete 20-30 minute exploration process
-   - `commands-template.md` → 5 intelligent commands with creative catalyst
+   - `commands-template.md` → 5 lightweight commands that read context dynamically
    - `guide-template.md` → Consolidated project reference  
    - `intelligence-library.md` → Architectural intelligence library (used throughout)
-   - `iteration-template.md` → Living iteration context that evolves
-4. **Output**: Structured `.claude/` directory with vision-aware commands and guides
+   - `iteration-framework-template.md` → Development roadmap framework
+4. **Output**: Structured `.claude/` directory with vision-aware commands and living context files
 
-## Benefits of Streamlined Structure
+## Benefits of Lightweight Command System
 
-### ✅ Focused System (4 vs 8 templates)
-- 50% reduction in maintenance complexity
-- Clear single purpose per template
-- No overlapping responsibilities
-- Linear execution flow
+### ✅ Solves Concept Drift
+- Commands read current context from living documents instead of static content
+- App evolution doesn't create drift from commands
+- Vision and roadmap updates are automatically available to all commands
+- Natural evolution without command regeneration
 
-### ✅ Enhanced Intelligence  
-- Consolidated architectural decision patterns
-- Creative catalyst capabilities when ready
-- Contextual awareness across all commands
-- Communication adaptation for different personalities
+### ✅ Solves Template Maintenance
+- `/core:update-commands` safely regenerates all app commands with latest templates
+- Context files (guides, roadmaps) are preserved during updates
+- Template improvements apply to all projects instantly
+- Clear separation between command logic and project context
 
-### ✅ Preserved Transformation
-- Complete 20-30 minute holistic onboarding maintained
-- Bold synthesis and pattern recognition enhanced
-- Vision protection embedded naturally in commands
-- Progressive disclosure from foundation to creative catalyst
-
-### ✅ Improved Accessibility
-- Multiple communication styles supported
-- Cultural sensitivity and failure recovery
-- Permission-based creative provocation
-- Easy exits and natural language fallbacks
+### ✅ Preserves Benefits
+- Namespaced commands (`/myapp:start`) maintain personalized feel
+- Complete 20-30 minute exploration process preserved
+- Vision-aware development with phase tracking
+- Contextual intelligence adapts to project state
+- Progressive disclosure and natural language fallbacks
 
 ## Evolution Notes
 
-**Previous System (8 templates)**: Overlapping complex templates with unclear dependencies
-**Current System (4 templates)**: Streamlined flow with concentrated intelligence
-**Key Improvement**: All architectural intelligence consolidated into `decision-patterns.md` library
-**Creative Enhancement**: Added creative catalyst mode with permission-based activation
+**Previous System**: Static commands with embedded content created concept drift and maintenance pain
+**Current System**: Lightweight commands that read context dynamically from living documents
+**Key Innovation**: Commands reference context files rather than embedding static content
+**Maintenance Solution**: `/core:update-commands` provides safe template updates across all projects
 
-The system now scales from supportive guidance to transformative creative catalyst based on developer readiness and explicit consent.
+The system now enables natural project evolution while maintaining command intelligence and solving the two core problems: concept drift and template maintenance.

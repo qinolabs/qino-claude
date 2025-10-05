@@ -2,7 +2,7 @@
 
 <!-- TEMPLATE: Clean, actionable project reference generated after onboarding -->
 <!-- USED BY: project-init.md Phase 4 -->
-<!-- REQUIRES: All outputs from onboarding-flow.md -->
+<!-- REQUIRES: All outputs from exploration-process.md -->
 
 *Single consolidated guide that captures everything important without overwhelming.*
 
@@ -60,7 +60,7 @@
 
 **Creative Growth**:
 4. `/{{PROJECT_NAME}}:evolve "insight"` - Update vision with learnings
-5. `/{{PROJECT_NAME}}:evolve --catalyst` - Request creative provocation (when ready)
+5. `/{{PROJECT_NAME}}:evolve "challenge me"` - Request creative provocation (when ready)
 
 **Support**:
 6. `/{{PROJECT_NAME}}:help "question"` - Natural language assistance
@@ -149,7 +149,7 @@ Based on our exploration, you prefer:
 - **Technical decision?** `/{{PROJECT_NAME}}:build "specific question"`
 - **Alignment concern?** `/{{PROJECT_NAME}}:review`
 - **Vision evolution?** `/{{PROJECT_NAME}}:evolve`
-- **Want creative challenge?** `/{{PROJECT_NAME}}:evolve --catalyst`
+- **Want creative challenge?** `/{{PROJECT_NAME}}:evolve "push me creatively"`
 - **General help?** `/{{PROJECT_NAME}}:help "describe situation"`
 
 ### Creative Catalyst Principles

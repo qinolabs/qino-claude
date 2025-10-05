@@ -92,7 +92,7 @@ claude
 → "Recent changes look solid technically, but I notice the complexity is creeping up. Remember your core users have given up on complex systems before..."
 
 # Ready for creative challenge
-/myidea:evolve --catalyst  
+/myidea:evolve "challenge my assumptions"  
 → "What if 'task management' is the wrong frame entirely? What if you're actually building 'parenting support software'?"
 ```
 
