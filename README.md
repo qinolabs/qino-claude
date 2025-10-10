@@ -1,92 +1,64 @@
 # qino-claude
 
-A Story-Driven Development environment that keeps developers connected to the user experience they're creating.
+A collection of Claude Code tools for thoughtful software development.
 
-## Story-Driven Development
+## Available Tools
 
-This environment uses Story-Driven Development to maintain connection between technical implementation and user experience.
+### 🎭 [Dev Assistant](tools/dev-assistant/)
+Transform app concepts into living development environments through guided exploration.
 
-## Getting Started
+**Best for:**
+- New projects needing vision-aligned commands
+- 20-30 minute guided exploration sessions
+- Generating personalized development workflows
 
-**📖 [Complete Getting Started Guide →](src/claude-config/GETTING_STARTED.md)**
-
-### Quick Start
-1. **Copy system**: Paste `src/claude-config/` into your project
-2. **Write concept**: Create `my-idea.md` describing your project  
-3. **Run init**: `/core:project-init my-idea.md`
-4. **Experience onboarding**: 20-30 minute guided exploration
-5. **Start building**: Use your generated `/myidea:*` commands
-
-### First Time Setup
+**Quick Start:**
 ```bash
-# 1. Copy the claude-config system to your project
-cp -r src/claude-config/ /path/to/your-project/
-
-# 2. Create your concept file (see getting started guide for examples)
-# my-app.md
-
-# 3. Initialize with Claude Code
-claude
+cp -r tools/dev-assistant/ /path/to/project/.claude/
 /core:project-init my-app.md
-
-# 4. Experience the transformative onboarding
-# 5. Start using your generated commands
-/myapp:start
 ```
 
-### Daily Development Flow
+[→ Full Documentation](tools/dev-assistant/README.md)
+
+---
+
+### 🧠 [Design Sprint](tools/design-sprint/)
+Multi-perspective design exploration with six personas that generates domain-specific questions.
+
+**Best for:**
+- Complex design challenges with tensions
+- Exploring before implementing
+- Discovering emergent questions (not imposed templates)
+
+**Quick Start:**
 ```bash
-# Start your session
-/[project]:start
-# Analyzes context and suggests next steps
-
-# Build features with vision alignment
-/[project]:build "what you want to create"
-# Implements with embedded vision protection
-
-# Check alignment when needed
-/[project]:review
-# Code review with vision context
-
-# Evolve your vision as you learn
-/[project]:evolve
-# Update understanding, includes creative catalyst when ready
+cp tools/design-sprint/commands/design-sprint.md /path/to/project/.claude/commands/
+cp tools/design-sprint/agents/design-sprint.md /path/to/project/.claude/agents/
+/design-sprint Your design challenge here
 ```
 
-## Core Commands
+[→ Full Documentation](tools/design-sprint/README.md)
 
-After initialization, you'll have 5 streamlined commands:
+---
 
-- `/project:start` - Intelligent context-aware guidance  
-- `/project:build` - Vision-aware development with decision intelligence
-- `/project:review` - Code review with alignment checking
-- `/project:evolve` - Vision evolution & creative catalyst (permission-based)
-- `/project:help` - Natural language interface and command routing
+## Comparison Guide
 
-Each command:
-1. Understands your project's vision
-2. Provides contextual guidance
-3. Protects alignment naturally
-4. Evolves with your understanding
+**Choose Dev Assistant when:**
+- Starting a new project
+- Need ongoing vision-aligned development
+- Want personalized project commands
 
-## Project Structure
+**Choose Design Sprint when:**
+- Facing a complex design decision
+- Need multiple perspectives
+- Want to explore before building
 
-After initialization, your project will have:
+[→ Detailed Comparison](docs/tools-overview.md)
 
-```
-.claude/
-├── concepts/
-│   └── [project]-guide.md  # Complete vision and insights
-├── commands/
-│   └── [project]/          # Your 5 core commands
-│       ├── start.md
-│       ├── build.md
-│       ├── check.md
-│       ├── evolve.md
-│       └── help.md
-└── init-log.md             # Record of your exploration
-```
+## Installation
+
+Each tool can be installed independently. See individual tool documentation for specific setup instructions.
 
 ## Philosophy
 
-We build better when we remember we're creating experiences, not just features. This system ensures every line of code connects to the human moment it serves.
+These tools share a belief: we build better when we stay connected to what matters. Whether through vision-aware commands or multi-perspective exploration, they help maintain that connection throughout development.

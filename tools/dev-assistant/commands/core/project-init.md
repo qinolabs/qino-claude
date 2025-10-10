@@ -1,6 +1,9 @@
 ---
 description: Transform your app concept into a focused development environment through guided exploration
 argument-hint: <concept-file-or-text>
+version: 1.5.0
+last_synced: 2025-10-05
+source: /Users/philhradecs/Code/malao/malao-apps/.claude/commands/core/project-init.md
 ---
 
 # Project Init: Create Your Development Environment

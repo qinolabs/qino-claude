@@ -1,5 +1,8 @@
 ---
 description: Regenerate all app commands from latest templates while preserving context
+version: 1.5.0
+last_synced: 2025-10-05
+source: /Users/philhradecs/Code/malao/malao-apps/.claude/commands/core/update-commands.md
 ---
 
 # Update Commands: Refresh All App Commands

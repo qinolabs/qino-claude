@@ -1,3 +1,10 @@
+---
+description: Generate focused development roadmap with clear validation points
+version: 1.5.0
+last_synced: 2025-10-05
+source: /Users/philhradecs/Code/malao/malao-apps/.claude/commands/core/iteration-plan.md
+---
+
 # Iteration Plan: Create Your Development Roadmap
 
 Generate a focused, balanced iteration plan that enables effective AI-assisted development with clear validation points.

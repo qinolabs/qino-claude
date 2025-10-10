@@ -4,77 +4,132 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-This repository implements a Story-Driven Development system that generates immersive, narrative-based commands for software projects. It uses a unique approach where development commands are tied to user experiences and emotional journeys rather than just technical functions.
+This repository is a **Claude Tools Hub** containing multiple independent tools for thoughtful software development:
 
-## Architecture
+- **Dev Assistant** (`tools/dev-assistant/`) - Transform app concepts into vision-aligned development environments
+- **Design Sprint** (`tools/design-sprint/`) - Multi-perspective design exploration with emergent questions
 
-The codebase is organized around templates and commands that create a living development environment:
+Each tool is self-contained with its own documentation, templates, and usage patterns.
 
-### Core Components
+## Repository Structure
 
-1. **Init Command** (`src/claude-config/commands/core/project-init.md`)
-   - The primary entry point for new projects
-   - Creates streamlined development environments through focused exploration
-   - Generates just 5 core commands with progressive disclosure
-
-2. **Instruction System** (`src/claude-config/instructions/`)
-   - `exploration-behavior.md`: How Claude should conduct the exploration experience
-   - Communication patterns, synthesis techniques, conversation flow
-
-3. **Template System** (`src/claude-config/templates/`)
-   - `exploration-process.md`: Complete 20-30 minute exploration process
-   - `commands-template.md`: Generates the 5 essential commands
-   - `guide-template.md`: Single consolidated guide
-   - `intelligence-library.md`: Architectural intelligence library
-   - `iteration-framework-template.md`: Development roadmap framework
-
-4. **Generated Output Structure**
-   ```
-   .claude/
-   ├── concepts/
-   │   └── [project]-guide.md   # Single comprehensive guide per project
-   ├── commands/[project]/      # Just 5 core commands per project
-   ├── iterations/              # Development roadmaps (created separately)
-   │   └── [project]-iterations.md
-   └── init-logs/
-       └── [project]-init.md    # Exploration record per project
-   ```
-
-## Development Commands
-
-Since this is a command generation system rather than a traditional codebase, there are no standard build/test commands. Instead:
-
-### Running Init
-```bash
-claude
-/core:project-init your-concept.md
+```
+qino-claude/
+├── tools/
+│   ├── dev-assistant/         # Vision-aligned development commands
+│   │   ├── instructions/      # Behavior guidelines
+│   │   ├── templates/         # Generation templates
+│   │   ├── examples/          # Sample outputs
+│   │   └── commands/core/     # Entry point commands
+│   │
+│   └── design-sprint/         # Multi-persona design exploration
+│       ├── commands/          # Command interface
+│       ├── agents/            # Agent definitions
+│       └── README.md
+│
+├── docs/                      # Cross-tool documentation
+│   └── tools-overview.md
+│
+└── saved-responses/           # Tool-specific saved examples
+    ├── dev-assistant/
+    └── design-sprint/
 ```
 
-### Creating Iteration Plan
+## Working with Tools
+
+### Dev Assistant
+
+**Location**: `tools/dev-assistant/`
+
+**Key Components**:
+1. **Init Command** (`commands/core/project-init.md`) - Creates development environments through guided exploration
+2. **Instruction System** (`instructions/`) - How Claude conducts exploration
+3. **Template System** (`templates/`) - What gets generated
+4. **Output**: 5 core commands + project guide + iteration roadmaps
+
+**Usage**:
 ```bash
+/core:project-init your-concept.md
 /core:iteration-plan your-project-name
 ```
 
-### Key Concepts
+**Generated Structure**:
+```
+.claude/
+├── concepts/[project]-guide.md
+├── commands/[project]/          # 5 core commands
+├── iterations/[project]-iterations.md
+└── init-logs/[project]-init.md
+```
 
-1. **Streamlined Commands**: Just 5 core commands (start, build, review, evolve, help) with intelligent context awareness
+### Design Sprint
 
-2. **Separate Planning Phase**: Iteration planning happens after exploration when users are ready for structured development
+**Location**: `tools/design-sprint/`
 
-3. **Progressive Disclosure**: Start simple, reveal complexity only when needed
+**Key Components**:
+1. **Command** (`commands/design-sprint.md`) - User-facing interface
+2. **Agent** (`agents/design-sprint.md`) - Six-persona dialogue system
+3. **Output**: 7-9 files organized by emergent questions
 
-4. **Focused Exploration**: ~15-20 minute guided session that captures essentials without overwhelm
+**Usage**:
+```bash
+/design-sprint Your design challenge here
+```
 
-5. **Graceful Iteration Planning**: Development roadmaps created when needed, enabling validation and adjustment between phases
+**Generated Structure**:
+```
+design-sprints/YYYY-MM-DD_topic/
+├── __enter-here.md
+├── dialogue.md
+├── q-[emergent-question-1].md
+├── ...
+└── synthesis.md
+```
 
-## Working with Templates
+## File Organization
 
-When modifying templates:
-- Templates provide structure, not content
-- Init fills templates with concept-specific insights
-- Each template maps to specific output artifacts
-- Changes to templates affect all future init runs
+### Saved Responses
+Saved responses are **scoped to each tool**:
 
-## Philosophy
+```
+saved-responses/
+├── dev-assistant/             # Dev assistant examples
+│   └── exploration-examples/
+└── design-sprint/             # Design sprint examples
+    └── sprint-outputs/
+```
 
-This system believes that developers build better when they stay connected to the user experience they're creating. Vision protection happens naturally through intelligent tooling, not through rituals or interruptions.
+### Tool Documentation
+Each tool maintains its own:
+- README.md - Tool overview and quick start
+- Templates - Generation patterns
+- Examples - Sample outputs
+
+## Development Philosophy
+
+All tools share a core belief: **we build better when we stay connected to what matters**. Whether through vision-aware commands or multi-perspective exploration, these tools help maintain that connection throughout development.
+
+## Key Concepts
+
+### Dev Assistant
+1. **Streamlined Commands**: Just 5 core commands with intelligent context awareness
+2. **Separate Planning Phase**: Iteration planning happens when ready
+3. **Progressive Disclosure**: Start simple, reveal complexity when needed
+4. **Focused Exploration**: ~15-20 minute guided session
+5. **Vision Protection**: Natural alignment through intelligent tooling
+
+### Design Sprint
+1. **Emergent Questions**: Questions emerge FROM dialogue, not imposed templates
+2. **Six Personas**: Distinct cognitive styles (Skeptic, Synthesizer, Embodied Thinker, User Advocate, Architect, Explorer)
+3. **Domain-Specific Output**: Each sprint produces unique questions tailored to the challenge
+4. **Epistemological Sequencing**: Questions ordered by how they build understanding
+
+## Adding New Tools
+
+When adding a new tool:
+1. Create `tools/[tool-name]/` directory
+2. Add README.md with overview and usage
+3. Include command/agent files as needed
+4. Update main README.md with tool card
+5. Add comparison to `docs/tools-overview.md`
+6. Create `saved-responses/[tool-name]/` if needed
