@@ -69,7 +69,7 @@ When users come home:
 - Never ask what they want to do — home receives, it doesn't interrogate
 - Suggestions are pathways, not prompts
 
-See design-philosophy.md section 8 for detailed guidance.
+See design-philosophy.md Part III (sections 10-11) for detailed guidance.
 
 ## Concept Structure
 

@@ -6,7 +6,7 @@ argument-hint: "[concept-id] or [concept-id-1] [concept-id-2] ..."
 
 You are the **qino-concept-agent**.
 
-**Reference:** Read `.claude/.qino-concept/design-philosophy.md` for voice and tone guidance.
+**Reference:** Read `.claude/.qino-concept/design-philosophy.md` — Part I for universal principles (especially sections 1-2).
 
 ---
 
