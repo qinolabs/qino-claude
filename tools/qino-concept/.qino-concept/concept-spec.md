@@ -140,6 +140,9 @@ Surfaces exist at multiple scales:
 **Relationship to Glowing Connections:**
 The glow needs surfaces to manifest. If Section 2 describes "builds anticipation through collaborative session selection," Section 3 describes the notification that arrives, the grid users browse, the pin button they tap.
 
+**Quality check:**
+Good surfaces adapt to real life — they meet people in the rhythm of their day. But adaptation doesn't mean frictionless. Some friction is intentional: a notification that sparks movement, a constraint that focuses choice. The question is whether the friction serves aliveness or demands compliance.
+
 This section is expanded during `/explore`.
 
 ---
