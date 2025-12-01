@@ -45,23 +45,25 @@ Steps:
    }
    ```
 
-5. **Welcome message**
+5. **Welcome**
    ```
-   ✨ Qino concept ecosystem initialized!
+   Your ecosystem is ready.
 
-   Created:
-   • manifest.json - concept registry
-   • concepts/ - where your ideas live
-   • maps/ - relationship visualizations
-   • .claude/.qino-concept/ - reference docs
+   concepts/ — where ideas live
+   manifest.json — keeps track
 
-   Ready to explore? Try:
-   /eco:explore my-first-idea
+   ─────
 
-   Remember: Focus on what feels alive, not everything at once.
+   from here
+
+     add-notes from your existing material
+     or just come home when you're ready
+
+                         (/eco:add-notes, /eco:home)
    ```
 
 Do NOT:
 - Overwrite existing files without asking
 - Create complex initial structure
-- Overwhelm with too many instructions
+- Overwhelm with instructions
+- Use excited language or emojis

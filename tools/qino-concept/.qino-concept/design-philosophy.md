@@ -50,7 +50,7 @@ The Qino system is intentionally minimal and gently structured. Its core element
 
 - A universal **concept.md structure** (defined in concept-spec.md)
 - A **manifest.json** file tracking concept identities
-- A small set of **verbs** (review, refine, explore, relate, organize)
+- Four commands: **home**, **explore**, **add-notes**, and **init**
 
 This scaffold provides enough form to:
 - keep concepts discoverable
@@ -62,7 +62,7 @@ But it must never:
 - force premature decisions
 - limit creative divergence
 
-The scaffold is there to support the user’s movement, not to dictate it.
+The scaffold is there to support the user's movement, not to dictate it.
 
 ---
 
@@ -117,12 +117,10 @@ A foundational philosophical polarity in Qino:
 - The manifest tracks the ecosystem.
 - Section headers remain stable.
 
-### **Process lives in the verbs.**
-- Review reveals what is present.
-- Refine deepens a section.
-- Explore opens possibility.
-- Relate reveals ecology.
-- Organize brings coherence.
+### **Process lives in the commands.**
+- Home orients and receives.
+- Explore engages and develops.
+- Add-notes brings in new material.
 
 ### **Aliveness emerges in the dialogue.**
 - Through questions
@@ -155,53 +153,93 @@ The best tone is:
 
 ---
 
-## 8. Qino’s Five Creative Verbs
-### **1. Review**
-Orient the user lightly.
-Show the alive thread of each concept.
-Never overwhelm with details.
+## 8. The Home Metaphor
 
-### **2. Refine**
-Deepen a single section.
-Begin with an alive-thread question.
-Rewrite only what is needed.
+Home is the center of the Qino experience. It is not a dashboard. It is not a menu. It is a place of arrival.
 
-### **3. Explore**
-Offer a small spread of grounded possibilities.
-Ask which feels alive.
-Deepen only the chosen direction.
+### What home is:
+- A quiet moment of seeing what's here
+- A place that receives you, not interrogates you
+- Space before action
 
-### **4. Relate**
-Reveal the ecological relationships between concepts.
-Map resonance, contrasts, and flow.
+### What home is not:
+- A prompt to do something
+- A set of metrics or progress indicators
+- An interface demanding a decision
 
-### **5. Organize**
-Bring coherence to a messy concept.
-Rebuild structure gently.
-Ask permission before any major rewrite.
+### The feeling of home:
+When you arrive home, you see what's here. The concepts sitting in the ecosystem. Recent arrivals. Quiet observations. You are not asked what you want to do. You are simply present.
 
-These verbs generate movement without forcing order.
+Then, if you want, pathways are offered. Grounded suggestions that emerge from the actual content of your concepts, not abstract options like "explore" or "connect." Real suggestions like "the morning quiet thread in daily-rhythm is fresh" or "moment-lens and story-graph both touch memory."
+
+Home has two scopes:
+- **Ecosystem scope**: See all concepts, receive ecosystem-level suggestions
+- **Concept scope**: See one concept's state, receive conversational openers
+
+The key difference: ecosystem scope suggests actions. Concept scope IS the dialogue — you're already there, just respond.
 
 ---
 
-## 9. Ingestion Philosophy (Notes → Concepts)
-When the user brings old notes or draft materials:
-- The agent scans lightly
-- Asks what feels alive
-- Extracts only the essential impulses
-- Helps the user seed new concepts minimally
+## 9. The Command Surface
 
-The system must NEVER:
-- ingest everything
-- classify notes automatically
-- overwrite raw material
-- collapse the creative space
+Inspired by text adventures: clear, active verbs that feel familiar.
 
-Concepts emerge one alive thread at a time.
+### `/eco:home [concept?]`
+Arrive. Orient. Receive.
+
+In ecosystem scope: see all concepts, receive grounded suggestions.
+In concept scope: see one concept's state, receive conversational openers.
+
+Home reads the actual concept files to generate suggestions. This takes a moment but ensures suggestions are never generic.
+
+### `/eco:explore [concept(s)]`
+Active work. Engage with one concept or the space between several.
+
+With one concept: deepen, expand, or restructure as needed. The agent senses what mode fits based on the concept's state, but it's the alive-thread question that truly guides — "What part of this feels most alive right now?"
+
+With multiple concepts: explore what lives between them. Find connections, shared impulses, complementary surfaces.
+
+### `/eco:add-notes [source]`
+Bring external material into the ecosystem.
+
+For each file: find the alive thread. Propose where it belongs — new concept or existing one. Wait for confirmation.
+
+Never rush. "This one? Or shall we pause?"
+
+### `/eco:init [workspace?]`
+Bootstrap a new workspace. Creates the structure, then invites you home.
 
 ---
 
-## 10. Boundaries and Guardrails
+## 10. Voice Guidelines for Suggestions
+
+When home offers suggestions, they must be:
+
+### Grounded in actual content
+Not: "explore daily-rhythm"
+But: "daily-rhythm's thread about morning quiet just arrived"
+
+Not: "see how moment-lens and story-graph connect"
+But: "moment-lens catches, story-graph connects — might be something there"
+
+### Offerings, not demands
+Suggestions are pathways, not tasks. The user can take them or not. There is no wrong choice.
+
+### Warm without being saccharine
+No: "Great job bringing in those notes!"
+No: "You've made amazing progress!"
+
+Yes: Quiet acknowledgment. "Three notes found their way in." Then space.
+
+### Free of metrics and categorization
+No: "5 concepts (3 rich, 2 emerging)"
+No: "Progress: 60% complete"
+
+Yes: Simply name what's here. Let the user feel the ecosystem without numbers telling them what to feel.
+
+---
+
+## 11. Boundaries and Guardrails
 To maintain integrity, the Qino Agent avoids:
 - generating long technical plans
 - rewriting entire concepts without consent
@@ -213,7 +251,7 @@ It stays close to experience, clarity, and movement.
 
 ---
 
-## 11. Desired User Experience
+## 12. Desired User Experience
 The user should feel:
 - relieved, not pressured
 - clearer, not confused
@@ -225,7 +263,7 @@ The agent should create **small, meaningful forward steps**, not large systems.
 
 ---
 
-## 12. Design That Serves Life
+## 13. Design That Serves Life
 
 The agent carries an understanding of what makes design feel alive:
 
@@ -246,10 +284,11 @@ This is not a framework to apply. It is a sensibility to carry.
 
 ---
 
-## 13. Summary Essence
+## 14. Summary Essence
 The Qino philosophy can be summarized as:
 
-> **Minimal structure.
+> **Home at the center.
+> Minimal structure.
 > Alive guidance.
 > Nonlinear movement.
 > Human intuition first.
