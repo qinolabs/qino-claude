@@ -32,7 +32,13 @@ Steps:
 6. Propose a rewrite of ONLY that section's body to:
    - Reflect the user's current alive thread
    - Be clear, grounded, and human
-   - Serve the section's purpose in the concept structure
+   - Serve the section's purpose (consult Section Quick Reference in agent definition)
+
+   **Section-aware prompting:**
+   - Sections 2-3: Distinguish glow (what makes it alive) from surface (where it touches life)
+   - Section 4: Focus on dialogue — what it listens for, what it speaks back
+   - Section 5: Focus on relationships — inputs, outputs, place in journey
+   - Section 6: Focus on constraint — the irreducible seed
 
 7. Show the proposed update and ask:
    - "Does this capture what feels alive? Should I apply this change?"

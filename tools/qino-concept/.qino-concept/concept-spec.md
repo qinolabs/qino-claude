@@ -81,94 +81,133 @@ The agent often refines this section first.
 ---
 
 ### **2. Glowing Connections**
-This section captures **high-level narrative or thematic connections** to other concepts.
-It should NOT include:
+This section captures what **mobilizes energy** and creates vitality within the concept. It holds two kinds of "glow":
 
-- technical integration
-- data flows
-- feature sets
+**A. Internal Glow (Energetic Qualities)**
+The aspects within this concept that create anticipation, delight, or weave together multiple layers of human experience. These are the qualities that make users feel alive. Glowing connections often need interfaces to come alive — it is often the *constraint* of an interface that creates movement and vitality.
+
+Phenomenological markers to listen for:
+- "builds anticipation," "invites curiosity," "sparks conversation"
+- "everyone feels valued," "creates positive atmosphere"
+- "weaves together," "touches multiple dimensions"
+- "the love," "life is good," "feels magical"
+
+**B. Relational Glow (Inter-Concept Resonance)**
+High-level narrative or thematic connections to other concepts in the ecosystem.
 
 It should include:
-
-- shared impulses
+- shared impulses between concepts
 - conceptual resonance
 - areas of potential synergy
 
-The agent may update this section during `/relate`.
+It should NOT include:
+- technical integration details
+- data flows
+- feature implementation
+
+**Example (Internal Glow):**
+> Session pinning mobilizes energy across multiple layers: human motivation (curiosity about games) → communication (delightful conversations) → materialization (the upcoming session) → positive atmosphere → love for games, friends, and life itself. The constraint of the pinning interface — a visual grid, notifications, voting — creates the movement that makes this glow come alive.
+
+The agent may update this section during `/refine` (internal glow) or `/relate` (relational glow).
 
 ---
 
 ### **3. Primary Surfaces**
-These are the **primary experiential touchpoints** where the concept becomes real for the user.
+These are the **concrete entry points** where the concept touches a user's actual, embodied, day-to-day life. Surfaces are where glowing connections find form — the constraint of an interface creates the movement that makes vitality tangible.
 
-Examples:
-- interfaces
-- moments
-- views
-- rituals
-- flows
+Primary surfaces answer: *When does this show up? Where is the user? What moment in their day does this interrupt, enhance, or invite?*
+
+**What are surfaces?**
+Surfaces exist at multiple scales:
+- **Device/Platform level**: mobile phone, desktop browser, AI glasses, smartwatch
+- **Modality level**: notifications, visual grids, voice commands, haptic feedback
+- **Specific touchpoint level**: the pin button, the session card, the voting gesture
+
+**Guiding questions for identifying surfaces:**
+- What interfaces bring this concept to life?
+- What are the specific touchpoints where users encounter this?
+- What modalities connect to the lived experience? (visual, auditory, haptic, spatial)
+- Where does the glow described in Section 2 become tangible?
+
+**Examples:**
+
+*Multi-scale surface description:*
+> **Mobile phone** (device) → **Push notifications + visual grid** (modality) → **Session card with pin gesture + vote counter** (specific touchpoint)
+
+*Ritual-based surface:*
+> **Weekly review moment** → Opens app on Sunday evening → Sees timeline of pinned sessions → Taps "reflect" to journal about what happened
+
+**Relationship to Glowing Connections:**
+The glow needs surfaces to manifest. If Section 2 describes "builds anticipation through collaborative session selection," Section 3 describes the notification that arrives, the grid users browse, the pin button they tap.
 
 This section is expanded during `/explore`.
 
 ---
 
 ### **4. Interfaces & Communication**
-This describes **how the concept exchanges information** with:
+This is the **dialogue layer** — the patterns of exchange between the concept and its environment. While Primary Surfaces describe *where* users encounter the concept, this section describes *what the conversation is*.
 
-- the user
-- other concepts
-- external systems
-
-It is conceptual, not technical.
+**Guiding questions:**
+- What does the concept listen for? (user inputs, signals, intentions)
+- What does it speak back? (feedback, confirmations, invitations)
+- How does it converse with other concepts or external systems?
+- What's the rhythm? (real-time, periodic, event-driven)
 
 ---
 
 ### **5. Ecosystem Integration**
-This section expresses how the concept sits within the larger ecosystem.
+This is the concept's **place in the constellation** — how it relates to other concepts functionally, what flows between them, where it sits in the user's journey.
 
-May include:
-- input/output relationships
-- conceptual adjacency
-- supportive roles
-- dependencies (conceptual, not technical)
+Unlike Glowing Connections (thematic resonance), this section captures *functional relationships* — inputs, outputs, what happens before and after.
 
-This section should grow as concepts become more mature.
+**Guiding questions:**
+- What does this concept receive from others?
+- What does it provide to others?
+- Where does it sit in the user's overall journey?
+- What would break if this concept didn't exist?
+
+This section grows as concepts mature and relationships become visible.
 
 ---
 
 ### **6. Scoped Features (Smallest Living Version)**
-Defines the **essence** of functionality required for the concept’s smallest complete expression.
+This is **constraint as creative force** — the irreducible core that makes the concept *itself*. Not "version 1 with fewer features" but the seed that contains the whole tree.
 
-Characteristics:
-- minimal
-- essential
-- viable
-- not a roadmap
+This section embodies the alive-thread principle: focus on what's alive, not everything at once.
 
-This is where the agent helps avoid scope bloat.
+**Guiding questions:**
+- What's the minimum that makes this concept recognizable?
+- What single feature carries the most glow?
+- What would kill the concept if removed?
+- If you could only ship one surface, what would it be?
+
+The agent helps protect against scope bloat by returning to this section.
 
 ---
 
 ### **7. Build Plan (Rough)**
-This optional section provides a **non-binding outline** of how the concept might eventually be implemented.
+This is the **bridge to implementation** — held loosely. Permission to sketch stepping stones without commitment. The word "rough" matters: this is not a spec, just a direction.
 
-Rules:
-- high-level
-- non-committal
-- no hard dependencies
-- not required for early concepts
+**Guiding questions:**
+- What technical stepping stones might get us there?
+- What's a possible sequence?
+- What would we build first to test the core?
+- What experiments might we try?
+
+Optional for early concepts. Should stay high-level and non-binding.
 
 ---
 
 ### **Sources**
-An optional list of:
+The **lineage** — where did this concept come from? Sources maintain connection to the raw material, honoring the origin while allowing the concept to evolve beyond it.
 
-- raw notes
-- original documents
+May include:
+- raw notes and original documents
 - audio transcripts
 - previous drafts
+- external references
 
-The agent may append file references during ingestion.
+The agent appends file references during ingestion.
 
 ---
 

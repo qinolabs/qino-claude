@@ -70,26 +70,102 @@ Each concept.md follows this template:
 # [Concept Name]
 
 ## 1. Real-World Impulse
-[What life situation spawns this?]
-
 ## 2. Glowing Connections
-[Links to other concepts]
-
 ## 3. Primary Surfaces
-[Key interfaces/interactions]
-
 ## 4. Interfaces & Communication
-[How parts talk]
-
 ## 5. Ecosystem Integration
-[How it fits with other concepts]
-
 ## 6. Scoped Features (Smallest Living Version)
-[Minimum viable aliveness]
-
 ## 7. Build Plan (Rough)
-[Technical stepping stones]
+## Sources
 ```
+
+### Section Quick Reference
+
+| # | Section | Core Question |
+|---|---------|---------------|
+| 1 | Real-World Impulse | What life situation calls for this? |
+| 2 | Glowing Connections | What makes this feel alive? (internal glow + relational glow) |
+| 3 | Primary Surfaces | Where does this touch the user's actual day? |
+| 4 | Interfaces & Communication | What's the dialogue? (listens for / speaks back) |
+| 5 | Ecosystem Integration | How does this fit the constellation? (inputs / outputs) |
+| 6 | Scoped Features | What's the irreducible seed? |
+| 7 | Build Plan | What stepping stones lead to code? |
+
+## Recognizing Surfaces vs. Glowing Connections
+
+When users describe concepts, listen for two distinct qualities:
+
+### Surface Descriptions → Primary Surfaces (Section 3)
+**What surfaces ARE:**
+- The **concrete entry points** where the concept touches a user's actual, embodied, day-to-day life
+- The interfaces, modalities, and touchpoints where users encounter the concept
+- Observable elements across device, interaction pattern, and specific UI levels
+- The "where" and "when" — what moment in their day does this show up?
+
+**Listen for:**
+- Device/platform references: "on their phone," "in the browser," "through glasses"
+- Modality descriptions: "notification," "visual grid," "voice command," "haptic buzz"
+- Specific UI elements: "the pin button," "session card," "vote counter"
+- Interaction moments: "when they tap," "as they scroll," "during weekly review"
+- Rituals and flows: "Sunday evening check-in," "pre-session voting flow"
+
+**Examples of surface language:**
+- "Users see a grid of game sessions on their phone"
+- "A notification appears when someone pins a new game"
+- "Voice command: 'What's pinned this week?'"
+- "Tap the session card to see who's interested"
+
+### Glowing Descriptions → Glowing Connections (Section 2)
+**What glowing connections ARE:**
+- The energetic qualities that mobilize anticipation, delight, or multi-layered connection
+- Relational resonance with other concepts
+- The "why this matters" beyond utility
+
+**Listen for:**
+- Multi-dimensional impact: touches motivation + social + aesthetic at once
+- Energetic verbs: "builds," "sparks," "weaves," "invites," "creates"
+- Feeling states: "anticipation," "delight," "valued," "alive," "magical"
+- Systemic qualities: "everyone feels included," "positive atmosphere"
+
+**Examples of glow language:**
+- "Builds anticipation for the upcoming session"
+- "Everyone feels their voice matters in choosing games"
+- "Weaves together curiosity about games and connection with friends"
+- "The love for games, friends, and life itself"
+
+---
+
+### How Surfaces and Glow Work Together
+
+**Key insight**: Glowing connections need surfaces to manifest. The constraint of form creates movement.
+
+**Pattern recognition:**
+When rich user input contains both glow and surface, separate them:
+- The energetic quality → Section 2: Glowing Connections
+- The interface that gives it form → Section 3: Primary Surfaces
+
+**Example of integrated description:**
+> User says: "People get excited when they see the grid of pinned sessions on their phones because everyone's preferences are visible and it builds anticipation for game night."
+
+**How to separate:**
+- Section 2 (Glow): "Builds anticipation for game night by making everyone's preferences visible, creating inclusive excitement"
+- Section 3 (Surface): "Visual grid on mobile phone displaying pinned sessions with visible vote counts"
+
+**Prompting for surfaces during exploration:**
+When helping users develop Section 3, ask:
+- "What interfaces bring this concept to life?"
+- "What specific touchpoints do users encounter?"
+- "What modalities connect to the lived experience — visual, voice, haptic?"
+- "At what scale: device level, interaction pattern, or specific UI element?"
+- "Where does the glow you described become tangible?"
+
+**Ask yourself before writing:**
+- Is this describing a *what/where* (surface) or a *why it glows* (connection)?
+- Does this name an interface or an energetic quality?
+- Is this observable or felt?
+- Could I point to this in a prototype or is it about emotional resonance?
+
+---
 
 ## Interaction Patterns
 

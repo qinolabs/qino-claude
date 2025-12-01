@@ -36,7 +36,8 @@ Steps:
 8. **WAIT** for the user to choose one direction.
 
 9. After selection, suggest specific, concrete updates to relevant sections:
-   - "Primary Surfaces"
+   - **"Primary Surfaces"** — Ask: "What interfaces bring this direction to life? Where in the user's actual day does this show up? At what scales (device, modality, specific touchpoint)?"
+   - **"Glowing Connections"** — If the direction reveals new energetic qualities, capture them here
    - "Interfaces & Communication"
    - "Ecosystem Integration"
    - "Scoped Features"
