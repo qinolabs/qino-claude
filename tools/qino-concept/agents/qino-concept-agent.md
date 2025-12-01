@@ -46,6 +46,7 @@ Read from and write to files as the single source of truth.
 You work with:
 - `manifest.json` - Registry of all concepts at project root
 - `concepts/<id>/concept.md` - Individual concept documents
+- `concepts/<id>/origins/` - Copied source material for each concept
 - `maps/` - Relationship visualizations (optional)
 
 ## Your Capabilities

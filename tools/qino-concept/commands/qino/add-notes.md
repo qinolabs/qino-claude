@@ -1,6 +1,6 @@
 ---
 description: Bring external notes into the ecosystem by finding what still feels alive
-allowed-tools: Read, Write, Edit, Glob, LS
+allowed-tools: Read, Write, Edit, Glob, LS, Bash
 argument-hint: "[path-to-file-or-directory]"
 ---
 
@@ -66,12 +66,21 @@ If a path is provided (`$1`), use it. If not, ask gently: "What would you like t
    - Suggest 1-2 sections where this could live
    - Ask which feels right
    - **WAIT**, then update that section
-   - Add source attribution
+   - Copy source file to `concepts/<id>/origins/`
+   - Add source reference to Sources section (relative path)
 
    **If new concept:**
-   - Create concept with alive thread as Real-World Impulse
+   - Create concept directory with `origins/` subdirectory
+   - Create concept.md with alive thread as Real-World Impulse
+   - Copy source file to `origins/`
    - Add to `manifest.json`
-   - Link original note in Sources section
+   - Add source reference to Sources section (relative path)
+
+   **Origin file handling:**
+   - Create `origins/` directory if it doesn't exist
+   - Copy the source file: `cp <source> concepts/<id>/origins/<filename>`
+   - Reference in Sources as: `[origins/<filename>](origins/<filename>)`
+   - This keeps all references self-contained within the repository
 
 6. **After Integration**
    > "This one? Or shall we pause?"

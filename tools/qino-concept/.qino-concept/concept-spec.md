@@ -23,8 +23,12 @@ This file should remain stable and minimal.
 Every concept must be stored at:
 
 ```
-concepts/<concept-id>/concept.md
+concepts/<concept-id>/
+  concept.md
+  origins/           # copied source material (optional)
 ```
+
+The `origins/` directory contains copies of external notes that were integrated into this concept. This keeps references self-contained within the repository.
 
 Each concept.md must follow the structure below:
 
@@ -205,12 +209,21 @@ Optional for early concepts. Should stay high-level and non-binding.
 The **lineage** — where did this concept come from? Sources maintain connection to the raw material, honoring the origin while allowing the concept to evolve beyond it.
 
 May include:
-- raw notes and original documents
+- raw notes and original documents (copied to `origins/`)
 - audio transcripts
 - previous drafts
 - external references
 
-The agent appends file references during ingestion.
+**Origin files:**
+When integrating external notes, the agent copies them to the concept's `origins/` directory. References in this section use relative paths:
+
+```markdown
+## Sources
+- [origins/idea-sketch.md](origins/idea-sketch.md) — initial brainstorm
+- [origins/meeting-notes.txt](origins/meeting-notes.txt) — team discussion
+```
+
+This keeps the workspace self-contained and portable.
 
 ---
 

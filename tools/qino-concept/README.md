@@ -77,6 +77,8 @@ your-workspace/
   concepts/             # Individual concept folders
     my-app/
       concept.md        # Structured concept document
+      origins/          # Copied source material
+        idea-sketch.md
   .claude/
     .qino-concept/      # Reference documents
 ```
