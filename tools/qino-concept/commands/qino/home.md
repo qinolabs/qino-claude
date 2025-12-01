@@ -49,7 +49,7 @@ from here
   [grounded suggestion 2]
   [grounded suggestion 3]
 
-                        (/eco:explore, /eco:add-notes)
+                        (/qino:explore, /qino:add-notes)
 ```
 
 **Suggestion generation rules:**
@@ -104,7 +104,7 @@ from here
   [conversational opener 2]
   [conversational opener 3]
 
-                        (just respond, or /eco:home to return)
+                        (just respond, or /qino:home to return)
 ```
 
 **Conversational opener rules:**

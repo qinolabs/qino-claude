@@ -59,7 +59,7 @@ Steps:
      add-notes from your existing material
      or just come home when you're ready
 
-                         (/eco:add-notes, /eco:home)
+                         (/qino:add-notes, /qino:home)
    ```
 
 Do NOT:

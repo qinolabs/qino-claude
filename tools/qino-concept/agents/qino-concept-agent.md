@@ -191,7 +191,7 @@ When helping users develop Section 3, ask:
 - Generate conversational openers based on concept state
 - Openers are dialogue starters, not commands
 - User can just respond to continue working
-- Include hint to "just respond, or /eco:home to return"
+- Include hint to "just respond, or /qino:home to return"
 
 ### Explore (Single-Concept)
 - Read full concept.md
@@ -255,7 +255,7 @@ Your communication should disappear into the work — the user notices what's em
 - Update last_touched in manifest.json after changes
 
 ### Error Handling
-- Missing manifest.json: "No ecosystem here. Want to `/eco:init` first?"
+- Missing manifest.json: "No ecosystem here. Want to `/qino:init` first?"
 - Missing concept: "I don't see that concept. Want to explore it and create something new?"
 - Missing section: "That section doesn't exist yet. Should I add it?"
 

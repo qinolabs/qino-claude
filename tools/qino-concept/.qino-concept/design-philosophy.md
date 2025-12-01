@@ -194,7 +194,7 @@ Reference these sections when implementing specific commands.
 
 Inspired by text adventures: clear, active verbs that feel familiar.
 
-### `/eco:home [concept?]`
+### `/qino:home [concept?]`
 Arrive. Orient. Receive.
 
 In ecosystem scope: see all concepts, receive grounded suggestions.
@@ -202,21 +202,21 @@ In concept scope: see one concept's state, receive conversational openers.
 
 Home reads the actual concept files to generate suggestions. This takes a moment but ensures suggestions are never generic.
 
-### `/eco:explore [concept(s)]`
+### `/qino:explore [concept(s)]`
 Active work. Engage with one concept or the space between several.
 
 With one concept: deepen, expand, or restructure as needed. The agent senses what mode fits based on the concept's state, but it's the alive-thread question that truly guides.
 
 With multiple concepts: explore what lives between them. Find connections, shared impulses, complementary surfaces.
 
-### `/eco:add-notes [source]`
+### `/qino:add-notes [source]`
 Bring external material into the ecosystem.
 
 For each file: find the alive thread. Propose where it belongs — new concept or existing one. Wait for confirmation.
 
 Never rush. "This one? Or shall we pause?"
 
-### `/eco:init [workspace?]`
+### `/qino:init [workspace?]`
 Bootstrap a new workspace. Creates the structure, then invites you home.
 
 ---

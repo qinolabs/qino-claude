@@ -12,17 +12,17 @@ The Qino Concept tool helps you explore and develop app concepts by following wh
 
 1. **Initialize workspace:**
    ```
-   /eco:init
+   /qino:init
    ```
 
 2. **Bring in existing notes:**
    ```
-   /eco:add-notes ~/my-app-notes
+   /qino:add-notes ~/my-app-notes
    ```
 
 3. **Come home to see what's here:**
    ```
-   /eco:home
+   /qino:home
    ```
 
 ## Commands
@@ -31,16 +31,16 @@ Four commands. Home is the center.
 
 | Command | Purpose |
 |---------|---------|
-| `/eco:home [concept?]` | Arrive and orient. See ecosystem or one concept. |
-| `/eco:explore [concept(s)]` | Active work. Deepen one concept or explore connections. |
-| `/eco:add-notes [source]` | Bring in external material. |
-| `/eco:init` | Bootstrap a new workspace. |
+| `/qino:home [concept?]` | Arrive and orient. See ecosystem or one concept. |
+| `/qino:explore [concept(s)]` | Active work. Deepen one concept or explore connections. |
+| `/qino:add-notes [source]` | Bring in external material. |
+| `/qino:init` | Bootstrap a new workspace. |
 
 ### Home
 
 ```
-/eco:home              # ecosystem scope — see all concepts
-/eco:home moment-lens  # concept scope — see one concept
+/qino:home              # ecosystem scope — see all concepts
+/qino:home moment-lens  # concept scope — see one concept
 ```
 
 Home shows what's here and offers grounded suggestions based on actual content. It doesn't ask questions. It receives.
@@ -48,8 +48,8 @@ Home shows what's here and offers grounded suggestions based on actual content. 
 ### Explore
 
 ```
-/eco:explore moment-lens              # work with one concept
-/eco:explore moment-lens story-graph  # explore connections
+/qino:explore moment-lens              # work with one concept
+/qino:explore moment-lens story-graph  # explore connections
 ```
 
 Explore is active work. The agent senses whether to expand, deepen, or restructure based on the concept's state and your responses.
@@ -57,8 +57,8 @@ Explore is active work. The agent senses whether to expand, deepen, or restructu
 ### Add Notes
 
 ```
-/eco:add-notes ~/notes/idea.md       # single file
-/eco:add-notes ~/notes/app-concept   # directory
+/qino:add-notes ~/notes/idea.md       # single file
+/qino:add-notes ~/notes/app-concept   # directory
 ```
 
 For each note: find the alive thread, propose where it belongs, wait for confirmation.
@@ -95,17 +95,17 @@ Each concept follows a gentle structure:
 ## Typical Flow
 
 ```
-/eco:init my-ideas
-/eco:add-notes ~/Documents/app-sketches
+/qino:init my-ideas
+/qino:add-notes ~/Documents/app-sketches
 
 # come home, see what emerged
-/eco:home
+/qino:home
 
 # work with what draws you
-/eco:explore task-forest
+/qino:explore task-forest
 
 # return home when ready
-/eco:home
+/qino:home
 ```
 
 The tool adapts to your rhythm. Never forcing decisions. Never overwhelming.
