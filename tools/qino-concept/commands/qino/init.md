@@ -56,10 +56,9 @@ Steps:
 
    from here
 
-     add-notes from your existing material
-     or just come home when you're ready
+     bring in some notes, or just settle in
 
-                         (/qino:add-notes, /qino:home)
+                         (/qino:add-notes <path>, /qino:home)
    ```
 
 Do NOT:

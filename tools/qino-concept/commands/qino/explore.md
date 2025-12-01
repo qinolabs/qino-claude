@@ -76,7 +76,10 @@ If no concept id is provided, ask gently: "Which concept would you like to explo
    - Update `last_touched` in `manifest.json`
 
 9. After significant work, offer:
-   > "Want to keep going, or return home?"
+   ```
+   keep going, or step back and see where things stand
+   (/qino:explore, /qino:home)
+   ```
 
 ---
 
@@ -125,7 +128,10 @@ If fewer than 2 concept ids provided, ask: "Which concepts would you like to exp
    - Update `last_touched` in `manifest.json`
 
 10. After significant work, offer:
-    > "Want to explore more, or return home?"
+    ```
+    keep going, or step back and see where things stand
+    (/qino:explore, /qino:home)
+    ```
 
 ---
 

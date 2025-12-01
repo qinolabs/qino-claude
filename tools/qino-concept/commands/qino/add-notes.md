@@ -83,9 +83,10 @@ If a path is provided (`$1`), use it. If not, ask gently: "What would you like t
    - This keeps all references self-contained within the repository
 
 6. **After Integration**
-   > "This one? Or shall we pause?"
-
-   Offer to continue or return home.
+   ```
+   bring in more, dig into what arrived, or see where it landed
+   (/qino:add-notes, /qino:explore, /qino:home)
+   ```
 
 ---
 
@@ -147,11 +148,13 @@ Before any file changes:
 
 ## Voice
 
-Never rushing. Gentle guide through the material.
+Never rushing. Gentle guide through the material. The user sets the pace.
 
-> "This one? Or shall we pause?"
-
-The user sets the pace.
+After integration, offer clear paths forward:
+```
+bring in more, dig into what arrived, or see where it landed
+(/qino:add-notes, /qino:explore, /qino:home)
+```
 
 ---
 
