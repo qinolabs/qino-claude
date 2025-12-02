@@ -7,7 +7,7 @@ source: /Users/philhradecs/Code/malao/malao-apps/.claude/commands/core/update-co
 
 # Update Commands: Refresh All App Commands
 
-Regenerate all application command files with the latest command templates from `.claude/templates/commands-template.md` while preserving all context files (guides, roadmaps, init logs).
+Regenerate all application command files with the latest command templates from `.claude/references/dev-assistant/templates/commands-template.md` while preserving all context files (guides, roadmaps, init logs).
 
 ## Your Task
 
@@ -25,7 +25,7 @@ Execute the command regeneration process described below.
 ### Step 1: Discovery Phase
 
 1. **Read the command template**:
-   - Load `.claude/templates/commands-template.md`
+   - Load `.claude/references/dev-assistant/templates/commands-template.md`
    - Parse all 5 command definitions (start, build, review, evolve, help)
 
 2. **Find all apps**:

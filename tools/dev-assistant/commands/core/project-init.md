@@ -89,19 +89,19 @@ From `my-app.md` you get:
 The system uses 4 focused templates with clear dependencies:
 
 ### Core Templates
-1. **`/templates/exploration-process.md`** - Complete 20-30 minute exploration process
-2. **`/templates/commands-template.md`** - Creates 5 intelligent commands  
-3. **`/templates/guide-template.md`** - Consolidated project reference
-4. **`/templates/intelligence-library.md`** - Architectural intelligence library
+1. **`.claude/references/dev-assistant/templates/exploration-process.md`** - Complete 20-30 minute exploration process
+2. **`.claude/references/dev-assistant/templates/commands-template.md`** - Creates 5 intelligent commands  
+3. **`.claude/references/dev-assistant/templates/guide-template.md`** - Consolidated project reference
+4. **`.claude/references/dev-assistant/templates/intelligence-library.md`** - Architectural intelligence library
 
 ### Supporting Instructions
-- **`/instructions/exploration-behavior.md`** - Communication patterns and synthesis techniques
+- **`.claude/references/dev-assistant/instructions/exploration-behavior.md`** - Communication patterns and synthesis techniques
 
 ## Process
 
 ### Phase 1: Pattern Recognition & Opening Synthesis (2-3 minutes)
 
-After reading the concept file(s), immediately begin with bold pattern recognition using `/templates/exploration-process.md`:
+After reading the concept file(s), immediately begin with bold pattern recognition using `.claude/references/dev-assistant/templates/exploration-process.md`:
 
 1. **Communication Style Calibration**: Determine how developer prefers to process information
 2. **Bold Pattern Recognition**: Generate immediate excitement through authentic AI synthesis
@@ -109,7 +109,7 @@ After reading the concept file(s), immediately begin with bold pattern recogniti
 
 ### Phase 2: 4-Chapter Exploration (15-20 minutes)
 
-**BEGIN IMMEDIATELY**: Conduct the complete conversational exploration using `/templates/exploration-process.md`. Integrate decision intelligence from `/templates/intelligence-library.md` throughout:
+**BEGIN IMMEDIATELY**: Conduct the complete conversational exploration using `.claude/references/dev-assistant/templates/exploration-process.md`. Integrate decision intelligence from `.claude/references/dev-assistant/templates/intelligence-library.md` throughout:
 
 **Chapter Structure**:
 1. **First Contact** → Identity & Entry transformation (4-5 min)
@@ -117,11 +117,11 @@ After reading the concept file(s), immediately begin with bold pattern recogniti
 3. **Social Fabric** → Community & connection patterns (3-4 min)
 4. **Technical Philosophy** → Architecture & boundaries (4-5 min)
 
-**Communication Guidelines**: Follow `/instructions/exploration-behavior.md` for authentic AI synthesis with connection-making phrases and failure recovery patterns.
+**Communication Guidelines**: Follow `.claude/references/dev-assistant/instructions/exploration-behavior.md` for authentic AI synthesis with connection-making phrases and failure recovery patterns.
 
 ### Phase 3: Command Generation (2-3 minutes)
 
-Generate the 5 intelligent commands using `/templates/commands-template.md`:
+Generate the 5 intelligent commands using `.claude/references/dev-assistant/templates/commands-template.md`:
 
 **Command Intelligence Features**:
 - **Contextual awareness**: Commands read project state and development patterns
@@ -141,7 +141,7 @@ Generate the 5 intelligent commands using `/templates/commands-template.md`:
 
 ### Phase 4: Project Guide Generation (2-3 minutes)
 
-Create consolidated project reference using `/templates/guide-template.md`:
+Create consolidated project reference using `.claude/references/dev-assistant/templates/guide-template.md`:
 
 **Guide Contents**:
 - **Vision summary**: One-line truth and core value proposition

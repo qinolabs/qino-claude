@@ -85,7 +85,7 @@ Establish ongoing adaptation:
 
 ## Generated Iteration Plan
 
-Uses `/templates/iteration-framework-template.md` to create:
+Uses `.claude/references/dev-assistant/templates/iteration-framework-template.md` to create:
 
 **Current Iteration Focus**:
 - Immediate development priorities

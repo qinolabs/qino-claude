@@ -37,9 +37,9 @@ If you haven't used Claude Code before:
 
 ```
 commands/core/     →  your-project/.claude/commands/core/
-instructions/      →  your-project/.claude/instructions/
-templates/         →  your-project/.claude/templates/
-examples/          →  your-project/.claude/examples/
+instructions/      →  your-project/.claude/references/dev-assistant/instructions/
+templates/         →  your-project/.claude/references/dev-assistant/templates/
+examples/          →  your-project/.claude/references/dev-assistant/examples/
 ```
 
 You should end up with:
@@ -51,16 +51,18 @@ your-project/
         project-init.md
         iteration-plan.md
         update-commands.md
-    instructions/
-      exploration-behavior.md
-    templates/
-      exploration-process.md
-      commands-template.md
-      guide-template.md
-      intelligence-library.md
-      iteration-framework-template.md
-    examples/
-      exploration-example.md
+    references/
+      dev-assistant/
+        instructions/
+          exploration-behavior.md
+        templates/
+          exploration-process.md
+          commands-template.md
+          guide-template.md
+          intelligence-library.md
+          iteration-framework-template.md
+        examples/
+          exploration-example.md
 ```
 
 Start Claude Code in that project folder. The `/core:...` commands are now available.

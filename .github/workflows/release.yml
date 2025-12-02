@@ -45,12 +45,13 @@ jobs:
 
       - name: Build dev-assistant.zip
         run: |
-          mkdir -p build/dev-assistant/qino-claude
+          mkdir -p build/dev-assistant/qino-claude/commands
+          mkdir -p build/dev-assistant/qino-claude/references/dev-assistant
 
-          cp -r tools/dev-assistant/commands build/dev-assistant/qino-claude/
-          cp -r tools/dev-assistant/instructions build/dev-assistant/qino-claude/
-          cp -r tools/dev-assistant/templates build/dev-assistant/qino-claude/
-          cp -r tools/dev-assistant/examples build/dev-assistant/qino-claude/
+          cp -r tools/dev-assistant/commands/core build/dev-assistant/qino-claude/commands/
+          cp -r tools/dev-assistant/instructions build/dev-assistant/qino-claude/references/dev-assistant/
+          cp -r tools/dev-assistant/templates build/dev-assistant/qino-claude/references/dev-assistant/
+          cp -r tools/dev-assistant/examples build/dev-assistant/qino-claude/references/dev-assistant/
 
           cd build/dev-assistant
           zip -r ../../dev-assistant.zip qino-claude
@@ -60,7 +61,7 @@ jobs:
         run: |
           mkdir -p build/all/qino-claude/commands
           mkdir -p build/all/qino-claude/agents
-          mkdir -p build/all/qino-claude/references
+          mkdir -p build/all/qino-claude/references/dev-assistant
 
           # qino-concept
           cp -r tools/qino-concept/commands/qino build/all/qino-claude/commands/
@@ -74,9 +75,9 @@ jobs:
 
           # dev-assistant
           cp -r tools/dev-assistant/commands/core build/all/qino-claude/commands/
-          cp -r tools/dev-assistant/instructions build/all/qino-claude/
-          cp -r tools/dev-assistant/templates build/all/qino-claude/
-          cp -r tools/dev-assistant/examples build/all/qino-claude/
+          cp -r tools/dev-assistant/instructions build/all/qino-claude/references/dev-assistant/
+          cp -r tools/dev-assistant/templates build/all/qino-claude/references/dev-assistant/
+          cp -r tools/dev-assistant/examples build/all/qino-claude/references/dev-assistant/
 
           cd build/all
           zip -r ../../all-tools.zip qino-claude
