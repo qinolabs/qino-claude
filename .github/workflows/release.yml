@@ -17,69 +17,69 @@ jobs:
 
       - name: Build qino-concept.zip
         run: |
-          mkdir -p build/qino-concept/.claude/commands
-          mkdir -p build/qino-concept/.claude/agents
-          mkdir -p build/qino-concept/.claude/references
+          mkdir -p build/qino-concept/qino-claude/commands
+          mkdir -p build/qino-concept/qino-claude/agents
+          mkdir -p build/qino-concept/qino-claude/references
 
-          cp -r tools/qino-concept/commands/qino build/qino-concept/.claude/commands/
-          cp tools/qino-concept/agents/*.md build/qino-concept/.claude/agents/
-          cp -r tools/qino-concept/references/qino-concept build/qino-concept/.claude/references/
+          cp -r tools/qino-concept/commands/qino build/qino-concept/qino-claude/commands/
+          cp tools/qino-concept/agents/*.md build/qino-concept/qino-claude/agents/
+          cp -r tools/qino-concept/references/qino-concept build/qino-concept/qino-claude/references/
 
           cd build/qino-concept
-          zip -r ../../qino-concept.zip .claude
+          zip -r ../../qino-concept.zip qino-claude
           cd ../..
 
       - name: Build design-adventure.zip
         run: |
-          mkdir -p build/design-adventure/.claude/commands
-          mkdir -p build/design-adventure/.claude/agents
-          mkdir -p build/design-adventure/.claude/references
+          mkdir -p build/design-adventure/qino-claude/commands
+          mkdir -p build/design-adventure/qino-claude/agents
+          mkdir -p build/design-adventure/qino-claude/references
 
-          cp tools/design-adventure/commands/*.md build/design-adventure/.claude/commands/
-          cp tools/design-adventure/agents/*.md build/design-adventure/.claude/agents/
-          cp -r tools/design-adventure/references/design-adventure build/design-adventure/.claude/references/
+          cp tools/design-adventure/commands/*.md build/design-adventure/qino-claude/commands/
+          cp tools/design-adventure/agents/*.md build/design-adventure/qino-claude/agents/
+          cp -r tools/design-adventure/references/design-adventure build/design-adventure/qino-claude/references/
 
           cd build/design-adventure
-          zip -r ../../design-adventure.zip .claude
+          zip -r ../../design-adventure.zip qino-claude
           cd ../..
 
       - name: Build dev-assistant.zip
         run: |
-          mkdir -p build/dev-assistant/.claude
+          mkdir -p build/dev-assistant/qino-claude
 
-          cp -r tools/dev-assistant/commands build/dev-assistant/.claude/
-          cp -r tools/dev-assistant/instructions build/dev-assistant/.claude/
-          cp -r tools/dev-assistant/templates build/dev-assistant/.claude/
-          cp -r tools/dev-assistant/examples build/dev-assistant/.claude/
+          cp -r tools/dev-assistant/commands build/dev-assistant/qino-claude/
+          cp -r tools/dev-assistant/instructions build/dev-assistant/qino-claude/
+          cp -r tools/dev-assistant/templates build/dev-assistant/qino-claude/
+          cp -r tools/dev-assistant/examples build/dev-assistant/qino-claude/
 
           cd build/dev-assistant
-          zip -r ../../dev-assistant.zip .claude
+          zip -r ../../dev-assistant.zip qino-claude
           cd ../..
 
       - name: Build all-tools.zip
         run: |
-          mkdir -p build/all/.claude/commands
-          mkdir -p build/all/.claude/agents
-          mkdir -p build/all/.claude/references
+          mkdir -p build/all/qino-claude/commands
+          mkdir -p build/all/qino-claude/agents
+          mkdir -p build/all/qino-claude/references
 
           # qino-concept
-          cp -r tools/qino-concept/commands/qino build/all/.claude/commands/
-          cp tools/qino-concept/agents/*.md build/all/.claude/agents/
-          cp -r tools/qino-concept/references/qino-concept build/all/.claude/references/
+          cp -r tools/qino-concept/commands/qino build/all/qino-claude/commands/
+          cp tools/qino-concept/agents/*.md build/all/qino-claude/agents/
+          cp -r tools/qino-concept/references/qino-concept build/all/qino-claude/references/
 
           # design-adventure
-          cp tools/design-adventure/commands/*.md build/all/.claude/commands/
-          cp tools/design-adventure/agents/*.md build/all/.claude/agents/
-          cp -r tools/design-adventure/references/design-adventure build/all/.claude/references/
+          cp tools/design-adventure/commands/*.md build/all/qino-claude/commands/
+          cp tools/design-adventure/agents/*.md build/all/qino-claude/agents/
+          cp -r tools/design-adventure/references/design-adventure build/all/qino-claude/references/
 
           # dev-assistant
-          cp -r tools/dev-assistant/commands/core build/all/.claude/commands/
-          cp -r tools/dev-assistant/instructions build/all/.claude/
-          cp -r tools/dev-assistant/templates build/all/.claude/
-          cp -r tools/dev-assistant/examples build/all/.claude/
+          cp -r tools/dev-assistant/commands/core build/all/qino-claude/commands/
+          cp -r tools/dev-assistant/instructions build/all/qino-claude/
+          cp -r tools/dev-assistant/templates build/all/qino-claude/
+          cp -r tools/dev-assistant/examples build/all/qino-claude/
 
           cd build/all
-          zip -r ../../all-tools.zip .claude
+          zip -r ../../all-tools.zip qino-claude
           cd ../..
 
       - name: Upload release assets

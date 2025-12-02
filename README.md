@@ -53,7 +53,7 @@ A 20-30 minute conversation where bold synthesis meets your vision. It connects 
 
 ## Installation
 
-**Quick:** Download `all-tools.zip` from the [latest release](https://github.com/qinolabs/qino-claude/releases/latest), unzip, and copy the `.claude/` folder into your project. All three tools, ready to go.
+**Quick:** Download `all-tools.zip` from the [latest release](https://github.com/qinolabs/qino-claude/releases/latest), unzip, and copy the contents of `qino-claude/` into your project's `.claude/` directory. All three tools, ready to go.
 
 **Individual tools:** Each release also has separate zips if you only want one.
 

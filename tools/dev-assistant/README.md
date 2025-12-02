@@ -31,7 +31,7 @@ If you haven't used Claude Code before:
 
 ## Installation
 
-**Quick:** Download `dev-assistant.zip` from the [latest release](https://github.com/qinolabs/qino-claude/releases/latest), unzip, and copy the `.claude/` folder into your project.
+**Quick:** Download `dev-assistant.zip` from the [latest release](https://github.com/qinolabs/qino-claude/releases/latest), unzip, and copy the contents of `qino-claude/` into your project's `.claude/` directory.
 
 **Manual:** Copy these directories into your project's `.claude/`:
 

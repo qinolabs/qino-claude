@@ -31,7 +31,7 @@ This tool adds one command that runs complete design explorations.
 
 ## Installation
 
-**Quick:** Download `design-adventure.zip` from the [latest release](https://github.com/qinolabs/qino-claude/releases/latest), unzip, and copy the `.claude/` folder into your project.
+**Quick:** Download `design-adventure.zip` from the [latest release](https://github.com/qinolabs/qino-claude/releases/latest), unzip, and copy the contents of `qino-claude/` into your project's `.claude/` directory.
 
 **Manual:** Copy these into your project's `.claude/`:
 
