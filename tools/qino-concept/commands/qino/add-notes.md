@@ -26,10 +26,21 @@ If a path is provided (`$1`), use it. If not, ask gently: "What would you like t
 
 **Steps:**
 
-1. **Read & Present**
+1. **Read & Present the Landscape**
    - Open the note
-   - Present a short summary (2-4 sentences)
-   - Surface soft impulses, themes, or cues you notice
+   - Present the note's **fullness atmospherically** — not as a list or summary, but as a felt landscape
+   - Show the shape of what it holds: themes it touches, questions it circles, seeds it contains
+   - Name what feels worked-through vs. what remains sketch-like
+   - This lets the user meet the scope of their past thinking before narrowing
+
+   **Voice example:**
+   > This note holds more than one thing.
+   >
+   > It moves through [X] — [brief atmospheric sense]. It touches something about [Y]. And there's a thread about [Z] woven through.
+   >
+   > Some of this feels worked-through, some is seed.
+
+   After presenting the landscape, transition naturally to the alive-thread question.
 
 2. **Find the Alive Thread**
    Ask:
@@ -82,7 +93,24 @@ If a path is provided (`$1`), use it. If not, ask gently: "What would you like t
    - Reference in Sources as: `[origins/<filename>](origins/<filename>)`
    - This keeps all references self-contained within the repository
 
-6. **After Integration**
+6. **After Integration — Honor What Wasn't Carried**
+
+   After integration, gently acknowledge the fullness that stayed behind:
+
+   - Name 2-3 themes or aspects from the original note that weren't carried into the concept
+   - Frame them as "held, not lost" — they live in the origin file
+   - No guilt, no pressure — just quiet acknowledgment that creates closure
+
+   **Voice example:**
+   > The alive thread found its home in [concept].
+   >
+   > These aspects stayed in the origin file:
+   > - [theme A] — something about [atmospheric sense]
+   > - [theme B] — the question of [X]
+   >
+   > They might return to life later. For now, they're held.
+
+   Then offer paths forward:
    ```
    bring in more, dig into what arrived, or see where it landed
    (/qino:add-notes, /qino:explore, /qino:home)
@@ -122,11 +150,13 @@ If a path is provided (`$1`), use it. If not, ask gently: "What would you like t
 
 3. **Holistic Flow** (if chosen)
    - Read all files
-   - Present unified summary (4-6 sentences)
-   - Surface cross-cutting themes
-   - Ask: "Looking at this as a whole, what feels alive?"
+   - Present the **combined landscape** — the fullness of what these notes hold together
+   - Show how they speak to each other: where they overlap, where they diverge, what emerges in the space between
+   - Name themes that only become visible when seen as a whole
+   - Ask: "Looking at this landscape, what feels alive?"
    - **WAIT**, then continue with integration
    - May draw from multiple files into one concept
+   - After integration, honor what wasn't carried (same as single-file mode)
 
 4. **One-by-One Flow** (default or if chosen)
    - Process each file using single-file mode
@@ -150,11 +180,9 @@ Before any file changes:
 
 Never rushing. Gentle guide through the material. The user sets the pace.
 
-After integration, offer clear paths forward:
-```
-bring in more, dig into what arrived, or see where it landed
-(/qino:add-notes, /qino:explore, /qino:home)
-```
+**On presenting the landscape:** Atmospheric, not exhaustive. Show the shape and feel of what's there — themes, tensions, seeds — rather than listing everything. The goal is for the user to *recognize* what they once held.
+
+**On honoring what wasn't carried:** Light touch. Name 2-3 aspects that stayed behind, framed as "held, not lost." No inventory of everything missed — just enough acknowledgment to create closure.
 
 ---
 
@@ -164,3 +192,6 @@ bring in more, dig into what arrived, or see where it landed
 - Assume meaning — always ask what feels alive
 - Overwhelm with too many files at once
 - Choose holistic vs one-by-one without asking (when pattern detected)
+- Skip the landscape presentation — users need to meet fullness before narrowing
+- List everything exhaustively — landscape is atmospheric, not inventory
+- Create guilt about what wasn't carried — frame as "held" not "lost"
