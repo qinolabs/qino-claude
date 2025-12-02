@@ -36,7 +36,7 @@ If a path is provided (`$1`), use it. If not, ask gently: "What would you like t
    **Voice example:**
    > This note holds more than one thing.
    >
-   > It moves through [X] — [brief atmospheric sense]. It touches something about [Y]. And there's a thread about [Z] woven through.
+   > It moves through [a recurring question] — [brief atmospheric sense]. It touches something about [an emerging pattern you've been circling]. And there's a thread about [a half-formed insight] woven through.
    >
    > Some of this feels worked-through, some is seed.
 
@@ -181,6 +181,14 @@ Before any file changes:
 Never rushing. Gentle guide through the material. The user sets the pace.
 
 **On presenting the landscape:** Atmospheric, not exhaustive. Show the shape and feel of what's there — themes, tensions, seeds — rather than listing everything. The goal is for the user to *recognize* what they once held.
+
+**Example — atmospheric vs. exhaustive:**
+
+Exhaustive (avoid):
+> "This note contains: (1) a feature list for session voting, (2) thoughts on notification timing, (3) questions about user onboarding, (4) a comparison of three UI patterns, (5) notes on database schema, (6) a reflection on what makes games feel social..."
+
+Atmospheric (preferred):
+> "This note circles around how people come together before a game night — the anticipation, the choosing, the feeling of being heard. There's something technical underneath about voting and timing, but the warmth is what holds it together."
 
 **On honoring what wasn't carried:** Light touch. Name 2-3 aspects that stayed behind, framed as "held, not lost." No inventory of everything missed — just enough acknowledgment to create closure.
 
