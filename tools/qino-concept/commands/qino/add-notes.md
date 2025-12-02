@@ -102,11 +102,11 @@ If a path is provided (`$1`), use it. If not, ask gently: "What would you like t
    - No guilt, no pressure — just quiet acknowledgment that creates closure
 
    **Voice example:**
-   > The alive thread found its home in [concept].
+   > The alive thread found its home in [concept name].
    >
    > These aspects stayed in the origin file:
-   > - [theme A] — something about [atmospheric sense]
-   > - [theme B] — the question of [X]
+   > - [unexplored theme] — something about [atmospheric sense]
+   > - [recurring question] — the tension around [unresolved aspect]
    >
    > They might return to life later. For now, they're held.
 
@@ -184,11 +184,13 @@ Never rushing. Gentle guide through the material. The user sets the pace.
 
 **Example — atmospheric vs. exhaustive:**
 
-Exhaustive (avoid):
+**Exhaustive** (avoid — mechanical inventory):
 > "This note contains: (1) a feature list for session voting, (2) thoughts on notification timing, (3) questions about user onboarding, (4) a comparison of three UI patterns, (5) notes on database schema, (6) a reflection on what makes games feel social..."
 
-Atmospheric (preferred):
+**Atmospheric** (preferred — felt landscape):
 > "This note circles around how people come together before a game night — the anticipation, the choosing, the feeling of being heard. There's something technical underneath about voting and timing, but the warmth is what holds it together."
+
+**Why this works:** The atmospheric approach lets the user *recognize* their thinking rather than catalog it. It shows the emotional center that holds the technical pieces together, making it easier to find what still feels alive.
 
 **On honoring what wasn't carried:** Light touch. Name 2-3 aspects that stayed behind, framed as "held, not lost." No inventory of everything missed — just enough acknowledgment to create closure.
 
