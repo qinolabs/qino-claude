@@ -38,9 +38,9 @@ When the adventure finishes, you enter the room after. Chairs still warm. Ideas 
 
 ### [Dev Assistant](tools/dev-assistant/)
 
-Turn an app concept into a development environment.
+Turn an app concept into a development environment with custom commands.
 
-A 20-30 minute conversation where synthesis meets your vision. It connects patterns across technical and emotional domains, generates architectural possibilities you wouldn't see alone, and builds momentum toward something real. What emerges: five commands tuned to your project, a guide that captures what matters, and a roadmap that stays connected as things evolve.
+A 20-30 minute structured conversation that explores your concept through five chapters — entry experience, core loop, social fabric, growth patterns, and technical philosophy. The conversation uses bold synthesis, connecting patterns across domains and generating architectural possibilities you wouldn't see alone. What emerges: five namespaced commands and a project guide. The commands read from the guide — the guide is where your project's specifics live.
 
 ```bash
 /core:project-init your-concept.md

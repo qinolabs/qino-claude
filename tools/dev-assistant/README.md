@@ -1,18 +1,25 @@
 # Dev Assistant
 
-Turn an app concept into a living development environment.
+Turn an app concept into a development environment with custom commands.
 
 ---
 
 ## What is this?
 
-You have an idea for an app. Maybe a few paragraphs, maybe just bullet points. This tool runs a 20-30 minute conversation that transforms that concept into:
+You have an idea for an app. Maybe a few paragraphs, maybe just bullet points. This tool runs a 20-30 minute structured conversation that explores your concept through five chapters:
 
-- **5 custom commands** tuned to your project (`/yourapp:start`, `/yourapp:build`, etc.)
-- **A project guide** capturing vision, principles, and technical philosophy
-- **An iteration roadmap** that stays connected as the project evolves
+1. **First Contact** — the entry experience and identity moment
+2. **Core Experience Loop** — what users do repeatedly, and why it matters
+3. **Social Fabric** — how people connect and community emerges
+4. **Evolution & Growth** — how the app scales and progresses
+5. **Technical Philosophy** — architecture, stack, complexity budget
 
-The conversation connects patterns across technical and emotional domains, generates architectural possibilities you can't see alone, and builds momentum toward something real.
+What emerges:
+
+- **5 namespaced commands** for your project (`/yourapp:start`, `/yourapp:build`, etc.)
+- **A project guide** capturing vision, principles, and technical decisions from the conversation
+
+The commands read from the guide at runtime — the guide is where your project's specifics live. The conversation uses bold synthesis, connecting patterns across domains and generating architectural possibilities you wouldn't see alone.
 
 It runs inside [Claude Code](https://docs.anthropic.com/en/docs/claude-code), Anthropic's CLI for working with Claude.
 
@@ -125,14 +132,14 @@ When it finishes, you'll have custom commands:
 
 ## What makes this different
 
-**Vision-aware commands** — Your commands understand and protect your original project vision.
+**Living guide** — The conversation produces a guide that captures your vision, technical decisions, and principles. Commands read from it at runtime.
 
 **Bold synthesis** — The exploration connects patterns across technical, emotional, and experiential domains.
 
-**Living documents** — Commands read from guides and roadmaps that evolve with your project, not static embedded content.
+**Updatable commands** — When templates improve, `/core:update-commands` regenerates your commands while preserving your guide.
 
 ---
 
 ## Questions?
 
-This tool is part of [qino-claude](https://github.com/qinolabs/qino-claude), a collection of thoughtful development tools.
+This tool is part of [qino-claude](https://github.com/qinolabs/qino-claude).
