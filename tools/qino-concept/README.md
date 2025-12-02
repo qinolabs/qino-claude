@@ -130,7 +130,7 @@ Each concept develops through seven sections:
 1. **Real-World Impulse** — What life situation calls for this?
 2. **Glowing Connections** — What makes this feel alive?
 3. **Primary Surfaces** — Where does this touch daily life?
-4. **Interfaces & Communication** — What's the dialogue?
+4. **Tone & Communication** — What's the voice?
 5. **Ecosystem Integration** — How does this fit with other things?
 6. **Scoped Features** — What's the smallest living version?
 7. **Build Plan** — What steps lead toward code?

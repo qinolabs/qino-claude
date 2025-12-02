@@ -110,10 +110,10 @@ If a path is provided (`$1`), use it. If not, ask gently: "What would you like t
    >
    > They might return to life later. For now, they're held.
 
-   Then offer paths forward:
+   Then offer paths forward (using the actual concept id that was touched):
    ```
-   bring in more, dig into what arrived, or see where it landed
-   (/qino:add-notes, /qino:explore, /qino:home)
+   bring in more, explore what arrived, or see where it landed
+   (/qino:add-notes, /qino:explore daily-rhythm, /qino:home daily-rhythm)
    ```
 
 ---

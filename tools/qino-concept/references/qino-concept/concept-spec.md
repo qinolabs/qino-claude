@@ -44,8 +44,8 @@ Each concept.md must follow the structure below:
 ## 3. Primary Surfaces
 <The main experiential surfaces where the user encounters the concept.>
 
-## 4. Interfaces & Communication
-<How the concept communicates outward or receives information from the user or other concepts.>
+## 4. Tone & Communication
+<The concept's voice — how it speaks, what it says and doesn't say, the quality of dialogue.>
 
 ## 5. Ecosystem Integration
 <How this concept relates to the broader ecosystem—inputs, outputs, flows, complementarities.>
@@ -151,14 +151,28 @@ This section is expanded during `/explore`.
 
 ---
 
-### **4. Interfaces & Communication**
-This is the **dialogue layer** — the patterns of exchange between the concept and its environment. While Primary Surfaces describe *where* users encounter the concept, this section describes *what the conversation is*.
+### **4. Tone & Communication**
+This is the **voice layer** — how the concept speaks, what it says and doesn't say, the felt quality of dialogue. While Primary Surfaces describe *where* users encounter the concept, this section describes *what the conversation feels like*.
 
 **Guiding questions:**
-- What does the concept listen for? (user inputs, signals, intentions)
-- What does it speak back? (feedback, confirmations, invitations)
-- How does it converse with other concepts or external systems?
-- What's the rhythm? (real-time, periodic, event-driven)
+- What's the tone? (warm, understated, playful, quiet, factual)
+- What does it say — and what does it withhold?
+- What's the rhythm? (immediate, periodic, only when asked)
+- How does restraint show up? (what it knows but doesn't push)
+
+**How this section grows:**
+This section is best developed through `/qino:explore` **inhabit mode** — stepping into specific moments as a user and discovering what communication would feel supportive. The result is scenario-based content: moments with voice samples that reveal the concept's character.
+
+**Example format:**
+```
+**Returning after absence**
+  "Two sessions happened while you were away."
+  Quiet, factual, warmth underneath. No guilt, no urgency.
+
+**Friend pins something you love**
+  "Marcus pinned Dune. You're already on the list."
+  Playful assumption of your interest. Respects your autonomy.
+```
 
 ---
 

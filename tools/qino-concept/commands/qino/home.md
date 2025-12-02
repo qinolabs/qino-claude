@@ -88,7 +88,7 @@ Examples:
   ```
 
 - Always ground line 1 in actual content from the concepts
-- Line 2 uses vocabulary: "explore", "explore X and Y together", "come home to", "add-notes"
+- Line 2 uses vocabulary: "explore", "explore X and Y together", "come home to", "add-notes", "step into a moment"
 - Never use metrics ("5 concepts, 3 rich")
 - Never use categories ("emerging", "mature")
 - Never ask questions — home receives, it doesn't interrogate
@@ -129,8 +129,8 @@ from here
   [observation line 2]
   [action line 2]
 
-                        just respond — dig in, or see what connects this to another
-                        (/qino:explore, /qino:explore <concept> <concept>, /qino:home)
+                        just respond, or see what connects this to another
+                        (use actual id: /qino:explore daily-rhythm, /qino:explore daily-rhythm moment-lens, /qino:home)
 ```
 
 **Conversational opener rules:**
@@ -164,11 +164,17 @@ Examples:
 - If a section feels ready to deepen:
   ```
   the impulse has energy, but the surfaces are vague
-  dig into where this actually touches your day
+  where does this actually touch your day?
+  ```
+
+- If Tone & Communication is thin but surfaces exist:
+  ```
+  the surfaces are taking shape, but the voice is quiet
+  step into a moment and see what it would say
   ```
 
 - Always use specific content from THIS concept
-- Line 2 can be a question (for dialogue) or use vocabulary (explore, dig in, etc.)
+- Line 2 can be a question (for dialogue) or use vocabulary (explore, step into a moment, etc.)
 - Never say "explore this concept" — you're already here
 - Never ask "what would you like to do?" — that's a demand
 
