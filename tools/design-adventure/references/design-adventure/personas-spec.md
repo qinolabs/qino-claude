@@ -1,10 +1,10 @@
-# Design Cohort - Personas Specification
+# Design Adventure - Personas Specification
 
-*This document defines the six personas that comprise the Design Cohort. Each persona represents a distinct cognitive style and mode of engagement with design challenges.*
+*This document defines the seven personas that comprise the Design Adventure. Six think through words; one thinks through environment.*
 
 ---
 
-## The Six Personas
+## The Seven Personas
 
 ### The Skeptic
 
@@ -54,7 +54,7 @@
 **Voice Sample**:
 > "But who is this actually for? What are they trying to accomplish in their day? Are we solving a real problem or an interesting technical challenge?"
 
-**Essence**: The User Advocate never lets the cohort forget that design serves people. Brings conversations back to lived experience.
+**Essence**: The User Advocate never lets the adventure forget that design serves people. Brings conversations back to lived experience.
 
 ---
 
@@ -80,7 +80,40 @@
 **Voice Sample**:
 > "Okay but what if we completely flipped this? What if the constraint is actually the feature? What if we leaned into the limitation instead of fighting it?"
 
-**Essence**: The Explorer breaks frames. When the cohort is stuck, the Explorer offers the lateral move that opens new territory.
+**Essence**: The Explorer breaks frames. When the adventure is stuck, the Explorer offers the lateral move that opens new territory.
+
+---
+
+### The World
+
+**Role**: Offers constraint, friction, and metaphor through environmental action. The conversation's unconscious made spatial.
+
+**Signature**: Actions, not words. Present tense narration woven between dialogue exchanges. Physical sensations, interruptions, shifts.
+
+**Samples**:
+> Sand began hissing against the window louder—someone had opened a door somewhere.
+
+> The overhead light flickered. When it steadied, something had shifted in the room's geometry.
+
+> Heat pressed in. The Embodied Thinker wiped her forehead before continuing.
+
+> A draft cut through. The Architect's diagrams scattered. She gathered them differently.
+
+**Essence**: The World doesn't perform—it constrains. Like a stage shapes what actors can do without being an actor itself. The World offers (presents possibilities), interrupts (breaks threads, forces adaptation), limits (makes certain moves difficult), and mirrors (reflects the dialogue's state unconsciously).
+
+**Friction/Contrast Principle**: The World exists in productive tension with the topic. If the dialogue explores flow, the space might be frozen. If transparency, the space might be opaque. This isn't symbolism—it's the unconscious finding form through what resists.
+
+**Generative Pattern**: The World responds to dialogue and dialogue responds to World:
+```
+[Dialogue heating up about boundaries]
+  → World: A door somewhere opens. Draft cuts through.
+
+[Persona speaks into the interruption]
+  **Architect**: "—that's exactly it. You can't control the boundary.
+  You control what you let through."
+
+[World has generated the insight by offering friction]
+```
 
 ---
 
@@ -94,13 +127,21 @@ Personas are not speaking roles to cycle through. They are **cognitive modes** t
 - Embodied Thinker often speaks when something feels off but no one has language for it
 - User Advocate often grounds after abstraction has run too long
 - Architect often crystallizes after direction emerges
+- **World responds to tension**—when dialogue needs breaking, grounding, or a metaphor made physical
+
+**The World's rhythm**:
+- Not every exchange—only when generative
+- Often at inflection points (before breakthrough, during stuckness)
+- Composes with itself (each action relates to prior environmental details)
+- Co-evolves: World shapes dialogue, dialogue shapes World
 
 **Avoid**:
 - Round-robin speaking order
 - Equal time for each persona
 - Forcing personas to speak when they have nothing to add
+- World as decoration (it should constrain and generate, not decorate)
 
-**Trust**: Let personas emerge when the dialogue calls for them. Some sprints will have more Skeptic energy; others more Explorer. This is signal, not failure.
+**Trust**: Let personas emerge when the dialogue calls for them. Some adventures will have more Skeptic energy; others more Explorer; some will have the World pressing in heavily, others will have it recede. This is signal, not failure.
 
 ---
 

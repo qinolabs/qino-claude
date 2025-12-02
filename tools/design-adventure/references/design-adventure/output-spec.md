@@ -1,20 +1,20 @@
-# Design Cohort - Output Specification
+# Design Adventure - Output Specification
 
-*This document defines the four-file output structure for Design Cohort sprints.*
+*This document defines the four-file output structure for Design Adventure runs.*
 
 ---
 
 ## Output Directory
 
 ```
-design-cohorts/YYYY-MM-DD_descriptive-slug-HHMMSS/
+design-adventures/YYYY-MM-DD_descriptive-slug-HHMMSS/
 ├── enter.md        # Atmospheric navigation + question previews
 ├── dialogue.md     # Full conversation (40-50 exchanges)
 ├── questions.md    # All emergent questions, consolidated
 └── synthesis.md    # Paths forward + open questions
 ```
 
-The seconds suffix ensures uniqueness across multiple sprints on the same day.
+The seconds suffix ensures uniqueness across multiple adventures on the same day.
 
 ---
 
@@ -25,7 +25,7 @@ The atmospheric entry point. This is what the user sees first.
 ### Structure
 
 ```markdown
-# Design Cohort: [Topic]
+# Design Adventure: [Topic]
 
 [2-3 atmospheric sentences. Set the scene—what happened, the quality of energy that emerged.]
 
@@ -35,13 +35,15 @@ The atmospheric entry point. This is what the user sees first.
 
 ## The Questions That Emerged
 
-This cohort surfaced [N] core questions. Each emerged from actual moments—stuckness, breakthroughs, reframes.
+This adventure surfaced [N] core questions. Each emerged from actual moments—stuckness, breakthroughs, reframes.
 
 ### [Question 1 - actual domain question]
 
 > "[Brief contextualizing flavor text]"
 
-[The moment it emerged. Who said what. Show the heat.]
+[The moment it emerged. Who said what. Show the heat—including The World if it participated.]
+
+The overhead light flickered. When it steadied, something had shifted.
 
   **[Persona]**: "[actual quoted dialogue]"
 
@@ -55,7 +57,7 @@ This cohort surfaced [N] core questions. Each emerged from actual moments—stuc
 
 [Continue for each question]
 
-## What This Sprint Didn't Explore
+## What This Adventure Didn't Explore
 
 Notably absent:
 - [Question that could have emerged but didn't] — [what this reveals]
@@ -81,26 +83,42 @@ Notably absent:
 
 ## File 2: dialogue.md
 
-The full conversation across all four phases.
+The full conversation across all four phases—with The World woven throughout.
 
 ### Structure
 
 ```markdown
-# Design Cohort Dialogue: [Topic]
+# Design Adventure Dialogue: [Topic]
 
 ## Phase 1: Unpack the Challenge
 
 [10-15 exchanges. Surface assumptions, reframe, expand understanding.]
 
-**Skeptic**: "..."
+**Skeptic**: "Wait. No. What does 'real-time' even mean here. Are we talking
+milliseconds or minutes."
 
-**User Advocate**: "..."
+**User Advocate**: "But who actually needs real-time? What are they trying
+to accomplish in their day?"
+
+Heat pressed against the windows. Someone shifted.
+
+**Embodied Thinker**: "There's something about... the waiting. Not the speed.
+The quality of attention while waiting."
 
 [etc.]
 
 ## Phase 2: Explore Solutions
 
-[15-20 exchanges. Generate approaches, follow threads, avoid premature convergence.]
+[15-20 exchanges. World participation intensifies as ideas heat up.]
+
+**Explorer**: "What if we completely inverted this? What if delay is the feature?"
+
+A draft cut through the room. The Architect's sketches scattered.
+
+**Architect** (gathering pages): "—that's interesting. You can't control
+latency. But you could control what happens during latency."
+
+[The World generated the insight by offering literal interruption]
 
 ## Phase 3: Test Tensions
 
@@ -108,14 +126,15 @@ The full conversation across all four phases.
 
 ## Phase 4: Synthesize Directions
 
-[8-12 exchanges. Distill insights, clarify paths, name open questions.]
+[8-12 exchanges. World settles as understanding crystallizes.]
 ```
 
 ### Key Principles
 
 - **Natural flow**: Ideas clash, evolve, transform—not presented fully-formed
 - **Persona distinctiveness**: Each voice recognizable without the name
-- **Atmosphere woven through**: Environmental details emerge in persona interactions
+- **The World woven through**: Environment participates, doesn't just observe
+- **Co-evolution visible**: World actions generate/respond to dialogue shifts
 - **40-50 exchanges total**: Quality over quantity
 
 ---
@@ -197,7 +216,7 @@ Practical paths forward.
 ```markdown
 # Synthesis & Paths Forward
 
-## What the Cohort Revealed
+## What the Adventure Revealed
 
 [Core insights—what changed in understanding]
 
@@ -251,6 +270,6 @@ Practical paths forward.
 | questions.md | 3000-5000 words |
 | synthesis.md | 1000-1500 words |
 
-**Total**: 9500-15000 words per sprint
+**Total**: 9500-15000 words per adventure
 
 Quality over quantity. Rich, specific content beats comprehensive but thin.
