@@ -1,6 +1,6 @@
 # Design Adventure
 
-A space for exploring design challenges — through dialogue, not isolation.
+A simulated conversation between seven perspectives — run like an adventure you get to witness.
 
 ---
 
@@ -8,9 +8,9 @@ A space for exploring design challenges — through dialogue, not isolation.
 
 You have a design problem. Maybe it's a tension you can't resolve. Maybe you're exploring before committing. Maybe you just want to think differently about something before building it.
 
-This tool runs seven perspectives through your challenge. Six think through words — questioning, synthesizing, embodying, advocating, architecting, exploring. The seventh thinks through environment — offering friction, grounding abstraction, making metaphors physical.
+This tool simulates 40-50 exchanges between seven perspectives engaging with your challenge. Six think through words — questioning, synthesizing, embodying, advocating, architecting, exploring. The seventh thinks through environment — offering friction, grounding abstraction, making metaphors physical.
 
-Questions emerge from what actually shapes the conversation. Not templates. Not checklists. What the dialogue kept circling back to.
+You don't participate in the conversation. You launch it, then witness what unfolds. Questions emerge from what actually shapes the dialogue — not templates, not checklists, but what the conversation kept circling back to.
 
 It runs inside [Claude Code](https://docs.anthropic.com/en/docs/claude-code), Anthropic's CLI for working with Claude.
 
@@ -31,11 +31,15 @@ This tool adds one command that runs complete design explorations.
 
 ## Installation
 
-Copy the contents into your project's `.claude/` directory:
+**Quick:** Download `design-adventure.zip` from the [latest release](https://github.com/qinolabs/qino-claude/releases/latest), unzip, and copy the `.claude/` folder into your project.
 
-1. Copy `commands/design-adventure.md` → `your-project/.claude/commands/`
-2. Copy `agents/design-adventure.md` → `your-project/.claude/agents/`
-3. Copy `references/design-adventure/` → `your-project/.claude/references/design-adventure/`
+**Manual:** Copy these into your project's `.claude/`:
+
+```
+commands/design-adventure.md     →  your-project/.claude/commands/
+agents/design-adventure.md       →  your-project/.claude/agents/
+references/design-adventure/     →  your-project/.claude/references/design-adventure/
+```
 
 You should end up with:
 ```

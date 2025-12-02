@@ -1,116 +1,136 @@
-# Claude Config Structure
+# Dev Assistant
 
-This directory contains the refactored metaprogramming system for qino-claude with clear separation of concerns.
+Turn an app concept into a living development environment.
 
-## Directory Structure
+---
+
+## What is this?
+
+You have an idea for an app. Maybe a few paragraphs, maybe just bullet points. This tool runs a 20-30 minute conversation that transforms that concept into:
+
+- **5 custom commands** tuned to your project (`/yourapp:start`, `/yourapp:build`, etc.)
+- **A project guide** capturing vision, principles, and technical philosophy
+- **An iteration roadmap** that stays connected as the project evolves
+
+The conversation connects patterns across technical and emotional domains, generates architectural possibilities you can't see alone, and builds momentum toward something real.
+
+It runs inside [Claude Code](https://docs.anthropic.com/en/docs/claude-code), Anthropic's CLI for working with Claude.
+
+---
+
+## Before you start
+
+You'll need **Claude Code** installed and working.
+
+If you haven't used Claude Code before:
+1. Install it: `npm install -g @anthropic-ai/claude-code`
+2. Run `claude` in your terminal to start a session
+3. You interact by typing messages — and Claude can run commands, read files, and help you build things
+
+---
+
+## Installation
+
+**Quick:** Download `dev-assistant.zip` from the [latest release](https://github.com/qinolabs/qino-claude/releases/latest), unzip, and copy the `.claude/` folder into your project.
+
+**Manual:** Copy these directories into your project's `.claude/`:
 
 ```
-src/claude-config/
-├── instructions/          # How Claude should behave
-│   └── exploration-behavior.md
-├── templates/            # What Claude should generate (streamlined)
-│   ├── exploration-process.md     # Complete exploration process
-│   ├── commands-template.md       # Lightweight command creation
-│   ├── intelligence-library.md    # Architectural intelligence library
-│   ├── iteration-framework-template.md  # Development roadmap framework
-│   └── guide-template.md          # Consolidated project reference
-├── examples/             # Sample outputs and demonstrations
-│   └── exploration-example.md
-└── commands/core/        # Entry point commands
-    ├── project-init.md      # Create new project environments
-    └── update-commands.md   # Refresh all app commands with latest templates
+commands/core/     →  your-project/.claude/commands/core/
+instructions/      →  your-project/.claude/instructions/
+templates/         →  your-project/.claude/templates/
+examples/          →  your-project/.claude/examples/
 ```
 
-## Content Type Conventions
+You should end up with:
+```
+your-project/
+  .claude/
+    commands/
+      core/
+        project-init.md
+        iteration-plan.md
+        update-commands.md
+    instructions/
+      exploration-behavior.md
+    templates/
+      exploration-process.md
+      commands-template.md
+      guide-template.md
+      intelligence-library.md
+      iteration-framework-template.md
+    examples/
+      exploration-example.md
+```
 
-### Instructions (`/instructions/`)
-Files that tell Claude **how to behave** during execution:
-- Communication style
-- Synthesis techniques  
-- Conversation patterns
-- Success indicators
+Start Claude Code in that project folder. The `/core:...` commands are now available.
 
-**Format:**
+---
+
+## Your first session
+
+### 1. Write your concept
+
+Create a simple markdown file describing your project:
+
 ```markdown
-# Instruction Title
-*Instructions for Claude on how to...*
+# Task Management for Busy Parents
 
-## Behavior Guidelines
-- Do this
-- Don't do that
+A simple task app that understands parents don't have time
+for complex productivity systems.
+
+Features:
+- Quick voice notes while doing dishes
+- Tasks that adapt to school pickup times
+- Shared family lists that actually work
+
+The goal: Make task management feel supportive, not overwhelming.
 ```
 
-### Templates (`/templates/`)
-Files that define **what Claude should generate**:
-- Atomic, self-contained content
-- Clear placeholder conventions
-- Required inputs documented
-- Validation criteria included
+### 2. Run init
 
-**Format:**
-```markdown
-# Template Title
-<!-- TEMPLATE: Description of what this generates -->
-<!-- REQUIRES: input1, input2, input3 from previous step -->
-
-Template content with {{PLACEHOLDERS}}
-
-<!-- PLACEHOLDERS:
-{{VARIABLE}} - Description of what this represents
--->
+```
+/core:project-init my-idea.md
 ```
 
-### Examples (`/examples/`)
-Files that show **sample outputs** and usage patterns:
-- Demonstrations of good/bad approaches
-- Before/after comparisons
-- Reference implementations
+### 3. Experience the conversation
 
-## Placeholder Conventions
+A 20-30 minute guided exploration begins. Just respond naturally. The conversation synthesizes your concept into actionable development guidance.
 
-Templates use minimal placeholder format for lightweight commands:
-- `{{PROJECT_NAME}}` - Project namespace for file paths and command naming
-- Commands read context dynamically from files rather than embedding static content
-- Context files: `.claude/concepts/{{PROJECT_NAME}}-guide.md`, `.claude/iterations/{{PROJECT_NAME}}-iterations.md`, `.claude/init-logs/{{PROJECT_NAME}}-init.md`
+### 4. Use your commands
 
-## Execution Flow
+When it finishes, you'll have custom commands:
 
-1. **Entry**: `/core:project-init` reads concept files
-2. **Instructions**: Loads behavior from `/instructions/exploration-behavior.md`
-3. **Templates**: Uses streamlined 5-template system:
-   - `exploration-process.md` → Complete 20-30 minute exploration process
-   - `commands-template.md` → 5 lightweight commands that read context dynamically
-   - `guide-template.md` → Consolidated project reference  
-   - `intelligence-library.md` → Architectural intelligence library (used throughout)
-   - `iteration-framework-template.md` → Development roadmap framework
-4. **Output**: Structured `.claude/` directory with vision-aware commands and living context files
+```
+/myidea:start          # Where you are and what's next
+/myidea:build "auth"   # Build features with vision alignment
+/myidea:review         # Check alignment after changes
+/myidea:evolve         # Update vision as you learn
+/myidea:help           # Natural language support
+```
 
-## Benefits of Lightweight Command System
+---
 
-### ✅ Solves Concept Drift
-- Commands read current context from living documents instead of static content
-- App evolution doesn't create drift from commands
-- Vision and roadmap updates are automatically available to all commands
-- Natural evolution without command regeneration
+## The three commands
 
-### ✅ Solves Template Maintenance
-- `/core:update-commands` safely regenerates all app commands with latest templates
-- Context files (guides, roadmaps) are preserved during updates
-- Template improvements apply to all projects instantly
-- Clear separation between command logic and project context
+| Command | What it does |
+|---------|--------------|
+| `/core:project-init concept.md` | Run the exploration, generate commands and guide |
+| `/core:iteration-plan project-name` | Create development roadmap when ready |
+| `/core:update-commands project-name` | Refresh commands with latest templates |
 
-### ✅ Preserves Benefits
-- Namespaced commands (`/myapp:start`) maintain personalized feel
-- Complete 20-30 minute exploration process preserved
-- Vision-aware development with phase tracking
-- Contextual intelligence adapts to project state
-- Progressive disclosure and natural language fallbacks
+---
 
-## Evolution Notes
+## What makes this different
 
-**Previous System**: Static commands with embedded content created concept drift and maintenance pain
-**Current System**: Lightweight commands that read context dynamically from living documents
-**Key Innovation**: Commands reference context files rather than embedding static content
-**Maintenance Solution**: `/core:update-commands` provides safe template updates across all projects
+**Vision-aware commands** — Your commands understand and protect your original project vision.
 
-The system now enables natural project evolution while maintaining command intelligence and solving the two core problems: concept drift and template maintenance.
+**Bold synthesis** — The exploration connects patterns across technical, emotional, and experiential domains.
+
+**Living documents** — Commands read from guides and roadmaps that evolve with your project, not static embedded content.
+
+---
+
+## Questions?
+
+This tool is part of [qino-claude](https://github.com/qinolabs/qino-claude), a collection of thoughtful development tools.

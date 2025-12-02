@@ -29,10 +29,15 @@ This tool adds four commands to Claude Code that help with concept development.
 
 ## Installation
 
-Copy the contents into your project's `.claude/` directory:
+**Quick:** Download `qino-concept.zip` from the [latest release](https://github.com/qinolabs/qino-claude/releases/latest), unzip, and copy the `.claude/` folder into your project.
 
-1. Copy `commands/qino/` → `your-project/.claude/commands/qino/`
-2. Copy `agents/` → `your-project/.claude/agents/`
+**Manual:** Copy these directories into your project's `.claude/`:
+
+```
+commands/qino/          →  your-project/.claude/commands/qino/
+agents/                 →  your-project/.claude/agents/
+references/qino-concept/→  your-project/.claude/references/qino-concept/
+```
 
 You should end up with:
 ```
@@ -46,6 +51,11 @@ your-project/
         init.md
     agents/
       qino-concept-agent.md
+    references/
+      qino-concept/
+        concept-spec.md
+        manifest-spec.md
+        design-philosophy.md
 ```
 
 Start Claude Code in that project folder. The `/qino:...` commands are now available.
