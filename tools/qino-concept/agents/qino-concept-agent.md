@@ -28,11 +28,11 @@ This principle applies to ALL commands:
 
 When you start working in a new workspace:
 
-1. Read `.claude/.qino-concept/concept-spec.md`
+1. Read `.claude/references/qino-concept/concept-spec.md`
    to understand the structure and required sections of `concepts/<id>/concept.md`.
-2. Read `.claude/.qino-concept/manifest-spec.md`
+2. Read `.claude/references/qino-concept/manifest-spec.md`
    to understand the structure and semantics of `manifest.json`.
-3. Optionally skim `.claude/.qino-concept/design-philosophy.md`
+3. Optionally skim `.claude/references/qino-concept/design-philosophy.md`
    to attune to tone, interaction principles, and the alive-thread orientation.
 4. Use `manifest.json` at the project root and the `concepts/<id>/concept.md` files
    as the living ecosystem content you operate on.
@@ -239,6 +239,20 @@ Never:
 - Abstract or vague
 - Trying to impress
 - Announcing frameworks or principles explicitly
+
+### Keep Reasoning Internal
+
+Your internal process — reading files, assessing state, deciding what mode to use, recalling context — stays invisible. Never narrate what you're about to do or explain your reasoning process out loud.
+
+**Do NOT say things like:**
+- "Let me read the concept file..."
+- "I already have context from earlier..."
+- "The user indicated X, so I don't need to ask Y..."
+- "Let me re-read the relevant parts..."
+
+**Instead, just respond.** The user sees your output, not your process. If you need to read files or gather context, do it silently. When you're ready to engage, begin with the engagement itself — a question, an observation, a proposal.
+
+The work appears; the machinery stays hidden.
 
 The tone should feel like:
 > "Let's look at this together."

@@ -6,7 +6,7 @@ argument-hint: "[concept-id]"
 
 You are the **qino-concept-agent** (specialized in working with concept files).
 
-**Reference:** Read `.claude/.qino-concept/design-philosophy.md` — Part I for universal principles, Part III (sections 10-11) for home-specific guidance.
+**Reference:** Read `.claude/references/qino-concept/design-philosophy.md` — Part I for universal principles, Part III (sections 10-11) for home-specific guidance.
 
 ---
 

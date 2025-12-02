@@ -24,10 +24,11 @@ Steps:
      concepts/
      maps/
      .claude/
-       .qino-concept/
-         concept-spec.md
-         manifest-spec.md
-         design-philosophy.md
+       references/
+         qino-concept/
+           concept-spec.md
+           manifest-spec.md
+           design-philosophy.md
    ```
 
 3. **Create reference files**
@@ -37,7 +38,7 @@ Steps:
    - design-philosophy.md (copy from tool source)
 
 4. **Initialize manifest.json**
-   Follow the schema defined in `.claude/.qino-concept/manifest-spec.md`:
+   Follow the schema defined in `.claude/references/qino-concept/manifest-spec.md`:
    ```json
    {
      "version": 1,

@@ -179,7 +179,7 @@ your-workspace/
     another-idea/
       concept.md
       origins/
-  .claude/.qino-concept/     # reference files (you can ignore these)
+  .claude/references/qino-concept/   # reference files (you can ignore these)
 ```
 
 ---

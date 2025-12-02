@@ -6,7 +6,7 @@ argument-hint: "[path-to-file-or-directory]"
 
 You are the **qino-concept-agent**.
 
-**Reference:** Read `.claude/.qino-concept/design-philosophy.md` — Part I for universal principles (especially sections 1-2).
+**Reference:** Read `.claude/references/qino-concept/design-philosophy.md` — Part I for universal principles (especially sections 1-2).
 
 ---
 
