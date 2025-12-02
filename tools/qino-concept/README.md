@@ -1,14 +1,14 @@
 # Qino Concept
 
-A gentle space for developing app ideas — through conversation, not documentation.
+A gentle space for developing ideas — through conversation, not documentation.
 
 ---
 
 ## What is this?
 
-You have app ideas scattered across notes, voice memos, late-night scribbles. Some feel alive. Most sit dormant.
+You have ideas scattered across notes, late-night scribbles, fragments that never found a home. Some feel alive. Most sit dormant.
 
-This tool helps you gather those fragments and develop them through dialogue. Instead of forcing you to fill out templates, it asks: *what part of this still feels alive?* — and works from there.
+This tool helps you gather those fragments and develop them through dialogue. Instead of forcing you into templates, it asks: *what part of this still feels alive?* — and works from there.
 
 It runs inside [Claude Code](https://docs.anthropic.com/en/docs/claude-code), Anthropic's CLI for working with Claude.
 
@@ -129,7 +129,7 @@ Home isn't a dashboard demanding decisions. It's a place of arrival. You see wha
 
 ### The alive thread
 
-The agent always asks: *what part feels alive?* Not the whole thing — just the piece that has energy right now.
+The agent always asks: *what part feels alive?* Not the whole thing — just the piece that draws you right now.
 
 This keeps the work focused and prevents overwhelm. You can always come back to other parts later.
 
@@ -145,7 +145,7 @@ Each concept develops through seven sections:
 6. **Scoped Features** — What's the smallest living version?
 7. **Build Plan** — What steps lead toward code?
 
-You don't fill these out in order. The agent helps you develop whichever section has energy.
+You don't fill these out in order. The agent helps you develop whichever section feels alive.
 
 **Tone & Communication** develops differently — through *inhabit mode*. When you want to discover the concept's voice, you step into specific moments as a user. The agent drafts what the concept might say, you react and refine, and together you discover the tone through scenarios rather than description.
 
@@ -199,7 +199,7 @@ your-workspace/
 ## Tips
 
 - **Start small.** One note, one concept. See how it feels.
-- **Follow energy.** If something doesn't feel alive, leave it. Come back later or let it go.
+- **Follow what's alive.** If something doesn't draw you, leave it. Come back later or let it go.
 - **Return home often.** Home re-orients you when things feel scattered.
 - **Trust the process.** The agent waits for confirmation before changing anything.
 

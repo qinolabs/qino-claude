@@ -12,7 +12,7 @@ These are custom commands for [Claude Code](https://docs.anthropic.com/en/docs/c
 
 A gentle space for developing ideas.
 
-You have notes scattered across files, late-night scribbles, fragments that never found a home. Some feel alive. Most sit dormant. This tool helps you gather them and work with what has energy — through conversation, not templates. It asks *what part feels alive?* and develops from there. You return home often.
+You have notes scattered across files, late-night scribbles, fragments that never found a home. Some feel alive. Most sit dormant. This tool helps you gather them and work with what's still warm — through conversation, not templates. It asks *what part feels alive?* and develops from there. You return home often.
 
 ```bash
 /qino:init
