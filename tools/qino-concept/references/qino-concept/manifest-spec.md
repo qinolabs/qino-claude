@@ -153,6 +153,31 @@ Semantics:
 
 The Qino agent updates `last_touched` whenever it performs a meaningful modification to the concept's `concept.md` file (e.g. refine, explore, organize).
 
+### 4.6 held_threads
+
+- Type: array of strings
+- Required: no (optional field)
+
+Each string captures a theme or aspect from origin material that wasn't carried into the concept during `/qino:add-notes`.
+
+Format: `"[theme] — [atmospheric sense]"`
+
+Example:
+
+```json
+"held_threads": [
+  "morning ritual tension — the friction before the day starts",
+  "raw voice about anticipation — how it should feel, not what it does"
+]
+```
+
+Semantics:
+
+- Threads are added during `/qino:add-notes` when acknowledging what wasn't carried forward
+- Threads accumulate across multiple add-notes sessions (append, don't replace)
+- Threads are never removed — they are multi-dimensional, and integration captures facets, not the whole thread
+- The agent uses held threads to offer specific bridges back to origin material when detecting gaps during exploration
+
 ---
 
 ## 5. Lifecycle Rules

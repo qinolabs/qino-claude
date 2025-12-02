@@ -36,6 +36,7 @@ If no concept id is provided, ask gently: "Which concept would you like to explo
    - **Thin**: Fewer than 3 sections have substance → likely needs expanding
    - **Uneven**: Some sections rich, others empty → likely needs deepening
    - **Cluttered**: All sections have content but feel disorganized → likely needs restructuring
+   - **Has held threads**: Check manifest for `held_threads` array — material from origins that wasn't carried forward
 
 4. Begin with the alive-thread question:
    > "What part of this feels most alive right now?"
@@ -44,7 +45,33 @@ If no concept id is provided, ask gently: "Which concept would you like to explo
 
 5. **WAIT** for the user's response.
 
-6. Based on their response, work in the appropriate mode:
+6. After the user responds, assess whether held threads could bridge a gap (if `held_threads` exists for this concept).
+
+### If held threads might help
+
+**Trigger conditions (any of):**
+- User's response points toward something not captured in concept.md
+- User expresses being stuck: "nothing feels alive," "I'm not sure"
+- User's alive thread relates to a thin section, and held threads touch that area
+- User's language echoes a held thread
+
+**If triggered, offer specifically:**
+
+> "There's something held in your origins — about [specific held thread theme]."
+> "Does that still have warmth, or has the concept moved past it?"
+
+**If user engages:**
+- Read the relevant origin file from `concepts/<id>/origins/`
+- Surface the specific material related to that thread
+- Work with it using normal expand/deepen modes
+- Held thread remains in the list — threads are multi-dimensional, and integration may only capture one facet
+
+**If user declines or concept has moved past:**
+- Acknowledge lightly: "Makes sense — things shift."
+- Continue with normal explore flow
+- Thread remains held — it may have other dimensions that become alive later
+
+7. Based on their response, work in the appropriate mode:
 
 ### If expanding (opening possibilities):
 - Propose 2-3 grounded directions the concept could take

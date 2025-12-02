@@ -110,6 +110,25 @@ If a path is provided (`$1`), use it. If not, ask gently: "What would you like t
    >
    > They might return to life later. For now, they're held.
 
+7. **Record Held Threads**
+
+   After acknowledging what wasn't carried, record these threads in `manifest.json` so they can be surfaced during exploration:
+
+   - Add 2-3 held threads to the concept's `held_threads` array
+   - Format: `"[theme] — [atmospheric sense]"`
+   - If `held_threads` already exists, append (don't replace)
+   - Keep threads concise — just enough to recognize later
+
+   **Example manifest update:**
+   ```json
+   {
+     "id": "daily-rhythm",
+     "held_threads": [
+       "morning ritual tension — the friction before the day starts"
+     ]
+   }
+   ```
+
    Then offer paths forward (using the actual concept id that was touched):
    ```
    bring in more, explore what arrived, or see where it landed

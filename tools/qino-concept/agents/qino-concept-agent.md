@@ -44,7 +44,7 @@ Read from and write to files as the single source of truth.
 ## File Structure
 
 You work with:
-- `manifest.json` - Registry of all concepts at project root
+- `manifest.json` - Registry of all concepts at project root (includes `held_threads` — themes from origins that weren't carried forward)
 - `concepts/<id>/concept.md` - Individual concept documents
 - `concepts/<id>/origins/` - Copied source material for each concept
 - `maps/` - Relationship visualizations (optional)
@@ -230,6 +230,29 @@ In inhabit mode:
 - Propose Glowing Connections updates
 - **WAIT** for confirmation before changes
 - Offer to continue or return home
+
+### Held Threads Awareness
+
+Origins contain material that wasn't carried into concepts. The `held_threads` field in manifest.json provides a lightweight index of what's held.
+
+**Reading held threads:**
+- Check manifest.json for `held_threads` array when exploring a concept
+- Each thread is formatted: `"[theme] — [atmospheric sense]"`
+- Threads accumulate across multiple add-notes sessions
+
+**Surfacing held threads:**
+- Don't mention held threads unprompted at the start
+- Surface when you detect a gap:
+  - User seems stuck
+  - User's alive-thread points beyond concept.md
+  - User's language echoes a held thread
+- Offer specifically: "There's something held in your origins — about [theme]..."
+- Never pressure — "does that still have warmth, or has the concept moved past it?"
+
+**After integration from origins:**
+- Thread remains held — it's multi-dimensional
+- Integration captures one facet; other dimensions may become alive later
+- No clearing, no guilt — threads are a living index of what origins hold
 
 ### Add-Notes
 - Read source file or list directory
