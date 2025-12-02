@@ -29,25 +29,26 @@ This tool adds four commands to Claude Code that help with concept development.
 
 ## Installation
 
-1. Copy this entire `qino-concept` folder into your Claude Code commands directory:
-   ```
-   ~/.claude/commands/
-   ```
+Copy the contents into your project's `.claude/` directory:
 
-2. You should end up with:
-   ```
-   ~/.claude/commands/qino-concept/
-     commands/qino/
-       home.md
-       explore.md
-       add-notes.md
-       init.md
-     agents/
-       qino-concept-agent.md
-     ...
-   ```
+1. Copy `commands/qino/` → `your-project/.claude/commands/qino/`
+2. Copy `agents/` → `your-project/.claude/agents/`
 
-3. Start Claude Code. The `/qino:...` commands are now available.
+You should end up with:
+```
+your-project/
+  .claude/
+    commands/
+      qino/
+        home.md
+        explore.md
+        add-notes.md
+        init.md
+    agents/
+      qino-concept-agent.md
+```
+
+Start Claude Code in that project folder. The `/qino:...` commands are now available.
 
 ---
 
