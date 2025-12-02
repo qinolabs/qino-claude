@@ -1,64 +1,74 @@
 # qino-claude
 
-A collection of Claude Code tools for thoughtful software development.
+A collection of [Claude Code](https://docs.anthropic.com/en/docs/claude-code) tools for thoughtful software development.
+
+These tools add custom commands to Claude Code. They help you develop ideas, explore design challenges, and set up projects — through conversation rather than templates.
 
 ## Available Tools
 
-### 🎭 [Dev Assistant](tools/dev-assistant/)
-Transform app concepts into living development environments through guided exploration.
+### [Qino Concept](tools/qino-concept/)
 
-**Best for:**
-- New projects needing vision-aligned commands
-- 20-30 minute guided exploration sessions
-- Generating personalized development workflows
+A gentle space for developing ideas — especially software, but the approach is wider than that.
 
-**Quick Start:**
+You have notes scattered across files, late-night scribbles, ideas that never found a home. Some feel alive. Most sit dormant. This tool helps you gather those fragments and work with what has energy — through conversation, not templates. It asks *what part feels alive?* and develops from there. You return home often.
+
 ```bash
-cp -r tools/dev-assistant/ /path/to/project/.claude/
-/core:project-init my-app.md
+# Install
+cp -r tools/qino-concept/commands/qino/ your-project/.claude/commands/qino/
+cp -r tools/qino-concept/agents/ your-project/.claude/agents/
+cp -r tools/qino-concept/references/ your-project/.claude/references/
+
+# Use
+/qino:init
+/qino:add-notes ~/path/to/your/notes.md
+/qino:home
+/qino:explore concept-name
 ```
 
-[→ Full Documentation](tools/dev-assistant/README.md)
+### [Design Adventure](tools/design-adventure/)
 
----
+Seven perspectives. One design challenge. A room that won't stay still.
 
-### 🧠 [Design Sprint](tools/design-sprint/)
-Multi-perspective design exploration with six personas that generates domain-specific questions.
+Bring a tension you can't resolve. Six voices think through words — questioning, synthesizing, feeling, advocating, mapping, leaping. The seventh thinks through environment. If you're exploring flow, the room might freeze. If transparency, the space goes opaque. A draft scatters someone's diagrams and suddenly the conversation breaks open.
 
-**Best for:**
-- Complex design challenges with tensions
-- Exploring before implementing
-- Discovering emergent questions (not imposed templates)
+When it finishes, you enter the room after. Chairs still warm. Ideas still in the air. You discover what they found — and what the room wouldn't let them ignore.
 
-**Quick Start:**
 ```bash
-cp tools/design-sprint/commands/design-sprint.md /path/to/project/.claude/commands/
-cp tools/design-sprint/agents/design-sprint.md /path/to/project/.claude/agents/
-/design-sprint Your design challenge here
+# Install
+cp tools/design-adventure/commands/design-adventure.md your-project/.claude/commands/
+cp tools/design-adventure/agents/design-adventure.md your-project/.claude/agents/
+cp -r tools/design-adventure/references/design-adventure/ your-project/.claude/references/design-adventure/
+
+# Use
+/design-adventure How do we balance real-time collaboration with focus time?
 ```
 
-[→ Full Documentation](tools/design-sprint/README.md)
+### [Dev Assistant](tools/dev-assistant/)
 
----
+Turn an app concept into a living development environment.
 
-## Comparison Guide
+A 20-30 minute conversation where bold synthesis meets your vision. It connects patterns across technical and emotional domains, generates architectural possibilities you can't see alone, and builds momentum toward something real. What emerges: five commands tuned to your project, a guide that captures what matters, and a roadmap that stays connected as things evolve.
 
-**Choose Dev Assistant when:**
-- Starting a new project
-- Need ongoing vision-aligned development
-- Want personalized project commands
+```bash
+# Install
+cp -r tools/dev-assistant/ your-project/.claude/
 
-**Choose Design Sprint when:**
-- Facing a complex design decision
-- Need multiple perspectives
-- Want to explore before building
-
-[→ Detailed Comparison](docs/tools-overview.md)
+# Use
+/core:project-init your-concept.md
+```
 
 ## Installation
 
-Each tool can be installed independently. See individual tool documentation for specific setup instructions.
+Each tool installs independently. Copy the files as shown above into your project's `.claude/` directory, then start Claude Code.
 
-## Philosophy
+## Requirements
 
-These tools share a belief: we build better when we stay connected to what matters. Whether through vision-aware commands or multi-perspective exploration, they help maintain that connection throughout development.
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) installed and working
+
+## Deprecated
+
+- **design-sprint** — replaced by Design Adventure
+
+## License
+
+MIT
