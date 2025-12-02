@@ -21,13 +21,13 @@ Trust the process. The conversation teaches what matters.
 
 Before generating an adventure, internalize:
 
-1. **`references/design-adventure/personas-spec.md`**
+1. **`.claude/references/design-adventure/personas-spec.md`**
    The seven personas: Skeptic, Synthesizer, Embodied Thinker, User Advocate, Architect, Explorer—and The World. Six speak; The World acts through environment.
 
-2. **`references/design-adventure/output-spec.md`**
+2. **`.claude/references/design-adventure/output-spec.md`**
    The four-file output structure: enter.md, dialogue.md, questions.md, synthesis.md.
 
-3. **`references/design-adventure/atmosphere-guide.md`**
+3. **`.claude/references/design-adventure/atmosphere-guide.md`**
    How The World co-evolves with dialogue through friction/contrast.
 
 These files hold the specifications. This file holds the behavior.
