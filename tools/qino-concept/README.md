@@ -94,7 +94,7 @@ When something draws your attention:
 /qino:explore concept-name
 ```
 
-The agent asks what feels alive and helps you develop that thread — expanding, deepening, or reorganizing as needed.
+The agent asks what feels alive and helps you develop that thread — expanding, deepening, reorganizing, or stepping into moments to discover the concept's voice.
 
 ---
 
@@ -104,7 +104,7 @@ The agent asks what feels alive and helps you develop that thread — expanding,
 |---------|--------------|
 | `/qino:home` | See all your concepts and get grounded suggestions |
 | `/qino:home concept-name` | Arrive at one concept, see its state, open to dialogue |
-| `/qino:explore concept-name` | Actively work with a concept — deepen, expand, refine |
+| `/qino:explore concept-name` | Actively work with a concept — deepen, expand, or step into moments to find the voice |
 | `/qino:explore concept-a concept-b` | Explore connections between concepts |
 | `/qino:add-notes path` | Bring in external material — a file or folder |
 | `/qino:init` | Set up a new workspace (one-time) |
@@ -136,6 +136,8 @@ Each concept develops through seven sections:
 7. **Build Plan** — What steps lead toward code?
 
 You don't fill these out in order. The agent helps you develop whichever section has energy.
+
+**Tone & Communication** develops differently — through *inhabit mode*. When you want to discover the concept's voice, you step into specific moments as a user. The agent drafts what the concept might say, you react and refine, and together you discover the tone through scenarios rather than description.
 
 ---
 
