@@ -76,7 +76,20 @@ Ready to update?
 Replace `## [Unreleased]` section with the versioned section.
 Add new empty `## [Unreleased]` at top.
 
-### 6b. Update READMEs
+### 6b. Bump Tool Versions
+
+For each tool that changed, update its `version.json`:
+
+**Location:** `tools/<tool-name>/references/<tool-name>/version.json`
+
+**Version bump rules:**
+- **Patch** (1.0.0 → 1.0.1): Bug fixes, internal improvements
+- **Minor** (1.0.0 → 1.1.0): New features, capabilities added
+- **Major** (1.0.0 → 2.0.0): Breaking changes
+
+Show proposed version bumps and **WAIT** for confirmation before applying.
+
+### 6c. Update READMEs
 
 For each tool with changes, review and update its README to reflect the latest state.
 
@@ -119,9 +132,10 @@ Create release?
 
 If confirmed:
 ```bash
-git add CHANGELOG.md
+git add CHANGELOG.md tools/*/references/*/version.json
 git commit -m "Release v0.2.0"
-git push
+git tag v0.2.0
+git push && git push --tags
 gh release create v0.2.0 --title "v0.2.0" --notes "..."
 ```
 
