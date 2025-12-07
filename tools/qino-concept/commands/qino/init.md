@@ -27,18 +27,18 @@ Steps:
        references/
          qino-concept/
            concept-spec.md
-           manifest-spec.md
+           manifest-project-spec.md
            design-philosophy.md
    ```
 
 3. **Create reference files**
    Create the specification files in project:
    - concept-spec.md (copy from tool source)
-   - manifest-spec.md (copy from tool source) 
+   - manifest-project-spec.md (copy from tool source) 
    - design-philosophy.md (copy from tool source)
 
 4. **Initialize manifest.json**
-   Follow the schema defined in `.claude/references/qino-concept/manifest-spec.md`:
+   Follow the schema defined in `.claude/references/qino-concept/manifest-project-spec.md`:
    ```json
    {
      "version": 1,

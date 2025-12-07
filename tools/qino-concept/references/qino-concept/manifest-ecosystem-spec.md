@@ -177,7 +177,7 @@ When patterns emerge and get woven into `ecosystem.md`:
 
 ## 6. Responsibilities of the Qino Concept Agent
 
-When reading `ecosystem-manifest-spec.md`, the agent must:
+When reading `manifest-ecosystem-spec.md`, the agent must:
 
 - Treat this file as the authoritative schema for `ecosystem/manifest.json`
 - Validate that the manifest matches the shape whenever it needs to use it

@@ -54,7 +54,7 @@ your-project/
     references/
       qino-concept/
         concept-spec.md
-        manifest-spec.md
+        manifest-project-spec.md
         design-philosophy.md
 ```
 

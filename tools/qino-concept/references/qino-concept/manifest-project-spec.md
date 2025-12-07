@@ -217,7 +217,7 @@ For now:
 
 ## 6. Responsibilities of the Qino Concept Agent
 
-When reading `manifest-spec.md`, the agent must:
+When reading `manifest-project-spec.md`, the agent must:
 
 - treat this file as the authoritative schema for `manifest.json`
 - validate that `manifest.json` matches the shape whenever it needs to use it

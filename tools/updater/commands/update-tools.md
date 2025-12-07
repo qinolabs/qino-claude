@@ -115,10 +115,10 @@ curl -sL "$BASE_URL/tools/qino-concept/commands/qino/init.md" -o .claude/command
 curl -sL "$BASE_URL/tools/qino-concept/commands/qino/ecosystem.md" -o .claude/commands/qino/ecosystem.md
 curl -sL "$BASE_URL/tools/qino-concept/agents/qino-concept-agent.md" -o .claude/agents/qino-concept-agent.md
 curl -sL "$BASE_URL/tools/qino-concept/references/qino-concept/concept-spec.md" -o .claude/references/qino-concept/concept-spec.md
-curl -sL "$BASE_URL/tools/qino-concept/references/qino-concept/manifest-spec.md" -o .claude/references/qino-concept/manifest-spec.md
+curl -sL "$BASE_URL/tools/qino-concept/references/qino-concept/manifest-project-spec.md" -o .claude/references/qino-concept/manifest-project-spec.md
 curl -sL "$BASE_URL/tools/qino-concept/references/qino-concept/design-philosophy.md" -o .claude/references/qino-concept/design-philosophy.md
 curl -sL "$BASE_URL/tools/qino-concept/references/qino-concept/ecosystem-spec.md" -o .claude/references/qino-concept/ecosystem-spec.md
-curl -sL "$BASE_URL/tools/qino-concept/references/qino-concept/ecosystem-manifest-spec.md" -o .claude/references/qino-concept/ecosystem-manifest-spec.md
+curl -sL "$BASE_URL/tools/qino-concept/references/qino-concept/manifest-ecosystem-spec.md" -o .claude/references/qino-concept/manifest-ecosystem-spec.md
 ```
 
 ### Step 5: Report Results

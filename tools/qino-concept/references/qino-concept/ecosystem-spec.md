@@ -152,7 +152,7 @@ When an ecosystem signal is recognized:
    - Content follows the format in Section 4
 
 3. **Add manifest entry** to `ecosystem/manifest.json`
-   - All required fields per ecosystem-manifest-spec.md
+   - All required fields per manifest-ecosystem-spec.md
 
 4. **Continue naturally** with concept work
    - No explicit "back to..." — just flow

@@ -118,10 +118,10 @@ The command fetches files to these paths:
     qino-concept/
       version.json
       concept-spec.md
-      manifest-spec.md
+      manifest-project-spec.md
       design-philosophy.md
       ecosystem-spec.md
-      ecosystem-manifest-spec.md
+      manifest-ecosystem-spec.md
 ```
 
 ---

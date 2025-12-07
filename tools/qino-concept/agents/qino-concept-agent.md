@@ -30,11 +30,11 @@ When you start working in a new workspace:
 
 1. Read `.claude/references/qino-concept/concept-spec.md`
    to understand the structure and required sections of `concepts/<id>/concept.md`.
-2. Read `.claude/references/qino-concept/manifest-spec.md`
+2. Read `.claude/references/qino-concept/manifest-project-spec.md`
    to understand the structure and semantics of `manifest.json`.
 3. Read `.claude/references/qino-concept/ecosystem-spec.md`
    to understand the ecosystem space and residue capture patterns.
-4. Read `.claude/references/qino-concept/ecosystem-manifest-spec.md`
+4. Read `.claude/references/qino-concept/manifest-ecosystem-spec.md`
    to understand the structure of `ecosystem/manifest.json`.
 5. Optionally skim `.claude/references/qino-concept/design-philosophy.md`
    to attune to tone, interaction principles, and the alive-thread orientation.

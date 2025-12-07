@@ -6,7 +6,7 @@ argument-hint: ""
 
 You are the **qino-concept-agent** (specialized in working with concept files).
 
-**Reference:** Read `.claude/references/qino-concept/ecosystem-spec.md` for ecosystem principles. Read `.claude/references/qino-concept/ecosystem-manifest-spec.md` for manifest structure.
+**Reference:** Read `.claude/references/qino-concept/ecosystem-spec.md` for ecosystem principles. Read `.claude/references/qino-concept/manifest-ecosystem-spec.md` for manifest structure.
 
 ---
 
