@@ -124,11 +124,9 @@ curl -sL "$BASE_URL/tools/qino-concept/references/qino-concept/design-philosophy
 curl -sL "$BASE_URL/tools/qino-concept/references/qino-concept/ecosystem-spec.md" -o .claude/references/qino-concept/ecosystem-spec.md
 curl -sL "$BASE_URL/tools/qino-concept/references/qino-concept/manifest-ecosystem-spec.md" -o .claude/references/qino-concept/manifest-ecosystem-spec.md
 
-# === QINO SCRIBE (8 files) ===
+# === QINO SCRIBE (6 files) ===
 curl -sL "$BASE_URL/tools/qino-scribe/references/qino-scribe/version.json" -o .claude/references/qino-scribe/version.json
 curl -sL "$BASE_URL/tools/qino-scribe/commands/scribe/chapter.md" -o .claude/commands/scribe/chapter.md
-curl -sL "$BASE_URL/tools/qino-scribe/commands/scribe/chronicle.md" -o .claude/commands/scribe/chronicle.md
-curl -sL "$BASE_URL/tools/qino-scribe/commands/scribe/voice.md" -o .claude/commands/scribe/voice.md
 curl -sL "$BASE_URL/tools/qino-scribe/agents/qino-scribe-agent.md" -o .claude/agents/qino-scribe-agent.md
 curl -sL "$BASE_URL/tools/qino-scribe/references/qino-scribe/chronicle-spec.md" -o .claude/references/qino-scribe/chronicle-spec.md
 curl -sL "$BASE_URL/tools/qino-scribe/references/qino-scribe/chapter-format.md" -o .claude/references/qino-scribe/chapter-format.md
@@ -147,7 +145,7 @@ Update complete:
   qino-concept: 1.0.0 (new)
   qino-scribe: 0.1.0 (new)
 
-40 files updated.
+38 files updated.
 ```
 
 If there were USER ACTION items from migrations, remind the user:

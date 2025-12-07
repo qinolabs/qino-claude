@@ -8,7 +8,9 @@ These are custom commands for [Claude Code](https://docs.anthropic.com/en/docs/c
 
 ## Available Tools
 
-### [Qino Concept](tools/qino-concept/)
+<br>
+
+### Qino Concept
 
 A gentle space for developing ideas.
 
@@ -21,9 +23,25 @@ You have notes scattered across files, late-night scribbles, fragments that neve
 /qino:ecosystem
 ```
 
-[Installation guide →](tools/qino-concept/README.md#installation)
+*[Source](tools/qino-concept/) · [Installation](tools/qino-concept/README.md#installation)*
 
-### [Design Adventure](tools/design-adventure/)
+<br>
+
+### Qino Scribe
+
+The ecosystem tells its own story.
+
+Your ecosystem evolves through conversations, explorations, and accumulated notes. Qino Scribe chronicles this evolution — not as a changelog, but as a fantasy world. Characters appear when concepts arrive. Locations reveal hidden rooms when ideas deepen. The chronicle is something you could read like a children's book by nightlamp.
+
+```bash
+/scribe:chapter
+```
+
+*[Source](tools/qino-scribe/) · [Installation](tools/qino-scribe/README.md#installation)*
+
+<br>
+
+### Design Adventure
 
 A simulated conversation between seven perspectives — an adventure you witness.
 
@@ -35,9 +53,11 @@ When the adventure finishes, you enter the room after. Chairs still warm. Ideas 
 /design-adventure How do we balance real-time collaboration with focus time?
 ```
 
-[Installation guide →](tools/design-adventure/README.md#installation)
+*[Source](tools/design-adventure/) · [Installation](tools/design-adventure/README.md#installation)*
 
-### [Dev Assistant](tools/dev-assistant/)
+<br>
+
+### Dev Assistant
 
 Turn an app concept into a development environment with custom commands.
 
@@ -47,7 +67,9 @@ A 20-30 minute structured conversation that explores your concept through five c
 /core:project-init your-concept.md
 ```
 
-[Installation guide →](tools/dev-assistant/README.md)
+*[Source](tools/dev-assistant/) · [Installation](tools/dev-assistant/README.md#installation)*
+
+<br>
 
 ## Installation
 
@@ -56,6 +78,8 @@ A 20-30 minute structured conversation that explores your concept through five c
 **Individual tools:** Separate zips available if you only want one.
 
 **Manual:** Each tool has its own [installation guide](#available-tools).
+
+<br>
 
 ## Keeping Updated
 
@@ -69,13 +93,19 @@ After installation, update all tools with one command.
 
 Fetches latest files from GitHub. Your project files stay untouched. [Details →](tools/updater/README.md)
 
+<br>
+
 ## Requirements
 
 [Claude Code](https://docs.anthropic.com/en/docs/claude-code)
 
+<br>
+
 ## Deprecated
 
 - **design-sprint** — replaced by Design Adventure
+
+<br>
 
 ## License
 

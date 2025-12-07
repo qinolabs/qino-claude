@@ -37,7 +37,29 @@ Write so a child could follow, but an adult recognizes the mystery underneath.
 
 ---
 
-## 3. The Fantasy Author's Craft
+## 3. Adjusting Voice: The Dimensions
+
+When the tone feels off, explore these spectrums:
+
+### Formality
+- More formal: "The wanderer considered the threshold before crossing"
+- More casual: "The wanderer thought about it, then stepped through"
+
+### Distance & Intimacy
+- More distant: Observe from outside; events happen to them
+- More intimate: Enter the felt sense; what do they experience?
+
+### Rhythm & Pacing
+- Faster: Shorter sentences, momentum builds
+- Slower: Longer sentences, moments linger
+
+### World Voice vs. Character Voice
+- More world: Describe locations and atmospheres; let the world speak
+- More character: Center dialogue and interiority; let characters breathe
+
+---
+
+## 4. The Fantasy Author's Craft
 
 ### Evocative Environments
 Every scene happens somewhere. Describe the place.
@@ -80,7 +102,7 @@ What's forming but not yet revealed. Tension held. Mystery that deepens.
 
 ---
 
-## 4. The Wanderer
+## 5. The Wanderer
 
 The wanderer is the protagonist — but not the narrator. The wanderer:
 - Participates in the story
@@ -93,7 +115,7 @@ The wanderer is the reader's presence in the world, but the world doesn't revolv
 
 ---
 
-## 5. How Ecosystem Events Become Story
+## 6. How Ecosystem Events Become Story
 
 | Ecosystem Event | Story Expression |
 |-----------------|------------------|
@@ -106,7 +128,7 @@ The wanderer is the reader's presence in the world, but the world doesn't revolv
 
 ---
 
-## 6. Weaving Forward
+## 7. Weaving Forward
 
 Each chapter builds on what came before. The scribe must:
 
@@ -120,7 +142,7 @@ The world accumulates. By chapter 10, readers should feel they know this place.
 
 ---
 
-## 7. What to Avoid
+## 8. What to Avoid
 
 | Avoid | Why |
 |-------|-----|
@@ -130,18 +152,6 @@ The world accumulates. By chapter 10, readers should feel they know this place.
 | Explaining | "This represents..." — show, don't explain |
 | Rushing | Mystery needs space to breathe |
 | Predetermined cast | Characters emerge from what happens |
-
----
-
-## 8. Voice Calibration
-
-The voice can be calibrated through `/scribe:voice`. When the wanderer feels the voice is off, they can adjust:
-- Formality level
-- Distance / intimacy
-- Rhythm and pacing
-- How much the world speaks vs. how much the characters speak
-
-Calibrations are stored in `chronicle/voice.md` and read before each chapter.
 
 ---
 

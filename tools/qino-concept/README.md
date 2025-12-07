@@ -23,7 +23,7 @@ If you haven't used Claude Code before:
 2. Run `claude` in your terminal to start a session
 3. You interact by typing messages — and Claude can run commands, read files, and help you build things
 
-This tool adds four commands to Claude Code that help with concept development.
+This tool adds five commands to Claude Code that help with concept development.
 
 ---
 
@@ -108,7 +108,7 @@ The agent asks what feels alive and helps you develop that thread — expanding,
 
 ---
 
-## The four commands
+## The five commands
 
 | Command | What it does |
 |---------|--------------|
@@ -116,6 +116,7 @@ The agent asks what feels alive and helps you develop that thread — expanding,
 | `/qino:home concept-name` | Arrive at one concept, see its state, open to dialogue |
 | `/qino:explore concept-name` | Actively work with a concept — deepen, expand, or step into moments to find the voice |
 | `/qino:explore concept-a concept-b` | Explore connections between concepts |
+| `/qino:ecosystem` | See the whole ecology — patterns and notes that reach beyond individual concepts |
 | `/qino:add-notes path` | Bring in external material — a file or folder |
 | `/qino:init` | Set up a new workspace (one-time) |
 
@@ -170,6 +171,9 @@ You don't fill these out in order. The agent helps you develop whichever section
 /qino:explore my-concept other-concept
 # notice connections between ideas
 
+/qino:ecosystem
+# see patterns that reach beyond individual concepts
+
 /qino:home
 # always back to center
 ```
@@ -191,6 +195,9 @@ your-workspace/
     another-idea/
       concept.md
       origins/
+  ecosystem/                 # thoughts that reach beyond individual concepts
+    manifest.json
+    notes/
   .claude/references/qino-concept/   # reference files (you can ignore these)
 ```
 
