@@ -34,20 +34,23 @@ In Claude Code:
 
 ### What happens
 
-1. **Version check** — Reads `version.json` from each tool's references directory
-2. **Migration check** — Fetches `migrations.md` from GitHub to find required changes
-3. **Confirmation** — If files need to be deleted or renamed, asks for confirmation
-4. **Fetch** — Downloads all 32 tool files from GitHub
-5. **Report** — Shows what changed and any manual actions needed
+1. **Manifest fetch** — Fetches `manifest.json` from GitHub to discover available tools
+2. **Version check** — Reads `version.json` from each tool's references directory
+3. **Migration check** — Fetches `migrations.md` from GitHub to find required changes
+4. **Confirmation** — If files need to be deleted or renamed, asks for confirmation
+5. **Fetch** — Downloads all tool files listed in the manifest
+6. **Report** — Shows what changed and any manual actions needed
 
 ### Example output
 
 ```
-Installed tools:
-  dev-assistant: 1.5.0
-  design-sprint: 2.1.0
+Available tools:
+  dev-assistant: 1.5.0 (installed)
+  design-sprint: 2.1.0 (installed)
   design-adventure: not installed
   qino-concept: not installed
+  qino-scribe: not installed
+  updater: 1.0.0 (installed)
 
 No migrations required.
 
@@ -58,8 +61,10 @@ Update complete:
   design-sprint: 2.1.0 (unchanged)
   design-adventure: 1.0.0 (new)
   qino-concept: 1.0.0 (new)
+  qino-scribe: 0.1.0 (new)
+  updater: 1.0.0 (unchanged)
 
-32 files updated.
+40 files updated.
 ```
 
 ---
@@ -89,22 +94,25 @@ Proceed with deletions? [y/n]
 
 ## What gets updated
 
-The command fetches files to these paths:
+The command dynamically fetches all files listed in `manifest.json`. Current structure:
 
 ```
 .claude/
   commands/
     core/                    # dev-assistant commands
     qino/                    # qino-concept commands
+    scribe/                  # qino-scribe commands
     design-sprint.md
     design-adventure.md
+    update-qino-tools.md
   agents/
     design-sprint.md
     design-adventure.md
     qino-concept-agent.md
+    qino-scribe-agent.md
   references/
     dev-assistant/
-      version.json           # version tracking
+      version.json
       instructions/
       templates/
       examples/
@@ -122,6 +130,13 @@ The command fetches files to these paths:
       design-philosophy.md
       ecosystem-spec.md
       manifest-ecosystem-spec.md
+    qino-scribe/
+      version.json
+      chronicle-spec.md
+      chapter-format.md
+      voice-guide.md
+    updater/
+      migrations.md
 ```
 
 ---
@@ -157,6 +172,8 @@ mv .claude/commands/update-tools.md .claude/commands/update-qino-tools.md
 ## Notes
 
 - Updates come from the `main` branch of [qino-claude](https://github.com/qinolabs/qino-claude)
+- Tools and files are discovered dynamically from `manifest.json`
+- New tools added to the repo are automatically available on next update
 - Tool files are overwritten — local changes will be lost
 - Project-specific files (guides, concepts, generated commands) are not affected
 - Requires `curl` (available by default on macOS and most Linux systems)

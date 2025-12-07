@@ -1,0 +1,76 @@
+{
+  "version": "1.0.0",
+  "description": "Manifest of all qino-claude tools and their files",
+  "tools": {
+    "dev-assistant": {
+      "description": "Transform app concepts into vision-aligned development environments",
+      "files": [
+        {"src": "tools/dev-assistant/references/dev-assistant/version.json", "dest": "references/dev-assistant/version.json"},
+        {"src": "tools/dev-assistant/commands/core/project-init.md", "dest": "commands/core/project-init.md"},
+        {"src": "tools/dev-assistant/commands/core/iteration-plan.md", "dest": "commands/core/iteration-plan.md"},
+        {"src": "tools/dev-assistant/commands/core/update-commands.md", "dest": "commands/core/update-commands.md"},
+        {"src": "tools/dev-assistant/instructions/exploration-behavior.md", "dest": "references/dev-assistant/instructions/exploration-behavior.md"},
+        {"src": "tools/dev-assistant/templates/exploration-process.md", "dest": "references/dev-assistant/templates/exploration-process.md"},
+        {"src": "tools/dev-assistant/templates/commands-template.md", "dest": "references/dev-assistant/templates/commands-template.md"},
+        {"src": "tools/dev-assistant/templates/guide-template.md", "dest": "references/dev-assistant/templates/guide-template.md"},
+        {"src": "tools/dev-assistant/templates/intelligence-library.md", "dest": "references/dev-assistant/templates/intelligence-library.md"},
+        {"src": "tools/dev-assistant/templates/iteration-framework-template.md", "dest": "references/dev-assistant/templates/iteration-framework-template.md"},
+        {"src": "tools/dev-assistant/examples/exploration-example.md", "dest": "references/dev-assistant/examples/exploration-example.md"}
+      ]
+    },
+    "design-sprint": {
+      "description": "Multi-perspective design exploration (deprecated)",
+      "files": [
+        {"src": "tools/design-sprint/references/design-sprint/version.json", "dest": "references/design-sprint/version.json"},
+        {"src": "tools/design-sprint/commands/design-sprint.md", "dest": "commands/design-sprint.md"},
+        {"src": "tools/design-sprint/agents/design-sprint.md", "dest": "agents/design-sprint.md"}
+      ]
+    },
+    "design-adventure": {
+      "description": "Seven-perspective design dialogue",
+      "files": [
+        {"src": "tools/design-adventure/references/design-adventure/version.json", "dest": "references/design-adventure/version.json"},
+        {"src": "tools/design-adventure/commands/design-adventure.md", "dest": "commands/design-adventure.md"},
+        {"src": "tools/design-adventure/agents/design-adventure.md", "dest": "agents/design-adventure.md"},
+        {"src": "tools/design-adventure/references/design-adventure/personas-spec.md", "dest": "references/design-adventure/personas-spec.md"},
+        {"src": "tools/design-adventure/references/design-adventure/output-spec.md", "dest": "references/design-adventure/output-spec.md"},
+        {"src": "tools/design-adventure/references/design-adventure/atmosphere-guide.md", "dest": "references/design-adventure/atmosphere-guide.md"}
+      ]
+    },
+    "qino-concept": {
+      "description": "Gentle space for developing ideas through conversation",
+      "files": [
+        {"src": "tools/qino-concept/references/qino-concept/version.json", "dest": "references/qino-concept/version.json"},
+        {"src": "tools/qino-concept/commands/qino/home.md", "dest": "commands/qino/home.md"},
+        {"src": "tools/qino-concept/commands/qino/explore.md", "dest": "commands/qino/explore.md"},
+        {"src": "tools/qino-concept/commands/qino/add-notes.md", "dest": "commands/qino/add-notes.md"},
+        {"src": "tools/qino-concept/commands/qino/init.md", "dest": "commands/qino/init.md"},
+        {"src": "tools/qino-concept/commands/qino/ecosystem.md", "dest": "commands/qino/ecosystem.md"},
+        {"src": "tools/qino-concept/agents/qino-concept-agent.md", "dest": "agents/qino-concept-agent.md"},
+        {"src": "tools/qino-concept/references/qino-concept/concept-spec.md", "dest": "references/qino-concept/concept-spec.md"},
+        {"src": "tools/qino-concept/references/qino-concept/manifest-project-spec.md", "dest": "references/qino-concept/manifest-project-spec.md"},
+        {"src": "tools/qino-concept/references/qino-concept/design-philosophy.md", "dest": "references/qino-concept/design-philosophy.md"},
+        {"src": "tools/qino-concept/references/qino-concept/ecosystem-spec.md", "dest": "references/qino-concept/ecosystem-spec.md"},
+        {"src": "tools/qino-concept/references/qino-concept/manifest-ecosystem-spec.md", "dest": "references/qino-concept/manifest-ecosystem-spec.md"}
+      ]
+    },
+    "qino-scribe": {
+      "description": "Chronicle ecosystem evolution through narrative chapters",
+      "files": [
+        {"src": "tools/qino-scribe/references/qino-scribe/version.json", "dest": "references/qino-scribe/version.json"},
+        {"src": "tools/qino-scribe/commands/scribe/chapter.md", "dest": "commands/scribe/chapter.md"},
+        {"src": "tools/qino-scribe/agents/qino-scribe-agent.md", "dest": "agents/qino-scribe-agent.md"},
+        {"src": "tools/qino-scribe/references/qino-scribe/chronicle-spec.md", "dest": "references/qino-scribe/chronicle-spec.md"},
+        {"src": "tools/qino-scribe/references/qino-scribe/chapter-format.md", "dest": "references/qino-scribe/chapter-format.md"},
+        {"src": "tools/qino-scribe/references/qino-scribe/voice-guide.md", "dest": "references/qino-scribe/voice-guide.md"}
+      ]
+    },
+    "updater": {
+      "description": "Keep tools updated from GitHub",
+      "files": [
+        {"src": "tools/updater/commands/update-qino-tools.md", "dest": "commands/update-qino-tools.md"},
+        {"src": "tools/updater/migrations.md", "dest": "references/updater/migrations.md"}
+      ]
+    }
+  }
+}
