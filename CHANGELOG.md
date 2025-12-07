@@ -10,6 +10,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.2.1] - 2025-12-07
+
+### Qino Concept
+
+#### Fixed
+- **Internal reasoning no longer leaks into output** — strengthened guidance to prevent model from outputting its deliberation process (assessment summaries, context analysis, reasoning chains)
+
+### General
+
+#### Changed
+- Refined README structure and release command workflow
+
+---
+
 ## [0.2.0] - 2025-12-07
 
 ### Qino Concept
