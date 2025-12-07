@@ -142,6 +142,18 @@ The update command reads these to determine what's installed and whether migrati
 
 ---
 
+## Migrating from previous versions
+
+### From early v0.2.0 builds
+
+The command was renamed from `update-tools` to `update-qino-tools`:
+
+```bash
+mv .claude/commands/update-tools.md .claude/commands/update-qino-tools.md
+```
+
+---
+
 ## Notes
 
 - Updates come from the `main` branch of [qino-claude](https://github.com/qinolabs/qino-claude)

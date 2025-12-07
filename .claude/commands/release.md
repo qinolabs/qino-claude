@@ -76,6 +76,24 @@ Ready to update?
 Replace `## [Unreleased]` section with the versioned section.
 Add new empty `## [Unreleased]` at top.
 
+### 6b. Update READMEs
+
+For each tool with changes, review and update its README to reflect the latest state:
+
+- **Capabilities**: Do the documented features match what the tool now does?
+- **Commands**: Are command names and usage examples accurate?
+- **Language**: Does the README embody the tool's current voice and essence?
+- **Migration**: If breaking changes affect users, add migration notes
+
+READMEs to check:
+- `README.md` (main)
+- `tools/dev-assistant/README.md`
+- `tools/design-adventure/README.md`
+- `tools/qino-concept/README.md`
+- `tools/updater/README.md`
+
+Show proposed README changes and **WAIT** for confirmation before applying.
+
 ### 7. Propose Release
 
 Show:
