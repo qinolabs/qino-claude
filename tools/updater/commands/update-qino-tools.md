@@ -18,6 +18,7 @@ Check which tools are installed by looking for version.json files:
 - `.claude/references/design-sprint/version.json`
 - `.claude/references/design-adventure/version.json`
 - `.claude/references/qino-concept/version.json`
+- `.claude/references/qino-scribe/version.json`
 
 For each file that exists, read the `version` field. If a file doesn't exist, that tool isn't installed.
 
@@ -28,6 +29,7 @@ Installed tools:
   design-sprint: 2.1.0
   design-adventure: not installed
   qino-concept: not installed
+  qino-scribe: not installed
 ```
 
 ### Step 2: Fetch Migrations
@@ -79,6 +81,8 @@ mkdir -p .claude/references/dev-assistant/examples
 mkdir -p .claude/references/design-sprint
 mkdir -p .claude/references/design-adventure
 mkdir -p .claude/references/qino-concept
+mkdir -p .claude/commands/scribe
+mkdir -p .claude/references/qino-scribe
 
 # === DEV ASSISTANT (11 files) ===
 curl -sL "$BASE_URL/tools/dev-assistant/references/dev-assistant/version.json" -o .claude/references/dev-assistant/version.json
@@ -119,6 +123,16 @@ curl -sL "$BASE_URL/tools/qino-concept/references/qino-concept/manifest-project-
 curl -sL "$BASE_URL/tools/qino-concept/references/qino-concept/design-philosophy.md" -o .claude/references/qino-concept/design-philosophy.md
 curl -sL "$BASE_URL/tools/qino-concept/references/qino-concept/ecosystem-spec.md" -o .claude/references/qino-concept/ecosystem-spec.md
 curl -sL "$BASE_URL/tools/qino-concept/references/qino-concept/manifest-ecosystem-spec.md" -o .claude/references/qino-concept/manifest-ecosystem-spec.md
+
+# === QINO SCRIBE (8 files) ===
+curl -sL "$BASE_URL/tools/qino-scribe/references/qino-scribe/version.json" -o .claude/references/qino-scribe/version.json
+curl -sL "$BASE_URL/tools/qino-scribe/commands/scribe/chapter.md" -o .claude/commands/scribe/chapter.md
+curl -sL "$BASE_URL/tools/qino-scribe/commands/scribe/chronicle.md" -o .claude/commands/scribe/chronicle.md
+curl -sL "$BASE_URL/tools/qino-scribe/commands/scribe/voice.md" -o .claude/commands/scribe/voice.md
+curl -sL "$BASE_URL/tools/qino-scribe/agents/qino-scribe-agent.md" -o .claude/agents/qino-scribe-agent.md
+curl -sL "$BASE_URL/tools/qino-scribe/references/qino-scribe/chronicle-spec.md" -o .claude/references/qino-scribe/chronicle-spec.md
+curl -sL "$BASE_URL/tools/qino-scribe/references/qino-scribe/chapter-format.md" -o .claude/references/qino-scribe/chapter-format.md
+curl -sL "$BASE_URL/tools/qino-scribe/references/qino-scribe/voice-guide.md" -o .claude/references/qino-scribe/voice-guide.md
 ```
 
 ### Step 5: Report Results
@@ -131,8 +145,9 @@ Update complete:
   design-sprint: 2.1.0 (unchanged)
   design-adventure: 1.0.0 (new)
   qino-concept: 1.0.0 (new)
+  qino-scribe: 0.1.0 (new)
 
-32 files updated.
+40 files updated.
 ```
 
 If there were USER ACTION items from migrations, remind the user:
