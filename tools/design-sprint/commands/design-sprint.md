@@ -1,8 +1,5 @@
 ---
 description: Run multi-perspective design sprint that organizes discoveries around emergent, domain-specific questions
-version: 2.1.0
-last_synced: 2025-10-05
-source: /Users/philhradecs/Code/malao/malao-apps/.claude/commands/design-sprint.md
 ---
 
 # Design Sprint

@@ -7,7 +7,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This repository is a **Claude Tools Hub** containing multiple independent tools for thoughtful software development:
 
 - **Dev Assistant** (`tools/dev-assistant/`) - Transform app concepts into vision-aligned development environments
-- **Design Sprint** (`tools/design-sprint/`) - Multi-perspective design exploration with emergent questions
+- **Design Adventure** (`tools/design-adventure/`) - Seven-perspective design exploration
+- **Design Sprint** (`tools/design-sprint/`) - Multi-perspective design exploration (deprecated)
+- **Qino Concept** (`tools/qino-concept/`) - Gentle space for developing ideas
+- **Updater** (`tools/updater/`) - Keep tools updated from GitHub
 
 Each tool is self-contained with its own documentation, templates, and usage patterns.
 
@@ -22,10 +25,22 @@ qino-claude/
 │   │   ├── examples/          # Sample outputs
 │   │   └── commands/core/     # Entry point commands
 │   │
-│   └── design-sprint/         # Multi-persona design exploration
-│       ├── commands/          # Command interface
-│       ├── agents/            # Agent definitions
-│       └── README.md
+│   ├── design-sprint/         # Multi-persona design exploration (deprecated)
+│   │   ├── commands/
+│   │   └── agents/
+│   │
+│   ├── design-adventure/      # Seven-perspective design dialogue
+│   │   ├── commands/
+│   │   ├── agents/
+│   │   └── references/
+│   │
+│   ├── qino-concept/          # Gentle concept development
+│   │   ├── commands/qino/
+│   │   ├── agents/
+│   │   └── references/
+│   │
+│   └── updater/               # Tool update utility
+│       └── commands/
 │
 ├── docs/                      # Cross-tool documentation
 │   └── tools-overview.md
@@ -85,6 +100,23 @@ design-sprints/YYYY-MM-DD_topic/
 ├── ...
 └── synthesis.md
 ```
+
+### Updater
+
+**Location**: `tools/updater/`
+
+**Purpose**: Provides a command that target projects can copy to fetch latest tool versions from GitHub.
+
+**Key Files**:
+- `commands/update-tools.md` - Command to copy into target projects
+- `README.md` - Installation and usage documentation
+
+**Usage** (in target projects):
+```bash
+/update-tools
+```
+
+**What it does**: Fetches all 28 tool files from `qinolabs/qino-claude` main branch and updates the local `.claude/` directory.
 
 ## File Organization
 

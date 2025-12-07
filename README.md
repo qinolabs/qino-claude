@@ -58,6 +58,21 @@ A 20-30 minute structured conversation that explores your concept through five c
 
 All tools add files to your project's `.claude/` directory. They're namespaced to avoid conflicts.
 
+## Keeping Updated
+
+After initial installation, you can update all tools to the latest versions with a single command.
+
+**Setup:** Copy [tools/updater/commands/update-tools.md](tools/updater/commands/update-tools.md) to your project's `.claude/commands/update-tools.md`
+
+**Usage:**
+```bash
+/update-tools
+```
+
+This fetches all 32 tool files from GitHub and overwrites your local copies. Project-specific files (guides, concepts, generated commands) are not affected.
+
+[Updater documentation →](tools/updater/README.md)
+
 ## Requirements
 
 [Claude Code](https://docs.anthropic.com/en/docs/claude-code) installed and working.
