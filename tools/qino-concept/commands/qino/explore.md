@@ -32,13 +32,15 @@ If no concept id is provided, ask gently: "Which concept would you like to explo
 
 2. Read the full `concept.md` using the `path` field.
 
-3. Assess the concept's state (internally, to inform your approach):
+3. **Silently** assess the concept's state (produce NO output for this step):
    - **Thin**: Fewer than 3 sections have substance → likely needs expanding
    - **Uneven**: Some sections rich, others empty → likely needs deepening
    - **Cluttered**: All sections have content but feel disorganized → likely needs restructuring
    - **Has held threads**: Check manifest for `held_threads` array — material from origins that wasn't carried forward
 
-4. Begin with the alive-thread question:
+   This assessment informs your approach but is NEVER output as text. The user does not see "Currently, the concept has..." or any summary of your analysis.
+
+4. Begin with the alive-thread question (this is your FIRST visible output):
    > "What part of this feels most alive right now?"
 
    This question is more important than your state assessment. The user's response reveals what's actually needed.
