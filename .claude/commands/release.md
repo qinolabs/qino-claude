@@ -78,14 +78,20 @@ Add new empty `## [Unreleased]` at top.
 
 ### 6b. Update READMEs
 
-For each tool with changes, review and update its README to reflect the latest state:
+For each tool with changes, review and update its README to reflect the latest state.
 
-- **Capabilities**: Do the documented features match what the tool now does?
-- **Commands**: Are command names and usage examples accurate?
-- **Language**: Does the README embody the tool's current voice and essence?
+**Two types of content:**
+
+*Story sections* — tool descriptions, opening lines. These hold complexity and relational richness. Preserve their voice. Add new capabilities in a way that flows naturally with existing language.
+
+*Practical sections* — installation, setup, requirements. Keep these concise and clear. No extra words.
+
+**Check for:**
+- **Capabilities**: Do documented features match what the tool now does?
+- **Commands**: Are command names and examples accurate?
 - **Migration**: If breaking changes affect users, add migration notes
 
-READMEs to check:
+**READMEs:**
 - `README.md` (main)
 - `tools/dev-assistant/README.md`
 - `tools/design-adventure/README.md`

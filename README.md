@@ -12,12 +12,13 @@ These are custom commands for [Claude Code](https://docs.anthropic.com/en/docs/c
 
 A gentle space for developing ideas.
 
-You have notes scattered across files, late-night scribbles, fragments that never found a home. Some feel alive. Most sit dormant. This tool helps you gather them and work with what's still warm — through conversation, not templates. It asks *what part feels alive?* and develops from there. You return home often.
+You have notes scattered across files, late-night scribbles, fragments that never found a home. Some feel alive. Most sit dormant. This tool helps you gather them and work with what's still warm — through conversation, not templates. It asks *what part feels alive?* and develops from there. You return home often. And as you work, thoughts arise that don't belong anywhere yet — patterns across projects, questions too large for one container. These accumulate in an ecosystem you can visit when you're ready.
 
 ```bash
 /qino:init
 /qino:home
 /qino:explore concept-name
+/qino:ecosystem
 ```
 
 [Installation guide →](tools/qino-concept/README.md#installation)
@@ -50,32 +51,27 @@ A 20-30 minute structured conversation that explores your concept through five c
 
 ## Installation
 
-**Quick:** Download `all-tools.zip` from the [latest release](https://github.com/qinolabs/qino-claude/releases/latest), unzip, and copy the contents of `qino-claude/` into your project's `.claude/` directory.
+**Quick:** Download `all-tools.zip` from the [latest release](https://github.com/qinolabs/qino-claude/releases/latest), unzip, copy contents to `.claude/` in your project.
 
-**Individual tools:** Each release includes separate zips if you only want one.
+**Individual tools:** Separate zips available if you only want one.
 
 **Manual:** Each tool has its own [installation guide](#available-tools).
 
-All tools add files to your project's `.claude/` directory. They're namespaced to avoid conflicts.
-
 ## Keeping Updated
 
-After initial installation, you can update all tools to the latest versions with a single command.
+After installation, update all tools with one command.
 
-**Setup:** Copy [tools/updater/commands/update-qino-tools.md](tools/updater/commands/update-qino-tools.md) to your project's `.claude/commands/update-qino-tools.md`
+**Setup:** Copy [update-qino-tools.md](tools/updater/commands/update-qino-tools.md) to `.claude/commands/`
 
-**Usage:**
 ```bash
 /update-qino-tools
 ```
 
-This fetches all 32 tool files from GitHub and overwrites your local copies. Project-specific files (guides, concepts, generated commands) are not affected.
-
-[Updater documentation →](tools/updater/README.md)
+Fetches latest files from GitHub. Your project files stay untouched. [Details →](tools/updater/README.md)
 
 ## Requirements
 
-[Claude Code](https://docs.anthropic.com/en/docs/claude-code) installed and working.
+[Claude Code](https://docs.anthropic.com/en/docs/claude-code)
 
 ## Deprecated
 
