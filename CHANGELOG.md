@@ -8,16 +8,35 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+---
+
+## [0.2.0] - 2025-12-07
+
 ### Qino Concept
 
 #### Added
 - **Ecosystem-level thinking** — capture thoughts that reach beyond individual concepts with `∴` acknowledgment pattern
-- **Ecosystem command** (`/qino:ecosystem`) — see the whole constellation of concepts and accumulated notes
+- **Ecosystem command** (`/qino:ecosystem`) — see the whole ecology of concepts and accumulated notes
 - **Ecosystem manifest** — separate `ecosystem/manifest.json` for ecosystem-scoped tracking
 
 #### Changed
 - **Simplified home command** — now focused on arriving at concepts; ecosystem view moved to dedicated command
 - **Two realities design** — structural separation (files) with experiential fluidity (seamless capture)
+- **Consistent manifest spec naming** — `manifest-project-spec.md` and `manifest-ecosystem-spec.md`
+
+### Updater (New Tool)
+
+#### Added
+- **Update command** (`/update-tools`) — fetch latest tool files from GitHub with a single command
+- **Version tracking** — `version.json` in each tool's references directory
+- **Migration support** — automatic handling of file renames, deletions, and breaking changes
+- **Selective updates** — detects which tools are installed and updates only those
+
+### General
+
+#### Added
+- **Changelog** — track meaningful changes across releases
+- **Release command** (`/release`) — coordinate changelog generation and GitHub releases
 
 ---
 

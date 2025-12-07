@@ -177,7 +177,7 @@ This section is best developed through `/qino:explore` **inhabit mode** — step
 ---
 
 ### **5. Ecosystem Integration**
-This is the concept's **place in the constellation** — how it relates to other concepts functionally, what flows between them, where it sits in the user's journey.
+This is the concept's **place in the ecology** — how it relates to other concepts functionally, what flows between them, where it sits in the user's journey.
 
 Unlike Glowing Connections (thematic resonance), this section captures *functional relationships* — inputs, outputs, what happens before and after.
 

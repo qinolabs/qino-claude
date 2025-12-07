@@ -110,7 +110,7 @@ The release notes should be the changelog entries for this version (concise, lin
 
 ### Qino Concept
 - Ecosystem-level thinking with `∴` capture pattern
-- New `/qino:ecosystem` command for constellation view
+- New `/qino:ecosystem` command for ecological view
 - Simplified home command
 
 ### Dev Assistant

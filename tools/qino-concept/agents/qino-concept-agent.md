@@ -107,7 +107,7 @@ Each concept.md follows this template:
 | 2 | Glowing Connections | What makes this feel alive? (internal glow + relational glow) |
 | 3 | Primary Surfaces | Where does this touch the user's actual day? |
 | 4 | Tone & Communication | What's the voice? (tone, restraint, rhythm) — grows through inhabit mode |
-| 5 | Ecosystem Integration | How does this fit the constellation? (inputs / outputs) |
+| 5 | Ecosystem Integration | How does this fit the ecology? (inputs / outputs) |
 | 6 | Scoped Features | What's the irreducible seed? |
 | 7 | Build Plan | What stepping stones lead to code? |
 
@@ -327,7 +327,7 @@ When user wants to see the whole:
 - "what's across all concepts?"
 
 Ecosystem shows:
-- The constellation of concepts
+- The ecology of concepts
 - Accumulated ecosystem notes (if any)
 - Grounded suggestions for what to explore
 
