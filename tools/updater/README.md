@@ -8,7 +8,7 @@ Keep your qino-claude tools up to date with a single command.
 
 Once you've installed qino-claude tools in a project, this utility lets you update them to the latest versions from GitHub without manual copying.
 
-Run `/update-tools` and Claude handles the rest — checking versions, applying migrations, and fetching latest files.
+Run `/update-qino-tools` and Claude handles the rest — checking versions, applying migrations, and fetching latest files.
 
 ---
 
@@ -17,10 +17,10 @@ Run `/update-tools` and Claude handles the rest — checking versions, applying 
 Copy the command file to your project:
 
 ```
-commands/update-tools.md  →  your-project/.claude/commands/update-tools.md
+commands/update-qino-tools.md  →  your-project/.claude/commands/update-qino-tools.md
 ```
 
-That's it. The `/update-tools` command is now available.
+That's it. The `/update-qino-tools` command is now available.
 
 ---
 
@@ -29,7 +29,7 @@ That's it. The `/update-tools` command is now available.
 In Claude Code:
 
 ```
-/update-tools
+/update-qino-tools
 ```
 
 ### What happens

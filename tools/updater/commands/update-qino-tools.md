@@ -142,6 +142,12 @@ Reminder - manual action needed:
   - Update concept files: change 'start_command' to 'home_command'
 ```
 
+**Always include this note:**
+
+```
+Note: The updated commands will be available when you start a new conversation.
+```
+
 ## Notes
 
 - Files are fetched from the `main` branch of qinolabs/qino-claude

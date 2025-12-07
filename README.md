@@ -62,11 +62,11 @@ All tools add files to your project's `.claude/` directory. They're namespaced t
 
 After initial installation, you can update all tools to the latest versions with a single command.
 
-**Setup:** Copy [tools/updater/commands/update-tools.md](tools/updater/commands/update-tools.md) to your project's `.claude/commands/update-tools.md`
+**Setup:** Copy [tools/updater/commands/update-qino-tools.md](tools/updater/commands/update-qino-tools.md) to your project's `.claude/commands/update-qino-tools.md`
 
 **Usage:**
 ```bash
-/update-tools
+/update-qino-tools
 ```
 
 This fetches all 32 tool files from GitHub and overwrites your local copies. Project-specific files (guides, concepts, generated commands) are not affected.

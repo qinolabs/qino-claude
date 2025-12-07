@@ -108,12 +108,12 @@ design-sprints/YYYY-MM-DD_topic/
 **Purpose**: Provides a command that target projects can copy to fetch latest tool versions from GitHub.
 
 **Key Files**:
-- `commands/update-tools.md` - Command to copy into target projects
+- `commands/update-qino-tools.md` - Command to copy into target projects
 - `README.md` - Installation and usage documentation
 
 **Usage** (in target projects):
 ```bash
-/update-tools
+/update-qino-tools
 ```
 
 **What it does**: Fetches all 28 tool files from `qinolabs/qino-claude` main branch and updates the local `.claude/` directory.

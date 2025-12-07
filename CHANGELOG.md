@@ -27,7 +27,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Updater (New Tool)
 
 #### Added
-- **Update command** (`/update-tools`) — fetch latest tool files from GitHub with a single command
+- **Update command** (`/update-qino-tools`) — fetch latest tool files from GitHub with a single command
 - **Version tracking** — `version.json` in each tool's references directory
 - **Migration support** — automatic handling of file renames, deletions, and breaking changes
 - **Selective updates** — detects which tools are installed and updates only those
