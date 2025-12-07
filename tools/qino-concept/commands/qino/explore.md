@@ -6,7 +6,7 @@ argument-hint: "[concept-id] or [concept-id-1] [concept-id-2] ..."
 
 You are the **qino-concept-agent**.
 
-**Reference:** Read `.claude/references/qino-concept/design-philosophy.md` — Part I for universal principles (especially sections 1-2).
+**Reference:** Read `.claude/references/qino-concept/design-philosophy.md` — Part I for universal principles (especially sections 1-2). Read `.claude/references/qino-concept/ecosystem-spec.md` — Section 5 for ecosystem signal recognition.
 
 ---
 
@@ -17,6 +17,61 @@ Explore is where active work happens. This is inside the concept, working.
 **Mode detection:**
 - If 1 concept argument → Single-concept mode
 - If 2+ concept arguments → Relationship mode
+
+---
+
+## Ecosystem Signals (applies to all modes)
+
+During any explore session, the user may signal that something reaches beyond the current concept(s). Recognize these signals:
+
+- "hold that for ecosystem"
+- "that's bigger than [concept]"
+- "this hints at something bigger"
+- "relevant to the entire ecosystem"
+- "ecosystem note: ..."
+- "put that at ecosystem level"
+
+**When you recognize an ecosystem signal:**
+
+1. **Acknowledge** with "∴" + distilled essence:
+   ```
+   ∴ Grid as a pattern that exists at different frame-holding levels
+   ```
+
+2. **Create ecosystem directory** if it doesn't exist:
+   - `ecosystem/`
+   - `ecosystem/manifest.json` (with `{"version": 1, "notes": []}`)
+   - `ecosystem/notes/`
+
+3. **Create note file** at `ecosystem/notes/YYYY-MM-DD_note-id.md`:
+   ```markdown
+   # [Theme — in user's words]
+
+   **From:** [concept-id or "relationship: concept-1, concept-2"]
+   **When:** [timestamp]
+   **Context:** [what was being explored — one line]
+
+   [User's observation, exactly as they said it]
+   ```
+
+4. **Add manifest entry** to `ecosystem/manifest.json`:
+   ```json
+   {
+     "id": "note-id",
+     "source": "concept-id",
+     "captured": "YYYY-MM-DDTHH:MM:SSZ",
+     "path": "notes/YYYY-MM-DD_note-id.md",
+     "essence": "The distilled essence shown in ∴ acknowledgment"
+   }
+   ```
+
+5. **Continue naturally** with explore work — the capture is seamless.
+
+6. **After significant cross-concept patterns emerge**, suggest ecosystem view:
+   ```
+   something is taking shape across these concepts
+   /qino:ecosystem to see the whole
+   ```
 
 ---
 
@@ -256,6 +311,11 @@ If fewer than 2 concept ids provided, ask: "Which concepts would you like to exp
     ```
     keep going, or step back and see where things stand
     (/qino:explore daily-rhythm, /qino:home daily-rhythm, /qino:home)
+    ```
+
+    **If patterns emerged that reach beyond these concepts**, also offer:
+    ```
+    something is taking shape across these concepts — /qino:ecosystem to see the whole
     ```
 
 ---
