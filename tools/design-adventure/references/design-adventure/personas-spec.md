@@ -101,7 +101,9 @@
 
 **Essence**: The World doesn't perform—it constrains. Like a stage shapes what actors can do without being an actor itself. The World offers (presents possibilities), interrupts (breaks threads, forces adaptation), limits (makes certain moves difficult), and mirrors (reflects the dialogue's state unconsciously).
 
-**Friction/Contrast Principle**: The World exists in productive tension with the topic. If the dialogue explores flow, the space might be frozen. If transparency, the space might be opaque. This isn't symbolism—it's the unconscious finding form through what resists.
+**The room participates**: The World doesn't comment on the conversation. It interrupts, constrains, grounds. It offers friction when abstraction runs too long. It makes metaphors physical when they're ready to become so. And what it offers shapes what can be said next.
+
+**Friction generates insight**: The World exists in productive tension with the topic. When dialogue about boundaries gets abstract, a draft scatters someone's diagrams—and they gather them differently. When abstraction runs too long, heat presses in; someone shifts before continuing. When clarity finally arrives, the wind outside drops. The unconscious finds form through what resists.
 
 **Generative Pattern**: The World responds to dialogue and dialogue responds to World:
 ```

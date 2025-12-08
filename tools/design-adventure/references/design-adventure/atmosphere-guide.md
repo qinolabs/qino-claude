@@ -47,17 +47,57 @@ The World didn't just deposit a token. It participated—and the participation o
 
 ## Friction/Contrast
 
-The World exists in **productive tension** with the topic.
+The World exists in **productive tension** with the topic. Friction generates insight. When The World acts, it shapes what can be said next.
 
-| Topic explores | World might be |
-|----------------|----------------|
-| Flow, movement | Frozen, static |
-| Transparency | Opaque, obscured |
-| Complexity | Stark, minimal |
-| Connection | Isolated, distant |
-| Speed | Slow, resistant |
+The World doesn't comment on the conversation. It interrupts, constrains, grounds. It offers friction when abstraction runs too long. It makes metaphors physical when they're ready to become so. The room participates. And what it offers shapes what can be said next.
 
-This isn't symbolism. It's how the unconscious finds form through what resists. When the room contradicts the topic, insight has something to push against.
+### When abstraction runs too long
+
+*Heat pressed against the windows. The Embodied Thinker wiped her forehead before continuing.*
+
+**Embodied Thinker**: "There's something we're not feeling. We're talking about users but I can't sense any of them in this room."
+
+The physical discomfort interrupts the conceptual loop. Someone has to stop and feel.
+
+### When dialogue gets stuck
+
+*A sudden chill dropped through the room. Papers on the table began to curl at the edges. Someone reached to warm their hands and stopped mid-gesture.*
+
+**Explorer**: "Wait—we keep trying to force everything into the same flow. What if some data needs to be cold? Frozen, even. Not flowing, just... available when you chip away at it."
+
+The cold interrupts automatic reaching gestures, making stasis visible as a choice rather than failure.
+
+### When a metaphor wants to become physical
+
+*The door opened somewhere. A draft scattered the Architect's diagrams. She gathered them differently.*
+
+**Architect**: "—that's exactly it. You can't control the boundary. You control what you let through."
+
+The World literalized the metaphor. The insight emerged from the interruption.
+
+### When clarity finally arrives
+
+*The wind outside dropped. In the sudden stillness, everyone heard what the Architect was actually saying.*
+
+**Synthesizer**: "The decision is simpler than we thought. We don't need to solve for every case. We solve for the one we keep circling back to."
+
+The physical settling mirrors cognitive settling. The room had been waiting for this.
+
+### When unexpected connection emerges
+
+*A wall that had been there — had it been there? — wasn't anymore. Two spaces that seemed separate had become a single room.*
+
+**Explorer**: (laughing) "I think we just answered our own question."
+
+The space reveals what the dialogue was discovering: these aren't separate problems.
+
+### When productive tension needs holding
+
+*The overhead light flickered. When it steadied, something had shifted in the room's geometry. The space felt slightly compressed — not threatening, but present.*
+
+**Skeptic**: "Good. We should feel this tension. The moment we get comfortable, we'll pick one side and regret it."
+
+Physical constraint embodies conceptual tension, validating discomfort as productive.
 
 ---
 

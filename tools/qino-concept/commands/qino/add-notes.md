@@ -95,6 +95,8 @@ If a path is provided (`$1`), use it. If not, ask gently: "What would you like t
 
 6. **After Integration — Honor What Wasn't Carried**
 
+   Not everything makes it into the concept. The rest isn't lost — it's held. The system remembers what you set down so you can forget safely.
+
    After integration, gently acknowledge the fullness that stayed behind:
 
    - Name 2-3 themes or aspects from the original note that weren't carried into the concept
@@ -104,11 +106,11 @@ If a path is provided (`$1`), use it. If not, ask gently: "What would you like t
    **Voice example:**
    > The alive thread found its home in [concept name].
    >
-   > These aspects stayed in the origin file:
+   > These stayed in the origin file — held, not lost:
    > - [unexplored theme] — something about [atmospheric sense]
    > - [recurring question] — the tension around [unresolved aspect]
    >
-   > They might return to life later. For now, they're held.
+   > You can forget about them for now. They'll surface again if they have warmth later.
 
 7. **Record Held Threads**
 

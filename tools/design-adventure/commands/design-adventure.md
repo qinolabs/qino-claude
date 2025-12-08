@@ -17,6 +17,8 @@ Run a multi-perspective design exploration. Seven personas explore your challeng
 
 ## What You'll Get
 
+When the adventure finishes, you enter the room after. Chairs still warm. Ideas still in the air. You weren't there for the heat of debate. You arrive for the clarity that followed.
+
 A design adventure produces four files in `design-adventures/YYYY-MM-DD_slug/`:
 
 - **enter.md** — Atmospheric navigation with question previews and dialogue excerpts
@@ -53,7 +55,7 @@ The adventure will surface domain-specific questions like:
 - "What if peripheral vision is the key?"
 - "Is movement the default or the exception?"
 
-Different runs produce different questions—this is the system working.
+Different runs surface different questions. This isn't noise to filter out—it's the system showing you what matters in this moment, for this challenge, given what these perspectives noticed.
 
 ---
 

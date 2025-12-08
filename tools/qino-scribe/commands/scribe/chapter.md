@@ -195,8 +195,6 @@ On confirmation:
    ```
    chapter NNN written to the chronicle
    world updated
-
-                                        /scribe:chronicle to see the whole
    ```
 
 ---

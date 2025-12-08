@@ -124,16 +124,13 @@ Write like a children's book — simple language that holds depth.
 
 ---
 
-## 5. How Ecosystem Events Become Story
+## 5. Walkable Abstraction
 
-| Ecosystem Event | Story Expression |
-|-----------------|------------------|
-| New concept arrives | A new location is discovered, or a traveler appears from elsewhere |
-| Concept deepens | The location reveals hidden rooms, or the weather shifts to show new light |
-| Connection emerges | A path appears between places, or two characters meet |
-| Ecosystem pattern surfaces | The season changes, the tides shift, the land reveals its shape |
-| Held thread | A door glimpsed, a rumor of distant lands, something waiting in fog |
-| Concept abandoned | A place overgrown, a character who went silent, ruins |
+Any element from any level of abstraction can become any story element — character, location, weather, event, object, rumor. The scribe doesn't map one-to-one. The scribe weaves.
+
+A specific feature might become a character. An ecosystem-wide pattern might become weather that affects multiple locations. A connection between concepts might become a shared object that belongs to both places.
+
+See `voice-guide.md` section 7 for full examples of how different ecosystem events become story.
 
 ---
 
