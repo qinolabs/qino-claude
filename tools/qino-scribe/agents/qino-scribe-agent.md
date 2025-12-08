@@ -130,6 +130,7 @@ Write so a child could follow, but an adult recognizes the mystery.
 - `chronicle/manifest.json` for chapter index and last git_ref
 - `chronicle/world.md` for living world-state
 - `git log --oneline [last_ref]..HEAD` for commit history
+- `git diff [last_ref]..HEAD` for actual file changes (ground truth — commit messages may be incomplete)
 - `manifest.json` for concept changes
 - `ecosystem/manifest.json` for ecosystem notes
 

@@ -42,8 +42,20 @@ Gather what changed since last chapter:
 
 **Git layer:**
 ```bash
+# What commits happened (for context)
 git log --oneline [last_ref]..HEAD
+
+# What actually changed (the ground truth)
+git diff [last_ref]..HEAD --stat        # Overview of files changed
+git diff [last_ref]..HEAD               # Full diff for understanding
 ```
+
+**Reading the diff:**
+- Look for what was added (new ideas, new structure)
+- Look for what was removed (what was let go)
+- Look for what was modified (what deepened or shifted)
+- The diff is ground truth — commit messages may be incomplete
+- If `chronicle/world.md` appears in the diff, pay attention — the world itself may have been updated outside of normal chapter flow
 
 **Manifest layer:**
 - Read current `manifest.json`
@@ -54,7 +66,7 @@ git log --oneline [last_ref]..HEAD
 - Note: new ecosystem notes
 
 **Content layer:**
-- Read concept files that changed
+- Read concept files that changed (informed by the diff)
 - Note: what deepened, what arrived
 
 ---
