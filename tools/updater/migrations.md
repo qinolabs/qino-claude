@@ -24,8 +24,30 @@ Initial release. No migrations needed.
 
 ---
 
+## v0.4.0
+
+**Summary**: Qino Concept unified notes system with multi-reference anchoring.
+
+**Delete**:
+- `.claude/commands/qino/add-notes.md` (renamed to import.md)
+- `.claude/references/qino-concept/manifest-ecosystem-spec.md` (deprecated, merged into manifest-project-spec.md)
+
+**Rename**:
+- `/qino:add-notes` → `/qino:import`
+
+**New**:
+- `.claude/commands/qino/note.md` — quick observation capture
+- `/qino:note` command for capturing thoughts without leaving current context
+
+**User action**:
+- Use `/qino:import` instead of `/qino:add-notes` for bringing external material into concepts
+- Use `/qino:note` to capture quick observations anchored to concepts or ecosystem
+- If you have existing ecosystem notes in `ecosystem/manifest.json`, migrate them to the unified `manifest.json` (see manifest-project-spec.md Section 5-6)
+
+---
+
 <!--
-## v1.1.0
+## v1.1.0 (template)
 
 Example migration entry for future reference:
 

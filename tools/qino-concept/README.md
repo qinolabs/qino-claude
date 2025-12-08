@@ -23,7 +23,7 @@ If you haven't used Claude Code before:
 2. Run `claude` in your terminal to start a session
 3. You interact by typing messages — and Claude can run commands, read files, and help you build things
 
-This tool adds five commands to Claude Code that help with concept development.
+This tool adds six commands to Claude Code that help with concept development.
 
 ---
 
@@ -47,14 +47,17 @@ your-project/
       qino/
         home.md
         explore.md
-        add-notes.md
+        import.md
+        note.md
         init.md
+        ecosystem.md
     agents/
       qino-concept-agent.md
     references/
       qino-concept/
         concept-spec.md
         manifest-project-spec.md
+        ecosystem-spec.md
         design-philosophy.md
 ```
 
@@ -79,7 +82,7 @@ This creates a simple structure — a place for concepts to live.
 If you have existing notes about an app idea:
 
 ```
-/qino:add-notes ~/path/to/your/notes.md
+/qino:import ~/path/to/your/notes.md
 ```
 
 The agent will read your notes, ask what part feels alive, and help you place it.
@@ -108,7 +111,7 @@ The agent asks what feels alive and helps you develop that thread — expanding,
 
 ---
 
-## The five commands
+## The six commands
 
 | Command | What it does |
 |---------|--------------|
@@ -117,7 +120,8 @@ The agent asks what feels alive and helps you develop that thread — expanding,
 | `/qino:explore concept-name` | Actively work with a concept — deepen, expand, or step into moments to find the voice |
 | `/qino:explore concept-a concept-b` | Explore connections between concepts |
 | `/qino:ecosystem` | See the whole ecology — patterns and notes that reach beyond individual concepts |
-| `/qino:add-notes path` | Bring in external material — a file or folder |
+| `/qino:import path` | Bring in external material — a file or folder |
+| `/qino:note` | Capture a quick observation anchored to a concept or ecosystem |
 | `/qino:init` | Set up a new workspace (one-time) |
 
 ---
@@ -157,7 +161,7 @@ You don't fill these out in order. The agent helps you develop whichever section
 ```
 /qino:init
 
-/qino:add-notes ~/Documents/app-idea.md
+/qino:import ~/Documents/app-idea.md
 
 /qino:home
 # see what emerged, follow a suggestion
@@ -186,7 +190,7 @@ After working for a while, your workspace looks like:
 
 ```
 your-workspace/
-  manifest.json              # keeps track of concepts
+  manifest.json              # keeps track of concepts and notes
   concepts/
     my-app-idea/
       concept.md             # the developing concept
@@ -195,9 +199,8 @@ your-workspace/
     another-idea/
       concept.md
       origins/
-  ecosystem/                 # thoughts that reach beyond individual concepts
-    manifest.json
-    notes/
+  notes/                     # observations anchored to concepts or ecosystem
+  ecosystem.md               # woven patterns (created when needed)
   .claude/references/qino-concept/   # reference files (you can ignore these)
 ```
 

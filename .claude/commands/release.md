@@ -1,43 +1,97 @@
 ---
 description: Generate changelog, finalize version, create GitHub release
-allowed-tools: Bash, Read, Edit, Write
+allowed-tools: Bash, Read, Edit, Write, Glob
 argument-hint: "<version>"
 ---
 
 Coordinate changelog generation and release creation for qino-claude.
 
+## Core Principle: Manifest-Driven Discovery
+
+All tool discovery uses `tools/manifest.json` as the source of truth. No hardcoded tool lists or paths.
+
 ## Task
 
-When ready to release, this command:
-1. Analyzes changes since last release
-2. Generates meaningful changelog entries
-3. Updates CHANGELOG.md with the new version
-4. Creates the GitHub release
+When ready to release:
+1. Validate manifest consistency
+2. Detect which tools changed since last release
+3. Generate meaningful changelog entries
+4. Update CHANGELOG.md, version.json files, and READMEs
+5. Create the GitHub release
+
+---
 
 ## Steps
 
-### 1. Validate
+### 1. Validate Prerequisites
 
-- Argument is required (e.g., `v0.2.0`)
-- Check git status is clean
-- Get the last release tag: `git describe --tags --abbrev=0`
+**Required:**
+- Argument provided (e.g., `v0.4.0`)
+- Git status is clean: `git status --porcelain`
+- Last release tag available: `git describe --tags --abbrev=0`
 
-### 2. Analyze Changes
+### 2. Validate Manifest Consistency
 
-Run:
+Read `tools/manifest.json` and check for drift:
+
+**Check 1: Files in manifest exist on disk**
 ```bash
-git log --oneline <last-tag>..HEAD
-git diff --stat <last-tag>..HEAD
+# For each file.src in manifest, verify it exists
 ```
 
-For each tool with changes, read the affected files to understand what actually changed — not just commit messages.
+**Check 2: Tool directories match manifest entries**
+```bash
+ls -d tools/*/  # Get actual tool directories
+# Compare against manifest.tools keys
+```
 
-### 3. Generate Changelog Entries
+**Check 3: Discover unmapped files**
+- Commands: `tools/<tool>/commands/**/*.md`
+- Agents: `tools/<tool>/agents/*.md`
+- References: `tools/<tool>/references/**/*`
 
-For each tool that changed:
-- What capabilities were added?
-- What behavior changed?
-- What was fixed?
+If drift detected:
+```
+Manifest drift detected:
+
+  Missing from disk:
+    - tools/qino-concept/commands/qino/add-notes.md (in manifest)
+
+  Missing from manifest:
+    - tools/qino-concept/commands/qino/import.md
+    - tools/qino-concept/commands/qino/note.md
+
+Fix manifest before continuing? [This is blocking]
+```
+
+**WAIT** for confirmation, then fix manifest.
+
+### 3. Detect Changed Tools
+
+```bash
+git diff --name-only <last-tag>..HEAD
+```
+
+Group changed files by tool directory (`tools/<tool-name>/...`).
+
+From manifest, identify which tools have changes.
+
+### 4. Analyze Changes Per Tool
+
+For each changed tool:
+
+```bash
+git log --oneline <last-tag>..HEAD -- tools/<tool>/
+git diff <last-tag>..HEAD -- tools/<tool>/
+```
+
+Read the affected files to understand what actually changed — not just commit messages. Look for:
+- New commands or capabilities
+- Changed behavior
+- Bug fixes
+- Removed features
+
+### 5. Generate Changelog Entries
 
 Write entries that:
 - Describe changes in terms users understand
@@ -45,22 +99,34 @@ Write entries that:
 - Highlight the "why" not just "what"
 - Match the voice of existing CHANGELOG.md
 
-### 4. Read Current CHANGELOG.md
+**Section structure:**
+```markdown
+### Tool Name
 
-Find the `## [Unreleased]` section. The new version will replace it.
+#### Added
+- New capability description
 
-### 5. Propose Changes
+#### Changed
+- Behavior change description
+
+#### Fixed
+- Bug fix description
+
+#### Removed
+- Removed feature description
+```
+
+### 6. Propose Changelog
+
+Read current `CHANGELOG.md`. The new version replaces `## [Unreleased]`.
 
 Show:
 ```
-## [0.2.0] - 2024-12-07
+## [0.4.0] - YYYY-MM-DD
 
 ### Qino Concept
 
 #### Added
-- ...
-
-#### Changed
 - ...
 
 ---
@@ -71,75 +137,95 @@ Ready to update?
 
 **WAIT** for confirmation.
 
-### 6. Update CHANGELOG.md
+### 7. Update CHANGELOG.md
 
 Replace `## [Unreleased]` section with the versioned section.
 Add new empty `## [Unreleased]` at top.
 
-### 6b. Bump Tool Versions
+### 8. Bump Tool Versions
 
-For each tool that changed, update its `version.json`:
-
-**Location:** `tools/<tool-name>/references/<tool-name>/version.json`
+For each changed tool, check for version.json:
+```
+tools/<tool>/references/<tool>/version.json
+```
 
 **Version bump rules:**
 - **Patch** (1.0.0 → 1.0.1): Bug fixes, internal improvements
 - **Minor** (1.0.0 → 1.1.0): New features, capabilities added
 - **Major** (1.0.0 → 2.0.0): Breaking changes
 
-Show proposed version bumps and **WAIT** for confirmation before applying.
+Show proposed bumps:
+```
+Version bumps:
 
-### 6c. Update READMEs
+  qino-concept: 1.1.0 → 1.2.0 (minor - new note command)
+  design-adventure: 1.0.0 → 1.0.1 (patch - doc updates)
 
-For each tool with changes, review and update its README to reflect the latest state.
+Apply?
+```
 
-**Two types of content:**
+**WAIT** for confirmation.
 
-*Story sections* — tool descriptions, opening lines. These hold complexity and relational richness. Preserve their voice. Add new capabilities in a way that flows naturally with existing language.
+### 9. Update READMEs
 
-*Practical sections* — installation, setup, requirements. Keep these concise and clear. No extra words.
+Discover READMEs dynamically:
+```bash
+ls tools/*/README.md  # Tool READMEs
+ls README.md          # Main README
+```
+
+For each tool with changes, review its README:
+
+**Two content types:**
+
+*Story sections* — tool descriptions, opening lines. Preserve their voice. Add new capabilities naturally.
+
+*Practical sections* — installation, setup, requirements. Concise and clear.
 
 **Check for:**
-- **Capabilities**: Do documented features match what the tool now does?
-- **Commands**: Are command names and examples accurate?
-- **Migration**: If breaking changes affect users, add migration notes
+- Do documented features match current capabilities?
+- Are command names and examples accurate?
+- If breaking changes, add migration notes
 
-**READMEs:**
-- `README.md` (main)
-- `tools/dev-assistant/README.md`
-- `tools/design-adventure/README.md`
-- `tools/qino-concept/README.md`
-- `tools/updater/README.md`
+Show proposed README changes and **WAIT** for confirmation.
 
-Show proposed README changes and **WAIT** for confirmation before applying.
-
-### 7. Propose Release
+### 10. Propose Release
 
 Show:
 ```
 Ready to create release:
 
-  gh release create v0.2.0 --title "v0.2.0" --notes-file -
+Files to commit:
+  - CHANGELOG.md
+  - tools/manifest.json (if updated)
+  - tools/*/references/*/version.json (changed tools)
+  - README.md, tools/*/README.md (if updated)
 
-Release notes will be the changelog entries for this version.
+Commands:
+  git add <files>
+  git commit -m "Release v0.4.0"
+  git tag v0.4.0
+  git push && git push --tags
+  gh release create v0.4.0 --title "v0.4.0" --notes "..."
 
 Create release?
 ```
 
 **WAIT** for confirmation.
 
-### 8. Create Release
+### 11. Create Release
 
-If confirmed:
 ```bash
-git add CHANGELOG.md tools/*/references/*/version.json
-git commit -m "Release v0.2.0"
-git tag v0.2.0
+git add CHANGELOG.md tools/manifest.json tools/*/references/*/version.json README.md tools/*/README.md
+git commit -m "Release v0.4.0"
+git tag v0.4.0
 git push && git push --tags
-gh release create v0.2.0 --title "v0.2.0" --notes "..."
+gh release create v0.4.0 --title "v0.4.0" --notes "..."
 ```
 
-The release notes should be the changelog entries for this version (concise, linking to full CHANGELOG.md for details).
+Release notes should be concise changelog summary with link to full CHANGELOG.md.
+
+---
 
 ## Example Release Notes
 
@@ -147,19 +233,41 @@ The release notes should be the changelog entries for this version (concise, lin
 ## What's New
 
 ### Qino Concept
-- Ecosystem-level thinking with `∴` capture pattern
-- New `/qino:ecosystem` command for ecological view
-- Simplified home command
+- Unified notes with multi-reference anchoring
+- New `/qino:note` command for quick observation capture
+- Renamed `/qino:add-notes` to `/qino:import`
 
-### Dev Assistant
-- Minor documentation improvements
+### Updater
+- Manifest-driven file discovery
 
 See [CHANGELOG.md](./CHANGELOG.md) for full details.
 ```
 
+---
+
+## Manifest Update Guide
+
+When fixing manifest drift, update `tools/manifest.json`:
+
+**Adding a new file:**
+```json
+{"src": "tools/qino-concept/commands/qino/note.md", "dest": "commands/qino/note.md"}
+```
+
+**Renaming a file:**
+- Remove old entry
+- Add new entry with correct path
+
+**Removing a file:**
+- Remove entry from manifest
+- Consider adding to `migrations.md` if users have the old file
+
+---
+
 ## Do NOT
 
-- Create release without showing changelog first
+- Release with manifest drift (blocks release)
+- Skip manifest validation
+- Hardcode tool or file lists
 - Skip confirmation steps
-- Include internal/trivial changes
 - Proceed if git status is dirty

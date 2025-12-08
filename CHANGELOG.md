@@ -10,6 +10,38 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.4.0] - 2025-12-08
+
+### Qino Concept
+
+#### Added
+- **New `/qino:note` command** — capture quick observations without leaving context; notes must be anchored to at least one concept or ecosystem before saving
+- **Multi-reference notes** — one note can be relevant to multiple concepts and ecosystem simultaneously; each reference has its own scope, context, and status
+- **Note surfacing during explore** — agent offers relevant notes when user's alive-thread echoes a note's theme
+- **Reference removal flow** — during exploration, agent can suggest removing stale references with user confirmation
+- **The Mirror principle** — expanded design philosophy: dialogue as interface for encountering yourself
+
+#### Changed
+- **Unified notes structure** — all notes now live in single `notes/` directory at project root; manifest version bumped to 2
+- **Renamed `/qino:add-notes` to `/qino:import`** — clearer distinction between importing external material and capturing observations
+- **Manifest consolidation** — ecosystem notes merged into root `manifest.json`; separate ecosystem manifest deprecated
+- **Descriptive status** — note reference status is now natural language (not enum), enabling richer agent interpretation
+
+#### Removed
+- **Separate ecosystem manifest** — `ecosystem/manifest.json` deprecated; notes now use unified structure with `"ecosystem"` as reserved scope value
+
+### Updater
+
+#### Changed
+- **Migration entry for v0.4.0** — documents the add-notes→import rename and new note command
+
+### General
+
+#### Changed
+- **Release command now manifest-driven** — validates manifest consistency before release, blocks on drift, discovers tools dynamically instead of using hardcoded lists
+
+---
+
 ## [0.3.0] - 2025-12-07
 
 ### Qino Scribe (New Tool)

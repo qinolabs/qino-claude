@@ -5,7 +5,7 @@
 Tools for working with ideas in [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
 
 <details>
-<summary><strong>Roots: Gregory Bateson, Nora Bateson, and the Pattern That Connects</strong></summary>
+<summary><strong>Companions on the Path: The Pattern That Connects</strong></summary>
 
 ### The Young Anthropologists and the Question of Fascism
 
@@ -105,7 +105,8 @@ Your perceiving is the process. The agent isn't extracting information from you 
 /qino:init
 /qino:home
 /qino:explore concept-name
-/qino:add-notes path/to/notes.md
+/qino:import path/to/notes.md
+/qino:note
 /qino:ecosystem
 ```
 
