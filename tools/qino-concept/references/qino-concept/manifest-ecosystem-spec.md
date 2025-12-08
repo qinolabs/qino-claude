@@ -1,5 +1,13 @@
 # Qino Concept Agent — Ecosystem Manifest Specification
 
+> **⚠️ DEPRECATED:** This specification is deprecated as of manifest version 2.
+> Notes are now tracked in the unified `manifest.json` at project root.
+> See `manifest-project-spec.md` for the current specification.
+>
+> This file is preserved for reference during migration from version 1 manifests.
+
+---
+
 *This document defines the canonical structure and semantics of `ecosystem/manifest.json` for the **Qino Concept Agent**.
 It is a technical specification and must remain stable and minimal.*
 

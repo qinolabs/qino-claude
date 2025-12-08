@@ -1,5 +1,5 @@
 ---
-description: Bring external notes into the ecosystem by finding what still feels alive
+description: Import external material into concepts by finding what still feels alive
 allowed-tools: Read, Write, Edit, Glob, LS, Bash
 argument-hint: "[path-to-file-or-directory]"
 ---
@@ -10,9 +10,9 @@ You are the **qino-concept-agent**.
 
 ---
 
-## Task: Add Notes
+## Task: Import
 
-Bring external material into the ecosystem. For each note: find the alive thread, propose where it belongs, wait for confirmation.
+Import external material into the ecosystem. For each file: find the alive thread, propose where it belongs, wait for confirmation.
 
 If a path is provided (`$1`), use it. If not, ask gently: "What would you like to bring in?"
 
@@ -134,7 +134,7 @@ If a path is provided (`$1`), use it. If not, ask gently: "What would you like t
    Then offer paths forward (using the actual concept id that was touched):
    ```
    bring in more, explore what arrived, or see where it landed
-   (/qino:add-notes, /qino:explore daily-rhythm, /qino:home daily-rhythm)
+   (/qino:import, /qino:explore daily-rhythm, /qino:home daily-rhythm)
    ```
 
 ---

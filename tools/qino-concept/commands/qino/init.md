@@ -22,6 +22,7 @@ Steps:
    [workspace]/
      manifest.json
      concepts/
+     notes/
      maps/
      .claude/
        references/
@@ -41,8 +42,9 @@ Steps:
    Follow the schema defined in `.claude/references/qino-concept/manifest-project-spec.md`:
    ```json
    {
-     "version": 1,
-     "concepts": []
+     "version": 2,
+     "concepts": [],
+     "notes": []
    }
    ```
 
@@ -51,15 +53,16 @@ Steps:
    Your ecosystem is ready.
 
    concepts/ — where ideas live
+   notes/ — where observations accumulate
    manifest.json — keeps track
 
    ─────
 
    from here
 
-     bring in some notes, or just settle in
+     bring in some material, capture a thought, or just settle in
 
-                         (/qino:add-notes <path>, /qino:home)
+                         (/qino:import <path>, /qino:note, /qino:home)
    ```
 
 Do NOT:

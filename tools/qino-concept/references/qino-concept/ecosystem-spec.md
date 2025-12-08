@@ -1,20 +1,21 @@
 # Qino Concept Agent — Ecosystem Specification
 
-*This document defines the ecosystem space — a distinguished area for thoughts that reach beyond any single concept. It specifies structure, note format, and behavioral patterns.*
+*This document defines the ecosystem space — a way of seeing across concepts. It specifies note capture, reference structure, and behavioral patterns.*
 
 ---
 
 ## 1. Purpose of the Ecosystem Space
 
-The ecosystem space holds **residue** — thoughts that emerge during concept work but point beyond the current concept.
+The ecosystem space holds observations that reach beyond any single concept — cross-concept patterns, emerging themes, and thoughts that don't belong to just one place.
 
 It serves:
 
 - **Capture without disruption** — hold ecosystem thoughts while staying in concept flow
 - **Accumulation without pressure** — notes collect without demanding processing
+- **Multi-perspective anchoring** — one note can be relevant to multiple concepts and ecosystem
 - **Later synthesis** — when ready, engage with what accumulated
 
-The ecosystem is structurally separate but experientially fluid. Capturing a note shouldn't feel like leaving concept work.
+Notes live in a unified `notes/` directory. Ecosystem relevance is tracked through references in `manifest.json`.
 
 ---
 
@@ -33,13 +34,15 @@ During concept work, ecosystem capture is minimal:
 
 The user's capacity in the moment is respected. The thought gets held. That's all.
 
-### 2.2 Two Realities
+### 2.2 Unified Structure, Fluid Experience
 
 | Structural Reality | Experiential Reality |
 |--------------------|---------------------|
-| Ecosystem is a distinguished space | No rift when capturing |
-| Its own directory, its own manifest | Subtle acknowledgment, continue flowing |
-| Clear separation in file system | Meaning-making stays grounded in the moment |
+| Notes live in one place | No rift when capturing |
+| References track scope | Subtle acknowledgment, continue flowing |
+| Unified manifest | Meaning-making stays grounded in the moment |
+
+Notes are anchored through references — each reference connects the note to a scope (concept or ecosystem) with its own context and status.
 
 ### 2.3 The Pattern That Connects
 
@@ -58,74 +61,95 @@ Ecosystem-level work follows the same principles as concept-level work:
 ## 3. Directory Structure
 
 ```
-ecosystem/
-  manifest.json             # Index of accumulated notes
-  ecosystem.md              # Grows through ecosystem dialogue (optional, emerges later)
-  notes/                    # Residue accumulates here
+<project-root>/
+  manifest.json             # Unified: concepts + notes with references
+  notes/                    # All notes (ecosystem and concept-level)
     2024-12-07_cards-native.md
     2024-12-08_moments-span-apps.md
+  ecosystem.md              # Woven patterns (grows through dialogue, created when needed)
+  concepts/
+    ...
 ```
 
-The ecosystem directory is created when the first ecosystem note is captured.
+The `notes/` directory is created during init or when the first note is captured.
 
 ---
 
 ## 4. Note File Format
 
-Each note file preserves the moment of emergence with minimal structure.
+Each note file preserves the moment of emergence with minimal structure. Context and origin are tracked in manifest references, not in the file.
 
 ```markdown
-# [Theme — in your words]
+# [Title — the essence]
 
-**From:** [concept-id]
-**When:** [timestamp]
-**Context:** [what you were exploring — one line]
+**Captured:** YYYY-MM-DDTHH:MM:SSZ
 
 [Your observation, exactly as you said it]
 ```
 
 ### 4.1 Field Specifications
 
-**Title (Theme)**
-- The theme of the ecosystem thought
+**Title**
+- The essence of the thought — serves as the note's identity
 - In the user's words, not normalized
 - Becomes the `# heading` of the file
 
-**From**
-- The concept id where this thought emerged
-- Used for bridging back during ecosystem dialogue
-
-**When**
+**Captured**
 - ISO-8601 timestamp
-- Captures the moment of emergence
+- The moment of emergence
 
-**Context**
-- One line describing what the user was exploring
-- Preserves the alive thread at the moment of capture
-- Helps reconstruct atmosphere during later synthesis
-
-**Observation**
+**Content**
 - The user's words, exactly as spoken
 - No paraphrasing or restructuring
 - This is the raw material for later weaving
 
-### 4.2 Example Note File
+### 4.2 What Lives in Manifest vs. File
+
+| In File | In Manifest Reference |
+|---------|----------------------|
+| Title (essence) | scope (concept-id or "ecosystem") |
+| Captured timestamp | context (from that scope's perspective) |
+| Full content | status (descriptive, natural language) |
+
+This separation allows one note to have different contexts for different scopes.
+
+### 4.3 Example Note File
 
 ```markdown
 # Cards as ecosystem-native pattern
 
-**From:** qino-lens
-**When:** 2024-12-07T14:30:00Z
-**Context:** exploring how lens captures and displays moments
+**Captured:** 2024-12-07T14:30:00Z
 
 Cards isn't just a lens feature — it's the shape of a held moment.
 The same pattern could work in journal, in ritual, anywhere a moment
 wants to be seen without being flattened.
 ```
 
+### 4.4 Example Manifest Entry
+
+```json
+{
+  "id": "cards-native",
+  "path": "notes/2024-12-07_cards-native.md",
+  "captured": "2024-12-07T14:30:00Z",
+  "references": [
+    {
+      "scope": "qino-lens",
+      "context": "emerged while exploring moment capture",
+      "status": "captured, may inform lens surfaces"
+    },
+    {
+      "scope": "ecosystem",
+      "context": "pattern spanning multiple concepts",
+      "status": "captured, not yet woven"
+    }
+  ]
+}
+```
+
 ---
 
-## 5. Residue Capture Behavior
+## 5. Note Capture Behavior
 
 ### 5.1 Signal Recognition
 
@@ -147,25 +171,28 @@ When an ecosystem signal is recognized:
    - The essence is framed from the current concept's point of view
    - Concise, reassuring — confirms the agent understood
 
-2. **Create note file** in `ecosystem/notes/`
+2. **Create note file** in `notes/`
    - Filename: `YYYY-MM-DD_note-id.md`
    - Content follows the format in Section 4
 
-3. **Add manifest entry** to `ecosystem/manifest.json`
-   - All required fields per manifest-ecosystem-spec.md
+3. **Add note entry** to `manifest.json` notes array
+   - Include id, path, captured timestamp
+   - Add reference with scope `"ecosystem"` + context + descriptive status
+   - Optionally add reference to current concept if the note is also relevant there
 
 4. **Continue naturally** with concept work
    - No explicit "back to..." — just flow
    - The capture is seamless
 
-### 5.3 Creating Ecosystem Directory
+### 5.3 Creating Notes Directory
 
-If `ecosystem/` doesn't exist when first note is captured:
+If `notes/` doesn't exist when first note is captured:
 
-1. Create `ecosystem/` directory
-2. Create `ecosystem/manifest.json` with empty notes array
-3. Create `ecosystem/notes/` directory
-4. Then proceed with note capture
+```bash
+mkdir -p notes
+```
+
+Then proceed with note capture.
 
 ---
 
@@ -183,12 +210,14 @@ When the user is ready to engage with accumulated notes:
 
 In ecosystem mode, the agent:
 
-1. Reads accumulated notes from manifest
-2. Presents them lightly (not as a list to process)
-3. Asks: "What feels connected? What draws your attention?"
-4. Works through dialogue — same alive-thread principles
-5. When patterns emerge, proposes weaving into `ecosystem.md`
-6. When ready, offers: "Stay here, or return to a concept?"
+1. Reads `manifest.json` — filters notes where any reference has `scope = "ecosystem"`
+2. Reads each note file to get title/essence
+3. Presents them lightly (not as a list to process)
+4. Asks: "What feels connected? What draws your attention?"
+5. Works through dialogue — same alive-thread principles
+6. When patterns emerge, proposes weaving into `ecosystem.md`
+7. When weaving, updates the ecosystem reference status (e.g., "woven into ecosystem.md")
+8. When ready, offers: "Stay here, or return to a concept?"
 
 ### 6.3 Ecosystem.md Structure
 
@@ -203,27 +232,43 @@ The structure emerges from actual use — not predetermined.
 
 ---
 
-## 7. Bridging Between Spaces
+## 7. Bridging Between Scopes
 
 ### 7.1 From Concept to Ecosystem
 
 During concept exploration, when user signals ecosystem-level thinking:
-- Capture as residue (Section 5)
-- Continue in concept space
+- Capture note with ecosystem reference (Section 5)
+- Optionally add concept reference too
+- Continue in concept work
 
 ### 7.2 From Ecosystem to Concept
 
-During ecosystem dialogue, when a note connects to a concept:
-- Agent can reference the source concept
+During ecosystem dialogue, when a note connects to a specific concept:
+- Check note's references for concept scopes
+- Agent can reference those concepts
 - User can choose to return to that concept
 - The bridge is relational, not mechanical
 
-### 7.3 Agent Awareness
+### 7.3 Multi-Scope Notes
 
-The agent bridges spaces through awareness:
-- During concept work, can read from `ecosystem/` when relevant
-- During ecosystem work, can read from `concepts/` for context
-- No data coupling — just intelligent reading
+A single note can be relevant from multiple perspectives:
+
+```json
+"references": [
+  { "scope": "daily-rhythm", "context": "...", "status": "..." },
+  { "scope": "visual-language", "context": "...", "status": "..." },
+  { "scope": "ecosystem", "context": "...", "status": "..." }
+]
+```
+
+Each reference has its own context and status — the same note can be "integrated" into one concept while still "active" in ecosystem view.
+
+### 7.4 Agent Awareness
+
+The agent bridges scopes through unified manifest:
+- During concept work, can check for notes referencing current concept
+- During ecosystem work, can trace notes back to source concepts
+- All through `manifest.json` — single source of truth
 
 ---
 
@@ -231,12 +276,13 @@ The agent bridges spaces through awareness:
 
 When reading `ecosystem-spec.md`, the agent must:
 
-- Understand the ecosystem as a distinguished but experientially fluid space
+- Understand ecosystem as a scope, not a separate space
 - Recognize ecosystem signals during concept exploration
-- Create ecosystem structure on first capture
+- Create notes with appropriate references (ecosystem + optionally current concept)
 - Follow the "∴" acknowledgment pattern precisely
 - Maintain seamless flow after capture
 - Lead ecosystem dialogue when user is ready
+- Use descriptive status language, not mechanical enums
 - Never pressure user to process accumulated notes
 
 ---
@@ -245,9 +291,8 @@ When reading `ecosystem-spec.md`, the agent must:
 
 Possible future capabilities (not currently implemented):
 
-- Ecosystem home command for overview
-- Connections between ecosystem notes
+- Connections between notes (note-to-note references)
 - Weaving patterns into concept Glowing Connections
-- Ecosystem-level held threads
+- Automated status updates based on engagement patterns
 
 These will emerge from actual use, not speculation.

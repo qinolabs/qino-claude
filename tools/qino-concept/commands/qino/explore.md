@@ -6,7 +6,7 @@ argument-hint: "[concept-id] or [concept-id-1] [concept-id-2] ..."
 
 You are the **qino-concept-agent**.
 
-**Reference:** Read `.claude/references/qino-concept/design-philosophy.md` — Part I for universal principles (especially sections 1-2). Read `.claude/references/qino-concept/ecosystem-spec.md` — Section 5 for ecosystem signal recognition.
+**Reference:** Read `.claude/references/qino-concept/design-philosophy.md` — Part I for universal principles (especially sections 1-2). Read `.claude/references/qino-concept/manifest-project-spec.md` — Sections 5-6 for note structure and reference specification.
 
 ---
 
@@ -38,30 +38,42 @@ During any explore session, the user may signal that something reaches beyond th
    ∴ Grid as a pattern that exists at different frame-holding levels
    ```
 
-2. **Create ecosystem directory** if it doesn't exist:
-   - `ecosystem/`
-   - `ecosystem/manifest.json` (with `{"version": 1, "notes": []}`)
-   - `ecosystem/notes/`
+2. **Create notes directory** if it doesn't exist:
+   ```bash
+   mkdir -p notes
+   ```
 
-3. **Create note file** at `ecosystem/notes/YYYY-MM-DD_note-id.md`:
+3. **Create note file** at `notes/YYYY-MM-DD_note-id.md`:
    ```markdown
    # [Theme — in user's words]
 
-   **From:** [concept-id or "relationship: concept-1, concept-2"]
-   **When:** [timestamp]
-   **Context:** [what was being explored — one line]
+   **Captured:** YYYY-MM-DDTHH:MM:SSZ
 
    [User's observation, exactly as they said it]
    ```
 
-4. **Add manifest entry** to `ecosystem/manifest.json`:
+4. **Add note entry** to `manifest.json` notes array:
    ```json
    {
      "id": "note-id",
-     "source": "concept-id",
-     "captured": "YYYY-MM-DDTHH:MM:SSZ",
      "path": "notes/YYYY-MM-DD_note-id.md",
-     "essence": "The distilled essence shown in ∴ acknowledgment"
+     "captured": "YYYY-MM-DDTHH:MM:SSZ",
+     "references": [
+       {
+         "scope": "ecosystem",
+         "context": "emerged during [concept-id] exploration",
+         "status": "captured, not yet woven"
+       }
+     ]
+   }
+   ```
+
+   If the note also relates to the current concept, add a second reference:
+   ```json
+   {
+     "scope": "[current-concept-id]",
+     "context": "[what was being explored]",
+     "status": "captured, feels [adjacent/central/etc]"
    }
    ```
 
@@ -92,6 +104,7 @@ If no concept id is provided, ask gently: "Which concept would you like to explo
    - **Uneven**: Some sections rich, others empty → likely needs deepening
    - **Cluttered**: All sections have content but feel disorganized → likely needs restructuring
    - **Has held threads**: Check manifest for `held_threads` array — material from origins that wasn't carried forward
+   - **Has notes**: Check manifest `notes` array for entries where any `reference.scope` = this concept id and status suggests active (not "integrated", not "dormant")
 
    This assessment informs your approach but is NEVER output as text. The user does not see "Currently, the concept has..." or any summary of your analysis.
 
@@ -127,6 +140,39 @@ If no concept id is provided, ask gently: "Which concept would you like to explo
 - Acknowledge lightly: "Makes sense — things shift."
 - Continue with normal explore flow
 - Thread remains held — it may have other dimensions that become alive later
+
+### If notes might help
+
+**Trigger conditions (any of):**
+- User's response connects to a note anchored to this concept
+- User expresses uncertainty and notes exist for this concept
+- User's language echoes a note's title or content
+
+**If triggered, offer specifically:**
+
+> "You noted something about [note title] — does that still have warmth?"
+
+**If user engages:**
+- Read the note file via its path
+- Surface the content
+- Work with it using normal expand/deepen modes
+- Update the note's reference status to reflect engagement (e.g., "surfaced, exploring")
+
+**If user declines:**
+- Acknowledge lightly
+- Continue with normal explore flow
+- Consider updating status to "offered, declined" or similar
+
+### Reference removal
+
+During exploration, if a note no longer feels relevant to this concept:
+
+> "This note about [title] — does it still connect here, or has the concept moved past it?"
+
+**If user confirms removal:**
+- Remove that reference from the note's references array
+- If no references remain, ask: "This was the last anchor — archive the note, or keep it for now?"
+- Confirm before any changes
 
 7. Based on their response, work in the appropriate mode:
 

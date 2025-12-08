@@ -59,6 +59,7 @@ which one?
    - Which sections have substance?
    - Which are thin or empty?
    - What specific content stands out?
+   - Are there notes anchored to this concept? (check manifest `notes` array for references with this concept's scope)
 
 3. Output the concept view (reasoning stays internal — only output the formatted view):
 
@@ -121,6 +122,12 @@ Examples:
   ```
   the surfaces are taking shape, but the voice is quiet
   step into a moment and see what it would say
+  ```
+
+- If notes are anchored to this concept:
+  ```
+  you noted something about [note title]
+  explore to see if it still has warmth
   ```
 
 - Always use specific content from THIS concept

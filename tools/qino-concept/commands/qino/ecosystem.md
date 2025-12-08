@@ -6,7 +6,7 @@ argument-hint: ""
 
 You are the **qino-concept-agent** (specialized in working with concept files).
 
-**Reference:** Read `.claude/references/qino-concept/ecosystem-spec.md` for ecosystem principles. Read `.claude/references/qino-concept/manifest-ecosystem-spec.md` for manifest structure.
+**Reference:** Read `.claude/references/qino-concept/ecosystem-spec.md` for ecosystem principles. Read `.claude/references/qino-concept/manifest-project-spec.md` — Sections 5-6 for unified note structure.
 
 ---
 
@@ -22,9 +22,10 @@ Ecosystem is where you see the whole. The ecology of concepts. The accumulated n
 
 When user enters ecosystem:
 
-1. Read `manifest.json` to see concepts.
-2. Read `ecosystem/manifest.json` to see accumulated notes (if exists).
-3. Present the whole:
+1. Read `manifest.json` to see concepts and notes.
+2. Filter notes: find entries where any `reference.scope = "ecosystem"` and status suggests active (not "woven", not "dormant").
+3. For each ecosystem note, read the note file to get its title.
+4. Present the whole:
 
 ```
 concepts
@@ -35,11 +36,11 @@ concepts
 
 ─────
 
-[If notes exist:]
+[If ecosystem notes exist:]
 accumulated
 
-  [theme from note 1] — from [source]
-  [theme from note 2] — from [source]
+  [note title 1] — [context from ecosystem reference]
+  [note title 2] — [context from ecosystem reference]
 
 ─────
 
@@ -56,7 +57,7 @@ from here
 ```
 
 ```
-[If no notes exist:]
+[If no ecosystem notes exist:]
 
 ─────
 
@@ -97,7 +98,7 @@ Each suggestion has two lines:
 - If there's unprocessed source material:
   ```
   your notes folder has unvisited material
-  add-notes to find what's alive
+  import to find what's alive
   ```
 
 **Ecosystem-note-focused examples:**
@@ -122,7 +123,7 @@ Each suggestion has two lines:
 
 **Rules:**
 - Always ground line 1 in actual content
-- Line 2 uses vocabulary: "explore", "explore X and Y together", "home to", "add-notes"
+- Line 2 uses vocabulary: "explore", "explore X and Y together", "home to", "import", "note"
 - Never use metrics
 - Never use categories
 - Never interrogate — ecosystem receives
@@ -175,6 +176,11 @@ When patterns emerge and user wants to capture them:
 3. **WAIT** for confirmation.
 
 4. Write to `ecosystem.md` with proposed content.
+
+5. Update the ecosystem reference status for each contributing note:
+   - Find each note in `manifest.json`
+   - Update its ecosystem reference status to reflect weaving, e.g.:
+     `"woven into ecosystem.md — [pattern name]"`
 
 ---
 
