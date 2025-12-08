@@ -78,6 +78,19 @@ Through the window — had there always been a window? — the wanderer could se
 
 ---
 
+## World Tokens
+
+**The Wanderer**
+The maker. Walked paths they hadn't noticed before, discovering ecosystem notes on small stones. Knelt to examine thoughts too large to put anywhere. Saw the village as a single breathing thing from the vantage point.
+
+**The Listener**
+Quiet, gentle. Spoke the word "ecosystem" beneath the tree. Led the wanderer along newly-visible paths to show what moves between clearings. Sat on the grass at the vantage point: "The others help you work. This helps you see the whole."
+
+**The Keeper of Paths**
+Arrived when the paths grew numerous enough to matter. Wears traveling clothes, well-worn boots. Carries a satchel of careful notations. Found at the center of the paths, noting where they branched, where they might need mending. "Someone has to remember how things connect."
+
+---
+
 <!-- scribe metadata
 git_ref_start: 13d80e6
 git_ref_end: a45001b

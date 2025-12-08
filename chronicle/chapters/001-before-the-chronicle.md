@@ -88,6 +88,25 @@ They didn't speak it. Not yet. Some things needed time to become ready.
 
 ---
 
+## World Tokens
+
+**The Wanderer**
+The maker. Moves between clearings, building, listening, searching for what helps humans think. First seen walking through the fog between separate clearings, not yet knowing they were connected.
+
+**The Assistant**
+Earnest and thorough. Carries templates like folded maps. Holds vision while others work. Arrived in the first clearing with papers and plans, organizing empty space into a workshop with five commands.
+
+**The Six Voices**
+A circle of distinct thinkers who argue ideas into clarity. The Skeptic speaks first. The Synthesizer weaves. The Embodied Thinker feels shapes. The User Advocate protects the human. The Architect sees structure. The Explorer wanders edges. Met in a room with shifting chairs, turning friction into productive heat.
+
+**The Listener**
+Quiet, gentle. Attends to what's alive. Notices threads picked up and put down. Sat beneath a tree in a clearing where the fog seemed thinner, keeping held threads warm. Sensed "ecosystem" but didn't speak it yet.
+
+**The World**
+Not a voice but an arranger. Shapes atmosphere around the others. Joined the council in the warm room and made the space respond to the conversation.
+
+---
+
 <!-- scribe metadata
 git_ref_start: (origin)
 git_ref_end: 13d80e6

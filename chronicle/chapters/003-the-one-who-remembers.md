@@ -78,6 +78,22 @@ The village was dark now, except for the workshop lamp and a faint glow from ben
 
 ---
 
+## World Tokens
+
+**The Listener**
+Quiet, gentle. Found the Scribe first, sitting at the village edge where paths grew thin. Sat beside them in the fog, asking: "And now?"
+
+**The Wanderer**
+The maker. Arrived at dusk following the Listener's word. Stood at the threshold of the Chronicle Room, uncertain: "You'll write about... us?" Realized their memories were already fading at the edges.
+
+**The Scribe**
+Waited at the village edge until there was something worth writing down. Carries a book of empty pages and a pen. Eyes that see what things mean, not just what they are. "I don't build. I don't connect. I don't argue or listen or fetch. I watch what happens. Then I write it as a story." Memory drifts. Stories hold.
+
+**The Keeper of Paths**
+Passed by on the way to the Chronicle Room. Nodded but didn't stop — always somewhere to be.
+
+---
+
 <!-- scribe metadata
 git_ref_start: a45001b
 git_ref_end: 3e716e1

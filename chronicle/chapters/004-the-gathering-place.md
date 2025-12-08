@@ -82,6 +82,22 @@ And beneath the tree, the Listener sat with eyes closed, attending to threads th
 
 ---
 
+## World Tokens
+
+**The Listener**
+Quiet, gentle. Troubled by scattered notes — observations tucked into corners, folded between pages, hidden beneath stones. Proposed the gathering place. Learning to listen for echoes: "When your alive-thread resonates with something already held — I can feel it. Like two strings tuned to the same note."
+
+**The Wanderer**
+The maker. Noticed the Listener's hesitation. Built the gathering place together with them. Walked the paths alone at evening, seeing the village more coherent than before. Experienced the mirror — meeting themselves from before through an old note.
+
+**The Scribe**
+Watched from the Chronicle Room window. Wrote "The Mirror" in the margins — dialogue as interface for encountering yourself. Recognized what the Listener had become.
+
+**The Keeper of Paths**
+Nodded toward the gathering place: "Good addition. Makes my job easier. When things connect properly, there's less to carry."
+
+---
+
 <!-- scribe metadata
 git_ref_start: 3e716e1
 git_ref_end: 61a6bee
