@@ -40,6 +40,16 @@ Chapters are flexible — they're stories, not templates. But they share common 
 
 ---
 
+## World Tokens
+
+**[Character Name]**
+[Narrative presence — what they did, where seen, how they appeared in this chapter]
+
+**[Location Name]**
+[Description of place as experienced in this chapter]
+
+---
+
 <!-- scribe metadata
 git_ref_start: abc1234
 git_ref_end: def5678
@@ -154,7 +164,46 @@ This metadata is for the scribe, not the reader. It helps update `world.md` afte
 
 ---
 
-## 7. Granularity
+## 7. World Tokens
+
+The `## World Tokens` section appears at the end of each chapter, just before the hidden metadata. It provides **narrative snapshots** of characters and locations as they appeared in this chapter.
+
+**Format:**
+```markdown
+## World Tokens
+
+**Character or Location Name**
+Narrative presence description — 1-3 sentences.
+
+**Another Name**
+Description...
+```
+
+**Purpose:**
+- Provides at-a-glance summary of who appeared and where events took place
+- Feeds into the qino-chronicles display layer for token highlighting
+- Helps readers track characters and locations across chapters
+
+**Guidelines:**
+- Include The Wanderer if they appear (marked specially in display)
+- Use the full name as established: "The Keeper of Held Threads" not "keeper"
+- Focus on what happened this chapter, not general description
+- Keep descriptions brief — 1-3 sentences each
+
+**Example:**
+```markdown
+## World Tokens
+
+**The Wanderer**
+Arrived at Discovery-Grid as the bell sounded. Opened a door that hadn't existed before.
+
+**The Chronicle Room**
+Dark wood door, warm to touch. Shelves holding light instead of books. First entered this chapter.
+```
+
+---
+
+## 8. Granularity
 
 Chapters are as long as they need to be. A chapter might cover:
 - A single session's deep work
