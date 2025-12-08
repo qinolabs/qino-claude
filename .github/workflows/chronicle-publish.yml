@@ -9,7 +9,7 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    name: Publish Chronicle to Qino Chronicles (${{ github.ref_name == 'main' && 'production' || 'development' }})
+    name: Publish Chronicle to qino Chronicles (${{ github.ref_name == 'main' && 'production' || 'development' }})
     steps:
       - name: Generate GitHub App Token
         id: app-token

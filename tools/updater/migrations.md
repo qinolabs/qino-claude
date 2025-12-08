@@ -26,7 +26,7 @@ Initial release. No migrations needed.
 
 ## v0.4.0
 
-**Summary**: Qino Concept unified notes system with multi-reference anchoring.
+**Summary**: qino Concept unified notes system with multi-reference anchoring.
 
 **Delete**:
 - `.claude/commands/qino/add-notes.md` (renamed to import.md)

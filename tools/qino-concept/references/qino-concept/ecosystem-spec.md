@@ -1,4 +1,4 @@
-# Qino Concept Agent — Ecosystem Specification
+# qino Concept Agent — Ecosystem Specification
 
 *This document defines the ecosystem space — a way of seeing across concepts. It specifies note capture, reference structure, and behavioral patterns.*
 
@@ -272,7 +272,7 @@ The agent bridges scopes through unified manifest:
 
 ---
 
-## 8. Responsibilities of the Qino Concept Agent
+## 8. Responsibilities of the qino Concept Agent
 
 When reading `ecosystem-spec.md`, the agent must:
 

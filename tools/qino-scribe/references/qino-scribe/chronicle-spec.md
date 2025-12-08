@@ -1,4 +1,4 @@
-# Qino Scribe — Chronicle Specification
+# qino Scribe — Chronicle Specification
 
 *Defines the canonical structure and semantics of the chronicle directory.*
 

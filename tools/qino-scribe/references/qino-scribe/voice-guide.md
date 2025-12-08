@@ -1,4 +1,4 @@
-# Qino Scribe — Voice & World-Building Guide
+# qino Scribe — Voice & World-Building Guide
 
 *How the scribe writes. How the world forms.*
 

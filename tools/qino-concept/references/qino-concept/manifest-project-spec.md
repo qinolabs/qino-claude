@@ -1,12 +1,12 @@
-# Qino Concept Agent — Manifest Specification
-*This document defines the canonical structure and semantics of `manifest.json` for the **Qino Concept Agent**.
+# qino Concept Agent — Manifest Specification
+*This document defines the canonical structure and semantics of `manifest.json` for the **qino Concept Agent**.
 It is a technical specification and must remain stable and minimal.*
 
 ---
 
 ## 1. Purpose of `manifest.json`
 
-`manifest.json` is the **unified index** for a Qino-powered workspace.
+`manifest.json` is the **unified index** for a qino-powered workspace.
 
 It answers:
 
@@ -17,7 +17,7 @@ It answers:
 - Which notes have been captured?
 - How do notes relate to concepts and the ecosystem?
 
-The Qino Concept Agent uses `manifest.json` to:
+The qino Concept Agent uses `manifest.json` to:
 
 - list and review concepts
 - resolve ids to file paths
@@ -45,7 +45,7 @@ The manifest must be stored at the **root of the project workspace**:
   .claude/
 ```
 
-There is exactly one manifest.json per Qino workspace.
+There is exactly one manifest.json per qino workspace.
 
 ---
 
@@ -153,7 +153,7 @@ This is what the user sees when glancing at the ecosystem.
 "path": "concepts/<id>/concept.md"
 ```
 
-The Qino agent resolves and opens concept files via this path.
+The qino agent resolves and opens concept files via this path.
 
 ### 4.4 tags
 
@@ -179,7 +179,7 @@ Semantics:
 - `null` → concept has never been modified since initial creation
 - ISO-8601 timestamp string (UTC), e.g.: `"2025-11-30T13:20:00Z"`
 
-The Qino agent updates `last_touched` whenever it performs a meaningful modification to the concept's `concept.md` file (e.g. refine, explore, organize).
+The qino agent updates `last_touched` whenever it performs a meaningful modification to the concept's `concept.md` file (e.g. refine, explore, organize).
 
 ### 4.6 held_threads
 
@@ -256,7 +256,7 @@ Guidelines:
 "path": "notes/YYYY-MM-DD_note-id.md"
 ```
 
-The Qino agent resolves and opens note files via this path.
+The qino agent resolves and opens note files via this path.
 
 ### 5.3 captured
 
@@ -362,7 +362,7 @@ The title is the essence — no separate essence field is stored in the manifest
 
 ### 8.1 Concept Creation
 
-When a new concept is seeded (e.g. via an init/import flow), the Qino agent must:
+When a new concept is seeded (e.g. via an init/import flow), the qino agent must:
 
 1. Create the folder and `concept.md` at the location given by `path`.
 2. Add a new entry to `manifest.json` with:
@@ -422,7 +422,7 @@ For now:
 
 ---
 
-## 9. Responsibilities of the Qino Concept Agent
+## 9. Responsibilities of the qino Concept Agent
 
 When reading `manifest-project-spec.md`, the agent must:
 

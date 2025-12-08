@@ -1,13 +1,13 @@
-# Qino Concept Agent - Concept File Specification
-*This document defines the canonical structure of a concept.md file used by the **Qino Concept Agent**.
+# qino Concept Agent - Concept File Specification
+*This document defines the canonical structure of a concept.md file used by the **qino Concept Agent**.
 It is a technical specification — not a concept itself.
 It guides the agent in reading, creating, refining, and organizing concept documents.*
 
 ---
 
 ## 1. Purpose of This Document
-This file describes the **required structure**, **sections**, and **formatting rules** of every `concept.md` document in a Qino concept ecosystem.
-The Qino Concept Agent reads this file on startup to understand:
+This file describes the **required structure**, **sections**, and **formatting rules** of every `concept.md` document in a qino concept ecosystem.
+The qino Concept Agent reads this file on startup to understand:
 
 - how to parse concept files
 - how to extract and rewrite specific sections
@@ -66,7 +66,7 @@ Spacing rules:
 - Exactly one `#` title at the top
 - All other sections begin with `##`
 - No deeper levels (`###`) should be used for core sections
-- The Qino Concept Agent rewrites only the body **below** a section heading and above the next heading
+- The qino Concept Agent rewrites only the body **below** a section heading and above the next heading
 
 ---
 
@@ -267,7 +267,7 @@ The specification ensures every concept grows within the same structural frame.
 
 ---
 
-## 6. Responsibilities of the Qino Concept Agent
+## 6. Responsibilities of the qino Concept Agent
 
 When reading this file, the agent must:
 

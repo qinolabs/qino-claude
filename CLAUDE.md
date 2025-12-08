@@ -9,7 +9,7 @@ This repository is a **Claude Tools Hub** containing multiple independent tools 
 - **Dev Assistant** (`tools/dev-assistant/`) - Transform app concepts into vision-aligned development environments
 - **Design Adventure** (`tools/design-adventure/`) - Seven-perspective design exploration
 - **Design Sprint** (`tools/design-sprint/`) - Multi-perspective design exploration (deprecated)
-- **Qino Concept** (`tools/qino-concept/`) - Gentle space for developing ideas
+- **qino Concept** (`tools/qino-concept/`) - Gentle space for developing ideas
 - **Updater** (`tools/updater/`) - Keep tools updated from GitHub
 
 Each tool is self-contained with its own documentation, templates, and usage patterns.

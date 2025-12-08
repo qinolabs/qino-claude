@@ -92,7 +92,7 @@ The chronicle is bootstrapped. Future chapters will emerge as the tools continue
 
 ---
 
-## Qino Concept
+## qino Concept
 
 A gentle space for developing ideas.
 
@@ -133,7 +133,7 @@ Your perceiving is the process. The agent isn't extracting information from you 
 
 ---
 
-## Qino Scribe
+## qino Scribe
 
 The ecosystem tells its own story.
 
@@ -141,7 +141,7 @@ The ecosystem tells its own story.
 
 Your ecosystem evolves through conversations and accumulated notes. Changes happen across sessions. Threads emerge.
 
-Qino Scribe transforms this into a fantasy world. Not metaphor — an actual place you can return to. Characters appear when concepts arrive. Locations reveal hidden rooms when ideas deepen. Seasons shift when larger patterns surface.
+qino Scribe transforms this into a fantasy world. Not metaphor — an actual place you can return to. Characters appear when concepts arrive. Locations reveal hidden rooms when ideas deepen. Seasons shift when larger patterns surface.
 
 > *The wanderer stood at the edge of Discovery-Grid. Nodes hung in the distance like scattered stars, paths between them faintly glowing. Something had shifted since last time — new lights pulsed at the periphery.*
 

@@ -124,7 +124,7 @@ Show:
 ```
 ## [0.4.0] - YYYY-MM-DD
 
-### Qino Concept
+### qino Concept
 
 #### Added
 - ...
@@ -232,7 +232,7 @@ Release notes should be concise changelog summary with link to full CHANGELOG.md
 ```
 ## What's New
 
-### Qino Concept
+### qino Concept
 - Unified notes with multi-reference anchoring
 - New `/qino:note` command for quick observation capture
 - Renamed `/qino:add-notes` to `/qino:import`

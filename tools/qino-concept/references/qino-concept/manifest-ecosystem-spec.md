@@ -1,4 +1,4 @@
-# Qino Concept Agent — Ecosystem Manifest Specification
+# qino Concept Agent — Ecosystem Manifest Specification
 
 > **⚠️ DEPRECATED:** This specification is deprecated as of manifest version 2.
 > Notes are now tracked in the unified `manifest.json` at project root.
@@ -8,7 +8,7 @@
 
 ---
 
-*This document defines the canonical structure and semantics of `ecosystem/manifest.json` for the **Qino Concept Agent**.
+*This document defines the canonical structure and semantics of `ecosystem/manifest.json` for the **qino Concept Agent**.
 It is a technical specification and must remain stable and minimal.*
 
 ---
@@ -24,7 +24,7 @@ It answers:
 - When was each note captured?
 - Where is the note file?
 
-The Qino Concept Agent uses `ecosystem/manifest.json` to:
+The qino Concept Agent uses `ecosystem/manifest.json` to:
 
 - List accumulated ecosystem notes
 - Resolve note ids to file paths
@@ -51,7 +51,7 @@ The ecosystem manifest must be stored at:
     ecosystem.md
 ```
 
-There is exactly one ecosystem manifest per Qino workspace. It lives within the `ecosystem/` directory, not at project root.
+There is exactly one ecosystem manifest per qino workspace. It lives within the `ecosystem/` directory, not at project root.
 
 ---
 
@@ -138,7 +138,7 @@ The moment the ecosystem note was captured.
 "path": "notes/YYYY-MM-DD_note-id.md"
 ```
 
-The Qino agent resolves and opens note files via this path.
+The qino agent resolves and opens note files via this path.
 
 ### 4.5 essence
 
@@ -183,7 +183,7 @@ When patterns emerge and get woven into `ecosystem.md`:
 
 ---
 
-## 6. Responsibilities of the Qino Concept Agent
+## 6. Responsibilities of the qino Concept Agent
 
 When reading `manifest-ecosystem-spec.md`, the agent must:
 

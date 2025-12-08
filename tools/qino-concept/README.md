@@ -1,4 +1,4 @@
-# Qino Concept
+# qino Concept
 
 A gentle space for developing ideas — through conversation, not documentation.
 

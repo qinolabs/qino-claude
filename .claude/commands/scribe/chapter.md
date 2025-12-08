@@ -30,7 +30,7 @@ Beyond standard git history, also observe:
 
 The "ecosystem" here is the tools themselves:
 
-- **Tools are characters** — Dev Assistant, Qino Concept, Design Adventure, Qino Scribe, Updater each have personality and purpose
+- **Tools are characters** — Dev Assistant, qino Concept, Design Adventure, qino Scribe, Updater each have personality and purpose
 - **The repository structure is the landscape** — `tools/` is the village where they live, `.claude/` is where they're summoned
 - **Releases are seasons changing** — version bumps mark shifts in what's possible
 - **Philosophy documents are the world's voice** — design principles that guide everything

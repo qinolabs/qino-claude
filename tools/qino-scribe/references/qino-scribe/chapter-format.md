@@ -1,4 +1,4 @@
-# Qino Scribe — Chapter Format
+# qino Scribe — Chapter Format
 
 *The chronicle is a fantasy world. Chapters are episodes in an ongoing story.*
 
