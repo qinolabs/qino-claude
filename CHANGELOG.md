@@ -10,6 +10,30 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.5.0] - 2025-12-09
+
+### qino Scribe
+
+#### Added
+- **World Tokens** — chapters now end with crystallized presences from the story: characters, locations, phenomena, each with 2-3 lines of essence that capture their embodied nature
+- **Theme seeding** — new chronicles begin with world-seed selection from a curated spectrum spanning ancient/mythic to cosmic/quiet; theme stored in `chronicle/theme.md`
+- **Theme guide** — comprehensive reference for generating spacious world-seeds with inherent tension
+
+#### Changed
+- **Git diff observation** — scribe now reads actual file changes (`git diff`) alongside commit messages, improving narrative accuracy when commit messages are incomplete
+
+### qino Concept
+
+#### Changed
+- **Renamed `/qino:note` to `/qino:capture`** — the word "capture" better conveys the gentle urgency of holding a thought before it fades
+
+### General
+
+#### Changed
+- **Normalized "qino" capitalization** — consistent lowercase styling across all tool documentation
+
+---
+
 ## [0.4.0] - 2025-12-08
 
 ### qino Concept

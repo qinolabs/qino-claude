@@ -125,7 +125,7 @@ Your perceiving is the process. The agent isn't extracting information from you 
 /qino:home
 /qino:explore concept-name
 /qino:import path/to/notes.md
-/qino:note
+/qino:capture
 /qino:ecosystem
 ```
 

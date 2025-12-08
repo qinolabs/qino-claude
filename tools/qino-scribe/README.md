@@ -59,7 +59,8 @@ Copy to your `.claude/` directory:
         ├── version.json
         ├── chronicle-spec.md
         ├── chapter-format.md
-        └── voice-guide.md
+        ├── voice-guide.md
+        └── theme-guide.md
 ```
 
 Or use `/update-qino-tools` if you have the updater installed.

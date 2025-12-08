@@ -48,7 +48,7 @@ your-project/
         home.md
         explore.md
         import.md
-        note.md
+        capture.md
         init.md
         ecosystem.md
     agents/
@@ -121,7 +121,7 @@ The agent asks what feels alive and helps you develop that thread — expanding,
 | `/qino:explore concept-a concept-b` | Explore connections between concepts |
 | `/qino:ecosystem` | See the whole ecology — patterns and notes that reach beyond individual concepts |
 | `/qino:import path` | Bring in external material — a file or folder |
-| `/qino:note` | Capture a quick observation anchored to a concept or ecosystem |
+| `/qino:capture` | Capture a quick observation anchored to a concept or ecosystem |
 | `/qino:init` | Set up a new workspace (one-time) |
 
 ---

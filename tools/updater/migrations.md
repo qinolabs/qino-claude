@@ -24,6 +24,24 @@ Initial release. No migrations needed.
 
 ---
 
+## v0.5.0
+
+**Summary**: qino Concept refined capture workflow; qino Scribe introduced World Tokens for thematic continuity.
+
+**Delete**:
+- `.claude/commands/qino/note.md` (renamed to capture.md)
+
+**Rename**:
+- `/qino:note` → `/qino:capture`
+
+**New**:
+- `.claude/references/qino-scribe/theme-guide.md` — World Tokens seeding for chronicle initialization
+
+**User action**:
+- Use `/qino:capture` instead of `/qino:note` for quick observation capture
+
+---
+
 ## v0.4.0
 
 **Summary**: qino Concept unified notes system with multi-reference anchoring.
