@@ -22,6 +22,7 @@ The chronicle is a public artifact. It's meant to be shared and read.
 ```
 chronicle/
 ├── manifest.json              # Chronicle state and chapter index
+├── theme.md                   # The world's seed (required)
 ├── world.md                   # Living world-state (characters, locations, arcs)
 ├── chapters/
 │   ├── 001-first-light.md     # Chapter files
@@ -31,6 +32,22 @@ chronicle/
 ```
 
 The chronicle directory lives at the workspace root, alongside `concepts/` and `ecosystem/`.
+
+---
+
+## 2.1 theme.md — The World's Seed
+
+The theme defines what kind of world this chronicle inhabits. It's set once, before the first chapter, and shapes everything that follows.
+
+```markdown
+# Theme
+
+Coastal trading post, age of sail.
+```
+
+One line. Maybe two if texture was given. The theme is a seed, not a blueprint — the world emerges through chapters, not from prescription.
+
+See `theme-guide.md` for how themes are chosen and how they shape the scribe's voice.
 
 ---
 
