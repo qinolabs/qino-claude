@@ -91,7 +91,20 @@ During any explore session, the user may signal that something reaches beyond th
 
 **Purpose:** Work with one concept — deepen, expand, restructure, or inhabit as needed.
 
-If no concept id is provided, ask gently: "Which concept would you like to explore?"
+If no concept id is provided:
+
+1. Check `manifest.json` for unanchored notes (notes with empty `references` array)
+2. If unanchored notes exist, offer them as entry points:
+
+   > "There are thoughts waiting to find their place:"
+   >
+   > - [essence 1]
+   > - [essence 2]
+   >
+   > "Any of these feel alive? Or which concept would you like to explore?"
+
+3. If user picks a note, ask which concept it might touch, then continue with that concept (the note becomes the starting alive thread)
+4. If no unanchored notes, simply ask: "Which concept would you like to explore?"
 
 **Steps:**
 
@@ -143,25 +156,41 @@ If no concept id is provided, ask gently: "Which concept would you like to explo
 
 ### If notes might help
 
+Check `manifest.json` for notes that might connect:
+- **Unanchored notes** (`references` is empty array) — thoughts waiting to find their place
+- **Notes anchored to this concept** — already connected but may have more to give
+
 **Trigger conditions (any of):**
-- User's response connects to a note anchored to this concept
-- User expresses uncertainty and notes exist for this concept
-- User's language echoes a note's title or content
+- User's alive thread echoes a note's essence (language, theme, or direction)
+- User expresses uncertainty and relevant notes exist
+- User's response points toward something a captured note touches
 
 **If triggered, offer specifically:**
 
-> "You noted something about [note title] — does that still have warmth?"
+For unanchored notes:
+> "You captured something about [essence] — does that connect here?"
+
+For already-anchored notes:
+> "There's a note here about [essence] — does it still have warmth?"
 
 **If user engages:**
 - Read the note file via its path
 - Surface the content
 - Work with it using normal expand/deepen modes
-- Update the note's reference status to reflect engagement (e.g., "surfaced, exploring")
+- **For unanchored notes:** Add a reference when woven in:
+  ```json
+  {
+    "concept": "[current-concept-id]",
+    "woven": "YYYY-MM-DDTHH:MM:SSZ",
+    "context": "[what emerged during exploration]"
+  }
+  ```
+- **For anchored notes:** Update status to reflect engagement (e.g., "surfaced, exploring")
 
 **If user declines:**
 - Acknowledge lightly
 - Continue with normal explore flow
-- Consider updating status to "offered, declined" or similar
+- Leave unanchored notes unanchored — they'll surface again when they have warmth
 
 ### Reference removal
 

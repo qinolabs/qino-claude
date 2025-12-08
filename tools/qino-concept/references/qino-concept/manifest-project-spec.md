@@ -70,13 +70,8 @@ The manifest is always a JSON object with these keys:
       "id": "example-note",
       "path": "notes/2024-12-07_example-note.md",
       "captured": "2024-12-07T14:30:00Z",
-      "references": [
-        {
-          "scope": "example-concept",
-          "context": "emerged during exploration",
-          "status": "captured, feels relevant to morning section"
-        }
-      ]
+      "essence": "example essence — a thought distilled",
+      "references": []
     }
   ]
 }
@@ -217,20 +212,12 @@ Each note entry must be an object with the following fields:
   "id": "grid-as-pattern",
   "path": "notes/2024-12-07_grid-as-pattern.md",
   "captured": "2024-12-07T14:30:00Z",
-  "references": [
-    {
-      "scope": "daily-rhythm",
-      "context": "emerged while exploring rhythm structure",
-      "status": "surfaced once, feels adjacent to morning section"
-    },
-    {
-      "scope": "ecosystem",
-      "context": "pattern spanning visual and temporal concepts",
-      "status": "captured, not yet woven"
-    }
-  ]
+  "essence": "grid as pattern — structure at different scales",
+  "references": []
 }
 ```
+
+Notes start **unanchored** (empty `references` array). They become anchored when woven into a concept during `/qino:explore`.
 
 ### 5.1 id
 
@@ -242,7 +229,7 @@ Guidelines:
 
 - lowercase
 - hyphen-separated words (e.g. `grid-as-pattern`, `moments-span-apps`)
-- derived from the theme of the note
+- derived from the essence
 - stable over time
 
 ### 5.2 path
@@ -266,79 +253,63 @@ The qino agent resolves and opens note files via this path.
 
 The moment the note was captured.
 
-### 5.4 references
+### 5.4 essence
+
+- Type: string
+- Required: yes
+- The distilled essence of the note (5-10 words)
+
+This is what the agent uses to recognize when a note might connect to an alive thread during exploration. It's also displayed when surfacing unanchored notes.
+
+### 5.5 references
 
 - Type: array of objects
-- Required: yes (must have at least one reference)
-- Each reference anchors the note to a scope with context.
+- Required: yes (may be empty `[]`)
+- Each reference records when the note was woven into a concept.
 
-Notes must be anchored before saving. The agent guides the user to establish at least one reference during capture.
+Notes are captured without references. References are added during `/qino:explore` when a note finds its place in a concept.
 
 ---
 
 ## 6. Reference Entry Specification
 
-Each reference within a note describes how that note relates to a particular scope:
+Each reference records when a note was woven into a concept during exploration:
 
 ```json
 {
-  "scope": "daily-rhythm",
-  "context": "emerged while exploring rhythm structure",
-  "status": "surfaced once, feels adjacent to morning section"
+  "concept": "daily-rhythm",
+  "woven": "2024-12-07T15:30:00Z",
+  "context": "emerged while exploring rhythm structure"
 }
 ```
 
-### 6.1 scope
+### 6.1 concept
 
 - Type: string
 - Required: yes
 - Either a concept id or the reserved value `"ecosystem"`.
 
-Reserved scopes:
+Reserved values:
 
-- `"ecosystem"` — note relates to cross-concept patterns
+- `"ecosystem"` — note woven into cross-concept patterns
 
 All other values are interpreted as concept ids and must exist in the `concepts` array.
 
-### 6.2 context
+### 6.2 woven
 
 - Type: string
 - Required: yes
-- Brief description of how this note relates to this scope.
+- ISO-8601 timestamp string (UTC), e.g.: `"2024-12-07T15:30:00Z"`
 
-Captures the perspective from which this note is relevant. The same note may have different contexts for different scopes.
+The moment the note was woven into this concept during exploration.
 
-### 6.3 status
+### 6.3 context
 
 - Type: string
 - Required: yes
-- Descriptive status guiding agent behavior.
+- Brief description of how this note connected during exploration.
 
-Status is natural language, not an enum. The agent interprets status contextually. This leverages language permeability — the agent reads intent from description.
-
-**Status vocabulary patterns (guidance, not enforcement):**
-
-Lifecycle markers:
-- `captured` — freshly noted, not yet integrated
-- `integrated` — woven into concept.md or ecosystem.md
-- `dormant` — touched but no resonance in recent sessions
-
-Relationship markers:
-- `adjacent to` — feels related but not central
-- `emerged from` — direct origin during exploration
-- `bridges` — connects multiple areas
-
-Energy markers:
-- `alive` — currently resonating
-- `cooling` — less active than before
-
-**Examples:**
-- `"captured, not yet woven"`
-- `"surfaced during rhythm work, feels unfinished"`
-- `"integrated into section 3"`
-- `"dormant — touched once, no resonance since"`
-
-The agent updates status meaningfully during interactions, not mechanically.
+Captures what was being explored when the note found its place. The same note may be woven into multiple concepts with different contexts.
 
 ---
 
@@ -381,25 +352,33 @@ Whenever the agent modifies `concept.md` in a meaningful way:
 - It should update `last_touched` with the current timestamp.
 - It may update `name` or `tags` only if the user has explicitly asked for this (e.g. renaming a concept or adding tags).
 
-### 8.3 Note Creation
+### 8.3 Note Capture
 
-When capturing a note (via `/qino:note` or ecosystem signals during explore):
+When capturing a note (via `/qino:capture` or ecosystem signals during explore):
 
-1. Guide user to anchor the note to at least one scope
+1. Distill the observation to its essence
 2. Create the note file at `notes/YYYY-MM-DD_note-id.md`
 3. Add a new entry to the `notes` array with:
-   - `id` derived from the note's theme
+   - `id` derived from the essence
    - `path` set to the note file location
    - `captured` set to current timestamp
-   - `references` with at least one entry
+   - `essence` set to the distilled essence
+   - `references` as empty array `[]`
 
-### 8.4 Note Reference Updates
+Notes start unanchored. They become woven during `/qino:explore`.
 
-The agent may update note references during exploration:
+### 8.4 Note Weaving
 
-- Add new references when a note becomes relevant to another scope
-- Update status descriptively when a note is surfaced or integrated
-- Remove stale references with user confirmation
+During `/qino:explore`, the agent surfaces notes when their essence echoes the alive thread:
+
+- Check for unanchored notes (`references` is empty)
+- Check for notes already woven to this concept
+- Offer notes that might connect: "You captured something about [essence] — does that connect here?"
+
+When a note is woven in:
+
+- Add a reference with `concept`, `woven` timestamp, and `context`
+- The same note can be woven into multiple concepts
 
 ### 8.5 Reference Removal
 
@@ -407,7 +386,7 @@ The agent can suggest removing references that no longer feel relevant:
 
 - During explore: "This note no longer feels connected here — remove this reference?"
 - Always require explicit user confirmation before removal
-- If the last reference would be removed, the note itself may be archived or deleted (with confirmation)
+- If the last reference would be removed, the note returns to unanchored state (it'll surface again when it has warmth)
 
 ### 8.6 Deletion / Deactivation
 
@@ -488,27 +467,32 @@ The smallest valid manifest:
       "id": "moments-span-apps",
       "path": "notes/2024-12-08_moments-span-apps.md",
       "captured": "2024-12-08T10:15:00Z",
+      "essence": "moments span apps — the same instant lives in multiple places",
       "references": [
         {
-          "scope": "moment-lens",
-          "context": "emerged during sensory exploration",
-          "status": "captured, feels central"
+          "concept": "moment-lens",
+          "woven": "2024-12-08T11:30:00Z",
+          "context": "emerged during sensory exploration"
         },
         {
-          "scope": "story-graph",
-          "context": "moments as nodes in narrative structure",
-          "status": "adjacent, worth exploring"
-        },
-        {
-          "scope": "ecosystem",
-          "context": "pattern spanning reflection and narrative",
-          "status": "captured, not yet woven"
+          "concept": "story-graph",
+          "woven": "2024-12-09T14:00:00Z",
+          "context": "moments as nodes in narrative structure"
         }
       ]
+    },
+    {
+      "id": "theme-as-wanderers-journey",
+      "path": "notes/2024-12-10_theme-as-wanderers-journey.md",
+      "captured": "2024-12-10T09:00:00Z",
+      "essence": "theme as wanderer's journey — world-building meets continuity",
+      "references": []
     }
   ]
 }
 ```
+
+The second note (`theme-as-wanderers-journey`) is unanchored — captured but not yet woven into any concept. It will surface during `/qino:explore` when its essence echoes an alive thread.
 
 ---
 
