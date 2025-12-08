@@ -71,6 +71,25 @@ This is the inheritance: from young anthropologists watching rituals on the Sepi
 
 </details>
 
+<details>
+<summary><strong>The Chronicle</strong></summary>
+
+This repository tells its own story.
+
+In `chronicle/`, the tools' evolution is written as a fantasy world — characters who arrive when new tools emerge, locations that deepen as ideas mature, arcs that build across chapters.
+
+> *The village existed before anyone named it. Fog lay heavy between the clearings — each one separate, each one holding something taking shape.*
+
+Four chapters trace the journey: from early making through the gate opening (v0.1.0), the ecosystem awakening (v0.2.0), the chronicler's arrival (v0.3.0), to the gathering place where notes find home (v0.4.0).
+
+> *"Memory drifts," the Scribe said gently. "Stories hold."*
+
+The chronicle is bootstrapped. Future chapters will emerge as the tools continue to evolve.
+
+→ [Enter the chronicle](chronicle/chapters/001-before-the-chronicle.md)
+
+</details>
+
 ---
 
 ## Qino Concept
