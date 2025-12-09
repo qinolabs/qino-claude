@@ -4,6 +4,8 @@
 
 Tools for working with ideas in [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
 
+**[Read the chronicles →](https://chronicles.qinolabs.com/)**
+
 <details>
 <summary><strong>Companions on the Path: The Pattern That Connects</strong></summary>
 
@@ -72,23 +74,23 @@ This is the inheritance: from young anthropologists watching rituals on the Sepi
 </details>
 
 <details>
-<summary><strong>The Chronicle</strong></summary>
+<summary><strong>The Chronicles</strong></summary>
 
-This repository tells its own story.
+Each repository in the qino ecosystem tells its own story.
 
-In `chronicle/`, the tools' evolution is written as a story world — characters who arrive when new tools emerge, locations that deepen as ideas mature, arcs that build across chapters.
+**qino-claude** — a village of tools emerging from fog. The Listener beneath the tree. The Scribe in the Chronicle Room. Characters who arrive when new capabilities take shape.
 
-> *The Listener crouched beneath the great tree, fingers tracing patterns in the dirt. Above, threads of light drifted between branches — some bright with recent touch, others fading toward silver. "There," she said, pointing to where two threads had begun to twist around each other. "That wasn't there yesterday."*
+**concepts-repo** — a quieter world. Ideas before they become tools. The wanderer walking between clearings that haven't fully formed yet.
 
-The chronicle grows with each release. New characters appear when something wants to be named. Locations reveal hidden rooms when ideas find their shape.
+**qinolabs-repo** — the infrastructure beneath. Where the paths themselves are built. A different texture — less characters, more landscape shifting.
+
+Same scribe. Different worlds. Different atmospheric registers. Life expressing itself through whatever theme the repository finds.
 
 > *The Keeper of Paths looked up from her maps. "Someone's been walking between the Workshop and the Warm Room. Over and over. The ground remembers."*
 >
 > *"What are they looking for?"*
 >
 > *She smiled. "They'll know when they stop."*
-
-→ [Read the chronicles (alpha)](https://chronicles.qinolabs.com/)
 
 </details>
 
@@ -148,8 +150,6 @@ qino Scribe transforms this into a story world. Not metaphor — an actual place
 > *The Listener had been troubled for days. Not visibly — they were never visible about such things. But the wanderer noticed: a slight hesitation beneath the tree, eyes drifting to scattered places, hands reaching for something not quite there.*
 
 The chronicle is something you could give to a collaborator, revisit in a year, or read like a children's book by nightlamp.
-
-→ [Read the chronicles (alpha)](https://chronicles.qinolabs.com/)
 
 ### Walkable abstraction
 
