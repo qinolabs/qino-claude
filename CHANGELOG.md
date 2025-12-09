@@ -10,6 +10,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.5.1] - 2025-12-09
+
+### qino Scribe
+
+#### Added
+- **Editorial pass** — mandatory self-review before presenting chapters, checking for wanderer agency, technical names, explanatory dialogue, collective character texture, mystery calibration, and warmth balance
+- **Retroactive chapters** — optional `from_ref` and `to_ref` arguments let you chronicle specific historical ranges, useful for regenerating chronicles or covering missed periods
+
+#### Changed
+- **Streamlined confirmations** — story beat approval (or theme selection for first chapter) is now the single confirmation point; chapters write immediately after, presenting content and "chapter written" together
+- **Terminology** — "fantasy world" → "story world" throughout documentation
+
+---
+
 ## [0.5.0] - 2025-12-09
 
 ### qino Scribe
