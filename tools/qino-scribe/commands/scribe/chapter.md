@@ -76,18 +76,20 @@ Gather what changed in the observation range (determined in Step 1):
 git log --oneline [from_ref]..[to_ref]
 
 # What actually changed (the ground truth)
-git diff [from_ref]..[to_ref] --stat        # Overview of files changed
-git diff [from_ref]..[to_ref]               # Full diff for understanding
+# Exclude chronicle directories — they're output, not source
+git diff [from_ref]..[to_ref] --stat -- . ':!*chronicle*'
+git diff [from_ref]..[to_ref] -- . ':!*chronicle*'
 ```
 
 Where `[from_ref]` and `[to_ref]` are determined from Step 1 (either from arguments or from manifest + HEAD).
+
+**Excluding chronicle directories:** The chronicle is output, not source material. When observing changes, always exclude any root directory containing "chronicle" in its name. The scribe reads the chronicle's world.md for continuity, but doesn't chronicle changes to the chronicle itself.
 
 **Reading the diff:**
 - Look for what was added (new ideas, new structure)
 - Look for what was removed (what was let go)
 - Look for what was modified (what deepened or shifted)
 - The diff is ground truth — commit messages may be incomplete
-- If `chronicle/world.md` appears in the diff, pay attention — the world itself may have been updated outside of normal chapter flow
 
 **Manifest layer:**
 - Read current `manifest.json`
