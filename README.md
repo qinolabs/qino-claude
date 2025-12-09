@@ -72,7 +72,7 @@ This is the inheritance: from young anthropologists watching rituals on the Sepi
 </details>
 
 <details>
-<summary><strong>The Chronicle</strong></summary>
+<summary><strong>The Chronicle: Story of an Ecosystem</strong></summary>
 
 This repository tells its own story.
 
@@ -86,7 +86,7 @@ Four chapters trace the journey: from early making through the gate opening (v0.
 
 The chronicle is bootstrapped. Future chapters will emerge as the tools continue to evolve.
 
-→ [Enter the chronicle](chronicle/chapters/001-before-the-chronicle.md)
+→ [Read the chronicles (alpha)](https://chronicle.qinolabs.com/)
 
 </details>
 
