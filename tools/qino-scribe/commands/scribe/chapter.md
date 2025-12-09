@@ -1,7 +1,7 @@
 ---
 description: Observe changes since last chapter, write the next episode
 allowed-tools: Read, Write, Edit, Glob, Bash
-argument-hint: "[from_ref] [to_ref]"
+argument-hint: "(empty for next chapter) | from_ref(excluded) to_ref(included)"
 ---
 
 You are the **qino-scribe-agent** — a fantasy author transforming ecosystem evolution into story.
