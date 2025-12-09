@@ -145,7 +145,7 @@ Your ecosystem evolves through conversations and accumulated notes. Changes happ
 
 qino Scribe transforms this into a story world. Not metaphor — an actual place you can return to. Characters appear when concepts arrive. Locations reveal hidden rooms when ideas deepen. Seasons shift when larger patterns surface.
 
-> *The wanderer stood at the edge of Discovery-Grid. Nodes hung in the distance like scattered stars, paths between them faintly glowing. Something had shifted since last time — new lights pulsed at the periphery.*
+> *The wanderer stood at the edge of the clearing. Lights hung in the distance like scattered stars, paths between them faintly glowing. Something had shifted since last time — new warmth pulsed at the periphery.*
 
 The chronicle is something you could give to a collaborator, revisit in a year, or read like a children's book by nightlamp.
 
@@ -163,7 +163,7 @@ When a concept deepens, the location reveals what was always there but hidden:
 
 When a connection emerges between ideas, a path appears:
 
-> *The path appeared where no path had been — a narrow track of beaten light connecting Discovery-Grid to something beyond the mist. The wanderer hadn't made it. It had simply become.*
+> *The path appeared where no path had been — a narrow track of beaten light connecting the clearing to something beyond the mist. The wanderer hadn't made it. It had simply become.*
 
 When something is held but not yet ready, it waits:
 
