@@ -309,7 +309,7 @@ The system stays in sync with your evolving sense of what you're building.
 
 ## License
 
-MIT
+[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) — free to use and adapt with attribution, non-commercial, share-alike.
 
 ---
 
