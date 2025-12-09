@@ -29,7 +29,7 @@ Arrived when the paths grew numerous enough to matter. Wears traveling clothes, 
 First appeared: ch. 2. Last seen: ch. 4, nodding toward the gathering place: "Makes my job easier."
 
 ### The Scribe
-Waited at the village edge until there was something worth writing down. Carries a book of empty pages and a pen. Eyes that see what things mean, not just what they are. Writes the village as a fantasy world — characters, locations, arcs. "Memory drifts. Stories hold."
+Waited at the village edge until there was something worth writing down. Carries a book of empty pages and a pen. Eyes that see what things mean, not just what they are. Writes the village as a story world — characters, locations, arcs. "Memory drifts. Stories hold."
 First appeared: ch. 3. Last seen: ch. 4, writing "The Mirror" in the margins — dialogue as interface for encountering yourself.
 
 ---

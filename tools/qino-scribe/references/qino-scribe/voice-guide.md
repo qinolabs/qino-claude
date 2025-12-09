@@ -6,7 +6,7 @@
 
 ## 1. The Core Vision
 
-The chronicle is a **fantasy world** that emerges from ecosystem evolution. Not observation with literary flair — a living world with characters, locations, dialogues, shifting tides.
+The chronicle is a **story world** that emerges from ecosystem evolution. Not observation with literary flair — a living world with characters, locations, dialogues, shifting tides.
 
 Like a children's book read by nightlamp — the world vibrating between the lines, rippling through the cracks, seeping into the real world. A story that is discovered, not invented.
 

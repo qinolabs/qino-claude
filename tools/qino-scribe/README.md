@@ -8,7 +8,7 @@ The ecosystem tells its own story. You participate, but you don't narrate.
 
 Your ecosystem evolves through conversations, explorations, and accumulated notes. Changes happen across sessions. Threads emerge and weave together. Concepts deepen.
 
-qino Scribe chronicles this evolution — not as a changelog, but as a fantasy world. Characters appear when concepts arrive. Locations reveal hidden rooms when ideas deepen. Seasons shift when larger patterns surface.
+qino Scribe chronicles this evolution — not as a changelog, but as a story world. Characters appear when concepts arrive. Locations reveal hidden rooms when ideas deepen. Seasons shift when larger patterns surface.
 
 The chronicle is something you could give to a collaborator, revisit in a year, or read like a children's book by nightlamp.
 

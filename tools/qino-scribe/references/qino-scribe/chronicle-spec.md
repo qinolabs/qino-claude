@@ -121,7 +121,7 @@ Each entry describes one chapter in the chronicle.
 
 ## 5. world.md — The Living World
 
-The chronicle is a fantasy world that emerges from ecosystem evolution. `world.md` tracks the living world-state, updated after each chapter.
+The chronicle is a story world that emerges from ecosystem evolution. `world.md` tracks the living world-state, updated after each chapter.
 
 **The scribe reads this first** to know where the story is before writing new chapters.
 

@@ -76,7 +76,7 @@ This is the inheritance: from young anthropologists watching rituals on the Sepi
 
 This repository tells its own story.
 
-In `chronicle/`, the tools' evolution is written as a fantasy world — characters who arrive when new tools emerge, locations that deepen as ideas mature, arcs that build across chapters.
+In `chronicle/`, the tools' evolution is written as a story world — characters who arrive when new tools emerge, locations that deepen as ideas mature, arcs that build across chapters.
 
 > *The village existed before anyone named it. Fog lay heavy between the clearings — each one separate, each one holding something taking shape.*
 
@@ -137,15 +137,17 @@ Your perceiving is the process. The agent isn't extracting information from you 
 
 The ecosystem tells its own story.
 
-### Fantasy world
+### Story world
 
 Your ecosystem evolves through conversations and accumulated notes. Changes happen across sessions. Threads emerge.
 
-qino Scribe transforms this into a fantasy world. Not metaphor — an actual place you can return to. Characters appear when concepts arrive. Locations reveal hidden rooms when ideas deepen. Seasons shift when larger patterns surface.
+qino Scribe transforms this into a story world. Not metaphor — an actual place you can return to. Characters appear when concepts arrive. Locations reveal hidden rooms when ideas deepen. Seasons shift when larger patterns surface.
 
 > *The wanderer stood at the edge of Discovery-Grid. Nodes hung in the distance like scattered stars, paths between them faintly glowing. Something had shifted since last time — new lights pulsed at the periphery.*
 
 The chronicle is something you could give to a collaborator, revisit in a year, or read like a children's book by nightlamp.
+
+→ [Read the chronicles (alpha)](https://chronicle.qinolabs.com/)
 
 ### Walkable abstraction
 
@@ -175,7 +177,7 @@ Each chapter builds on what came before. Characters have first appearances and l
 >
 > *The wanderer didn't answer immediately. The question felt larger than it sounded.*
 
-By chapter ten, you feel you know this place. The world has grown with your thinking.
+Over time, you feel you know this place. The world has grown with your thinking.
 
 ### The wanderer
 
@@ -184,6 +186,8 @@ The wanderer is the protagonist — but not the narrator. They participate in th
 > *The path appeared where no path had been — a narrow track of beaten light. The wanderer hadn't made it. It had simply become.*
 
 The wanderer is your presence in the world. But the world doesn't revolve around them. They're a traveler, discovering alongside you what the ecosystem has become.
+
+The wanderer as palimpsest — layers of experience visible through each other. Objects gathered in pockets, wounds and gifts visible through behavior, echoes of other places. The reader accumulates understanding the way the wanderer accumulates weight.
 
 ```bash
 /scribe:chapter

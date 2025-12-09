@@ -71,7 +71,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### qino Scribe (New Tool)
 
 #### Added
-- **Chronicle your ecosystem as a fantasy world** — qino Scribe transforms evolution into story: characters appear when concepts arrive, locations reveal hidden rooms when ideas deepen
+- **Chronicle your ecosystem as a story world** — qino Scribe transforms evolution into story: characters appear when concepts arrive, locations reveal hidden rooms when ideas deepen
 - **One command**: `/scribe:chapter` — observe what changed, shape the narrative together, write the next chapter
 - **World memory** — `world.md` tracks characters, locations, and arcs so the story builds on itself
 
