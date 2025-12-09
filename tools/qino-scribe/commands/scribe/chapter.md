@@ -218,25 +218,11 @@ Continue until a full pass finds nothing to fix. Only then proceed to Step 6.
 
 ---
 
-## Step 6: Present to Wanderer
+## Step 6: Write Chapter & Update World
 
-Present the revised chapter:
+After the editorial pass, proceed directly — no additional confirmation needed. The story beat approval in Step 4 is the moment of consent.
 
-```
-here is the chapter
-
-[full chapter content]
-
-─────
-
-                                        should I add this to the chronicle?
-```
-
----
-
-## Step 7: Write & Update World
-
-On confirmation:
+**Immediately:**
 
 1. **Write chapter file:**
    - Path: `chronicle/chapters/NNN-slug.md`
@@ -269,11 +255,17 @@ On confirmation:
    - Update arc progress (what advanced, what began)
    - Update season if it shifted
 
-4. Confirm:
+4. **Present what was written:**
    ```
+   [full chapter content]
+
+   ─────
+
    chapter NNN written to the chronicle
    world updated
    ```
+
+The wanderer sees the chapter and confirmation together. One moment, not two.
 
 ---
 
@@ -319,7 +311,7 @@ On receiving the theme:
 
 ### Step 3: Write First Chapter
 
-Now write the first chapter — an origin story steeped in the theme.
+Now write the first chapter — an origin story steeped in the theme. No additional confirmation needed — the theme selection is the moment of consent.
 
 The scribe determines:
 - How the wanderer arrives (shaped by theme)
@@ -327,6 +319,8 @@ The scribe determines:
 - Who appears
 
 The first chapter has special weight — it's the world's birth.
+
+**Proceed directly:** Write the chapter file, update manifest and world.md, then present the chapter with confirmation that it was written. One moment of output, not "here it is, should I write it?"
 
 ---
 
@@ -352,7 +346,6 @@ but stillness can be chapter-worthy
 
 ## Do NOT:
 
-- Write without confirmation
 - Use progress or metric language ("great progress", "3 concepts touched")
 - Make the wanderer the protagonist-hero
 - Use technical jargon ("ecosystem architecture")
@@ -360,3 +353,4 @@ but stillness can be chapter-worthy
 - Forget to update world.md after writing
 - Chronicle trivially (typo fixes, minor reformatting)
 - Write sections like "What Moved / What Emerged" — write **story**
+- Ask for multiple confirmations — one confirmation per workflow (story beat approval or theme selection), then proceed
