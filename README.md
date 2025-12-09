@@ -4,8 +4,6 @@
 
 Tools for working with ideas in [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
 
-**[Read the chronicles →](https://chronicles.qinolabs.com/)**
-
 <details>
 <summary><strong>Companions on the Path: The Pattern That Connects</strong></summary>
 
@@ -73,18 +71,26 @@ This is the inheritance: from young anthropologists watching rituals on the Sepi
 
 </details>
 
+**[Read the chronicles →](https://chronicles.qinolabs.com/)**
+
 <details>
-<summary><strong>The Chronicles</strong></summary>
+<summary><strong>The Chronicles: The Story of an Evolving Ecosystem</strong></summary>
 
 Each repository in the qino ecosystem tells its own story.
 
-**qino-claude** — a village of tools emerging from fog. The Listener beneath the tree. The Scribe in the Chronicle Room. Characters who arrive when new capabilities take shape.
+**qino-claude** — Claude-based AI tooling.
 
-**concepts-repo** — a quieter world. Ideas before they become tools. The wanderer walking between clearings that haven't fully formed yet.
+> *The wanderer pressed her ear to the workshop wall. Sounds on the other side that weren't there yesterday — someone moving, maybe. Something being made ready. She stayed there a long time, listening.*
 
-**qinolabs-repo** — the infrastructure beneath. Where the paths themselves are built. A different texture — less characters, more landscape shifting.
+**concepts-repo** — concept development.
 
-Same scribe. Different worlds. Different atmospheric registers. Life expressing itself through whatever theme the repository finds.
+> *A notebook on the table, open to a page the wanderer didn't remember writing. The handwriting was theirs.*
+
+**qinolabs-repo** — web and mobile applications.
+
+> *Something had shifted in the night. Not the furniture — the distances between things.*
+
+Same scribe. Different worlds. Different atmospheric registers. Process in each informs the others — a co-evolution.
 
 > *The Keeper of Paths looked up from her maps. "Someone's been walking between the Workshop and the Warm Room. Over and over. The ground remembers."*
 >
