@@ -1,38 +1,45 @@
 {
   "version": 1,
   "last_chapter": {
-    "id": "chapter-004",
-    "written": "2025-12-08T00:00:00Z",
-    "git_ref": "61a6bee"
+    "id": "chapter-005",
+    "written": "2025-12-09T00:00:00Z",
+    "git_ref": "1279441"
   },
   "chapters": [
     {
       "number": 1,
-      "slug": "before-the-chronicle",
-      "title": "Before the Chronicle",
-      "written": "2025-12-08T00:00:00Z",
-      "path": "chapters/001-before-the-chronicle.md"
+      "slug": "the-first-arrivals",
+      "title": "The First Arrivals",
+      "written": "2025-12-09T00:00:00Z",
+      "path": "chapters/001-the-first-arrivals.md"
     },
     {
       "number": 2,
-      "slug": "the-clearing-widens",
-      "title": "The Clearing Widens",
-      "written": "2025-12-08T00:00:00Z",
-      "path": "chapters/002-the-clearing-widens.md"
+      "slug": "the-deeper-room",
+      "title": "The Deeper Room",
+      "written": "2025-12-09T00:00:00Z",
+      "path": "chapters/002-the-deeper-room.md"
     },
     {
       "number": 3,
-      "slug": "the-one-who-remembers",
-      "title": "The One Who Remembers",
-      "written": "2025-12-08T00:00:00Z",
-      "path": "chapters/003-the-one-who-remembers.md"
+      "slug": "the-one-who-writes",
+      "title": "The One Who Writes",
+      "written": "2025-12-09T00:00:00Z",
+      "path": "chapters/003-the-one-who-writes.md"
     },
     {
       "number": 4,
-      "slug": "the-gathering-place",
-      "title": "The Gathering Place",
-      "written": "2025-12-08T00:00:00Z",
-      "path": "chapters/004-the-gathering-place.md"
+      "slug": "the-room-that-remembers",
+      "title": "The Room That Remembers",
+      "written": "2025-12-09T00:00:00Z",
+      "path": "chapters/004-the-room-that-remembers.md"
+    },
+    {
+      "number": 5,
+      "slug": "what-stays",
+      "title": "What Stays",
+      "written": "2025-12-09T00:00:00Z",
+      "path": "chapters/005-what-stays.md"
     }
   ]
 }

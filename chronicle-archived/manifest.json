@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "last_chapter": {
+    "id": "chapter-001",
+    "written": "2025-12-09T00:00:00Z",
+    "git_ref": "cd29298"
+  },
+  "chapters": [
+    {
+      "number": 1,
+      "slug": "the-shore-before-the-village",
+      "title": "The Shore Before the Village",
+      "written": "2025-12-09T00:00:00Z",
+      "path": "chapters/001-the-shore-before-the-village.md"
+    }
+  ]
+}
