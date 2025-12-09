@@ -1,9 +1,9 @@
 ---
 name: design-sprint
 description: Run multi-perspective design sprint exploration that organizes discoveries around emergent, domain-specific questions. Creates 7-9 files: navigation map, full dialogue, 5-7 question files answering what actually emerged from the conversation, and synthesis.
-version: 2.1.0
-last_synced: 2025-10-05
-source: /Users/philhradecs/Code/malao/malao-apps/.claude/agents/design-sprint.md
+tools: Read, Write, Edit, Glob
+permissionMode: acceptEdits
+---
 
 Examples of when to use:
 

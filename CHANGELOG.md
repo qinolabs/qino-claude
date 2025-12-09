@@ -17,6 +17,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 #### Added
 - **Agent permission mode** — agent frontmatter now includes `tools` and `permissionMode: acceptEdits`, so the scribe can write chapters without prompting for file operation confirmations
 
+### qino Concept
+
+#### Added
+- **Agent permission mode** — same as above
+
+### Design Adventure
+
+#### Added
+- **Agent permission mode** — same as above
+
+### Design Sprint
+
+#### Added
+- **Agent permission mode** — same as above
+
 ---
 
 ## [0.5.1] - 2025-12-09
