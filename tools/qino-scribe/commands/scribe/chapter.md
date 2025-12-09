@@ -192,21 +192,29 @@ arcs_begun: [list]
 
 ## Step 5b: Editorial Pass (Before Presenting)
 
-Before showing the chapter, reread it through the editor's lens. Check:
+Before showing the chapter, reread it through the editor's lens. This is not optional.
+
+**The checklist:**
 
 1. **Wanderer agency:** Does the wanderer do something that reveals character — a habit, a mistake, a held-back opinion? If they only observe and ask questions, add one moment of personhood.
 
 2. **Technical names:** Are any concept names (GameJoin, PerfectWeek, GMtool) used directly? Transform them — describe what they carry without naming them.
 
-3. **Explanatory dialogue:** Is any character reading a feature list aloud with dramatic pauses? Cut it. Show through behavior and restraint instead.
+3. **Explanatory dialogue:** Is any character explaining how something works? Delete the explanation entirely. Replace it with a moment showing someone's *relationship* to that thing — their history with it, their failure to understand it, their ritual around it.
 
-4. **Mystery calibration:** Count the unresolved threads. More than two in one chapter? Choose the strongest; save others for later.
+4. **Collective characters:** If multiple voices appear (like the Sevenfold), does each speaker have a physical detail, a verbal pattern, and an attitude? If they sound like abstractions having a meeting, give each one texture.
 
-5. **Warmth balance:** Is every character mysterious? Give one warmth instead. Is every location tense? Let one be ordinary.
+5. **Mystery calibration:** Count the unresolved threads. More than two in one chapter? Choose the strongest; save others for later.
 
-6. **Transformation test:** Read any passage and ask: could I strip the fantasy vocabulary and still see the diff underneath? If yes, rewrite.
+6. **Warmth balance:** Is every character mysterious? Give one warmth instead. Is every location tense? Let one be ordinary.
 
-If the draft fails any of these, revise before presenting. The editorial pass is not optional.
+7. **Transformation test:** Read any passage and ask: could I strip the fantasy vocabulary and still see the diff underneath? If yes, rewrite.
+
+**The verification loop:**
+
+After checking each item, if you made revisions, run the checklist again from the beginning. A fix for one problem can create another — adding wanderer agency might introduce explanatory dialogue; giving characters warmth might reduce mystery below the threshold.
+
+Continue until a full pass finds nothing to fix. Only then proceed to Step 6.
 
 ---
 

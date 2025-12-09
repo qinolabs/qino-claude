@@ -185,6 +185,34 @@ Characters have:
 - Voice (how they speak)
 - Mystery (what we don't know about them)
 
+### Collective Characters Must Feel Like Individuals
+
+When introducing a group — whether two figures or seven — each member needs texture. Abstract collectives sound like philosophy having a meeting.
+
+*Abstract (wrong):*
+> *"The boundary isn't where we draw it,"* said the first. *"It's where the pressure differential allows passage."*
+>
+> *"But that assumes we can control the differential,"* said the second. *"Reality is messier."*
+
+*Individual (right):*
+> The one with ink-stained fingers spoke first: *"You're thinking about this like a wall. It's not a wall. It's weather."*
+>
+> *"Weather."* The tall one — she'd been standing with arms crossed since they arrived — made it sound like a curse. *"Weather doesn't explain why three expeditions failed at the same threshold."*
+>
+> *"Maybe they weren't failures."* This from the one sitting apart, eyes still closed. *"Maybe they found something we're not counting."*
+
+The second version has:
+- Physical markers (ink-stained fingers, tall with crossed arms, sitting apart)
+- Verbal textures (one speaks in metaphors, one is skeptical, one reframes)
+- Distinct relationships to the problem (poetic, grounded, oblique)
+
+**Even in scenes with many voices, give each speaker:**
+- One physical detail (how they stand, what they carry, a habitual gesture)
+- One verbal pattern (skeptical, metaphorical, quiet, blunt)
+- One attitude toward the conversation (leaning in, resisting, watching from the edges)
+
+Three details per character. That's enough to distinguish. Without them, you have a chorus reciting different lines of the same speech.
+
 ### Dialogue That Sounds Like People
 Not concepts explaining themselves. People encountering mystery together.
 
@@ -213,6 +241,20 @@ The character is reading a feature list aloud. "Frame-holding. Choice cards. Wor
 > "That one I'm still reading." She didn't elaborate. But later, the wanderer noticed she'd moved it to a separate table — away from the others, as if it needed space to breathe.
 
 Now the depth is shown through *how she handles it*, not through a list of what it contains. The reader feels there's something different about this arrival without being told what.
+
+**"Cut it" means remove it entirely.**
+
+When you find explanatory dialogue, the repair is not to add pauses or soften the tone. The repair is to *delete the explanation* and replace it with something else entirely:
+
+*Before (explanatory dialogue):*
+> "We don't clear them," Selin continued. "Threads are multi-dimensional. You might integrate one facet, but other dimensions stay held. They're a living index of what the origins contain."
+
+*After (cut and replace):*
+> Selin pulled a thread from the drawer — a slip of paper so thin the light passed through it. The writing was faded. "This one's been here since I arrived," she said. "Every few months I think I understand it. Every few months I'm wrong." She tucked it back among the others without looking. "Some things keep teaching."
+
+The first version explains the concept. The second shows someone *living with* the concept — the years of returning to the same slip of paper, the humility of being wrong, the patience of things that keep teaching.
+
+**The rule:** If a character is explaining how something works, delete the explanation. Replace it with a moment that shows someone's *relationship* to that thing — their history with it, their failure to understand it, their ritual around it. The reader doesn't need to understand. They need to feel there's something worth understanding.
 
 ### Events That Unfold
 Things happen. Arrivals, departures, discoveries, confrontations, quiet moments.
@@ -380,16 +422,32 @@ The reader closes the book. The world continues.
 
 **World Tokens come last.** After the closing breath, include a `## World Tokens` section listing the crystallized presences from the chapter — characters, locations, objects, phenomena. This is required by the chronicle app for visual rendering.
 
-World Tokens are not summary — they are *tokens*, embodied elements that can be touched and explored. Write them as presences, not descriptions:
+World Tokens are not summary — they are *tokens*, embodied elements that can be touched and explored. Write them as presences, not descriptions.
+
+**The test for each token:** Could this description work without the chapter? Tokens should stand alone as evocative fragments. If the token only makes sense by referencing plot ("She explained the three concepts"), it's summary, not presence.
+
+**Good tokens (presences):**
 
 > **Selin**
 > Cartographer. Eyes like deep space. Holds her stylus like a conductor's baton.
 
-Not:
+> **The Receiving Hall**
+> Curved desks, luminous paper, a viewport facing the uncharted dark. Smells of ink and star-chart dust.
+
+> **Held Threads**
+> Margin notes on translucent paper. What arrived but wasn't carried forward. Some are decades old.
+
+**Bad tokens (summaries):**
+
 > **Selin**
 > A cartographer who handles arrivals at the outpost. She explained the three concepts to the wanderer.
 
-The first is a presence. The second is a plot summary. Whether character, location, object, or phenomenon — each token should feel tangible, something with weight and texture, not a description of what happened.
+> **Held Threads**
+> Material that arrives alongside transmissions but wasn't carried into the final form. A living index of what origins contain. Never cleared — threads are multi-dimensional.
+
+The good tokens have sensory detail (eyes, paper, smell). The bad tokens describe function ("handles arrivals," "living index"). The good tokens could appear in a different story. The bad tokens are tied to plot.
+
+Whether character, location, object, or phenomenon — each token should feel tangible, something with weight and texture, not a description of what happened or how it works.
 
 After World Tokens, the scribe's technical block (git refs, timestamps) goes in hidden comments.
 
