@@ -72,19 +72,21 @@ This is the inheritance: from young anthropologists watching rituals on the Sepi
 </details>
 
 <details>
-<summary><strong>The Chronicle: Story of an Ecosystem</strong></summary>
+<summary><strong>The Chronicle</strong></summary>
 
 This repository tells its own story.
 
 In `chronicle/`, the tools' evolution is written as a story world — characters who arrive when new tools emerge, locations that deepen as ideas mature, arcs that build across chapters.
 
-> *The village existed before anyone named it. Fog lay heavy between the clearings — each one separate, each one holding something taking shape.*
+> *The Listener crouched beneath the great tree, fingers tracing patterns in the dirt. Above, threads of light drifted between branches — some bright with recent touch, others fading toward silver. "There," she said, pointing to where two threads had begun to twist around each other. "That wasn't there yesterday."*
 
-Four chapters trace the journey: from early making through the gate opening (v0.1.0), the ecosystem awakening (v0.2.0), the chronicler's arrival (v0.3.0), to the gathering place where notes find home (v0.4.0).
+The chronicle grows with each release. New characters appear when something wants to be named. Locations reveal hidden rooms when ideas find their shape.
 
-> *"Memory drifts," the Scribe said gently. "Stories hold."*
-
-The chronicle is bootstrapped. Future chapters will emerge as the tools continue to evolve.
+> *The Keeper of Paths looked up from her maps. "Someone's been walking between the Workshop and the Warm Room. Over and over. The ground remembers."*
+>
+> *"What are they looking for?"*
+>
+> *She smiled. "They'll know when they stop."*
 
 → [Read the chronicles (alpha)](https://chronicle.qinolabs.com/)
 
