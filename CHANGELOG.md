@@ -10,6 +10,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.5.2] - 2025-12-09
+
+### qino Scribe
+
+#### Added
+- **Agent permission mode** — agent frontmatter now includes `tools` and `permissionMode: acceptEdits`, so the scribe can write chapters without prompting for file operation confirmations
+
+---
+
 ## [0.5.1] - 2025-12-09
 
 ### qino Scribe
