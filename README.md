@@ -88,7 +88,7 @@ The chronicle grows with each release. New characters appear when something want
 >
 > *She smiled. "They'll know when they stop."*
 
-→ [Read the chronicles (alpha)](https://chronicle.qinolabs.com/)
+→ [Read the chronicles (alpha)](https://chronicles.qinolabs.com/)
 
 </details>
 
@@ -149,7 +149,7 @@ qino Scribe transforms this into a story world. Not metaphor — an actual place
 
 The chronicle is something you could give to a collaborator, revisit in a year, or read like a children's book by nightlamp.
 
-→ [Read the chronicles (alpha)](https://chronicle.qinolabs.com/)
+→ [Read the chronicles (alpha)](https://chronicles.qinolabs.com/)
 
 ### Walkable abstraction
 
