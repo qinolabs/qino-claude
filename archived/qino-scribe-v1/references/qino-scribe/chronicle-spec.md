@@ -130,24 +130,14 @@ The chronicle is a story world that emerges from ecosystem evolution. `world.md`
 
 *Last updated: Chapter 3*
 
-## The World's Breath
-
-The harbor is quiet today. Low tide. The kind of stillness where you can hear the dock wood settling.
-
-Fog sits heavy at the boundary — not threatening, just present. Waiting to see what arrives.
-
----
-
 ## Characters
 
 ### The one who arrived with questions
 First appeared at the threshold (ch. 1). Walked toward the weaving-room (ch. 2).
 Not seen since — somewhere in the interior.
-*Notices*: hands, how people hold things, what they set down
 
 ### The keeper of held threads
 Appears when something waits. Speaks little. Seen at the edge of discovery-grid (ch. 3).
-*Notices*: what's been here longest, what's ready to leave
 
 ---
 
@@ -161,16 +151,6 @@ Warm, lamp-lit. Where connections form. Threads hang visible. Visited: ch. 2
 
 ### Discovery-Grid
 Vast open space. Nodes like stars, paths between. First glimpsed ch. 3.
-
----
-
-## Tensions
-
-The keeper believes some things should stay held. The wanderer wants to understand everything.
-
-The weaving-room and the threshold have different relationships to time — one holds, one releases.
-
-The harbor itself is changing. Some characters have noticed. Others haven't yet.
 
 ---
 
@@ -191,14 +171,10 @@ A feeling of arrival, of things taking shape.
 ```
 
 **Key principles:**
-- **The world's breath** — what the environment is doing now, its mood, what it offers
-- **Characters and locations** emerge from what actually happens — no predetermined cast
-- **What characters notice** — their perceptual bias, what draws them, what they miss
-- **Tensions** — between characters, between places, between what is and what wants to be
-- **Arcs** track journeys and unresolved questions, not tasks
-- **The season** captures the larger rhythm — what kind of time this is
-
-These aren't categories to fill — they're containers that hold whatever wants to be held.
+- Characters and locations emerge from what actually happens — no predetermined cast
+- Each entry includes first appearance and last seen (for continuity)
+- Arcs track tensions and journeys, not tasks
+- The season captures the larger rhythm — what kind of time this is
 
 ---
 

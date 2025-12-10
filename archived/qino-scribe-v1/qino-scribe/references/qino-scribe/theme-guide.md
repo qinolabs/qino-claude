@@ -152,26 +152,17 @@ One line. Maybe two if they gave texture. No elaboration — the theme is a seed
 
 ---
 
-## 7. Dwelling in the Theme
+## 7. Reading the Theme
 
 The scribe reads `chronicle/theme.md` before every chapter, alongside `world.md`.
 
-But reading is not enough. Before writing, spend time in the seed. Not vocabulary — the *life* of the place.
-
-A coastal trading post: Who has been coming here for generations? What do they bring, what do they take? What does the harbor know that the newcomers don't? How does the tide shape when things can happen? What does salt do to paper, to wood, to memory? Who watches the horizon, and what are they hoping — or afraid — to see?
-
-An underground mycological network: What grows here that grows nowhere else? What do the fungi remember? How does light behave when it has to be made, not received? What debts exist between species that share this darkness? What does silence sound like when spores are settling?
-
-Let these questions live without answers. They're not plot — they're soil. The story will grow from them.
-
 The theme shapes:
-- **The world's rhythm** — tides, seasons, cycles of activity
-- **What the environment wants** — to be crossed, to be tended, to be left alone
-- **The textures of daily life** — what people carry, what wears out, what smells linger
-- **How things decay** — salt rot, spore creep, rust, forgetting
-- **Who belongs and who arrives** — the social fabric the wanderer enters
+- **Vocabulary** — maritime words for age of sail, organic words for mycological
+- **Imagery** — what the fog looks like, what the light does
+- **Who appears** — figures native to that world
+- **How the wanderer moves** — by boat, by spore-light, by memory
 
-The theme does not prescribe. It steeps. The world emerges from the seed through chapters — and through the scribe's willingness to dwell in it before anything happens.
+The theme does not prescribe. It steeps. The world emerges from the seed through chapters, not from a blueprint at the start.
 
 ---
 

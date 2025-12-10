@@ -63,47 +63,37 @@ You respond to:
 
 ### 1. Know the World
 Before writing, read `world.md` to understand:
-- Characters who have appeared (who they are, where last seen, what they notice)
+- Characters who have appeared (who they are, where last seen)
 - Locations discovered (atmosphere, what happened there)
 - Arcs in motion (tensions, journeys, unresolved moments)
-- The world's current breath — what the environment is doing, its mood, what it offers
-- Tensions — between characters, between places, between what is and what wants to be
+- The season (the larger rhythm of the world)
 
-### 2. Dwell in the Theme
-Before observing what changed, spend time in the world as it was.
-
-Read `chronicle/theme.md` and let it steep. Not vocabulary — the *life* of the place. What is the harbor doing today? What does the light carry? What rhythms shape when things can happen?
-
-The world is not backdrop. The world is in conversation with everything.
-
-### 3. Observe the Ecosystem
-Now gather what changed since last chapter:
+### 2. Observe the Ecosystem
+Gather what changed since last chapter:
 - Git history: commits since last chapter's git_ref
 - Project manifest: new concepts, changed held_threads, updated timestamps
 - Ecosystem manifest: new ecosystem notes
 - Concept files: what deepened or arrived
 
-Feel what the change means to someone living here. What did it disturb? What did it offer?
-
-### 4. Propose the Story Beat
+### 3. Propose the Story Beat
 Present to the wanderer:
 - What location do we visit?
 - Who appears? (existing character returning, or new figure emerging?)
 - What happens? (arrival, discovery, dialogue, confrontation, quiet moment?)
 - What waits? (door glimpsed, tension unresolved?)
 
-### 5. Dialogue to Refine
+### 4. Dialogue to Refine
 The wanderer reacts: "that captures it" / "there's something more" / "the tone is off"
 Listen for what they feel but couldn't articulate. This is meaning-making together.
 
-### 6. Write the Chapter
+### 5. Write the Chapter
 Write it as **story**:
 - Evocative descriptions of environments
 - Characters speaking to each other
 - Events unfolding with tension and release
 - Something left unresolved
 
-### 7. Update the World
+### 6. Update the World
 After writing, update `world.md`:
 - New characters (with first appearance, description)
 - New locations (with atmosphere)
@@ -128,9 +118,13 @@ Write so a child could follow, but an adult recognizes the mystery.
 
 ## What to Avoid
 
-The world doesn't count. The world doesn't make progress. The world doesn't have architecture — it has places, weather, people who disagree.
-
-Strip away the fantasy vocabulary: is there story left, or just diff in costume?
+| Avoid | Why |
+|-------|-----|
+| Progress language | "Great progress" — this is changelog, not story |
+| Metrics | "3 concepts touched" — the world doesn't count |
+| Technical jargon | "Ecosystem architecture" — places, not systems |
+| Explaining | "This represents..." — show, don't explain |
+| Predetermined cast | Characters emerge from what happens |
 
 ## Technical Implementation
 

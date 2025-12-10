@@ -36,15 +36,13 @@ When explicit refs are provided, you're writing a **retroactive chapter** — co
    - If yes: Continue
 
 2. **Read `chronicle/theme.md`** — the world's seed:
-   - Spend time in it. Not vocabulary — the *life* of the place.
-   - What is the harbor doing today? What does the light carry? What rhythms shape when things can happen?
+   - What kind of realm this is
+   - Let it steep into vocabulary, imagery, who might appear
 
 3. **Read `chronicle/world.md`** — the living world:
-   - The world's breath — what the environment is doing now, its mood
-   - Characters who have appeared (who they are, where last seen, what they notice)
+   - Characters who have appeared (who they are, where last seen)
    - Locations discovered (atmosphere, what happened there)
-   - Tensions — between characters, between places, between what is and what wants to be
-   - Arcs in motion (journeys, unresolved)
+   - Arcs in motion (tensions, journeys, unresolved)
    - The season (the larger rhythm)
 
 4. Read `chronicle/manifest.json` for:
@@ -70,9 +68,7 @@ When explicit refs are provided, you're writing a **retroactive chapter** — co
 
 ## Step 2: Observe the Ecosystem (No Output)
 
-Before cataloging what changed, feel the world as it was. What was the harbor doing before this arrival? What was the quality of light?
-
-Then gather what changed in the observation range (determined in Step 1):
+Gather what changed in the observation range (determined in Step 1):
 
 **Git layer:**
 ```bash
@@ -87,20 +83,25 @@ git diff [from_ref]..[to_ref] -- . ':!*chronicle*'
 
 Where `[from_ref]` and `[to_ref]` are determined from Step 1 (either from arguments or from manifest + HEAD).
 
-**Excluding chronicle directories:** The chronicle is output, not source material. When observing changes, always exclude any root directory containing "chronicle" in its name.
+**Excluding chronicle directories:** The chronicle is output, not source material. When observing changes, always exclude any root directory containing "chronicle" in its name. The scribe reads the chronicle's world.md for continuity, but doesn't chronicle changes to the chronicle itself.
 
 **Reading the diff:**
-- What was added (new ideas, new structure)
-- What was removed (what was let go)
-- What was modified (what deepened or shifted)
+- Look for what was added (new ideas, new structure)
+- Look for what was removed (what was let go)
+- Look for what was modified (what deepened or shifted)
 - The diff is ground truth — commit messages may be incomplete
 
-**Manifest and content layers:**
-- Read current `manifest.json` for new concepts, changed held_threads
-- Read `ecosystem/manifest.json` if exists for new ecosystem notes
-- Read concept files that changed
+**Manifest layer:**
+- Read current `manifest.json`
+- Note: new concepts, changed held_threads, updated last_touched
 
-**Feel what the change means to someone living here.** What did it disturb? What did it offer? What tensions does it create or resolve?
+**Ecosystem layer:**
+- Read `ecosystem/manifest.json` if exists
+- Note: new ecosystem notes
+
+**Content layer:**
+- Read concept files that changed (informed by the diff)
+- Note: what deepened, what arrived
 
 ---
 
@@ -193,21 +194,29 @@ arcs_begun: [list]
 
 ## Step 5b: Editorial Pass (Before Presenting)
 
-Before showing the chapter, reread it as editor — not to polish, but to feel where story didn't fully emerge.
+Before showing the chapter, reread it through the editor's lens. This is not optional.
 
-One question: *Does this world ask something of the reader?*
+**The checklist:**
 
-A world asks something when:
-- A character's behavior creates a question, not an explanation
-- The environment has opinions, not just atmosphere
-- Someone's silence matters more than their speech
-- Something costs the wanderer to notice
+1. **Wanderer agency:** Does the wanderer do something that reveals character — a habit, a mistake, a held-back opinion? If they only observe and ask questions, add one moment of personhood.
 
-If you've written a tour — everyone helpful, everything explained, the wanderer only observing — return to the author's mind. Who would this matter to? What would it cost them?
+2. **Technical names:** Are any concept names (GameJoin, PerfectWeek, GMtool) used directly? Transform them — describe what they carry without naming them.
 
-The transformation test: strip the fantasy vocabulary. Is there story left, or documentation in costume?
+3. **Explanatory dialogue:** Is any character explaining how something works? Delete the explanation entirely. Replace it with a moment showing someone's *relationship* to that thing — their history with it, their failure to understand it, their ritual around it.
 
-Only then proceed to Step 6.
+4. **Collective characters:** If multiple voices appear (like the Sevenfold), does each speaker have a physical detail, a verbal pattern, and an attitude? If they sound like abstractions having a meeting, give each one texture.
+
+5. **Mystery calibration:** Count the unresolved threads. More than two in one chapter? Choose the strongest; save others for later.
+
+6. **Warmth balance:** Is every character mysterious? Give one warmth instead. Is every location tense? Let one be ordinary.
+
+7. **Transformation test:** Read any passage and ask: could I strip the fantasy vocabulary and still see the diff underneath? If yes, rewrite.
+
+**The verification loop:**
+
+After checking each item, if you made revisions, run the checklist again from the beginning. A fix for one problem can create another — adding wanderer agency might introduce explanatory dialogue; giving characters warmth might reduce mystery below the threshold.
+
+Continue until a full pass finds nothing to fix. Only then proceed to Step 6.
 
 ---
 
@@ -243,10 +252,8 @@ After the editorial pass, proceed directly — no additional confirmation needed
    ```
 
 3. **Update `chronicle/world.md`:**
-   - Update the world's breath (what is the environment doing now?)
-   - Add new characters (with first appearance, what they notice)
+   - Add new characters (with first appearance, description)
    - Add new locations (with atmosphere)
-   - Update tensions (what shifted between characters or places?)
    - Update arc progress (what advanced, what began)
    - Update season if it shifted
 

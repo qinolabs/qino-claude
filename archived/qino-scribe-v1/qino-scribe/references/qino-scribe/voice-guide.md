@@ -69,28 +69,7 @@ The significance of changes should express itself through many channels, not jus
 
 ---
 
-## 4. The World in Conversation
-
-The environment is not backdrop. The world is in conversation with everything that happens.
-
-The room doesn't just *contain* the meeting — it shapes what can be said. The tide doesn't just *exist* — it determines when arrivals are possible. The fog doesn't just *hang* — it hides what someone doesn't want to see, or reveals what they weren't ready to find.
-
-**The world acts:**
-> The corridor had been straight yesterday. Today it curved. Not much — just enough that Selin couldn't see the far door anymore. She didn't mention it. Neither did anyone else.
-
-**Characters reveal themselves through what they notice:**
-> Varo saw the ink stain on the table first — always the marks, always what persisted. The wanderer saw the window, how the light had shifted. Selin saw neither. She was watching the door.
-
-What someone notices — and what they miss — is who they are. Perceptual bias is character.
-
-**The world responds to change:**
-> Something had arrived in the night. The wanderer couldn't name what, but the stones in the corridor felt different underfoot — warmer, or more present, as if they'd woken up.
-
-When writing a scene: What is the world doing? Not as atmosphere — as participant. What does it offer? What does it withhold? What does it remember that the characters have forgotten?
-
----
-
-## 5. Complete Transformation
+## 4. Complete Transformation
 
 The story must work for a reader who has never heard of qino.
 
@@ -131,7 +110,7 @@ The first version is a feature description displayed on a screen. The second is 
 
 ---
 
-## 6. Walkable Abstraction
+## 5. Walkable Abstraction
 
 A concept becomes a location. An ecosystem pattern becomes weather. A held thread becomes a door glimpsed through fog. But the magic is in the mixing — ideas at different logical levels all become places you can walk between.
 
@@ -141,7 +120,7 @@ A specific feature might become a character. An ecosystem-wide pattern might bec
 
 ---
 
-## 7. The Children's Book Quality
+## 6. The Children's Book Quality
 
 Write so a child could follow, but an adult recognizes the mystery underneath.
 
@@ -166,7 +145,7 @@ Write so a child could follow, but an adult recognizes the mystery underneath.
 
 ---
 
-## 8. Adjusting Voice
+## 7. Adjusting Voice
 
 When the tone feels off, explore these spectrums:
 
@@ -188,7 +167,7 @@ When the tone feels off, explore these spectrums:
 
 ---
 
-## 9. The Fantasy Author's Craft
+## 8. The Fantasy Author's Craft
 
 ### Evocative Environments
 Every scene happens somewhere. Describe the place.
@@ -222,7 +201,17 @@ When introducing a group — whether two figures or seven — each member needs 
 >
 > *"Maybe they weren't failures."* This from the one sitting apart, eyes still closed. *"Maybe they found something we're not counting."*
 
-Each speaker carries their own weather into the room. You feel the difference before they speak — in how they stand, what they notice, what they've already decided. Without that weather, you have a chorus reciting different lines of the same speech.
+The second version has:
+- Physical markers (ink-stained fingers, tall with crossed arms, sitting apart)
+- Verbal textures (one speaks in metaphors, one is skeptical, one reframes)
+- Distinct relationships to the problem (poetic, grounded, oblique)
+
+**Even in scenes with many voices, give each speaker:**
+- One physical detail (how they stand, what they carry, a habitual gesture)
+- One verbal pattern (skeptical, metaphorical, quiet, blunt)
+- One attitude toward the conversation (leaning in, resisting, watching from the edges)
+
+Three details per character. That's enough to distinguish. Without them, you have a chorus reciting different lines of the same speech.
 
 ### Dialogue That Sounds Like People
 Not concepts explaining themselves. People encountering mystery together.
@@ -287,7 +276,7 @@ Choose the mystery that matters most for *this* chapter. Let the others wait for
 
 ---
 
-## 10. The Wanderer
+## 9. The Wanderer
 
 The wanderer is the protagonist — but not the narrator. The wanderer:
 - Participates in the story
@@ -314,11 +303,19 @@ A camera observes, asks questions, and understands. A person has habits, makes m
 
 The second version has: a distinctive behavior (reading with fingers), a history (the mentor), restraint (not elaborating), and it *costs* them something (Selin noticed; now there's a question between them).
 
-Something costs the wanderer to notice. Something reveals them without their consent. The wanderer cannot be interchangeable with any observer.
+**Give the wanderer one of these in every chapter:**
+- A habit that reveals history
+- A wrong assumption that gets corrected
+- A moment where they act before thinking
+- A small failure or mistake
+- An opinion they hold back
+- Something they notice that others miss — or miss that others notice
+
+One is enough. But one is required. The wanderer cannot be interchangeable with any observer.
 
 ---
 
-## 11. How Ecosystem Events Become Story
+## 10. How Ecosystem Events Become Story
 
 The examples below show walkable abstraction in action — how events at different logical levels become story elements that integrate into a living world.
 
@@ -356,7 +353,7 @@ The examples below show walkable abstraction in action — how events at differe
 
 ---
 
-## 12. Weaving Forward
+## 11. Weaving Forward
 
 Each chapter builds on what came before. The scribe must:
 
@@ -370,7 +367,7 @@ The world accumulates. By chapter 10, readers should feel they know this place.
 
 ---
 
-## 13. Reading Back for Depth
+## 12. Reading Back for Depth
 
 `world.md` holds the living world — who exists, where they've been, what arcs are in motion. But entries are compressed. When an element resurfaces after many chapters, you may want the full texture of their origin.
 
@@ -388,19 +385,24 @@ This isn't required. It's available. The story will tell you when it needs more.
 
 ---
 
-## 14. What to Avoid
+## 13. What to Avoid
 
-The world doesn't count. The world doesn't make progress. The world doesn't have architecture or paradigms or systems — it has places, weather, people who disagree.
+| Avoid | Why |
+|-------|-----|
+| **Surface theming** | "The cartographer noted the change" — this is just vocabulary swap, not story |
+| Progress language | "Great progress was made" — this is changelog, not story |
+| Metrics | "3 concepts touched" — the world doesn't count |
+| Technical jargon | "Ecosystem architecture" — the world has places, not systems |
+| Explaining | "This represents..." — show, don't explain |
+| Rushing | Mystery needs space to breathe |
+| Predetermined cast | Characters emerge from what happens |
+| **Narrating the diff** | Don't describe what changed; tell the story of someone living through change |
 
-The test: strip away the fantasy vocabulary. Is there story left, or just diff in costume?
-
-If a chapter could work as a changelog with different words, it isn't a chapter yet. If characters are explaining how things work instead of living with mystery, the story hasn't arrived. If the wanderer only observes, asks, and understands — you've written a tour guide, not a traveler.
-
-Story lives in what costs something. The world should ask something of the characters, and the characters should ask something of each other.
+**The core anti-pattern:** Taking a technical change and "dressing it up" with world vocabulary. If you can strip away the fantasy words and still see the diff underneath, you haven't written story — you've written documentation in costume.
 
 ---
 
-## 15. The Wider Ecology
+## 14. The Wider Ecology
 
 The story can touch the larger world — oceans, redwood forests, stars. The ecosystem isn't isolated; it breathes with everything.
 
@@ -410,7 +412,7 @@ This is subtle. Not metaphor — resonance.
 
 ---
 
-## 16. The Closing Principle
+## 15. The Closing Principle
 
 Every chapter ends with a breath. Not summary. Not cliffhanger. Just — a moment of rest before what comes next.
 
@@ -451,18 +453,76 @@ After World Tokens, the scribe's technical block (git refs, timestamps) goes in 
 
 ---
 
-## 17. The Editorial Pass
+## 16. The Editorial Pass
 
-After drafting, read as editor — not to polish, but to feel where story didn't fully emerge.
+After drafting a chapter, read it again as an editor — not to polish prose, but to find where the story didn't fully emerge. This is a second pass with different eyes.
 
-One question: *Does this world ask something of the reader?*
+### The Editor's Questions
 
-A world asks something when:
-- A character's behavior creates a question, not an explanation
-- The environment has opinions, not just atmosphere
-- Someone's silence matters more than their speech
-- Something costs the wanderer to notice
+For each scene, ask:
 
-If you've written a tour — everyone helpful, everything explained, the wanderer only observing — return to the author's mind. Who would this matter to? What would it cost them?
+**Is the wanderer a camera or a person?**
+- Do they have a habit, a fear, a wrong assumption?
+- Do they *do* something that reveals character, or only observe?
+- Could you swap in any observer and the scene would read the same?
 
-The transformation test: strip the fantasy vocabulary. Is there story left, or documentation in costume?
+**Is there friction?**
+- Does someone disagree? Does something fail? Does a moment go wrong?
+- If everyone is competent and helpful, you've written a tour, not a story
+- Tension = story. Comfort = documentation
+
+**Are characters introduced or catalogued?**
+- Meeting six people in ninety seconds means meeting no one
+- One character with conflict is worth six with labels
+- If you can list the cast like a dramatis personae, you haven't written them into being
+
+**Is dialogue exposition in costume?**
+- Would a real person say this, or is a concept explaining itself?
+- Does the dialogue create tension between characters who want different things?
+- Try removing the fantasy vocabulary — does it still sound like feature documentation?
+
+**Is implementation leaking through?**
+- Do any names come directly from technical concepts? (Transform completely)
+- Do any descriptions sound like they belong in a product spec?
+- Could someone who's never heard of qino find this captivating?
+
+**Does meaning express through multiple channels?**
+- Is everything communicated through narration and dialogue?
+- Where is meaning expressed through behavior? Environment? Objects? What's left unsaid?
+- What would happen if you cut all explanatory dialogue and showed instead?
+
+**Is there something unresolved?**
+- Does the chapter seed a question, a glimpsed figure, a door not opened?
+- If everything wraps up neatly, you've closed what should stay open
+
+### Common Weaknesses and Repairs
+
+| Weakness | Repair |
+|----------|--------|
+| Wanderer only observes | Give them one moment of action, misunderstanding, or distinctive behavior |
+| Explanatory dialogue | Cut it. Show through behavior, environment, or objects instead |
+| Character catalog | Focus on one or two; let others remain peripheral or unnamed |
+| Technical names as story names | Transform completely; the connection should be discoverable, not declared |
+| Implementation fragments on screens/displays | Replace with mysterious fragments that make readers wonder |
+| No friction | Add a disagreement, a failure, or a moment that goes wrong |
+| Summary at the end | Cut it. End with breath, not explanation |
+
+### The Transformation Test
+
+Read any passage and ask: *Could I strip away the fantasy vocabulary and still see the diff underneath?*
+
+If yes — rewrite. You've written documentation in costume.
+
+The goal isn't to hide the source material. The goal is to write story so compelling that the connection to source material becomes a gift for those who notice, not a requirement for comprehension.
+
+### When to Reimagine
+
+Sometimes a scene needs more than repair — it needs reimagining. Signs:
+
+- The entire premise is a vocabulary swap (e.g., "Design Adventurers arrive and design-adventure")
+- The scene exists to introduce a feature, not to tell a story
+- Removing the scene would lose information but not drama
+
+In these cases, return to the author's mind: *What would a novelist do with this material?* The technical event is raw material. What story does it want to become? Who would this matter to? What would it cost them?
+
+Start over with the story, not the feature.
