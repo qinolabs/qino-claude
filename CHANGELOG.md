@@ -10,6 +10,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.6.0] - 2025-12-10
+
+### qino Scribe
+
+#### Added
+- **Environmental-relational storytelling** — the world is now a participant, not backdrop; it acts, responds, and shapes what can happen
+- **"The World's Breath"** — `world.md` now tracks the environment's current mood: what it's doing, what it offers, what it withholds
+- **Character perception bias** — entries now include what each character notices (and misses), making perceptual habits part of their identity
+- **Tension tracking** — `world.md` captures tensions between characters, between places, between what is and what wants to be
+- **Theme dwelling** — before writing, the scribe now spends time in the theme as a living place, not just vocabulary to extract
+
+#### Changed
+- **Git diff excludes chronicle directories** — avoids the recursive problem of chronicling the chronicle
+- **Streamlined editorial pass** — simplified to one question: "Does this world ask something of the reader?"
+- **Voice guide renumbered** — sections 4-16 become 5-17 to accommodate new "World in Conversation" section
+
+---
+
 ## [0.5.2] - 2025-12-09
 
 ### qino Scribe
