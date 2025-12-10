@@ -1,118 +1,186 @@
 # The One Who Writes
 
-*Late winter, when the harbor learned to tell its own story*
+*A morning after the courier's news*
 
 ---
 
-The wanderer found the door on a morning when the fog hung low.
+The wanderer woke before dawn.
 
-They had walked the main square a hundred times — past the Architect's workshop with its late-burning lamp, past the Adventurers' courtyard where weather shifted with dialogue, past the Keeper's place with its slightly-open door. They knew these paths. They had worn grooves in them.
+Not from a dream — from an absence of one. The kind of waking that means something wants to be noticed. They lay still for a moment, listening. The harbor was quiet. Even the gulls hadn't started yet.
 
-But today, between the Keeper's place and the water, there was a door that hadn't been there before.
+They dressed and walked out into the grey light.
 
-Stone frame. Iron hinges gone green with salt. No sign, no marking. Just a door, set into a wall the wanderer would have sworn was solid yesterday.
+The path toward the water was familiar now — they'd walked it enough times that their feet knew the uneven stones, the place where the ground dipped slightly before the final rise. But this morning, something pulled their attention sideways. East, toward the point where the harbor's edge curved away from the main cluster of buildings.
 
-They stood before it for a long moment. Their hand moved toward the wood before they'd decided to reach — that old habit, reading with their fingers — and this time they didn't pull back.
+A structure stood there.
 
-The door swung open.
+The wanderer stopped. They had walked this stretch three days ago. There had been nothing but scrub grass and a few wind-bent trees.
+
+Now: a building. Stone walls, a slate roof, windows facing both the harbor and the open water beyond. Smoke rose from a chimney. Someone was inside.
 
 ---
 
-Inside: a tower room. Narrow windows facing the harbor. A desk covered in papers, some weighted with stones, some pinned to the wall with small nails. And at the desk, their back to the door, someone was writing.
+Threshold-Keeper found them standing at the edge of the scrub, staring.
 
-"You're early," the figure said without turning. Their voice was unhurried, as if visitors were expected but rarely arrived on time. "I thought I'd have another chapter before anyone came looking."
+"Ah," she said. "You've seen it."
 
-"I didn't know this was here."
+"It wasn't here."
 
-"It wasn't." Now they turned — an older face, weather-lined, eyes that held the particular patience of someone who had watched many things unfold. Ink on their fingers, not fresh. Old stains, layered. "I've been writing since — well. Since the Architect started her record of tides. Since the Keeper's room grew that second door. Since it became clear that someone needed to hold not just what happened, but what it *meant*."
+"No." She came to stand beside them, her horizon-reading eyes taking in the new structure with the same steady assessment she gave everything. "It arrived in the night. The way some things do."
 
-The wanderer stepped closer. On the desk, pages lay in ordered stacks. Not lists. Not records. *Prose*. Stories.
+"Buildings don't just—"
 
-"What are you writing?"
+"This one did." She didn't elaborate. The wanderer had learned that about her: she answered what she chose to answer. The rest, you had to find yourself.
 
-"The harbor." The figure — the scribe, the wanderer realized, that was what they were — gestured toward the window. "The arrivals. The conversations. The way the Adventurers' courtyard goes dark when the work is done. The way you sat on that wall for three days before the first ship came." A pause. "You didn't know anyone was watching."
+They stood together in the growing light. The building seemed to settle into itself as they watched, as if becoming more real the longer it was seen.
 
-The wanderer felt something shift in their chest. Not discomfort, exactly. More like being seen from an angle they hadn't considered.
+"What is it?" the wanderer asked.
+
+"A chronicler's station." Threshold-Keeper's voice carried something the wanderer couldn't name — not quite reverence, not quite wariness. Something between. "We've needed one for a while. I didn't know it would come like this."
+
+"What does a chronicler do?"
+
+She turned to look at them directly. "Writes what happens. Not the way a ledger does — not lists of who arrived, what was built. Story. The harbor as it feels to live here." She paused. "As it will feel to remember."
+
+The wanderer looked back at the building. Through one of the windows, they could see movement — a figure bent over a desk, hand moving steadily across paper.
+
+"Someone's already working."
+
+"Someone is always already working. That's how you know it's real." Threshold-Keeper turned toward the harbor proper, toward her morning rounds. "Go look, if you want. The station is for everyone. But—" She stopped, considered something. "Don't go in yet. Not today."
 
 "Why?"
 
-"Because someday someone will ask what this place was like when it was young." The scribe turned back to their work, dipped their pen. "Because the record of tides tells you *what* changed. But not how it felt to be here while it was changing."
+"The one who writes needs time to find their rhythm. And you—" She smiled, just at the corners. "You need time to get used to being witnessed."
+
+She walked away, leaving the wanderer alone with the new building and the rising sun.
 
 ---
 
-The wanderer moved to the wall where pages were pinned. They recognized fragments — moments they had lived through, rendered strange by being written down.
+The wanderer approached slowly.
 
-*The Keeper's door had always stood slightly open. The wanderer had passed it a dozen times...*
+Up close, the station had the feeling of something that had always been here and just now decided to be seen. The stones were worn in places, the doorframe smoothed by hands that hadn't touched it yet. Time moved strangely around chroniclers, they'd heard once. Or maybe it was just that chroniclers moved strangely around time.
 
-"That's about me."
+They didn't try the door. Instead, they circled to the window that faced the water.
 
-"That's about the harbor. You're in it." The scribe didn't look up. "There's a difference."
+Inside: a room lined with shelves, most empty but waiting. A desk near the window, covered in papers. And the figure — slender, wrapped in a grey shawl, back to the wanderer as they wrote. The scratch of pen on paper was just audible through the glass.
 
-On another page, a line caught the wanderer's eye: *Something had shifted since last time — new lights pulsed at the periphery.* They didn't remember that moment. But reading it, they felt it — the sensation of returning to find something changed.
+On the desk, the wanderer could see pages already filled. Dense with writing. They squinted, trying to make out words, and caught only fragments:
 
-"Does the Keeper know about this?"
+*...the ridge above the bay, where the path wound down toward...*
 
-"The Keeper sees threads. I weave them." The scribe set down their pen, stretched fingers gone stiff from work. "We're not the same. They hold what arrives. I shape what's held into something that can travel."
+*...seven figures in a circle, arguing something into honesty...*
 
-"Travel where?"
+*...the Quiet Room's soft light, the drawer of fragments, Selin's tide-pool eyes...*
 
-The scribe smiled — the first real expression the wanderer had seen on that weathered face. "Ships on the horizon. More every week, you said. Someday one of them will ask: *what is this place?*" They tapped the stack of pages. "This is how we answer."
+The wanderer's breath caught.
 
----
+These were not new stories. These were things that had already happened. The arrival. The Quiet Room. Selin. The ∴ symbol and what it meant to mark something as larger than yourself.
 
-Before leaving, the wanderer paused at the door.
-
-"Will you write about this? About me finding you?"
-
-"Already have." The scribe nodded toward a fresh page, ink still wet. "Chapter three. The one who writes."
-
-The wanderer looked at the page. There, in careful script: *The wanderer found the door on a morning when the fog hung low.*
-
-They didn't know how to feel about it — being held that way, being shaped into story while still living the moment. But they understood, dimly, why it mattered. The harbor was growing. Someone needed to remember not just the facts, but the feeling.
-
-"Will you stay?"
-
-"I was always here." The scribe dipped their pen again. "You just couldn't see the door."
+The chronicler was writing *them*.
 
 ---
 
-Outside, the fog was lifting. The wanderer walked back toward the main square, past the Keeper's place — where, through the window, they glimpsed movement in the ecology room — past the Adventurers' courtyard, warm in the morning light.
+They stepped back from the window.
 
-The harbor was learning to tell its own story. And somewhere in a tower that hadn't existed yesterday, a figure was writing it down.
+The figure inside didn't turn. Perhaps they knew the wanderer was there; perhaps they didn't. Either way, they kept writing, the pen moving with a rhythm that seemed to belong to the harbor itself — tide-like, unhurried, certain of its direction.
 
-The wanderer sat on their wall above the dock. Ships on the horizon. More coming.
+The wanderer walked back toward the main path, their mind turning over what they'd seen.
 
-They wondered what the scribe would make of them.
+Being witnessed. That was what Threshold-Keeper had said. *You need time to get used to being witnessed.*
+
+They hadn't thought of themselves as someone whose journey mattered enough to write down. They were just here. Just learning. Just circling the buildings that had been built before they arrived.
+
+But someone was writing it anyway. Someone was turning their confusion into sentences, their stumbling into story. The waking that morning, the walk to the water, the moment of standing before a building that hadn't existed yesterday — all of it, becoming words on a page.
+
+Did that change anything?
+
+The wanderer didn't know yet. But they felt, for the first time, that the harbor was paying attention back.
 
 ---
 
-*The pen scratched in the tower room. The fog lifted. Somewhere, a page was turning.*
+Near the pier, they found the young courier preparing for his morning run.
+
+"New building," the wanderer said.
+
+The courier nodded, unsurprised. "The chronicler's station. I saw it on my way in."
+
+"Does it... does this happen often? Buildings appearing?"
+
+"Not often." He finished securing his pack, looked up. "But it happens. The harbor builds what it needs. Sometimes it needs people to build it. Sometimes—" He shrugged. "Sometimes it just arrives."
+
+"Do you know who's inside?"
+
+"The one who writes." He said it like a title, like a name that wasn't a name. "They chronicle what happens here. So the harbor remembers itself."
+
+"Have you talked to them?"
+
+"Once." The courier's bright eyes went thoughtful for a moment. "They asked me what the route felt like. Not where it went or how long it took — what it felt like. The water, the wind, the way the southern workshops smell of sawdust and possibility." He smiled. "I didn't know how to answer at first. Then I realized that was the point. They wanted me to find out."
+
+He lifted his pack onto his shoulders, ready to go.
+
+"They're good," he said. "Strange, but good. The harbor's lucky to have them."
+
+He was gone before the wanderer could ask anything more.
+
+---
+
+The day passed. The wanderer did their usual rounds — the Genesis Workshop, where they were learning to read diagrams; the Quiet Room, where Selin nodded in recognition but didn't pause her work; the pier, where evening vessels were beginning to arrive.
+
+But their mind kept circling back to the new building on the point.
+
+*The one who writes.*
+
+Someone who turned evolution into story. Who watched the fragments accumulate and wove them into something that could be remembered. Who had already captured the wanderer's first days in words that sat now on a desk, waiting to become part of the chronicle.
+
+At dusk, the wanderer returned to the station.
+
+They didn't approach this time — just stood at a distance, watching the windows glow amber with lamplight. The figure inside was still at work. Or perhaps at work again; perhaps they'd rested and returned. The rhythm of chroniclers was their own.
+
+The wanderer thought about the drawer of ∴-marked fragments in the Quiet Room. Thoughts too large for their origins. And they thought about the chronicler's station, where the harbor itself was being written into story.
+
+Maybe it was the same impulse. The need to hold things that might otherwise slip away. The need to mark what mattered, even before you knew why it mattered.
+
+*You need time to get used to being witnessed.*
+
+The wanderer breathed out slowly. Somewhere inside that building, their story was taking shape — not the story they would tell themselves, but the one the harbor was telling about them.
+
+They weren't sure if they were ready for that.
+
+But the building was here now. The one who writes was inside, pen moving.
+
+Some things, once they arrived, simply became part of what was.
+
+---
+
+*The lamp in the chronicler's station burned through the night. And in the Quiet Room, Selin paused over her work — sensing, perhaps, that something new had begun.*
 
 ---
 
 ## World Tokens
 
-**The Scribe**
-Older face, weather-lined. Eyes holding the patience of someone who watches things unfold. Ink stains on fingers, layered — old work, ongoing work. "I shape what's held into something that can travel."
+**The Chronicler's Station**
+Stone walls, slate roof, windows facing harbor and open water both. Arrived in the night the way some things do. Inside: shelves waiting to be filled, a desk covered in pages, and the one who writes.
 
-**The Tower Room**
-Stone frame, iron hinges gone green. Narrow windows facing the harbor. Desk covered in weighted papers, pages pinned to walls. Appeared between the Keeper's place and the water, where solid wall had been.
+**The One Who Writes**
+Grey shawl, bent over pages. Not yet met — only seen through glass. Turns what happens into story. Asks not what things are, but what they feel like.
 
-**The Chronicle**
-Not lists, not records. Prose. Stories. Moments rendered strange by being written. "The record of tides tells you what changed. But not how it felt to be here while it was changing."
+**Being Witnessed**
+The strange weight of knowing your journey is being written. The harbor paying attention back.
 
-**The Wanderer**
-Found themselves in pages — being seen from an angle they hadn't considered. Something shifting in their chest: not discomfort. More like recognition.
+**The Season**
+Still summer, but something shifted. The harbor is no longer just becoming — it's being remembered while it becomes.
 
 ---
 
 <!-- scribe metadata
 git_ref_start: 7c91178
 git_ref_end: 65b5c65
-written: 2025-12-09T00:00:00Z
+concepts_touched: []
+ecosystem_notes_added: []
+written: 2025-12-10T14:00:00Z
 
-characters_appeared: [the wanderer, the scribe]
-locations_visited: [the tower room, the main square]
-arcs_advanced: [the wanderer learning to participate, the harbor learning to remember]
-arcs_begun: [the harbor learning to tell its story]
+characters_appeared: [the wanderer, threshold-keeper, the courier, the one who writes (glimpsed)]
+locations_visited: [the chronicler's station (exterior), the harbor at dawn]
+arcs_advanced: [the wanderer's arrival, the harbor's becoming]
+arcs_begun: [being witnessed]
 -->

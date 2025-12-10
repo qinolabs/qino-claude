@@ -1,45 +1,52 @@
 {
   "version": 1,
   "last_chapter": {
-    "id": "chapter-005",
-    "written": "2025-12-09T00:00:00Z",
-    "git_ref": "1279441"
+    "id": "chapter-006",
+    "written": "2025-12-10T23:00:00Z",
+    "git_ref": "892b70d"
   },
   "chapters": [
     {
       "number": 1,
-      "slug": "the-first-arrivals",
-      "title": "The First Arrivals",
-      "written": "2025-12-09T00:00:00Z",
-      "path": "chapters/001-the-first-arrivals.md"
+      "slug": "the-founding",
+      "title": "The Founding",
+      "written": "2025-12-10T00:00:00Z",
+      "path": "chapters/001-the-founding.md"
     },
     {
       "number": 2,
-      "slug": "the-deeper-room",
-      "title": "The Deeper Room",
-      "written": "2025-12-09T00:00:00Z",
-      "path": "chapters/002-the-deeper-room.md"
+      "slug": "the-quiet-room",
+      "title": "The Quiet Room",
+      "written": "2025-12-10T00:00:00Z",
+      "path": "chapters/002-the-quiet-room.md"
     },
     {
       "number": 3,
       "slug": "the-one-who-writes",
       "title": "The One Who Writes",
-      "written": "2025-12-09T00:00:00Z",
+      "written": "2025-12-10T00:00:00Z",
       "path": "chapters/003-the-one-who-writes.md"
     },
     {
       "number": 4,
       "slug": "the-room-that-remembers",
       "title": "The Room That Remembers",
-      "written": "2025-12-09T00:00:00Z",
+      "written": "2025-12-10T00:00:00Z",
       "path": "chapters/004-the-room-that-remembers.md"
     },
     {
       "number": 5,
-      "slug": "what-stays",
-      "title": "What Stays",
-      "written": "2025-12-09T00:00:00Z",
-      "path": "chapters/005-what-stays.md"
+      "slug": "what-the-harbor-holds",
+      "title": "What the Harbor Holds",
+      "written": "2025-12-10T22:00:00Z",
+      "path": "chapters/005-what-the-harbor-holds.md"
+    },
+    {
+      "number": 6,
+      "slug": "the-world-before-words",
+      "title": "The World Before Words",
+      "written": "2025-12-10T23:00:00Z",
+      "path": "chapters/006-the-world-before-words.md"
     }
   ]
 }
