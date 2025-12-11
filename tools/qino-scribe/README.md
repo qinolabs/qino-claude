@@ -10,7 +10,7 @@ Your ecosystem evolves through conversations, explorations, and accumulated note
 
 qino Scribe chronicles this evolution — not as a changelog, but as a story world. Characters appear when concepts arrive. Locations reveal hidden rooms when ideas deepen. Seasons shift when larger patterns surface.
 
-The chronicle is something you could give to a collaborator, revisit in a year, or read like a children's book by nightlamp.
+The chronicle is something you could give to a collaborator, revisit in a year, or read by nightlamp.
 
 ---
 

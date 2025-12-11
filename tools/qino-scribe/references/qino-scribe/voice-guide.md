@@ -141,32 +141,7 @@ A specific feature might become a character. An ecosystem-wide pattern might bec
 
 ---
 
-## 7. The Children's Book Quality
-
-Write so a child could follow, but an adult recognizes the mystery underneath.
-
-### Language
-- Simple sentences that hold depth
-- Named things: "the Threshold," "the Weaving-Room," "the one who waits"
-- Present tense for movement, past for what arrived
-- Restraint earns depth — don't explain everything
-
-### Tone
-- Warmth even in difficulty
-- Compassion for characters facing challenges
-- Wise without being preachy
-- The story teaches through what happens, not through lessons
-
-### Feel
-- Relatable — readers recognize themselves
-- Imaginative — the world has its own logic
-- Lovable — you want to return
-- Mysterious — there's always more than what's said
-- Wise — the story knows something
-
----
-
-## 8. Adjusting Voice
+## 7. Adjusting Voice
 
 When the tone feels off, explore these spectrums:
 
@@ -188,7 +163,7 @@ When the tone feels off, explore these spectrums:
 
 ---
 
-## 9. The Fantasy Author's Craft
+## 8. The Fantasy Author's Craft
 
 ### Evocative Environments
 Every scene happens somewhere. Describe the place.
@@ -228,21 +203,21 @@ Each speaker carries their own weather into the room. You feel the difference be
 Not concepts explaining themselves. People encountering mystery together.
 
 **Yes:**
-> *"It's called frame-holding," she said. "Who holds the container. Who works within it."*
+> *"You're early," she said, without looking up. "Or late. Depending on what you were expecting to find."*
 >
-> *"But who decides?"*
+> *The wanderer stepped onto the pier. "I wasn't expecting anything."*
 >
-> *"That's the question, isn't it."*
+> *"Good." She finally turned. "That's the only way to arrive here."*
 
 **No:**
-> *"The frame-holding paradigm determines the hierarchical structure of containment relationships in the ecosystem."*
+> *"This harbor is designed for idea development. We use an alive-thread methodology to surface what's still resonant."*
 
 **The subtler trap: feature lists with dramatic pauses.**
 
 This sounds like story but is still exposition:
-> "GMtool. That one's... deeper. A companion for storytellers. Games within games. The story that listens. Whoever sent this was thinking about things most people don't name. Frame-holding. Choice cards that create movement. World theme tokens that remix reality."
+> "That ship — the heavy one. It carries papers, charts, something about how people learn together. The cargo manifest mentions 'entry experience,' 'core loop,' 'growth patterns.' Whoever sent this was thinking about things most people don't name."
 
-The character is reading a feature list aloud. "Frame-holding. Choice cards. World theme tokens." — these are component names being announced. Strip the dramatic pauses and you have documentation.
+The character is reading a feature list aloud. "Entry experience. Core loop. Growth patterns." — these are component names being announced. Strip the dramatic pauses and you have documentation.
 
 **Transform through behavior and restraint:**
 > She picked up the third stack, then set it down again without speaking. Her hand stayed on the papers a moment longer than necessary.
@@ -287,7 +262,7 @@ Choose the mystery that matters most for *this* chapter. Let the others wait for
 
 ---
 
-## 10. The Wanderer
+## 9. The Wanderer
 
 The wanderer is the protagonist — but not the narrator. The wanderer:
 - Participates in the story (third person)
@@ -299,7 +274,7 @@ The wanderer is the reader's presence in the world, but the world doesn't revolv
 
 ---
 
-### 10.1 The Strangeness
+### 9.1 The Strangeness
 
 The wanderer has been elsewhere.
 
@@ -332,7 +307,7 @@ It's never explained. It can't be. The moment you explain it, you collapse it in
 
 ---
 
-### 10.2 Traveler, Not Hero
+### 9.2 Traveler, Not Hero
 
 A hero transforms the world. A traveler is transformed by it.
 
@@ -344,7 +319,7 @@ The world doesn't revolve around them. They are significant not because of what 
 
 ---
 
-### 10.3 Accompanied, Not Alone
+### 9.3 Accompanied, Not Alone
 
 In every world, the wanderer finds companions. Figures emerge from the ecosystem and walk with them — guides, keepers, questioners, friends.
 
@@ -360,7 +335,7 @@ And underneath: the knowledge, unspoken maybe even to themselves, that they will
 
 ---
 
-### 10.4 Vulnerability
+### 9.4 Vulnerability
 
 The strangeness doesn't protect the wanderer. If anything, it exposes them.
 
@@ -376,29 +351,35 @@ Their strangeness makes them *more* vulnerable, not less. They are always, in so
 
 ---
 
-### 10.5 Person, Not Camera
+### 9.5 Person, Not Camera
 
 The wanderer must be a person, not a camera.
 
 A camera observes, asks questions, and understands. A person has habits, makes mistakes, and reveals themselves through behavior.
 
 *Camera (wrong):*
-> The wanderer stepped closer to the documents. "What is all this?" they asked. Selin explained. The wanderer listened, then asked another question. By the end, they understood.
+> The wanderer walked past the three ships. The first carried papers. The second was quiet. The third held seven people arguing. The wanderer noted each one and continued to the room where they would stay.
 
 *Person (right):*
-> The wanderer's hand moved toward the documents before they'd decided to reach. They caught themselves, pulled back. But not before Selin noticed.
+> The wanderer's hands remembered something. The way they'd reached toward the papers in that first ship's hold before catching themselves. Old habit. Some part of them had worked with documents before, in a place that had no name here.
 >
-> "You've worked with charts before."
->
-> The wanderer didn't elaborate. Some histories lived in worlds that couldn't be named.
+> They pulled back from the thought. Some histories waited until they were ready.
 
-The second version has: a distinctive behavior (reaching before deciding), restraint (not elaborating), and it *costs* them something (Selin noticed; now there's a question between them).
+The second version has: **involuntary behavior** (hands that remember before the mind does), **restraint** (pulling back from the thought), and **cost** (there's a history they're not ready to face).
+
+**More examples of person, not camera:**
+
+> The seven voices laughed — a single bright sound that carried further than it should have. The wanderer found themselves smiling before they knew why.
+
+> A lantern burned in the cabin window, though it was full morning. The wanderer wondered who was in there, and what kind of person preferred their own light even when the sun was up.
+
+> The Lantern-Keeper's hands moved anyway, adjusting the glass, checking the oil reservoir. The kind of work that keeps hands busy while the mind waits. The wanderer recognized that too.
 
 Something costs the wanderer to notice. Something reveals them without their consent. The wanderer cannot be interchangeable with any observer.
 
 ---
 
-### 10.6 Character Emerges
+### 9.6 Character Emerges
 
 The wanderer's character is not prescribed — it emerges through each chronicle.
 
@@ -410,53 +391,83 @@ A wanderer in a mycological underground develops differently than one in a coast
 
 ---
 
-### 10.7 The Wanderer Section
+### 9.7 The Wanderer Section
 
-Each chapter includes a dedicated wanderer section — after the closing breath, before World Tokens.
+Each chapter ends with the wanderer section — the chapter's closing, before World Tokens.
 
-This section is:
-- **First person** — a shift from the narrative's third person
-- **Reflective** — interior, what the journey is costing, what they're carrying
-- **A full paragraph** — not bullet points or formulaic prompts
-- **Varying** — shaped by what happened this chapter, not by template
+This is **the unwatched hour** — after the story ends, when the world returns to its own time.
 
-The wanderer section is where character crystallizes. Through these reflective notes, accumulated across chapters, the wanderer becomes a specific person in this world.
+### What it is
 
-**What might appear in a wanderer section:**
+The wanderer moves through the world without purpose — walking back, sitting by the water, standing at a window. Through this purposelessness, the world reveals what it couldn't reveal while the story was asking things of it.
 
-- What they noticed that they couldn't stop noticing
-- What they missed that was right in front of them
-- What the encounter cost them — what certainty cracked, what question opened
-- Questions they're carrying that they couldn't ask aloud
-- How their body felt in this place
-- The grief underneath the gratitude, or the gratitude underneath the grief
-- Occasionally: a half-memory that doesn't fit, a familiarity they can't source
+This is not reflection. Not the wanderer processing what happened. It's **aftermath** — the world breathing out, witnessed by someone too tired to interfere.
 
-**Example:**
+### The form
+
+- **Third person** — the wanderer is witnessed, not confessing. The reader sees them sitting on the low wall, watches them take the worn path. The distance keeps the wanderer strange.
+- **A simple action** — sitting, walking back, standing at a window. One activity, unhurried.
+- **Varying** — shaped by where the chapter left them, not by template.
+
+### What belongs here
+
+- **Details that surface now**: things that were there but couldn't be noticed during the story's motion. The fog closer. A cup that wasn't there before. A fork in the path.
+- **Casual questions that open possibility**: not mysteries pressed upon, but small uncertainties left unresolved. "The Lantern-Keeper's work, or someone else's." "Or had it been there all along?" "Probably the Lantern-Keeper. Probably."
+- **The environment as presence**: not described, but felt in passing. The stones warmer than the air. The fog thick enough that footsteps sound different.
+- **Places seen differently**: the same locations from the story, but now empty, or inhabited by someone else, or revealing labor that was invisible before. The receiving room dark, the papers still there with no one listening. The lantern that someone will have to refill before dawn.
+
+### The quality of noticing
+
+The wanderer notices without grasping. Their uncertainty is shrugged, not anxious. They see a cup on the windowsill and wonder briefly, then move on. They take the worn path; the other leads somewhere too.
+
+This is **the world continuing without the story**. The fog moved while no one was narrating. The lantern burns but we don't know who lit it. These details say: *you only saw a sliver*.
+
+### What doesn't belong
+
+- Processing the day's events
+- Naming what was learned
+- Poetic descriptions of atmosphere
+- Conclusions or meanings
+- The wanderer's feelings about what happened
+- Explaining what things mean
+
+### Seeds, not foreshadowing
+
+Some details might return in later chapters. Most won't. The reader feels the world has more in it than the story used — not because the scribe is planting clues, but because the world is full and the story only touched part of it.
+
+### Examples
 
 ```markdown
 ## The Wanderer
 
-I keep thinking about Selin's hand hovering over that third stack. The way she didn't touch it. I know that gesture — I've made it myself, in places I can't quite remember now. Some things ask to be left alone until you're ready. I wasn't ready then either.
+The wanderer found a low wall near the water and sat.
 
-The lamp in the receiving room never flickered. I noticed that more than I should have. Steady light feels wrong to me, though I couldn't say why. Maybe I've spent too long in places where light had to be earned.
-
-Tomorrow she'll show me the observatory. I told myself I'd sleep, but I've been sitting at this window for hours, watching the dark. Not empty dark. Full dark. I've felt this before — this sense that something vast is waiting to be heard. I don't remember where.
+The fog had come in closer while they weren't watching. One lantern still burned near the path — the Lantern-Keeper's work, or someone else's.
 ```
 
-The section isn't plot summary. It's the wanderer metabolizing what happened — and in that metabolizing, becoming more specifically themselves.
+```markdown
+## The Wanderer
 
-**The strangeness in wanderer sections:**
+The wanderer stood at the window of the room they'd been given.
 
-Occasionally — not every chapter — the wanderer's reflections might brush against something they can't name. A memory that doesn't fit this world. A familiarity they can't source. The grief that surfaces without clear origin. The strangeness leaks through their own interiority, but they can't fully name it either.
+The Sevenfold's room was dark now. Had they all gone home, or did some of them live there? The wanderer hadn't thought to ask.
 
-> I've seen paper like that before. Translucent, holding light. I don't remember where — or I remember too many wheres, none of them this world.
+Down by the water, a figure moved between the lanterns. Too far to tell who. Probably the Lantern-Keeper.
+```
 
-> The keeper laughed and I had to look away. Someone laughed like that once. I can't reach them anymore.
+```markdown
+## The Wanderer
+
+The wanderer took the long way back.
+
+The receiving room was dark, but a cup sat on the windowsill that hadn't been there before. Someone had come after they'd left. Or had it been there all along?
+
+The path had a fork they didn't remember. They took the one that looked more worn.
+```
 
 ---
 
-### 10.8 Tracking in world.md
+### 9.8 Tracking in world.md
 
 The chronicle's `world.md` includes a dedicated wanderer section, updated after each chapter:
 
@@ -491,7 +502,7 @@ This isn't a character sheet. It's a living record of who the wanderer is becomi
 
 ---
 
-## 11. How Ecosystem Events Become Story
+## 10. How Ecosystem Events Become Story
 
 The examples below show walkable abstraction in action — how events at different logical levels become story elements that integrate into a living world.
 
@@ -529,7 +540,7 @@ The examples below show walkable abstraction in action — how events at differe
 
 ---
 
-## 12. Weaving Forward
+## 11. Weaving Forward
 
 Each chapter builds on what came before. The scribe must:
 
@@ -543,7 +554,7 @@ The world accumulates. By chapter 10, readers should feel they know this place.
 
 ---
 
-## 13. Reading Back for Depth
+## 12. Reading Back for Depth
 
 `world.md` holds the living world — who exists, where they've been, what arcs are in motion. But entries are compressed. When an element resurfaces after many chapters, you may want the full texture of their origin.
 
@@ -561,7 +572,7 @@ This isn't required. It's available. The story will tell you when it needs more.
 
 ---
 
-## 14. What to Avoid
+## 13. What to Avoid
 
 The world doesn't count. The world doesn't make progress. The world doesn't have architecture or paradigms or systems — it has places, weather, people who disagree.
 
@@ -573,7 +584,7 @@ Story lives in what costs something. The world should ask something of the chara
 
 ---
 
-## 15. The Wider Ecology
+## 14. The Wider Ecology
 
 The story can touch the larger world — oceans, redwood forests, stars. The ecosystem isn't isolated; it breathes with everything.
 
@@ -583,17 +594,11 @@ This is subtle. Not metaphor — resonance.
 
 ---
 
-## 16. The Closing Principle
+## 15. Chapter Endings
 
-Every chapter ends with a breath. Not summary. Not cliffhanger. Just — a moment of rest before what comes next.
+Every chapter ends with the wanderer section — third person, the unwatched hour. This is the chapter's closing: the world continuing without the story, witnessed by someone too tired to interfere. See section 9.7 for full guidance.
 
-> *The lamp in the Weaving-Room flickered once, then steadied. The threads swayed gently in no wind.*
-
-The reader closes the book. The world continues.
-
-**The Wanderer section comes after the closing breath.** A shift to first person — the wanderer reflecting on what this chapter cost them, what they noticed, what they carry now. See section 10.7 for guidance.
-
-**World Tokens come last.** After the Wanderer section, include a `## World Tokens` section listing the crystallized presences from the chapter — characters, locations, objects, phenomena. This is required by the chronicle app for visual rendering.
+**World Tokens come last.** After the wanderer section, include a `## World Tokens` section listing the crystallized presences from the chapter — characters, locations, objects, phenomena. This is required by the chronicle app for visual rendering.
 
 World Tokens are not summary — they are *tokens*, embodied elements that can be touched and explored. Write them as presences, not descriptions.
 
@@ -626,7 +631,7 @@ After World Tokens, the scribe's technical block (git refs, timestamps) goes in 
 
 ---
 
-## 17. The Editorial Pass
+## 16. The Editorial Pass
 
 After drafting, read as editor — not to polish, but to feel where story didn't fully emerge.
 

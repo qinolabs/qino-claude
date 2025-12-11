@@ -36,15 +36,10 @@ Chapters are flexible — they're stories, not templates. But they share common 
 
 ---
 
-*[Closing — a breath, an image, an invitation]*
-
----
-
 ## The Wanderer
 
-[First-person reflective paragraph — what this chapter cost them, what they
-noticed, what they carry now. The shift to first person creates intimacy;
-the wanderer metabolizes what happened.]
+[Third person, the unwatched hour — the world continuing without the story.
+A simple action, details that surface, casual questions left unresolved.]
 
 ---
 
@@ -61,14 +56,12 @@ the wanderer metabolizes what happened.]
 <!-- scribe metadata
 git_ref_start: abc1234
 git_ref_end: def5678
-concepts_touched: [gm-tool, discovery-grid]
-ecosystem_notes_added: [frame-holding-paradigm]
 written: 2025-12-07T18:00:00Z
 
-characters_appeared: [the wanderer, the keeper of held threads]
-locations_visited: [discovery-grid, the threshold]
-arcs_advanced: [learning to listen]
-arcs_begun: [the search for connection]
+characters_appeared: [the lantern-keeper, the seven voices]
+locations_visited: [the harbor, the pier]
+arcs_advanced: [the harbor's becoming]
+arcs_begun: [the wanderer's hands]
 -->
 ```
 
@@ -96,11 +89,11 @@ Concepts become places. Each has atmosphere, history, weather.
 ### Dialogue
 Characters talk to each other. Not concepts explaining themselves — people encountering mystery together.
 
-> *"It's called frame-holding," she said, tracing a thread between her fingers. "Who holds the container. Who works within it."*
+> *"You're early," she said, without looking up. "Or late. Depending on what you were expecting to find."*
 >
-> *"But who decides?"*
+> *The wanderer stepped onto the pier. "I wasn't expecting anything."*
 >
-> *She smiled, or something like it. "That's the question, isn't it."*
+> *"Good." She finally turned. "That's the only way to arrive here."*
 
 ### Events
 What happens. Arrivals, departures, discoveries, confrontations, quiet moments.
@@ -112,47 +105,19 @@ Every chapter leaves something unresolved. A door glimpsed, a rumor, tension hel
 
 > *In the distance, past the new path, something moved. Too far to see clearly. The wanderer noted it, stored it somewhere below thought, and turned back toward the known.*
 
-### Closing
-A breath. An image. Not summary — punctuation.
-
-> *The lamp in the Weaving-Room flickered once, then steadied. The threads swayed gently in no wind.*
-
 ---
 
-## 4. The Children's Book Quality
-
-Write like a children's book — simple language that holds depth.
-
-**Yes:**
-- "The wanderer walked to the threshold."
-- "Something waited in the fog."
-- "She spoke quietly, as if the room were listening."
-
-**No:**
-- "The user accessed the concept interface."
-- "This represents a paradigm shift in the ecosystem architecture."
-- "Significant progress was made on multiple fronts."
-
-**Principles:**
-- Sentences a child could follow
-- Mystery an adult recognizes
-- Named things: "the Threshold," "the Keeper," "the Weaving-Room"
-- Warmth even in difficulty
-- Wise without being preachy — the story teaches through what happens
-
----
-
-## 5. Walkable Abstraction
+## 4. Walkable Abstraction
 
 Any element from any level of abstraction can become any story element — character, location, weather, event, object, rumor. The scribe doesn't map one-to-one. The scribe weaves.
 
 A specific feature might become a character. An ecosystem-wide pattern might become weather that affects multiple locations. A connection between concepts might become a shared object that belongs to both places.
 
-See `voice-guide.md` section 7 for full examples of how different ecosystem events become story.
+See `voice-guide.md` section 10 for full examples of how different ecosystem events become story.
 
 ---
 
-## 6. Metadata Fields
+## 5. Metadata Fields
 
 Hidden at the end of each chapter for scribe continuity:
 
@@ -172,56 +137,60 @@ This metadata is for the scribe, not the reader. It helps update `world.md` afte
 
 ---
 
-## 7. The Wanderer Section
+## 6. The Wanderer Section
 
-After the closing breath, before World Tokens, each chapter includes a dedicated wanderer section.
+Each chapter ends with the wanderer section — the chapter's closing. This replaces the old "closing breath" concept with something more embodied.
 
-This section is different from the narrative:
-- **First person** — a shift from third person, creating intimacy
-- **Reflective** — interior processing, not plot
-- **Full paragraph** — not fragments or bullet points
-- **Varying** — shaped by what happened, not by formula
+This is **the unwatched hour** — after the story ends, when the world returns to its own time.
 
-The wanderer section is where character crystallizes. The wanderer in third person *acts*; in first person, they *become*.
+### The form
+
+- **Third person** — the wanderer is witnessed, not confessing. The distance keeps them strange.
+- **A simple action** — sitting, walking back, standing at a window. One activity, unhurried.
+- **Varying** — shaped by where the chapter left them, not by template.
 
 ### What belongs here
 
-- What they noticed that they couldn't stop noticing
-- What they missed that was right in front of them
-- What the encounter cost them
-- Questions they're carrying that they couldn't ask aloud
-- How their body felt in this place
-- Occasionally: a half-memory that doesn't fit, a familiarity they can't source
+- Details that surface now — things that couldn't be noticed during the story's motion
+- Casual questions that open possibility — small uncertainties left unresolved
+- Places seen differently — the same locations, now empty or revealing labor that was invisible before
+- The environment as presence — felt in passing, not described
 
 ### What doesn't belong
 
-- Plot summary ("Today I learned about the three transmissions")
-- Explaining the world's mechanics
-- Direct statements about their between-world nature
+- Processing what happened
+- Naming what was learned
+- Poetic descriptions of atmosphere
+- The wanderer's feelings about events
+- Explaining what things mean
 
-### Example
+### Examples
 
 ```markdown
 ## The Wanderer
 
-I keep thinking about Selin's hand hovering over that third stack. The way she didn't touch it. I know that gesture — I've made it myself, in places I can't quite remember now. Some things ask to be left alone until you're ready.
+The wanderer sat on the dock long after the others had gone to bed.
 
-The lamp in the receiving room never flickered. I noticed that more than I should have. Steady light feels wrong to me, though I couldn't say why.
-
-Tomorrow she'll show me the observatory. I told myself I'd sleep, but I've been sitting at this window for hours, watching the dark. Not empty dark. Full dark. I've felt this before — this sense that something vast is waiting to be heard. I don't remember where.
+The fog had come in closer while they weren't watching. One lantern still burned where the pier met the land — the harbormaster's work, or someone else's.
 ```
 
-The section isn't long. One paragraph, sometimes two. Enough to capture what's settling in the wanderer — and occasionally, what's stirring beneath.
+```markdown
+## The Wanderer
 
-### The strangeness
+The wanderer took the long way back.
 
-Once every few chapters, the wanderer's reflection might brush against something they can't name — a memory that doesn't fit this world, a familiarity they can't source. This is the wanderer's between-world nature surfacing in their own interiority.
+The receiving room was dark, but a cup sat on the windowsill that hadn't been there before. Someone had come after they'd left. Or had it been there all along?
 
-Don't force it. When it appears naturally, let it. When it doesn't, the wanderer is simply a person processing experience. The strangeness works because it's rare.
+The path had a fork they didn't remember. They took the one that looked more worn.
+```
+
+The section isn't long. Two or three short paragraphs. The world continuing without the story — details that say *you only saw a sliver*.
+
+See `voice-guide.md` section 9.7 for the full philosophy.
 
 ---
 
-## 8. World Tokens
+## 7. World Tokens
 
 Each chapter ends with tokens — crystallized presences from the story. Names and 2-3 lines of essence.
 
@@ -253,7 +222,7 @@ The app renders tokens visually but never changes the text. The scribe's words a
 
 ---
 
-## 9. Granularity
+## 8. Granularity
 
 Chapters are as long as they need to be. A chapter might cover:
 - A single session's deep work

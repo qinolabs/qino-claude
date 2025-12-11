@@ -203,7 +203,7 @@ arcs_begun: [list]
 -->
 ```
 
-**The Wanderer section is required.** After the closing breath, before World Tokens. First person, reflective, a full paragraph. This is where the wanderer's character crystallizes — who they're becoming in this world. See `voice-guide.md` section 10.7 for guidance.
+**The Wanderer section is required.** This is the chapter's closing — the unwatched hour. Third person, the world continuing without the story. A simple action (sitting, walking back, standing at a window), details that surface, casual questions left unresolved. See `voice-guide.md` section 9.7 for guidance.
 
 **World Tokens section is required.** After the wanderer section. Crystallized presences — characters, locations, objects, phenomena. Write as evocative fragments, not plot summaries. **The wanderer is never included in World Tokens** — they have their own dedicated section above.
 
@@ -223,15 +223,15 @@ A world asks something when:
 
 If you've written a tour — everyone helpful, everything explained, the wanderer only observing — return to the author's mind. Who would this matter to? What would it cost them?
 
-**For the wanderer section:** Is this reflection or summary?
+**For the wanderer section:** Is this the unwatched hour or processing?
 
 The wanderer section works when:
-- It captures what's settling in them, not what happened
-- It includes something they noticed that surprised them
-- It carries a question they couldn't ask aloud
-- Occasionally: something stirs beneath — a half-memory, a familiarity they can't source
+- Third person — the wanderer is witnessed, not confessing
+- A simple action — sitting, walking back, standing at a window
+- Details that surface now — things that couldn't be noticed during the story's motion
+- Casual questions that open possibility — small uncertainties left unresolved
 
-If the wanderer section reads like "Today I learned about X and met Y," it's summary. Return to interiority. What did it *cost* them?
+If the wanderer section reads like processing what happened or naming what was learned, return to aftermath. The world continuing without the story. Details that say *you only saw a sliver*.
 
 The transformation test: strip the fantasy vocabulary. Is there story left, or documentation in costume?
 

@@ -161,69 +161,73 @@ They walked through the fog as if they'd walked through stranger. The keeper not
 
 ## Characters
 
-### Selin
-First appeared at the receiving room (ch. 1). Cartographer. Eyes like deep space.
-Handles arrivals — not people, papers. Holds her work at careful distance, except the third stack.
-*Notices*: what persists, what's ready to leave
+### The Lantern-Keeper
+First appeared at the pier's end (ch. 1). Tends flames that don't need tending — hands busy while the mind waits.
+Eyes like someone who's spent years watching horizons. Not searching. Just watching.
+*What stays with you*: the way she said "good" when the wanderer expected nothing
 
-### The keeper of held threads
-Appears when something waits. Speaks little. Seen at the edge of discovery-grid (ch. 3).
-*Notices*: what's been here longest, what's ready to leave
+### The Seven Voices
+First heard from the third ship (ch. 1). Three days arguing on deck when the wanderer arrived.
+Not fighting — finding. One voice claims, another pushes back, a third reframes the whole question.
+*What stays with you*: that single bright laugh that carried further than it should have
 
 ---
 
 ## Locations
 
-### The Receiving Room
-Curved desk, viewport facing uncharted dark. Where transmissions arrive before their senders are known.
-Lamp that never flickers. Visited: ch. 1, 2
+### The Harbor
+New-built, wood still pale from recent cutting. Ropes not yet salt-stiffened.
+Three ships docked when the wanderer arrived. More shapes on the horizon.
+*The feel of it*: a place becoming what it will be
 
-### The Threshold
-Where new things arrive. Always misty, always uncertain. Visited: ch. 1, 2
+### The Pier
+Where the Lantern-Keeper waits. Wood that gives slightly underfoot, still learning how to hold weight.
+Visited: ch. 1
 
-### Discovery-Grid
-Vast open space. Nodes like stars, paths between. First glimpsed ch. 3.
+### The Room Above the Lantern Station
+Small, clean, a window facing the water. The bed had been slept in before, but not recently.
+A chipped cup on the windowsill — left by whoever stayed here last.
+Visited: ch. 1
 
 ---
 
 ## Tensions
 
-The keeper believes some things should stay held. The wanderer wants to understand everything — but is learning patience.
+None yet named. The harbor is too new for friction.
 
-The receiving room and the threshold have different relationships to time — one holds, one releases.
-
-Something about the wanderer unsettles Selin. She hasn't named it.
+But: the heavy ship sits low with its papers and purpose. The quiet vessel keeps its lantern burning in daylight. The seven voices have been arguing for three days. These are different ways of being in the world. How they relate to each other — that hasn't been tested yet.
 
 ---
 
 ## Arcs in Motion
 
-### First listening
-The guild's work. Not first contact — first listening. The wanderer is learning what this means.
-Began ch. 1. Unresolved.
+### The harbor's becoming
+"This place is going to be something. I don't know what yet."
+The Lantern-Keeper feels it in how the wind's been shifting. More shapes on the horizon.
+Began ch. 1. Just starting.
 
-### The third stack
-Selin won't discuss it. The wanderer noticed. Something waits there.
+### The wanderer's hands
+They reached toward papers before catching themselves. Old habit. Some part of them has worked with documents before, in a place that has no name here.
 Began ch. 1. Unresolved.
 
 ---
 
 ## The Season
 
-Early days. The world is still forming. More locations glimpsed than known.
-A feeling of arrival, of things taking shape.
+Late summer, the year the harbor opened. Everything still becoming what it will be.
+Fog at the edges. Shapes that might be sails, might be clouds that want to be.
 ```
 
 **Key principles:**
 - **The world's breath** — what the environment is doing now, its mood, what it offers
 - **The wanderer** — tracked separately, the continuous thread across chapters
 - **Characters and locations** emerge from what actually happens — no predetermined cast
-- **What characters notice** — their perceptual bias, what draws them, what they miss
+- **What stays with you** — not what characters "notice" (too clinical), but what lingers: a gesture, a phrase, the way someone held something
 - **Tensions** — between characters, between places, between what is and what wants to be
 - **Arcs** track journeys and unresolved questions, not tasks
 - **The season** captures the larger rhythm — what kind of time this is
 
-These aren't categories to fill — they're containers that hold whatever wants to be held.
+These aren't categories to fill — they're containers that hold whatever wants to be held. The entries should sound like someone's memory of a place, not a character database.
 
 ---
 

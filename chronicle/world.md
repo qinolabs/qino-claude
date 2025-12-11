@@ -1,109 +1,163 @@
 # The World
 
-*Last updated: Chapter 6*
+*Last updated: Chapter 3*
+
+## The World's Breath
+
+Late summer. The piers smell of fresh-cut wood and salt. Fog comes in the evenings, softening the lights.
+
+The harbor is new — barely a season old. Everything has the feel of preparation: receiving rooms half-finished, systems being tested, workers who haven't quite learned each other's rhythms yet. A place becoming what it will be.
+
+Ships appear on the horizon more often now. Cargo arrives overnight — river rafts, by the rope-work. The real work is beginning. Things are being tended.
+
+---
+
+## The Wanderer
+
+*Updated after Chapter 3*
+
+Arrived on a timber raft from the interior. Three weeks of drift, carrying notebooks full of fragments — ideas half-formed, sketches that almost meant something, questions without answers. Years of collecting. Never learned what to do with any of it.
+
+Told the harbormaster they know how to hold things until they're ready. It was almost true.
+
+**Carries now:**
+- The image of the tender's hands resting on an unopened crate
+- The sound of seven voices almost agreeing
+- A question: what part feels alive?
+- Notebooks they haven't opened yet
+- The harbormaster's words: "they can hear it too"
+- The scribe's question: would you rather be changed by being seen, or by being forgotten?
+- The knowledge that someone is watching — and writing
+
+**Last seen:** Climbing the stairs to their room, pausing at the chipped cup on the windowsill. Wondering if they want to be remembered.
+
+*What remains unspoken:*
+The scribe knew things about them no one had told her. The reaching toward the tender's shelf. The way they look at her door even when walking somewhere else. Being seen like that felt like being touched without permission. Not violent. Just sudden. They haven't decided yet if they mind.
+
+---
 
 ## Characters
 
-### The Architect of Beginnings
-First to arrive at the harbor (ch. 1). Conducts structured conversations in five movements, helps visitors build custom tools aligned to their vision. Ink-stained fingers, surveyor's eye. Has rebuilt her workshop multiple times as the work teaches her what it needs. Started the record of tides — a way to remember what changes. Has found her own rhythm now, like the others (ch. 6).
-*Notices*: structure, what can be built, how things fit together.
+### The Harbormaster
+First appeared at the base of the longest pier (ch. 1). Sun-darkened skin, a ledger she rarely writes in. Watches everything, decides what structures are needed before anyone knows to ask.
 
-### The Seven Adventurers
-Arrived together on a frost-edged morning (ch. 1). Originally called the Design Cohort, renamed to Adventurers. They don't build — they talk through problems until the right questions surface. One skeptical, one feeling, one sketching invisible things. Their courtyard shifts weather based on what's being discussed. Have found their own rhythms too, though they'd never admit it (ch. 6).
-*Notices*: questions, tensions, what hasn't been said yet.
+Built the harbor's system — not just piers, but a way for things to arrive and be tended. "We're building a place where people can put things down."
 
-### The Keeper of Alive Things (Selin)
-Arrived on the first warm day of spring (ch. 1). Gentle, patient, carries only a small journal. Works with fragments others can't place. Asks one question: *what part of this still feels alive?* Teaches through inhabiting — stepping into moments to discover tone through encounter, not description. Has a gesture — ∴ — that means "the thought is held" (ch. 2). Tends the ecology room. Teaches *forget safely* — the room remembers what you set down (ch. 4). Changed a word: *note* became *capture* — because a thought about to fade isn't waiting politely. Tide-pool eyes.
-*Notices*: what's alive, what's fading, what needs tending.
+*What she notices:* When something's off. She appeared at the tender's door without being summoned, heard the narrating, corrected it. "I know. But they can hear it too."
 
-### The Wanderer
-Has been watching the bay since before the first ship arrived. Sat on the stone wall for three days before anything came. Walked the paths between workshops for the first time (ch. 1). Entered the Keeper's place for the first time (ch. 2). Found the tower room and discovered themselves in the Scribe's pages (ch. 3). Has an old habit: reading with their fingers — something from before the harbor, from a mentor. Some histories stay folded. Discovered they might be holding something too tightly (ch. 4). Finally entered the chronicler's station and met the One Who Writes face to face (ch. 5). Learning that nothing comes out finished — the work is in the revision. Beginning to hear the harbor's language — learned to read its moods by scent (ch. 6).
-*Notices*: light, how it shifts; windows; what others are watching.
+*What stays with you:* The long silence before she explained what the harbor was for. The gentleness of her correction — firm, but not unkind.
 
-### The Figure at the Dock / The Question-Carrier
-First glimpsed at the harbor's edge (ch. 2). Weathered face, calm eyes, satchel worn thin from travel. Carries word between harbors. "Makes sure the tools stay sharp, the charts stay current." Vanished into the dark between buildings. Glimpsed again on the ridge path above the harbor (ch. 4). Walks between harbors, carries questions that aren't ready yet. "They'll come when they're ready. Some visitors you don't summon." Still waiting (ch. 5). Closer now — the chronicler saw them two nights ago (ch. 6). Almost ready.
-*Notices*: unknown — hasn't spoken yet.
+### The Tender
+First appeared in the half-finished receiving room (ch. 1). Eyes like river water — brown and green and something else underneath. Sits with crates, asks what feels alive.
 
-### The One Who Writes
-First appeared in the chronicler's station (ch. 3). Older face, weather-lined, eyes holding the patience of someone who watches things unfold. Ink stains on fingers — old, layered. Has been writing since the Architect started her record of tides. "The Keeper sees threads. I weave them." Shapes what's held into something that can travel. Met the wanderer face to face for the first time (ch. 5). Desk covered in revisions — crossings-out, marginalia, paragraphs moved and tried again. "Nothing comes out finished." Teaches that the difference between a list and a story is everything. Changed their practice — now stands at the window each morning, feeling the harbor's mood before writing (ch. 6). "The space is where the saying comes from."
-*Notices*: the harbor's breath, what kind of day it is, whether the light wants to come through or hold back.
+Keeps a shelf of waiting things: compass with cracked face, papers tied with twine, a carving of a swift. Tends them. Keeps them warm. "Sometimes things wake up. Sometimes they don't. I don't decide for them."
+
+*What she notices:* The weight of things. How binding softens with handling. Where pages are worn. She reads with her hands.
+
+*What stays with you:* The way she touched the bird carving — gently, like something sleeping. The moment she caught herself narrating, and stopped.
+
+*A crack in the work (ch. 2):* She was speaking her process aloud — naming what she noticed as she noticed it. "It helps. Saying it out loud. I can hear what I'm thinking." The harbormaster corrected her. The work returned to silence.
+
+### The Seven Voices
+First heard from a broad-beamed ship at the far pier (ch. 1). Seven figures in a rough circle, voices overlapping then separating like currents around rocks.
+
+Not arguing — finding. One claims, another pushes back, a third reframes. They talked until the lantern guttered and the voices softened into something like agreement, or exhaustion.
+
+*What stays with you:* That single bright laugh that carried further than it should have.
+
+### The Scribe
+First appeared at the end of the pier, back against a piling (ch. 3). Eyes like old ink — brown so dark it's almost black, with something patient underneath. Arrived by river, like the wanderer.
+
+Sits where she can see everything. Notebook always open, but not always writing. Watches. Holds the shape of what happens until it becomes something that can be returned to.
+
+*What she notices:* The gestures people repeat. The words they can't stop saying. What they say once and never mention again, but their hands remember. She knew about the wanderer's reaching before anyone told her.
+
+*What stays with you:* "Everyone wants to know how they'll be remembered. Even the ones who say they don't care. Especially them."
 
 ---
 
 ## Locations
 
 ### The Harbor
-Stone walls, dock planks, morning frost. The first place. Where everything arrives. The wanderer's watching-place — a wall above the dock where they've sat since before the town existed. A bay that "has been chosen for something." Ships now pass in the distance, carrying stories to other harbors.
+New-built, wood still pale from recent cutting. Ropes not yet salt-stiffened. Where the slow river meets the sea.
 
-### The Harbormaster's Office
-Near the pier. Where official business happens. Now displays a board with the harbor's new terms: share freely, adapt freely, pass on freely — but not for profit. The design of the tools belongs to those who use them (ch. 5).
+Receiving rooms with different purposes: sorting, tending, gathering for argument. More ships on the horizon every day.
 
-### The Architect's Workshop (Genesis Workshop)
-Near the water. Where structured conversations happen. Has been rebuilt three times as its keeper learned. Contains templates for different kinds of emergence. Light burns late.
+*The feel of it:* A place preparing for arrivals that haven't happened yet.
 
-### The Adventurers' Courtyard
-At the edge of town. A building with many rooms and a courtyard that shifts its weather — warm when dialogue is warm, still and dark when the day's work is done. Famous now.
+### The Pier
+The longest one, where the harbormaster stood on the first day. Lanterns burn at its end — someone keeps them filled.
 
-### The Keeper's Place (The Quiet Room)
-Door stands slightly open. Lamplight spilling into the street. Smaller than expected inside — single table, shelves of journals, window facing water. A space for those who aren't sure yet. Contains the narrow door to the ecology room (ch. 2). Now holds the unified cabinet — long drawers along the western wall where fragments can belong to many places at once (ch. 4). Labels like descriptions of feeling. Also contains the lineage wall — eastern wall covered in writing about where the methods came from (ch. 4).
+Wood that gives slightly underfoot, still learning how to hold weight.
 
-### The Ecology Room
-Behind a curtain in the Keeper's place, through a narrow door (ch. 2). Larger inside than the building allows. Threads no longer just hang from pegs — they've grown roots (ch. 4). Fine filaments extend downward, connecting to wooden boxes labeled with concepts. One observation can belong to three places. Status written along filaments as descriptions, not labels. The room grows when it needs to. "Forget safely. The room remembers what you set down."
+Visited: ch. 1
 
-### The Main Square
-Where the three workshops stand. Paths between them worn by walking. The structure of the town itself — a manifest, a record of what lives here.
+### The Tender's Room
+Half-finished receiving room. A table surrounded by unopened crates. A shelf of waiting things — objects that might wake up, or might not.
 
-### The Chronicler's Station
-Between the Keeper's place and the water, where solid wall had been (ch. 3). Stone walls, slate roof, windows facing both harbor and open water. Arrived in the night the way some things do. Inside: shelves filling with bound pages and loose sheets, a desk covered in papers weighted with stones (ch. 5). Smells of ink and salt air and old paper — though early morning, before the work begins, it smells more of salt than ink (ch. 6). The wanderer finally entered (ch. 5). Where the work of revision happens — crossing out, moving, trying again. The eastern window — small, salt-fogged — faces the open water; the chronicler stands there each morning now, learning the day's mood before writing (ch. 6).
+Visited: ch. 1
 
----
+### The Room Above the Lantern Station
+Small, clean. A window facing the water. The bed had been slept in before, but not recently. A chipped cup on the windowsill from whoever stayed here last.
 
-## Arcs in Motion
+The wanderer's room now.
 
-### The wanderer learning to participate
-Began watching from above. Walked the paths (ch. 1). Entered the Keeper's place for the first time (ch. 2). Found the chronicler's station and discovered themselves written into the story (ch. 3). Revealed an old habit — reading with fingers — from a mentor, from before. Some histories stay folded. Discovered they might be holding something too tightly (ch. 4). Finally entered the chronicler's station and met the One Who Writes face to face (ch. 5). Learning that nothing comes out finished — the work is in the revision. Beginning to hear the harbor's language — reading its moods by scent, listening for what comes before the words (ch. 6). Deepening.
+Visited: ch. 1
 
-### The harbor becoming something
-First public invitation sent to the wider world. Ships on the horizon. The place "not finished becoming what it is." A manifest exists. A name on charts. Ships pass in the distance, carrying stories elsewhere. The harbor has now claimed its terms — what can be shared, what must be protected (ch. 5).
+### The Memory House
+A small structure set apart from the receiving rooms. Window facing the water. Empty since the harbor was built, waiting for someone to fill it.
 
-### The harbor learning to remember
-Began ch. 2. The Architect started the record of tides — what changed, and when, and why it mattered. The ecology room appeared. The figure at the dock arrived, carrying word between harbors. The ecology room learned to hold things differently — threads with roots, observations belonging to multiple places (ch. 4). The Keeper changed a word: *note* to *capture*. "If we don't remember what we were, we won't know what we're becoming."
+The harbormaster built it before she knew anyone would come. "A harbor that doesn't remember itself isn't a harbor. It's just a place where ships stop."
 
-### The harbor learning to tell its story
-Began ch. 3. The One Who Writes appeared in a station that wasn't there before. Not just holding what happened — shaping it into something that can travel. The One Who Writes showed the wanderer the difference between a list and a story — behavior and restraint instead of features announced (ch. 5). The chronicler changed their practice — now dwells in the world's mood before writing, stands at the window each morning feeling the harbor's breath (ch. 6). "A shape sits on the page. A story lives in it."
+The scribe's room now.
 
-### Learning to let go
-Began ch. 4. The Keeper's principle: *forget safely*. The room remembers what you set down so you can let go without losing. The wanderer wondered what they've been holding too tightly.
-
-### Trust given
-Began ch. 5. The harbor decided its keepers could be trusted. The asking was breaking the rhythm. Now they work without constant permission. The work is real — what you make is what you chose to make. Something both freeing and weighty.
-
-### The question-carrier approaching
-The figure on the ridge. Glimpsed ch. 4, still waiting ch. 5. Walks between harbors, carries questions that aren't ready yet. "They'll come when they're ready. Some visitors you don't summon." Closer now — the chronicler saw them two nights ago (ch. 6). Almost ready. Carrying something that has traveled longer than anyone in the harbor has been writing.
-
----
-
-## The World's Breath
-
-Early autumn arriving. The fog comes thicker now, lifts later. The harbor is tired — not empty, but resting. The kind of stillness where you can hear the dock wood settling.
-
-The keepers have found their own rhythms. The chronicler stands at the eastern window each morning, feeling the day's mood before any words come. The others, too — working in their own time, finding the breath between notes.
-
-On the ridge path, closer than before, something approaches. The chronicler saw it two nights ago. Almost ready.
-
-The air smells of salt more than ink, this early. The work is in the waiting, before the words.
+Visited: ch. 3 (exterior only)
 
 ---
 
 ## Tensions
 
-- **Trust and weight** — the keepers can work freely now, but freedom means the work is truly theirs. No excuses. What you make is what you chose to make.
-- **Protection and openness** — the harbor shares freely but guards its design intelligence. The terms of the exchange.
-- **The figure approaching** — something waits on the ridge, closer now, carrying a question that has traveled longer than anyone here has been writing. Almost ready. When it arrives, what will it ask?
-- **Action and attention** — the chronicler learned that writing first was wrong, that the space before words is where stories come from. What else might change by waiting instead of beginning?
+### The visible and the hidden
+The tender's work requires silence — process that stays invisible. But speaking helps her think. "I can hear what I'm thinking." The harbormaster corrected this: "they can hear it too." What is the cost of keeping the work hidden? What breaks when it shows?
+
+### Different ways of knowing
+The harbormaster builds systems while the tender waits for things to reveal themselves. The seven voices argue toward clarity while others prefer silence. These are different ways of being in the world. How they relate to each other — that's beginning to be tested.
+
+### Being seen
+The scribe watches everything. She knows things no one told her — reads them from how people move, where they pause, what they look at when they think no one's watching. Being witnessed like this changes something. The wanderer felt it: "like being touched without permission. Not violent. Just sudden." What does it cost to be seen? What does it cost to be forgotten?
+
+---
+
+## Arcs in Motion
+
+### The harbor's becoming
+"We're building a place where people can put things down." The harbor is ready, or nearly. Ships on the horizon, more each day. The real work is beginning — cargo arrives, tending happens.
+
+Began ch. 1. Advancing.
+
+### The wanderer's hands
+They reached toward the tender's shelf before catching themselves. Old habit. Some part of them has carried fragments before, in a life that has no name here yet. Now they've seen the tender make a similar mistake — speaking what should stay silent. They recognized it.
+
+Began ch. 1. Deepening (ch. 2).
+
+### What stays hidden
+The tender's work requires invisibility. Process that doesn't show. The harbormaster corrected a leak — the tender was narrating her assessments. "They can hear it too." Now there's someone whose entire work is making things visible — turning the invisible into something that can be read. The tension sharpens.
+
+Began ch. 2. Complicated by ch. 3.
+
+### The one who remembers
+The scribe has arrived. She watches, she writes, she holds the shape of what happens until it becomes something that can be returned to. "A harbor that doesn't remember itself isn't a harbor." The harbormaster built the memory house before she knew anyone would come. Now someone has.
+
+The question underneath: does being remembered change what you become?
+
+Began ch. 3.
 
 ---
 
 ## The Season
 
-Early autumn arriving. Fog thicker, lifting later. The harbor is tired — resting, not empty. The keepers have found their own rhythms, the space between notes. Something approaches on the ridge path, closer now, almost ready. The work is in the waiting, before the words.
+Late summer, the year the piers were finished. The becoming is becoming.
+
+Fog at the edges. Cargo arrives overnight now. The real work is beginning — not just preparation, but tending. The harbor is no longer waiting. It's doing.
+
+And now someone is watching. Writing. The scribe arrived, and with her the possibility of being remembered. The harbor has a memory house. The story has begun to record itself.
