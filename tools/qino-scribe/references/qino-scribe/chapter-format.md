@@ -40,6 +40,14 @@ Chapters are flexible — they're stories, not templates. But they share common 
 
 ---
 
+## The Wanderer
+
+[First-person reflective paragraph — what this chapter cost them, what they
+noticed, what they carry now. The shift to first person creates intimacy;
+the wanderer metabolizes what happened.]
+
+---
+
 ## World Tokens
 
 **[Character Name]**
@@ -164,15 +172,63 @@ This metadata is for the scribe, not the reader. It helps update `world.md` afte
 
 ---
 
-## 7. World Tokens
+## 7. The Wanderer Section
+
+After the closing breath, before World Tokens, each chapter includes a dedicated wanderer section.
+
+This section is different from the narrative:
+- **First person** — a shift from third person, creating intimacy
+- **Reflective** — interior processing, not plot
+- **Full paragraph** — not fragments or bullet points
+- **Varying** — shaped by what happened, not by formula
+
+The wanderer section is where character crystallizes. The wanderer in third person *acts*; in first person, they *become*.
+
+### What belongs here
+
+- What they noticed that they couldn't stop noticing
+- What they missed that was right in front of them
+- What the encounter cost them
+- Questions they're carrying that they couldn't ask aloud
+- How their body felt in this place
+- Occasionally: a half-memory that doesn't fit, a familiarity they can't source
+
+### What doesn't belong
+
+- Plot summary ("Today I learned about the three transmissions")
+- Explaining the world's mechanics
+- Direct statements about their between-world nature
+
+### Example
+
+```markdown
+## The Wanderer
+
+I keep thinking about Selin's hand hovering over that third stack. The way she didn't touch it. I know that gesture — I've made it myself, in places I can't quite remember now. Some things ask to be left alone until you're ready.
+
+The lamp in the receiving room never flickered. I noticed that more than I should have. Steady light feels wrong to me, though I couldn't say why.
+
+Tomorrow she'll show me the observatory. I told myself I'd sleep, but I've been sitting at this window for hours, watching the dark. Not empty dark. Full dark. I've felt this before — this sense that something vast is waiting to be heard. I don't remember where.
+```
+
+The section isn't long. One paragraph, sometimes two. Enough to capture what's settling in the wanderer — and occasionally, what's stirring beneath.
+
+### The strangeness
+
+Once every few chapters, the wanderer's reflection might brush against something they can't name — a memory that doesn't fit this world, a familiarity they can't source. This is the wanderer's between-world nature surfacing in their own interiority.
+
+Don't force it. When it appears naturally, let it. When it doesn't, the wanderer is simply a person processing experience. The strangeness works because it's rare.
+
+---
+
+## 8. World Tokens
 
 Each chapter ends with tokens — crystallized presences from the story. Names and 2-3 lines of essence.
 
+**The wanderer is never a World Token.** They have their own dedicated section above. World Tokens capture what the wanderer encountered — not the wanderer themselves.
+
 ```markdown
 ## World Tokens
-
-**The Wanderer**
-Still circling the threshold. Something unasked.
 
 **Arlen**
 First appearance. Tests ground before stepping.
@@ -197,7 +253,7 @@ The app renders tokens visually but never changes the text. The scribe's words a
 
 ---
 
-## 8. Granularity
+## 9. Granularity
 
 Chapters are as long as they need to be. A chapter might cover:
 - A single session's deep work

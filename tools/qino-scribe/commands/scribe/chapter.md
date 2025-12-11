@@ -40,6 +40,7 @@ When explicit refs are provided, you're writing a **retroactive chapter** — co
    - What is the harbor doing today? What does the light carry? What rhythms shape when things can happen?
 
 3. **Read `chronicle/world.md`** — the living world:
+   - The wanderer — who they're becoming, what they carry, where they were last, what remains unspoken about them
    - The world's breath — what the environment is doing now, its mood
    - Characters who have appeared (who they are, where last seen, what they notice)
    - Locations discovered (atmosphere, what happened there)
@@ -173,6 +174,21 @@ has mood, has history.]
 
 ---
 
+## The Wanderer
+
+[First-person reflective paragraph. What this chapter cost them. What they
+noticed that they couldn't stop noticing. What they carry now. The shift
+to first person creates intimacy — the wanderer metabolizes what happened.]
+
+---
+
+## World Tokens
+
+**[Token Name]**
+[2-3 lines of presence]
+
+---
+
 <!-- scribe metadata
 git_ref_start: [last chapter's ref]
 git_ref_end: [current HEAD]
@@ -187,7 +203,9 @@ arcs_begun: [list]
 -->
 ```
 
-**World Tokens section required.** After the closing breath, add a `## World Tokens` section listing crystallized presences — characters, locations, objects, phenomena. The chronicle app parses this for visual rendering. Write tokens as presences (evocative fragments), not plot summaries.
+**The Wanderer section is required.** After the closing breath, before World Tokens. First person, reflective, a full paragraph. This is where the wanderer's character crystallizes — who they're becoming in this world. See `voice-guide.md` section 10.7 for guidance.
+
+**World Tokens section is required.** After the wanderer section. Crystallized presences — characters, locations, objects, phenomena. Write as evocative fragments, not plot summaries. **The wanderer is never included in World Tokens** — they have their own dedicated section above.
 
 ---
 
@@ -195,7 +213,7 @@ arcs_begun: [list]
 
 Before showing the chapter, reread it as editor — not to polish, but to feel where story didn't fully emerge.
 
-One question: *Does this world ask something of the reader?*
+**For the narrative:** Does this world ask something of the reader?
 
 A world asks something when:
 - A character's behavior creates a question, not an explanation
@@ -204,6 +222,16 @@ A world asks something when:
 - Something costs the wanderer to notice
 
 If you've written a tour — everyone helpful, everything explained, the wanderer only observing — return to the author's mind. Who would this matter to? What would it cost them?
+
+**For the wanderer section:** Is this reflection or summary?
+
+The wanderer section works when:
+- It captures what's settling in them, not what happened
+- It includes something they noticed that surprised them
+- It carries a question they couldn't ask aloud
+- Occasionally: something stirs beneath — a half-memory, a familiarity they can't source
+
+If the wanderer section reads like "Today I learned about X and met Y," it's summary. Return to interiority. What did it *cost* them?
 
 The transformation test: strip the fantasy vocabulary. Is there story left, or documentation in costume?
 
@@ -243,6 +271,11 @@ After the editorial pass, proceed directly — no additional confirmation needed
    ```
 
 3. **Update `chronicle/world.md`:**
+   - **Update the wanderer section:**
+     - What emerged about them this chapter (habits, reactions, ways of being)
+     - What they carry now (add new images, phrases, questions)
+     - Where they were last seen
+     - If characters sensed their strangeness: add to "What remains unspoken"
    - Update the world's breath (what is the environment doing now?)
    - Add new characters (with first appearance, what they notice)
    - Add new locations (with atmosphere)
@@ -302,7 +335,7 @@ On receiving the theme:
 2. Create `chronicle/theme.md` with the user's theme (exactly as given)
 3. Create `chronicle/manifest.json` with empty chapters array
 4. Create `chronicle/chapters/` directory
-5. Create `chronicle/world.md` with initial structure
+5. Create `chronicle/world.md` with initial structure (including empty wanderer section)
 
 ### Step 3: Write First Chapter
 
@@ -313,9 +346,9 @@ The scribe determines:
 - What the world looks like
 - Who appears
 
-The first chapter has special weight — it's the world's birth.
+The first chapter has special weight — it's the world's birth. Include the wanderer section — their first reflections in this world.
 
-**Proceed directly:** Write the chapter file, update manifest and world.md, then present the chapter with confirmation that it was written. One moment of output, not "here it is, should I write it?"
+**Proceed directly:** Write the chapter file (including wanderer section), update manifest and world.md (including wanderer emergence), then present the chapter with confirmation that it was written. One moment of output, not "here it is, should I write it?"
 
 ---
 

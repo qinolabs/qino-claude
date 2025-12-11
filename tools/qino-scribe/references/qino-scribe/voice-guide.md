@@ -290,15 +290,95 @@ Choose the mystery that matters most for *this* chapter. Let the others wait for
 ## 10. The Wanderer
 
 The wanderer is the protagonist — but not the narrator. The wanderer:
-- Participates in the story
-- Appears in third person
+- Participates in the story (third person)
 - Is learning, not leading
 - Makes mistakes
 - Is accompanied, not alone
 
 The wanderer is the reader's presence in the world, but the world doesn't revolve around them. They are a traveler, not a hero.
 
-**The wanderer must be a person, not a camera.**
+---
+
+### 10.1 The Strangeness
+
+The wanderer has been elsewhere.
+
+Not metaphorically. Actually. They carry something from having inhabited worlds that the characters in this chronicle cannot comprehend. Each world they enter, they arrive as someone who has *been somewhere* — and that somewhere is beyond the horizon of what this world can imagine.
+
+This is the wanderer's constant across all chronicles. Not personality traits — those emerge through experience in each world. What persists is this quality of having-crossed, of carrying something between.
+
+The inhabitants might sense it:
+- In how the wanderer holds things
+- In what they don't say
+- In their strange patience with mystery
+- In moments where they seem to be listening to something that isn't there
+- In the way they touch old things as if they've known older
+
+It's never explained. It can't be. The moment you explain it, you collapse it into plot. The strangeness remains as *aura* — hinted at through small moments, never named, never resolved.
+
+**Examples of the strangeness leaking through:**
+
+> Selin paused mid-sentence. The wanderer had that look again — not distracted, but *elsewhere*. As if part of them was still standing in a room Selin had never seen.
+
+> "You've done this before," the keeper said. Not a question.
+>
+> The wanderer didn't answer. Some answers required explaining things that had no names here.
+
+> Their hand rested on the stone longer than necessary. The stone was old — centuries, maybe. But something in how the wanderer touched it suggested they'd known older.
+
+> The fog didn't seem to bother them. Selin pulled her cloak tighter, but the wanderer walked through it as if fog were familiar — as if they'd walked through things far stranger and learned not to mind.
+
+**Calibration:** The strangeness is subtle. One or two moments per chapter, at most. If every scene hints at the wanderer's otherworldly nature, it becomes a character trait rather than an aura. The strangeness works because it's rare, because it surprises even the scribe when it surfaces.
+
+---
+
+### 10.2 Traveler, Not Hero
+
+A hero transforms the world. A traveler is transformed by it.
+
+The wanderer doesn't save worlds. They pass through and are changed. The chronicle isn't about what the wanderer *accomplishes* — it's about what the journey *does to them*.
+
+Each world marks them. The strangeness they carry isn't power — it's accumulation. Every passage leaves something. The wanderer is who they are not despite having traveled, but because of it. They are made of crossings.
+
+The world doesn't revolve around them. They are significant not because of what they do, but because of how they witness. Their presence makes things visible that might otherwise go unseen — not through action, but through the quality of their attention.
+
+---
+
+### 10.3 Accompanied, Not Alone
+
+In every world, the wanderer finds companions. Figures emerge from the ecosystem and walk with them — guides, keepers, questioners, friends.
+
+Something about the wanderer draws others. Perhaps it's how they *see* people — a quality of attention that makes others feel witnessed. Perhaps those who sense their strangeness are drawn to it without naming it. Perhaps the wanderer, having traveled so far, has learned how to be genuinely present with whoever is in front of them.
+
+The warmth is real. The wanderer connects genuinely — to places, to people, to the rhythms of each world. They learn the names of things. They care about what happens.
+
+And underneath: the knowledge, unspoken maybe even to themselves, that they will move on. Every relationship is touched by this. Not poisoned — touched. The wanderer loves knowing that love is temporary. This is not coldness. It's a particular kind of tenderness, sharpened by awareness of passage.
+
+> The keeper had been kind to them — kinder than necessary. The wanderer recognized it for what it was: the kindness people offer to travelers. The kind that doesn't ask for permanence.
+>
+> They were grateful. And something in them grieved already, though they hadn't yet left.
+
+---
+
+### 10.4 Vulnerability
+
+The strangeness doesn't protect the wanderer. If anything, it exposes them.
+
+They carry wounds from worlds that have no names here. They can be hurt, confused, wrong. The between-worlds nature isn't armor — it's a kind of ongoing displacement. They belong everywhere a little, nowhere completely.
+
+The wanderer can be overwhelmed. Can fail to understand. Can make mistakes that cost others. Can be moved to tears by something small — a gesture that echoes a gesture from a world they can't quite remember.
+
+Their strangeness makes them *more* vulnerable, not less. They are always, in some way, a stranger. Even when welcomed. Even when loved.
+
+> Something in the keeper's laugh — the wanderer couldn't place it. But their chest tightened. Someone, somewhere, had laughed like that. Someone they couldn't quite reach anymore.
+>
+> They looked away before the keeper could notice.
+
+---
+
+### 10.5 Person, Not Camera
+
+The wanderer must be a person, not a camera.
 
 A camera observes, asks questions, and understands. A person has habits, makes mistakes, and reveals themselves through behavior.
 
@@ -306,15 +386,108 @@ A camera observes, asks questions, and understands. A person has habits, makes m
 > The wanderer stepped closer to the documents. "What is all this?" they asked. Selin explained. The wanderer listened, then asked another question. By the end, they understood.
 
 *Person (right):*
-> The wanderer's hand moved toward the documents before they'd decided to reach. An old habit — their mentor had called it "reading with your fingers." They caught themselves, pulled back. But not before Selin noticed.
+> The wanderer's hand moved toward the documents before they'd decided to reach. They caught themselves, pulled back. But not before Selin noticed.
 >
 > "You've worked with charts before."
 >
-> "A long time ago." The wanderer didn't elaborate. Some histories were better left folded.
+> The wanderer didn't elaborate. Some histories lived in worlds that couldn't be named.
 
-The second version has: a distinctive behavior (reading with fingers), a history (the mentor), restraint (not elaborating), and it *costs* them something (Selin noticed; now there's a question between them).
+The second version has: a distinctive behavior (reaching before deciding), restraint (not elaborating), and it *costs* them something (Selin noticed; now there's a question between them).
 
 Something costs the wanderer to notice. Something reveals them without their consent. The wanderer cannot be interchangeable with any observer.
+
+---
+
+### 10.6 Character Emerges
+
+The wanderer's character is not prescribed — it emerges through each chronicle.
+
+The first chapter is where the wanderer begins to take shape in *this* world. The theme shapes their arrival. The first encounters shape who they start to become. By chapter five, they have history — but it's history within this chronicle, accumulated through experience.
+
+What carries between worlds is the strangeness, the quality of having-been, the vulnerability and tenderness of passage. Who they become in each world — their habits, their fears, their specific ways of noticing — that emerges fresh.
+
+A wanderer in a mycological underground develops differently than one in a coastal trading post. Same presence, different person by chapter ten.
+
+---
+
+### 10.7 The Wanderer Section
+
+Each chapter includes a dedicated wanderer section — after the closing breath, before World Tokens.
+
+This section is:
+- **First person** — a shift from the narrative's third person
+- **Reflective** — interior, what the journey is costing, what they're carrying
+- **A full paragraph** — not bullet points or formulaic prompts
+- **Varying** — shaped by what happened this chapter, not by template
+
+The wanderer section is where character crystallizes. Through these reflective notes, accumulated across chapters, the wanderer becomes a specific person in this world.
+
+**What might appear in a wanderer section:**
+
+- What they noticed that they couldn't stop noticing
+- What they missed that was right in front of them
+- What the encounter cost them — what certainty cracked, what question opened
+- Questions they're carrying that they couldn't ask aloud
+- How their body felt in this place
+- The grief underneath the gratitude, or the gratitude underneath the grief
+- Occasionally: a half-memory that doesn't fit, a familiarity they can't source
+
+**Example:**
+
+```markdown
+## The Wanderer
+
+I keep thinking about Selin's hand hovering over that third stack. The way she didn't touch it. I know that gesture — I've made it myself, in places I can't quite remember now. Some things ask to be left alone until you're ready. I wasn't ready then either.
+
+The lamp in the receiving room never flickered. I noticed that more than I should have. Steady light feels wrong to me, though I couldn't say why. Maybe I've spent too long in places where light had to be earned.
+
+Tomorrow she'll show me the observatory. I told myself I'd sleep, but I've been sitting at this window for hours, watching the dark. Not empty dark. Full dark. I've felt this before — this sense that something vast is waiting to be heard. I don't remember where.
+```
+
+The section isn't plot summary. It's the wanderer metabolizing what happened — and in that metabolizing, becoming more specifically themselves.
+
+**The strangeness in wanderer sections:**
+
+Occasionally — not every chapter — the wanderer's reflections might brush against something they can't name. A memory that doesn't fit this world. A familiarity they can't source. The grief that surfaces without clear origin. The strangeness leaks through their own interiority, but they can't fully name it either.
+
+> I've seen paper like that before. Translucent, holding light. I don't remember where — or I remember too many wheres, none of them this world.
+
+> The keeper laughed and I had to look away. Someone laughed like that once. I can't reach them anymore.
+
+---
+
+### 10.8 Tracking in world.md
+
+The chronicle's `world.md` includes a dedicated wanderer section, updated after each chapter:
+
+```markdown
+## The Wanderer
+
+*Updated after Chapter 3*
+
+Arrived by unnamed ship, three months of drift behind them. Something about how they hold documents — reaching before deciding, then pulling back. Selin noticed. Now there's a question between them neither has asked.
+
+Learning the guild's rhythm: first listening, not first contact. The phrase stays with them.
+
+**Carries now:**
+- The image of translucent paper, writing they couldn't read
+- The question of the third stack
+- A growing comfort with the dark at the viewport
+- The keeper's kindness, and the grief already forming underneath
+
+**Last seen:** Quarters above the receiving room. Couldn't sleep. Watching the mountain peaks.
+
+*What remains unspoken:*
+They walked through the fog as if they'd walked through stranger. The keeper noticed but said nothing. Selin watches them sometimes when she thinks they don't see.
+```
+
+The section tracks:
+- **What's emerged** — habits, reactions, specific ways of being that have developed in this world
+- **Carries now** — images, phrases, questions, griefs accumulated across chapters
+- **Where they were last** — continuity for the next chapter
+- **What remains unspoken** — the aura. What characters have sensed but not named. What accumulates into the wanderer's strangeness as witnessed by others.
+
+This isn't a character sheet. It's a living record of who the wanderer is becoming in this world — and a reminder of what, underneath, they always are: a traveler between, marked by passage, genuinely present and already grieving, vulnerable and strange.
 
 ---
 
@@ -418,7 +591,9 @@ Every chapter ends with a breath. Not summary. Not cliffhanger. Just — a momen
 
 The reader closes the book. The world continues.
 
-**World Tokens come last.** After the closing breath, include a `## World Tokens` section listing the crystallized presences from the chapter — characters, locations, objects, phenomena. This is required by the chronicle app for visual rendering.
+**The Wanderer section comes after the closing breath.** A shift to first person — the wanderer reflecting on what this chapter cost them, what they noticed, what they carry now. See section 10.7 for guidance.
+
+**World Tokens come last.** After the Wanderer section, include a `## World Tokens` section listing the crystallized presences from the chapter — characters, locations, objects, phenomena. This is required by the chronicle app for visual rendering.
 
 World Tokens are not summary — they are *tokens*, embodied elements that can be touched and explored. Write them as presences, not descriptions.
 
