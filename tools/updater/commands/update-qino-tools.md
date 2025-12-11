@@ -23,24 +23,40 @@ Parse the JSON to get:
 - For each tool: description and files array
 - Each file has `src` (path in repo) and `dest` (path in `.claude/`)
 
-### Step 2: Check Current Versions
+### Step 2: Check Versions (Local vs Remote)
 
-For each tool in the manifest, check if it's installed by looking for its version.json:
+For each tool in the manifest:
 
-`.claude/references/{tool-name}/version.json`
+1. **Check local version** — look for `.claude/references/{tool-name}/version.json`
+   - If exists, read the `version` field
+   - If doesn't exist, tool isn't installed
 
-Read the `version` field from each file that exists. If a file doesn't exist, that tool isn't installed.
+2. **Check remote version** — fetch from GitHub:
+   ```bash
+   curl -sL "https://raw.githubusercontent.com/qinolabs/qino-claude/main/tools/{tool-name}/references/{tool-name}/version.json"
+   ```
+   Parse the `version` field from the response.
+
+3. **Compare** — determine which tools need updating:
+   - Not installed → skip (unless user wants to install)
+   - Installed, same version → skip
+   - Installed, different version → needs update
 
 Report to user:
 ```
-Available tools:
-  dev-assistant: 1.5.0 (installed)
-  design-sprint: 2.1.0 (installed)
+Checking versions...
+
+  dev-assistant: 1.5.0 → 1.6.0 (update available)
+  design-sprint: 2.1.0 (up to date)
   design-adventure: not installed
-  qino-concept: not installed
-  qino-scribe: not installed
-  updater: 1.0.0 (installed)
+  qino-concept: 1.0.0 (up to date)
+  qino-scribe: 0.2.0 → 0.3.0 (update available)
+  updater: 1.0.0 (up to date)
+
+2 tools have updates available.
 ```
+
+If no tools need updating, report "All tools up to date." and stop.
 
 ### Step 3: Fetch Migrations
 
@@ -76,56 +92,40 @@ If confirmed:
 
 ### Step 5: Create Directories and Fetch Files
 
-For each tool in the manifest, create necessary directories and fetch all files.
+**Only process tools that need updating** (identified in Step 2).
 
-**Directory creation**: Extract unique directory paths from all `dest` values and create them:
-```bash
-mkdir -p .claude/commands/core
-mkdir -p .claude/commands/qino
-mkdir -p .claude/commands/scribe
-mkdir -p .claude/agents
-mkdir -p .claude/references/dev-assistant/instructions
-mkdir -p .claude/references/dev-assistant/templates
-mkdir -p .claude/references/dev-assistant/examples
-mkdir -p .claude/references/design-sprint
-mkdir -p .claude/references/design-adventure
-mkdir -p .claude/references/qino-concept
-mkdir -p .claude/references/qino-scribe
-mkdir -p .claude/references/updater
-```
+For each tool that needs updating:
 
-**File fetching**: For each file in each tool, construct the curl command:
-```bash
-BASE_URL="https://raw.githubusercontent.com/qinolabs/qino-claude/main"
+1. **Create directories** — extract unique directory paths from the tool's `dest` values:
+   ```bash
+   mkdir -p .claude/commands/core
+   mkdir -p .claude/references/dev-assistant/instructions
+   # etc. — only for this tool's files
+   ```
 
-# For each file entry in manifest:
-curl -sL "$BASE_URL/{src}" -o .claude/{dest}
-```
+2. **Fetch files** — download all files for this tool:
+   ```bash
+   BASE_URL="https://raw.githubusercontent.com/qinolabs/qino-claude/main"
 
-Example for a file with `src: "tools/dev-assistant/commands/core/project-init.md"` and `dest: "commands/core/project-init.md"`:
-```bash
-curl -sL "$BASE_URL/tools/dev-assistant/commands/core/project-init.md" -o .claude/commands/core/project-init.md
-```
+   # For each file entry in this tool's manifest:
+   curl -sL "$BASE_URL/{src}" -o .claude/{dest}
+   ```
 
-Process all tools from the manifest this way.
+Example: if only `qino-scribe` needs updating, only fetch its 7 files — not all 40+ files across all tools.
 
 ### Step 6: Report Results
 
-Count total files fetched from the manifest.
-
-Read the version.json files to get new versions and report:
+Report only the tools that were updated:
 
 ```
 Update complete:
-  dev-assistant: 1.5.0 → 1.6.0
-  design-sprint: 2.1.0 (unchanged)
-  design-adventure: 1.0.0 (new)
-  qino-concept: 1.0.0 (new)
-  qino-scribe: 0.1.0 (new)
-  updater: 1.0.0 (unchanged)
+  dev-assistant: 1.5.0 → 1.6.0 (11 files)
+  qino-scribe: 0.2.0 → 0.3.0 (7 files)
 
-42 files updated.
+18 files updated.
 ```
+
+Tools that were already up to date are not mentioned (they weren't touched).
 
 If there were USER ACTION items from migrations, remind the user:
 

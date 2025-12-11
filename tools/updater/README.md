@@ -35,36 +35,46 @@ In Claude Code:
 ### What happens
 
 1. **Manifest fetch** — Fetches `manifest.json` from GitHub to discover available tools
-2. **Version check** — Reads `version.json` from each tool's references directory
+2. **Version comparison** — Compares local `version.json` against remote for each installed tool
 3. **Migration check** — Fetches `migrations.md` from GitHub to find required changes
 4. **Confirmation** — If files need to be deleted or renamed, asks for confirmation
-5. **Fetch** — Downloads all tool files listed in the manifest
-6. **Report** — Shows what changed and any manual actions needed
+5. **Selective fetch** — Downloads files only for tools that have new versions
+6. **Report** — Shows what was updated
 
 ### Example output
 
 ```
-Available tools:
-  dev-assistant: 1.5.0 (installed)
-  design-sprint: 2.1.0 (installed)
+Checking versions...
+
+  dev-assistant: 1.5.0 → 1.6.0 (update available)
+  design-sprint: 2.1.0 (up to date)
   design-adventure: not installed
-  qino-concept: not installed
-  qino-scribe: not installed
-  updater: 1.0.0 (installed)
+  qino-concept: 1.0.0 (up to date)
+  qino-scribe: 0.2.0 → 0.3.0 (update available)
+  updater: 1.0.0 (up to date)
+
+2 tools have updates available.
 
 No migrations required.
 
-Fetching latest files...
+Fetching updates...
 
 Update complete:
-  dev-assistant: 1.5.0 → 1.6.0
-  design-sprint: 2.1.0 (unchanged)
-  design-adventure: 1.0.0 (new)
-  qino-concept: 1.0.0 (new)
-  qino-scribe: 0.1.0 (new)
-  updater: 1.0.0 (unchanged)
+  dev-assistant: 1.5.0 → 1.6.0 (11 files)
+  qino-scribe: 0.2.0 → 0.3.0 (7 files)
 
-40 files updated.
+18 files updated.
+```
+
+If all tools are up to date:
+```
+Checking versions...
+
+  dev-assistant: 1.6.0 (up to date)
+  qino-concept: 1.0.0 (up to date)
+  qino-scribe: 0.3.0 (up to date)
+
+All tools up to date.
 ```
 
 ---
