@@ -2,6 +2,15 @@ name: Publish Chronicle
 
 on:
   workflow_dispatch:
+    inputs:
+      force:
+        description: 'Force regenerate all images (use for fixing existing images)'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
   push:
     branches: [main]
     paths:
@@ -49,6 +58,9 @@ jobs:
             fi
           done
 
+          # Determine force flag (from workflow input or default to false)
+          FORCE="${{ inputs.force || 'false' }}"
+
           # Build full payload
           PAYLOAD=$(jq -n \
             --arg repoName "$REPO_NAME" \
@@ -56,9 +68,10 @@ jobs:
             --arg theme "$THEME_CONTENT" \
             --argjson manifest "$MANIFEST_JSON" \
             --argjson chapters "$CHAPTERS_JSON" \
-            '{repoName: $repoName, world: $world, theme: $theme, manifest: $manifest, chapters: $chapters}')
+            --argjson force "$FORCE" \
+            '{repoName: $repoName, world: $world, theme: $theme, manifest: $manifest, chapters: $chapters, force: $force}')
 
-          echo "Publishing $REPO_NAME with $(echo "$CHAPTERS_JSON" | jq 'length') chapters"
+          echo "Publishing $REPO_NAME with $(echo "$CHAPTERS_JSON" | jq 'length') chapters (force: $FORCE)"
 
           # POST to backend
           RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "$BACKEND_URL/publish" \
