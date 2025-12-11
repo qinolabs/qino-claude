@@ -10,6 +10,32 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.6.1] - 2025-12-11
+
+### qino Scribe
+
+#### Added
+- **The Wanderer section** — each chapter now includes a dedicated first-person reflection after the closing breath; the shift from third to first person creates intimacy as the wanderer metabolizes what happened
+- **Wanderer tracking in world.md** — chronicles now track the wanderer separately: what's emerged about them, what they carry, where they were last seen, and what remains unspoken
+- **The strangeness** — the wanderer's between-world nature surfaces through rare, subtle moments; accumulated in "what remains unspoken" across chapters
+- **Comprehensive wanderer voice guidance** — new sections covering vulnerability, emergence, and how character crystallizes through chapters
+
+#### Changed
+- **World Tokens exclude the wanderer** — the wanderer has their own dedicated section; they are no longer listed among other tokens
+- **Editorial pass expanded** — now includes a second check: "Is this reflection or summary?"
+
+### Updater
+
+#### Changed
+- **Selective updates** — compares local vs remote version.json and only downloads files for tools that have new versions; tools already up to date are skipped
+
+### General
+
+#### Added
+- **Release git ranges** — `docs/release-ranges.md` documents git ref ranges for each release
+
+---
+
 ## [0.6.0] - 2025-12-10
 
 ### qino Scribe
