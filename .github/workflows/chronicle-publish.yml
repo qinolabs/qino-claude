@@ -59,7 +59,13 @@ jobs:
           done
 
           # Determine force flag (from workflow input or default to false)
-          FORCE="${{ inputs.force || 'false' }}"
+          # Convert string input to JSON boolean for jq
+          if [ "${{ inputs.force }}" = "true" ]; then
+            FORCE_JSON="true"
+          else
+            FORCE_JSON="false"
+          fi
+          echo "Force flag: $FORCE_JSON"
 
           # Build full payload
           PAYLOAD=$(jq -n \
@@ -68,10 +74,10 @@ jobs:
             --arg theme "$THEME_CONTENT" \
             --argjson manifest "$MANIFEST_JSON" \
             --argjson chapters "$CHAPTERS_JSON" \
-            --argjson force "$FORCE" \
+            --argjson force "$FORCE_JSON" \
             '{repoName: $repoName, world: $world, theme: $theme, manifest: $manifest, chapters: $chapters, force: $force}')
 
-          echo "Publishing $REPO_NAME with $(echo "$CHAPTERS_JSON" | jq 'length') chapters (force: $FORCE)"
+          echo "Publishing $REPO_NAME with $(echo "$CHAPTERS_JSON" | jq 'length') chapters (force: $FORCE_JSON)"
 
           # POST to backend
           RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "$BACKEND_URL/publish" \
