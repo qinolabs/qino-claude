@@ -295,6 +295,90 @@ The system stays in sync with your evolving sense of what you're building.
 
 ---
 
+## qino Eval
+
+Discover what makes creative work work — and improve the system that makes it.
+
+### The felt sense is the data
+
+You read two chapters. One pulls you forward; one doesn't. You can feel the difference before you can name it.
+
+qino Eval provides frameworks that help you articulate what the felt sense is responding to. Seven dimensions for quality. Six dimensions for progression. But the frameworks don't override the feeling — they help you find language for it.
+
+> *"The wanderer becomes textured and multi-dimensional, not because of what they said, but precisely because they didn't have to say it. In that moment, I, the reader, am telling the story. I, the reader, am filling the gaps — and it feels engaging, because there's something of ME in it now."*
+
+That's not analysis. That's someone discovering why a passage worked.
+
+### Compare: which works better, and why
+
+Two chapters side by side. Maybe from different tools, different chronicles, different approaches to the same challenge.
+
+You read both. Notice what stays with you. Find the passages that worked — and the ones that didn't. The framework gives you questions:
+
+| Dimension | Question |
+|-----------|----------|
+| Action | Does the wanderer do or only witness? |
+| Stakes | What could go wrong? |
+| Discovery | Told or shown? |
+| World | Does environment act or only contain? |
+
+One chapter might build immersive atmosphere but leave you indifferent. Another might feel rougher but create genuine stakes. The comparison reveals what matters:
+
+> *"In A, the wanderer risks being seen by a world that's paying attention. In B, the world is beautifully rendered but indifferent — and indifference is contagious."*
+
+### Progression: does the chronicle move?
+
+Two chapters from the same chronicle. Does the second feel like it *needed* to follow the first?
+
+| Dimension | What it feels like |
+|-----------|-------------------|
+| Pull | Incompleteness at chapter end — wanting the next |
+| Meet | Continuation at chapter start — being acknowledged |
+| Weight | Accumulation — later chapters carry earlier ones |
+| Echo | Callbacks that land, not just occur |
+
+Progression isn't continuity. It's momentum — the felt sense of being pulled through a story.
+
+### The learning loop
+
+This is where it gets powerful.
+
+```
+evaluation → insight → architectural change → next evaluation tests the change
+```
+
+You compare chapters. You discover a principle: *"The wanderer gains depth through how others respond to what they don't say."* That's not just feedback on one chapter — it's insight that can change how the scribe works.
+
+The insight flows back:
+- Problems that recur become fixes in `process.md`
+- Patterns that work become reinforcement in `soul.md`
+- Structural issues become changes in `craft.md`
+
+Then you generate again. Evaluate again. See if the change helped.
+
+Over time, the evaluation log accumulates patterns. Problems that keep appearing. Fixes that worked. The scribe improves not through random iteration but through discovered principles.
+
+### Principles discovered
+
+From a single evaluation session comparing two approaches:
+
+**The Mutual Seeing Principle** — The wanderer sees the world; the world must see back. Without mutual gaze, no stakes.
+
+**The Relational Mirror Principle** — Characters gain depth through how others respond to what they *don't* say.
+
+**The Reader as Co-Author Principle** — Beautiful description can render a world the reader admires but never enters. If every meaning is delivered, there's nothing to contribute. The gap must have *pull*.
+
+These principles now live in the scribe's architecture. The next chapter will be different because of what the evaluation discovered.
+
+```bash
+/eval:compare chapter-a.md chapter-b.md
+/eval:progression chapter-1.md chapter-2.md
+```
+
+*[Source](tools/qino-eval/) · [Installation](tools/qino-eval/README.md#installation)*
+
+---
+
 ## Adapters
 
 This repository uses its own tools. The source files live in `tools/`, and adapter commands in `.claude/commands/` reference them.
