@@ -60,11 +60,9 @@
       "files": [
         {"src": "tools/qino-scribe/references/qino-scribe/version.json", "dest": "references/qino-scribe/version.json"},
         {"src": "tools/qino-scribe/commands/scribe/chapter.md", "dest": "commands/scribe/chapter.md"},
-        {"src": "tools/qino-scribe/agents/qino-scribe-agent.md", "dest": "agents/qino-scribe-agent.md"},
-        {"src": "tools/qino-scribe/references/qino-scribe/chronicle-spec.md", "dest": "references/qino-scribe/chronicle-spec.md"},
-        {"src": "tools/qino-scribe/references/qino-scribe/chapter-format.md", "dest": "references/qino-scribe/chapter-format.md"},
-        {"src": "tools/qino-scribe/references/qino-scribe/voice-guide.md", "dest": "references/qino-scribe/voice-guide.md"},
-        {"src": "tools/qino-scribe/references/qino-scribe/theme-guide.md", "dest": "references/qino-scribe/theme-guide.md"}
+        {"src": "tools/qino-scribe/references/qino-scribe/soul.md", "dest": "references/qino-scribe/soul.md"},
+        {"src": "tools/qino-scribe/references/qino-scribe/craft.md", "dest": "references/qino-scribe/craft.md"},
+        {"src": "tools/qino-scribe/references/qino-scribe/process.md", "dest": "references/qino-scribe/process.md"}
       ]
     },
     "updater": {

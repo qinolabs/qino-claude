@@ -145,57 +145,61 @@ Your perceiving is the process. The agent isn't extracting information from you 
 
 ## qino Scribe
 
-The ecosystem tells its own story.
+Adventure emerges from pressure. The chronicle is a living world.
 
 ### Story world
 
-Your ecosystem evolves through conversations and accumulated notes. Changes happen across sessions. Threads emerge.
+Your ecosystem evolves through conversations, explorations, and accumulated work. qino Scribe transforms this evolution into a fantasy chronicle — not documentation with literary flair, but a story world with action, stakes, and consequence.
 
-qino Scribe transforms this into a story world. Not metaphor — an actual place you can return to. Characters appear when concepts arrive. Locations reveal hidden rooms when ideas deepen. Seasons shift when larger patterns surface.
+The key insight: **adventure, not observation**.
 
-> *The Listener had been troubled for days. Not visibly — they were never visible about such things. But the wanderer noticed: a slight hesitation beneath the tree, eyes drifting to scattered places, hands reaching for something not quite there.*
+> *The wanderer had meant to pass through. But the room had other intentions — a door that wasn't there before, and behind it, sounds that demanded investigation.*
 
-The chronicle is something you could give to a collaborator, revisit in a year, or read like a children's book by nightlamp.
+The chronicle is something you could give to a collaborator, revisit in a year, or read like a children's book by nightlamp. But unlike documentation, it pulls you forward.
 
-### Walkable abstraction
+### Ground before observe
 
-A concept becomes a location. An ecosystem pattern becomes weather. A held thread becomes a door glimpsed through fog.
+The scribe inhabits the world before looking at what changed. This prevents the diff from narrowing vision.
 
-When a new concept arrives, a traveler might appear at the threshold — someone who wasn't there before, carrying questions no one else has asked yet.
+What's alive in this world that has nothing to do with the code changes? What pressures are building? What's about to break? Only after grounding does the scribe look at git history — and then asks not "where does this change appear?" but "who in this world would care about this? What could go wrong?"
 
-When a concept deepens, the location reveals what was always there but hidden:
+### Three options, choose most alive
 
-> *The Weaving-Room was warm, as always. But today there was a door the wanderer hadn't noticed — or perhaps it had just become. Behind it, threads hung in patterns that moved without wind.*
+For every chapter, three possibilities:
 
-When a connection emerges between ideas, a path appears:
+**The expected** — where the change would naturally surface, who would explain it. The tour-guide version.
 
-> *The wanderer paused at the workshop. Through the window, the Assistant was reorganizing something — making room, they realized, for references to somewhere else. Even structure was learning to point beyond itself.*
+**The unexpected location** — discovered at the world's edges, through someone affected rather than someone who manages.
 
-When something is held but not yet ready, it waits:
+**The complication** — what if it creates a problem? Someone disagrees. The wanderer tries to help and makes things worse. A pressure finally breaks.
 
-> *In the distance, past the new path, something moved. Too far to see clearly. The wanderer noted it, stored it somewhere below thought, and turned back toward the known.*
+The scribe chooses the option with the most action, stakes, and wanderer participation.
 
-Ideas at different levels — specific features, whole concepts, ecosystem-wide patterns — all become places you can walk between.
+### The wanderer acts
+
+The wanderer is the protagonist — but not a camera that tours. They participate. They make mistakes. They try things that don't work. They're accompanied by figures who emerge from the world — but those figures have faces, not just functions.
+
+> *"You shouldn't be here," the keeper said. Not hostile — tired. As if they'd said it before, to others who hadn't listened.*
+>
+> *The wanderer didn't leave. That was the first mistake.*
+
+One explanatory dialogue exchange maximum. The rest emerges through behavior, environment, consequence.
+
+### Pressures must evolve
+
+The world tracks pressures — what's building, what's about to break. These are fuel for future chapters.
+
+Every chapter should leave at least one pressure building. If the Pressures section is empty after a chapter, the scribe hasn't finished.
+
+> *The traders were late. Three days now. The keeper pretended not to notice, but the wanderer had seen the glances toward the eastern path — quick, involuntary, immediately suppressed.*
+
+Pressures create momentum. Without them, the story stalls into beautiful description.
 
 ### The world accumulates
 
 Each chapter builds on what came before. Characters have first appearances and last-seen notes. Locations have atmosphere and history. Arcs track tensions across chapters, not tasks within them.
 
-> *"You've been circling this place," said a figure at the threshold — the one who always waited there, though no one knew for how long. "What are you looking for?"*
->
-> *The wanderer didn't answer immediately. The question felt larger than it sounded.*
-
-Over time, you feel you know this place. The world has grown with your thinking.
-
-### The wanderer
-
-The wanderer is the protagonist — but not the narrator. They participate in the story, appear in third person, learn rather than lead. They make mistakes. They're accompanied by figures who emerge from the world.
-
-> *The path appeared where no path had been — a narrow track of beaten light. The wanderer hadn't made it. It had simply become.*
-
-The wanderer is your presence in the world. But the world doesn't revolve around them. They're a traveler, discovering alongside you what the ecosystem has become.
-
-The wanderer as palimpsest — layers of experience visible through each other. Objects gathered in pockets, wounds and gifts visible through behavior, echoes of other places. The reader accumulates understanding the way the wanderer accumulates weight.
+Over time, you feel you know this place. The world has grown with your thinking — but it's also grown its own tensions, its own unresolved threads, its own weather.
 
 ```bash
 /scribe:chapter
@@ -386,7 +390,6 @@ This repository uses its own tools. The source files live in `tools/`, and adapt
 ```
 tools/qino-concept/commands/qino/    → .claude/commands/qino/
 tools/qino-scribe/commands/scribe/   → .claude/commands/scribe/
-tools/qino-world/commands/world/     → .claude/commands/world/
 tools/qino-eval/commands/eval/       → .claude/commands/eval/
 ```
 

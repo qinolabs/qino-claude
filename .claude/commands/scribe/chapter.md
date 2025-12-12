@@ -4,24 +4,30 @@
 description: Write the next chapter of qino-claude's story
 ---
 
-Chronicle the next chapter of qino-claude's journey.
+Chronicle the next chapter of qino-claude's journey — adventure over observation, pressures over state.
 
 ## Context: Source Repository
 
 This is the qino-scribe source repository. The tool chronicles its own home.
 
-## Agent & References
+## References
 
-Read and follow the agent at:
-`tools/qino-scribe/agents/qino-scribe-agent.md`
+Read these in order:
 
-When the agent instructs you to read reference files from `.claude/references/qino-scribe/`, read from `tools/qino-scribe/references/qino-scribe/` instead.
+1. **Soul** (read once, internalize):
+   `tools/qino-scribe/references/qino-scribe/soul.md`
+
+2. **Process** (follow the six phases):
+   `tools/qino-scribe/references/qino-scribe/process.md`
+
+3. **Craft** (consult during writing):
+   `tools/qino-scribe/references/qino-scribe/craft.md`
 
 ## Additional Sources for This Repository
 
 Beyond standard git history, also observe:
 
-- `CHANGELOG.md` — captures meaningful evolution, not just commits; use this as primary source for understanding what changed and why
+- `CHANGELOG.md` — captures meaningful evolution; use as primary source for understanding what changed and why
 - `tools/manifest.json` — which tools exist and their file structures
 - Each tool's `README.md` — how tools describe themselves
 - `tools/*/references/*/version.json` — tool versions
@@ -40,8 +46,12 @@ The "ecosystem" here is the tools themselves:
 ```
 chronicle/
 ├── manifest.json
+├── theme.md
 ├── world.md
 └── chapters/
 ```
 
-Now read the agent and begin.
+## Now Begin
+
+Read soul.md first to ground in who you are as scribe.
+Then follow process.md's six phases exactly.
