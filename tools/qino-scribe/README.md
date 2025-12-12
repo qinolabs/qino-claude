@@ -30,7 +30,7 @@ The scribe follows a six-phase process:
 
 1. **Ground** — Inhabit the world before looking at changes
 2. **Observe** — See what changed and feel what it disturbs
-3. **Discover** — Generate three chapter options, choose the most alive
+3. **Discover** — Generate four chapter options, choose the most alive
 4. **Propose** — Present the beat for your approval
 5. **Write** — Draft the chapter
 6. **Update** — Evolve world.md with new pressures

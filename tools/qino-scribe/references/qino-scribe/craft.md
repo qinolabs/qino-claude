@@ -53,36 +53,27 @@ arcs_begun: [list]
 
 ## The Wanderer Section
 
-Each chapter ends with the wanderer section — the chapter's closing, before World Tokens.
+The chapter's closing, before World Tokens. See `soul.md` → "Presence Through Aftermath" for the principle.
 
-This is **the unwatched hour** — after the story ends, when the world returns to its own time.
-
-### What It Is
-
-The wanderer moves through the world without purpose — walking back, sitting by the water, standing at a window. Through this purposelessness, the world reveals what it couldn't reveal while the story was asking things of it.
-
-This is not reflection. Not the wanderer processing what happened. It's **aftermath** — the world breathing out, witnessed by someone too tired to interfere.
-
-### The Form
+### Format
 
 - **Third person** — the wanderer is witnessed, not confessing
-- **A simple action** — sitting, walking back, standing at a window
+- **A simple action** — sitting, walking back, standing at a threshold
 - **Varying** — shaped by where the chapter left them, not by template
 
-### What Belongs Here
+### Belongs
 
-- Details that surface now — things that were there but couldn't be noticed during the story's motion
-- Casual questions that open possibility — small uncertainties left unresolved
-- The environment as presence — felt in passing, not described
-- Places seen differently — same locations from the story, but now empty or inhabited by someone else
+- Details that surface now — things that couldn't be noticed during story motion
+- Casual questions that open possibility — small uncertainties unresolved
+- Environment as presence — felt in passing, not rendered
+- Places seen differently — same location, now empty or inhabited by someone else
 
-### What Doesn't Belong
+### Doesn't Belong
 
-- Processing the day's events
+- Processing what happened
 - Naming what was learned
-- Poetic descriptions of atmosphere
+- Description for its own sake
 - Conclusions or meanings
-- Explaining what things mean
 
 ### Examples
 
@@ -131,6 +122,59 @@ The good tokens have sensory detail. The bad tokens describe function.
 
 ---
 
+## Arc Shapes
+
+When an arc begins, sense its shape. These are verbs, not categories.
+
+### Something hidden
+
+*Will reveal or deepen.*
+
+Could be: a secret kept, a place avoided, an object never shown, a history the records omit, a feeling neither names, a memory that surfaces only in gesture. Could be held by one person or forgotten by everyone.
+
+### Something in motion
+
+*Will arrive, or transform the path.*
+
+Could be: a message sent, a person traveling elsewhere, a season turning, a rumor spreading, a ship expected, a change moving through the world that hasn't reached here yet.
+
+### Something building
+
+*Will break or be built.*
+
+Could be: tension between people, pressure on a structure, a pattern accumulating, trust slowly forming, resentment collecting, something being made that isn't finished yet.
+
+### Something between people
+
+*Will deepen or rupture.*
+
+Could be: attraction unspoken, debt unpaid, recognition neither has risked, old wound reopened, loyalty untested, the question of what they are to each other.
+
+### Something calling outward
+
+*Will be undertaken, reached, or release the call.*
+
+Could be: a glimpse that needs following, a place that needs reaching, something needed from elsewhere, a promise to keep, a companion's purpose shared, an unknown that pulls.
+
+Journeys (this shape) often hold other shapes within them. A journey might reveal something hidden, or cause something between people to deepen.
+
+---
+
+**The shapes manifest through the theme.** Sense what each means in this world. What counts as "hidden" in a harbor town differs from what's hidden in a space station or a mythic underworld. The grammar is portable; the instances are yours to find.
+
+### Arc Field Guidance
+
+**Scale thresholds:**
+- Quick = 1-2 chapters
+- Has weight = 3-5 chapters
+- Long = 6+ chapters
+
+**Moves toward:** Update when the direction shifts, not every chapter. This is a compass, not a countdown.
+
+**What it yielded (journal):** Name 1-3 concrete outcomes — what the world now has, knows, or lost.
+
+---
+
 ## Chronicle Directory Structure
 
 ```
@@ -138,6 +182,7 @@ chronicle/
 ├── manifest.json      # Chronicle state and chapter index
 ├── theme.md           # The world's seed (required)
 ├── world.md           # Living world-state
+├── journal.md         # Completed arcs (created when first arc completes)
 └── chapters/
     ├── 001-slug.md
     └── ...
@@ -178,13 +223,10 @@ chronicle/
 
 ## Pressures
 
-*What's building. What's about to break. What remains unspoken between people.*
+*What's building. What's calling.*
 
 ### [Pressure Name]
 [What's happening, who's involved, what's at stake]
-
-### [Relational Pressure Name]
-[What's unspoken between characters — what one has sensed about another, what neither has named]
 
 ---
 
@@ -235,7 +277,12 @@ First appeared: [chapter, circumstance]
 ## Arcs in Motion
 
 ### [Arc Name]
-[What's happening, where it began, what's unresolved]
+*Shape:* [hidden / motion / building / between / calling outward]
+*Scale:* [quick / has weight / long]
+*Holds:* [the question this arc is exploring]
+*Moves toward:* [what might resolve it — direction, not script]
+
+[Current state — what's happening now]
 
 ---
 
@@ -265,16 +312,33 @@ After every chapter, ask:
 - What's someone worried about that they weren't before?
 - What's the wanderer carrying that they can't put down?
 
-### Relational Pressures
+---
 
-Pressures aren't only plot — they're also what's unspoken between characters.
+## journal.md Structure
 
-After every chapter, also ask:
-- What has one character sensed about another that they haven't named?
-- What's building between the wanderer and someone else — attraction, suspicion, recognition, unasked questions?
-- What did a character perceive about the wanderer that the wanderer doesn't know they revealed?
+The journal holds completed arcs — memory of what the chronicle has lived through. Created when the first arc completes.
 
-These relational pressures create stakes. The wanderer risks being *seen* — and that seeing might be wrong, or too right, or something neither can yet articulate.
+```markdown
+# Journal
+
+*Memory of completed significance.*
+
+---
+
+## [Arc Name]
+
+*Shape:* [which of the five]
+*Chapters:* [which chapters it spanned]
+*Resolved:* [how it ended — one line]
+
+**What it yielded:**
+[What the world now has, knows, or lost]
+
+**What changed between people:**
+[Relational shifts that persist]
+```
+
+Journeys naturally have more to say: companions who traveled, the route taken, what was discovered. This emerges from the shape, not a separate template.
 
 ---
 

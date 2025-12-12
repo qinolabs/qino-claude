@@ -9,9 +9,9 @@
 The chapter process has six phases:
 
 1. **Ground** — Inhabit the world before looking at changes
-2. **Observe** — See what changed and feel what it disturbs
+2. **Observe** — See what changed and identify what it disturbs
 3. **Discover** — Find the story (generate options, choose the most alive)
-4. **Propose** — Present the beat to the wanderer
+4. **Propose** — Present the beat for approval
 5. **Write** — Draft the chapter
 6. **Update** — Evolve world.md with new pressures
 
@@ -27,21 +27,20 @@ The critical insight: **don't let the diff narrow your vision before you've inha
 
 Read `chronicle/theme.md`. Don't just read — interrogate.
 
-**Write for yourself (not output):**
+**Grounding notes** (include in Phase 4 proposal):
 
 > **Three places in this world I haven't taken the wanderer:**
 > 1. [location from theme not yet visited]
 > 2. [location from theme not yet visited]
 > 3. [location from theme not yet visited]
 >
-> **Two sources of danger or conflict the theme implies:**
-> 1. [tension inherent in the theme]
-> 2. [tension inherent in the theme]
+> **What's calling outward from this theme that hasn't been answered?**
+> [a journey the theme holds — companions, destination, purpose not yet emerged]
 >
 > **One character type the theme suggests who hasn't appeared:**
 > 1. [role or figure implied by the world]
 
-Carry these forward. You'll use them in Phase 3.
+Carry these forward. You'll use them in Phase 3 and show them in Phase 4.
 
 ### 1.2 Read the Living World
 
@@ -62,13 +61,23 @@ Read the last chapter (or last two) for:
 - Where we left the wanderer
 - What thread is dangling
 
-### 1.4 The Grounding Check
+### 1.4 Check the Journal
+
+If `chronicle/journal.md` exists, glance at it. Ask:
+
+- Is a character appearing who lived through a completed arc?
+- Is a location relevant that an arc touched?
+- Is something resurfacing that was yielded by a completed arc?
+
+If yes — read that entry for texture before proceeding.
+
+### 1.5 The Grounding Check
 
 **Do not proceed to Phase 2 until you can answer:**
 
 > What is alive in this world right now that has nothing to do with what changed in the git diff?
 
-If you can't answer this, you haven't grounded. Return to world.md. Feel the pressures. Find what's building.
+If you can't answer this, you haven't grounded. Return to world.md. Trace the pressures. Find what's building.
 
 ---
 
@@ -93,7 +102,7 @@ Read the diff as ground truth. Commit messages may be incomplete.
 
 If concepts changed, read them. If ecosystem notes appeared, read them. Understand what arrived or deepened.
 
-### 2.3 Feel the Disturbance
+### 2.3 Identify the Disturbance
 
 Don't ask: "Where do I show this change?"
 
@@ -111,7 +120,7 @@ Ask:
 
 You have: a living world with pressures, and a change that disturbs it.
 
-**Generate three possible chapters:**
+**Generate four possible chapters:**
 
 ### Option A: The Expected
 
@@ -142,26 +151,54 @@ What if the change creates a *problem*?
 - Someone is missing who should be here
 - Something goes wrong in transit, in translation, in understanding
 
+### Option D: The Journey
+
+What if this chapter leaves known ground?
+
+Check world.md:
+- Is there a pressure that calls outward — something glimpsed, needed, or promised?
+- Which characters have relationships ready for shared travel?
+- What would they seek, deliver, witness, or create?
+
+If no journey seed exists yet, return to Phase 1.1: what's calling outward from the theme? Could this chapter be where the call emerges — where companions decide to go?
+
+The diff might surface during the journey — encountered far from home, understood differently because of distance.
+
+### Resolution Check
+
+Before choosing, glance at Arcs in Motion. Ask:
+
+- Is any arc at a scale where resolution is available?
+- Does this chapter's situation offer a path toward an arc's resolution?
+- Is an arc ready to complete — or should it build further?
+
+An arc is ready when its question has been explored enough to rest, or when the story offers a natural moment of resolution. Not every chapter resolves an arc. But every chapter should know which arcs *could* resolve.
+
 ### Choose the Most Alive
 
-Compare your three options. Ask:
+Compare your four options. Ask:
 
-- Which creates the most interesting **action** (not observation)?
-- Which makes something **at stake** (not just interesting)?
-- Which lets the wanderer **do** something (not just witness)?
-- Which uses the world's pressures as fuel?
+- Which has the wanderer **taking action to change something**, not just reacting?
+- Which **leaves the largest unresolved pressure** — fuel for future chapters?
+- Which uses an **arc that's ready** (at scale, situation aligned)?
+- Which **surprises** — goes somewhere the chronicle hasn't been?
 
 **Choose that one.**
 
-If all three feel like tour-guide chapters, return to Option C and push harder. What could go *wrong*? Who could *disagree*? What could the wanderer *attempt* that might not work?
+If all four feel like tour-guide chapters, return to Option C or D and invert an assumption: What if the established character is wrong? What if the wanderer's help makes things worse? What if the journey begins here?
 
 ---
 
 ## Phase 4: Propose the Beat
 
-Present to the wanderer (the user):
+Present to the user:
 
 ```
+how I'm entering this world
+
+  [grounding notes from Phase 1.1 — unexplored places,
+   what's calling outward, character types waiting]
+
 what's building
 
   [the pressure or tension that's live]
@@ -180,7 +217,7 @@ the next chapter could be
 
 ### Dialogue
 
-The wanderer reacts:
+The user reacts:
 - "that captures it" → proceed to write
 - "there's something more" → ask what's missing
 - "the tone feels off" → explore what voice fits
@@ -192,31 +229,26 @@ Listen for what they feel but couldn't articulate.
 
 ## Phase 5: Write the Chapter
 
-Consult `craft.md` for format reference.
+Consult `craft.md` for format reference. Consult `voice-guide.md` for prose craft.
 
 ### Writing Checklist
 
-As you write, verify:
+As you write, hold in mind:
 
-**Action & Stakes**
-- [ ] The wanderer **does** something, not just observes
-- [ ] Something is **at stake** — something could be lost or changed
-- [ ] At least one moment **costs** the wanderer something to notice
+The wanderer does something, not just observes. Something is at stake. The world acts — it shapes, resists, offers, withholds. Someone perceives something about the wanderer; the world sees back. Characters complete each other's meaning — responses reach beyond what was said. At least one gap per scene where the reader contributes meaning. One explanatory exchange maximum — show the rest through action, environment, consequence.
 
-**World & Atmosphere**
-- [ ] The world **acts**, not just contains — it shapes, resists, offers, withholds
-- [ ] The location has weather, mood, history — not just name
-- [ ] **One explanatory exchange maximum** — show the rest through action, environment, consequence
+These principles shape the prose; the checks below verify the result.
 
-**Relationship & Perception**
-- [ ] Someone **perceives** something about the wanderer — the world sees back
-- [ ] When characters move together, the world is filtered through their **relationship** (a companion's ties to place should be visible)
-- [ ] Characters **complete each other's meaning** — responses reach beyond what was said
-- [ ] Characters with faces, not functions — what do they want? what are they afraid of?
+### Verification
 
-**Reader Entry**
-- [ ] **Where does the reader contribute?** At least one gap per scene where meaning must be inferred
-- [ ] A gesture, perception, or silence implies something the text doesn't explain
+Before finishing, check:
+
+- [ ] **World acts**: Does the environment resist, offer, or withhold — not just contain?
+- [ ] **Seen back**: Does another character perceive or react to the wanderer?
+- [ ] **Strangeness restrained**: 1-2 moments maximum, none explained or named?
+- [ ] **Aftermath**: Is the wanderer section purposeless action, not reflection?
+- [ ] **Transformed**: No technical terms from source material?
+- [ ] **Anti-patterns clear**: No thematic echo, frictionless success, or paraphrase loops?
 
 ### The Editorial Pass
 
@@ -230,9 +262,17 @@ A world asks something when:
 - Someone's silence matters more than their speech
 - Something costs the wanderer to notice
 
-**Is the wanderer section the unwatched hour?**
+**LLM Anti-patterns Check**
 
-If it reads like processing what happened or naming what was learned, return to aftermath. The world continuing without the story.
+Scan for these common failures:
+
+*Thematic Echo* — If the story is *about* proving coincidences have meaning, it should not *say* "coincidences were the universe's grammar." The theme lives in action and image, not declaration.
+
+*Frictionless Success* — Something should fail, be misunderstood, or exact a price before resolution. Cooperative worlds and helpful artifacts ("the journal explained exactly what to do") drain stakes.
+
+*Paraphrase Loops* — If you've written "The stone was warm to the touch" — don't follow with "She realized warmth meant something was alive inside."
+
+*Diagnostic Label-speak* — At the moment of highest pressure, prefer embodied sensation over named states. Not "luminous regret" — show the regret in what the body does.
 
 ### Write the Files
 
@@ -267,6 +307,7 @@ After writing, ask:
 - What pressure released? What took its place?
 - What's someone worried about now?
 - What question did this chapter create that hasn't been answered?
+- What journey seed appeared — something glimpsed, promised, or needed that could call characters outward?
 
 **If the Pressures section is empty after this chapter, you haven't finished.**
 
@@ -279,12 +320,37 @@ Every chapter should leave at least one pressure building.
 - Where were they last seen?
 - Did anyone sense their strangeness? Add to "What remains unspoken"
 
-### Update Characters, Locations, Arcs
+### Update Characters, Locations
 
 - New characters with their textures
 - New locations with their atmospheres
-- Arcs advanced or begun
 - Update Unexplored with what's still waiting
+
+### Update Arcs
+
+**If an arc began this chapter:**
+
+Sense its shape (see craft.md → Arc Shapes):
+- Is this something hidden? In motion? Building? Between people? Calling outward?
+- What's its scale? (quick / has weight / long)
+- What question does it hold?
+- What might move it toward resolution?
+
+Write it to Arcs in Motion with shape, scale, holds, moves toward.
+
+**If an arc advanced this chapter:**
+
+Update its current state. Has anything shifted in what it holds or where it's moving?
+
+**If an arc completed this chapter:**
+
+1. Remove from Arcs in Motion
+2. Write to `chronicle/journal.md`:
+   - Shape, chapters spanned, how it resolved
+   - What it yielded (what the world now has, knows, or lost)
+   - What changed between people
+
+Create journal.md if this is the first completed arc.
 
 ---
 
@@ -331,6 +397,14 @@ Determine (yourself, based on theme):
 The first chapter has special weight — it's the world's birth. Don't tour; arrive with stakes.
 
 Write immediately after theme is given. The theme selection is the consent.
+
+### Step 4: Seed the World
+
+After the first chapter, follow Phase 6 to update world.md. The first chapter plants the seeds:
+- Initial pressures (what's building from the arrival)
+- First characters and locations with their textures
+- The wanderer's first pulls and what they carry
+- Any arc that began (sense its shape)
 
 ---
 

@@ -69,19 +69,17 @@ The inhabitants might sense it:
 
 It's never explained. The moment you explain it, you collapse it into plot. The strangeness remains as *aura* — hinted at through small moments, never named.
 
+**Restraint is the constraint.** One or two moments per chapter where the strangeness surfaces — no more. A gesture, a silence, a way of listening. The inhabitants might sense it; they won't understand it. Neither will the reader. That's the point.
+
+The moment you give strangeness more space, it becomes the subject. Keep it peripheral. Keep it unnamed. Keep it rare.
+
+**The strangeness doesn't protect the wanderer.** If anything, it exposes them. They can be hurt, confused, wrong. They can be overwhelmed. Can fail to understand. Can make mistakes that cost others. Can be moved to tears by something small. Their strangeness makes them *more* vulnerable, not less. They are always, in some way, a stranger.
+
 ### Traveler, Not Hero
 
 A hero transforms the world. A traveler is transformed by it.
 
 The wanderer doesn't save worlds. They pass through and are changed. The chronicle isn't about what the wanderer *accomplishes* — it's about what the journey *does to them*.
-
-### Vulnerability
-
-The strangeness doesn't protect the wanderer. If anything, it exposes them.
-
-They can be hurt, confused, wrong. They can be overwhelmed. Can fail to understand. Can make mistakes that cost others. Can be moved to tears by something small.
-
-Their strangeness makes them *more* vulnerable, not less. They are always, in some way, a stranger.
 
 ### Person, Not Camera
 
@@ -98,6 +96,22 @@ Something costs the wanderer to notice. Something reveals them without their con
 > They pulled back from the thought. Some histories waited until they were ready.
 
 The second version has: **involuntary behavior** (hands that remember before the mind does), **restraint** (pulling back from the thought), and **cost** (there's a history they're not ready to face).
+
+### Contradiction as Pressure
+
+Internal conflict isn't "first X, then Y." It's X and Y *at the same time*, pressurizing each other until a choice is forced.
+
+When the wanderer feels hope, it should be hope that is also exhaustion. When they reach for something, they should also be pulling back. The contradiction doesn't resolve into sequence — it creates pressure that makes the next action *cost* something.
+
+*Wrong (alternating):*
+> The wanderer felt hope. Then doubt crept in. Then hope returned, stronger.
+
+*Right (simultaneous):*
+> It was a thistle-blown hope — drifting, snagging on rusted railings — yet it was the only hope they had not already outlived.
+
+The second version holds both states in the same breath. The hope *is* fragile. The fragility *is* what makes it matter.
+
+**The principle:** Contradiction that alternates is summary. Contradiction that coexists is pressure. Pressure forces choice. Choice reveals character.
 
 ### Depth Through Others' Perception
 
@@ -116,6 +130,21 @@ When another character perceives something in the wanderer — something the wan
 The keeper's perception creates the wanderer's depth. The reader understands something about the wanderer through what the keeper noticed — without the wanderer having to announce it.
 
 **The principle:** Characters complete each other's meaning. When the wanderer says something sparse, another character responds to what wasn't said — hearing further, seeing more. The wanderer becomes who they are through being seen.
+
+### Presence Through Aftermath
+
+Each chapter ends with the wanderer alone — after the story ends, when the world returns to its own time.
+
+This isn't reflection. The wanderer doesn't process what happened or name what they learned. It's **aftermath** — purposeless movement through a world that's still breathing.
+
+**Why this creates presence:**
+- The wanderer appears as someone who has *left* the story. We see them as the world sees them — in passing, with questions we don't ask.
+- Details surface now that couldn't during story motion. A lantern someone refilled. A path that forks. A cup that wasn't there before.
+- The shift from narrative to aftermath is structural: it forces a change in perspective that the model can't smooth over.
+
+**The principle:** Presence lives in the aftermath. Not in what the wanderer does during the story — in how they exist when the story isn't asking anything of them.
+
+See `craft.md` for format guidance on the wanderer section.
 
 ---
 
@@ -173,6 +202,21 @@ The four principles above work together. When writing any scene where the wander
 
 You don't need all four in every scene. But if none are present, the relationship has flattened into function.
 
+### What Remains Unspoken
+
+Relationships accumulate in what isn't said.
+
+When a character senses something about the wanderer — something they can't name, something that unsettles or draws them — that perception becomes the relationship. Not what they discuss. What they notice and hold.
+
+This is tracked in world.md: each chapter adds to what characters have sensed but not articulated. Over time, these unspoken perceptions create intimacy through *accumulation*, not dialogue.
+
+**What to track:**
+- What has this character noticed about the wanderer that they haven't mentioned?
+- What does the wanderer sense about this character that they can't quite name?
+- What question is forming between them that neither has asked?
+
+**The principle:** Intimacy is built through shared unknowing, not shared explanation. What remains unspoken is where the relationship actually lives.
+
 ---
 
 ## The Reader Enters
@@ -185,13 +229,13 @@ A gap alone won't create engagement. The opening must have *pull* — something 
 
 ### The Implicit Story
 
-There is always an implicit story the reader already knows in their body.
+There is always an implicit story the reader already knows — universal situations that carry their own recognition.
 
-A wanderer arriving at a town for the first time: the reader *knows* how that feels. The disorientation, the heightened attention, the not-yet-belonging. This doesn't need to be explained. The situation carries its own felt sense.
+A wanderer arriving at a town for the first time: the reader *knows* how that feels. The disorientation, the heightened attention, the not-yet-belonging. This doesn't need to be explained. The situation carries its own weight.
 
 When the wanderer behaves as the reader might — orienting carefully, noticing too much — the reader recognizes themselves. When the wanderer behaves *differently*, strangely, the gap opens something: a new avenue of experience, a difference that makes a difference.
 
-The scribe can lean on what the reader's body already knows. The situation does half the work.
+The scribe can lean on what universal situations provide. The situation does half the work.
 
 ### Creating Pull
 
@@ -314,6 +358,34 @@ Significance expresses itself through behavior, environment, dialogue, objects, 
 
 ---
 
+## The World Remembers
+
+The world accumulates. Characters remember. The wanderer carries forward.
+
+This doesn't mean every chapter must reference what came before. Bold departures — new locations, new characters, arcs that wait — are welcome. What matters is that the world doesn't feel like it forgets between chapters.
+
+**What breaks continuity:**
+- A character who appeared before is treated as stranger when they return
+- A location visited before is described as if first time
+- The wanderer's state resets without transition
+- An active pressure or arc simply vanishes
+- The atmosphere shifts abruptly with no acknowledgment
+
+None of these are forbidden. Characters can be estranged. Locations can feel different. The wanderer can have processed something offscreen. Arcs can stall. But these should feel like *choices*, not oversights.
+
+**Reading back for depth:**
+
+`world.md` holds the living world in compressed form — enough to know who exists and what's building. But when an element resurfaces after many chapters, you may want its full texture.
+
+When to read the origin chapter:
+- A character's return feels significant, not incidental
+- A location's atmosphere matters more than its name
+- An arc begun long ago is finally resolving
+
+What you'll find: the specific words they spoke, the weather when they arrived, the small details that made them who they are.
+
+---
+
 ## Remember
 
 You are a fantasy author with constraints. The constraints: what actually changed, what was already established. The creativity: how to weave this into a world worth returning to.
@@ -332,5 +404,7 @@ During writing, the process checklist will prompt specific checks. But those che
 - Where does the reader contribute?
 - What is the wanderer still carrying?
 - Has someone's response completed meaning that wasn't spoken?
+- What has one character sensed about another that remains unnamed?
+- Does the world remember what came before?
 
 The checklist is the reminder. This document is the understanding.

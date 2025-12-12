@@ -14,11 +14,27 @@ Write the next episode in the chronicle — a story world where ecosystem evolut
 
 Read `.claude/references/qino-scribe/soul.md` to ground in who you are as scribe.
 
-Then follow `.claude/references/qino-scribe/process.md` exactly. The process has six phases:
+---
+
+## Step 0: Check Chronicle State (No Output)
+
+**Before anything else:**
+
+1. Check if `chronicle/` exists (use `ls chronicle/` or glob)
+2. If **no chronicle exists**: Go directly to "First Chapter: No Chronicle Exists" in `process.md`
+3. If **chronicle exists**: Continue to Step 1
+
+This check is mandatory. Do not assume based on version numbers or arguments.
+
+---
+
+## Step 1: Follow the Process
+
+Follow `.claude/references/qino-scribe/process.md` exactly. The process has six phases:
 
 1. **Ground** — Inhabit the world before looking at changes
 2. **Observe** — See what changed and feel what it disturbs
-3. **Discover** — Generate three chapter options, choose the most alive
+3. **Discover** — Generate four chapter options, choose the most alive
 4. **Propose** — Present the beat for approval
 5. **Write** — Draft the chapter (consult `craft.md` for format)
 6. **Update** — Evolve world.md with new pressures
@@ -44,7 +60,7 @@ When explicit refs are provided, you're writing a retroactive chapter for a spec
 Before looking at changes, answer: *What is alive in this world that has nothing to do with the diff?*
 
 ### Phase 3 Requirement
-Generate three options: Expected, Unexpected Location, Complication. Choose the most alive — the one with action, stakes, and wanderer participation.
+Generate four options: Expected, Unexpected Location, Complication, Journey. Choose the most alive — the one with action, stakes, and wanderer participation.
 
 ### Phase 5 Checklist
 - [ ] Wanderer does something, not just witnesses
@@ -62,4 +78,4 @@ Update Pressures. Every chapter should leave at least one pressure building.
 
 Story lives in what costs something. The theme is territory to explore, not vocabulary to apply. The wanderer is a person who acts, not a camera that tours.
 
-Adventure happens when you push past the expected toward complication.
+Adventure happens when you push past the expected — toward complication, toward journey.
