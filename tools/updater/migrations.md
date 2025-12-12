@@ -12,6 +12,38 @@ Each version section includes:
 
 ---
 
+## v0.7.0
+
+**Summary**: qino Scribe architecture overhaul — adventure over observation. qino Eval introduced for chapter evaluation.
+
+**Delete** (qino-scribe):
+- `.claude/agents/qino-scribe-agent.md` (replaced by reference files)
+- `.claude/references/qino-scribe/voice-guide.md` (archived)
+- `.claude/references/qino-scribe/chapter-format.md` (archived)
+- `.claude/references/qino-scribe/chronicle-spec.md` (archived)
+- `.claude/references/qino-scribe/theme-guide.md` (archived)
+
+**New** (qino-scribe):
+- `.claude/references/qino-scribe/soul.md` — who the scribe is
+- `.claude/references/qino-scribe/craft.md` — format reference
+- `.claude/references/qino-scribe/process.md` — six-phase workflow
+
+**New** (qino-eval):
+- `.claude/commands/eval/compare.md` — side-by-side chapter comparison
+- `.claude/commands/eval/progression.md` — evaluate movement between chapters
+- `.claude/references/qino-eval/stance.md` — evaluator stance
+- `.claude/references/qino-eval/compare-framework.md` — 7-dimension framework
+- `.claude/references/qino-eval/compare-session.md` — facilitation guide
+- `.claude/references/qino-eval/progression-lens.md` — 6-dimension felt lens
+- `.claude/references/qino-eval/learning-log.md` — capturing insights
+
+**User action**:
+- Delete old qino-scribe files listed above before updating
+- Chronicles created with old scribe will still work; new chapters use new architecture
+- Consider regenerating chronicles to benefit from adventure-over-observation approach
+
+---
+
 ## v1.0.0
 
 Initial release. No migrations needed.

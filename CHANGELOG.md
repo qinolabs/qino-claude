@@ -10,6 +10,38 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.7.0] - 2025-12-12
+
+### qino Scribe
+
+#### Changed
+- **Adventure over observation** — complete architecture overhaul merging qino-world into qino-scribe; chapters now emerge from action, stakes, and wanderer participation rather than tour-guide observation
+- **Ground before observe** — scribe inhabits the world before looking at git changes, preventing the diff from narrowing vision
+- **Three options per chapter** — generates Expected, Unexpected Location, and Complication options; chooses the most alive
+- **Pressures tracked in world.md** — the world now tracks what's building and what's about to break; pressures fuel future chapters
+- **One explanatory exchange maximum** — everything else emerges through behavior, environment, and consequence
+- **New reference architecture** — `soul.md` (who the scribe is), `craft.md` (format reference), `process.md` (six-phase workflow) replace previous agent/reference structure
+
+#### Removed
+- **Agent file** — `qino-scribe-agent.md` removed; behavior now guided by three focused reference files
+- **Previous reference files** — `voice-guide.md`, `chapter-format.md`, `chronicle-spec.md`, `theme-guide.md` archived
+
+### qino Eval (New Tool)
+
+#### Added
+- **Chapter comparison** (`/eval:compare`) — side-by-side evaluation of two chapters using 7-dimension framework (Action, Stakes, Discovery, World, Theme, Character, Thread)
+- **Progression evaluation** (`/eval:progression`) — evaluate movement between chapters using 6-dimension felt lens (Pull, Meet, Weight, Shape, Cost, Echo)
+- **Learning loop** — insights flow back to scribe architecture; problems become fixes in `process.md`, patterns become reinforcement in `soul.md`
+- **Felt sense as data** — frameworks articulate what the felt sense is responding to, not override it
+
+### General
+
+#### Added
+- **Adapters pattern documented** — README explains how the repository uses its own tools via adapter commands
+- **chapters-to-write.md** — documents git ranges for each chronicle chapter
+
+---
+
 ## [0.6.1] - 2025-12-11
 
 ### qino Scribe

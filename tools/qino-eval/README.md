@@ -83,7 +83,6 @@ Insights flow back to the scribe tool:
 - Structural issues become changes in `craft.md` or `world.md`
 
 The log lives with the scribe tool being evaluated:
-- `tools/qino-world/evaluation-log.md`
 - `tools/qino-scribe/evaluation-log.md`
 
 ---

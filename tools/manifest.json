@@ -65,6 +65,19 @@
         {"src": "tools/qino-scribe/references/qino-scribe/process.md", "dest": "references/qino-scribe/process.md"}
       ]
     },
+    "qino-eval": {
+      "description": "Discover what makes chronicle chapters work",
+      "files": [
+        {"src": "tools/qino-eval/references/qino-eval/version.json", "dest": "references/qino-eval/version.json"},
+        {"src": "tools/qino-eval/commands/eval/compare.md", "dest": "commands/eval/compare.md"},
+        {"src": "tools/qino-eval/commands/eval/progression.md", "dest": "commands/eval/progression.md"},
+        {"src": "tools/qino-eval/references/qino-eval/stance.md", "dest": "references/qino-eval/stance.md"},
+        {"src": "tools/qino-eval/references/qino-eval/compare-framework.md", "dest": "references/qino-eval/compare-framework.md"},
+        {"src": "tools/qino-eval/references/qino-eval/compare-session.md", "dest": "references/qino-eval/compare-session.md"},
+        {"src": "tools/qino-eval/references/qino-eval/progression-lens.md", "dest": "references/qino-eval/progression-lens.md"},
+        {"src": "tools/qino-eval/references/qino-eval/learning-log.md", "dest": "references/qino-eval/learning-log.md"}
+      ]
+    },
     "updater": {
       "description": "Keep tools updated from GitHub",
       "files": [
