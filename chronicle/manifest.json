@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "last_chapter": {
+    "number": 2,
+    "written": "2025-12-13T00:00:00Z",
+    "git_ref": "7c91178"
+  },
+  "chapters": [
+    {
+      "number": 1,
+      "slug": "what-the-water-brings",
+      "title": "What the Water Brings",
+      "written": "2025-12-13T00:00:00Z",
+      "path": "chapters/001-what-the-water-brings.md"
+    },
+    {
+      "number": 2,
+      "slug": "the-weight-of-holding",
+      "title": "The Weight of Holding",
+      "written": "2025-12-13T00:00:00Z",
+      "path": "chapters/002-the-weight-of-holding.md"
+    }
+  ]
+}
