@@ -72,7 +72,21 @@ As you read, notice:
 - Does chapter 2 resonate with chapter 1 in any way?
 - Are there callbacks that land vs. just occur?
 
-### 3. Present Your Interpretation
+### 3. Check Arc Shapes (if world.md exists)
+
+If arcs are tracked in world.md, ask:
+- What shapes are the active arcs? (hidden / motion / building / between / calling outward)
+- Does the movement in this chapter feel true to those shapes?
+- Is any arc at scale to resolve? Did it?
+
+### 4. Check Pressures
+
+- What pressure existed at the end of chapter 1?
+- Did chapter 2 respond to, build, or release it?
+- What pressure exists at the end of chapter 2?
+- If no pressure remains, the chronicle may be losing momentum.
+
+### 5. Present Your Interpretation
 
 Don't score dimensions. Don't fill out a framework.
 
@@ -80,7 +94,7 @@ Write a short interpretation of what you see in the progression. Be specific —
 
 End with 1-2 observations or questions that feel most alive to you.
 
-### 4. Dialogue
+### 6. Dialogue
 
 Wait for the human's response. They may:
 - Agree and want to go deeper on something
@@ -90,7 +104,7 @@ Wait for the human's response. They may:
 
 Follow the thread. The conversation discovers what matters — you don't need to cover every dimension or reach a verdict.
 
-### 5. Capture What We Learned
+### 7. Capture What We Learned
 
 When the dialogue feels complete, offer to capture insights:
 

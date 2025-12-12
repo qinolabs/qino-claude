@@ -21,9 +21,9 @@ Both are structured practices of attention, not automated quality checks. Human 
 
 Guided comparison of two chapters (can be from different scribes, different chronicles).
 
-**Mode:** Facilitated session through seven phases (reading, felt sense, passages, comparison, stakes, synthesis, residue)
+**Mode:** Facilitated session through nine phases (reading, felt sense, passages, parallel mirror, comparison, aftermath, stakes, synthesis + anti-patterns, residue)
 
-**Framework:** 7 dimensions for perceiving chapter quality:
+**Framework:** 10 dimensions for perceiving chapter quality:
 | Dimension | Question |
 |-----------|----------|
 | Action | Does the wanderer do or only witness? |
@@ -33,6 +33,11 @@ Guided comparison of two chapters (can be from different scribes, different chro
 | Theme | Territory explored or vocabulary applied? |
 | Character | People or functions? |
 | Thread | What question remains? |
+| Relationship | Does anyone see the wanderer back? |
+| Reader Entry | Where does the reader contribute? |
+| Aftermath | Does the wanderer section feel like a different mode? |
+
+**Anti-Pattern Detection:** Thematic echo, frictionless success, paraphrase loops, diagnostic label-speak
 
 **Output:** Which is better at what, why, insights for improvement
 
@@ -53,6 +58,10 @@ Evaluate movement between two chapters of the same chronicle.
 | Shape | Trajectory — going somewhere, not just continuing |
 | Cost | Rising stakes — more could be lost |
 | Echo | Resonance — callbacks that land, not just occur |
+
+**Arc Shapes:** Hidden, motion, building, between, calling outward — evaluate whether arcs move true to their shape
+
+**Pressures:** What's building that creates fuel for future chapters? Does each chapter leave pressure?
 
 **Output:** What's working in the progression, what isn't, where momentum lives or breaks
 

@@ -10,6 +10,11 @@ Progression isn't continuity (things don't contradict). It's **momentum** — th
 
 When reading two chapters from the same chronicle, you're asking: does chapter 2 feel like it *needed* to follow chapter 1? Does the chronicle move?
 
+Two structural elements feed momentum:
+
+1. **Pressures** — What's building in the world that creates fuel for story
+2. **Arcs** — Named shapes of unfolding that give trajectory meaning
+
 ---
 
 ## Six Felt Dimensions
@@ -73,6 +78,54 @@ Read both chapters in order. Let the dimensions guide your attention, but don't 
 After reading, write what you actually noticed. Quote passages that show what you mean. Name what's working and what isn't.
 
 Present your interpretation. Let the dialogue discover what matters.
+
+---
+
+## Arc Shapes
+
+The scribe tracks arcs with named shapes. When evaluating progression, knowing the shape helps you perceive whether the chapter is true to it.
+
+### The Five Shapes
+
+| Shape | What it holds | Movement looks like |
+|-------|---------------|---------------------|
+| **Hidden** | A secret, an avoidance, a history omitted | Revelation approaches or deepens |
+| **Motion** | Something traveling, a message sent, a change spreading | The thing arrives, or the path transforms |
+| **Building** | Tension accumulating, trust forming, pressure collecting | Something breaks or is completed |
+| **Between** | Attraction, debt, recognition, the question of what they are | Deepening or rupture |
+| **Calling outward** | A glimpse that needs following, something needed from elsewhere | Undertaking, reaching, or releasing the call |
+
+### Using Shapes in Evaluation
+
+When world.md names an arc with a shape, ask:
+
+- **Is the shape honored?** A "building" arc should feel like pressure accumulating, not just events continuing.
+- **Is scale appropriate?** Quick arcs (1-2 chapters) should resolve soon. Long arcs (6+) shouldn't rush.
+- **Does resolution fit the shape?** A "hidden" arc resolves through revelation. A "between" arc resolves through relational shift.
+
+If the chapter touches an arc but the movement doesn't feel true to its shape, something may be off.
+
+---
+
+## Pressures
+
+Pressures are the fuel. Each chapter should leave at least one pressure building — something to push future chapters.
+
+### Evaluating Pressure
+
+After reading both chapters, ask:
+
+- **What pressure existed at the end of chapter 1?** (Check world.md if available)
+- **Did chapter 2 respond to that pressure?** Did it build, release, or redirect?
+- **What pressure exists at the end of chapter 2?** If none, the chronicle may be running out of momentum.
+
+### Pressure vs. Thread
+
+A **thread** is a question the reader wants answered. A **pressure** is force building in the world — something characters worry about, something that could break.
+
+Both create pull. But pressure creates *urgency*. If the dangling thread is "what will the wanderer find?" the pressure might be "the water supply is failing" or "someone is lying about who they are."
+
+Threads without pressure feel like curiosity without stakes.
 
 ---
 

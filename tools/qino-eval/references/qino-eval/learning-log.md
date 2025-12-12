@@ -65,6 +65,8 @@ Each evaluation session produces one entry:
 - **Read next?** A / B / Neither
 - **More dangerous?** A / B / Neither
 - **Wanderer more real?** A / B / Neither
+- **World sees wanderer back?** A / B / Neither
+- **Reader contributed where?** A / B / Neither
 
 ### Key Passages
 
@@ -89,6 +91,10 @@ Each evaluation session produces one entry:
 - **B risked**:
 - **After A, worried about**:
 - **After B, worried about**:
+
+### Anti-Patterns Detected
+- **A**: [thematic echo / frictionless success / paraphrase loops / label-speak / none]
+- **B**: [thematic echo / frictionless success / paraphrase loops / label-speak / none]
 
 ### Verdict
 - **A does better**:
@@ -121,6 +127,15 @@ After 3-5 entries, review the log and extract patterns:
 | Too much explanatory dialogue | | | |
 | Stakes unclear | | | |
 | Theme as vocabulary not territory | | | |
+| Mutual seeing absent (no one perceives wanderer) | | | |
+| Reader gaps missing or lack pull | | | |
+| Aftermath reflective instead of purposeless | | | |
+| Thematic echo (declaring instead of living) | | | |
+| Frictionless success | | | |
+| Paraphrase loops | | | |
+| Diagnostic label-speak at high pressure | | | |
+| Arcs not honoring their shape | | | |
+| Pressures empty at chapter end | | | |
 
 ### What Consistently Works
 

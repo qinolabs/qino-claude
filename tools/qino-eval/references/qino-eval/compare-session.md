@@ -62,6 +62,10 @@ Go into the text. Find passages that illuminate the felt sense.
 
 5. *Find the moment your attention drifted. What's happening?*
 
+6. *Find a moment where someone perceives the wanderer — sees something about them.* If you can't find one, mutual seeing may be absent.
+
+7. *Find a gap where you contributed meaning — where you filled in what the text left open.* What pulled you to contribute there?
+
 ---
 
 ### Phase 4: The Parallel Mirror
@@ -115,6 +119,17 @@ For each, paste passages side by side and ask:
 - *Which makes you want to know more?*
 - *Which feels like something's at stake?*
 
+### Phase 5.5: Aftermath Comparison
+
+Compare the wanderer sections specifically:
+
+> Read just the wanderer section from each chapter. Which feels like the world returning to its own time? Which feels like the wanderer is still in story mode?
+
+Prompts:
+- *Does the wanderer process what happened, or exist in aftermath?*
+- *Are there details surfacing that couldn't be noticed during story motion?*
+- *Which leaves you with a quiet question, not a conclusion?*
+
 ---
 
 ### Phase 6: Stakes Test
@@ -144,6 +159,22 @@ Help articulate discoveries:
 3. *The most important difference — not most obvious, but the one that matters for whether you'd keep reading?*
 
 4. *What guidance would you give the weaker chapter's scribe? Not "do X" but "notice Y" or "ask yourself Z."*
+
+---
+
+### Phase 7.5: Anti-Pattern Scan
+
+Quick check for common LLM failures:
+
+1. **Thematic Echo**: *Find a sentence that declares what the chapter is about. Delete it mentally. Does story remain?*
+
+2. **Frictionless Success**: *Trace the path from problem to resolution. Was there resistance? Did anything fail or exact a price?*
+
+3. **Paraphrase Loops**: *Find a passage that shows something, then explains it. Is the explanation necessary?*
+
+4. **Diagnostic Label-speak**: *Find emotional labels (regret, hope, longing). Are they earned by what the body does, or applied from outside?*
+
+If anti-patterns appear in one chapter but not the other, that's diagnostic.
 
 ---
 
