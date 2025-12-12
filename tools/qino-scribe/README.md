@@ -39,13 +39,14 @@ The scribe follows a six-phase process:
 
 ## Architecture
 
-Three reference files, each with a distinct purpose:
+Four reference files, each with a distinct purpose:
 
 ```
 references/qino-scribe/
-├── soul.md      # Who the scribe is (read once per session)
-├── craft.md     # Technical format reference (consulted during writing)
-└── process.md   # The workflow (guides each chapter)
+├── soul.md        # Who the scribe is (read once per session)
+├── craft.md       # Technical format reference (consulted during writing)
+├── process.md     # The workflow (guides each chapter)
+└── voice-guide.md # Sentence-level execution of soul.md principles
 ```
 
 **soul.md** — The unchanging essence. Voice, the wanderer's nature, what story is. Read once at session start, not re-read per chapter.
@@ -53,6 +54,8 @@ references/qino-scribe/
 **craft.md** — Technical reference. Chapter format, world tokens, world.md structure. Consulted when writing, not when exploring.
 
 **process.md** — The workflow. Six phases that ensure grounding before observation, exploration before execution.
+
+**voice-guide.md** — The craft of prose. How to execute soul.md principles at the sentence level.
 
 ---
 
@@ -92,11 +95,12 @@ Pressures are fuel for future chapters. Without them, the story stalls.
 ### Ground Before Observe
 Read theme and world.md *before* looking at the diff. Know what's alive in the world independent of changes.
 
-### Three Options, Choose Most Alive
+### Four Options, Choose Most Alive
 For every chapter, generate:
-- **Option A**: The expected (tour-guide version)
-- **Option B**: Unexpected location (from theme's unexplored territory)
-- **Option C**: Complication (what could go wrong)
+- **Expected**: The tour-guide version
+- **Unexpected**: Location from theme's unexplored territory
+- **Complication**: What could go wrong
+- **Wild Card**: Something the scribe wouldn't normally try
 
 Choose the option with the most action, stakes, and wanderer participation.
 
@@ -123,5 +127,6 @@ Copy to your `.claude/` directory:
     └── qino-scribe/
         ├── soul.md
         ├── craft.md
-        └── process.md
+        ├── process.md
+        └── voice-guide.md
 ```

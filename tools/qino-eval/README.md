@@ -108,7 +108,7 @@ tools/qino-eval/
 └── references/qino-eval/
     ├── stance.md                            # Shared: who you are as evaluator
     ├── learning-log.md                      # Shared: how to capture insights
-    ├── compare-framework.md                 # Compare: 7 quality dimensions
+    ├── compare-framework.md                 # Compare: 10 quality dimensions
     ├── compare-session.md                   # Compare: facilitation guide
     └── progression-lens.md                  # Progression: 6 felt dimensions
 ```

@@ -10,6 +10,29 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.8.0] - 2025-12-13
+
+### qino Scribe
+
+#### Added
+- **Voice guide** — new `voice-guide.md` bridges philosophy to execution; shows *how* to write at the sentence level what `soul.md` describes at the conceptual level
+- **Four chapter options** — discover phase now generates Expected, Unexpected, Complication, and Wild Card options (was 3)
+- **Specific craft patterns** — sustaining interiority across scenes, completing meaning without spelling it out, avoiding the feature-list trap
+
+#### Changed
+- **Refined reference documentation** — `craft.md`, `process.md`, and `soul.md` updated with clearer guidance based on evaluation learnings
+
+### qino Eval
+
+#### Added
+- **Three new compare dimensions** — Relationship (human connection), Reader Entry (immersion quality), and Aftermath (what lingers)
+- **Expanded compare session** — 9 phases (was 7); new parallel mirror and aftermath phases
+- **Anti-pattern detection** — identifies thematic echo, frictionless success, and paraphrase loops
+- **Arc shapes** — progression lens now evaluates movement type: hidden, motion, building, between, calling
+- **Pressures tracking** — documents what builds between chapters for continuity
+
+---
+
 ## [0.7.0] - 2025-12-12
 
 ### qino Scribe

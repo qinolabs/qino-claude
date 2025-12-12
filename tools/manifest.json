@@ -62,7 +62,8 @@
         {"src": "tools/qino-scribe/commands/scribe/chapter.md", "dest": "commands/scribe/chapter.md"},
         {"src": "tools/qino-scribe/references/qino-scribe/soul.md", "dest": "references/qino-scribe/soul.md"},
         {"src": "tools/qino-scribe/references/qino-scribe/craft.md", "dest": "references/qino-scribe/craft.md"},
-        {"src": "tools/qino-scribe/references/qino-scribe/process.md", "dest": "references/qino-scribe/process.md"}
+        {"src": "tools/qino-scribe/references/qino-scribe/process.md", "dest": "references/qino-scribe/process.md"},
+        {"src": "tools/qino-scribe/references/qino-scribe/voice-guide.md", "dest": "references/qino-scribe/voice-guide.md"}
       ]
     },
     "qino-eval": {
