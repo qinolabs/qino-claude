@@ -7,11 +7,11 @@ This file defines the git history ranges for each chapter the scribe should writ
 Run each command in a fresh Claude Code session (clear history between chapters):
 
 1. `/scribe:chapter ab2c143 v0.1.0`  — Chapter 1: The Harbor Forms
-2. `/scribe:chapter v0.1.0 v0.2.0`  — Chapter 2: The Vessels for Change
-3. `/scribe:chapter v0.2.0 v0.3.0`  — Chapter 3: The Scribe Arrives
-4. `/scribe:chapter v0.3.0 v0.4.0`  — Chapter 4: The Room That Remembers
-5. `/scribe:chapter v0.4.0 v0.5.0`  — Chapter 5: The Chronicle Takes Root
-6. `/scribe:chapter v0.5.0 v0.6.0`  — Chapter 6: The Maritime Rewrite
+2. `/scribe:chapter v0.1.0 v0.2.1`  — Chapter 2: The Vessels for Change (v0.1.0..v0.2.*)
+3. `/scribe:chapter v0.2.1 v0.3.0`  — Chapter 3: The Scribe Arrives (v0.2.*..v0.3.*)
+4. `/scribe:chapter v0.3.0 v0.4.0`  — Chapter 4: The Room That Remembers (v0.3.*..v0.4.*)
+5. `/scribe:chapter v0.4.0 v0.5.2`  — Chapter 5: The Chronicle Takes Root (v0.4.*..v0.5.*)
+6. `/scribe:chapter v0.5.2 v0.6.1`  — Chapter 6: The Maritime Rewrite (v0.5.*..v0.6.*)
 
 ---
 
@@ -35,8 +35,8 @@ Run each command in a fresh Claude Code session (clear history between chapters)
 
 ## Chapter 2: The Vessels for Change
 
-**Git Range**: `v0.1.0` through `v0.2.0`
-**Command**: `/scribe:chapter v0.1.0 v0.2.0`
+**Git Range**: `v0.1.0` through `v0.2.*` (v0.2.1)
+**Command**: `/scribe:chapter v0.1.0 v0.2.1`
 **Date**: December 7, 2025 (after 5-day gap)
 
 **What happened in the code**:
@@ -51,8 +51,8 @@ Run each command in a fresh Claude Code session (clear history between chapters)
 
 ## Chapter 3: The Scribe Arrives
 
-**Git Range**: `v0.2.0` through `v0.3.0`
-**Command**: `/scribe:chapter v0.2.0 v0.3.0`
+**Git Range**: `v0.2.*` (v0.2.1) through `v0.3.*` (v0.3.0)
+**Command**: `/scribe:chapter v0.2.1 v0.3.0`
 **Date**: December 7, 2025
 
 **What happened in the code**:
@@ -67,7 +67,7 @@ Run each command in a fresh Claude Code session (clear history between chapters)
 
 ## Chapter 4: The Room That Remembers
 
-**Git Range**: `v0.3.0` through `v0.4.0`
+**Git Range**: `v0.3.*` (v0.3.0) through `v0.4.*` (v0.4.0)
 **Command**: `/scribe:chapter v0.3.0 v0.4.0`
 **Date**: December 8, 2025
 
@@ -83,8 +83,8 @@ Run each command in a fresh Claude Code session (clear history between chapters)
 
 ## Chapter 5: The Chronicle Takes Root
 
-**Git Range**: `v0.4.0` through `v0.5.0`
-**Command**: `/scribe:chapter v0.4.0 v0.5.0`
+**Git Range**: `v0.4.*` (v0.4.0) through `v0.5.*` (v0.5.2)
+**Command**: `/scribe:chapter v0.4.0 v0.5.2`
 **Date**: December 9, 2025
 
 **What happened in the code**:
@@ -101,8 +101,8 @@ Run each command in a fresh Claude Code session (clear history between chapters)
 
 ## Chapter 6: The Maritime Rewrite
 
-**Git Range**: `v0.5.0` through `v0.6.0`
-**Command**: `/scribe:chapter v0.5.0 v0.6.0`
+**Git Range**: `v0.5.*` (v0.5.2) through `v0.6.*` (v0.6.1)
+**Command**: `/scribe:chapter v0.5.2 v0.6.1`
 **Date**: December 10, 2025
 
 **What happened in the code**:
