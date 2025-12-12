@@ -295,6 +295,21 @@ The system stays in sync with your evolving sense of what you're building.
 
 ---
 
+## Adapters
+
+This repository uses its own tools. The source files live in `tools/`, and adapter commands in `.claude/commands/` reference them.
+
+```
+tools/qino-concept/commands/qino/    → .claude/commands/qino/
+tools/qino-scribe/commands/scribe/   → .claude/commands/scribe/
+tools/qino-world/commands/world/     → .claude/commands/world/
+tools/qino-eval/commands/eval/       → .claude/commands/eval/
+```
+
+Adapters are thin wrappers that import the source command and adjust paths. This lets us develop tools and use them in the same repository without duplication.
+
+---
+
 ## Installation
 
 **Quick:** Download `all-tools.zip` from the [latest release](https://github.com/qinolabs/qino-claude/releases/latest), unzip, copy contents to `.claude/` in your project.
