@@ -196,17 +196,15 @@ chronicle/
 {
   "version": 1,
   "last_chapter": {
-    "number": 3,
+    "id": "chapter-003",
     "written": "2025-12-07T18:00:00Z",
     "git_ref": "abc1234"
   },
   "chapters": [
     {
-      "number": 1,
-      "slug": "first-light",
+      "slug": "001-first-light",
       "title": "First Light",
-      "written": "2025-11-30T10:00:00Z",
-      "path": "chapters/001-first-light.md"
+      "written": "2025-11-30T10:00:00Z"
     }
   ]
 }
