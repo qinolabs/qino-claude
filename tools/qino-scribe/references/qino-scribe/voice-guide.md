@@ -12,6 +12,14 @@ This document bridges philosophy to execution. Soul.md tells you *what* makes st
 
 ---
 
+## How to Use This Document
+
+Examples illustrate craft principles — they are not templates to copy. When you see a "Yes" example, absorb what makes it work, then create your own sentences that embody that principle differently. If you find yourself writing words from these examples verbatim, pause and create a variation instead.
+
+The goal is to internalize the *technique*, not memorize the *words*.
+
+---
+
 ## Opening Lines
 
 ### The Craft
@@ -55,13 +63,19 @@ Characters are introduced through action and position. What they *do*, not how t
 - Sparse dialogue that reveals more than it states
 - No elaborate descriptions, no names announced
 
-### Yes
+### Yes — variations on the same craft
+
+Each shows sparse dialogue that asserts without asking. Note how the *technique* stays constant while the *words* vary:
 
 > A woman sat on an overturned hull near the waterline, mending a net with fingers that moved without looking. She was watching the wanderer approach. Had been watching, perhaps, since she first emerged from the river mouth.
 >
 > "From the interior," the woman said. Not a question.
 
-Action-based. Fingers moving without looking. The watching implied through time ("Had been watching, perhaps"). Dialogue is sparse — four words that carry weight.
+> She glanced at the bundle. "The scholars' camp." As if she already knew.
+
+> "Three days." The woman didn't look up from her mending. "Maybe four, if the current was kind."
+
+Action-based. Fingers moving without looking. The watching implied through time ("Had been watching, perhaps"). The principle: **assertion as statement**. The character knows (or perceives) before being told. Show this through sentence construction — not always through the same tag. Create your own variations of this dynamic.
 
 ### No
 
