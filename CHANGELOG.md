@@ -10,6 +10,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.9.1] - 2025-12-14
+
+### qino Scribe
+
+#### Changed
+- **Immersion test replaces mapping table** — soul.md now teaches contextual recognition ("is this word from the story world or leaking from source material?") instead of mechanical term substitution; the same word can be fine or breaking depending on context
+- **Examples as patterns, not templates** — voice-guide.md now explicitly frames examples as craft principles to learn from, not phrases to copy; added meta-instruction and dialogue variations
+- **Single source of truth** — removed redundant prose examples from soul.md that duplicated voice-guide.md; added cross-references instead
+- **Verification checklist updated** — process.md now references "Immersion Test" instead of "Transformed"
+
+---
+
 ## [0.9.0] - 2025-12-14
 
 ### qino Dev (New Tool)
