@@ -245,49 +245,68 @@ The questions themselves teach you how to think about the problem.
 
 ---
 
-## Dev Assistant
+## qino Dev
 
-Turn an app concept into a development environment with custom commands.
+Implementation companion for qino-concept — translates essence into technical reality.
 
-### The bridge
+### The separation
 
-Technical decisions live in one realm. The experience you're building lives in another. Most development loses the bridge between them — you start with a feeling, then spend months in code, and somewhere along the way the feeling fades into requirements.
+Concept holds what the thing *is*. Implementation holds how to *build* it.
 
-This tool keeps the bridge alive. The conversation captures not just what you're building but what it should feel like to use. The guide holds that essence. And every command reads from the guide — so when you're deep in implementation, the experience you're walking toward still informs each step.
+Most tools blur this line. You start with a vision, then requirements absorb it, then tickets fragment it, until what you're building has no memory of why it mattered. The feeling fades into features.
 
-You don't lose the soul while building the structure.
+qino Dev keeps them separate. Your concept stays in concepts-repo — the impulse, the surfaces, the glow. Your implementation lives in the target project — stack, architecture, iterations. Two places. Two concerns. Connected but distinct.
 
-### The landing
+When you're deep in code and something about the essence shifts, you capture it with `/qino:capture` — and it flows back to the source of truth. No drift. No duplication. The concept evolves where concepts live.
 
-You bring a concept — maybe a few paragraphs, maybe just bullet points. The conversation begins immediately with pattern recognition: what transformation is this creating? What's the emotional architecture underneath the features?
+### Translation, not discovery
 
-Five chapters unfold: entry experience, core loop, social fabric, evolution patterns, technical philosophy. Each one surfaces something you knew but hadn't articulated, or connects something you hadn't seen connected.
+When you initialize from a concept, the work isn't to rediscover what you already know. It's to translate.
 
-By the end, you have commands that know your project and a guide that holds what matters.
+Given this essence, what technologies serve it? Given these surfaces, what architecture patterns? Given this scope, what complexity budget? What would signal we're on track — or off it?
 
-### The conversation builds
+A fifteen-minute conversation translates conceptual understanding into technical context. What emerges is an `implementation.md` that knows what it's building toward and why certain choices fit better than others.
 
-The conversation doesn't extract information from you. It builds on what you offer.
+### Arrival
 
-"They pick from pixel art film critics."
+The generated command — `/qino-dev:app` — follows the home pattern. Quiet arrival. Show what's here. Open to what's next.
 
-"Beautiful! This makes me think about how gaming avatars create investment. Your approach unlocks two paths: cosmetic identity versus weighted evaluation. If the Snobby Critic weights nuance higher and the Popcorn Fan values clarity, you get richer aggregate data..."
+```
+my-app
 
-Your half-formed thought becomes architectural possibility. The conversation shows you what your idea contains.
+concept — linked to board-games
+stack — React, Supabase, shadcn/ui
+iteration — 01: foundation — in progress
 
-### Living guide
+─────
 
-What emerges isn't documentation you write once and forget. It's a reference the commands read at runtime.
+from here
 
-When you run `/yourapp:build`, it reads your current vision and complexity budget. When you run `/yourapp:review`, it checks your work against the principles you established. When your understanding deepens, you update the guide — and the commands deepen with it.
+  two of three goals done in this iteration
+  what's blocking the last one?
 
-The system stays in sync with your evolving sense of what you're building.
+  there's uncommitted work on authentication
+  continue here, or commit what you have?
 
-```bash
-/core:project-init your-concept.md
+                        just respond, or /qino:explore board-games
 ```
 
-*[Source](tools/dev-assistant/) · [Installation](tools/dev-assistant/README.md#installation)*
+Not a dashboard. Not a menu. A place to arrive before you work.
+
+### Turn-taking
+
+Iterations aren't sprints. They're checkpoints for turn-taking.
+
+AI implements to the iteration spec. User tests and reviews. Feedback flows before the next phase begins. Each iteration has scope, goals, and test criteria — clear enough to build toward, flexible enough to learn from.
+
+The files live in `implementations/` — visible, version-controlled, yours. Not hidden in `.claude/`. Not abstracted away. You can read them, edit them, understand what's planned.
+
+```bash
+/qino-dev:init path/to/concept.md
+/qino-dev:app
+```
+
+*[Source](tools/qino-dev/) · [Installation](tools/qino-dev/README.md#installation)*
 
 ---
 
