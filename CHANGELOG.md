@@ -10,6 +10,37 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.9.0] - 2025-12-14
+
+### qino Dev (New Tool)
+
+#### Added
+- **Implementation companion** — translates concept essence into technical reality; concept holds what the thing *is*, implementation holds how to *build* it
+- **`/qino-dev:init`** — initialize from a concept with a 15-minute translation exploration; creates `implementation.md`, first iteration, and per-app arrival command
+- **`/qino-dev:<app>`** — generated arrival command following the home pattern; shows concept link, stack, current iteration, and observations grounded in git state
+- **Turn-taking iterations** — AI implements to spec, user tests and reviews, feedback flows before next phase; each iteration has scope, goals, and test criteria
+- **User-land artifacts** — `implementations/` directory (visible, version-controlled) alongside concepts/ and chronicle/
+- **Templates** — implementation-template.md, iteration-template.md, app-command-template.md
+
+### qino Concept
+
+#### Added
+- **Remote workspace support** — operate against a remote concepts-repo via `.claude/qino-config.json`; captures flow directly to source of truth without duplication
+- **Auto-tagged captures** — when capturing from implementation context, notes automatically reference the linked concept with scope and context metadata
+- **Linked concept default** — `/qino:home` defaults to the linked concept when run from an implementation project
+
+### Dev Assistant
+
+#### Changed
+- **Archived** — moved to `tools/archived/`; replaced by qino-dev which offers a simpler interface and better integration with qino-concept
+
+### qino Scribe
+
+#### Changed
+- **Craft reference refined** — minor updates to craft.md based on ongoing chronicle work
+
+---
+
 ## [0.8.0] - 2025-12-13
 
 ### qino Scribe
