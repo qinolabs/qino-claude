@@ -247,17 +247,15 @@ The questions themselves teach you how to think about the problem.
 
 ## qino Dev
 
-Implementation companion for qino-concept — translates essence into technical reality.
+Implementation companion for qino-concept.
 
-### The separation
+### The drift
 
-Concept holds what the thing *is*. Implementation holds how to *build* it.
+You start with a vision. Requirements absorb it. Tickets fragment it. Somewhere in the building, the feeling fades into features.
 
-Most tools blur this line. You start with a vision, then requirements absorb it, then tickets fragment it, until what you're building has no memory of why it mattered. The feeling fades into features.
+This happens because concept and implementation occupy the same space — and implementation always wins. The code is right there, immediate and demanding. The feeling that started it all recedes into memory, then into nothing.
 
-qino Dev keeps them separate. Your concept stays in concepts-repo — the impulse, the surfaces, the glow. Your implementation lives in the target project — stack, architecture, iterations. Two places. Two concerns. Connected but distinct.
-
-When you're deep in code and something about the essence shifts, you capture it with `/qino:capture` — and it flows back to the source of truth. No drift. No duplication. The concept evolves where concepts live.
+qino Dev keeps them apart. Your concept stays in concepts-repo. Your implementation lives in the target project. When something about the essence shifts while you're deep in code, you capture it — and it flows back to the source of truth. The concept evolves where concepts live.
 
 ### Translation, not discovery
 
