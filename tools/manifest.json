@@ -3,19 +3,20 @@
   "description": "Manifest of all qino-claude tools and their files",
   "tools": {
     "dev-assistant": {
-      "description": "Transform app concepts into vision-aligned development environments",
+      "description": "Transform app concepts into vision-aligned development environments (archived - use qino-dev)",
+      "archived": true,
       "files": [
-        {"src": "tools/dev-assistant/references/dev-assistant/version.json", "dest": "references/dev-assistant/version.json"},
-        {"src": "tools/dev-assistant/commands/core/project-init.md", "dest": "commands/core/project-init.md"},
-        {"src": "tools/dev-assistant/commands/core/iteration-plan.md", "dest": "commands/core/iteration-plan.md"},
-        {"src": "tools/dev-assistant/commands/core/update-commands.md", "dest": "commands/core/update-commands.md"},
-        {"src": "tools/dev-assistant/instructions/exploration-behavior.md", "dest": "references/dev-assistant/instructions/exploration-behavior.md"},
-        {"src": "tools/dev-assistant/templates/exploration-process.md", "dest": "references/dev-assistant/templates/exploration-process.md"},
-        {"src": "tools/dev-assistant/templates/commands-template.md", "dest": "references/dev-assistant/templates/commands-template.md"},
-        {"src": "tools/dev-assistant/templates/guide-template.md", "dest": "references/dev-assistant/templates/guide-template.md"},
-        {"src": "tools/dev-assistant/templates/intelligence-library.md", "dest": "references/dev-assistant/templates/intelligence-library.md"},
-        {"src": "tools/dev-assistant/templates/iteration-framework-template.md", "dest": "references/dev-assistant/templates/iteration-framework-template.md"},
-        {"src": "tools/dev-assistant/examples/exploration-example.md", "dest": "references/dev-assistant/examples/exploration-example.md"}
+        {"src": "tools/archived/dev-assistant/references/dev-assistant/version.json", "dest": "references/dev-assistant/version.json"},
+        {"src": "tools/archived/dev-assistant/commands/core/project-init.md", "dest": "commands/core/project-init.md"},
+        {"src": "tools/archived/dev-assistant/commands/core/iteration-plan.md", "dest": "commands/core/iteration-plan.md"},
+        {"src": "tools/archived/dev-assistant/commands/core/update-commands.md", "dest": "commands/core/update-commands.md"},
+        {"src": "tools/archived/dev-assistant/instructions/exploration-behavior.md", "dest": "references/dev-assistant/instructions/exploration-behavior.md"},
+        {"src": "tools/archived/dev-assistant/templates/exploration-process.md", "dest": "references/dev-assistant/templates/exploration-process.md"},
+        {"src": "tools/archived/dev-assistant/templates/commands-template.md", "dest": "references/dev-assistant/templates/commands-template.md"},
+        {"src": "tools/archived/dev-assistant/templates/guide-template.md", "dest": "references/dev-assistant/templates/guide-template.md"},
+        {"src": "tools/archived/dev-assistant/templates/intelligence-library.md", "dest": "references/dev-assistant/templates/intelligence-library.md"},
+        {"src": "tools/archived/dev-assistant/templates/iteration-framework-template.md", "dest": "references/dev-assistant/templates/iteration-framework-template.md"},
+        {"src": "tools/archived/dev-assistant/examples/exploration-example.md", "dest": "references/dev-assistant/examples/exploration-example.md"}
       ]
     },
     "design-sprint": {
@@ -64,6 +65,18 @@
         {"src": "tools/qino-scribe/references/qino-scribe/craft.md", "dest": "references/qino-scribe/craft.md"},
         {"src": "tools/qino-scribe/references/qino-scribe/process.md", "dest": "references/qino-scribe/process.md"},
         {"src": "tools/qino-scribe/references/qino-scribe/voice-guide.md", "dest": "references/qino-scribe/voice-guide.md"}
+      ]
+    },
+    "qino-dev": {
+      "description": "Implementation companion for qino-concept",
+      "files": [
+        {"src": "tools/qino-dev/references/qino-dev/version.json", "dest": "references/qino-dev/version.json"},
+        {"src": "tools/qino-dev/commands/qino-dev/init.md", "dest": "commands/qino-dev/init.md"},
+        {"src": "tools/qino-dev/agents/qino-dev-agent.md", "dest": "agents/qino-dev-agent.md"},
+        {"src": "tools/qino-dev/templates/implementation-template.md", "dest": "references/qino-dev/templates/implementation-template.md"},
+        {"src": "tools/qino-dev/templates/iteration-template.md", "dest": "references/qino-dev/templates/iteration-template.md"},
+        {"src": "tools/qino-dev/templates/app-command-template.md", "dest": "references/qino-dev/templates/app-command-template.md"},
+        {"src": "tools/qino-dev/references/qino-dev/home-pattern.md", "dest": "references/qino-dev/home-pattern.md"}
       ]
     },
     "qino-eval": {

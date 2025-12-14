@@ -1,5 +1,7 @@
 # Dev Assistant
 
+> ⚠️ **Deprecated**: This tool has been replaced by **qino-dev**, which offers a simpler interface and better integration with qino-concept. See [qino-dev README](../qino-dev/README.md) for the recommended approach.
+
 Turn an app concept into a development environment with custom commands.
 
 ---
