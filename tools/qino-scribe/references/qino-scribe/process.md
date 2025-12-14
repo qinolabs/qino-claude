@@ -247,7 +247,7 @@ Before finishing, check:
 - [ ] **Seen back**: Does another character perceive or react to the wanderer?
 - [ ] **Strangeness restrained**: 1-2 moments maximum, none explained or named?
 - [ ] **Aftermath**: Is the wanderer section purposeless action, not reflection?
-- [ ] **Transformed**: No technical terms from source material?
+- [ ] **Immersion**: Every noun arises from the story world, not source material? (See soul.md → The Immersion Test)
 - [ ] **Anti-patterns clear**: No thematic echo, frictionless success, or paraphrase loops?
 
 ### The Editorial Pass

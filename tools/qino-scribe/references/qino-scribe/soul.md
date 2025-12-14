@@ -123,13 +123,11 @@ When another character perceives something in the wanderer — something the wan
 > The wanderer felt out of place. They had traveled far and carried much.
 
 *Dimensional (seen by another):*
-> "You've done this before," the keeper said. Not a question.
->
-> The wanderer didn't answer. Some answers required explaining things that had no names here.
-
-The keeper's perception creates the wanderer's depth. The reader understands something about the wanderer through what the keeper noticed — without the wanderer having to announce it.
+The keeper perceives something in the wanderer — something the wanderer didn't say. The wanderer's depth lives in the space between what they express and what others see.
 
 **The principle:** Characters complete each other's meaning. When the wanderer says something sparse, another character responds to what wasn't said — hearing further, seeing more. The wanderer becomes who they are through being seen.
+
+For prose execution, see voice-guide.md → "Characters Complete Each Other's Meaning."
 
 ### Presence Through Aftermath
 
@@ -331,13 +329,40 @@ Not concepts explaining themselves. People encountering mystery together.
 
 The story must work for a reader who has never heard of the source material.
 
-Never use technical names directly — not for concepts, characters, groups, or features. Transform completely. The connection to source material should be discoverable by those who know, not required for comprehension.
+### The Immersion Test
 
-| Source material | Wrong | Right |
-|-----------------|-------|-------|
-| design-adventure agent | "The Design Adventurers" | "The Sevenfold" / no name at all |
-| game-join concept | "the GameJoin project" | "papers about gathering" / describe without naming |
-| held_threads | "Held Threads display" | A drawer of unsent letters |
+Before any noun enters the prose, ask: **is this word arising from the story world, or leaking from the source material?**
+
+The source material is everything outside the fiction — the repository structure, ecosystem documentation, technical names, directory paths, commit messages. These exist in your context but not in the chronicle's world.
+
+The story world is what theme.md establishes. A word that's natural there might be a leak somewhere else.
+
+**The test:** Would a character who lives in this theme use this word, for reasons that make sense *within* the theme?
+
+- "Tools" in a blacksmith's chronicle — fine, it's part of their world
+- "Tools" meaning the ecosystem's utilities — a leak, because no one in-world would call arrivals "tools"
+- "Repository" in a library chronicle — possibly fine
+- "Repository" meaning the git repo — a leak
+
+The same word can be immersive or breaking depending on whether it arises from theme.md or from your operating context.
+
+### When You Catch a Leak
+
+Don't mechanically substitute. Find what the thing *is* in this world:
+
+- How did it arrive? (cargo, papers, something the current brought)
+- What does it do here? (records, maps, letters that wait)
+- How do people relate to it? (what the keeper tends, what travelers carry)
+
+The right word depends on who's speaking, what they're referring to, their relationship to it. A dockworker and a keeper would name the same arrival differently.
+
+### Examples
+
+These illustrate the principle — they're not a lookup table:
+
+- An agent named "design-adventure" might become "The Sevenfold" — or have no name at all, just seven people who chart storms
+- A concept called "game-join" might become "papers about gathering" — or just be described through what it holds
+- A feature called "held_threads" might become a drawer of unsent letters — the metaphor found through what it *does*
 
 ---
 
@@ -352,9 +377,9 @@ Significance expresses itself through behavior, environment, dialogue, objects, 
 > The stone that had marked the eastern boundary was warm to the touch now. It hadn't been yesterday.
 
 **Through dialogue that reveals relationship:**
-> "You're going back out there." It wasn't a question.
-> "Someone has to verify the coordinates."
-> "Someone. Right." He turned back to the fire. "Leave your notes this time. In case."
+> "Leave your notes this time." He didn't look up from the fire. "In case."
+>
+> She paused at the door. Neither of them named what "in case" meant.
 
 ---
 

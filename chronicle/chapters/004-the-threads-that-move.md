@@ -112,7 +112,7 @@ The wanderer's hands — the ones both keepers watched — curled slightly. An o
 
 "But something you can feel."
 
-It wasn't a question. The wanderer didn't answer. The threads swayed in no wind, and the room held its breath.
+The wanderer didn't answer. The threads swayed in no wind, and the room held its breath.
 
 ---
 

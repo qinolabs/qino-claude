@@ -28,7 +28,7 @@ He spoke like someone reciting facts they'd recited before. The answer was clear
 
 The wanderer waited. The room was quiet except for the distant sound of gulls from the harbor below.
 
-"Something else," they said. It wasn't a question.
+"Something else," they said. They waited.
 
 Seren was silent for a long moment. Then he opened the ledger on his desk — not the pages, just the cover — and pushed it toward the wanderer.
 

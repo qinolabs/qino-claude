@@ -86,7 +86,7 @@ The Mender was waiting when the wanderer reached her building.
 
 Not at her workbench — at the door, standing in the frame, as if she'd been watching the river quay from a window that couldn't possibly see it.
 
-"Deren," she said. Not a question.
+"Deren," she said.
 
 "Tomorrow morning."
 

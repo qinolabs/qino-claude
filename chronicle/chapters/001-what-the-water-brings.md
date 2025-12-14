@@ -1,6 +1,6 @@
 # What the Water Brings
 
-*Early summer, the year the tools first arrived*
+*Early summer, the year the first papers came downriver*
 
 ---
 
