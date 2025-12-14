@@ -249,13 +249,13 @@ The questions themselves teach you how to think about the problem.
 
 Implementation companion for qino-concept.
 
-### The drift
+### The relationship
 
 You start with a vision. Requirements absorb it. Tickets fragment it. Somewhere in the building, the feeling fades into features.
 
-This happens because concept and implementation occupy the same space — and implementation always wins. The code is right there, immediate and demanding. The feeling that started it all recedes into memory, then into nothing.
+This happens when concept and implementation share the same space. Without boundaries, one absorbs the other — and implementation always wins. The code is right there, immediate and demanding.
 
-qino Dev keeps them apart. Your concept stays in concepts-repo. Your implementation lives in the target project. When something about the essence shifts while you're deep in code, you capture it — and it flows back to the source of truth. The concept evolves where concepts live.
+qino Dev gives them separate places. Your concept stays in concepts-repo. Your implementation lives in the target project. Not to keep them apart, but so they can inform each other without merging. The concept shapes what you build. What you discover while building flows back to shape the concept. Each keeps its own form while the other grows.
 
 ### Translation, not discovery
 
