@@ -16,6 +16,21 @@ A thought arrived. Capture it before it fades.
 
 ---
 
+## Workspace Detection (First Step)
+
+Before anything else, check for implementation context:
+
+1. **Check for `.claude/qino-config.json`** in current directory
+2. If present:
+   - Read `conceptsRepo` path → use as workspace root
+   - Read `linkedConcept` id → remember for auto-tagging
+   - Note: capturing from **implementation context**
+3. If absent:
+   - Use current directory as workspace
+   - Proceed with normal behavior
+
+---
+
 ## Flow
 
 ### 1. Receive
@@ -45,6 +60,7 @@ Silently distill the observation to its essence (5-10 words). This becomes the n
 
 4. Add entry to `manifest.json` notes array:
 
+**Standard capture (no implementation context):**
 ```json
 {
   "id": "note-id",
@@ -54,6 +70,25 @@ Silently distill the observation to its essence (5-10 words). This becomes the n
   "references": []
 }
 ```
+
+**Implementation context capture (when qino-config.json exists):**
+```json
+{
+  "id": "note-id",
+  "path": "notes/YYYY-MM-DD_note-id.md",
+  "captured": "YYYY-MM-DDTHH:MM:SSZ",
+  "essence": "[distilled essence]",
+  "references": [
+    {
+      "scope": "implementation",
+      "concept": "[linkedConcept from qino-config]",
+      "context": "captured during implementation"
+    }
+  ]
+}
+```
+
+The auto-tag connects the note to its source concept. Later during `/qino:explore [concept]`, these notes can be surfaced: "You captured something about [essence] while implementing — does it connect here?"
 
 ### 4. Confirm
 

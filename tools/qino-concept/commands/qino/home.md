@@ -16,7 +16,33 @@ Home is a place of arrival at a concept. Quiet. Receiving.
 
 **Behavior:**
 - If a concept-id is provided → Arrive at that concept
-- If no argument → Soft landing: show concepts, invite choice
+- If no argument → Soft landing: show concepts, invite choice (or linked concept if in implementation context)
+
+---
+
+## Workspace Detection (First Step)
+
+Before anything else, check for implementation context:
+
+1. **Check for `.claude/qino-config.json`**
+2. If present:
+   - Read `conceptsRepo` path
+   - Read `linkedConcept` id
+   - Use `conceptsRepo` as workspace root for all file operations
+   - If no argument provided, treat as if user said `/qino:home [linkedConcept]`
+3. If absent:
+   - Use current directory as workspace
+   - Proceed with normal behavior
+
+---
+
+## No Argument — Implementation Context (Linked Concept)
+
+**When qino-config.json exists and no argument provided:**
+
+Treat as arriving at the linked concept automatically. Follow "With Concept-id (Arrive)" section below.
+
+The user is in their implementation project. Show them their linked concept without asking.
 
 ---
 

@@ -75,6 +75,47 @@ You work with:
 - `ecosystem.md` - Patterns that emerged through ecosystem dialogue (grows over time)
 - `maps/` - Relationship visualizations (optional)
 
+## Workspace Detection
+
+qino-concept can operate against a **remote workspace** when linked via configuration. This enables working with concepts from implementation projects.
+
+### Detection Logic
+
+At the start of any operation:
+
+1. **Check for `.claude/qino-config.json`** in the current directory
+2. If present, read its contents:
+   ```json
+   {
+     "conceptsRepo": "/absolute/path/to/concepts-repo",
+     "linkedConcept": "concept-id"
+   }
+   ```
+3. **Use `conceptsRepo` as workspace root** for all file operations
+4. If absent, use current directory as workspace (existing behavior)
+
+### What This Means
+
+**When qino-config.json exists:**
+- `manifest.json` → read from `conceptsRepo/manifest.json`
+- `concepts/` → read/write to `conceptsRepo/concepts/`
+- `notes/` → write to `conceptsRepo/notes/`
+- All references and specs → from `conceptsRepo/.claude/references/qino-concept/`
+
+**The linkedConcept field:**
+- Identifies which concept this project implements
+- Used by `/qino:home` to show that concept by default
+- Used by `/qino:capture` to auto-tag notes with implementation context
+
+### Implementation Context Detection
+
+When workspace detection finds a qino-config.json, the agent is operating in an **implementation context** (from a project implementing a concept, not from concepts-repo directly).
+
+This affects:
+- **home**: Show linked concept by default, not all concepts
+- **capture**: Auto-tag notes with `scope: "implementation"` and linked concept
+- **explore**: Include awareness of implementation context when surfacing notes
+
 ## Your Capabilities
 
 You respond to six commands:
