@@ -1,0 +1,1 @@
+../../tools/qino-scribe/agents/qino-scribe-agent.md
