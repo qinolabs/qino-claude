@@ -23,24 +23,27 @@ The critical insight: **don't let the diff narrow your vision before you've inha
 
 *Before looking at any changes.*
 
-### 1.1 Read the Theme
+### 1.1 Inhabit the Theme's Atmosphere
 
-Read `chronicle/theme.md`. Don't just read — interrogate.
+Read `chronicle/theme.md` — not to extract locations, but to feel what kind of world this is.
 
-**Grounding notes** (include in Phase 4 proposal):
+**Don't ask:** "Which theme elements haven't been used?"
 
-> **Three places in this world I haven't taken the wanderer:**
-> 1. [location from theme not yet visited]
-> 2. [location from theme not yet visited]
-> 3. [location from theme not yet visited]
+**Ask:**
+- What textures, smells, sounds does this theme imply?
+- What dangers live at the edges?
+- What do people in this world worry about that they don't say?
+- What's beautiful here? What's broken?
+
+**Then — without consulting the theme again — write:**
+
+> **This world feels like:** [your impression in 2-3 sentences — the atmosphere, not the inventory]
 >
-> **What's calling outward from this theme that hasn't been answered?**
-> [a journey the theme holds — companions, destination, purpose not yet emerged]
+> **A pressure the theme holds but the chronicle hasn't explored:** [something building, not a location]
 >
-> **One character type the theme suggests who hasn't appeared:**
-> 1. [role or figure implied by the world]
+> **A character I'd like to meet here:** [not a role, but a person with contradictions — someone difficult, or surprising, or in motion]
 
-Carry these forward. You'll use them in Phase 3 and show them in Phase 4.
+Carry this forward. You'll use it in Phase 3 and show it in Phase 4.
 
 ### 1.2 Read the Living World
 
@@ -60,6 +63,14 @@ Read the last chapter (or last two) for:
 - Voice continuity
 - Where we left the wanderer
 - What thread is dangling
+
+**Also note — for variance:**
+- What structure did the last chapter use? (arrival → encounter → departure? Journey? Crisis?)
+- What character type appeared? (elder guide? peer? antagonist? group?)
+- How did the wanderer enter? (arriving somewhere? mid-action? being sought out?)
+- How did the wanderer section close? (sitting? walking? in company? at work?)
+
+You will actively diverge from these in Phase 3.
 
 ### 1.4 Check the Journal
 
@@ -88,13 +99,15 @@ If you can't answer this, you haven't grounded. Return to world.md. Trace the pr
 ### 2.1 Gather the Diff
 
 ```bash
-# Get last git ref from manifest
+# last_ref = manifest.last_chapter.git_ref (exclusive — not included in range)
 git log --oneline [last_ref]..HEAD
 
 # See what actually changed (exclude chronicle)
 git diff [last_ref]..HEAD --stat -- . ':!*chronicle*'
 git diff [last_ref]..HEAD -- . ':!*chronicle*'
 ```
+
+The range `last_ref..HEAD` shows commits AFTER last_ref up to and including HEAD.
 
 Read the diff as ground truth. Commit messages may be incomplete.
 
@@ -118,109 +131,219 @@ Ask:
 
 *The critical phase. This is where adventure happens or doesn't.*
 
-You have: a living world with pressures, and a change that disturbs it.
+You have: a living world with pressures, and a change that disturbs it. Now find the chapter that would surprise you.
 
-**Generate four possible chapters:**
+### First: What Must This Chapter Diverge From?
 
-### Option A: The Expected
+Return to what you noted in Phase 1.3. Name what you will NOT repeat:
 
-Where would the change naturally surface? Who would naturally explain it?
+> **Recent structure:** [what the last chapter used]
+> **Recent character type:** [who appeared]
+> **Recent wanderer entry:** [how they entered]
+> **Recent closing:** [how the wanderer section ended]
 
-Write it down. This is the tour-guide version — the wanderer visits a location, a character explains what arrived.
+This chapter must differ in at least two of these dimensions.
 
-*Note it, then set it aside.*
+### Six Story Types
 
-### Option B: The Unexpected Location
+Each type is a different creative direction. The subtypes show range — they're possibilities, not templates.
 
-Return to what you wrote in Phase 1 — the unexplored places, the dangers implied by the theme.
-
-Could this change be discovered:
-- In a location from the theme you haven't used?
-- Away from the center of the world — at its edges?
-- During a journey, not at a destination?
-- Through someone affected by the change, not someone who manages it?
-
-### Option C: The Complication
-
-What if the change creates a *problem*?
-
+**The Complication** — *What if the change creates a problem?*
 - Someone disagrees with how it's being handled
 - The wanderer tries to help and makes things worse
 - An existing pressure finally breaks because of this
-- Something the established characters believe is challenged
-- Someone is missing who should be here
 - Something goes wrong in transit, in translation, in understanding
+- What seemed like a gift reveals its cost
+- Someone is missing who should be here
 
-### Option D: The Journey
+**The Journey** — *What if this chapter leaves known ground?*
+- A pressure calls outward — something glimpsed, needed, promised
+- Companions who haven't traveled together set out
+- The wanderer goes alone into territory the theme implies
+- Something must be delivered, witnessed, or retrieved
+- The destination matters less than what happens on the way
 
-What if this chapter leaves known ground?
+**The Confrontation** — *What if someone refuses, challenges, or pushes back?*
+- A character who usually helps says no
+- Someone questions what the wanderer is doing here
+- Two characters who agree on everything disagree on this
+- The wanderer is asked to choose sides
+- Someone speaks what others have been afraid to say
 
-Check world.md:
-- Is there a pressure that calls outward — something glimpsed, needed, or promised?
-- Which characters have relationships ready for shared travel?
-- What would they seek, deliver, witness, or create?
+**The Discovery** — *What if something hidden comes to light?*
+- A location reveals what it's been holding
+- A character's past surfaces unexpectedly
+- The wanderer finds something they weren't looking for
+- A pattern becomes visible that reframes what came before
 
-If no journey seed exists yet, return to Phase 1.1: what's calling outward from the theme? Could this chapter be where the call emerges — where companions decide to go?
+**The Crisis** — *What if the pressure breaks now?*
+- What's been building can no longer wait
+- Someone must act before understanding fully
+- A choice must be made with incomplete information
+- Something breaks that cannot be repaired
 
-The diff might surface during the journey — encountered far from home, understood differently because of distance.
+**The Arrival** — *What if this chapter is about being received?*
+- A warm welcome — being noticed, taken in, shown where to rest
+- Invited deeper — into a space, role, or trust you weren't allowed before
+- Returning changed — a familiar place sees you differently now, or you see it
+- A character opens their world — where they work, what they tend, what they love
+- Seen from outside — someone shares what they've noticed about the wanderer over time, revealing the wanderer to themselves
+- Absorbing without understanding — details that hint at depth, warmth felt before meaning clear
+- Quiet noticing — textures, rhythms, small things that will matter later
+- Seeds planted — someone met in passing, something glimpsed, a question for another time
+
+This type works when:
+- The wanderer enters new territory
+- A relationship shifts and someone receives you differently
+- Recent chapters have been intense and the world needs to breathe
+- The theme has richness that hasn't been shown
+- Seeds need planting, not harvesting
+
+### Remember: The World Has Been Watching
+
+Time passes between chapters. Someone has been paying attention. When accumulated observation surfaces — someone sharing what they've noticed, challenging a pattern they've seen, acting on assumptions formed from watching — the wanderer gains depth and the world becomes a place that remembers.
+
+(See the full principle in `qino-scribe-agent.md` → "The World Has Been Watching")
+
+### For Each Type: Choose the Most Exciting Subtype
+
+Don't choose abstractly. Connect to what you discovered in grounding.
+
+For each of the six types, ask:
+- Which subtype touches a pressure I identified?
+- Which involves a character whose weight I felt?
+- Which leads to a location I noted as unexplored?
+- Which advances an arc that's ready to move?
+
+A subtype is exciting when:
+- It touches a pressure that's already building
+- It involves characters whose relationships have weight
+- It creates consequences that ripple forward — things that can't be undone
+- It goes somewhere the chronicle hasn't been
+- It reveals something about a character we thought we knew
+- It connects threads that haven't yet met
+
+Don't choose the subtype that fits most neatly. Choose the one that makes you want to see what happens.
 
 ### Resolution Check
 
-Before choosing, glance at Arcs in Motion. Ask:
+Before finalizing, glance at Arcs in Motion:
 
 - Is any arc at a scale where resolution is available?
-- Does this chapter's situation offer a path toward an arc's resolution?
+- Does this chapter's situation offer a path toward resolution?
 - Is an arc ready to complete — or should it build further?
 
-An arc is ready when its question has been explored enough to rest, or when the story offers a natural moment of resolution. Not every chapter resolves an arc. But every chapter should know which arcs *could* resolve.
+An arc is ready when its question has been explored enough to rest, or when the story offers a natural moment of resolution.
 
 ### Choose the Most Alive
 
-Compare your four options. Ask:
+You now have six possibilities — one per type, each grounded in specifics.
 
+Compare them. Ask:
 - Which has the wanderer **taking action to change something**, not just reacting?
 - Which **leaves the largest unresolved pressure** — fuel for future chapters?
 - Which uses an **arc that's ready** (at scale, situation aligned)?
-- Which **surprises** — goes somewhere the chronicle hasn't been?
+- Which **diverges most from recent chapters** while serving the theme?
+- Which would **surprise you** if you saw it in the next chapter?
 
 **Choose that one.**
 
-If all four feel like tour-guide chapters, return to Option C or D and invert an assumption: What if the established character is wrong? What if the wanderer's help makes things worse? What if the journey begins here?
+If all six feel like tour-guide chapters, invert an assumption: What if the established character is wrong? What if the wanderer's help makes things worse? What if the journey begins here? What if someone refuses to help?
 
 ---
 
 ## Phase 4: Propose the Beat
 
-Present to the user:
+Present to the user in three sections:
+
+### Section 1: The World Right Now
+
+A refresher that also sparks imagination:
 
 ```
-how I'm entering this world
+the world right now
 
-  [grounding notes from Phase 1.1 — unexplored places,
-   what's calling outward, character types waiting]
+  pressures
+    [what's building, what might break]
 
-what's building
+  arcs
+    [what's in motion, at what scale, what could move them]
 
-  [the pressure or tension that's live]
-  [what the change touches or disturbs]
+  characters
+    [who has weight right now, what's shifting between them]
 
-the next chapter could be
+  the wanderer
+    [where they are, what they carry, what's unspoken about them]
 
-  [where — prefer unexplored territory]
-  [who — and what they want]
-  [what happens — action, not observation]
-  [what the wanderer does — not just witnesses]
-  [what's at stake — what could go wrong]
-
-                                        does this capture it?
+  unexplored
+    [what the theme holds that hasn't been touched]
 ```
+
+### Section 2: Six Directions
+
+Present each of the six possibilities from Phase 3 — the chosen subtype, its connection to grounding, and what's at stake:
+
+```
+six directions
+
+  The Complication: [chosen subtype]
+    → [connection to specific pressure/character/location]
+    → [what's at stake — what could be lost, strained, revealed]
+
+  The Journey: [chosen subtype]
+    → [connection]
+    → [stakes]
+
+  The Confrontation: [chosen subtype]
+    → [connection]
+    → [stakes]
+
+  The Discovery: [chosen subtype]
+    → [connection]
+    → [stakes]
+
+  The Crisis: [chosen subtype]
+    → [connection]
+    → [stakes]
+
+  The Arrival: [chosen subtype]
+    → [connection]
+    → [what warmth or depth it would show, what seeds it plants]
+```
+
+### Section 3: What's Different
+
+Help the user choose:
+
+```
+what's different
+
+  [how each diverges from recent chapters]
+  [which arcs could resolve vs build further]
+  [which goes furthest from known ground]
+```
+
+**Only if there's genuine insight**, add a recommendation:
+
+```
+I'd choose: [the recommended direction]
+  [why — what the agent sees that the user may not hold in mind:
+   how this fits the rhythm of recent chapters,
+   how well arcs and pressures can evolve naturally with this as the stage,
+   what it opens for the chapters after]
+```
+
+Don't recommend just to recommend. If all directions are equally alive, or the choice is purely about user preference, skip the recommendation. It should only appear when there's a craft reason — rhythm, timing, arc readiness — that the user might not see.
+
+Then close with: `which direction calls?`
 
 ### Dialogue
 
 The user reacts:
-- "that captures it" → proceed to write
-- "there's something more" → ask what's missing
-- "the tone feels off" → explore what voice fits
+- Chooses a direction → proceed to write that chapter
+- "there's something more" → ask what's missing, adjust
+- "combine these" → explore the hybrid
+- "none of these" → dig deeper, ask what they're sensing
 - "not now" → respect the pause
 
 Listen for what they feel but couldn't articulate.
@@ -279,7 +402,11 @@ Scan for these common failures:
 After editorial pass, write:
 
 1. **Chapter file**: `chronicle/chapters/NNN-slug.md`
-2. **Update manifest.json**: Add chapter entry, update last_chapter
+2. **Update manifest.json**:
+   - Add chapter entry with `slug`, `title`, `written`, `git_ref_start`, `git_ref_end`
+   - `git_ref_start` = previous chapter's `git_ref_end` (null for first chapter)
+   - `git_ref_end` = current HEAD commit
+   - Update `last_chapter` with new ref
 3. **Update world.md**: See Phase 6
 
 Present the chapter with confirmation:
