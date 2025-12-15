@@ -4,6 +4,14 @@
 
 ---
 
+## How to Use This Document
+
+Examples are marked with `<example>` tags. These illustrate formats and principles — they are not templates to copy. When you see an example, absorb what makes it work, then create your own variation.
+
+**If you find yourself writing words from an example verbatim, pause and diverge.**
+
+---
+
 ## Chapter Format
 
 ```markdown
@@ -37,8 +45,8 @@ has mood, has history.]
 ---
 
 <!-- scribe metadata
-git_ref_start: [last chapter's ref]
-git_ref_end: [current HEAD]
+git_ref_start: [previous chapter's git_ref_end, or null]
+git_ref_end: [HEAD at time of writing]
 concepts_touched: [list]
 written: [ISO timestamp]
 
@@ -53,13 +61,13 @@ arcs_begun: [list]
 
 ## The Wanderer Section
 
-The chapter's closing, before World Tokens. See `soul.md` → "Presence Through Aftermath" for the principle.
+The chapter's closing, before World Tokens. The wanderer in aftermath — not reflecting, just present.
 
 ### Format
 
 - **Third person** — the wanderer is witnessed, not confessing
-- **A simple action** — sitting, walking back, standing at a threshold
-- **Varying** — shaped by where the chapter left them, not by template
+- **A simple action** — but NOT the same action each chapter
+- **Varying** — the closing must differ chapter to chapter. Check what the last chapter did and diverge.
 
 ### Belongs
 
@@ -75,25 +83,61 @@ The chapter's closing, before World Tokens. See `soul.md` → "Presence Through 
 - Description for its own sake
 - Conclusions or meanings
 
-### Examples
+### Vary the Closing
 
+If the last chapter closed with the wanderer sitting alone, this one should close differently. Options include:
+
+- **In motion:** walking somewhere, hands occupied with a task
+- **In company:** still with someone, not speaking
+- **At work:** doing something — mending, sorting, holding something for someone
+- **Standing/watching:** at a window, at a threshold, at an edge
+- **Being sought:** someone comes to find them
+
+The examples below illustrate different closings. **Do not copy these verbatim** — absorb the principle (aftermath, not reflection; varying action) and create your own.
+
+### Examples — showing variety
+
+<example>
 ```markdown
 ## The Wanderer
 
-The wanderer found a low wall near the water and sat.
+The wanderer walked the long way back, hands in pockets.
 
-The fog had come in closer while they weren't watching. One lantern still burned near the path — the Lantern-Keeper's work, or someone else's.
+The path had a fork they didn't remember. They took the one that looked more worn. Somewhere behind them, a door closed.
 ```
+</example>
 
+<example>
 ```markdown
 ## The Wanderer
 
-The wanderer took the long way back.
+The wanderer was still holding the rope when Selin found them.
 
-The receiving room was dark, but a cup sat on the windowsill that hadn't been there before. Someone had come after they'd left. Or had it been there all along?
+"You can let go now," she said. Not unkindly.
 
-The path had a fork they didn't remember. They took the one that looked more worn.
+They looked at their hands. The rope had left marks.
 ```
+</example>
+
+<example>
+```markdown
+## The Wanderer
+
+The wanderer stood at the window they'd been given.
+
+Down by the water, figures moved between lanterns. Too far to tell who. The glass was cold where their forehead touched it.
+```
+</example>
+
+<example>
+```markdown
+## The Wanderer
+
+The wanderer helped carry the last crate inside.
+
+When the others went to eat, they stayed in the storeroom a moment longer. The smell of salt and cedar. Someone had written a name on one of the crates, then crossed it out.
+```
+</example>
 
 ---
 
@@ -105,18 +149,24 @@ Crystallized presences — characters, locations, objects, phenomena. Write as e
 
 Could this description work without the chapter? Tokens should stand alone as evocative fragments.
 
-### Good Tokens (Presences)
+### Good Tokens — presences with sensory detail
 
+<example>
 > **Selin**
 > Cartographer. Eyes like deep space. Holds her stylus like a conductor's baton.
+</example>
 
+<example>
 > **The Receiving Hall**
 > Curved desks, luminous paper, a viewport facing the uncharted dark. Smells of ink and star-chart dust.
+</example>
 
-### Bad Tokens (Summaries)
+### Bad Tokens — summaries that describe function
 
+<example>
 > **Selin**
 > A cartographer who handles arrivals at the outpost. She explained the three concepts to the wanderer.
+</example>
 
 The good tokens have sensory detail. The bad tokens describe function.
 
@@ -204,11 +254,29 @@ chronicle/
     {
       "slug": "001-first-light",
       "title": "First Light",
-      "written": "2025-11-30T10:00:00Z"
+      "written": "2025-11-30T10:00:00Z",
+      "git_ref_start": null,
+      "git_ref_end": "abc1234"
+    },
+    {
+      "slug": "002-the-weight-of-names",
+      "title": "The Weight of Names",
+      "written": "2025-12-05T14:00:00Z",
+      "git_ref_start": "abc1234",
+      "git_ref_end": "def5678"
     }
   ]
 }
 ```
+
+**Git ref fields:**
+- `git_ref_start`: Last commit of previous chapter — **exclusive** (not included in this chapter's range). Null for first chapter.
+- `git_ref_end`: Last commit covered by this chapter — **inclusive**.
+
+**Constructing ranges:**
+- Git command: `git diff git_ref_start..git_ref_end` (two dots)
+- GitHub URL: `github.com/org/repo/compare/git_ref_start..git_ref_end`
+- First chapter: Use repo's initial commit as start, or link to `git_ref_end` directly
 
 ---
 
