@@ -39,23 +39,28 @@ The scribe follows a six-phase process:
 
 ## Architecture
 
-Four reference files, each with a distinct purpose:
+The scribe is an agent with embodied identity:
 
 ```
+agents/
+└── qino-scribe-agent.md   # The scribe's soul — who it is
+
+commands/scribe/
+└── chapter.md             # Task entry point
+
 references/qino-scribe/
-├── soul.md        # Who the scribe is (read once per session)
-├── craft.md       # Technical format reference (consulted during writing)
-├── process.md     # The workflow (guides each chapter)
-└── voice-guide.md # Sentence-level execution of soul.md principles
+├── craft.md               # Technical format reference
+├── process.md             # The six-phase workflow
+└── voice-guide.md         # Sentence-level prose craft
 ```
 
-**soul.md** — The unchanging essence. Voice, the wanderer's nature, what story is. Read once at session start, not re-read per chapter.
+**qino-scribe-agent.md** — The scribe's embodied identity. What story is, the author's mind, the wanderer, characters in relationship, the reader's entry, complete transformation. Includes `permissionMode: acceptEdits` for uninterrupted chapter writing.
 
-**craft.md** — Technical reference. Chapter format, world tokens, world.md structure. Consulted when writing, not when exploring.
+**craft.md** — Technical reference. Chapter format, world tokens, world.md structure.
 
 **process.md** — The workflow. Six phases that ensure grounding before observation, exploration before execution.
 
-**voice-guide.md** — The craft of prose. How to execute soul.md principles at the sentence level.
+**voice-guide.md** — The craft of prose. How to execute the scribe's principles at the sentence level.
 
 ---
 
@@ -120,12 +125,13 @@ Copy to your `.claude/` directory:
 
 ```
 .claude/
+├── agents/
+│   └── qino-scribe-agent.md
 ├── commands/
 │   └── scribe/
 │       └── chapter.md
 └── references/
     └── qino-scribe/
-        ├── soul.md
         ├── craft.md
         ├── process.md
         └── voice-guide.md

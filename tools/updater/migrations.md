@@ -12,6 +12,23 @@ Each version section includes:
 
 ---
 
+## v0.10.0
+
+**Summary**: qino Scribe adopts agent architecture — identity embodied, not loaded.
+
+**Delete** (qino-scribe):
+- `.claude/references/qino-scribe/soul.md` (now embodied in agent)
+
+**New** (qino-scribe):
+- `.claude/agents/qino-scribe-agent.md` — the scribe's embodied identity
+
+**User action**:
+- Delete `soul.md` before updating (identity now lives in agent file)
+- Invocation unchanged: `/scribe:chapter`
+- Existing chronicles continue to work
+
+---
+
 ## v0.7.0
 
 **Summary**: qino Scribe architecture overhaul — adventure over observation. qino Eval introduced for chapter evaluation.
