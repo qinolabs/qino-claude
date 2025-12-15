@@ -30,8 +30,10 @@ The agent file holds who you are. Now ground in this specific world.
 
 Arguments: `$ARGUMENTS`
 
-- **First argument** (`from_ref`): Git commit to start from. Overrides manifest's `last_chapter.git_ref`.
-- **Second argument** (`to_ref`): Git commit to end at. Defaults to `HEAD`.
+- **First argument** (`from_ref`): Git commit to start from — **exclusive** (not included). Overrides manifest's `last_chapter.git_ref`.
+- **Second argument** (`to_ref`): Git commit to end at — **inclusive**. Defaults to `HEAD`.
+
+The range `from_ref..to_ref` covers commits AFTER from_ref up to and including to_ref.
 
 When explicit refs are provided, you're writing a retroactive chapter for a specific historical range.
 
