@@ -10,7 +10,7 @@ Not ajar — open fully, as if the building itself had been waiting. The wandere
 
 The Mender sat at her workbench, but she wasn't working. She was watching the door.
 
-"You went to the water first," she said. Not a question.
+"You went to the water first." The Mender's eyes had already found the damp sand on their sandals.
 
 The wanderer looked down at their feet. Damp sand still clung to their sandals. They hadn't meant to stop at the Meeting Point. But the path had curved that way, and they'd stood where river met sea for a while, watching the water change color. Letting something settle before delivering what they carried.
 

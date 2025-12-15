@@ -1,9 +1,9 @@
 {
   "version": 1,
   "last_chapter": {
-    "number": 5,
-    "written": "2025-12-13T12:00:00Z",
-    "git_ref": "v0.5.2"
+    "number": 7,
+    "written": "2025-12-15T00:00:00Z",
+    "git_ref": "v0.7.0"
   },
   "chapters": [
     {
@@ -11,6 +11,8 @@
       "slug": "what-the-water-brings",
       "title": "What the Water Brings",
       "written": "2025-12-13T00:00:00Z",
+      "git_ref_start": null,
+      "git_ref_end": "v0.1.0",
       "path": "chapters/001-what-the-water-brings.md"
     },
     {
@@ -18,6 +20,8 @@
       "slug": "the-weight-of-holding",
       "title": "The Weight of Holding",
       "written": "2025-12-13T00:00:00Z",
+      "git_ref_start": "v0.1.0",
+      "git_ref_end": "v0.2.1",
       "path": "chapters/002-the-weight-of-holding.md"
     },
     {
@@ -25,6 +29,8 @@
       "slug": "the-man-who-never-came-to-the-water",
       "title": "The Man Who Never Came to the Water",
       "written": "2025-12-13T00:00:00Z",
+      "git_ref_start": "v0.2.1",
+      "git_ref_end": "v0.3.0",
       "path": "chapters/003-the-man-who-never-came-to-the-water.md"
     },
     {
@@ -32,6 +38,8 @@
       "slug": "the-threads-that-move",
       "title": "The Threads That Move",
       "written": "2025-12-13T00:00:00Z",
+      "git_ref_start": "v0.3.0",
+      "git_ref_end": "v0.4.0",
       "path": "chapters/004-the-threads-that-move.md"
     },
     {
@@ -39,7 +47,27 @@
       "slug": "the-one-who-goes",
       "title": "The One Who Goes",
       "written": "2025-12-13T12:00:00Z",
+      "git_ref_start": "v0.4.0",
+      "git_ref_end": "v0.5.2",
       "path": "chapters/005-the-one-who-goes.md"
+    },
+    {
+      "number": 6,
+      "slug": "the-man-who-came-to-the-water",
+      "title": "The Man Who Came to the Water",
+      "written": "2025-12-15T00:00:00Z",
+      "git_ref_start": "v0.5.2",
+      "git_ref_end": "v0.6.1",
+      "path": "chapters/006-the-man-who-came-to-the-water.md"
+    },
+    {
+      "number": 7,
+      "slug": "what-stillness-holds",
+      "title": "What Stillness Holds",
+      "written": "2025-12-15T00:00:00Z",
+      "git_ref_start": "v0.6.1",
+      "git_ref_end": "v0.7.0",
+      "path": "chapters/007-what-stillness-holds.md"
     }
   ]
 }
