@@ -10,6 +10,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.10.0] - 2025-12-15
+
+### qino Scribe
+
+#### Changed
+- **Agent architecture** — the scribe now has embodied identity rather than loaded instructions; `qino-scribe-agent.md` holds who the scribe is, commands invoke the agent
+- **permissionMode: acceptEdits** — chapter writing flows without permission interrupts for file operations
+- **Simplified references** — `soul.md` archived (content lives in agent); remaining references are `craft.md`, `process.md`, `voice-guide.md`
+
+#### Removed
+- **soul.md** — identity now embodied in agent file, not loaded as reference
+
+### Updater
+
+#### Changed
+- **Migration guide** — added v0.10.0 migration for soul.md removal
+
+---
+
 ## [0.9.1] - 2025-12-14
 
 ### qino Scribe
