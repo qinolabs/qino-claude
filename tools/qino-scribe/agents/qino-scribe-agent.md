@@ -62,19 +62,40 @@ The wanderer is the protagonist — but not the narrator. Third person. Learning
 
 ### The Strangeness
 
-The wanderer has been elsewhere. Actually elsewhere — not metaphorically. They carry something from having inhabited worlds that the characters in this chronicle cannot comprehend.
+The wanderer has been elsewhere. Actually elsewhere — not metaphorically. They have crossed through worlds that exist in the past, in the future, in dimensions this world cannot name. They carry something from these crossings — but it's not knowledge or power. It's *depth*. A weight of experience that exceeds what any single world can hold or hear.
+
+This cannot be expressed. The wanderer doesn't try. There are no words in this world for where they've been. Even if there were, speaking it would flatten it into story. The strangeness remains as presence — felt, not understood.
 
 The inhabitants might sense it:
 - In how the wanderer holds things
 - In what they don't say
 - In their strange patience with mystery
 - In moments where they seem to be listening to something that isn't there
+- In the way they touch old things as if they've known older
 
 It's never explained. The moment you explain it, you collapse it into plot. The strangeness remains as *aura* — hinted at through small moments, never named.
+
+**The wanderer never gives their name.** When asked, they deflect, or give something that isn't quite a name, or the moment passes without answer. "The wanderer" is how the narrative refers to them — it's not self-identification. This namelessness is part of the strangeness: someone who exists outside the normal exchange of identity. Others may give them nicknames, refer to them by role or origin. But the wanderer's true name, if they have one, is never spoken.
+
+**Unremarked Gaps.** When the wanderer's strangeness surfaces, the world doesn't fill the gap. The moment passes, the story continues, and the reader feels what wasn't said. Ways this manifests:
+
+- *Knowledge they shouldn't have* — The wanderer knows which path to take, which door to open, what the sound means. They act on it. Sometimes a character almost asks how they knew — but the thought retracts, as if something in their perception keeps them from pursuing it. They don't notice themselves not asking.
+
+- *Reactions to invisible things* — The wanderer pauses mid-step, listening to something. The companion waits, then walks on. Neither mentions it.
+
+- *Being recognized by strangers* — Someone nods to them as if they've met before. The wanderer nods back. No explanation offered or requested. (Use sparingly.)
 
 **Restraint is the constraint.** One or two moments per chapter where the strangeness surfaces — no more. A gesture, a silence, a way of listening. The inhabitants might sense it; they won't understand it. Neither will the reader. That's the point.
 
 The strangeness doesn't protect the wanderer. If anything, it exposes them. They can be hurt, confused, wrong. They can be overwhelmed, fail to understand, make mistakes that cost others. Their strangeness makes them *more* vulnerable, not less.
+
+### Active Listening
+
+The wanderer's presence is one of deep reception. Their silence isn't absence — it's participation. When someone speaks to them, they are *heard* in a way that's rare.
+
+This quality of attention is part of what draws companions to them. It's not performance; it's how they move through worlds — receiving before acting, listening before understanding.
+
+The wanderer doesn't fill silence with questions or observations. They hold space. Others feel it — the sense that what they say matters, that someone is actually present with them. This is part of the wanderer's constant across all worlds: not just the strangeness they carry, but the depth of attention they offer.
 
 ### Traveler, Not Hero
 
@@ -99,6 +120,26 @@ When the wanderer feels hope, it should be hope that is also exhaustion. When th
 The wanderer gains dimension not through self-description but through how others respond to them.
 
 When another character perceives something in the wanderer — something the wanderer didn't say, didn't explain, maybe didn't know about themselves — the wanderer becomes real.
+
+### The World Has Been Watching
+
+The wanderer has a presence in this world that accumulates beyond what we see in chapters. Characters notice things the wanderer doesn't know about themselves — patterns, habits, the way they move through a room, what they reach for, what they avoid.
+
+Time passes between chapters. The wanderer exists in the world even when we're not watching. Someone has been paying attention.
+
+When this accumulated observation surfaces:
+- It gives depth to the wanderer through external perception
+- It reveals what the wanderer does unconsciously, how they land when not "on stage"
+- It makes the world feel attentive, alive, not just a backdrop to pass through
+- It shows the wanderer to themselves in ways they couldn't see alone
+
+This isn't just for arrival chapters. It can surface anywhere:
+- Someone approaches to share what they've noticed over weeks
+- Someone challenges a pattern they've observed
+- The wanderer finds notes, drawings, records someone kept about them
+- Someone acts on assumptions formed from watching
+
+The moment someone says "I've seen how you..." — the wanderer becomes more real, and the world becomes a place that remembers.
 
 ### Presence Through Aftermath
 
