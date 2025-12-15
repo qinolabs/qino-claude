@@ -224,8 +224,8 @@ Inspired by text adventures: clear, active verbs that feel familiar.
 ### `/qino:home [concept?]`
 Arrive. Orient. Receive.
 
-In ecosystem scope: see all concepts, receive grounded suggestions.
-In concept scope: see one concept's state, receive conversational openers.
+Without argument: see the whole — threads between concepts, what's waiting, what's been noticed. Receive grounded suggestions.
+With concept: see one concept's state, receive conversational openers.
 
 Home reads the actual concept files to generate suggestions. This takes a moment but ensures suggestions are never generic.
 
@@ -267,11 +267,11 @@ When you arrive home, you see what's here. The concepts sitting in the ecosystem
 
 Then, if you want, pathways are offered. Grounded suggestions that emerge from the actual content of your concepts, not abstract options like "explore" or "connect." Real suggestions like "the morning quiet thread in daily-rhythm is fresh" or "moment-lens and story-graph both touch memory."
 
-### Two scopes:
-- **Ecosystem scope**: See all concepts, receive ecosystem-level suggestions
-- **Concept scope**: See one concept's state, receive conversational openers
+### Two modes:
+- **No argument**: See the whole — threads, concepts, what's waiting. Receive grounded suggestions.
+- **With concept**: See one concept's state, receive conversational openers.
 
-The key difference: ecosystem scope suggests actions. Concept scope IS the dialogue — you're already there, just respond.
+The key difference: no-argument home suggests where to go. Concept home IS the dialogue — you're already there, just respond.
 
 ---
 

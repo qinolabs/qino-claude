@@ -90,38 +90,58 @@ Silently distill the observation to its essence (5-10 words). This becomes the n
 
 The auto-tag connects the note to its source concept. Later during `/qino:explore [concept]`, these notes can be surfaced: "You captured something about [essence] while implementing — does it connect here?"
 
-### 4. Confirm
+### 4. Confirm and Offer Connection
 
-After saving:
+After saving, confirm and offer concept connection:
 
 ```
 ∴ [essence]
 
-explore this now, or let it settle?
+does this connect to something?
+
+  [concept-1] (touched [timeframe])
+  [concept-2] (touched [timeframe])
+
+or name another, or let it settle
 ```
 
 The `∴` signals: captured, held, safe.
 
 **WAIT** for response.
 
-### 5. If User Wants to Explore
+### 5. If User Names Concepts
 
-Ask gently:
+Add references immediately:
 
-> "which concept does this touch?"
->
-> [List 2-3 most recently touched concepts from manifest]
-> or name another
+1. For each concept named, add a reference to the note:
+   ```json
+   {
+     "concept": "[concept-id]",
+     "woven": "[timestamp]",
+     "context": "connected at capture"
+   }
+   ```
 
-**WAIT** for response.
+2. Confirm:
+   ```
+   connected to [concept-1] and [concept-2]
 
-Then **invoke `/qino:explore [concept]`** directly — the note's essence becomes the starting alive thread for the exploration. The explore flow will naturally weave the note in if it finds its place.
+   explore one now, or let it settle?
+   ```
+
+3. **WAIT** for response.
+
+4. If user wants to explore → invoke `/qino:explore [concept]` with note as starting alive thread.
+
+5. If user lets it settle → done.
 
 ### 6. If User Lets It Settle
 
+Any natural phrasing works: "let it settle", "not yet", "no", etc.
+
 > "it'll surface when it has warmth."
 
-Done.
+Note stays with empty references. Done.
 
 ---
 

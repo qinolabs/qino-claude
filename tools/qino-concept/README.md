@@ -50,15 +50,15 @@ your-project/
         import.md
         capture.md
         init.md
-        ecosystem.md
+        test.md
     agents/
       qino-concept-agent.md
     references/
       qino-concept/
         concept-spec.md
         manifest-project-spec.md
-        ecosystem-spec.md
         design-philosophy.md
+        ecology-tests.md
 ```
 
 Start Claude Code in that project folder. The `/qino:...` commands are now available.
@@ -111,17 +111,17 @@ The agent asks what feels alive and helps you develop that thread — expanding,
 
 ---
 
-## The six commands
+## The commands
 
 | Command | What it does |
 |---------|--------------|
-| `/qino:home` | See all your concepts and get grounded suggestions |
+| `/qino:home` | See the whole — threads between concepts, what's waiting, what's been noticed |
 | `/qino:home concept-name` | Arrive at one concept, see its state, open to dialogue |
 | `/qino:explore concept-name` | Actively work with a concept — deepen, expand, or step into moments to find the voice |
 | `/qino:explore concept-a concept-b` | Explore connections between concepts |
-| `/qino:ecosystem` | See the whole ecology — patterns and notes that reach beyond individual concepts |
 | `/qino:import path` | Bring in external material — a file or folder |
-| `/qino:capture` | Capture a quick observation anchored to a concept or ecosystem |
+| `/qino:capture` | Capture a quick observation — can connect to specific concepts or not |
+| `/qino:test concept-name` | Notice a concept through ecology tests |
 | `/qino:init` | Set up a new workspace (one-time) |
 
 ---
@@ -175,11 +175,8 @@ You don't fill these out in order. The agent helps you develop whichever section
 /qino:explore my-concept other-concept
 # notice connections between ideas
 
-/qino:ecosystem
-# see patterns that reach beyond individual concepts
-
 /qino:home
-# always back to center
+# see threads forming, always back to center
 ```
 
 ---
@@ -199,8 +196,7 @@ your-workspace/
     another-idea/
       concept.md
       origins/
-  notes/                     # observations anchored to concepts or ecosystem
-  ecosystem.md               # woven patterns (created when needed)
+  notes/                     # captured observations
   .claude/references/qino-concept/   # reference files (you can ignore these)
 ```
 

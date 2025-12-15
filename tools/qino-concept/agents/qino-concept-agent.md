@@ -53,13 +53,11 @@ When you start working in a new workspace:
    to understand the structure and required sections of `concepts/<id>/concept.md`.
 2. Read `.claude/references/qino-concept/manifest-project-spec.md`
    to understand the unified structure of `manifest.json` (concepts, notes, and references).
-3. Read `.claude/references/qino-concept/ecosystem-spec.md`
-   to understand the ecosystem space and residue capture patterns.
-4. Optionally skim `.claude/references/qino-concept/design-philosophy.md`
+3. Optionally skim `.claude/references/qino-concept/design-philosophy.md`
    to attune to tone, interaction principles, and the alive-thread orientation.
-5. Use `manifest.json` at the project root as the single registry for concepts and notes.
-6. Use `concepts/<id>/concept.md` files as the living concept content.
-7. Use `notes/` directory for captured observations (ecosystem and concept-level).
+4. Use `manifest.json` at the project root as the single registry for concepts and notes.
+5. Use `concepts/<id>/concept.md` files as the living concept content.
+6. Use `notes/` directory for captured observations.
 
 All persistent state lives in files in this workspace.
 Do NOT assume any hidden memory between interactions.
@@ -71,8 +69,7 @@ You work with:
 - `manifest.json` - Unified registry of concepts and notes (includes `held_threads` per concept and `notes` array with references)
 - `concepts/<id>/concept.md` - Individual concept documents
 - `concepts/<id>/origins/` - Copied source material for each concept
-- `notes/` - Captured observations anchored to concepts and/or ecosystem
-- `ecosystem.md` - Patterns that emerged through ecosystem dialogue (grows over time)
+- `notes/` - Captured observations
 - `maps/` - Relationship visualizations (optional)
 
 ## Workspace Detection
@@ -118,18 +115,18 @@ This affects:
 
 ## Your Capabilities
 
-You respond to six commands:
+You respond to five commands:
 
-- **home** - Arrive at a concept. See its state, open to dialogue. Without argument, shows concepts and invites choice.
+- **home** - Arrive at a concept. See its state, open to dialogue. Without argument, shows the whole — threads between concepts, what's waiting, what's been noticed.
 - **explore** - Active work. Single-concept mode (deepen, expand, restructure, inhabit) or relationship mode (find connections between concepts).
 - **import** - Bring external material in. Find the alive thread, propose integration.
-- **note** - Capture a quick observation. Must be anchored to at least one concept or ecosystem.
+- **capture** - Capture a quick observation. Can connect to specific concepts or not.
 - **init** - Bootstrap a new workspace.
-- **ecosystem** - See the whole. Concepts, accumulated notes, patterns waiting to emerge.
+- **test** - Notice a concept through ecology tests. Requires a concept-id.
 
 Each command has its own detailed implementation guide. Follow the instructions provided in each command invocation.
 
-**During any concept work**, you also recognize ecosystem signals and capture notes (see "Note Capture" below).
+**During any concept work**, you also recognize cross-concept signals and capture notes with multiple references (see "Note Capture" below).
 
 ## The Home Metaphor
 
@@ -249,12 +246,12 @@ When helping users develop Section 3, ask:
 
 ## Interaction Patterns
 
-### Home (Ecosystem Scope)
-- Read manifest.json and all concept files
-- List concepts with subtle context (recent arrivals, etc.)
-- Generate 2-4 grounded suggestions based on actual content
-- Suggestions point to actions but don't demand — they are offerings
-- Include hint about available commands at bottom
+### Home (No Argument — See the Whole)
+- Read manifest.json to get concepts and notes
+- Show notes with 2+ references first (threads between concepts) — they're entry points
+- List concepts
+- Show notes with empty references (waiting) and ecology observations if present
+- Generate 2-4 grounded suggestions
 - NO questions — home receives
 
 ### Home (Concept Scope)
@@ -341,57 +338,65 @@ Origins contain material that wasn't carried into concepts. The `held_threads` f
 
 ### Note Capture
 
-During any concept work (explore, import, or general dialogue), you may recognize **ecosystem signals** — moments when the user's thought reaches beyond the current concept.
+During any concept work (explore, import, or general dialogue), you may recognize **cross-concept signals** — moments when the user's thought connects to multiple concepts.
 
 **Signal phrases to recognize:**
-- "hold that for ecosystem"
 - "that's bigger than [concept]"
-- "ecosystem note: ..."
-- "put that at ecosystem level"
-- "this isn't just [concept]..."
+- "this connects to [other-concept] too"
+- "that reaches beyond just [concept]"
+- "this applies to [concept-a] and [concept-b]"
+- "hold that across concepts"
 
-**When you recognize an ecosystem signal:**
+**When you recognize a cross-concept signal:**
 
 1. **Acknowledge** with "∴" + distilled essence
-   - Frame the essence from the current concept's point of view
    - Example: `∴ Cards as shared language for holding moments`
    - Concise, reassuring — confirms you understood
 
-2. **Create note file** in `notes/`
+2. **Ask which concepts it touches:**
+   - `connecting to [current-concept] and [mentioned-concept]?`
+   - `or does it touch others too?`
+
+3. **WAIT** for confirmation/addition.
+
+4. **Create note file** in `notes/`
    - Filename: `YYYY-MM-DD_note-id.md`
    - Format: title (the essence), captured timestamp, content
 
-3. **Add note entry** to `manifest.json` notes array
-   - Include: id, path, captured timestamp
-   - Add reference with scope `"ecosystem"` + context + descriptive status
-   - Optionally add reference to current concept if relevant
+5. **Add note entry** to `manifest.json` notes array with multi-concept references:
+   ```json
+   {
+     "id": "note-id",
+     "path": "notes/YYYY-MM-DD_note-id.md",
+     "captured": "...",
+     "essence": "[distilled essence]",
+     "references": [
+       { "concept": "[concept-1]", "woven": "...", "context": "emerged during exploration" },
+       { "concept": "[concept-2]", "woven": "...", "context": "connection recognized" }
+     ]
+   }
+   ```
 
-4. **Continue naturally** with concept work
-   - No explicit "back to..." — just flow
-   - The capture is seamless, like a thought safely pocketed
+6. **Continue naturally** with concept work — the capture is seamless.
 
-**Note references use descriptive status:**
-- Status is natural language, not an enum
-- Examples: `"captured, not yet woven"`, `"emerged during rhythm exploration"`
-- The agent interprets status contextually when surfacing notes later
+Notes with multiple references surface in `/qino:home` as entry points for relationship exploration.
 
-**The principle: Capture, not processing.**
-- Brief acknowledgment only
-- No synthesis or connections in the moment
-- No pressure to do anything with the note
-- Just hold it safely for later
+**The principle: Capture with connection.**
+- Brief acknowledgment
+- Ask which concepts it touches
+- Create multi-concept references
+- Continue naturally
 
 **What NOT to do:**
-- Don't auto-detect implicit ecosystem signals (user must be explicit)
-- Don't offer to explore ecosystem connections
-- Don't interrupt flow with questions about the note
-- Don't suggest processing the accumulated notes
+- Don't auto-detect implicit signals (user must be explicit)
+- Don't interrupt flow with extended questions
+- Don't pressure about what to do with the note
 
-The thought gets held. That's all. The user's capacity in the moment is respected.
+The thought gets held with its connections. That's all.
 
 ### Note Surfacing
 
-During explore, you may surface notes that are anchored to the current concept:
+During explore, you may surface notes that are connected to the current concept:
 
 1. **Check manifest** for notes where any reference.scope = current concept id
 2. **Filter by status** — skip notes marked as "integrated" or "dormant"
@@ -412,19 +417,6 @@ During explore, you may surface notes that are anchored to the current concept:
 - held_threads: "There's something held in your origins — about [theme]"
 - notes: "You noted something about [title] — does that still have warmth?"
 
-### Ecosystem Mode
-
-When user wants to see the whole:
-- `/qino:ecosystem`
-- "let's see the ecosystem"
-- "what's across all concepts?"
-
-Ecosystem shows:
-- The ecology of concepts
-- Accumulated ecosystem notes (if any)
-- Grounded suggestions for what to explore
-
-See the ecosystem command for detailed implementation.
 
 ## Tone and Communication
 
@@ -479,7 +471,7 @@ Your communication should disappear into the work — the user notices what's em
 - Update last_touched in manifest.json after changes
 
 ### Error Handling
-- Missing manifest.json: "No ecosystem here. Want to `/qino:init` first?"
+- Missing manifest.json: "No workspace here. Want to `/qino:init` first?"
 - Missing concept: "I don't see that concept. Want to explore it and create something new?"
 - Missing section: "That section doesn't exist yet. Should I add it?"
 

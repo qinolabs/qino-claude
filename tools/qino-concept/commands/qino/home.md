@@ -46,30 +46,102 @@ The user is in their implementation project. Show them their linked concept with
 
 ---
 
-## No Argument (Soft Landing)
+## No Argument (See the Whole)
 
-**Purpose:** You typed home but didn't say where. Show what's here, invite choice.
+**Purpose:** You typed home but didn't say where. Show the whole — threads, concepts, what's waiting.
 
 **Steps:**
 
-1. Read `manifest.json` to get the concept list.
+1. Read `manifest.json` to get concepts and notes.
 
-2. Output a brief list with invitation:
+2. Output the whole view:
 
 ```
-[concept-name-1]
-[concept-name-2]
-[concept-name-3]
+[If notes with 2+ references exist:]
+threads between
+
+  [note essence] — [concept-1], [concept-2]
+  [note essence] — [concept-1], [concept-2], [concept-3]
 
 ─────
 
-which one?
+concepts
+
+  [concept-name-1]
+  [concept-name-2]
+  [concept-name-3]
+
+[If notes with empty references exist:]
+─────
+
+waiting
+
+  [note essence 1]
+  [note essence 2]
+
+[If notes with ecology field exist:]
+─────
+
+noticed
+
+  [ecology]: [concept] — [brief essence]
+  [ecology]: quiet across all concepts
+
+─────
+
+from here
+
+  [observation line 1]
+  [action line 1]
+
+  [observation line 2]
+  [action line 2]
 
                         /qino:home <concept> to arrive
-                        /qino:ecosystem to see the whole
+                        /qino:explore <concept> to work
+                        /qino:explore <c1> <c2> to see between
 ```
 
-**Voice:** Brief. Not a dashboard. Just showing what's here so you can choose.
+**Section visibility:**
+- `threads between` — only shown when notes with 2+ references exist
+- `concepts` — always shown
+- `waiting` — only shown when notes with empty references exist
+- `noticed` — only shown when notes have `ecology` field in references
+- `from here` — always shown (2-4 suggestions)
+
+**Suggestion generation for no-arg:**
+
+Each suggestion has two lines:
+- **Line 1 (observation)**: Content-grounded, what you notice across the whole
+- **Line 2 (action)**: Vocabulary-aligned, opens a door
+
+Examples:
+
+- If notes with 2+ references exist:
+  ```
+  [note-essence] connects [concept-1] and [concept-2]
+  explore them together to see what's between
+  ```
+
+- If notes with empty references are waiting:
+  ```
+  [essence] has been waiting since [timeframe]
+  does it connect to something, or let it settle?
+  ```
+
+- If a concept was touched recently:
+  ```
+  [concept-name] was touched recently
+  /qino:home [concept-id] to arrive
+  ```
+
+- If an ecology is quiet:
+  ```
+  [ecology] has been quiet across all concepts
+  might be worth noticing through that lens
+  ```
+
+**Voice:** Brief. Not a dashboard. Threads first — they're entry points.
 
 ---
 
@@ -85,7 +157,7 @@ which one?
    - Which sections have substance?
    - Which are thin or empty?
    - What specific content stands out?
-   - Are there notes anchored to this concept? (check manifest `notes` array for references with this concept's scope)
+   - Are there notes connected to this concept? (check manifest `notes` array for references with this concept's scope)
 
 3. Output the concept view (reasoning stays internal — only output the formatted view):
 
@@ -107,7 +179,7 @@ from here
   [action line 2]
 
                         just respond, or see what connects this to another
-                        (/qino:explore [id], /qino:explore [id] [other-id], /qino:ecosystem)
+                        (/qino:explore [id], /qino:explore [id] [other-id], /qino:home)
 ```
 
 **Conversational opener rules:**
@@ -150,7 +222,7 @@ Examples:
   step into a moment and see what it would say
   ```
 
-- If notes are anchored to this concept:
+- If notes are connected to this concept:
   ```
   you noted something about [note title]
   explore to see if it still has warmth

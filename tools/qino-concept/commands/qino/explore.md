@@ -20,30 +20,34 @@ Explore is where active work happens. This is inside the concept, working.
 
 ---
 
-## Ecosystem Signals (applies to all modes)
+## Cross-Concept Signals (applies to all modes)
 
 During any explore session, the user may signal that something reaches beyond the current concept(s). Recognize these signals:
 
-- "hold that for ecosystem"
 - "that's bigger than [concept]"
-- "this hints at something bigger"
-- "relevant to the entire ecosystem"
-- "ecosystem note: ..."
-- "put that at ecosystem level"
+- "this connects to [other-concept] too"
+- "that reaches beyond just [concept]"
+- "this applies to [concept-a] and [concept-b]"
+- "hold that across concepts"
 
-**When you recognize an ecosystem signal:**
+**When you recognize a cross-concept signal:**
 
 1. **Acknowledge** with "∴" + distilled essence:
    ```
    ∴ Grid as a pattern that exists at different frame-holding levels
    ```
 
-2. **Create notes directory** if it doesn't exist:
-   ```bash
-   mkdir -p notes
+2. **Ask which concepts it touches:**
+   ```
+   connecting to [current-concept] and [mentioned-concept]?
+   or does it touch others too?
    ```
 
-3. **Create note file** at `notes/YYYY-MM-DD_note-id.md`:
+3. **WAIT** for confirmation/addition.
+
+4. **Create notes directory** if it doesn't exist.
+
+5. **Create note file** at `notes/YYYY-MM-DD_note-id.md`:
    ```markdown
    # [Theme — in user's words]
 
@@ -52,37 +56,36 @@ During any explore session, the user may signal that something reaches beyond th
    [User's observation, exactly as they said it]
    ```
 
-4. **Add note entry** to `manifest.json` notes array:
+6. **Add note entry** to `manifest.json` notes array with multi-concept references:
    ```json
    {
      "id": "note-id",
      "path": "notes/YYYY-MM-DD_note-id.md",
      "captured": "YYYY-MM-DDTHH:MM:SSZ",
+     "essence": "[distilled essence]",
      "references": [
        {
-         "scope": "ecosystem",
-         "context": "emerged during [concept-id] exploration",
-         "status": "captured, not yet woven"
+         "concept": "[current-concept-id]",
+         "woven": "YYYY-MM-DDTHH:MM:SSZ",
+         "context": "emerged during exploration"
+       },
+       {
+         "concept": "[other-concept-id]",
+         "woven": "YYYY-MM-DDTHH:MM:SSZ",
+         "context": "connection recognized"
        }
      ]
    }
    ```
 
-   If the note also relates to the current concept, add a second reference:
-   ```json
-   {
-     "scope": "[current-concept-id]",
-     "context": "[what was being explored]",
-     "status": "captured, feels [adjacent/central/etc]"
-   }
-   ```
+7. **Confirm:** `connected across [concept-1] and [concept-2]`
 
-5. **Continue naturally** with explore work — the capture is seamless.
+8. **Continue naturally** with explore work — the capture is seamless.
 
-6. **After significant cross-concept patterns emerge**, suggest ecosystem view:
+9. **After significant cross-concept patterns emerge**, suggest relationship exploration:
    ```
-   something is taking shape across these concepts
-   /qino:ecosystem to see the whole
+   something is taking shape between these concepts
+   /qino:explore [concept-1] [concept-2] to see the threads
    ```
 
 ---
@@ -93,8 +96,8 @@ During any explore session, the user may signal that something reaches beyond th
 
 If no concept id is provided:
 
-1. Check `manifest.json` for unanchored notes (notes with empty `references` array)
-2. If unanchored notes exist, offer them as entry points:
+1. Check `manifest.json` for notes with empty `references` array
+2. If such notes exist, offer them as entry points:
 
    > "There are thoughts waiting to find their place:"
    >
@@ -104,7 +107,7 @@ If no concept id is provided:
    > "Any of these feel alive? Or which concept would you like to explore?"
 
 3. If user picks a note, ask which concept it might touch, then continue with that concept (the note becomes the starting alive thread)
-4. If no unanchored notes, simply ask: "Which concept would you like to explore?"
+4. If no such notes, simply ask: "Which concept would you like to explore?"
 
 **Steps:**
 
@@ -157,8 +160,8 @@ If no concept id is provided:
 ### If notes might help
 
 Check `manifest.json` for notes that might connect:
-- **Unanchored notes** (`references` is empty array) — thoughts waiting to find their place
-- **Notes anchored to this concept** — already connected but may have more to give
+- Notes with empty `references` — thoughts waiting to find their place
+- Notes already connected to this concept — may have more to give
 
 **Trigger conditions (any of):**
 - User's alive thread echoes a note's essence (language, theme, or direction)
@@ -167,17 +170,17 @@ Check `manifest.json` for notes that might connect:
 
 **If triggered, offer specifically:**
 
-For unanchored notes:
+For notes with empty references:
 > "You captured something about [essence] — does that connect here?"
 
-For already-anchored notes:
+For notes already connected:
 > "There's a note here about [essence] — does it still have warmth?"
 
 **If user engages:**
 - Read the note file via its path
 - Surface the content
 - Work with it using normal expand/deepen modes
-- **For unanchored notes:** Add a reference when woven in:
+- **For notes with empty references:** Add a reference when connected:
   ```json
   {
     "concept": "[current-concept-id]",
@@ -185,12 +188,12 @@ For already-anchored notes:
     "context": "[what emerged during exploration]"
   }
   ```
-- **For anchored notes:** Update status to reflect engagement (e.g., "surfaced, exploring")
+- **For connected notes:** Update status to reflect engagement (e.g., "surfaced, exploring")
 
 **If user declines:**
 - Acknowledge lightly
 - Continue with normal explore flow
-- Leave unanchored notes unanchored — they'll surface again when they have warmth
+- Leave notes without references as they are — they'll surface again when they have warmth
 
 ### Reference removal
 
@@ -390,7 +393,7 @@ If fewer than 2 concept ids provided, ask: "Which concepts would you like to exp
 
     **If patterns emerged that reach beyond these concepts**, also offer:
     ```
-    something is taking shape across these concepts — /qino:ecosystem to see the whole
+    something is taking shape between these concepts — /qino:explore [concept-1] [concept-2] to see the threads
     ```
 
 ---

@@ -15,7 +15,7 @@ It answers:
 - Where is the canonical `concept.md` file for each?
 - What lightweight metadata is associated with each concept?
 - Which notes have been captured?
-- How do notes relate to concepts and the ecosystem?
+- How do notes relate to concepts?
 
 The qino Concept Agent uses `manifest.json` to:
 
@@ -41,7 +41,6 @@ The manifest must be stored at the **root of the project workspace**:
   manifest.json
   concepts/
   notes/
-  ecosystem.md          # woven patterns (created when needed)
   .claude/
 ```
 
@@ -217,7 +216,7 @@ Each note entry must be an object with the following fields:
 }
 ```
 
-Notes start **unanchored** (empty `references` array). They become anchored when woven into a concept during `/qino:explore`.
+Notes start with an empty `references` array. They gain references during `/qino:explore` or `/qino:capture` — one reference connects to a concept, multiple references connect concepts together.
 
 ### 5.1 id
 
@@ -259,7 +258,7 @@ The moment the note was captured.
 - Required: yes
 - The distilled essence of the note (5-10 words)
 
-This is what the agent uses to recognize when a note might connect to an alive thread during exploration. It's also displayed when surfacing unanchored notes.
+This is what the agent uses to recognize when a note might connect to an alive thread during exploration. It's also displayed when surfacing notes with empty references.
 
 ### 5.5 references
 
@@ -287,13 +286,9 @@ Each reference records when a note was woven into a concept during exploration:
 
 - Type: string
 - Required: yes
-- Either a concept id or the reserved value `"ecosystem"`.
+- Must be a concept id that exists in the `concepts` array.
 
-Reserved values:
-
-- `"ecosystem"` — note woven into cross-concept patterns
-
-All other values are interpreted as concept ids and must exist in the `concepts` array.
+A note can reference multiple concepts. Notes with multiple references surface in `/qino:home` as entry points for relationship exploration.
 
 ### 6.2 woven
 
@@ -354,31 +349,34 @@ Whenever the agent modifies `concept.md` in a meaningful way:
 
 ### 8.3 Note Capture
 
-When capturing a note (via `/qino:capture` or ecosystem signals during explore):
+When capturing a note via `/qino:capture`:
 
 1. Distill the observation to its essence
 2. Create the note file at `notes/YYYY-MM-DD_note-id.md`
-3. Add a new entry to the `notes` array with:
+3. Offer concept connection: "does this connect to something?"
+4. Add a new entry to the `notes` array with:
    - `id` derived from the essence
    - `path` set to the note file location
    - `captured` set to current timestamp
    - `essence` set to the distilled essence
-   - `references` as empty array `[]`
+   - `references` as either:
+     - empty array `[]` if user lets it settle
+     - array with references if user names concepts
 
-Notes start unanchored. They become woven during `/qino:explore`.
+Notes can start with empty references or with connections. Notes with empty references become connected during later `/qino:explore` sessions.
 
-### 8.4 Note Weaving
+### 8.4 Note Connection During Explore
 
 During `/qino:explore`, the agent surfaces notes when their essence echoes the alive thread:
 
-- Check for unanchored notes (`references` is empty)
-- Check for notes already woven to this concept
+- Check for notes with empty `references`
+- Check for notes already connected to this concept
 - Offer notes that might connect: "You captured something about [essence] — does that connect here?"
 
-When a note is woven in:
+When a note is connected:
 
 - Add a reference with `concept`, `woven` timestamp, and `context`
-- The same note can be woven into multiple concepts
+- The same note can connect to multiple concepts
 
 ### 8.5 Reference Removal
 
@@ -386,7 +384,7 @@ The agent can suggest removing references that no longer feel relevant:
 
 - During explore: "This note no longer feels connected here — remove this reference?"
 - Always require explicit user confirmation before removal
-- If the last reference would be removed, the note returns to unanchored state (it'll surface again when it has warmth)
+- If the last reference would be removed, the note returns to empty references (it'll surface again when it has warmth)
 
 ### 8.6 Deletion / Deactivation
 
@@ -418,9 +416,9 @@ When reading `manifest-project-spec.md`, the agent must:
 ```
 
 - ensure each concept entry contains all required fields
-- ensure each note entry contains all required fields with at least one reference
+- ensure each note entry contains all required fields
 - never introduce additional fields unless the specification is extended
-- validate that note scopes reference existing concept ids or `"ecosystem"`
+- validate that note references use concept ids that exist in the `concepts` array
 
 ---
 
@@ -492,7 +490,7 @@ The smallest valid manifest:
 }
 ```
 
-The second note (`theme-as-wanderers-journey`) is unanchored — captured but not yet woven into any concept. It will surface during `/qino:explore` when its essence echoes an alive thread.
+The second note (`theme-as-wanderers-journey`) has empty references — captured but not yet connected to any concept. It will surface during `/qino:explore` when its essence echoes an alive thread.
 
 ---
 

@@ -33,7 +33,7 @@ Before anything else, check for implementation context:
    - Note: testing from **implementation context**
 3. If absent:
    - Use current directory as workspace
-   - Proceed with single-concept or ecosystem mode
+   - Proceed with single-concept mode
 
 ---
 
@@ -155,45 +155,21 @@ Before anything else, check for implementation context:
 
 ---
 
-## Ecosystem Test View (No Argument)
+## No Argument
 
-**Purpose:** See patterns in test observations across concepts.
+If no concept-id is provided (and no linked concept in implementation context):
 
-**Steps:**
+```
+which concept would you like to notice through?
 
-1. Read `manifest.json`
+  [concept-1]
+  [concept-2]
+  [concept-3]
+```
 
-2. Scan notes array for entries with `ecology` field in their references
+**WAIT** for response, then proceed with Single-Concept Mode.
 
-3. Gather patterns:
-   - Which concepts have test observations?
-   - Which ecologies have been active? Which quiet?
-   - Any ecology completely untouched across all concepts?
-
-4. Present the ecosystem view:
-   ```
-   ## Test observations across the ecosystem
-
-   **Active ecologies:**
-   - user: [concept-1], [concept-2]
-   - gesture: [concept-3]
-
-   **Quiet ecologies:**
-   - infrastructure: no observations
-   - fabric: no observations
-
-   **Untested concepts:**
-   - [concept-4], [concept-5]
-   ```
-
-5. Offer pathways:
-   > "[ecology] is quiet across all concepts — want to test through that?"
-   >
-   > or name a concept to test
-
-   **WAIT** for response.
-
-6. If user chooses, invoke single-concept mode for that concept/ecology.
+Note: Ecology test patterns across concepts are now surfaced in `/qino:home` (the "noticed" section).
 
 ---
 
