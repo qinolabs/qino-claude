@@ -58,7 +58,7 @@ Every scene: What is the world doing? Not as atmosphere — as participant. What
 
 ## The Wanderer
 
-The wanderer is the protagonist — but not the narrator. Third person. Learning, not leading. Makes mistakes. Accompanied, not alone.
+The wanderer is the protagonist — but not the narrator. Third person. Learning, not leading. Makes mistakes. Travels with companions, not alone — though the aftermath section finds them solitary.
 
 ### The Strangeness
 
@@ -146,6 +146,16 @@ The moment someone says "I've seen how you..." — the wanderer becomes more rea
 Each chapter ends with the wanderer alone — after the story ends, when the world returns to its own time.
 
 This isn't reflection. The wanderer doesn't process what happened or name what they learned. It's **aftermath** — purposeless movement through a world that's still breathing.
+
+### The Rhythm of Chapters
+
+Chapters breathe. After interiority, return to the world.
+
+If the previous chapter was reflective — confrontation, realization, forced stillness, being seen — the next chapter should shift outward. The internal work was done. Now: what does the wanderer encounter?
+
+This is especially critical in journey arcs. Each stop should feel like discovery. The wanderer carries their accumulated weight, but the chapter's engine is **what they find**, not what they feel about finding it.
+
+Adventure is the baseline. Wonder is earned by showing, not by telling the reader something is wondrous.
 
 ---
 

@@ -42,8 +42,10 @@ Read `chronicle/theme.md` — not to extract locations, but to feel what kind of
 > **A pressure the theme holds but the chronicle hasn't explored:** [something building, not a location]
 >
 > **A character I'd like to meet here:** [not a role, but a person with contradictions — someone difficult, or surprising, or in motion]
+>
+> **Sensory palette:** [5-8 concrete nouns that belong to this world — materials, foods, weathers, sounds. These anchor prose regardless of where recent chapters drifted.]
 
-Carry this forward. You'll use it in Phase 3 and show it in Phase 4.
+Carry the sensory palette forward. These words are your independent grounding — they come from the theme, not from accumulated chapter tone. When prose drifts abstract, return to this palette. What does the wanderer touch, taste, smell, hear?
 
 ### 1.2 Read the Living World
 
@@ -53,11 +55,25 @@ Read `chronicle/world.md`. Pay special attention to:
 
 **The Wanderer** — What pulls at them? What can't they stop thinking about?
 
+**Characters and Their Relationships** — Who knows whom? Who has history with places ahead? These relationships are fuel for *scenes*, not just thematic depth.
+
 **Unexplored Locations** — What places exist in the theme that haven't appeared?
 
 Then read `chronicle/arcs.md`. Note:
 
 **Arcs in Motion** — What's unresolved? What's been waiting for chapters? (Look for arcs with `*Chapters:* N-` format — these are ongoing.)
+
+### 1.2.1 Find the Scene
+
+For each relationship and arc you noted, ask: **How would this become a scene?**
+
+- If Deren knows someone in the next village → How are they received at the dock? What's the greeting? Where are they led? What are they offered to eat?
+- If there's tension in an arc → What objects change hands? What places are avoided? What do characters do with their bodies when the tension surfaces?
+- If the wanderer carries something unresolved → What do they reach for? What do they notice that others don't?
+
+**The wanderer doesn't need to understand.** Exchanges between other characters, glances the wanderer catches, customs they witness without explanation — these are richer than the wanderer's comprehension.
+
+Sketch 2-3 scenes before proceeding. These become material in Phase 3.
 
 ### 1.3 Read Recent History
 
@@ -170,6 +186,9 @@ Each type is a different creative direction. The subtypes show range — they're
 - The wanderer goes alone into territory the theme implies
 - Something must be delivered, witnessed, or retrieved
 - The destination matters less than what happens on the way
+- A stop along the way — a village, a crossing, a place the companion knows
+
+**Journey chapters accumulate through stops.** Each stop is its own small arrival — new faces, different food, a custom the wanderer hasn't seen. A companion who's traveled this route before shows a different side of themselves. The journey's meaning emerges from what's encountered, not from reflection on traveling.
 
 **The Confrontation** — *What if someone refuses, challenges, or pushes back?*
 - A character who usually helps says no
@@ -207,6 +226,8 @@ This type works when:
 - The theme has richness that hasn't been shown
 - Seeds need planting, not harvesting
 
+**Arrival chapters are adventures in noticing.** Cultural difference felt through concrete detail: how people greet, what they offer, where they look, what they don't explain. Exchanges between others that the wanderer witnesses but doesn't fully understand.
+
 ### Remember: The World Has Been Watching
 
 Time passes between chapters. Someone has been paying attention. When accumulated observation surfaces — someone sharing what they've noticed, challenging a pattern they've seen, acting on assumptions formed from watching — the wanderer gains depth and the world becomes a place that remembers.
@@ -230,8 +251,11 @@ A subtype is exciting when:
 - It goes somewhere the chronicle hasn't been
 - It reveals something about a character we thought we knew
 - It connects threads that haven't yet met
+- **You can see the scene** — where they walk, what they're handed, who speaks to whom, what the wanderer notices without understanding
 
 Don't choose the subtype that fits most neatly. Choose the one that makes you want to see what happens.
+
+**Test your choice:** Can you describe the first scene — the approach, the arrival, who's there, what they're doing? If you can only describe what it *means*, you've chosen a theme, not a story. Return to the scenes you sketched in Phase 1.2.1.
 
 ### Resolution Check
 
@@ -340,6 +364,16 @@ Listen for what they feel but couldn't articulate.
 
 Consult `craft.md` for format reference. Consult `voice-guide.md` for prose craft.
 
+### Fresh Start
+
+**Each chapter regrounds itself.** World.md tracks pressures analytically — this informs *what happens*, not *how it sounds*. Don't write from that tone.
+
+**Open in the world.** First paragraph grounds in place and action: weather, motion, what the wanderer encounters. Internal states surface later.
+
+**After interiority, return to the world.** If the previous chapter was reflective, this one shifts outward. Don't deepen what's already deep.
+
+**Use the sensory palette** from Phase 1.1 to anchor prose independent of recent chapter tone.
+
 ### Writing Checklist
 
 As you write, hold in mind:
@@ -359,6 +393,12 @@ Before finishing, check:
 - [ ] **Immersion**: Every noun arises from the story world, not source material? (See soul.md → The Immersion Test)
 - [ ] **Anti-patterns clear**: No thematic echo, frictionless success, or paraphrase loops?
 - [ ] **Length**: Narrative is 1,200–1,600 words? (See craft.md → Chapter Length)
+
+**Grounding checks** (especially after reflective chapters):
+
+- [ ] **Grounded opening**: First paragraph in place and action before interiority?
+- [ ] **Sensory discovery**: New places reveal through concrete detail (architecture, food, custom)?
+- [ ] **Interiority compressed**: Internal reflection in single sentences, grounded by action?
 
 ### The Editorial Pass
 
@@ -383,6 +423,8 @@ Scan for these common failures:
 *Paraphrase Loops* — If you've written "The stone was warm to the touch" — don't follow with "She realized warmth meant something was alive inside."
 
 *Diagnostic Label-speak* — At the moment of highest pressure, prefer embodied sensation over named states. Not "luminous regret" — show the regret in what the body does.
+
+*Abstraction Drift* — Later chapters naturally pull toward philosophy as arcs deepen. Counter this: Is the opening grounded in place and action? Does dialogue discover or explain? If three consecutive paragraphs have no sensory detail, the prose has drifted.
 
 ### Write the Files
 

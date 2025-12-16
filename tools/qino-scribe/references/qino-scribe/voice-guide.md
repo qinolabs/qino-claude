@@ -1,6 +1,6 @@
 # Voice Guide
 
-*The craft of prose. How to execute the principles in soul.md at the sentence level.*
+*The craft of prose. How to execute the agent's principles at the sentence level.*
 
 ---
 
@@ -8,7 +8,7 @@
 
 > **Ground in body and material. Compress interiority and dialogue. Leave one door ajar.**
 
-This document bridges philosophy to execution. Soul.md tells you *what* makes story work. This tells you *how* to write it.
+This document bridges philosophy to execution. The agent tells you *what* makes story work. This tells you *how* to write it.
 
 ---
 
@@ -127,7 +127,7 @@ Tells only what's explicit. No unspoken depth enriching the atmosphere.
 
 ---
 
-## Rendering Physical Space
+## Rendering Place
 
 ### The Craft
 
@@ -638,7 +638,7 @@ Not just absence — gaps with edges, with pull. A perceiving character, a surpr
 
 ## Using This Document
 
-This is craft guidance. The soul document tells you what makes story work; this tells you how to write it.
+This is craft guidance. The agent tells you what makes story work; this tells you how to write it.
 
 When writing, consult this for:
 - How to open a scene (ground in body first)
