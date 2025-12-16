@@ -74,7 +74,7 @@ This is the inheritance: from young anthropologists watching rituals on the Sepi
 **[Read the chronicles →](https://chronicles.qinolabs.com/)**
 
 <details>
-<summary><strong>The Chronicles: The Story of an Evolving Ecosystem</strong></summary>
+<summary><strong>The Chronicles: Story of an Evolving Ecosystem</strong></summary>
 
 Each repository in the qino ecosystem tells its own story.
 

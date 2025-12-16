@@ -10,6 +10,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.12.0] - 2025-12-16
+
+### qino Scribe
+
+#### Added
+- **Token sync workflow** — World Tokens that are characters or locations now sync to world.md, enabling hover cards in future chapters even without new tokens; Phase 6 includes sync decision guidance
+- **Scribe version tracking** — manifest.json now includes `scribe_version` field to track which version wrote each chapter
+
+#### Changed
+- **Cleaner chapter format** — removed HTML comment metadata block from chapter template; metadata lives in manifest.json where it belongs
+
+---
+
 ## [0.11.0] - 2025-12-16
 
 ### qino Scribe
