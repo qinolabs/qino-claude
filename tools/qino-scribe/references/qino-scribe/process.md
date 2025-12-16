@@ -480,10 +480,33 @@ Every chapter should leave at least one pressure building.
 - Where were they last seen?
 - Did anyone sense their strangeness? Add to "What remains unspoken"
 
+### Sync World Tokens to Characters/Locations
+
+**For each World Token written in this chapter:**
+
+1. **Is this a character?** (a person, being, or entity with agency)
+   - If yes and not already in `## Characters` → add with their texture
+   - Use the token's presence as a starting point, expand to canonical description
+
+2. **Is this a location?** (a place the wanderer can be in or travel to)
+   - If yes and not already in `## Locations` → add with its atmosphere
+   - Use the token's presence as a starting point, expand to canonical description
+
+3. **Is this something else?** (object, concept, phenomenon)
+   - No sync needed — these live only as World Tokens
+
+**Why sync matters:** The app highlights entity names and shows hover cards. Entities in world.md get hover cards even in chapters where they don't have a token. Without sync, a location mentioned meaningfully in one chapter becomes invisible in future chapters.
+
+**Example:**
+- World Token: `**The Rift Valley**` → Is this a location? Yes → Add to Locations
+- World Token: `**The Ring**` → Is this a location? No. Character? No. → Object, no sync
+- World Token: `**The Crystals**` → Is this a location? Debatable (phenomenon) → Use judgment
+
 ### Update Characters, Locations
 
-- New characters with their textures
-- New locations with their atmospheres
+After syncing tokens:
+- Add any additional characters not captured as tokens
+- Add any additional locations not captured as tokens
 - Update Unexplored with what's still waiting
 
 ### Update Arcs (in arcs.md)

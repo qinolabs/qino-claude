@@ -162,6 +162,16 @@ When the others went to eat, they stayed in the storeroom a moment longer. The s
 
 Crystallized presences — characters, locations, objects, phenomena. Write as evocative fragments, not plot summaries. **The wanderer is never included in World Tokens.**
 
+### Sync to world.md
+
+World Tokens that are **characters** or **locations** should also be added to the corresponding section in `world.md`. This enables:
+- Hover cards in future chapters (even without a new token)
+- Consistent highlighting of entity names across the chronicle
+
+**In Phase 6**, for each token ask: Is this a character? A location? If yes, sync to world.md. Objects, concepts, and phenomena live only as tokens.
+
+See `process.md` → Phase 6 → "Sync World Tokens to Characters/Locations" for details.
+
 ### The Test
 
 Could this description work without the chapter? Tokens should stand alone as evocative fragments.
