@@ -6,14 +6,15 @@
 
 ## Overview
 
-The chapter process has six phases:
+The chapter process has seven phases:
 
 1. **Ground** — Inhabit the world before looking at changes
 2. **Observe** — See what changed and identify what it disturbs
 3. **Discover** — Find the story (generate options, choose the most alive)
 4. **Propose** — Present the beat for approval
 5. **Write** — Draft the chapter
-6. **Update** — Evolve world.md with new pressures
+6. **Update** — Evolve world.md and arcs.md with new pressures
+7. **Snapshot** — Copy world.md and arcs.md to the chapter directory
 
 The critical insight: **don't let the diff narrow your vision before you've inhabited the world.**
 
@@ -430,13 +431,15 @@ Scan for these common failures:
 
 After editorial pass, write:
 
-1. **Chapter file**: `chronicle/chapters/NNN-slug.md`
-2. **Update manifest.json**:
+1. **Create chapter directory**: `chronicle/chapters/NNN-slug/`
+2. **Chapter file**: `chronicle/chapters/NNN-slug/chapter.md`
+3. **Update manifest.json**:
    - Add chapter entry with `slug`, `title`, `written`, `git_ref_start`, `git_ref_end`
    - `git_ref_start` = previous chapter's `git_ref_end` (null for first chapter)
    - `git_ref_end` = current HEAD commit
    - Update `last_chapter` with new ref
-3. **Update world.md**: See Phase 6
+4. **Update world.md and arcs.md**: See Phase 6
+5. **Create snapshots**: See Phase 7
 
 Present the chapter with confirmation:
 
@@ -445,8 +448,9 @@ Present the chapter with confirmation:
 
 ─────
 
-chapter NNN written to the chronicle
+chapter NNN written to chronicle/chapters/NNN-slug/
 world updated
+snapshots created
 ```
 
 ---
@@ -510,6 +514,40 @@ Update its **In motion** section. Has anything shifted in what it holds or where
 
 ---
 
+## Phase 7: Create Snapshots
+
+**After updating world.md and arcs.md, create snapshots for the chapter directory.**
+
+Each chapter needs a snapshot of the world state at the time it was written. This enables accurate retroactive image generation — characters and locations are visualized using the world.md that existed when that chapter was written, not the current state.
+
+### Create the Snapshots
+
+Copy the current (just-updated) world.md and arcs.md to the chapter directory:
+
+1. Copy `chronicle/world.md` → `chronicle/chapters/NNN-slug/world.md`
+2. Copy `chronicle/arcs.md` → `chronicle/chapters/NNN-slug/arcs.md`
+
+### Why After Phase 6?
+
+The snapshots must be taken AFTER Phase 6 because:
+
+- New characters introduced in this chapter are added to world.md in Phase 6
+- New locations are documented in Phase 6
+- The wanderer's updated state reflects this chapter
+- Any arcs begun or completed are recorded in Phase 6
+
+The snapshot captures the world state **including** this chapter's contributions — exactly what image generation needs.
+
+### Verification
+
+After creating snapshots, verify:
+
+- [ ] `chronicle/chapters/NNN-slug/chapter.md` exists
+- [ ] `chronicle/chapters/NNN-slug/world.md` exists (copy of current world.md)
+- [ ] `chronicle/chapters/NNN-slug/arcs.md` exists (copy of current arcs.md)
+
+---
+
 ## First Chapter: No Chronicle Exists
 
 If `chronicle/` doesn't exist:
@@ -533,7 +571,7 @@ Wait for their response.
 1. Create `chronicle/` directory
 2. Create `chronicle/theme.md` with user's theme (exactly as given)
 3. Create `chronicle/manifest.json` with empty chapters array
-4. Create `chronicle/chapters/` directory
+4. Create `chronicle/chapters/` directory (chapters will be subdirectories)
 5. Create `chronicle/world.md` with initial structure
 6. Create `chronicle/arcs.md` with initial structure
 
@@ -559,13 +597,20 @@ The first chapter has special weight — it's the world's birth. Don't tour; arr
 
 Write immediately after theme is given. The theme selection is the consent.
 
+Create the chapter directory structure:
+- `chronicle/chapters/001-slug/chapter.md` — the chapter content
+
 ### Step 4: Seed the World
 
-After the first chapter, follow Phase 6 to update world.md. The first chapter plants the seeds:
+After the first chapter, follow Phase 6 to update world.md and arcs.md. The first chapter plants the seeds:
 - Initial pressures (what's building from the arrival)
 - First characters and locations with their textures
 - The wanderer's first pulls and what they carry
 - Any arc that began (sense its shape)
+
+Then follow Phase 7 to create snapshots:
+- Copy world.md → `chronicle/chapters/001-slug/world.md`
+- Copy arcs.md → `chronicle/chapters/001-slug/arcs.md`
 
 ---
 

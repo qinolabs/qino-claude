@@ -262,12 +262,16 @@ Journeys (this shape) often hold other shapes within them. A journey might revea
 chronicle/
 ├── manifest.json      # Chronicle state and chapter index
 ├── theme.md           # The world's seed (required)
-├── world.md           # Living world-state (characters, locations, pressures)
-├── arcs.md            # All arcs (in motion + completed) with chapter ranges
+├── world.md           # Living world-state (current)
+├── arcs.md            # All arcs (current)
 └── chapters/
-    ├── 001-slug.md
-    └── ...
+    └── 001-slug/
+        ├── chapter.md     # The chapter content
+        ├── world.md       # Snapshot at chapter write time
+        └── arcs.md        # Snapshot at chapter write time
 ```
+
+Each chapter lives in its own directory with **snapshots** of `world.md` and `arcs.md` taken after the chapter is written. These snapshots enable accurate retroactive image generation — Chapter 2's images use Chapter 2's world state, not the current state.
 
 ---
 
