@@ -8,7 +8,7 @@
   "chapters": [
     {
       "number": 1,
-      "slug": "what-the-water-brings",
+      "slug": "001-what-the-water-brings",
       "title": "What the Water Brings",
       "written": "2025-12-13T00:00:00Z",
       "git_ref_start": null,
@@ -18,7 +18,7 @@
     },
     {
       "number": 2,
-      "slug": "the-weight-of-holding",
+      "slug": "002-the-weight-of-holding",
       "title": "The Weight of Holding",
       "written": "2025-12-13T00:00:00Z",
       "git_ref_start": "v0.1.0",
@@ -28,7 +28,7 @@
     },
     {
       "number": 3,
-      "slug": "the-man-who-never-came-to-the-water",
+      "slug": "003-the-man-who-never-came-to-the-water",
       "title": "The Man Who Never Came to the Water",
       "written": "2025-12-13T00:00:00Z",
       "git_ref_start": "v0.2.1",
@@ -38,7 +38,7 @@
     },
     {
       "number": 4,
-      "slug": "the-threads-that-move",
+      "slug": "004-the-threads-that-move",
       "title": "The Threads That Move",
       "written": "2025-12-13T00:00:00Z",
       "git_ref_start": "v0.3.0",
@@ -48,7 +48,7 @@
     },
     {
       "number": 5,
-      "slug": "the-one-who-goes",
+      "slug": "005-the-one-who-goes",
       "title": "The One Who Goes",
       "written": "2025-12-13T12:00:00Z",
       "git_ref_start": "v0.4.0",
@@ -58,7 +58,7 @@
     },
     {
       "number": 6,
-      "slug": "the-man-who-came-to-the-water",
+      "slug": "006-the-man-who-came-to-the-water",
       "title": "The Man Who Came to the Water",
       "written": "2025-12-15T00:00:00Z",
       "git_ref_start": "v0.5.2",
@@ -68,7 +68,7 @@
     },
     {
       "number": 7,
-      "slug": "what-stillness-holds",
+      "slug": "007-what-stillness-holds",
       "title": "What Stillness Holds",
       "written": "2025-12-15T00:00:00Z",
       "git_ref_start": "v0.6.1",
@@ -78,7 +78,7 @@
     },
     {
       "number": 8,
-      "slug": "the-second-bend",
+      "slug": "008-the-second-bend",
       "title": "The Second Bend",
       "written": "2025-12-16T00:00:00Z",
       "git_ref_start": "v0.7.0",
