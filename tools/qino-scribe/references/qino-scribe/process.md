@@ -434,9 +434,10 @@ After editorial pass, write:
 1. **Create chapter directory**: `chronicle/chapters/NNN-slug/`
 2. **Chapter file**: `chronicle/chapters/NNN-slug/chapter.md`
 3. **Update manifest.json**:
-   - Add chapter entry with `slug`, `title`, `written`, `git_ref_start`, `git_ref_end`
+   - Add chapter entry with `slug`, `title`, `written`, `git_ref_start`, `git_ref_end`, `scribe_version`
    - `git_ref_start` = previous chapter's `git_ref_end` (null for first chapter)
    - `git_ref_end` = current HEAD commit
+   - `scribe_version` = current version from `references/qino-scribe/version.json`
    - Update `last_chapter` with new ref
 4. **Update world.md and arcs.md**: See Phase 6
 5. **Create snapshots**: See Phase 7
