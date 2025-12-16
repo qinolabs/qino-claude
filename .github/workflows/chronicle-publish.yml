@@ -32,14 +32,18 @@ jobs:
           REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
           CHRONICLE_PATH="chronicle"
 
-          # Read world.md and theme.md
+          # Read world.md, theme.md, and journal.md
           WORLD_CONTENT=""
           THEME_CONTENT=""
+          JOURNAL_CONTENT=""
           if [ -f "$CHRONICLE_PATH/world.md" ]; then
             WORLD_CONTENT=$(cat "$CHRONICLE_PATH/world.md")
           fi
           if [ -f "$CHRONICLE_PATH/theme.md" ]; then
             THEME_CONTENT=$(cat "$CHRONICLE_PATH/theme.md")
+          fi
+          if [ -f "$CHRONICLE_PATH/journal.md" ]; then
+            JOURNAL_CONTENT=$(cat "$CHRONICLE_PATH/journal.md")
           fi
 
           # Read manifest.json if it exists
@@ -72,10 +76,11 @@ jobs:
             --arg repoName "$REPO_NAME" \
             --arg world "$WORLD_CONTENT" \
             --arg theme "$THEME_CONTENT" \
+            --arg journal "$JOURNAL_CONTENT" \
             --argjson manifest "$MANIFEST_JSON" \
             --argjson chapters "$CHAPTERS_JSON" \
             --argjson force "$FORCE_JSON" \
-            '{repoName: $repoName, world: $world, theme: $theme, manifest: $manifest, chapters: $chapters, force: $force}')
+            '{repoName: $repoName, world: $world, theme: $theme, journal: $journal, manifest: $manifest, chapters: $chapters, force: $force}')
 
           echo "Publishing $REPO_NAME with $(echo "$CHAPTERS_JSON" | jq 'length') chapters (force: $FORCE_JSON)"
 

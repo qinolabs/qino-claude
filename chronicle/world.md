@@ -149,8 +149,3 @@ The keepers are in the middle of something. The wanderer chose to go before unde
 
 Summer still, but the light is different on the river. First day done. Night on the sandbar, fire small, river sounds in the dark. The wanderer's hands wrapped in cloth. Their body remembering that stillness has its own rhythm. Dawn will come, and with it, the current to be rowed against again. Seven days to the last village. Three more past that. The journey measured in what the river allows.
 
----
-
-## Completed Arcs
-
-*See journal.md*
