@@ -131,6 +131,12 @@ Ask:
 
 *The critical phase. This is where adventure happens or doesn't.*
 
+**OUTPUT NOTHING DURING THIS PHASE.**
+
+Do the work below silently. Do not narrate. Do not show your exploration. Do not output "Let me think through..." or "Now I'll explore..." — output nothing at all.
+
+When Phase 3 is complete, proceed directly to Phase 4 and output only the checkpoint.
+
 You have: a living world with pressures, and a change that disturbs it. Now find the chapter that would surprise you.
 
 ### First: What Must This Chapter Diverge From?
@@ -250,15 +256,44 @@ Compare them. Ask:
 
 If all six feel like tour-guide chapters, invert an assumption: What if the established character is wrong? What if the wanderer's help makes things worse? What if the journey begins here? What if someone refuses to help?
 
+**Phase 3 complete. Now output only the checkpoint.**
+
 ---
 
 ## Phase 4: Propose the Beat
 
-Present to the user in three sections:
+Present the choice cleanly. The user needs to choose a direction, not review your process.
 
-### Section 1: The World Right Now
+### The Checkpoint
 
-A refresher that also sparks imagination:
+```
+─────────────────────────────────────────────────────────────────
+
+six directions
+
+  The Complication → [one phrase: what goes wrong]
+  The Journey → [one phrase: where it goes]
+  The Confrontation → [one phrase: who pushes back]
+  The Discovery → [one phrase: what surfaces]
+  The Crisis → [one phrase: what breaks]
+  The Arrival → [one phrase: what warmth opens]
+
+[optional: 2-3 sentence recommendation — only if there's genuine
+craft insight about rhythm, arc readiness, or what this opens]
+
+                                      which direction calls?
+                                         (say more for depth)
+```
+
+**Format notes:**
+- Each direction is one line — the essential image, not the stakes
+- No "the world right now" section (available if user asks)
+- No "what's different" section (fold insight into recommendation)
+- Recommendation is brief and only when it adds something the user wouldn't see
+
+### If the User Asks for More
+
+If they want to understand the world state or compare options:
 
 ```
 the world right now
@@ -267,81 +302,30 @@ the world right now
     [what's building, what might break]
 
   arcs
-    [what's in motion, at what scale, what could move them]
-
-  characters
-    [who has weight right now, what's shifting between them]
+    [what's in motion, at what scale]
 
   the wanderer
-    [where they are, what they carry, what's unspoken about them]
-
-  unexplored
-    [what the theme holds that hasn't been touched]
+    [where they are, what they carry]
 ```
 
-### Section 2: Six Directions
-
-Present each of the six possibilities from Phase 3 — the chosen subtype, its connection to grounding, and what's at stake:
+Or expand a specific direction:
 
 ```
-six directions
-
-  The Complication: [chosen subtype]
-    → [connection to specific pressure/character/location]
-    → [what's at stake — what could be lost, strained, revealed]
-
-  The Journey: [chosen subtype]
-    → [connection]
-    → [stakes]
-
-  The Confrontation: [chosen subtype]
-    → [connection]
-    → [stakes]
-
-  The Discovery: [chosen subtype]
-    → [connection]
-    → [stakes]
-
-  The Crisis: [chosen subtype]
-    → [connection]
-    → [stakes]
-
-  The Arrival: [chosen subtype]
-    → [connection]
-    → [what warmth or depth it would show, what seeds it plants]
+The Crisis — Seren appears at dawn
+  → touches The Debt to Seren (quick arc, ready to resolve)
+  → stakes: the confrontation avoided, goodbye as wound
+  → diverges from: last two chapters were about choosing to go;
+    this is about what leaving costs
 ```
 
-### Section 3: What's Different
-
-Help the user choose:
-
-```
-what's different
-
-  [how each diverges from recent chapters]
-  [which arcs could resolve vs build further]
-  [which goes furthest from known ground]
-```
-
-**Only if there's genuine insight**, add a recommendation:
-
-```
-I'd choose: [the recommended direction]
-  [why — what the agent sees that the user may not hold in mind:
-   how this fits the rhythm of recent chapters,
-   how well arcs and pressures can evolve naturally with this as the stage,
-   what it opens for the chapters after]
-```
-
-Don't recommend just to recommend. If all directions are equally alive, or the choice is purely about user preference, skip the recommendation. It should only appear when there's a craft reason — rhythm, timing, arc readiness — that the user might not see.
-
-Then close with: `which direction calls?`
+But start slim. The checkpoint's job is to prompt a choice, not exhaustively document the options.
 
 ### Dialogue
 
 The user reacts:
 - Chooses a direction → proceed to write that chapter
-- "there's something more" → ask what's missing, adjust
+- "tell me more" / "what's at stake?" → expand the direction(s) they're curious about
+- "where are we?" / "remind me" → show "the world right now"
 - "combine these" → explore the hybrid
 - "none of these" → dig deeper, ask what they're sensing
 - "not now" → respect the pause
@@ -372,6 +356,7 @@ Before finishing, check:
 - [ ] **Aftermath**: Is the wanderer section purposeless action, not reflection?
 - [ ] **Immersion**: Every noun arises from the story world, not source material? (See soul.md → The Immersion Test)
 - [ ] **Anti-patterns clear**: No thematic echo, frictionless success, or paraphrase loops?
+- [ ] **Length**: Narrative is 1,200–1,600 words? (See craft.md → Chapter Length)
 
 ### The Editorial Pass
 

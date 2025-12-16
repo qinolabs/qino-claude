@@ -79,7 +79,7 @@ The principle is **grounded introduction through action**. But there are many wa
 <example>
 > A woman sat on an overturned hull near the waterline, mending a net with fingers that moved without looking.
 >
-> "From the interior," she said. Not a question.
+> "From the interior," she said. Her hands kept moving, unsurprised.
 </example>
 
 **Pattern B: In motion + ignoring**
@@ -113,7 +113,7 @@ The principle is **grounded introduction through action**. But there are many wa
 
 ### The Principle
 
-The technique is **action before explanation, depth through restraint**. The specific syntax (seated work, assertion dialogue, "Not a question") should vary. If you've used one pattern recently, use a different one.
+The technique is **action before explanation, depth through restraint**. Vary your approach chapter to chapter. If you've used seated work recently, try motion or occupied. If you've shown certainty through continuing action, try a revealing detail instead.
 
 ### No — only what's explicit
 
@@ -510,6 +510,51 @@ The wanderer said something sparse. The woman heard more than the words — she 
 </example>
 
 The response is flat acknowledgment. She heard only what was said. No perception, no completion, no depth created.
+
+---
+
+## Stance Through Action, Not Annotation
+
+### The Trap
+
+When dialogue is assertion rather than question, resist annotating it:
+
+<example>
+> "You're from the interior," she said. Not a question.
+</example>
+
+This is a shortcut. "Not a question" *tells* the reader about the dialogue instead of *showing* the character's certainty. It's easy to drop in after any declarative statement, which is why it gets overused.
+
+### The Fix
+
+Show stance through what the character does. Action reveals certainty better than annotation:
+
+**Annotation (tells):**
+> "Tea," they said. Not a question.
+
+**Action (shows):**
+> "Tea," they said, already reaching for the kettle.
+
+**Annotation:**
+> "You don't sleep much," Deren said. Not a question.
+
+**Action:**
+> "You don't sleep much." Deren was looking at the lamp oil — nearly gone.
+
+**Annotation:**
+> "You went to the water first," she said. Not a question.
+
+**Action:**
+> "You went to the water first." Her hands kept moving on the net, unsurprised.
+
+### The Principle
+
+When a character speaks with certainty, show it through:
+- **Already moving** — they don't wait for confirmation
+- **A revealing detail** — something that shows how they know
+- **Continuing what they were doing** — undisturbed, unsurprised
+
+Annotation ("Not a question," "Not unkindly," "Not an accusation") is shortcut. Action is craft.
 
 ---
 

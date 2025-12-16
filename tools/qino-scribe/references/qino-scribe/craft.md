@@ -59,6 +59,37 @@ arcs_begun: [list]
 
 ---
 
+## Chapter Length
+
+**Target: 1,200–1,600 words** of narrative content (excluding World Tokens and metadata).
+
+### Why This Range
+
+- **Episodic rhythm**: Each chapter should feel complete in one sitting — long enough for atmosphere and stakes, short enough to finish on a commute or break.
+- **New IP needs consistency**: Readers discovering an unfamiliar world need predictable commitment. Wide variance (900 words one chapter, 1,800 the next) erodes trust.
+- **The prose style reads slow**: Contemplative, atmospheric writing takes longer to absorb than action. Shorter chapters respect that pace.
+
+### What Counts
+
+- **Narrative**: Opening through the Wanderer section — the story itself.
+- **World Tokens**: Don't count toward the budget. These are reference material, not reading time.
+- **Metadata**: Doesn't count.
+
+### When to Check
+
+Glance at length after drafting, before the editorial pass. If you're significantly over (1,800+), ask:
+- Is there a scene that could be its own chapter?
+- Are characters explaining what the story already showed?
+- Is atmosphere doing work, or just existing?
+
+If you're significantly under (1,000-), ask:
+- Does this chapter have stakes, or just motion?
+- Is something being rushed that deserves breath?
+
+This is guidance, not a cap. A chapter that needs 1,700 words to land should take them. But consistent drift upward suggests the scribe is elaborating rather than discovering.
+
+---
+
 ## The Wanderer Section
 
 The chapter's closing, before World Tokens. The wanderer in aftermath — not reflecting, just present.
@@ -113,7 +144,7 @@ The path had a fork they didn't remember. They took the one that looked more wor
 
 The wanderer was still holding the rope when Selin found them.
 
-"You can let go now," she said. Not unkindly.
+"You can let go now." Selin was already reaching for the coil, making space.
 
 They looked at their hands. The rope had left marks.
 ```
