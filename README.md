@@ -176,7 +176,11 @@ Your ecosystem evolves through conversations and work that spans sessions. qino 
 
 ### Show, don't tell
 
-> *At Orith's Landing, Lira felt the pouch before she saw it. "The one who holds between will find the door," she said, as if remembering. Children on the platforms watched the wanderer like news arriving ahead of the river.*
+Example from this chronicle (Chapter 8):
+
+- **Git change:** Added new notes about an elder who recognized the pouch the wanderer carries.
+- **Chapter output:** The wanderer docks at Orith's Landing; Lira recognizes the pouch as something that passed through years ago; villagers already know the wanderer is coming.
+- **world.md update:** Added pressures about the pouch's history and news outrunning the river, plus tokens for Lira and Orith's Landing so later chapters can echo them.
 
 **Pressures** (`world.md`)
 
@@ -202,10 +206,10 @@ Known before they arrive. The pouch warms toward soon. The message — the one w
 
 ```markdown
 **Lira**
-Elder of Orith's Landing. Hands stained dark, eyes sharp with river light.
+Elder of Orith's Landing. Knows the pouch and its last carrier.
 
 **Orith's Landing**
-Platforms over fast water. Rope bridges, smoke rising, children who watch in practiced stillness.
+Platforms over fast water. Rope bridges, smoke, children who track arrivals.
 ```
 
 ```bash
