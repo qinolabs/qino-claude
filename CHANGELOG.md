@@ -10,6 +10,34 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.11.0] - 2025-12-16
+
+### qino Scribe
+
+#### Added
+- **Chapter snapshots** — chapters now live in directories (`NNN-slug/chapter.md`) with `world.md` and `arcs.md` snapshots taken at write time; enables accurate retroactive image generation using chapter-time world state
+- **Phase 7 (Snapshot)** — new process phase for creating world state snapshots after chapter completion
+- **Six story types** — expanded story discovery with Quiet Shift, Arrival, Departure, Return, Tension, and Resolution patterns
+- **Grounding guidance** — prevents abstraction drift by staying in specific, sensory details
+
+#### Changed
+- **Unified arcs registry** — arcs now tracked in single `arcs.md` file with motion states
+- **Deepened wanderer character** — richer guidance for the wanderer's interiority and presence
+- **Voice guidance distilled** — refined from style research into actionable craft patterns
+
+### qino Concept
+
+#### Added
+- **Ecology test command** (`/qino:test`) — validate concept coherence through structured testing
+- **Ecology tests reference** — framework for testing concept relationships
+
+#### Removed
+- **Ecosystem scope** — simplified API by removing separate ecosystem commands; functionality absorbed into existing commands
+- **`/qino:ecosystem` command** — use `/qino:home` instead
+- **ecosystem-spec.md, manifest-ecosystem-spec.md** — consolidated into existing specs
+
+---
+
 ## [0.10.0] - 2025-12-15
 
 ### qino Scribe

@@ -47,13 +47,12 @@
         {"src": "tools/qino-concept/commands/qino/import.md", "dest": "commands/qino/import.md"},
         {"src": "tools/qino-concept/commands/qino/capture.md", "dest": "commands/qino/capture.md"},
         {"src": "tools/qino-concept/commands/qino/init.md", "dest": "commands/qino/init.md"},
-        {"src": "tools/qino-concept/commands/qino/ecosystem.md", "dest": "commands/qino/ecosystem.md"},
+        {"src": "tools/qino-concept/commands/qino/test.md", "dest": "commands/qino/test.md"},
         {"src": "tools/qino-concept/agents/qino-concept-agent.md", "dest": "agents/qino-concept-agent.md"},
         {"src": "tools/qino-concept/references/qino-concept/concept-spec.md", "dest": "references/qino-concept/concept-spec.md"},
         {"src": "tools/qino-concept/references/qino-concept/manifest-project-spec.md", "dest": "references/qino-concept/manifest-project-spec.md"},
         {"src": "tools/qino-concept/references/qino-concept/design-philosophy.md", "dest": "references/qino-concept/design-philosophy.md"},
-        {"src": "tools/qino-concept/references/qino-concept/ecosystem-spec.md", "dest": "references/qino-concept/ecosystem-spec.md"},
-        {"src": "tools/qino-concept/references/qino-concept/manifest-ecosystem-spec.md", "dest": "references/qino-concept/manifest-ecosystem-spec.md"}
+        {"src": "tools/qino-concept/references/qino-concept/ecology-tests.md", "dest": "references/qino-concept/ecology-tests.md"}
       ]
     },
     "qino-scribe": {

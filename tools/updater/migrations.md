@@ -12,6 +12,29 @@ Each version section includes:
 
 ---
 
+## v0.11.0
+
+**Summary**: qino Scribe adds chapter snapshots; qino Concept ecosystem commands removed (functionality absorbed into existing commands).
+
+**Delete** (qino-concept):
+- `.claude/commands/qino/ecosystem.md` (use `/qino:home` instead)
+- `.claude/references/qino-concept/ecosystem-spec.md` (merged into other specs)
+- `.claude/references/qino-concept/manifest-ecosystem-spec.md` (merged into manifest-project-spec.md)
+
+**New** (qino-concept):
+- `.claude/commands/qino/test.md` — ecology testing for concept coherence
+- `.claude/references/qino-concept/ecology-tests.md` — test framework
+
+**Changed** (qino-scribe):
+- Chapters now live in directories (`NNN-slug/chapter.md`) with world.md and arcs.md snapshots
+- Enables accurate retroactive image generation using chapter-time world state
+
+**User action**:
+- Delete removed qino-concept files before updating
+- Existing chronicles work but new chapters use directory structure
+
+---
+
 ## v0.10.0
 
 **Summary**: qino Scribe adopts agent architecture — identity embodied, not loaded.

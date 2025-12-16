@@ -1,7 +1,7 @@
 {
-  "version": "3.1.0",
+  "version": "3.2.0",
   "name": "qino-scribe",
   "description": "Chronicle generation with embodied agent identity",
-  "created": "2025-12-15",
+  "created": "2025-12-16",
   "status": "stable"
 }
