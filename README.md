@@ -130,13 +130,25 @@ The tool asks a question. You respond. The tool surfaces something back — a re
 
 Your perceiving is the process. The agent isn't extracting information from you — it's providing a surface where you can meet your own sense of what matters. The dialogue becomes an interface for encountering yourself.
 
+### Working together in practice
+
+Arrive, bring material in, notice what matters, and let the whole system echo back.
+
+- `/qino:home` is the quiet landing. It shows threads between concepts, notes waiting to be woven, and recent movement. It is the easiest way to feel where to go next.
+- `/qino:import` brings outside notes into the manifest. What you don't carry into a concept gets held; Home surfaces those held threads later.
+- `/qino:explore [concept-id]` turns toward one concept (or two at once) and follows the alive thread. Imported notes and captures appear as starting points.
+- `/qino:capture [observation]` is the immediate notebook. Essence is saved, references stay open until you connect them or let them settle. Those captures later appear in Explore suggestions.
+- `/qino:test [concept-id]` runs ecology tests. The noticing becomes a note with ecology metadata, so Home can show what's been quiet and what keeps echoing.
+
+Home, Import, Explore, Capture, and Test feed each other: arrivals reveal what was imported; explorations surface captures; tests seed new captures; everything held quietly reappears the next time you come home.
+
 ```bash
 /qino:init
 /qino:home
-/qino:explore concept-name
+/qino:explore concept-id [other-concept-id]
 /qino:import path/to/notes.md
-/qino:capture
-/qino:ecosystem
+/qino:capture [observation]
+/qino:test [concept-id]
 ```
 
 *[Source](tools/qino-concept/) · [Installation](tools/qino-concept/README.md#installation)*
@@ -145,34 +157,37 @@ Your perceiving is the process. The agent isn't extracting information from you 
 
 ## qino Scribe
 
-Adventure emerges from pressure. The chronicle is a living world.
+qino Scribe keeps the chronicle alive. It reads the git range, grounds in `world.md`, then writes a chapter where the wanderer acts and the world pushes back. The constraints are there to protect story craft: pressure before plot, world that sees the wanderer, action that costs something.
+
+In this repository's chronicle, the wanderer is ferrying a warming pouch upriver. Villages know about them before they arrive. Lira at Orith's Landing recognizes the pouch from years ago; Seren fears the writing filling his margins; the river itself carries news. The chronicle only moves when the wanderer does — and when the world answers.
 
 ### Pressure-first chronicle
 
-Your ecosystem evolves through conversations and work that spans sessions. qino Scribe turns that movement into a fantasy chronicle with action, consequence, and a wanderer who acts — not documentation in costume.
+Your ecosystem evolves through conversations and work that spans sessions. qino Scribe turns that movement into a fantasy chronicle with action, consequence, and a wanderer who acts — not documentation in costume. Each chapter ends with pressures still building so the next one has somewhere to land.
 
-### How it works (six phases)
+### How the system holds the craft (six phases)
 
-- **Ground before diff** — read the theme and world, note unexplored places and figures waiting to appear
-- **Observe what changed** — read the git range, ask who in-world is disturbed and what could go wrong
+- **Ground before diff** — read the theme and world, find where tension already waits
+- **Observe what changed** — read the git range, ask who in-world feels it and what could go wrong
 - **Discover four options** — Expected, Unexpected Location, Complication, Journey; choose the most alive (action + stakes)
 - **Propose → Write** — present the beat, then draft with one explanatory exchange max; the world must act, and the wanderer must risk something
 - **Update world.md** — pressures, wanderer, characters, locations, arcs; add journal entries when arcs complete
+- **Keep the ledger** — world tokens stay small and specific so later chapters can echo them without breaking immersion
 
 ### Show, don't tell
 
-> *The receiving hall's windows were salted with mist. Selin kept glancing east, counting the beats between lanterns. "Three days late," she said, not to the wanderer but to the empty air. The room seemed to listen back.*
+> *At Orith's Landing, Lira felt the pouch before she saw it. "The one who holds between will find the door," she said, as if remembering. Children on the platforms watched the wanderer like news arriving ahead of the river.*
 
 **Pressures** (`world.md`)
 
 ```markdown
 ## Pressures
 
-### The Valley Traders Are Late
-Three days without word. Selin keeps glancing east.
+### The Pouch's History
+It passed through here before. Now it's going home. What waits for it there?
 
-### The Third Stack
-Whatever Selin hid in the third stack is changing her.
+### Word Traveling Faster Than Water
+The river villages know about the wanderer. News moves upstream ahead of them.
 ```
 
 **Aftermath** (wanderer section)
@@ -180,21 +195,22 @@ Whatever Selin hid in the third stack is changing her.
 ```markdown
 ## The Wanderer
 
-The wanderer took the long way back. A cup sat on the sill that hadn't been there. The forked path looked more worn on the route they didn't take.
+Known before they arrive. The pouch warms toward soon. The message — the one who holds between will find the door — still unread.
 ```
 
 **World Tokens**
 
 ```markdown
-**Selin**
-Cartographer. Eyes like deep space. Holds her stylus like a conductor's baton.
+**Lira**
+Elder of Orith's Landing. Hands stained dark, eyes sharp with river light.
 
-**The Receiving Hall**
-Curved desks, luminous paper, star-chart dust in the air.
+**Orith's Landing**
+Platforms over fast water. Rope bridges, smoke rising, children who watch in practiced stillness.
 ```
 
 ```bash
 /scribe:chapter
+/scribe:chapter from_ref to_ref   # retroactive chapter for a git range
 ```
 
 *[Source](tools/qino-scribe/) · [Installation](tools/qino-scribe/README.md#installation)*
