@@ -13,7 +13,7 @@
       "written": "2025-12-13T00:00:00Z",
       "git_ref_start": null,
       "git_ref_end": "v0.1.0",
-      "path": "chapters/001-what-the-water-brings.md"
+      "path": "chapters/001-what-the-water-brings/chapter.md"
     },
     {
       "number": 2,
@@ -22,7 +22,7 @@
       "written": "2025-12-13T00:00:00Z",
       "git_ref_start": "v0.1.0",
       "git_ref_end": "v0.2.1",
-      "path": "chapters/002-the-weight-of-holding.md"
+      "path": "chapters/002-the-weight-of-holding/chapter.md"
     },
     {
       "number": 3,
@@ -31,7 +31,7 @@
       "written": "2025-12-13T00:00:00Z",
       "git_ref_start": "v0.2.1",
       "git_ref_end": "v0.3.0",
-      "path": "chapters/003-the-man-who-never-came-to-the-water.md"
+      "path": "chapters/003-the-man-who-never-came-to-the-water/chapter.md"
     },
     {
       "number": 4,
@@ -40,7 +40,7 @@
       "written": "2025-12-13T00:00:00Z",
       "git_ref_start": "v0.3.0",
       "git_ref_end": "v0.4.0",
-      "path": "chapters/004-the-threads-that-move.md"
+      "path": "chapters/004-the-threads-that-move/chapter.md"
     },
     {
       "number": 5,
@@ -49,7 +49,7 @@
       "written": "2025-12-13T12:00:00Z",
       "git_ref_start": "v0.4.0",
       "git_ref_end": "v0.5.2",
-      "path": "chapters/005-the-one-who-goes.md"
+      "path": "chapters/005-the-one-who-goes/chapter.md"
     },
     {
       "number": 6,
@@ -58,7 +58,7 @@
       "written": "2025-12-15T00:00:00Z",
       "git_ref_start": "v0.5.2",
       "git_ref_end": "v0.6.1",
-      "path": "chapters/006-the-man-who-came-to-the-water.md"
+      "path": "chapters/006-the-man-who-came-to-the-water/chapter.md"
     },
     {
       "number": 7,
@@ -67,7 +67,7 @@
       "written": "2025-12-15T00:00:00Z",
       "git_ref_start": "v0.6.1",
       "git_ref_end": "v0.7.0",
-      "path": "chapters/007-what-stillness-holds.md"
+      "path": "chapters/007-what-stillness-holds/chapter.md"
     }
   ]
 }
