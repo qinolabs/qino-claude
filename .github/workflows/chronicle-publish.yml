@@ -88,8 +88,8 @@ jobs:
           fi
           echo "Force flag: $FORCE_JSON"
 
-          # Build full payload
-          PAYLOAD=$(jq -n \
+          # Build full payload and write to temp file (avoids "argument list too long" error)
+          jq -n \
             --arg repoName "$REPO_NAME" \
             --arg world "$WORLD_CONTENT" \
             --arg theme "$THEME_CONTENT" \
@@ -97,15 +97,15 @@ jobs:
             --argjson manifest "$MANIFEST_JSON" \
             --argjson chapters "$CHAPTERS_JSON" \
             --argjson force "$FORCE_JSON" \
-            '{repoName: $repoName, world: $world, theme: $theme, arcs: $arcs, manifest: $manifest, chapters: $chapters, force: $force}')
+            '{repoName: $repoName, world: $world, theme: $theme, arcs: $arcs, manifest: $manifest, chapters: $chapters, force: $force}' > /tmp/payload.json
 
           echo "Publishing $REPO_NAME with $(echo "$CHAPTERS_JSON" | jq 'length') chapters (force: $FORCE_JSON)"
 
-          # POST to backend
+          # POST to backend (using file to handle large payloads)
           RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "$BACKEND_URL/publish" \
             -H "Content-Type: application/json" \
             -H "X-API-Key: $PUBLISH_API_KEY" \
-            -d "$PAYLOAD")
+            -d @/tmp/payload.json)
 
           HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
           BODY=$(echo "$RESPONSE" | sed '$d')
