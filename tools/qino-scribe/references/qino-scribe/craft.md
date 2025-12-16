@@ -41,20 +41,6 @@ has mood, has history.]
 
 **[Token Name]**
 [2-3 lines of presence]
-
----
-
-<!-- scribe metadata
-git_ref_start: [previous chapter's git_ref_end, or null]
-git_ref_end: [HEAD at time of writing]
-concepts_touched: [list]
-written: [ISO timestamp]
-
-characters_appeared: [list]
-locations_visited: [list]
-arcs_advanced: [list]
-arcs_begun: [list]
--->
 ```
 
 ---

@@ -141,15 +141,3 @@ New arrivals in the Mender's web. Connections she didn't draw but should have. T
 Numbers in Seren's careful hand. Not data — a direction. Upriver, toward the interior, toward whatever opened. They wait in the wanderer's pocket, patient as seeds.
 
 ---
-
-<!-- scribe metadata
-git_ref_start: v0.3.0
-git_ref_end: v0.4.0
-concepts_touched: [manifest, unified-notes, mirror-principle, anchoring, multi-reference]
-written: 2025-12-13T00:00:00Z
-
-characters_appeared: [The Wanderer, The Mender]
-locations_visited: [The Mender's Building, The Meeting Point, stone quay]
-arcs_advanced: [The Writing in the Margins, The Mender's Solitude, The Wanderer's Hands]
-arcs_begun: []
--->

@@ -113,15 +113,3 @@ Colors spanning walls between papers. Some taut, some slack. Connections not obv
 Record-keeper in town. Tracks what arrives by sea. Has been doing it longer than the Mender has been alive. Never comes to the water himself. Watches patterns.
 
 ---
-
-<!-- scribe metadata
-git_ref_start: cd29298
-git_ref_end: 7c91178
-concepts_touched: [ecosystem, connections, patterns, versions, tracking, memory]
-written: 2025-12-13T00:00:00Z
-
-characters_appeared: [The Mender, The Wanderer]
-locations_visited: [The Mender's Building, Town streets]
-arcs_advanced: [The Wanderer's Hands]
-arcs_begun: [The Flood from Upriver, The Pattern-Keeper's Question]
--->

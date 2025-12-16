@@ -156,16 +156,3 @@ Rough with fifteen years of rope and oar. The calluses have patterns. She works 
 Something shifts inside. Warmer than body heat now, warmer than sun. The wanderer's hand reaches for it without deciding. *Not yet* — but soon.
 
 ---
-
-<!-- scribe metadata
-git_ref_start: v0.6.1
-git_ref_end: v0.7.0
-concepts_touched: [qino-eval arrival, scribe architecture split, soul-craft-process separation]
-written: 2025-12-15T00:00:00Z
-
-characters_appeared: [The Wanderer, Deren]
-locations_visited: [The River, The Sandbar]
-arcs_advanced: [The Journey Upstream, The Wanderer's Hands]
-arcs_begun: []
-arcs_resolved: []
--->

@@ -148,15 +148,3 @@ Arrived from upriver a year ago. Never opened. Something inside that shifts betw
 Where the brown water runs, silt-heavy from the interior. Shallow-draft boats. A different quiet than the harbor — expectant, not patient.
 
 ---
-
-<!-- scribe metadata
-git_ref_start: v0.4.0
-git_ref_end: v0.5.2
-concepts_touched: [capture-rename, world-tokens, theme-seeding, voice-guide, permission-modes]
-written: 2025-12-13T12:00:00Z
-
-characters_appeared: [The Wanderer, Deren, The Mender]
-locations_visited: [River Quay, The Mender's Building]
-arcs_advanced: [The Flood from Upriver, The Wanderer's Hands]
-arcs_begun: [The Journey Upstream]
--->

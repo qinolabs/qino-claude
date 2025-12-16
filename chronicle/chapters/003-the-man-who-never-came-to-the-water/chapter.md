@@ -92,15 +92,3 @@ Where the steps end, looking out over the harbor. Smaller than the Mender's, den
 In handwriting that isn't Seren's. Fresh ink with a mineral smell. It looks at facts and names what they mean. Not facts — something else. *The keeper counts arrivals. But who arrives at the keeper?*
 
 ---
-
-<!-- scribe metadata
-git_ref_start: 7c91178
-git_ref_end: 65b5c65
-concepts_touched: [qino-scribe, chronicling, ecosystem signals, release process]
-written: 2025-12-13T00:00:00Z
-
-characters_appeared: [The Wanderer, Seren]
-locations_visited: [Seren's Building, hillside steps]
-arcs_advanced: [The Pattern-Keeper's Question, The Flood from Upriver]
-arcs_begun: [The Writing in the Margins]
--->

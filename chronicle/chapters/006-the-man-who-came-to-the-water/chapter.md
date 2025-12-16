@@ -174,16 +174,3 @@ The man who never comes to the river, standing on the quay at dawn. Grey robes w
 Where the current runs fastest, brown with silt from the interior. The town disappears behind the first bend. Ahead: green distance, the unknown, eight days if the river is kind.
 
 ---
-
-<!-- scribe metadata
-git_ref_start: v0.5.2
-git_ref_end: v0.6.1
-concepts_touched: [voice-guide-wanderer, environmental-relational, updater-selective]
-written: 2025-12-15T00:00:00Z
-
-characters_appeared: [The Wanderer, Seren, Deren]
-locations_visited: [River Quay, The River Channel]
-arcs_advanced: [The Journey Upstream, The Debt to Seren]
-arcs_resolved: [The Debt to Seren]
-arcs_begun: []
--->

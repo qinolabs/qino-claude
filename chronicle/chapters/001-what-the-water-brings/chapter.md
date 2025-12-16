@@ -93,15 +93,3 @@ Works where river meets sea. Patience worn into her hands like salt stain. Sorts
 Stone quay at the water's edge where brown current surrenders to grey-green tide. Things wash up here that have been traveling a long time. Some know what they are. Some are still asking.
 
 ---
-
-<!-- scribe metadata
-git_ref_start: ab2c143
-git_ref_end: cd29298
-concepts_touched: [origin, patience, alive-thread, sorting, arrival]
-written: 2025-12-13T00:00:00Z
-
-characters_appeared: [The Mender]
-locations_visited: [The Meeting Point]
-arcs_advanced: []
-arcs_begun: [The Wanderer's Hands]
--->
