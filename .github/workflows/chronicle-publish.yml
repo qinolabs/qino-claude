@@ -32,18 +32,14 @@ jobs:
           REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
           CHRONICLE_PATH="chronicle"
 
-          # Read world.md, theme.md, and arcs.md
+          # Read world.md and theme.md
           WORLD_CONTENT=""
           THEME_CONTENT=""
-          ARCS_CONTENT=""
           if [ -f "$CHRONICLE_PATH/world.md" ]; then
             WORLD_CONTENT=$(cat "$CHRONICLE_PATH/world.md")
           fi
           if [ -f "$CHRONICLE_PATH/theme.md" ]; then
             THEME_CONTENT=$(cat "$CHRONICLE_PATH/theme.md")
-          fi
-          if [ -f "$CHRONICLE_PATH/arcs.md" ]; then
-            ARCS_CONTENT=$(cat "$CHRONICLE_PATH/arcs.md")
           fi
 
           # Read manifest.json if it exists
@@ -52,18 +48,39 @@ jobs:
             MANIFEST_JSON=$(cat "$CHRONICLE_PATH/manifest.json")
           fi
 
-          # Build chapters array by reading each chapter file
+          # Read arcs.md if it exists
+          ARCS_CONTENT=""
+          if [ -f "$CHRONICLE_PATH/arcs.md" ]; then
+            ARCS_CONTENT=$(cat "$CHRONICLE_PATH/arcs.md")
+          fi
+
+          # Build chapters array from directory structure (chapters/{slug}/chapter.md)
           CHAPTERS_JSON="[]"
-          for chapter_file in "$CHRONICLE_PATH/chapters"/*.md; do
-            if [ -f "$chapter_file" ]; then
-              slug=$(basename "$chapter_file" .md)
-              content=$(cat "$chapter_file")
-              CHAPTERS_JSON=$(echo "$CHAPTERS_JSON" | jq --arg slug "$slug" --arg content "$content" '. + [{slug: $slug, content: $content}]')
+          for chapter_dir in "$CHRONICLE_PATH/chapters"/*/; do
+            if [ -d "$chapter_dir" ] && [ -f "${chapter_dir}chapter.md" ]; then
+              slug=$(basename "$chapter_dir")
+              content=$(cat "${chapter_dir}chapter.md")
+
+              # Read snapshots
+              world_snapshot=""
+              arcs_snapshot=""
+              if [ -f "${chapter_dir}world.md" ]; then
+                world_snapshot=$(cat "${chapter_dir}world.md")
+              fi
+              if [ -f "${chapter_dir}arcs.md" ]; then
+                arcs_snapshot=$(cat "${chapter_dir}arcs.md")
+              fi
+
+              CHAPTERS_JSON=$(echo "$CHAPTERS_JSON" | jq \
+                --arg slug "$slug" \
+                --arg content "$content" \
+                --arg worldSnapshot "$world_snapshot" \
+                --arg arcsSnapshot "$arcs_snapshot" \
+                '. + [{slug: $slug, content: $content, worldSnapshot: (if $worldSnapshot == "" then null else $worldSnapshot end), arcsSnapshot: (if $arcsSnapshot == "" then null else $arcsSnapshot end)}]')
             fi
           done
 
           # Determine force flag (from workflow input or default to false)
-          # Convert string input to JSON boolean for jq
           if [ "${{ inputs.force }}" = "true" ]; then
             FORCE_JSON="true"
           else
