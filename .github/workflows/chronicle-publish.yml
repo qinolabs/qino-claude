@@ -31,81 +31,72 @@ jobs:
         run: |
           REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
           CHRONICLE_PATH="chronicle"
+          FORCE_FLAG="${{ inputs.force || 'false' }}"
+          if [ -z "$FORCE_FLAG" ]; then FORCE_FLAG="false"; fi
+          PAYLOAD_FILE=$(mktemp)
+          export REPO_NAME CHRONICLE_PATH FORCE_FLAG PAYLOAD_FILE
 
-          # Read world.md and theme.md
-          WORLD_CONTENT=""
-          THEME_CONTENT=""
-          if [ -f "$CHRONICLE_PATH/world.md" ]; then
-            WORLD_CONTENT=$(cat "$CHRONICLE_PATH/world.md")
-          fi
-          if [ -f "$CHRONICLE_PATH/theme.md" ]; then
-            THEME_CONTENT=$(cat "$CHRONICLE_PATH/theme.md")
-          fi
+          python <<'PY'
+          import json, os
+          from pathlib import Path
 
-          # Read manifest.json if it exists
-          MANIFEST_JSON="null"
-          if [ -f "$CHRONICLE_PATH/manifest.json" ]; then
-            MANIFEST_JSON=$(cat "$CHRONICLE_PATH/manifest.json")
-          fi
+          repo_name = os.environ["REPO_NAME"]
+          chronicle_path = Path(os.environ.get("CHRONICLE_PATH", "chronicle"))
+          payload_file = Path(os.environ["PAYLOAD_FILE"])
+          force_flag = os.environ.get("FORCE_FLAG", "false").lower() == "true"
 
-          # Read arcs.md if it exists
-          ARCS_CONTENT=""
-          if [ -f "$CHRONICLE_PATH/arcs.md" ]; then
-            ARCS_CONTENT=$(cat "$CHRONICLE_PATH/arcs.md")
-          fi
+          def read_text(path: Path) -> str:
+              return path.read_text() if path.is_file() else ""
 
-          # Build chapters array from directory structure (chapters/{slug}/chapter.md)
-          CHAPTERS_JSON="[]"
-          for chapter_dir in "$CHRONICLE_PATH/chapters"/*/; do
-            if [ -d "$chapter_dir" ] && [ -f "${chapter_dir}chapter.md" ]; then
-              slug=$(basename "$chapter_dir")
-              content=$(cat "${chapter_dir}chapter.md")
+          payload = {
+              "repoName": repo_name,
+              "world": read_text(chronicle_path / "world.md"),
+              "theme": read_text(chronicle_path / "theme.md"),
+              "arcs": read_text(chronicle_path / "arcs.md"),
+              "force": force_flag,
+          }
 
-              # Read snapshots
-              world_snapshot=""
-              arcs_snapshot=""
-              if [ -f "${chapter_dir}world.md" ]; then
-                world_snapshot=$(cat "${chapter_dir}world.md")
-              fi
-              if [ -f "${chapter_dir}arcs.md" ]; then
-                arcs_snapshot=$(cat "${chapter_dir}arcs.md")
-              fi
+          manifest_path = chronicle_path / "manifest.json"
+          if manifest_path.is_file():
+              try:
+                  payload["manifest"] = json.loads(manifest_path.read_text())
+              except Exception:
+                  payload["manifest"] = None
+          else:
+              payload["manifest"] = None
 
-              CHAPTERS_JSON=$(echo "$CHAPTERS_JSON" | jq \
-                --arg slug "$slug" \
-                --arg content "$content" \
-                --arg worldSnapshot "$world_snapshot" \
-                --arg arcsSnapshot "$arcs_snapshot" \
-                '. + [{slug: $slug, content: $content, worldSnapshot: (if $worldSnapshot == "" then null else $worldSnapshot end), arcsSnapshot: (if $arcsSnapshot == "" then null else $arcsSnapshot end)}]')
-            fi
-          done
+          chapters_dir = chronicle_path / "chapters"
+          chapters = []
+          if chapters_dir.is_dir():
+              for chapter_dir in sorted(chapters_dir.iterdir()):
+                  if not chapter_dir.is_dir():
+                      continue
+                  chapter_file = chapter_dir / "chapter.md"
+                  if not chapter_file.is_file():
+                      continue
 
-          # Determine force flag (from workflow input or default to false)
-          if [ "${{ inputs.force }}" = "true" ]; then
-            FORCE_JSON="true"
-          else
-            FORCE_JSON="false"
-          fi
-          echo "Force flag: $FORCE_JSON"
+                  chapter = {
+                      "slug": chapter_dir.name,
+                      "content": chapter_file.read_text(),
+                  }
+                  world_snapshot = chapter_dir / "world.md"
+                  arcs_snapshot = chapter_dir / "arcs.md"
+                  if world_snapshot.is_file():
+                      chapter["worldSnapshot"] = world_snapshot.read_text()
+                  if arcs_snapshot.is_file():
+                      chapter["arcsSnapshot"] = arcs_snapshot.read_text()
+                  chapters.append(chapter)
 
-          # Build full payload and write to temp file (avoids "argument list too long" error)
-          jq -n \
-            --arg repoName "$REPO_NAME" \
-            --arg world "$WORLD_CONTENT" \
-            --arg theme "$THEME_CONTENT" \
-            --arg arcs "$ARCS_CONTENT" \
-            --argjson manifest "$MANIFEST_JSON" \
-            --argjson chapters "$CHAPTERS_JSON" \
-            --argjson force "$FORCE_JSON" \
-            '{repoName: $repoName, world: $world, theme: $theme, arcs: $arcs, manifest: $manifest, chapters: $chapters, force: $force}' > /tmp/payload.json
+          payload["chapters"] = chapters
 
-          echo "Publishing $REPO_NAME with $(echo "$CHAPTERS_JSON" | jq 'length') chapters (force: $FORCE_JSON)"
+          payload_file.write_text(json.dumps(payload))
+          print(f"Built payload with {len(chapters)} chapters (force: {force_flag}) -> {payload_file}")
+          PY
 
-          # POST to backend (using file to handle large payloads)
           RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "$BACKEND_URL/publish" \
             -H "Content-Type: application/json" \
             -H "X-API-Key: $PUBLISH_API_KEY" \
-            -d @/tmp/payload.json)
+            -d @"$PAYLOAD_FILE")
 
           HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
           BODY=$(echo "$RESPONSE" | sed '$d')
