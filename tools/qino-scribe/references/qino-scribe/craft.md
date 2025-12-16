@@ -262,8 +262,8 @@ Journeys (this shape) often hold other shapes within them. A journey might revea
 chronicle/
 ├── manifest.json      # Chronicle state and chapter index
 ├── theme.md           # The world's seed (required)
-├── world.md           # Living world-state
-├── journal.md         # Completed arcs (created when first arc completes)
+├── world.md           # Living world-state (characters, locations, pressures)
+├── arcs.md            # All arcs (in motion + completed) with chapter ranges
 └── chapters/
     ├── 001-slug.md
     └── ...
@@ -371,18 +371,6 @@ First appeared: [chapter, circumstance]
 
 ---
 
-## Arcs in Motion
-
-### [Arc Name]
-*Shape:* [hidden / motion / building / between / calling outward]
-*Scale:* [quick / has weight / long]
-*Holds:* [the question this arc is exploring]
-*Moves toward:* [what might resolve it — direction, not script]
-
-[Current state — what's happening now]
-
----
-
 ## The Season
 
 [The larger rhythm — what kind of time this is]
@@ -398,7 +386,8 @@ First appeared: [chapter, circumstance]
 2. **The Wanderer** — What pulls at them now? What do they carry?
 3. **Characters** — Anyone new? Anyone deepened?
 4. **Locations** — Anywhere new? Anywhere changed?
-5. **Arcs** — What advanced? What began?
+
+(Arcs are tracked separately in arcs.md — see below.)
 
 ### Pressures Are Critical
 
@@ -411,31 +400,52 @@ After every chapter, ask:
 
 ---
 
-## journal.md Structure
+## arcs.md Structure
 
-The journal holds completed arcs — memory of what the chronicle has lived through. Created when the first arc completes.
+The arcs file tracks all narrative arcs — both in motion and completed — with chapter ranges for temporal display.
 
 ```markdown
-# Journal
+# Arcs
 
-*Memory of completed significance.*
+*Narrative threads — in motion and complete.*
 
 ---
 
 ## [Arc Name]
 
-*Shape:* [which of the five]
-*Chapters:* [which chapters it spanned]
+*Shape:* [hidden / motion / building / between / calling outward]
+*Chapters:* [start]-[end] or [start]- (ongoing)
+
+**In motion:**
+*Holds:* [the question this arc is exploring]
+*Moves toward:* [what might resolve it — direction, not script]
+
+**Completed:**
 *Resolved:* [how it ended — one line]
-
-**What it yielded:**
-[What the world now has, knows, or lost]
-
-**What changed between people:**
-[Relational shifts that persist]
+*Yielded:*
+- [What the world now has, knows, or lost]
+*Changed between people:*
+- [Relational shifts that persist]
 ```
 
-Journeys naturally have more to say: companions who traveled, the route taken, what was discovered. This emerges from the shape, not a separate template.
+### Chapter Range Syntax
+
+- `*Chapters:* 2-5` — Arc completed (chapters 2 through 5)
+- `*Chapters:* 6-` — Arc in motion (started chapter 6, ongoing)
+
+### Arc Sections
+
+**All arcs have:**
+- Shape and chapter range
+- **In motion** section with *Holds* and *Moves toward*
+
+**Completed arcs also have:**
+- **Completed** section with *Resolved*, *Yielded*, *Changed between people*
+
+When an arc completes:
+1. Change `X-` to `X-Y` where Y is the ending chapter
+2. Add the **Completed** section
+3. Keep the **In motion** section as historical context
 
 ---
 
@@ -448,10 +458,15 @@ When no chronicle exists:
 3. Create `chronicle/theme.md` with user's theme
 4. Create `chronicle/manifest.json` with empty chapters
 5. Create `chronicle/world.md` with initial structure
-6. Write first chapter
+6. Create `chronicle/arcs.md` with initial structure
+7. Write first chapter
 
 Initial world.md should include:
 - Empty Pressures section (will populate after first chapter)
 - The World's Breath based on theme
 - Sparse Wanderer section (will grow)
 - Unexplored locations from theme
+
+Initial arcs.md should include:
+- Title and description line
+- Empty (arcs begin when the story creates them)

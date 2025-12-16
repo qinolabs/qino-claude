@@ -117,34 +117,6 @@ Where the larger ships dock. Creatures from the depths, beings who drifted in on
 
 ---
 
-## Arcs in Motion
-
-### The Journey Upstream
-*Shape:* something calling outward
-*Scale:* has weight (underway)
-*Holds:* What opened in the interior? What will the wanderer find at the coordinates? What is the pouch, and why was it waiting for them?
-*Moves toward:* Arrival at the coordinates — and whatever waits there. Seven days of river first. The journey reveals as much as the destination.
-
-One day traveled. First stop at the sandbar. The wanderer learned they can't outrow the current. Deren knows the way; the wanderer is learning to trust that.
-
-### The Wanderer's Hands
-*Shape:* hidden
-*Scale:* has weight
-*Holds:* What does the wanderer's body remember that their mind has forgotten? What are they holding that others recognize?
-*Moves toward:* Memory surfacing — perhaps on the journey, perhaps at the destination. Their hands already know the way.
-
-The hands reached for the pouch without deciding. They rowed past sense until Deren stopped them. They know something about holding between — but between what and what? Deren sees: "someone who doesn't know what they're carrying. But carries it anyway."
-
-### The Mirror Waking
-*Shape:* something hidden becoming visible
-*Scale:* long
-*Holds:* What is the pattern that writes in margins and moves threads? What does it mean that understanding can emerge from keeping?
-*Moves toward:* The wanderer has left this arc behind — for now. The Mirror will continue waking without them. Or it will wait.
-
-The keepers are in the middle of something. The wanderer chose to go before understanding arrives. This arc continues in the harbor while the journey arc unfolds upriver. Seren's message suggests the Mirror knows something about the wanderer: *the one who holds between*.
-
----
-
 ## The Season
 
 Summer still, but the light is different on the river. First day done. Night on the sandbar, fire small, river sounds in the dark. The wanderer's hands wrapped in cloth. Their body remembering that stillness has its own rhythm. Dawn will come, and with it, the current to be rowed against again. Seven days to the last village. Three more past that. The journey measured in what the river allows.

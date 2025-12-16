@@ -51,11 +51,13 @@ Read `chronicle/world.md`. Pay special attention to:
 
 **Pressures** — What's building? What's about to break? This is your fuel.
 
-**Arcs in Motion** — What's unresolved? What's been waiting for chapters?
-
 **The Wanderer** — What pulls at them? What can't they stop thinking about?
 
 **Unexplored Locations** — What places exist in the theme that haven't appeared?
+
+Then read `chronicle/arcs.md`. Note:
+
+**Arcs in Motion** — What's unresolved? What's been waiting for chapters? (Look for arcs with `*Chapters:* N-` format — these are ongoing.)
 
 ### 1.3 Read Recent History
 
@@ -72,15 +74,15 @@ Read the last chapter (or last two) for:
 
 You will actively diverge from these in Phase 3.
 
-### 1.4 Check the Journal
+### 1.4 Check Completed Arcs
 
-If `chronicle/journal.md` exists, glance at it. Ask:
+Glance at completed arcs in `chronicle/arcs.md` (those with `*Chapters:* X-Y` format). Ask:
 
 - Is a character appearing who lived through a completed arc?
 - Is a location relevant that an arc touched?
 - Is something resurfacing that was yielded by a completed arc?
 
-If yes — read that entry for texture before proceeding.
+If yes — read that arc's **Completed** section for texture before proceeding.
 
 ### 1.5 The Grounding Check
 
@@ -438,31 +440,31 @@ Every chapter should leave at least one pressure building.
 - New locations with their atmospheres
 - Update Unexplored with what's still waiting
 
-### Update Arcs
+### Update Arcs (in arcs.md)
 
 **If an arc began this chapter:**
 
 Sense its shape (see craft.md → Arc Shapes):
 - Is this something hidden? In motion? Building? Between people? Calling outward?
-- What's its scale? (quick / has weight / long)
 - What question does it hold?
 - What might move it toward resolution?
 
-Write it to Arcs in Motion with shape, scale, holds, moves toward.
+Add to `chronicle/arcs.md` with:
+- Shape and `*Chapters:* N-` (chapter number followed by dash, indicating ongoing)
+- **In motion** section with *Holds* and *Moves toward*
 
 **If an arc advanced this chapter:**
 
-Update its current state. Has anything shifted in what it holds or where it's moving?
+Update its **In motion** section. Has anything shifted in what it holds or where it's moving?
 
 **If an arc completed this chapter:**
 
-1. Remove from Arcs in Motion
-2. Write to `chronicle/journal.md`:
-   - Shape, chapters spanned, how it resolved
-   - What it yielded (what the world now has, knows, or lost)
-   - What changed between people
-
-Create journal.md if this is the first completed arc.
+1. Change `*Chapters:* X-` to `*Chapters:* X-Y` where Y is the ending chapter
+2. Add the **Completed** section:
+   - *Resolved:* (how it ended — one line)
+   - *Yielded:* (what the world now has, knows, or lost)
+   - *Changed between people:* (relational shifts that persist)
+3. Keep the **In motion** section as historical context
 
 ---
 
@@ -491,6 +493,7 @@ Wait for their response.
 3. Create `chronicle/manifest.json` with empty chapters array
 4. Create `chronicle/chapters/` directory
 5. Create `chronicle/world.md` with initial structure
+6. Create `chronicle/arcs.md` with initial structure
 
 For initial world.md:
 - Pressures section starts empty (will fill after first chapter)
@@ -498,6 +501,10 @@ For initial world.md:
 - Wanderer section sparse (will grow)
 - Characters/Locations empty
 - **Unexplored section populated from theme** — list places the theme implies
+
+For initial arcs.md:
+- Title and description line
+- Empty (arcs begin when the story creates them)
 
 ### Step 3: Write First Chapter
 
