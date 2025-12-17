@@ -54,25 +54,11 @@ The door opened.
 
 A woman stepped out. Older than the grey-haired one, but straighter, her eyes sharp in a face that had weathered decades of river light. She wore her hair in a single braid that fell past her waist, and her hands — the wanderer noticed her hands first — were stained with something dark. Ink, maybe. Or something else.
 
-"The one who came down." Lira's voice was like the river itself — low, moving, carrying things beneath the surface. "We felt you pass."
+"The one who came down." Lira's voice was low, unhurried. "Maret told me. You're going back upriver."
 
-"Felt?"
+"Yes."
 
-"The water talks to those who listen." Lira stepped closer, close enough that the wanderer could smell herbs and smoke and something metallic. "You came down carrying weight. I wondered if you'd stop. Most who carry that much don't pause for villages."
-
-The wanderer didn't know what to say. They hadn't paused — they'd been carried by current and storm, barely conscious, holding onto what mattered while everything else was lost.
-
-"I didn't choose to stop."
-
-"No." Lira almost smiled. "The river chose for you. And now you're going back." Her eyes moved to the wanderer's hip — to where the pouch hung hidden under cloth. "With something that's waking."
-
-The wanderer went still.
-
-"I won't ask to see it." Lira's voice was gentle. "Some things aren't for showing. But I'll tell you this: what you're carrying was carried before. It passed through here once, years ago, going the other way. I was younger then. I didn't understand what I felt." Her stained hand touched her own chest, briefly. "Now you're taking it home."
-
-"Home?"
-
-"Wherever it came from. The interior holds things the coast has forgotten." Lira turned back toward the door. "You'll eat with us. Rest. The current reverses at dusk — you'll have help tomorrow morning."
+"The current reverses at dusk. You'll eat with us. Rest. We'll help you push off in the morning."
 
 She went inside. The wanderer stood alone on the platform, the village moving around them, the river running underneath.
 
@@ -102,19 +88,15 @@ The wanderer thought of Seren at the quay, grey robes wrong in waterfront light.
 
 Lira was quiet for a moment. Then: "Then something is changing faster than I thought."
 
-She stood, brushing crumbs from her lap. The wanderer looked up at her — at the braid, the stained hands, the eyes that had seen decades of arrivals and departures.
+<aura:numinous>
+The wanderer had gone still. Lira watched them a moment — their eyes fixed on something past the wall, past the village, past where this river ended or began.
 
-"The one who holds between." The wanderer said it without deciding to. The words from Seren's margins. "Do you know what that means?"
+"More tea," she said. Their hands were already reaching for the cup. The warmth of it, the steam rising between them.
+</aura:numinous>
 
-Lira's face changed. Not surprise — recognition. Something old surfacing.
+She stood, brushing crumbs from her lap. "You'll find out what you're looking for. That's why you're going."
 
-"Between what and what?"
-
-"I don't know."
-
-"Neither do I." She looked at the wanderer differently now — not as stranger, not as guest. As something else. "But I think you'll find out. That's why you're going."
-
-She walked away, disappearing into the smoke and conversation. The wanderer sat with the words, with the weight of being known by strangers, with the pouch warm against their hip.
+She walked away, disappearing into the smoke and conversation. The wanderer sat with the warmth fading from their hands, with the pouch warm against their hip.
 
 Deren appeared and dropped onto the bench beside them.
 

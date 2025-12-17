@@ -80,7 +80,9 @@ The thought came from somewhere they couldn't name. Their hand pulled back.
 
 "The Mender gave you that."
 
-Deren had come up beside them. She wasn't looking at the pouch — she was looking at the wanderer's face, at whatever had crossed it.
+<aura:numinous>
+Deren had come up beside them. The wanderer was looking at something past the river, past the far bank. Deren followed their gaze but saw only trees.
+</aura:numinous>
 
 "Yes."
 

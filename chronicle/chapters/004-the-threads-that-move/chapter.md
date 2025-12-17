@@ -78,7 +78,7 @@ The Mender smiled. It was the first time the wanderer had seen her smile — not
 
 She stopped. The wanderer waited.
 
-"You felt the paper traveling. The first day. Before I said anything." The Mender's voice had changed — quieter now, more careful. "Seren watched your hands too. He told me, in the note. Said you touched the margin where the writing was, and the ink smelled different after."
+"You felt the paper traveling. The first day. Before I said anything." The Mender's voice had changed — quieter now, more careful. "Seren watched your hands too. He mentioned it, in the note."
 
 The wanderer looked at their hands. They seemed the same as always. But something in the way the Mender spoke made them feel seen — not observed, but *recognized*. Like a thread had been drawn between them and some larger pattern they couldn't see.
 

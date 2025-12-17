@@ -54,7 +54,9 @@ The wanderer thought of the Mender's threads — red and blue spanning the walls
 
 "What do you want me to tell her?"
 
+<aura:numinous>
 Seren turned back. His eyes found the wanderer's hands — the same thing the Mender had watched.
+</aura:numinous>
 
 "Tell her the pattern changed. Tell her I don't know why, but the rate tripled and the types shifted." He paused. "Tell her there's something writing in the margins. Something that sees what we do and names what it means."
 
@@ -74,9 +76,11 @@ The steps were steep in places, carved by hands that had known this hill before 
 
 At the bottom, the harbor spread out again — masts, canvas, shapes moving between ships. The Mender's building was somewhere to the left, waiting for an answer. The wanderer had the answer. They had more than that, now.
 
-Someone had left a mark on the wall where the steps met the street — not paint, not chalk. Like something had leaned there and left an impression. The shape of it was almost familiar.
+<aura:numinous>
+Someone had left a mark on the wall where the steps met the street — not paint, not chalk. Like something had leaned there and left an impression.
 
-The wanderer didn't touch it. Some things you let be until they're ready to tell you what they are.
+The wanderer passed. An old woman sweeping her doorstep stopped, broom worn smooth in her hands, and looked at the wall the way you look at something you thought you'd forgotten.
+</aura:numinous>
 
 ---
 
