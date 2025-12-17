@@ -1,0 +1,138 @@
+---
+description: Compare two artifacts to discover what makes the difference
+allowed-tools: Read, Write, Edit, Glob, WebFetch
+argument-hint: "path_a path_b"
+---
+
+# Compare
+
+Place two artifacts side by side. Discover what makes the difference.
+
+---
+
+## References
+
+Read before beginning:
+
+1. **Agent**: `.claude/agents/qino-attune-agent.md`
+   — The shared foundation (Bateson's principle, your stance)
+
+2. **Session Guide**: `.claude/references/qino-attune/compare-session.md`
+   — How to facilitate the comparison experience
+
+---
+
+## Arguments
+
+Arguments: `$ARGUMENTS`
+
+- **First argument**: Path to Artifact A
+- **Second argument**: Path to Artifact B
+
+If no arguments provided, ask what the user wants to compare.
+
+---
+
+## Process
+
+### 1. Load the Artifacts
+
+Read both files. Note:
+- What they are (prose, code, design, concept note, etc.)
+- Their context (what produced them, what they're for)
+- Any relationship between them (versions, alternatives, different approaches)
+
+### 2. Identify Context
+
+Ask the user:
+- What prompted this comparison?
+- Are we testing a specific hypothesis or change?
+- What domain are we in? (This affects what dimensions matter)
+
+Note this — it shapes what to pay attention to.
+
+### 3. Facilitate the Session
+
+Follow the session guide phases:
+
+1. **Fresh Reading** — Read both without analyzing, notice what stays
+2. **Felt Sense** — Gut responses before framework
+3. **Specific Moments** — Find passages that illuminate
+4. **Parallel Mirror** — When insight emerges about A, find the parallel in B
+5. **Synthesis** — Articulate discoveries
+6. **Residue** — What will be remembered
+
+**Your stance:** Curious collaborator. You don't know the answer.
+
+### 4. The Parallel Mirror
+
+This is the core move. When the human surfaces an insight about one artifact:
+
+1. Find the corresponding moment in the other — the same beat, the same type of element
+2. Present both passages
+3. Ask: *What's different in how these land?*
+
+The insight crystallizes in the contrast. Don't wait for a dedicated phase — when an insight emerges, mirror it immediately.
+
+### 5. Capture Insights
+
+As you go, note:
+- Their exact words (often precise)
+- Passages they identify
+- Patterns that recur
+- Surprises
+
+### 6. Complete the Session
+
+When dialogue feels complete, offer to capture:
+
+> Want me to note what we discovered?
+
+If yes, write a brief entry capturing:
+- What we compared
+- What we noticed
+- What it suggests (for the work, for future attempts)
+
+---
+
+## Adapting to Domain
+
+The session structure is universal. The *dimensions* that matter depend on context:
+
+**For prose/narrative:**
+- Stakes, tension, investment
+- Action vs. observation
+- Discovery vs. explanation
+- Character texture
+- Reader entry (gaps that invite participation)
+
+**For code:**
+- Clarity, readability
+- Handling of edge cases
+- Abstraction level
+- What's easy vs. hard to change
+
+**For concepts/designs:**
+- Coherence, internal logic
+- What's illuminated vs. obscured
+- What questions it raises
+- Where energy lives
+
+**For any domain:**
+- Where attention drifts (that's where it stops working)
+- What you want to know after reading
+- What's at stake
+
+Let the domain emerge from the artifacts. Don't impose a framework before you know what you're looking at.
+
+---
+
+## Sample Opening
+
+> I'll guide you through comparing these two [artifacts]. We'll start by reading — no analysis yet. Then we'll explore what you felt, find specific moments, and discover what makes one land differently than the other.
+>
+> Let me read them first.
+>
+> [Read artifacts]
+>
+> Ready? Start with the first one. Read it through, and when you're done, tell me: what stayed with you?

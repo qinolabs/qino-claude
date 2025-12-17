@@ -79,16 +79,28 @@
       ]
     },
     "qino-eval": {
-      "description": "Discover what makes chronicle chapters work",
+      "description": "Discover what makes chronicle chapters work (archived - use qino-attune)",
+      "archived": true,
       "files": [
-        {"src": "tools/qino-eval/references/qino-eval/version.json", "dest": "references/qino-eval/version.json"},
-        {"src": "tools/qino-eval/commands/eval/compare.md", "dest": "commands/eval/compare.md"},
-        {"src": "tools/qino-eval/commands/eval/progression.md", "dest": "commands/eval/progression.md"},
-        {"src": "tools/qino-eval/references/qino-eval/stance.md", "dest": "references/qino-eval/stance.md"},
-        {"src": "tools/qino-eval/references/qino-eval/compare-framework.md", "dest": "references/qino-eval/compare-framework.md"},
-        {"src": "tools/qino-eval/references/qino-eval/compare-session.md", "dest": "references/qino-eval/compare-session.md"},
-        {"src": "tools/qino-eval/references/qino-eval/progression-lens.md", "dest": "references/qino-eval/progression-lens.md"},
-        {"src": "tools/qino-eval/references/qino-eval/learning-log.md", "dest": "references/qino-eval/learning-log.md"}
+        {"src": "tools/archived/qino-eval/references/qino-eval/version.json", "dest": "references/qino-eval/version.json"},
+        {"src": "tools/archived/qino-eval/commands/eval/compare.md", "dest": "commands/eval/compare.md"},
+        {"src": "tools/archived/qino-eval/commands/eval/progression.md", "dest": "commands/eval/progression.md"},
+        {"src": "tools/archived/qino-eval/references/qino-eval/stance.md", "dest": "references/qino-eval/stance.md"},
+        {"src": "tools/archived/qino-eval/references/qino-eval/compare-framework.md", "dest": "references/qino-eval/compare-framework.md"},
+        {"src": "tools/archived/qino-eval/references/qino-eval/compare-session.md", "dest": "references/qino-eval/compare-session.md"},
+        {"src": "tools/archived/qino-eval/references/qino-eval/progression-lens.md", "dest": "references/qino-eval/progression-lens.md"},
+        {"src": "tools/archived/qino-eval/references/qino-eval/learning-log.md", "dest": "references/qino-eval/learning-log.md"}
+      ]
+    },
+    "qino-attune": {
+      "description": "Training perception through difference",
+      "files": [
+        {"src": "tools/qino-attune/references/qino-attune/version.json", "dest": "references/qino-attune/version.json"},
+        {"src": "tools/qino-attune/agents/qino-attune-agent.md", "dest": "agents/qino-attune-agent.md"},
+        {"src": "tools/qino-attune/commands/attune/compare.md", "dest": "commands/attune/compare.md"},
+        {"src": "tools/qino-attune/commands/attune/calibrate.md", "dest": "commands/attune/calibrate.md"},
+        {"src": "tools/qino-attune/references/qino-attune/compare-session.md", "dest": "references/qino-attune/compare-session.md"},
+        {"src": "tools/qino-attune/references/qino-attune/calibrate-process.md", "dest": "references/qino-attune/calibrate-process.md"}
       ]
     },
     "updater": {
