@@ -328,87 +328,57 @@ The files live in `implementations/` — visible, version-controlled, yours. Not
 
 ---
 
-## qino Eval
+## qino Attune
 
-Discover what makes creative work work — and improve the system that makes it.
+Training perception through difference.
 
-### The felt sense is the data
+### The foundation
 
-You read two chapters. One pulls you forward; one doesn't. You can feel the difference before you can name it.
+> **Information is "a difference that makes a difference."**
+> — Gregory Bateson
 
-qino Eval provides frameworks that help you articulate what the felt sense is responding to. Seven dimensions for quality. Six dimensions for progression. But the frameworks don't override the feeling — they help you find language for it.
+Describing one thing teaches less than contrasting two. The comparison does the teaching.
 
-> *"The wanderer becomes textured and multi-dimensional, not because of what they said, but precisely because they didn't have to say it. In that moment, I, the reader, am telling the story. I, the reader, am filling the gaps — and it feels engaging, because there's something of ME in it now."*
+### Compare: place two artifacts side by side
 
-That's not analysis. That's someone discovering why a passage worked.
+You have two chapters. Two designs. Two approaches to the same problem. Which works better?
 
-### Compare: which works better, and why
+You could analyze each one, list their properties, compare the lists. Or you could read them side by side and notice what *lands* differently.
 
-Two chapters side by side. Maybe from different tools, different chronicles, different approaches to the same challenge.
+The compare session guides you through:
+- **Fresh reading** — what stays with you from each
+- **Felt sense** — gut response before analysis
+- **Specific moments** — passages that illuminate the difference
+- **The parallel mirror** — when insight emerges about A, find the parallel in B
+- **Synthesis** — articulate what you discovered
 
-You read both. Notice what stays with you. Find the passages that worked — and the ones that didn't. The framework gives you questions:
+The discovery emerges from the gap between contexts. Not from examining one thing, but from what becomes visible when two things meet.
 
-| Dimension | Question |
-|-----------|----------|
-| Action | Does the wanderer do or only witness? |
-| Stakes | What could go wrong? |
-| Discovery | Told or shown? |
-| World | Does environment act or only contain? |
+### Calibrate: refine a vague quality into concrete craft
 
-One chapter might build immersive atmosphere but leave you indifferent. Another might feel rougher but create genuine stakes. The comparison reveals what matters:
+You know "otherworldliness" when you feel it. But you can't teach it without making it concrete.
 
-> *"In A, the wanderer risks being seen by a world that's paying attention. In B, the world is beautifully rendered but indifferent — and indifference is contagious."*
+Start with intuition — a quality you recognize but can't yet articulate. Maybe "tension." Maybe "aliveness." Maybe "reader entry."
 
-### Progression: does the chronicle move?
+The calibrate process:
+1. **Find candidates** — examples from existing work that might have the quality
+2. **Calibrate through feedback** — yes/no/why for each; your responses teach you what you're looking for
+3. **Build inspiration index** — language and references that capture what you're circling
+4. **Transform iteratively** — failed examples become working ones; the transformation reveals the technique
+5. **Extract principles** — what works, what breaks it, what the quality actually *is*
 
-Two chapters from the same chronicle. Does the second feel like it *needed* to follow the first?
+By the end, the vague quality has become concrete craft you can recognize, teach, and protect.
 
-| Dimension | What it feels like |
-|-----------|-------------------|
-| Pull | Incompleteness at chapter end — wanting the next |
-| Meet | Continuation at chapter start — being acknowledged |
-| Weight | Accumulation — later chapters carry earlier ones |
-| Echo | Callbacks that land, not just occur |
+### The stance
 
-Progression isn't continuity. It's momentum — the felt sense of being pulled through a story.
-
-### The learning loop
-
-This is where it gets powerful.
-
-```
-evaluation → insight → architectural change → next evaluation tests the change
-```
-
-You compare chapters. You discover a principle: *"The wanderer gains depth through how others respond to what they don't say."* That's not just feedback on one chapter — it's insight that can change how the scribe works.
-
-The insight flows back:
-- Problems that recur become fixes in `process.md`
-- Patterns that work become reinforcement in `soul.md`
-- Structural issues become changes in `craft.md`
-
-Then you generate again. Evaluate again. See if the change helped.
-
-Over time, the evaluation log accumulates patterns. Problems that keep appearing. Fixes that worked. The scribe improves not through random iteration but through discovered principles.
-
-### Principles discovered
-
-From a single evaluation session comparing two approaches:
-
-**The Mutual Seeing Principle** — The wanderer sees the world; the world must see back. Without mutual gaze, no stakes.
-
-**The Relational Mirror Principle** — Characters gain depth through how others respond to what they *don't* say.
-
-**The Reader as Co-Author Principle** — Beautiful description can render a world the reader admires but never enters. If every meaning is delivered, there's nothing to contribute. The gap must have *pull*.
-
-These principles now live in the scribe's architecture. The next chapter will be different because of what the evaluation discovered.
+Curious collaborator, not judge. You don't know the answer. The tool doesn't know the answer. But by placing things side by side and noticing what lands differently, the difference teaches you both.
 
 ```bash
-/eval:compare chapter-a.md chapter-b.md
-/eval:progression chapter-1.md chapter-2.md
+/attune:compare path/to/a.md path/to/b.md
+/attune:calibrate otherworldliness
 ```
 
-*[Source](tools/qino-eval/) · [Installation](tools/qino-eval/README.md#installation)*
+*[Source](tools/qino-attune/) · [Installation](tools/qino-attune/README.md#installation)*
 
 ---
 
@@ -419,7 +389,7 @@ This repository uses its own tools. The source files live in `tools/`, and adapt
 ```
 tools/qino-concept/commands/qino/    → .claude/commands/qino/
 tools/qino-scribe/commands/scribe/   → .claude/commands/scribe/
-tools/qino-eval/commands/eval/       → .claude/commands/eval/
+tools/qino-attune/commands/attune/   → .claude/commands/attune/
 ```
 
 Adapters are thin wrappers that import the source command and adjust paths. This lets us develop tools and use them in the same repository without duplication.

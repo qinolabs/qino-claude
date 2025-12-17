@@ -12,6 +12,35 @@ Each version section includes:
 
 ---
 
+## v0.13.0
+
+**Summary**: qino Attune replaces qino Eval with a cleaner operation model (compare and calibrate).
+
+**Delete** (qino-eval):
+- `.claude/commands/eval/compare.md`
+- `.claude/commands/eval/progression.md`
+- `.claude/references/qino-eval/version.json`
+- `.claude/references/qino-eval/stance.md`
+- `.claude/references/qino-eval/compare-framework.md`
+- `.claude/references/qino-eval/compare-session.md`
+- `.claude/references/qino-eval/progression-lens.md`
+- `.claude/references/qino-eval/learning-log.md`
+
+**New** (qino-attune):
+- `.claude/agents/qino-attune-agent.md` — curious collaborator stance
+- `.claude/commands/attune/compare.md` — place two artifacts side by side
+- `.claude/commands/attune/calibrate.md` — refine vague qualities into concrete craft
+- `.claude/references/qino-attune/version.json`
+- `.claude/references/qino-attune/compare-session.md` — comparison facilitation
+- `.claude/references/qino-attune/calibrate-process.md` — calibration workflow
+
+**User action**:
+- Delete qino-eval files before updating
+- Use `/attune:compare` instead of `/eval:compare` for artifact comparison
+- Use `/attune:calibrate` for refining aesthetic qualities (new capability)
+
+---
+
 ## v0.11.0
 
 **Summary**: qino Scribe adds chapter snapshots; qino Concept ecosystem commands removed (functionality absorbed into existing commands).

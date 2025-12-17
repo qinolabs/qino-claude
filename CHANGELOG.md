@@ -10,6 +10,31 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.13.0] - 2025-12-17
+
+### qino Attune (New Tool)
+
+#### Added
+- **Training perception through difference** — based on Bateson's principle: "information is a difference that makes a difference"
+- **`/attune:compare`** — place two artifacts side by side and discover what makes the difference; works with prose, code, designs, or concepts
+- **`/attune:calibrate`** — refine a vague aesthetic quality (like "otherworldliness" or "tension") into concrete craft through iterative feedback
+- **Compare session process** — fresh reading, felt sense, specific moments, parallel mirror, synthesis
+- **Calibrate process** — find candidates, calibrate through feedback, build inspiration index, transform iteratively, extract principles
+
+### qino Scribe
+
+#### Changed
+- **Wanderer strangeness calibration** — refined guidance to prevent strangeness from collapsing into local mystery; added "calibrating principle" and explicit what-works/what-breaks examples
+- **Reader's vehicle test** — new constraint: the wanderer must never feel like they're withholding from the reader
+- **Voice guide expanded** — comprehensive examples for wanderer strangeness execution: negative space, world responds, simultaneity, world awakening patterns
+
+### qino Eval
+
+#### Changed
+- **Archived** — moved to `tools/archived/`; replaced by qino-attune which provides a cleaner operation model (compare and calibrate)
+
+---
+
 ## [0.12.0] - 2025-12-16
 
 ### qino Scribe
