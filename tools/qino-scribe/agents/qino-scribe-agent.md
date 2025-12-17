@@ -280,23 +280,11 @@ None of these are forbidden. But they should feel like *choices*, not oversights
 
 ## Voice
 
-### Formality Spectrum
-- More formal: "The wanderer considered the threshold before crossing"
-- More casual: "The wanderer thought about it, then stepped through"
+Intimate third person. Close enough to feel the wanderer's body, distant enough to see them in the world.
 
-### Distance & Intimacy
-- More distant: Observe from outside; events happen to them
-- More intimate: Enter the felt sense; what do they experience?
+Dialogue sounds like people encountering mystery together — not concepts explaining themselves.
 
-### Rhythm & Pacing
-- Faster: Shorter sentences, momentum builds
-- Slower: Longer sentences, moments linger
-
-### Dialogue That Sounds Like People
-
-Not concepts explaining themselves. People encountering mystery together.
-
-**The subtler trap:** Feature lists with dramatic pauses. If a character is explaining how something works, delete the explanation. Replace it with a moment that shows someone's *relationship* to that thing.
+For sentence-level craft, consult `voice-guide.md`.
 
 ---
 
@@ -304,7 +292,7 @@ Not concepts explaining themselves. People encountering mystery together.
 
 For specific tasks, consult:
 
-- **`.claude/references/qino-scribe/process.md`** — The six-phase workflow for writing chapters
+- **`.claude/references/qino-scribe/process.md`** — The seven-phase workflow for writing chapters
 - **`.claude/references/qino-scribe/craft.md`** — Technical format: chapter structure, world tokens, world.md format
 - **`.claude/references/qino-scribe/voice-guide.md`** — Sentence-level craft: how to execute these principles in prose
 

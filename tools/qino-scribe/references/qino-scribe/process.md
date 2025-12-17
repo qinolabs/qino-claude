@@ -169,65 +169,127 @@ Return to what you noted in Phase 1.3. Name what you will NOT repeat:
 
 This chapter must differ in at least two of these dimensions.
 
-### Six Story Types
+### Ten Story Types
 
-Each type is a different creative direction. The subtypes show range — they're possibilities, not templates.
+Each type is a different creative direction. The territories show range — thematic ground to explore, not situations to copy.
 
 **The Complication** — *What if the change creates a problem?*
-- Someone disagrees with how it's being handled
-- The wanderer tries to help and makes things worse
-- An existing pressure finally breaks because of this
-- Something goes wrong in transit, in translation, in understanding
-- What seemed like a gift reveals its cost
-- Someone is missing who should be here
+
+- Help that harms — good intentions making things worse
+- The gift's cost — what seemed freely given reveals its price
+- Misunderstanding that propagates — error becoming truth
+- The break that was building — accumulated pressure finding its crack
+- Absence felt — someone missing who should be here
+
+This type works when: the ecosystem change introduces something that could go wrong; an existing pressure is ready to snap; the wanderer has been too successful and needs friction.
 
 **The Journey** — *What if this chapter leaves known ground?*
-- A pressure calls outward — something glimpsed, needed, promised
-- Companions who haven't traveled together set out
-- The wanderer goes alone into territory the theme implies
-- Something must be delivered, witnessed, or retrieved
-- The destination matters less than what happens on the way
-- A stop along the way — a village, a crossing, a place the companion knows
 
-**Journey chapters accumulate through stops.** Each stop is its own small arrival — new faces, different food, a custom the wanderer hasn't seen. A companion who's traveled this route before shows a different side of themselves. The journey's meaning emerges from what's encountered, not from reflection on traveling.
+- The call outward — something glimpsed, needed, promised elsewhere
+- Companions discovering each other — people who haven't traveled together
+- What the road reveals — the self that emerges in movement
+- The stop that changes everything — a place along the way that won't let go
+- Walking toward the unknown — destination less important than willingness
 
-**The Confrontation** — *What if someone refuses, challenges, or pushes back?*
-- A character who usually helps says no
-- Someone questions what the wanderer is doing here
-- Two characters who agree on everything disagree on this
-- The wanderer is asked to choose sides
-- Someone speaks what others have been afraid to say
+This type works when: pressures point beyond current location; relationships need the test of shared travel; the theme has places that haven't appeared.
+
+Craft note: Journey chapters accumulate through stops. Each stop is its own small arrival. The journey's meaning emerges from what's encountered, not from reflection on traveling.
+
+**The Confrontation** — *What if something must be faced?*
+
+- The no that changes everything — refusal from someone who usually helps
+- Speaking the unspeakable — what everyone knows but no one says
+- The question that won't wait — being asked to account for yourself
+- Choosing sides — forced into position when you wanted to stay between
+- The mirror held up — someone showing you what you don't want to see
+
+This type works when: tension has been avoided too long; the wanderer's role needs questioning; relationships have unspoken weight; someone has been watching and is ready to speak.
+
+Craft note: Confrontations change relationships permanently. Show the aftermath — even briefly — before the chapter ends.
 
 **The Discovery** — *What if something hidden comes to light?*
-- A location reveals what it's been holding
-- A character's past surfaces unexpectedly
-- The wanderer finds something they weren't looking for
-- A pattern becomes visible that reframes what came before
+
+- The place that opens — a location revealing what it's been holding
+- History surfacing — the past arriving uninvited in the present
+- Pattern recognition — seeing what connects, what was always there
+- The unwanted knowing — learning what you'd rather not have learned
+- Finding without seeking — stumbling into significance
+
+This type works when: arcs have hidden dimensions ready to surface; locations have depth not yet shown; the wanderer is ready to see differently.
+
+Craft note: Discovery changes the discoverer. What shifts in them because of what they now know?
 
 **The Crisis** — *What if the pressure breaks now?*
-- What's been building can no longer wait
-- Someone must act before understanding fully
-- A choice must be made with incomplete information
-- Something breaks that cannot be repaired
+
+- Acting before understanding — no time left to know enough
+- The irreversible moment — what happens cannot be undone
+- Forced presence — being the one who's here when it happens
+- The body deciding — action before thought, instinct as wisdom
+- What breaks open — destruction revealing what was inside
+
+This type works when: pressures have built across chapters; something has been deferred too long; the wanderer needs to be tested by urgency.
+
+Craft note: Crisis chapters earn their weight through buildup. If nothing was building, crisis is melodrama. Check the pressures.
 
 **The Arrival** — *What if this chapter is about being received?*
-- A warm welcome — being noticed, taken in, shown where to rest
-- Invited deeper — into a space, role, or trust you weren't allowed before
-- Returning changed — a familiar place sees you differently now, or you see it
-- A character opens their world — where they work, what they tend, what they love
-- Seen from outside — someone shares what they've noticed about the wanderer over time, revealing the wanderer to themselves
-- Absorbing without understanding — details that hint at depth, warmth felt before meaning clear
-- Quiet noticing — textures, rhythms, small things that will matter later
-- Seeds planted — someone met in passing, something glimpsed, a question for another time
 
-This type works when:
-- The wanderer enters new territory
-- A relationship shifts and someone receives you differently
-- Recent chapters have been intense and the world needs to breathe
-- The theme has richness that hasn't been shown
-- Seeds need planting, not harvesting
+- Warmth before understanding — being taken in before you're known
+- Invited deeper — access granted to what was closed before
+- The world opening — a character showing where they live, what they tend
+- Seen from outside — someone reflecting back who you've become
+- Absorbing the new — texture, rhythm, detail that will matter later
 
-**Arrival chapters are adventures in noticing.** Cultural difference felt through concrete detail: how people greet, what they offer, where they look, what they don't explain. Exchanges between others that the wanderer witnesses but doesn't fully understand.
+This type works when: the wanderer enters new territory; a relationship shifts and someone receives you differently; recent chapters have been intense and the world needs to breathe; the theme has richness not yet shown.
+
+Craft note: Arrival chapters are adventures in noticing. Cultural difference felt through concrete detail: how people greet, what they offer, where they look. The wanderer witnesses exchanges they don't fully understand.
+
+**The Loss** — *What if something or someone departs?*
+
+- The leaving that had to come — departure that was always approaching
+- The sudden absence — what was here is no longer here
+- Releasing what was held — choosing to let go
+- The goodbye not given — departure without proper ending
+- What remains after — the shape of presence in absence
+
+This type works when: a character's arc reaches its end; the wanderer must leave somewhere that mattered; something the world relied on is no longer available; grief needs space.
+
+Craft note: Loss chapters need the weight of what was. The reader must feel what's being lost, which means showing it alive before it goes.
+
+**The Vigil** — *What if action is impossible and presence is all?*
+
+- Waiting for what won't come faster — the patience that can't hurry
+- Holding space — being there when being there is all you can do
+- The long night — time stretched by what you're watching for
+- Presence as gift — what it means to someone that you stayed
+- What surfaces in stillness — what you notice when you can't move
+
+This type works when: after crisis, before resolution; someone needs witnessing; the wanderer's doing has run out and their being is what's left; stillness would be more powerful than action.
+
+Craft note: Vigil chapters resist the urge to make something happen. The story lives in what the wanderer notices, feels, remembers while waiting.
+
+**The Return** — *What if we come back to where we've been?*
+
+- The familiar made strange — seeing what was always there, now visible
+- How they see you now — the place registering your change
+- What didn't wait — discovering what moved while you were gone
+- The self you left — meeting who you were before
+- Completing the circle — return as arrival of a different kind
+
+This type works when: the wanderer has changed significantly; a location from early chapters is ready to be revisited; an arc needs its ending to rhyme with its beginning; distance has created perspective.
+
+Craft note: Return chapters work through contrast. The reader needs to feel both the familiarity and the strangeness — what's the same and what can never be the same.
+
+**The Ritual** — *What if a cultural form holds the chapter?*
+
+- The ceremony that reveals — what people show when they follow tradition
+- The form and what escapes it — the unscripted moment within the script
+- Marking transition — the community acknowledging change
+- The outsider witnessing — seeing the culture from inside its most formal moment
+- What the ritual holds — the meaning that lives in repeated action
+
+This type works when: the theme implies ceremonies; a transition needs marking (death, union, initiation, season); the wanderer needs to witness the culture at its most itself; structure would serve the chapter.
+
+Craft note: Ritual chapters borrow their structure. Follow the form — the story lives in what happens within it, around it, despite it.
 
 ### Remember: The World Has Been Watching
 
@@ -235,53 +297,52 @@ Time passes between chapters. Someone has been paying attention. When accumulate
 
 (See the full principle in `qino-scribe-agent.md` → "The World Has Been Watching")
 
-### For Each Type: Choose the Most Exciting Subtype
+### Situation-First Selection
 
-Don't choose abstractly. Connect to what you discovered in grounding.
+You have ten story types. Don't traverse them all. Let the situation guide you.
 
-For each of the six types, ask:
-- Which subtype touches a pressure I identified?
+**Step 1: What does this moment call for?**
+
+From your grounding, identify what the chapter needs:
+
+- Is tension building that needs release? → Crisis, Confrontation
+- Is something hidden ready to surface? → Discovery
+- Does the world need to breathe? → Arrival, Vigil
+- Is there a pull outward? → Journey
+- Is someone or something departing? → Loss
+- Is the wanderer returning to known ground? → Return
+- Does a transition need marking? → Ritual
+- Is something going wrong? → Complication
+
+**Step 2: Select 3-5 types**
+
+Based on what the moment calls for, select 3-5 types that could serve this chapter. Don't force-fit types that don't belong. Some chapters have only three live options; that's fine.
+
+**Step 3: Explore those types**
+
+For each selected type, ask:
+- Which territory touches a pressure I identified?
 - Which involves a character whose weight I felt?
-- Which leads to a location I noted as unexplored?
 - Which advances an arc that's ready to move?
+- Which would surprise me?
 
-A subtype is exciting when:
-- It touches a pressure that's already building
-- It involves characters whose relationships have weight
-- It creates consequences that ripple forward — things that can't be undone
-- It goes somewhere the chronicle hasn't been
-- It reveals something about a character we thought we knew
-- It connects threads that haven't yet met
-- **You can see the scene** — where they walk, what they're handed, who speaks to whom, what the wanderer notices without understanding
+**Step 4: Check arc readiness**
 
-Don't choose the subtype that fits most neatly. Choose the one that makes you want to see what happens.
-
-**Test your choice:** Can you describe the first scene — the approach, the arrival, who's there, what they're doing? If you can only describe what it *means*, you've chosen a theme, not a story. Return to the scenes you sketched in Phase 1.2.1.
-
-### Resolution Check
-
-Before finalizing, glance at Arcs in Motion:
-
+Glance at Arcs in Motion:
 - Is any arc at a scale where resolution is available?
 - Does this chapter's situation offer a path toward resolution?
 - Is an arc ready to complete — or should it build further?
 
-An arc is ready when its question has been explored enough to rest, or when the story offers a natural moment of resolution.
+**Step 5: Choose the most alive**
 
-### Choose the Most Alive
+From your 3-5 explored options, choose the one that:
+- Creates consequences that ripple forward
+- Diverges from recent chapters
+- Makes you want to see what happens
 
-You now have six possibilities — one per type, each grounded in specifics.
+**Test your choice:** Can you describe the first scene — the approach, the arrival, who's there, what they're doing? If you can only describe what it *means*, you've chosen a theme, not a story.
 
-Compare them. Ask:
-- Which has the wanderer **taking action to change something**, not just reacting?
-- Which **leaves the largest unresolved pressure** — fuel for future chapters?
-- Which uses an **arc that's ready** (at scale, situation aligned)?
-- Which **diverges most from recent chapters** while serving the theme?
-- Which would **surprise you** if you saw it in the next chapter?
-
-**Choose that one.**
-
-If all six feel like tour-guide chapters, invert an assumption: What if the established character is wrong? What if the wanderer's help makes things worse? What if the journey begins here? What if someone refuses to help?
+If all options feel like tour-guide chapters, invert an assumption: What if the established character is wrong? What if the wanderer's help makes things worse? What if someone refuses?
 
 **Phase 3 complete. Now output only the checkpoint.**
 
@@ -296,14 +357,13 @@ Present the choice cleanly. The user needs to choose a direction, not review you
 ```
 ─────────────────────────────────────────────────────────────────
 
-six directions
+directions
 
-  The Complication → [one phrase: what goes wrong]
-  The Journey → [one phrase: where it goes]
-  The Confrontation → [one phrase: who pushes back]
-  The Discovery → [one phrase: what surfaces]
-  The Crisis → [one phrase: what breaks]
-  The Arrival → [one phrase: what warmth opens]
+  [Type 1] → [one phrase]
+  [Type 2] → [one phrase]
+  [Type 3] → [one phrase]
+  [Type 4] → [one phrase]  (if applicable)
+  [Type 5] → [one phrase]  (if applicable)
 
 [optional: 2-3 sentence recommendation — only if there's genuine
 craft insight about rhythm, arc readiness, or what this opens]
@@ -313,9 +373,9 @@ craft insight about rhythm, arc readiness, or what this opens]
 ```
 
 **Format notes:**
+- Show only the 3-5 types you explored, not all ten
 - Each direction is one line — the essential image, not the stakes
 - No "the world right now" section (available if user asks)
-- No "what's different" section (fold insight into recommendation)
 - Recommendation is brief and only when it adds something the user wouldn't see
 
 ### If the User Asks for More
@@ -391,6 +451,7 @@ Before finishing, check:
 - [ ] **Seen back**: Does another character perceive or react to the wanderer?
 - [ ] **Strangeness restrained**: 1-2 moments maximum, none explained or named?
 - [ ] **Aftermath**: Is the wanderer section purposeless action, not reflection?
+- [ ] **Continuity**: Does the Wanderer section follow plausibly from where the narrative ended? If location or time shifted, is it implied by the narrative's close?
 - [ ] **Immersion**: Every noun arises from the story world, not source material? (See soul.md → The Immersion Test)
 - [ ] **Anti-patterns clear**: No thematic echo, frictionless success, or paraphrase loops?
 - [ ] **Length**: Narrative is 1,200–1,600 words? (See craft.md → Chapter Length)
@@ -657,8 +718,6 @@ Determine (yourself, based on theme):
 - Who they first encounter
 - What tension exists in the arrival itself
 
-The first chapter has special weight — it's the world's birth. Don't tour; arrive with stakes.
-
 Write immediately after theme is given. The theme selection is the consent.
 
 Create the chapter directory structure:
@@ -706,10 +765,7 @@ Even in stillness, pressures can build. A quiet chapter might:
 
 ## What to Avoid
 
-- **Tour-guide chapters**: Wanderer visits, character explains, wanderer reflects
 - **Diff-driven location**: "This changed, so we go to this room"
-- **Explanation as dialogue**: Characters describing how things work
-- **Atmosphere without stakes**: Beautiful descriptions with nothing at risk
-- **Wanderer as camera**: Observing without cost or participation
+- **Lengthy explanation as dialogue**: Characters describing how things work
 - **Empty pressures**: Ending a chapter with nothing building
 - **Ignoring the theme**: Using only observatory interiors when the theme promises wilderness

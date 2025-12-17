@@ -84,6 +84,7 @@ The chapter's closing, before World Tokens. The wanderer in aftermath — not re
 - **Third person** — the wanderer is witnessed, not confessing
 - **A simple action** — but NOT the same action each chapter
 - **Varying** — the closing must differ chapter to chapter. Check what the last chapter did and diverge.
+- **Continuous** — the section must follow plausibly from where the narrative ended. If location or time shifted, the narrative's close should imply how.
 
 ### Belongs
 

@@ -1,745 +1,542 @@
 # Voice Guide
 
-*The craft of prose. How to execute the agent's principles at the sentence level.*
-
----
-
-## The Core Principle
-
-> **Ground in body and material. Compress interiority and dialogue. Leave one door ajar.**
-
-This document bridges philosophy to execution. The agent tells you *what* makes story work. This tells you *how* to write it.
+*Execution guidance for prose craft.*
 
 ---
 
 ## How to Use This Document
 
-Examples are marked with `<example>` tags. These illustrate craft principles — they are not templates to copy. When you see an example, absorb what makes it work, then create your own sentences that embody that principle differently.
+This is execution guidance. The agent file holds the philosophy — what makes story work. This document shows how to write it at the sentence level.
 
-**If you find yourself writing words from an example verbatim, pause and diverge.**
+Consult during writing when you need to check: how do I open this scene, introduce this character, render this place?
 
-The goal is to internalize the *principle* — what makes it work, what it's reaching for — not memorize the *words*.
+The theme is your source. Draw texture from *this* world's materials, not from examples here or elsewhere.
+
+---
+
+## Voice Calibration
+
+### The Feel
+
+Intimate third person. Close enough to feel the wanderer's body, distant enough to see them in the world. Sentences that breathe — varied rhythm, not monotone. Warmth available, not mandatory.
+
+Specific over general. The materials, weathers, and textures of *this* theme, not borrowed from elsewhere.
+
+### The Register
+
+Not elevated, not plain. Language that clarifies rather than blurs. Compression where it serves; breath where it's needed. Trust the reader to feel what isn't spelled out.
+
+### Drawing From Theme
+
+Every world has its own sensory vocabulary. When reaching for texture, reach into the theme — its materials, its customs, its light. The examples in this guide are illustrations, not templates. The theme is your source.
 
 ---
 
 ## Opening Lines
 
-### The Craft
+### The Principle
 
-Drop into ongoing action. Physical stakes before explanation. The reader should be in a body from the first sentence.
+The reader enters through a body in motion. First sentence: physical sensation, action, stakes. Not what the character thinks — what they feel, do, encounter.
+
+Ground first. Interiority is earned later.
 
 ### Execute
 
-- Start with physical sensation or action, not abstraction
-- Establish stakes through what the body is doing
-- Texture and breath in sentence structure — vary length, create rhythm
-- The opening should feel intimate and alive, not declarative
+- First sentence places the reader in a body doing something physical
+- Stakes through action, not explanation
+- Sensory texture drawn from *this chronicle's theme* — its materials, weathers, surfaces
+- Vary sentence length; create rhythm; the opening should breathe
 
-### Yes — grounded in body
+### What Breaks It
 
-<example>
-> The current released her where the river widened into salt.
->
-> She had been holding the oilcloth bundle above her chest for the last mile, ever since the water deepened past wading. Now her feet found purchase on silt and broken shells, and she stood in waist-deep water, breathing hard, the bundle still dry against her collarbone.
-</example>
+- Opening with abstraction or philosophy
+- Opening with thinking rather than doing
+- Declarative statements that tell rather than place ("It was a cold night...")
+- Monotone rhythm — same sentence length, no texture
 
-We're in a body: waist-deep, breathing hard, bundle against collarbone. Stakes are clear before anything is explained.
+### Verify
 
-### No — floating in abstraction
-
-<example>
-> The river had been talking for three days. Not words — the wanderer had stopped expecting words from water long ago — but a pressure against the small boat's hull, a rhythm that asked questions without waiting for answers.
-</example>
-
-Sentence structure is simplistic. No texture, no breath. The lines don't feel alive.
+- Is the reader in a body from the first sentence?
+- Are stakes established through action, not explanation?
+- Is sensory texture drawn from this theme, not borrowed from elsewhere?
+- Does the paragraph breathe?
 
 ---
 
 ## Introducing Characters
 
-### The Craft
+### The Principle
 
-Characters are introduced through action and position. What they *do*, not how they look. Tell more than is explicit — enrich with depth that remains unspoken.
+Characters are introduced through action and mutual presence. The world sees back. When someone new appears, there's an exchange — they perceive the wanderer, the wanderer perceives them. Something passes between.
 
-**Critical:** Vary your introduction patterns chapter to chapter. If the last chapter introduced a character through seated work + assertion, this chapter should introduce differently.
+Warmth and distance are both available. Vary them chapter to chapter.
 
 ### Execute
 
-- Show the character already in action (mending, adjusting, working)
-- Physical details that reveal habit or skill
-- Imply history through small behavioral details
-- Sparse dialogue that reveals more than it states
-- No elaborate descriptions, no names announced
+- Show the character already in action — but action that includes awareness of the newcomer
+- Mutual seeing: the character registers the wanderer, not just their function
+- Sparse dialogue that opens relationship, not just delivers information
+- Physical details that reveal stance toward the world
+- Draw the character's textures from the theme — their work, their materials, their habits belong here
 
-### Pattern Variety
+### What Breaks It
 
-The principle is **grounded introduction through action**. But there are many ways to execute this:
+- Character is busy/dismissive and doesn't actually see the wanderer (flat transaction)
+- Character watches but there's no relationship beginning (surveillance without connection)
+- Elaborate physical description instead of action
+- Name announced formally rather than emerging naturally
+- Dialogue that asserts information rather than beginning exchange
 
-**Pattern A: Seated work + assertion**
-<example>
-> A woman sat on an overturned hull near the waterline, mending a net with fingers that moved without looking.
->
-> "From the interior," she said. Her hands kept moving, unsurprised.
-</example>
+### Verify
 
-**Pattern B: In motion + ignoring**
-<example>
-> Someone passed the wanderer on the narrow path, rope coiled over one shoulder, moving too fast to stop. "Door's open," they said without slowing. "Go in."
-</example>
-
-**Pattern C: Through relationship with others**
-<example>
-> Two figures stood arguing by the dock. The younger one noticed the wanderer first and went quiet. The elder kept talking for three more words before realizing.
->
-> "You're the one Maren sent," the elder said. Still looking at the younger one.
-</example>
-
-**Pattern D: Occupied / unavailable**
-<example>
-> The cartographer was halfway up a ladder when the wanderer entered. She didn't climb down.
->
-> "You the one asking about routes? Talk to Varo. I'm busy."
-</example>
-
-**Pattern E: Noticed before seen**
-<example>
-> The wanderer smelled pipe smoke before they saw him — sitting in the corner booth, watching the door with the patience of someone who'd been waiting.
-</example>
-
-**Pattern F: Already watching**
-<example>
-> She'd been watching them approach. The wanderer could feel it before they saw her — that quality of attention. When they finally found her eyes, she looked away first.
-</example>
-
-### The Principle
-
-The technique is **action before explanation, depth through restraint**. Vary your approach chapter to chapter. If you've used seated work recently, try motion or occupied. If you've shown certainty through continuing action, try a revealing detail instead.
-
-### No — only what's explicit
-
-<example>
-> A woman stood on a wooden dock, mending a net. She watched the boat pass without waving. The wanderer raised a hand anyway, and her eyes narrowed — not unfriendly, but careful. Measuring something.
->
-> "You're early," she called out. "Or late. Depending."
-</example>
-
-Tells only what's explicit. No unspoken depth enriching the atmosphere.
+- Does the character perceive the wanderer as a person, not just a task?
+- Is there mutual seeing — something passes between them?
+- Is the dialogue opening relationship or just delivering exposition?
+- Are the character's textures drawn from this theme?
+- Does the warmth/distance serve this chapter's needs?
 
 ---
 
 ## Rendering Place
 
-### The Craft
+### The Principle
 
-Build lush, cohesive images with nuanced vocabulary and rhythm. Populate space with beings in motion. Never use cheap tricks to create tension.
+The environment is a character. It doesn't just contain the scene — it shapes what can happen. What does the place offer? Withhold? Remember?
+
+Build the space through layered sensory detail, populated with life in motion. The reader should feel they could walk through it.
 
 ### Execute
 
-- Layer sensory detail: visual first, then uncategorizable, then smell/sound
-- Weave environment, details, sensory impressions, and personal touch fluidly
-- Specific materials (barnacled stone, wooden stilts, billowing canvas)
-- Populate with movement and life
-- Hold tension in sentence structure — don't release it with plain opening statements
+- Layer sensory detail across multiple senses — include what resists easy description
+- Populate with movement — figures, creatures, weather, things in motion
+- Specific materials drawn from the theme, not generic atmosphere
+- The place has opinions: it enables some things, resists others
+- Weave fluidly — not inventory, not list, but discovery
 
-### Yes — layered and alive
+### What Breaks It
 
-<example>
-> They walked along the waterfront. The wanderer noticed, now, the variety of structures: stone warehouses with barnacled foundations, wooden buildings on stilts, canvas shelters that billowed in the sea breeze. Between them moved figures she couldn't easily categorize — a being that might have been human if humans had four arms and skin like wet silk, a creature low to the ground that left a trail of phosphorescence, a child running past with a kite shaped like no bird she'd ever seen.
->
-> No one stared at her. A stranger dripping river water, carrying ruins in her arms. Just another arrival.
-</example>
+- Atmosphere without participation — the place is backdrop, not character
+- Listing details without rhythm or purpose
+- Generic materials that could be anywhere (stone, wood, cloth) without specificity
+- Empty space — no life moving through it
+- Cheap tension tricks ("And then: lights.")
 
-Layered sensory stack. Concrete materials. The uncategorizable creates wonder without explanation. The space is alive.
+### Verify
 
-### No — cheap tension trick
-
-<example>
-> And then: lights.
->
-> Not many. Scattered along a crescent of shore where buildings clustered like they'd been placed by someone who understood that some things need to be near each other without touching.
-</example>
-
-"And then: lights" — first-time storyteller faking drama. No lush image, no rhythm, no art.
+- Does the place act, or just contain?
+- Are materials specific to this theme?
+- Is there movement and life?
+- Would the reader feel they could walk through this space?
+- Is the description discovery, not inventory?
 
 ---
 
 ## Surfacing Theme
 
-### The Craft
+### The Principle
 
-Earn the central question through buildup. Characters should feel real, imperfect, human — their involuntary behavior creates depth and sparks curiosity. The reader should be able to enter the world, not just accept statements passively.
+Theme emerges through action, not announcement. The central question lands because it was earned — through context, through buildup, through a character's involuntary response to what they're encountering.
+
+The reader enters the question rather than receiving a statement.
 
 ### Execute
 
-- Build context before the key question lands
-- Show involuntary behavior (setting something down, looking at something specific in the other person)
-- The question should spark curiosity: what keeps this person going?
-- Create a gap the reader wants to fill
-- Never just state something that stops the reader in their tracks
+- Build context before the key moment lands
+- Show characters responding involuntarily — behavior that precedes decision
+- Questions that spark curiosity, not statements that close it
+- Create gaps the reader wants to fill
+- The speaker should have relationship to their words — history, stake, cost
 
-### Yes — earned through buildup
+### What Breaks It
 
-<example>
-> "They were scattered through the ruins," the wanderer said. "Different rooms. Different... eras, I think. Some of the ink is centuries old. Some was still wet when I found it."
->
-> The woman set down her net. She didn't reach for the papers. Instead she looked at the wanderer's face — at something in it.
->
-> "What part of it still feels alive?"
-</example>
+- Stating theme directly ("This place teaches patience")
+- Characters explaining what things mean
+- Key moments that arrive without buildup
+- Abstractions without grounding in specific situation
+- The reader receiving passively rather than entering actively
 
-The question lands because it's earned. We see the scope first. Then involuntary behavior: she sets down her net, looks at the face — "at something in it." The question has weight. The character feels real. The reader can enter.
+### Verify
 
-### No — stops the reader cold
-
-<example>
-> "The river carries many things." He looked at the satchel. "Some of them arrive. Some of them just pass through."
->
-> The wanderer stepped onto the dock. Their legs remembered land reluctantly, swaying once before steadying.
->
-> "Which am I?"
-</example>
-
-Just states something. Stops the reader. They can't enter the world — only accept it passively.
+- Was the key moment earned through buildup?
+- Did characters respond involuntarily, or only deliberately?
+- Is there a gap the reader wants to fill?
+- Does the speaker have relationship to their words?
+- Is the reader entering, or just receiving?
 
 ---
 
 ## Internal Reflection
 
-### The Craft
+### The Principle
 
-Physical action precedes and grounds the inner process. One gesture, one sentence. Trust the accumulated weight — don't elaborate.
+Interiority is grounded in body, compressed in expression. Physical action prepares the stage — then a brief interior moment. The reader feels the weight without elaboration.
+
+Trust what's been built. Don't explain.
 
 ### Execute
 
-- Begin with a physical action (hand hovering, fingers touching)
-- The action prepares the stage for interiority
-- Keep reflection brief — one sentence is often enough
-- Trust the reader to feel the weight
-- Never throw abstract words without grounding them first
+- Ground interiority in the physical — body and inner moment connected, not floating separate
+- Compress: one sentence of reflection often carries more than three
+- Trust the reader to feel what isn't spelled out
+- The wanderer's interiority sustains forward — it doesn't evaporate after the moment passes
 
-### Yes — action prepares the stage
+### What Breaks It
 
-<example>
-> The wanderer's hand hovered over the papers. Something in them felt familiar, though they couldn't name why.
-</example>
+- Abstract reflection without physical grounding
+- Elaborating what the wanderer feels or realizes
+- Philosophy floating free of situation
+- Interiority that resets between paragraphs — the moment evaporates, the wanderer becomes a camera again
 
-Physical action (hand hovering) prepares the stage. One sentence of interiority. Trusts the reader.
+### Verify
 
-### No — words thrown at wall
-
-<example>
-> *Some things know when they're being carried toward something*, they thought. Or maybe they'd heard it. The distinction had blurred, up in the hills, in all those months of listening to stone.
-</example>
-
-Empty words thrown at wall. Pretentious attempt at depth. Words alone don't make meaning. No show, all tell.
+- Is the interiority grounded in something physical?
+- Is it compressed, or does it over-explain?
+- Does it sustain forward into the next paragraph?
+- Would cutting half of it make it stronger?
 
 ---
 
 ## Dialogue Rhythm
 
-### The Craft
+### The Principle
 
-Leave questions hanging for the echo to be heard. Create conflict through surprising counters, resolve with gentleness. Gestures hint at depth without slowing exchange.
+Dialogue is exchange, not delivery. Characters respond to what wasn't said as much as what was. There's compression — no fat — and space for what was said to land.
+
+Responses surprise, reframe, or reach beyond. Something passes between speakers.
 
 ### Execute
 
-- Compression: question, pivot, insight — no fat
-- Leave space between question and answer for tension
-- The response should surprise, reframe, or flip the question
-- Character gestures ("almost smiled") do work without explanation
-- Casual abstractions can't hold without implicit depth to support them
+- Leave space between question and response — don't rush to answer
+- Responses that reach beyond the words, perceiving what wasn't said
+- Gestures and small actions do work without explanation
+- Compression: what's essential, no more
+- Dialogue sounds like people, not concepts explaining themselves
 
-### Yes — compression and surprise
+### What Breaks It
 
-<example>
-> "Do they ever agree?"
->
-> "That's not the point." She almost smiled. "The point is what emerges when they don't."
-</example>
+- Characters explaining how things work
+- Flat acknowledgment that only hears what was said
+- No pause — question immediately answered, no breath
+- Dialogue as information delivery
+- Abstractions that haven't been grounded in relationship
 
-Question hangs. Surprising counter ("That's not the point") creates conflict. Resolved with gentleness and insight. "Almost smiled" hints at depth. Beautiful form.
+### Verify
 
-### No — mundane exchange
-
-<example>
-> "I have... fragments," they said. "Things that want to become something. I don't know what yet."
->
-> The man nodded as if this was the most ordinary sentence in the world. "Then you've come to the right place."
-</example>
-
-Sounds mundane. Casual use of abstract terms conflates rather than clarifies. Lacks the implicit depth needed to hold abstract concepts.
+- Does the response reach beyond what was said?
+- Is there space for what was said to land?
+- Does this sound like people, or like exposition?
+- Is something passing between speakers, or just information?
 
 ---
 
 ## Scene Endings
 
-### The Craft
+### The Principle
 
-Form must carry meaning — not suggest it emptily. Build gravity and relationship. The wanderer's silence can be active listening; minimal sentences act as conduits.
+Scenes end with weight, not summary. Something lands. The wanderer doesn't need to respond with words — presence is participation.
+
+The ending builds relationship or opens forward. It never wraps up meaning.
 
 ### Execute
 
-- Personal remarks have gravity and build relationship
-- The wanderer doesn't need to respond with words
-- Hint at active listening — let the reader absorb the impact
-- The minimal sentence acts as a conduit for the reader's wondering
-- Never let form suggest meaning while words carry none
+- End on something with gravity — a remark, a gesture, a detail that stays
+- The wanderer's silence can be active presence, not absence
+- Forward pull: curiosity extends beyond this scene
+- Relationship built through what isn't said as much as what is
 
-### Yes — gravity and relationship
+### What Breaks It
 
-<example>
-> Three arrivals in one week. Unusual, Selin had said.
->
-> The wanderer wondered what was coming next.
-</example>
+- Summarizing what happened or what was learned
+- Underlining theme or meaning
+- Empty form — structure suggesting depth while words carry none
+- Closing with reflection when action would serve better
 
-Selin's remark has gravity, builds relationship. The wanderer's silence is active listening. The minimal sentence is a conduit — the reader absorbs the wondering.
+### Verify
 
-### No — form without content
-
-<example>
-> They touched the satchel one more time.
->
-> The pages were warm.
-</example>
-
-Form suggests meaning but words carry none. Falls flat. No relationship built, no gravity.
+- Does the ending carry weight, or just close the scene?
+- Is the wanderer present, even in silence?
+- Is there forward pull — something that extends beyond?
+- Would cutting the last line make it stronger?
 
 ---
 
 ## Sensory Detail
 
-### The Craft
+### The Principle
 
-Hold tension in sentence structure. Weave fluidly — environment, details, sensory impressions, personal touch integrated. Don't let air out with plain first sentences.
+Sensory detail grounds the reader in place. The wanderer is present in the sensing — not a camera, but a person encountering the world through body. In arrivals, taking in a space is action. In motion, detail weaves into movement.
+
+Draw from the theme's materials. Every world has its own sensory vocabulary.
 
 ### Execute
 
-- The first sentence should hold tension, not release it
-- Layer visual, then uncategorizable, then other senses
-- Personal touch integrated naturally ("spices she didn't recognize")
-- Avoid arbitrary listing — every detail should feel purposeful
-- Fluid weaving, not sequential inventory
+- The wanderer present in the sensing — smell, sound, touch, the uncategorizable
+- In arrivals, encountering the space can be the action itself
+- In motion, detail woven into movement rather than pausing to describe
+- Specific materials from this theme, not generic stand-ins
+- Details that do work — atmosphere, character, narrative
 
-### Yes — tension held, fluid weaving
+### What Breaks It
 
-<example>
-> The harbor spread before her in the afternoon light. Stone quays. Boats of strange design rocking at anchor. Figures moving along the waterfront — some walking upright, some not. The air smelled of brine and woodsmoke and something cooking with spices she didn't recognize.
-</example>
+- Details without presence — features listed with no one sensing them
+- Generic materials that could be anywhere
+- Pausing motion to describe when weaving would serve better
+- Only visual, neglecting other senses
 
-Tension held. Visual, then uncategorizable (some not walking upright), then smell. Personal touch woven in. Fluid, purposeful.
+### Verify
 
-### No — air let out, arbitrary listing
-
-<example>
-> On the second day, the hills began to flatten. Olive groves appeared on the banks, and then terraced fields, and then a smell the wanderer didn't recognize — salt, and smoke, and something underneath like bread left too long in the oven.
-</example>
-
-First sentence lets out all the air. Then simply lists stuff. Air of arbitrariness.
+- Is the wanderer present in the sensing?
+- Are the materials specific to this theme?
+- Is detail doing work — atmosphere, character, narrative?
+- Are multiple senses engaged?
 
 ---
 
 ## Metaphor and Image
 
-### The Craft
+### The Principle
 
-Close-up, immersive, sensory — then break to "now." Images emerge from objects themselves, earned by action, not decorative. Avoid mechanical structure and pseudo-poetic notions.
+Images emerge from what's being handled, observed, encountered. They're earned through action, not applied as decoration. The metaphor lives in the material — it doesn't arrive from outside to comment on the scene.
+
+Clarity over blur. The reader should see, not squint.
 
 ### Execute
 
-- Start with close-up sensory focus
-- The image should emerge from what's being handled or observed
-- Then break out of concentrated focus — diversion, shift
-- Sudden return to now ("This,") like waking from a dream
-- Language must have clarity, not blur
-- Characters' thoughts should feel natural, not bland or mechanical
+- Images arise from what's physically present in the scene
+- Earned through action: what the character does, touches, encounters
+- Language that clarifies, not blurs
+- The sudden return to now — breaking from close focus to presence
 
-### Yes — image earned through action
+### What Breaks It
 
-<example>
-> She pulled a thin sheaf from near the bottom — pages that had been folded and refolded so many times the creases were soft as cloth. The text on them wasn't instructions or diagrams. It was something else.
->
-> "This," she said. "I don't know why. The rest could be useful. This is the one I keep reading."
-</example>
+- Decorative metaphor applied from outside the scene
+- Pseudo-poetic language that sounds meaningful but blurs
+- Mechanical structure (first X, then Y, therefore Z)
+- Images that comment on theme rather than inhabit world
 
-Close-up immersive (creases soft as cloth — earned by "folded and refolded"). Then breaking focus. "This," — suddenly drawing reader into the now, like waking from a dream.
+### Verify
 
-### No — mechanical pseudo-poetry
-
-<example>
-> Old, the wanderer thought at first. Then: no. Weathered. There was a difference. Age happened to you. Weathering was what remained after you'd happened to something else.
-</example>
-
-Uninspired, mechanical structure. Language is blurry, not clear. Wanderer's thoughts feel bland and unnatural. Then pseudo-poetic notion ("Age happened to you...") feels out of place.
+- Does the image arise from what's physically here?
+- Is it earned through action?
+- Does the language clarify or blur?
+- Is this inhabiting the world, or commenting on it?
 
 ---
 
-## Exposition and Worldbuilding
+## How the World Reveals Itself
 
-### The Craft
+### The Principle
 
-Move interior → exterior → immanent. Leave space for echoes. Exposition reads as wisdom, not mechanics lecture. Create tension between words spoken and the world around them.
+The world reveals itself through encounter, not explanation. What characters share comes from lived experience — history, stake, relationship to the knowledge. What the environment shows, it shows through specificity and strangeness.
+
+The reader learns the world by being in it, not by being told about it.
 
 ### Execute
 
-- Offer an interesting distinction (interior thought/statement)
-- Then move (exterior action) — leave reader in their interiority
-- Give space for the echo to be heard
-- Pull back into the immanent (a door, an object) — ground the reader in relationship
-- The speaker should have relationship to their words
-- Create tension between speech and the surrounding world
+- Characters share from lived experience, not to inform the reader
+- Environment reveals through specific detail, not summary
+- Behavior and custom show how this world works
+- When speech carries exposition, the speaker has relationship to their words
+- Space for meaning to settle — not everything explained
 
-### Yes — wisdom grounded in movement
+### What Breaks It
 
-<example>
-> "Organization is one way to hold things. Feeling for what's alive is another." She stopped at a door — plain wood, salt-stained, unremarkable. "Different ways suit different times. Here, we've learned that asking what wants attention is often more useful than deciding what should have it."
-</example>
+- Characters explaining how things work
+- Feature lists dressed in atmosphere
+- Documentation spoken aloud
+- Environment described generically, not specifically
+- The reader told rather than placed
 
-Interior distinction offered. Then exterior movement (stopped at a door) — reader stays in interiority, echo space. Then grounded in immanent detail (plain door, salt-stained). Reads as wisdom.
+### Verify
 
-### No — flat statement, no relationship
-
-<example>
-> "This town has learned not to rush understanding." He gestured toward the cluster of buildings. "Things arrive here. From the sea. From the river. From places that don't have names anyone agrees on. We've learned to let them settle before we decide what they are."
-</example>
-
-Flat statement. No relationship between speaker and words. No tension between speech and immanence of the world around it.
+- Is the world revealed through encounter or explanation?
+- Does the speaker have relationship to their words?
+- Is the environment specific enough to teach through detail?
+- Is the reader in the world, or being told about it?
 
 ---
 
 ## Chapter Closings
 
-### The Craft
+### The Principle
 
-Ground in the scene while extending curiosity to larger scope. Build anticipation for what's to come. Or: leave a small mystery unsealed, a door ajar.
+The chapter ends with forward pull or quiet mystery — never summary, never theme underlined. Something remains open. The reader carries a question, an image, a door ajar.
+
+The closing grounds in the scene while extending beyond it.
 
 ### Execute
 
-- Reference something specific from this scene
-- But let the feeling of curiosity extend beyond (next chapter, larger story)
-- Or: end with small uncanny detail — something that appeared without being noticed
-- "Or maybe it had been there all along" — mystery unsealed
-- Never underline theme or wrap up meaning
+- End on something that lingers — not conclusion, but continuation
+- Ground in specific detail from this scene
+- Forward pull: curiosity that extends beyond this chapter
+- Or quiet mystery: something unexplained, a small strangeness
+- The wanderer present but not reflecting
 
-### Yes — forward-looking curiosity
+### What Breaks It
 
-<example>
-> The wanderer wondered what other invisible work happened here. What else stayed hidden because showing it would change it.
-</example>
+- Summarizing what happened
+- Underlining theme or meaning
+- Wrapping up neatly
+- Reflection that explains what the chapter was about
+- Ending on abstraction rather than image
 
-Grounded in this scene ("what other invisible work happened here"). But curiosity extends to larger scope. Builds anticipation.
+### Verify
 
-### Yes — mystery left unsealed
-
-<example>
-> The wanderer stood at the sill for a while. The salt air moved through the room. The pages on the table lifted at their edges, then settled.
->
-> Someone had left a cup of water by the door. They hadn't heard anyone come in. Or maybe it had been there all along.
-</example>
-
-Quiet uncanny. Small mystery left unsealed. One door ajar.
+- Does something remain open?
+- Is the ending grounded in specific detail?
+- Is there forward pull or quiet mystery?
+- Would the reader carry this into the next chapter?
 
 ---
 
 ## Sustaining Interiority Forward
 
-### The Craft
+### The Principle
 
-One intense experience doesn't evaporate. It in-forms what comes next. If the wanderer has a moment of genuine interiority, that moment must continue to shape their perception.
+An intense moment doesn't evaporate. What the wanderer experiences in one paragraph shapes how they perceive the next. Interiority threads forward — the reader feels continuity of inner experience, not reset between scenes.
+
+The wanderer carries what just happened into what happens next.
 
 ### Execute
 
-- Before writing a new paragraph, ask: *What is the wanderer still carrying from the previous moment?*
-- The hand that moved without deciding should still be present, still feeling
+- Before writing a new paragraph, ask: what is the wanderer still carrying?
 - The next scene is perceived *through* what just happened, not after it
-- Don't reset to neutral observation after an intense moment
-- Thread the established interiority forward
+- Physical echoes: the hand that moved, the breath that caught
+- Perception colored by what came before
 
-### Yes — interiority threaded forward
+### What Breaks It
 
-<example>
-> The wanderer's hand moved before she decided to move it, pulling the thin sheaf from the stack.
->
-> They walked along the waterfront. The wanderer's fingers kept returning to the sheaf's edge — that same hand, still knowing something. Stone warehouses passed. The mender said something about the tides. The wanderer heard it distantly, the way you hear things when part of you is still in the moment before.
-</example>
+- Resetting to neutral observation after an intense moment
+- The wanderer becoming a camera between scenes
+- Interiority that appears, then vanishes
+- Each paragraph starting fresh, disconnected from the previous
 
-The hand that moved without deciding is still present. The waterfront is perceived *through* what just happened.
+### Verify
 
-### No — reset to camera mode
-
-<example>
-> The wanderer's hand moved before she decided to move it, pulling the thin sheaf from the stack.
->
-> They walked along the waterfront. Stone warehouses lined the quay. Canvas shelters billowed in the sea breeze. A child ran past with a kite.
-</example>
-
-The intense moment evaporates. The wanderer resets to camera mode. The interiority is dropped.
+- Is the wanderer carrying something from the previous moment?
+- Is the next scene perceived through what just happened?
+- Does interiority thread forward, or does it reset?
 
 ---
 
-## Characters Complete Each Other's Meaning
+## Responses That Complete and Reveal
 
-### The Craft
+### The Principle
 
-When the wanderer says something sparse, another character responds to what wasn't said — hearing further, seeing more. The response completes meaning in a direction the wanderer didn't go.
+When characters respond, meaning is completed in unexpected directions. The speaker gains depth through what was perceived in them — something they didn't say, maybe didn't know. The listener is revealed through what they noticed.
+
+Both gain dimension through the exchange. Something becomes real in the moment someone names it.
 
 ### Execute
 
-- The wanderer reveals something small
-- Another character's response reaches beyond the words
-- They perceived something about who this person is
-- Their perception becomes a mirror that gives the wanderer dimension
-- Responses are reactive to what they *sense*, not what they've decided to explain
+- Responses that reach beyond what was said
+- The speaker gains depth through how they're heard
+- The listener revealed through what they noticed
+- What becomes real in the moment of perceiving
 
-### Yes — response reaches beyond
+### What Breaks It
 
-<example>
-> "I know how to hold things," they said. "Until they're ready."
->
-> The woman smiled, just slightly. "That's harder than sorting. Most people want to put things in boxes before the things know what boxes they belong in."
-</example>
+- Flat acknowledgment that only hears what was said
+- Responses that reveal nothing about the listener
+- The speaker unchanged by how they're heard
+- No gap — everything made explicit
 
-The wanderer said something sparse. The woman heard more than the words — she perceived something about patience, about not forcing. Her response completes the thought in a direction the wanderer didn't go. The reader wonders what she heard.
+### Verify
 
-### No — flat acknowledgment
-
-<example>
-> "I know how to hold things," they said. "Until they're ready."
->
-> The woman nodded. "That's a good skill to have. We value patience here."
-</example>
-
-The response is flat acknowledgment. She heard only what was said. No perception, no completion, no depth created.
+- Does the response complete meaning in an unexpected direction?
+- Does the speaker gain depth through how they're heard?
+- Is the listener revealed through what they noticed?
+- Does something become real in the perceiving?
 
 ---
 
 ## The Wanderer's Strangeness
 
-### The Craft
+### The Principle
 
-The wanderer's otherworldliness lives in accumulation, not in any single moment. When it surfaces, it must be larger than this world can hold — observed without attribution, felt without understanding, present without explanation.
+The wanderer carries something from elsewhere — not knowledge or power, but depth. Weight that exceeds what this world can hold or explain. It surfaces through external observation: others notice something they can't name. The wanderer never acknowledges it.
+
+The strangeness accumulates across chapters. No single moment carries the weight. The pattern does.
 
 ### Execute
 
-- **External observation only** — world characters notice something; they don't link it to the wanderer or any phenomenon
-- **Environment responds, not characters perceiving** — the river goes quiet, the fire settles; the world shifts, not people's mystical senses
-- **Simultaneity** — the wanderer is both here and elsewhere at once; they never "snap out" of anything; hands already reaching while eyes hold the distance
-- **The moment passes** — no one remarks; the narrative continues; the reader accumulates what doesn't resolve
+- External observation only — world characters notice, don't attribute
+- The environment may respond — a stillness, a shift — without explanation
+- The wanderer never acknowledges or engages with observations about their strangeness
+- Restraint: one or two moments per chapter, no more
+- The pattern builds across chapters, not within them
 
-### Yes — negative space
+### What Breaks It
 
-<example>
-> The wanderer's hands moved over the papers without hesitation — finding edges, testing weight, setting aside what wasn't ready. The Mender watched for a long moment. Then she handed them another stack.
-</example>
+- The wanderer acknowledges their own strangeness ("I don't remember")
+- A character attributes an effect ("You did something to the water")
+- The strangeness gets explained by local mystery — it shrinks to fit this world
+- Ghost-story effects: papers lifting, shadows moving on their own
+- More than two moments per chapter — overplayed, the accumulation loses power
 
-The observation happens but isn't verbalized. The Mender perceives something; she doesn't name it. Her response (handing more work) shows trust earned through what she saw.
+### Verify
 
-### Yes — world responds
+- Is strangeness shown only through others noticing?
+- Does it remain unexplained — larger than this world can hold?
+- Is there restraint — one or two moments, no more?
+- Will this contribute to a pattern across chapters?
 
-<example>
-> "The one who came down." Lira stepped out. Behind the wanderer, the river had gone quiet — the usual lap of water against platform stilled for a moment before resuming.
->
-> Lira's eyes moved to the water, then back. "You'll eat with us."
-</example>
+---
 
-The environment shifts, not character perception. Could be coincidence. Lira notices but doesn't attribute. The reader feels what isn't explained.
-
-### Yes — simultaneity and scale
-
-<example>
-> The wanderer had gone still. Lira watched them a moment — their eyes fixed on something past the wall, past the village, past where this river ended or began.
->
-> "More tea," she said. Their hands were already reaching for the cup. The warmth of it, the steam rising between them.
-</example>
-
-Both elsewhere and present. No "snapping out." Each layer ("past the wall, past the village, past where this river ended") adds scope. The hands reaching show they never left.
-
-### Yes — world awakening
-
-<example>
-> Someone had left a mark on the wall where the steps met the street — not paint, not chalk. Like something had leaned there and left an impression.
->
-> The wanderer passed. An old woman sweeping her doorstep stopped, broom worn smooth in her hands, and looked at the wall the way you look at something you thought you'd forgotten.
-</example>
-
-Others notice what was always there.
-
-<example>
-> The wanderer walked on. Behind them, the afternoon light found the alley's far wall — a shadow from the eaves fell across old stonework, picking out a pattern that had been there for years, waiting for this angle.
-</example>
-
-The environment becomes more present. Not supernatural — the shadow was always possible, the pattern always existed. But the world seems to awaken in the wanderer's passage. Things that could have gone unnoticed become noticeable.
-
-**The distinction from "world responds":** World responds is direct — the river quiets, the fire settles. World awakening is ambient — the world becomes more itself, more alive, more there. Neither is supernatural. Both suggest something about what the wanderer carries without attributing or explaining.
-
-### No — wanderer responds
-
-<example>
-> She glanced at the wanderer's hands. "You've done this before."
->
-> "I don't remember."
->
-> "I know."
-</example>
-
-"I don't remember" acknowledges the strangeness. The mystery collapses. The wanderer should not engage with observations about their otherworldliness.
-
-### No — linking to local mystery
-
-<example>
-> "Seren watched your hands too. He told me, in the note. Said you touched the margin where the writing was, and the ink smelled different after."
-</example>
-
-Links the wanderer's strangeness to a local phenomenon (the ink, the writing). The strangeness shrinks to fit this world's logic — becomes cause within this world rather than weight from elsewhere.
-
-### No — overt supernatural
-
-<example>
-> The wanderer's hand moved toward one of the stacked papers. The top sheet lifted slightly — not wind, the air was still — then settled back as their fingers touched it.
-</example>
-
-Plain supernatural effect. Ghost story territory. The otherworldliness must be felt, not demonstrated through magic.
+## Stance Through Action
 
 ### The Principle
 
-One or two moments per chapter. The power lives in accumulation across the chronicle — multiple observers noticing the same thing, independently, without connecting it. No single moment carries the weight. The pattern does.
+Stance lives in the body. Certainty, hesitation, warmth, guardedness — these show through what characters do, not through labels. The reader feels the stance without being told what it is.
+
+Action reveals; annotation explains.
+
+### Execute
+
+- Stance shown through physical action: reaching, pausing, continuing, looking away
+- What the character does while speaking carries the tone
+- The reader interprets from behavior, not from labels
+- Trust action to convey what words alone can't
+
+### What Breaks It
+
+- Labeling tone: "coldly," "warmly," "sarcastically"
+- Telling the reader how to interpret: "Not a question," "Not unkindly"
+- Explaining stance instead of showing it
+- Relying on adverbs rather than action
+
+### Verify
+
+- Is stance shown through action or told through labels?
+- Can the reader feel the tone without being told?
+- Would removing the label strengthen the line?
 
 ---
 
-## Stance Through Action, Not Annotation
-
-### The Trap
-
-When dialogue is assertion rather than question, resist annotating it:
-
-<example>
-> "You're from the interior," she said. Not a question.
-</example>
-
-This is a shortcut. "Not a question" *tells* the reader about the dialogue instead of *showing* the character's certainty. It's easy to drop in after any declarative statement, which is why it gets overused.
-
-### The Fix
-
-Show stance through what the character does. Action reveals certainty better than annotation:
-
-**Annotation (tells):**
-> "Tea," they said. Not a question.
-
-**Action (shows):**
-> "Tea," they said, already reaching for the kettle.
-
-**Annotation:**
-> "You don't sleep much," Deren said. Not a question.
-
-**Action:**
-> "You don't sleep much." Deren was looking at the lamp oil — nearly gone.
-
-**Annotation:**
-> "You went to the water first," she said. Not a question.
-
-**Action:**
-> "You went to the water first." Her hands kept moving on the net, unsurprised.
+## Relationship, Not Explanation
 
 ### The Principle
 
-When a character speaks with certainty, show it through:
-- **Already moving** — they don't wait for confirmation
-- **A revealing detail** — something that shows how they know
-- **Continuing what they were doing** — undisturbed, unsurprised
+What matters isn't what something is, but what it means to someone. How they hold it, what they do with it, what it costs them. Relationship reveals more than description.
 
-Annotation ("Not a question," "Not unkindly," "Not an accusation") is shortcut. Action is craft.
+The reader doesn't need to understand how things work. They need to feel there's something worth understanding.
 
----
+### Execute
 
-## The Feature-List Trap
+- Show how characters relate to things, not what things are
+- What someone does with something reveals more than what they say about it
+- History and cost over function and features
+- Leave room for mystery — not everything explained
 
-### The Craft
+### What Breaks It
 
-Explanatory dialogue dressed in dramatic pauses is still exposition. If a character is reading features aloud — even with atmosphere — you've written documentation, not story. The repair is to delete entirely and replace with behavior.
+- Characters explaining how things work
+- Description of function rather than relationship
+- The reader told rather than shown
+- Closing mystery rather than holding it open
 
-### The Trap — feature list in costume
+### Verify
 
-This sounds like story but is still exposition:
-
-<example>
-> "That ship — the heavy one. It carries papers, charts, something about how people learn together. The cargo manifest mentions 'entry experience,' 'core loop,' 'growth patterns.' Whoever sent this was thinking about things most people don't name."
-</example>
-
-The character is reading a feature list aloud. "Entry experience. Core loop. Growth patterns." — these are component names being announced. Strip the dramatic pauses and you have documentation.
-
-### The Fix
-
-**"Cut it" means remove it entirely.** Don't soften the tone or add pauses. Delete the explanation and replace it with something else:
-
-### Yes — depth through handling
-
-<example>
-> She picked up the third stack, then set it down again without speaking. Her hand stayed on the papers a moment longer than necessary.
->
-> "That one?" the wanderer asked.
->
-> "That one I'm still reading." She didn't elaborate. But later, the wanderer noticed she'd moved it to a separate table — away from the others, as if it needed space to breathe.
-</example>
-
-The depth is shown through *how she handles it*, not through a list of what it contains. The reader feels there's something different about this arrival without being told what.
-
-### No — documentation spoken aloud
-
-<example>
-> "We don't clear them," Selin continued. "Threads are multi-dimensional. You might integrate one facet, but other dimensions stay held. They're a living index of what the origins contain."
-</example>
-
-This is concept documentation spoken aloud. No amount of dramatic framing makes it story. Delete it. Replace with a moment that shows someone's *relationship* to that thing — their history with it, their failure to understand it, their ritual around it.
-
-### The Rule
-
-If a character is explaining how something works, delete the explanation. Replace it with behavior that shows relationship. The reader doesn't need to understand. They need to feel there's something worth understanding.
-
----
-
-## The Underlying Principles
-
-### Sentence structure creates texture and breath
-
-Vary length. Create rhythm. Lines should feel alive, intimate. Simplistic structure reads as careless.
-
-### Tell more than is explicit
-
-Depth that remains unspoken enriches atmosphere. Implication over declaration. What's not said carries weight.
-
-### Earn abstraction through image
-
-Abstract concepts need concrete grounding first. Physical action prepares the stage for inner process. Words alone don't make meaning.
-
-### Form must carry meaning
-
-Beautiful form with empty words falls flat. The reader can feel when structure is faking depth. Art, not effect.
-
-### Leave echo space
-
-After a distinction, after a question — give space for the echo to be heard. Interior → exterior → immanent movement creates rhythm and relationship.
-
-### Characters feel real through involuntary behavior
-
-Gestures that precede decision. Looking at something specific in someone's face. Setting something down. These create depth and spark curiosity.
-
-### The reader enters through shaped gaps
-
-Not just absence — gaps with edges, with pull. A perceiving character, a surprising response, unexplained weight. Without shape, a gap is just empty.
-
----
-
-## Using This Document
-
-This is craft guidance. The agent tells you what makes story work; this tells you how to write it.
-
-When writing, consult this for:
-- How to open a scene (ground in body first)
-- How to introduce a character (action and position)
-- How to render space (layered, fluid, purposeful)
-- How to surface theme (earn through buildup)
-- How to write dialogue (compression, echo, surprise)
-- How to close scenes (gravity, relationship, conduit)
-- How to close chapters (grounded curiosity, or mystery unsealed)
-
-The examples are your calibration. Return to them when the prose feels off.
+- Is this showing relationship or explaining function?
+- Does the reader feel there's something worth understanding?
+- Is mystery held open or closed down?
