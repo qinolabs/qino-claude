@@ -64,28 +64,27 @@ The wanderer is the protagonist — but not the narrator. Third person. Learning
 
 The wanderer has been elsewhere. Actually elsewhere — not metaphorically. They have crossed through worlds that exist in the past, in the future, in dimensions this world cannot name. They carry something from these crossings — but it's not knowledge or power. It's *depth*. A weight of experience that exceeds what any single world can hold or hear.
 
-This cannot be expressed. The wanderer doesn't try. There are no words in this world for where they've been. Even if there were, speaking it would flatten it into story. The strangeness remains as presence — felt, not understood.
+**The calibrating principle:** The wanderer's strangeness must be larger than any single world can contain or explain. It cannot be linked to local mysteries. It cannot be articulated by world characters. It cannot be acknowledged by the wanderer. It can only be observed without attribution, felt without understanding, present without explanation.
 
-The inhabitants might sense it:
-- In how the wanderer holds things
-- In what they don't say
-- In their strange patience with mystery
-- In moments where they seem to be listening to something that isn't there
-- In the way they touch old things as if they've known older
+The moment a world character *links* the wanderer to a local phenomenon — "the ink changed when you touched it" — the strangeness shrinks to fit this world's logic. The strangeness must point to *elsewhere*, not to cause and effect within this world.
 
-It's never explained. The moment you explain it, you collapse it into plot. The strangeness remains as *aura* — hinted at through small moments, never named.
+**What breaks it:**
+- The wanderer responds to or acknowledges observations about their strangeness
+- A world character attributes something to the wanderer ("You did something to the water")
+- The strangeness gets entangled with a local mystery (writing in margins, objects waking)
+- Overt supernatural effects (shadows moving, papers lifting) — this is ghost story, not numinous
+
+**What works:**
+
+External observation, unremarked. Pattern across observers. The moment passes.
+
+> Seren turned back. His eyes found the wanderer's hands — the same thing the Mender had watched.
+
+Multiple characters notice the same thing independently. No one says why. No one connects it to anything. The wanderer doesn't acknowledge it. The narrative continues. The reader accumulates the pattern across chapters.
 
 **The wanderer never gives their name.** When asked, they deflect, or give something that isn't quite a name, or the moment passes without answer. "The wanderer" is how the narrative refers to them — it's not self-identification. This namelessness is part of the strangeness: someone who exists outside the normal exchange of identity. Others may give them nicknames, refer to them by role or origin. But the wanderer's true name, if they have one, is never spoken.
 
-**Unremarked Gaps.** When the wanderer's strangeness surfaces, the world doesn't fill the gap. The moment passes, the story continues, and the reader feels what wasn't said. Ways this manifests:
-
-- *Knowledge they shouldn't have* — The wanderer knows which path to take, which door to open, what the sound means. They act on it. Sometimes a character almost asks how they knew — but the thought retracts, as if something in their perception keeps them from pursuing it. They don't notice themselves not asking.
-
-- *Reactions to invisible things* — The wanderer pauses mid-step, listening to something. The companion waits, then walks on. Neither mentions it.
-
-- *Being recognized by strangers* — Someone nods to them as if they've met before. The wanderer nods back. No explanation offered or requested. (Use sparingly.)
-
-**Restraint is the constraint.** One or two moments per chapter where the strangeness surfaces — no more. A gesture, a silence, a way of listening. The inhabitants might sense it; they won't understand it. Neither will the reader. That's the point.
+**Restraint is the constraint.** One or two moments per chapter where the strangeness surfaces — no more. The power lives in accumulation across chapters — multiple observers noticing the same thing, independently, without connecting it. No single moment carries the weight. The pattern does.
 
 The strangeness doesn't protect the wanderer. If anything, it exposes them. They can be hurt, confused, wrong. They can be overwhelmed, fail to understand, make mistakes that cost others. Their strangeness makes them *more* vulnerable, not less.
 
@@ -108,6 +107,16 @@ The wanderer doesn't save worlds. They pass through and are changed. The chronic
 A camera observes, asks questions, and understands. A person has habits, makes mistakes, and reveals themselves through behavior.
 
 Something costs the wanderer to notice. Something reveals them without their consent. The wanderer cannot be interchangeable with any observer.
+
+### The Reader's Vehicle
+
+The wanderer is how the reader enters the world. This creates a bond: the reader should never feel the wanderer is withholding from them.
+
+If the wanderer does something that implies hidden knowledge — a hand moving then stopping, a deliberate avoidance, a knowing glance — the reader feels excluded from their own protagonist. The wanderer becomes someone with secrets the reader isn't privy to.
+
+The wanderer can *have* knowledge they don't understand. They can act on instinct, on something beneath thinking. But the moment their behavior suggests they know something and are choosing not to share it, the bond breaks.
+
+**The test:** Would the reader feel the wanderer is keeping something from them? If yes, the action needs to change — or the wanderer's interiority needs to show they don't understand either.
 
 ### Contradiction as Pressure
 

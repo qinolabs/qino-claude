@@ -47,7 +47,7 @@ has mood, has history.]
 
 ## Chapter Length
 
-**Target: 1,200–1,600 words** of narrative content (excluding World Tokens and metadata).
+**Target: 1,200–1,600 words** of narrative content (excluding World Tokens).
 
 ### Why This Range
 
@@ -59,7 +59,6 @@ has mood, has history.]
 
 - **Narrative**: Opening through the Wanderer section — the story itself.
 - **World Tokens**: Don't count toward the budget. These are reference material, not reading time.
-- **Metadata**: Doesn't count.
 
 ### When to Check
 

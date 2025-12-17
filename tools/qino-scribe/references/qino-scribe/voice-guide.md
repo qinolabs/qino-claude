@@ -513,6 +513,99 @@ The response is flat acknowledgment. She heard only what was said. No perception
 
 ---
 
+## The Wanderer's Strangeness
+
+### The Craft
+
+The wanderer's otherworldliness lives in accumulation, not in any single moment. When it surfaces, it must be larger than this world can hold — observed without attribution, felt without understanding, present without explanation.
+
+### Execute
+
+- **External observation only** — world characters notice something; they don't link it to the wanderer or any phenomenon
+- **Environment responds, not characters perceiving** — the river goes quiet, the fire settles; the world shifts, not people's mystical senses
+- **Simultaneity** — the wanderer is both here and elsewhere at once; they never "snap out" of anything; hands already reaching while eyes hold the distance
+- **The moment passes** — no one remarks; the narrative continues; the reader accumulates what doesn't resolve
+
+### Yes — negative space
+
+<example>
+> The wanderer's hands moved over the papers without hesitation — finding edges, testing weight, setting aside what wasn't ready. The Mender watched for a long moment. Then she handed them another stack.
+</example>
+
+The observation happens but isn't verbalized. The Mender perceives something; she doesn't name it. Her response (handing more work) shows trust earned through what she saw.
+
+### Yes — world responds
+
+<example>
+> "The one who came down." Lira stepped out. Behind the wanderer, the river had gone quiet — the usual lap of water against platform stilled for a moment before resuming.
+>
+> Lira's eyes moved to the water, then back. "You'll eat with us."
+</example>
+
+The environment shifts, not character perception. Could be coincidence. Lira notices but doesn't attribute. The reader feels what isn't explained.
+
+### Yes — simultaneity and scale
+
+<example>
+> The wanderer had gone still. Lira watched them a moment — their eyes fixed on something past the wall, past the village, past where this river ended or began.
+>
+> "More tea," she said. Their hands were already reaching for the cup. The warmth of it, the steam rising between them.
+</example>
+
+Both elsewhere and present. No "snapping out." Each layer ("past the wall, past the village, past where this river ended") adds scope. The hands reaching show they never left.
+
+### Yes — world awakening
+
+<example>
+> Someone had left a mark on the wall where the steps met the street — not paint, not chalk. Like something had leaned there and left an impression.
+>
+> The wanderer passed. An old woman sweeping her doorstep stopped, broom worn smooth in her hands, and looked at the wall the way you look at something you thought you'd forgotten.
+</example>
+
+Others notice what was always there.
+
+<example>
+> The wanderer walked on. Behind them, the afternoon light found the alley's far wall — a shadow from the eaves fell across old stonework, picking out a pattern that had been there for years, waiting for this angle.
+</example>
+
+The environment becomes more present. Not supernatural — the shadow was always possible, the pattern always existed. But the world seems to awaken in the wanderer's passage. Things that could have gone unnoticed become noticeable.
+
+**The distinction from "world responds":** World responds is direct — the river quiets, the fire settles. World awakening is ambient — the world becomes more itself, more alive, more there. Neither is supernatural. Both suggest something about what the wanderer carries without attributing or explaining.
+
+### No — wanderer responds
+
+<example>
+> She glanced at the wanderer's hands. "You've done this before."
+>
+> "I don't remember."
+>
+> "I know."
+</example>
+
+"I don't remember" acknowledges the strangeness. The mystery collapses. The wanderer should not engage with observations about their otherworldliness.
+
+### No — linking to local mystery
+
+<example>
+> "Seren watched your hands too. He told me, in the note. Said you touched the margin where the writing was, and the ink smelled different after."
+</example>
+
+Links the wanderer's strangeness to a local phenomenon (the ink, the writing). The strangeness shrinks to fit this world's logic — becomes cause within this world rather than weight from elsewhere.
+
+### No — overt supernatural
+
+<example>
+> The wanderer's hand moved toward one of the stacked papers. The top sheet lifted slightly — not wind, the air was still — then settled back as their fingers touched it.
+</example>
+
+Plain supernatural effect. Ghost story territory. The otherworldliness must be felt, not demonstrated through magic.
+
+### The Principle
+
+One or two moments per chapter. The power lives in accumulation across the chronicle — multiple observers noticing the same thing, independently, without connecting it. No single moment carries the weight. The pattern does.
+
+---
+
 ## Stance Through Action, Not Annotation
 
 ### The Trap
