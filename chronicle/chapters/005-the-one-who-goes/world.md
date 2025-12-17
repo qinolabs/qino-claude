@@ -22,7 +22,7 @@ The wanderer didn't climb the hillside steps. Didn't tell Seren they're going. T
 
 ## The World's Breath
 
-Summer holding, but the light is shifting — morning gold on silt-water, the promise of movement after stillness. The harbor keeps its rhythm below while the river quay prepares for departure. The town holds space for leaving the way it holds space for arriving. But leaving is harder. Leaving means choosing.
+The harbor town where river meets sea. Stone quays where water changes color — brown current surrendering to grey-green tide. The Mender's building with its papers and threads. Seren's archive half-carved into the hillside. Ships arriving, shapes passing between them, the town holding its patient rhythm. Summer light on water.
 
 ---
 

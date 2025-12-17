@@ -22,7 +22,7 @@ The wanderer didn't climb the hillside steps. Didn't tell Seren they're going. T
 
 ## The World's Breath
 
-Late afternoon turning to evening. The sun catches the Mender's threads and turns them to fire — red and blue and green now, the green ones moving on their own. Two keepers seeing the same pattern from different rooms. The wanderer sits at the stone quay, watching lamp-light break on water, coordinates patient in their pocket.
+The harbor town where river meets sea. Stone quays where water changes color — brown current surrendering to grey-green tide. The Mender's building with its papers and threads. Seren's archive half-carved into the hillside. Ships arriving, shapes passing between them, the town holding its patient rhythm. Summer light on water.
 
 ---
 

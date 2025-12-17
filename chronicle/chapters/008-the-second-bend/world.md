@@ -25,7 +25,7 @@ The threads move. The margins fill. The keepers in the middle of something they'
 
 ## The World's Breath
 
-Second night on the river, but not alone this time. A village built on platforms, the current moving underneath, smoke rising into evening air. The wanderer ate strange bread and was watched by strangers who already knew their story. Lira's hands stained dark, tracing patterns on a table. Deren laughing with people she knows. The interior getting closer — five days now, maybe less.
+The river passage between coast and interior. Brown water running through green distance, banks drawing closer as the channel narrows. Villages built on platforms and bridges, swaying with the current. Smoke rising, children watching from rope bridges, strangers who know the river's stories. The interior getting closer with each bend.
 
 ---
 

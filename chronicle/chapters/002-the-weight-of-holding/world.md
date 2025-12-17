@@ -19,7 +19,7 @@ She has always worked alone. Now the work has grown beyond pretending otherwise.
 
 ## The World's Breath
 
-Summer deepening. The harbor busy with shapes that pass between ships. The town holds its patience, but something has accelerated—more arrivals, more things waiting to be understood. The Mender's building is full. The water itself seems to carry more.
+The harbor town where river meets sea. Stone quays where water changes color — brown current surrendering to grey-green tide. The Mender's building with its papers and threads. Seren's archive half-carved into the hillside. Ships arriving, shapes passing between them, the town holding its patient rhythm. Summer light on water.
 
 ---
 

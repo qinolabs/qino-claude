@@ -25,7 +25,7 @@ You row like someone who's afraid to stop. Deren said it without accusation, and
 
 ## The World's Breath
 
-First night on the river. The sandbar warm from afternoon sun, now cooling under stars. Fire making sounds beside water making sounds. The boat pulled up on silt, waiting for dawn. The wanderer's hands bandaged, resting. Deren's presence — practical, not unkind. The green distance upstream, invisible in darkness, but present. Something to be rowed toward when the light returns.
+The river passage between coast and interior. Brown water running through green distance, banks drawing closer as the channel narrows. Villages built on platforms and bridges, swaying with the current. Smoke rising, children watching from rope bridges, strangers who know the river's stories. The interior getting closer with each bend.
 
 ---
 

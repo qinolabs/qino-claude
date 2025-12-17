@@ -481,6 +481,45 @@ Every chapter should leave at least one pressure building.
 - Where were they last seen?
 - Did anyone sense their strangeness? Add to "What remains unspoken"
 
+### Update The World's Breath (When Needed)
+
+**The World's Breath captures environmental presence** — what's physically here, who's here, the immediate spatial context. It answers: "What am I looking at?"
+
+**Update only when:**
+- The sensory environment changes significantly (new location, major spatial shift)
+- What's physically present changes (people arrive or depart, objects appear)
+- The immediate atmospheric presence shifts noticeably
+
+**Do NOT update for:**
+- Routine chapter progressions within the same space
+- Internal character developments
+- Plot events that don't change the physical environment
+
+**Why stability matters:** Image generation uses World's Breath to ground all images in consistent atmospheric context. If it changes every chapter, images lose coherence. Characters and objects encountered carry the atmosphere of when they were first discovered — this is the "gently chapter-contextual" quality that makes tokens feel situated rather than generic.
+
+**Example — update needed:**
+- Chapter moves from the observatory to the rift valley camps → Update
+- A crowd gathers in a previously empty hall → Update
+
+**Example — no update needed:**
+- Wanderer has a conversation in the same location → No update
+- Wanderer learns something new about a character → No update
+
+### Update The Season (Rarely)
+
+**The Season captures temporal quality** — time of year, how light behaves, the broader envelope of time. It answers: "When is this? How does light feel?"
+
+**Update only when:**
+- Significant time passes between chapters
+- Seasons actually change
+- The quality of light shifts noticeably (solstice, weather patterns)
+
+The Season and World's Breath are **orthogonal dimensions**:
+- World's Breath = WHERE/WHAT (environmental presence)
+- The Season = WHEN/HOW (temporal envelope, light quality)
+
+Both can be stable for many chapters. Neither should track routine progression.
+
 ### Sync World Tokens to Characters/Locations
 
 **For each World Token written in this chapter:**
@@ -601,7 +640,8 @@ Wait for their response.
 
 For initial world.md:
 - Pressures section starts empty (will fill after first chapter)
-- World's Breath drawn from theme
+- **World's Breath** drawn from theme — the immediate environmental presence (what's here, who's here, what's visible). This establishes atmospheric context for image generation.
+- **The Season** drawn from theme — when is this, how does light behave
 - Wanderer section sparse (will grow)
 - Characters/Locations empty
 - **Unexplored section populated from theme** — list places the theme implies

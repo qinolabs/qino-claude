@@ -22,7 +22,7 @@ The wanderer didn't climb the hillside steps. Didn't tell Seren they're going. T
 
 ## The World's Breath
 
-Morning after a night at the fountain. The hillside steps climbing away from the harbor, stone dust and dry herbs in the air. Seren's ledgers hold more than facts now — something writes in his margins, something that names what he records. The wanderer carries coordinates and questions back down toward the water.
+The harbor town where river meets sea. Stone quays where water changes color — brown current surrendering to grey-green tide. The Mender's building with its papers and threads. Seren's archive half-carved into the hillside. Ships arriving, shapes passing between them, the town holding its patient rhythm. Summer light on water.
 
 ---
 
