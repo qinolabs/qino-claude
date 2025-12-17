@@ -19,7 +19,7 @@ She has always worked alone. Now the work has grown beyond pretending otherwise.
 
 ## The World's Breath
 
-Summer deepening. The harbor busy with shapes that pass between ships. The town holds its patience, but something has accelerated—more arrivals, more things waiting to be understood. The Mender's building is full. The water itself seems to carry more.
+Early summer at the Meeting Point. The water changes color where brown current surrenders to grey-green tide. The Mender works in the shallows, sorting what arrives. The wanderer sits on a flat stone above the tide line, hands remembering something their mind doesn't know yet.
 
 ---
 

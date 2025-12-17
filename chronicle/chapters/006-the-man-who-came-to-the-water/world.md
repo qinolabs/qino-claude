@@ -25,7 +25,7 @@ You row like someone who's afraid to stop. Deren said it without accusation, and
 
 ## The World's Breath
 
-First night on the river. The sandbar warm from afternoon sun, now cooling under stars. Fire making sounds beside water making sounds. The boat pulled up on silt, waiting for dawn. The wanderer's hands bandaged, resting. Deren's presence — practical, not unkind. The green distance upstream, invisible in darkness, but present. Something to be rowed toward when the light returns.
+Dawn at the river quay, gold light on silt. Seren's grey robes wrong against the waterfront, his farewell still echoing. The first bend already behind them, the town vanishing into morning haze. The wanderer's arms burn from rowing. Ahead: seven days of river, green distance, whatever opened.
 
 ---
 
