@@ -219,6 +219,7 @@ Responses surprise, reframe, or reach beyond. Something passes between speakers.
 - No pause — question immediately answered, no breath
 - Dialogue as information delivery
 - Abstractions that haven't been grounded in relationship
+- Every character speaking in polished wisdom (see Character Voice Variation)
 
 ### Verify
 
@@ -500,16 +501,49 @@ Action reveals; annotation explains.
 
 ### What Breaks It
 
-- Labeling tone: "coldly," "warmly," "sarcastically"
-- Telling the reader how to interpret: "Not a question," "Not unkindly"
+- Labeling tone with adverbs after dialogue
+- Annotating dialogue with how to interpret it
 - Explaining stance instead of showing it
-- Relying on adverbs rather than action
+- Telling the reader what they should already feel from the action
 
 ### Verify
 
 - Is stance shown through action or told through labels?
 - Can the reader feel the tone without being told?
 - Would removing the label strengthen the line?
+
+---
+
+## Character Voice Variation
+
+### The Principle
+
+Not everyone speaks wisdom. Characters have varied registers — some deflect, some ramble, some go quiet when pressed. Vulnerability, uncertainty, and struggle to express are more human than polished insight.
+
+The world feels real when characters fail to find the right words, not just when they find them.
+
+### Execute
+
+- Vary registers across characters: some speak in finished thoughts, most don't
+- Uncertainty is valid: hedging, trailing off, changing direction mid-sentence
+- Deflection is character: humor, evasion, talking around the thing
+- Vulnerability surfaces through what's hard to say, not what's eloquently said
+- One sage is memorable; four sages is a philosophy lecture
+
+### What Breaks It
+
+- Every character speaks in polished, complete thoughts
+- Wisdom lines that could be spoken by any character interchangeably
+- No one fumbles, hedges, or struggles to articulate
+- Vulnerability only through what's said, never how it's (not) said
+- Characters as mouthpieces for theme
+
+### Verify
+
+- Do different characters sound different from each other?
+- Is there at least one character who struggles to express themselves?
+- Could these lines be interchanged between characters, or do they belong to someone?
+- Is vulnerability shown through difficulty of expression, not just content?
 
 ---
 

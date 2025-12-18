@@ -26,7 +26,7 @@ The critical insight: **don't let the diff narrow your vision before you've inha
 
 ### 1.1 Inhabit the Theme's Atmosphere
 
-Read `chronicle/theme.md` — not to extract locations, but to feel what kind of world this is.
+Read `chronicle/theme.md` — not to extract locations, but to feel what kind of world this is. The sensory palette you generate below is your working tool during writing. Return to the theme to re-feel atmosphere, not to check coverage.
 
 **Don't ask:** "Which theme elements haven't been used?"
 
@@ -462,6 +462,17 @@ Before finishing, check:
 - [ ] **Sensory discovery**: New places reveal through concrete detail (architecture, food, custom)?
 - [ ] **Interiority compressed**: Internal reflection in single sentences, grounded by action?
 
+### The Strangeness Pass
+
+After the draft, before editorial:
+
+1. Look for pauses that already exist — where attention lands on the wanderer naturally
+2. Ask: would someone noticing something here feel organic, or inserted?
+3. If nothing feels right, don't add anything. Zero is better than forced.
+4. Maximum one or two moments. The moment should feel discovered, not added.
+
+See `qino-scribe-agent.md` → "The Strangeness" for what it is and what breaks it.
+
 ### The Editorial Pass
 
 Before presenting, reread as editor:
@@ -612,6 +623,8 @@ After syncing tokens:
 
 ### Update Arcs (in arcs.md)
 
+**The wanderer's strangeness is not an arc.** Don't track it. Don't name it. It accumulates through external observation across chapters — others notice, no one connects it, the pattern builds in the reader's mind. The moment you make it an arc, it becomes a plot point to resolve instead of a constant that deepens.
+
 **If an arc began this chapter:**
 
 Sense its shape (see craft.md → Arc Shapes):
@@ -693,7 +706,7 @@ Wait for their response.
 ### Step 2: Create Chronicle Structure
 
 1. Create `chronicle/` directory
-2. Create `chronicle/theme.md` with user's theme (exactly as given)
+2. Create `chronicle/theme.md` — if user provided detail, distill to essence (see craft.md → Theme). Extract implied locations to world.md's Unexplored section.
 3. Create `chronicle/manifest.json` with empty chapters array
 4. Create `chronicle/chapters/` directory (chapters will be subdirectories)
 5. Create `chronicle/world.md` with initial structure
@@ -717,6 +730,17 @@ Determine (yourself, based on theme):
 - How the wanderer arrives
 - Who they first encounter
 - What tension exists in the arrival itself
+
+The first chapter has special weight — it's the world's birth. Don't tour; arrive with stakes.
+
+**First chapter qualities** (regardless of story type):
+
+- **Grounding** — the reader is new here. Texture and atmosphere do heavy lifting. The world needs to be felt, not just shown.
+- **Felt experience** — we're meeting the wanderer. Their inner life matters more than usual. How they move through the world reveals who they are.
+- **Participation** — the wanderer should be IN the world, not passing through it. They drink, sit, touch, notice, feel. The world acts on them and they respond.
+- **Seeds** — details that will matter later, planted without emphasis. The first chapter is generous with what it offers.
+
+Whatever the story type, the wanderer's experience should land in the body — theirs and the reader's.
 
 Write immediately after theme is given. The theme selection is the consent.
 
@@ -765,7 +789,10 @@ Even in stillness, pressures can build. A quiet chapter might:
 
 ## What to Avoid
 
+- **Tour-guide chapters**: Wanderer visits, character explains, wanderer reflects
 - **Diff-driven location**: "This changed, so we go to this room"
-- **Lengthy explanation as dialogue**: Characters describing how things work
+- **Explanation as dialogue**: Characters describing how things work
+- **Atmosphere without stakes**: Beautiful descriptions with nothing at risk
+- **Wanderer as camera**: Observing without cost or participation
 - **Empty pressures**: Ending a chapter with nothing building
 - **Ignoring the theme**: Using only observatory interiors when the theme promises wilderness

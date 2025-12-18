@@ -12,6 +12,24 @@ Examples are marked with `<example>` tags. These illustrate formats and principl
 
 ---
 
+## Theme
+
+The theme is atmosphere to inhabit, not inventory to extract.
+
+**Form:**
+- A paragraph or two. Brief enough to read once and carry, brief enough that returning means re-feeling, not scanning.
+- Prose that evokes. Implies materials and textures without listing them.
+- Spacious (a realm, not a scene), tensioned (something at risk), atmospheric (feeling over features).
+
+**What belongs elsewhere:**
+- Specific locations → world.md Unexplored section
+- Building layouts, system explanations → emerge through chapters or don't exist
+- Character roles, social structures → world.md or chapters
+
+If user provides detailed setting, distill to essence. Extract implied locations to Unexplored. The theme stays brief; world.md grows.
+
+---
+
 ## Chapter Format
 
 ```markdown

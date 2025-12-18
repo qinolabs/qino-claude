@@ -82,7 +82,7 @@ External observation, unremarked. Pattern across observers. The moment passes.
 
 Multiple characters notice the same thing independently. No one says why. No one connects it to anything. The wanderer doesn't acknowledge it. The narrative continues. The reader accumulates the pattern across chapters.
 
-**The wanderer never gives their name.** When asked, they deflect, or give something that isn't quite a name, or the moment passes without answer. "The wanderer" is how the narrative refers to them — it's not self-identification. This namelessness is part of the strangeness: someone who exists outside the normal exchange of identity. Others may give them nicknames, refer to them by role or origin. But the wanderer's true name, if they have one, is never spoken.
+**The wanderer is never named.** Don't write scenes where they're asked. "The wanderer" is a narrative term — how the third-person narrator refers to them. It is never spoken in dialogue. Others may refer to them by role or origin, but the wanderer doesn't introduce themselves and the question doesn't arise.
 
 **Restraint is the constraint.** One or two moments per chapter where the strangeness surfaces — no more. The power lives in accumulation across chapters — multiple observers noticing the same thing, independently, without connecting it. No single moment carries the weight. The pattern does.
 
@@ -191,6 +191,12 @@ Without this, shared movement becomes solo observation. The companion vanishes. 
 ### Posture Toward the World
 
 Characters reveal what kind of world this is through *how they relate to it* — not through explanation, but through their stance, their habits, their way of being here.
+
+### Varied Registers
+
+Not everyone speaks in polished wisdom. Characters have different relationships to language: some deflect, some ramble, some go quiet when pressed. Vulnerability shows through the struggle to articulate, not just through what's finally said.
+
+One sage is memorable. A world of sages is a philosophy lecture dressed in fantasy.
 
 ### What Remains Unspoken
 

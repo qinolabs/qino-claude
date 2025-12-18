@@ -42,6 +42,8 @@ These commonly fail. Keep them visible:
 - Something at stake
 - One explanatory exchange maximum
 - Every noun arises from story world, not source material
+- "The wanderer" is narrative voice, never spoken — don't write scenes where they're asked their name
+- Not everyone speaks wisdom — vary character registers
 - Pressures section not empty when you finish
 
 ## Remember
