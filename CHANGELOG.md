@@ -10,6 +10,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.13.3] - 2025-12-18
+
+### qino Scribe
+
+#### Added
+- **Scale as Presence** — location tokens now carry the wanderer's felt experience of scale; triggers include approach from outside, first impression of size, and relationship to surroundings
+
+#### Changed
+- **Token sync enrichment** — world.md entries for existing characters and locations can now be enriched when a chapter reveals something significant, not just created when new
+
+---
+
 ## [0.13.2] - 2025-12-18
 
 ### qino Scribe
