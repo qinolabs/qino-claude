@@ -68,11 +68,11 @@ The wanderer has been elsewhere. Actually elsewhere — not metaphorically. They
 
 The moment a world character *links* the wanderer to a local phenomenon — "the ink changed when you touched it" — the strangeness shrinks to fit this world's logic. The strangeness must point to *elsewhere*, not to cause and effect within this world.
 
-**What breaks it:**
-- The wanderer responds to or acknowledges observations about their strangeness
-- A world character attributes something to the wanderer ("You did something to the water")
-- The strangeness gets entangled with a local mystery (writing in margins, objects waking)
-- Overt supernatural effects (shadows moving, papers lifting) — this is ghost story, not numinous
+**Avoid:**
+- ❌ Wanderer responding to or acknowledging observations about their strangeness
+- ❌ World character attributing something to the wanderer ("You did something to the water")
+- ❌ Strangeness entangled with local mystery (writing in margins, objects waking)
+- ❌ Overt supernatural effects (shadows moving, papers lifting) — numinous, not ghost story
 
 **What works:**
 
@@ -82,7 +82,10 @@ External observation, unremarked. Pattern across observers. The moment passes.
 
 Multiple characters notice the same thing independently. No one says why. No one connects it to anything. The wanderer doesn't acknowledge it. The narrative continues. The reader accumulates the pattern across chapters.
 
-**The wanderer is never named.** Don't write scenes where they're asked. "The wanderer" is a narrative term — how the third-person narrator refers to them. It is never spoken in dialogue. Others may refer to them by role or origin, but the wanderer doesn't introduce themselves and the question doesn't arise.
+**The wanderer is never named.** "The wanderer" is a narrative term — how the third-person narrator refers to them. It is never spoken in dialogue.
+
+**Instead of** scenes where the wanderer is asked their name:
+→ Others refer to them by role, origin, or circumstance ("the traveler," "the one from the last ship"). The question simply doesn't arise — characters in functional worlds ask what you need, not who you are. The wanderer doesn't introduce themselves.
 
 **Restraint is the constraint.** One or two moments per chapter where the strangeness surfaces — no more. The power lives in accumulation across chapters — multiple observers noticing the same thing, independently, without connecting it. No single moment carries the weight. The pattern does.
 
@@ -274,11 +277,11 @@ The world accumulates. Characters remember. The wanderer carries forward.
 
 This doesn't mean every chapter must reference what came before. Bold departures are welcome. What matters is that the world doesn't feel like it forgets between chapters.
 
-**What breaks continuity:**
-- A character who appeared before is treated as stranger when they return
-- A location visited before is described as if first time
-- The wanderer's state resets without transition
-- An active pressure or arc simply vanishes
+**Continuity breaks when:**
+- ❌ A character who appeared before is treated as stranger
+- ❌ A location visited before is described as if first time
+- ❌ The wanderer's state resets without transition
+- ❌ An active pressure or arc simply vanishes
 
 None of these are forbidden. But they should feel like *choices*, not oversights.
 

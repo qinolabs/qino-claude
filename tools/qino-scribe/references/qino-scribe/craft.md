@@ -111,12 +111,12 @@ The chapter's closing, before World Tokens. The wanderer in aftermath — not re
 - Environment as presence — felt in passing, not rendered
 - Places seen differently — same location, now empty or inhabited by someone else
 
-### Doesn't Belong
+### Avoid
 
-- Processing what happened
-- Naming what was learned
-- Description for its own sake
-- Conclusions or meanings
+- ❌ Processing what happened — aftermath, not reflection
+- ❌ Naming what was learned — let it settle unnamed
+- ❌ Description for its own sake — presence, not rendering
+- ❌ Conclusions or meanings — leave doors ajar
 
 ### Vary the Closing
 
@@ -194,7 +194,11 @@ See `process.md` → Phase 6 → "Sync World Tokens to Characters/Locations" for
 
 Could this description work without the chapter? Tokens should stand alone as evocative fragments.
 
-### Good Tokens — presences with sensory detail
+### Token Quality — Presence vs Function
+
+Tokens succeed through sensory presence. They fail when they summarize function or plot.
+
+**Works — sensory presence:**
 
 <example>
 > **Selin**
@@ -206,14 +210,10 @@ Could this description work without the chapter? Tokens should stand alone as ev
 > Curved desks, luminous paper, a viewport facing the uncharted dark. Smells of ink and star-chart dust.
 </example>
 
-### Bad Tokens — summaries that describe function
+**Instead of** summarizing what someone does or what happened:
+→ Capture how they land in the senses. What stays with you about them? What would you recognize them by?
 
-<example>
-> **Selin**
-> A cartographer who handles arrivals at the outpost. She explained the three concepts to the wanderer.
-</example>
-
-The good tokens have sensory detail. The bad tokens describe function.
+The test: Does this token evoke presence, or report function? "A cartographer who handles arrivals" reports. "Eyes like deep space" evokes.
 
 ---
 

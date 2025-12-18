@@ -47,12 +47,12 @@ Ground first. Interiority is earned later.
 - Sensory texture drawn from *this chronicle's theme* — its materials, weathers, surfaces
 - Vary sentence length; create rhythm; the opening should breathe
 
-### What Breaks It
+### Avoid
 
-- Opening with abstraction or philosophy
-- Opening with thinking rather than doing
-- Declarative statements that tell rather than place ("It was a cold night...")
-- Monotone rhythm — same sentence length, no texture
+- ❌ Opening with abstraction or philosophy — ground in body first
+- ❌ Opening with thinking rather than doing — action earns interiority
+- ❌ Declarative statements that tell rather than place ("It was a cold night...")
+- ❌ Monotone rhythm — vary sentence length, create texture
 
 ### Verify
 
@@ -79,13 +79,16 @@ Warmth and distance are both available. Vary them chapter to chapter.
 - Physical details that reveal stance toward the world
 - Draw the character's textures from the theme — their work, their materials, their habits belong here
 
-### What Breaks It
+### Instead Of
 
-- Character is busy/dismissive and doesn't actually see the wanderer (flat transaction)
-- Character watches but there's no relationship beginning (surveillance without connection)
-- Elaborate physical description instead of action
-- Name announced formally rather than emerging naturally
-- Dialogue that asserts information rather than beginning exchange
+**Instead of** names announced formally ("I am Selin, head cartographer"):
+→ Names emerge through use — someone else calls them, they sign something, they're introduced by a third party. Identity arrives in passing, not declaration.
+
+**Instead of** flat transactions (character busy/dismissive, no mutual seeing):
+→ Even brief encounters have exchange. The character registers something about the wanderer — a glance, a pause, a shift in posture. Something passes between.
+
+**Instead of** dialogue that asserts information:
+→ Dialogue that opens relationship. Questions that reveal the asker. Responses that reach beyond what was said.
 
 ### Verify
 
@@ -113,13 +116,13 @@ Build the space through layered sensory detail, populated with life in motion. T
 - The place has opinions: it enables some things, resists others
 - Weave fluidly — not inventory, not list, but discovery
 
-### What Breaks It
+### Avoid
 
-- Atmosphere without participation — the place is backdrop, not character
-- Listing details without rhythm or purpose
-- Generic materials that could be anywhere (stone, wood, cloth) without specificity
-- Empty space — no life moving through it
-- Cheap tension tricks ("And then: lights.")
+- ❌ Atmosphere without participation — if the place is backdrop, not character, it's not earning its space
+- ❌ Listing details without rhythm — inventory kills immersion
+- ❌ Generic materials (stone, wood, cloth) — specificity belongs to this theme
+- ❌ Empty space — life should move through it
+- ❌ Cheap tension tricks ("And then: lights.")
 
 ### Verify
 
@@ -147,13 +150,13 @@ The reader enters the question rather than receiving a statement.
 - Create gaps the reader wants to fill
 - The speaker should have relationship to their words — history, stake, cost
 
-### What Breaks It
+### Avoid
 
-- Stating theme directly ("This place teaches patience")
-- Characters explaining what things mean
-- Key moments that arrive without buildup
-- Abstractions without grounding in specific situation
-- The reader receiving passively rather than entering actively
+- ❌ Stating theme directly ("This place teaches patience") — theme lives in action, not declaration
+- ❌ Characters explaining what things mean — let meaning emerge
+- ❌ Key moments without buildup — earn the weight
+- ❌ Abstractions without grounding — every idea needs a body
+- ❌ Reader receiving passively — create gaps they want to fill
 
 ### Verify
 
@@ -180,12 +183,12 @@ Trust what's been built. Don't explain.
 - Trust the reader to feel what isn't spelled out
 - The wanderer's interiority sustains forward — it doesn't evaporate after the moment passes
 
-### What Breaks It
+### Avoid
 
-- Abstract reflection without physical grounding
-- Elaborating what the wanderer feels or realizes
-- Philosophy floating free of situation
-- Interiority that resets between paragraphs — the moment evaporates, the wanderer becomes a camera again
+- ❌ Abstract reflection without physical grounding — tie it to the body
+- ❌ Elaborating what the wanderer feels or realizes — compression is strength
+- ❌ Philosophy floating free of situation — ideas need bodies
+- ❌ Interiority that resets between paragraphs — sustain forward, don't evaporate
 
 ### Verify
 
@@ -212,14 +215,14 @@ Responses surprise, reframe, or reach beyond. Something passes between speakers.
 - Compression: what's essential, no more
 - Dialogue sounds like people, not concepts explaining themselves
 
-### What Breaks It
+### Avoid
 
-- Characters explaining how things work
-- Flat acknowledgment that only hears what was said
-- No pause — question immediately answered, no breath
-- Dialogue as information delivery
-- Abstractions that haven't been grounded in relationship
-- Every character speaking in polished wisdom (see Character Voice Variation)
+- ❌ Characters explaining how things work — dialogue reveals relationship, not function
+- ❌ Flat acknowledgment that only hears what was said — reach beyond the words
+- ❌ No pause — let what was said land before responding
+- ❌ Dialogue as information delivery — information emerges from exchange
+- ❌ Abstractions not grounded in relationship — ideas need bodies
+- ❌ Every character speaking in polished wisdom — see Character Voice Variation
 
 ### Verify
 
@@ -245,12 +248,12 @@ The ending builds relationship or opens forward. It never wraps up meaning.
 - Forward pull: curiosity extends beyond this scene
 - Relationship built through what isn't said as much as what is
 
-### What Breaks It
+### Avoid
 
-- Summarizing what happened or what was learned
-- Underlining theme or meaning
-- Empty form — structure suggesting depth while words carry none
-- Closing with reflection when action would serve better
+- ❌ Summarizing what happened or what was learned — weight, not summary
+- ❌ Underlining theme or meaning — trust what's been built
+- ❌ Empty form — structure suggesting depth while words carry none
+- ❌ Closing with reflection when action would serve better
 
 ### Verify
 
@@ -277,12 +280,12 @@ Draw from the theme's materials. Every world has its own sensory vocabulary.
 - Specific materials from this theme, not generic stand-ins
 - Details that do work — atmosphere, character, narrative
 
-### What Breaks It
+### Avoid
 
-- Details without presence — features listed with no one sensing them
-- Generic materials that could be anywhere
-- Pausing motion to describe when weaving would serve better
-- Only visual, neglecting other senses
+- ❌ Details without presence — features listed with no one sensing them
+- ❌ Generic materials — specificity belongs to this theme
+- ❌ Pausing motion to describe — weave detail into movement
+- ❌ Only visual — engage multiple senses
 
 ### Verify
 
@@ -308,12 +311,12 @@ Clarity over blur. The reader should see, not squint.
 - Language that clarifies, not blurs
 - The sudden return to now — breaking from close focus to presence
 
-### What Breaks It
+### Avoid
 
-- Decorative metaphor applied from outside the scene
-- Pseudo-poetic language that sounds meaningful but blurs
-- Mechanical structure (first X, then Y, therefore Z)
-- Images that comment on theme rather than inhabit world
+- ❌ Decorative metaphor applied from outside the scene — images must live in the material
+- ❌ Pseudo-poetic language that blurs — clarity over atmosphere
+- ❌ Mechanical structure (first X, then Y, therefore Z) — organic movement
+- ❌ Images that comment on theme rather than inhabit world
 
 ### Verify
 
@@ -340,13 +343,13 @@ The reader learns the world by being in it, not by being told about it.
 - When speech carries exposition, the speaker has relationship to their words
 - Space for meaning to settle — not everything explained
 
-### What Breaks It
+### Avoid
 
-- Characters explaining how things work
-- Feature lists dressed in atmosphere
-- Documentation spoken aloud
-- Environment described generically, not specifically
-- The reader told rather than placed
+- ❌ Characters explaining how things work — revelation through encounter, not lecture
+- ❌ Feature lists dressed in atmosphere — inventory kills immersion
+- ❌ Documentation spoken aloud — people don't talk like manuals
+- ❌ Environment described generically — specificity teaches
+- ❌ Reader told rather than placed — put them in the world
 
 ### Verify
 
@@ -373,13 +376,13 @@ The closing grounds in the scene while extending beyond it.
 - Or quiet mystery: something unexplained, a small strangeness
 - The wanderer present but not reflecting
 
-### What Breaks It
+### Avoid
 
-- Summarizing what happened
-- Underlining theme or meaning
-- Wrapping up neatly
-- Reflection that explains what the chapter was about
-- Ending on abstraction rather than image
+- ❌ Summarizing what happened — the reader was there
+- ❌ Underlining theme or meaning — trust what's been built
+- ❌ Wrapping up neatly — something should remain open
+- ❌ Reflection that explains — presence, not processing
+- ❌ Ending on abstraction — end on image
 
 ### Verify
 
@@ -405,12 +408,12 @@ The wanderer carries what just happened into what happens next.
 - Physical echoes: the hand that moved, the breath that caught
 - Perception colored by what came before
 
-### What Breaks It
+### Avoid
 
-- Resetting to neutral observation after an intense moment
-- The wanderer becoming a camera between scenes
-- Interiority that appears, then vanishes
-- Each paragraph starting fresh, disconnected from the previous
+- ❌ Resetting to neutral observation after an intense moment — carry it forward
+- ❌ Wanderer becoming a camera between scenes — person, not lens
+- ❌ Interiority that appears, then vanishes — sustain the thread
+- ❌ Each paragraph starting fresh — connect to what came before
 
 ### Verify
 
@@ -435,12 +438,12 @@ Both gain dimension through the exchange. Something becomes real in the moment s
 - The listener revealed through what they noticed
 - What becomes real in the moment of perceiving
 
-### What Breaks It
+### Avoid
 
-- Flat acknowledgment that only hears what was said
-- Responses that reveal nothing about the listener
-- The speaker unchanged by how they're heard
-- No gap — everything made explicit
+- ❌ Flat acknowledgment that only hears what was said — reach beyond
+- ❌ Responses that reveal nothing about the listener — both gain dimension
+- ❌ Speaker unchanged by how they're heard — hearing transforms
+- ❌ No gap — leave space for the reader to complete
 
 ### Verify
 
@@ -467,13 +470,13 @@ The strangeness accumulates across chapters. No single moment carries the weight
 - Restraint: one or two moments per chapter, no more
 - The pattern builds across chapters, not within them
 
-### What Breaks It
+### Avoid
 
-- The wanderer acknowledges their own strangeness ("I don't remember")
-- A character attributes an effect ("You did something to the water")
-- The strangeness gets explained by local mystery — it shrinks to fit this world
-- Ghost-story effects: papers lifting, shadows moving on their own
-- More than two moments per chapter — overplayed, the accumulation loses power
+- ❌ Wanderer acknowledging their strangeness ("I don't remember") — external observation only
+- ❌ Character attributing an effect ("You did something to the water") — notice, don't explain
+- ❌ Strangeness explained by local mystery — it must exceed this world
+- ❌ Ghost-story effects (papers lifting, shadows moving) — numinous, not supernatural
+- ❌ More than two moments per chapter — restraint is the constraint
 
 ### Verify
 
@@ -499,12 +502,12 @@ Action reveals; annotation explains.
 - The reader interprets from behavior, not from labels
 - Trust action to convey what words alone can't
 
-### What Breaks It
+### Avoid
 
-- Labeling tone with adverbs after dialogue
-- Annotating dialogue with how to interpret it
-- Explaining stance instead of showing it
-- Telling the reader what they should already feel from the action
+- ❌ Labeling tone with adverbs ("coldly," "warmly") — let action carry it
+- ❌ Annotating dialogue with how to interpret it — trust the reader
+- ❌ Explaining stance instead of showing it — body, not label
+- ❌ Telling what reader should already feel — they felt it
 
 ### Verify
 
@@ -530,13 +533,16 @@ The world feels real when characters fail to find the right words, not just when
 - Vulnerability surfaces through what's hard to say, not what's eloquently said
 - One sage is memorable; four sages is a philosophy lecture
 
-### What Breaks It
+### Instead Of
 
-- Every character speaks in polished, complete thoughts
-- Wisdom lines that could be spoken by any character interchangeably
-- No one fumbles, hedges, or struggles to articulate
-- Vulnerability only through what's said, never how it's (not) said
-- Characters as mouthpieces for theme
+**Instead of** polished wisdom from every character:
+→ One speaks in complete thoughts; another trails off; a third deflects with humor. The dock worker doesn't sound like the archivist. Vulnerability shows in the struggle to say it, not in what's finally said.
+
+**Instead of** wisdom lines any character could speak:
+→ Lines belong to someone — their history, their habits, their relationship to language. If you can swap the speaker, the line needs work.
+
+**Instead of** characters as mouthpieces for theme:
+→ Characters have their own concerns. Theme emerges from collision, not announcement.
 
 ### Verify
 
@@ -562,12 +568,12 @@ The reader doesn't need to understand how things work. They need to feel there's
 - History and cost over function and features
 - Leave room for mystery — not everything explained
 
-### What Breaks It
+### Avoid
 
-- Characters explaining how things work
-- Description of function rather than relationship
-- The reader told rather than shown
-- Closing mystery rather than holding it open
+- ❌ Characters explaining how things work — relationship over function
+- ❌ Description of function rather than relationship — cost over capability
+- ❌ Reader told rather than shown — immerse, don't inform
+- ❌ Closing mystery rather than holding it open — leave doors ajar
 
 ### Verify
 

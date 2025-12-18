@@ -787,12 +787,23 @@ Even in stillness, pressures can build. A quiet chapter might:
 
 ---
 
-## What to Avoid
+## Instead Of
 
-- **Tour-guide chapters**: Wanderer visits, character explains, wanderer reflects
-- **Diff-driven location**: "This changed, so we go to this room"
-- **Explanation as dialogue**: Characters describing how things work
-- **Atmosphere without stakes**: Beautiful descriptions with nothing at risk
-- **Wanderer as camera**: Observing without cost or participation
-- **Empty pressures**: Ending a chapter with nothing building
-- **Ignoring the theme**: Using only observatory interiors when the theme promises wilderness
+**Instead of** tour-guide chapters (wanderer visits, character explains, wanderer reflects):
+→ The wanderer participates. They carry something, break something, are asked to do something. The character needs something from them — not just the opportunity to explain.
+
+**Instead of** characters describing how things work:
+→ Characters share from stake — what they've lost to this place, what they're watching for, why they stayed when others left. The reader learns the world through what it costs people.
+
+**Instead of** atmosphere without stakes (beautiful descriptions with nothing at risk):
+→ Beauty that someone might lose. Description that reveals what's fragile, contested, or changing.
+
+**Instead of** wanderer as camera (observing without cost or participation):
+→ Something costs the wanderer to notice. They're implicated in what they see. Their presence changes something.
+
+**Instead of** empty pressures (ending a chapter with nothing building):
+→ Every chapter leaves at least one tension accumulating. What's someone worried about now that they weren't before?
+
+❌ **Diff-driven location**: "This changed, so we go to this room" — let the world's pressures determine where the story goes, not the git diff.
+
+❌ **Ignoring the theme**: Using only observatory interiors when the theme promises wilderness — return to your sensory palette from Phase 1.
