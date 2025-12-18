@@ -10,6 +10,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.13.1] - 2025-12-18
+
+### qino Scribe
+
+#### Added
+- **Character Voice Variation** — new voice-guide principle: not everyone speaks wisdom; characters have varied registers from polished insight to struggle and deflection
+- **Theme section in craft.md** — guidance on distilling detailed user themes to brief atmosphere; implied locations extract to world.md's Unexplored section
+- **First chapter guidance** — grounding, felt experience, participation, and seeds; special weight for the world's birth
+- **Strangeness pass** — editorial step after draft: look for organic moments where the wanderer's nature might surface, add nothing if nothing feels right
+
+#### Changed
+- **Wanderer naming clarified** — "the wanderer" is narrative voice only, never spoken in dialogue; don't write scenes where they're asked their name
+- **Wanderer strangeness isn't an arc** — explicit guidance against tracking it; accumulation through external observation is the mechanism
+- **Expanded "what to avoid"** — tour-guide chapters, atmosphere without stakes, wanderer as camera
+
+---
+
 ## [0.13.0] - 2025-12-17
 
 ### qino Attune (New Tool)
