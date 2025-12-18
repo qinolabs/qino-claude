@@ -10,6 +10,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.13.2] - 2025-12-18
+
+### qino Scribe
+
+#### Changed
+- **Negative examples restructured** — "What Breaks It" sections replaced with ❌ inline markers and contrast pairs to prevent LLMs from extracting failure patterns as templates
+- **High-risk patterns now show alternatives** — wanderer naming, character voice variation, tour-guide chapters, and explanation-as-dialogue now use "Instead of X → Y" format
+- **17 guidance sections converted** — all negative examples now bound to their corrections with em-dash pattern
+
+---
+
 ## [0.13.1] - 2025-12-18
 
 ### qino Scribe
