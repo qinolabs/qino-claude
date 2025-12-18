@@ -597,15 +597,19 @@ Both can be stable for many chapters. Neither should track routine progression.
 **For each World Token written in this chapter:**
 
 1. **Is this a character?** (a person, being, or entity with agency)
-   - If yes and not already in `## Characters` → add with their texture
+   - If new → add with their texture
+   - If exists but this chapter revealed something significant → enrich the entry
    - Use the token's presence as a starting point, expand to canonical description
 
 2. **Is this a location?** (a place the wanderer can be in or travel to)
-   - If yes and not already in `## Locations` → add with its atmosphere
+   - If new → add with its atmosphere and scale (see craft.md → Scale as Presence)
+   - If exists but this chapter revealed something significant → enrich the entry
    - Use the token's presence as a starting point, expand to canonical description
 
 3. **Is this something else?** (object, concept, phenomenon)
    - No sync needed — these live only as World Tokens
+
+**Enriching existing entries:** Characters deepen as we learn more about them. Locations gain detail as the wanderer explores. When a chapter reveals something significant — a new facet of someone's character, a part of a place not seen before — update the world.md entry. Don't bloat; add what matters.
 
 **Why sync matters:** The app highlights entity names and shows hover cards. Entities in world.md get hover cards even in chapters where they don't have a token. Without sync, a location mentioned meaningfully in one chapter becomes invisible in future chapters.
 

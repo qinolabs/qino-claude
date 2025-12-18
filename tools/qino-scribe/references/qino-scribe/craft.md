@@ -215,6 +215,35 @@ Tokens succeed through sensory presence. They fail when they summarize function 
 
 The test: Does this token evoke presence, or report function? "A cartographer who handles arrivals" reports. "Eyes like deep space" evokes.
 
+### Scale as Presence (Location Tokens)
+
+Scale can be presence. "A vast archive" evokes differently than "an archive." "A summit complex visible from the shuttle's descent" grounds the reader in the wanderer's first impression.
+
+When the wanderer experiences scale — arriving from a distance, being dwarfed by a space, finding something unexpectedly intimate — the token should carry that.
+
+**Triggers:**
+- Approach from outside → token reflects what they saw before entering
+- First impression of size → "vast," "cramped," "sprawling," "intimate"
+- Relationship to surroundings → "crowning the summit," "carved into the cliff," "nestled in the valley"
+
+**Works:**
+```
+**The Observatory**
+A summit complex of domed buildings, visible from the shuttle's descent. Warm halls against the vast dark. Architecture that curves and nests.
+```
+
+The first phrase grounds scale through the arrival experience. The rest evokes atmosphere.
+
+**Loses scale:**
+```
+**The Observatory**
+A summit dwelling where cartographers steward the unknown. Warm halls, long views.
+```
+
+"Summit dwelling" could be a cabin. The evocative impulse won, but the reader (and image generation) lost spatial grounding.
+
+This isn't specification — it's the wanderer's felt experience of encountering the place.
+
 ---
 
 ## Arc Shapes
