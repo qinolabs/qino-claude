@@ -10,6 +10,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.13.4] - 2025-12-18
+
+### qino Scribe
+
+#### Changed
+- **Voice guide transformed** — all "Avoid" bullet lists converted to "Instead Of" sections with concrete before/after examples; shows what breaks and what works side by side using the → pattern
+- **Reference navigation clarified** — agent file now explicitly directs: start with `process.md` for workflow, consult `craft.md` and `voice-guide.md` during writing phase
+- **Fixed broken reference** — process.md checklist now points to qino-scribe-agent.md instead of archived soul.md
+
+---
+
 ## [0.13.3] - 2025-12-18
 
 ### qino Scribe

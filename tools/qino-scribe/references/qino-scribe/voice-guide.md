@@ -47,12 +47,19 @@ Ground first. Interiority is earned later.
 - Sensory texture drawn from *this chronicle's theme* — its materials, weathers, surfaces
 - Vary sentence length; create rhythm; the opening should breathe
 
-### Avoid
+### Instead Of
 
-- ❌ Opening with abstraction or philosophy — ground in body first
-- ❌ Opening with thinking rather than doing — action earns interiority
-- ❌ Declarative statements that tell rather than place ("It was a cold night...")
-- ❌ Monotone rhythm — vary sentence length, create texture
+**Instead of** opening with abstraction or philosophy ("In places like the observatory, time moved differently"):
+→ Ground in body first. The doors opened onto warmth. The wanderer stopped just inside, letting the heat press against their face. The abstraction — if it earns a place at all — comes later, after the reader has arrived through sensation.
+
+**Instead of** opening with thinking rather than doing ("The wanderer considered what they might find inside"):
+→ Action earns interiority. The wanderer's hand found the door. Cold metal, then give. What they considered — if anything — lives in what they do, not in the narration of their thoughts.
+
+**Instead of** declarative statements that tell rather than place ("It was a cold night at the observatory"):
+→ Put the reader in the cold. The wind cut through their jacket. Their breath made shapes. "It was cold" tells; the body experiencing cold places.
+
+**Instead of** monotone rhythm (sentences all the same length, all the same structure):
+→ Vary. Short sentence. Then something longer that unfolds, carrying the reader through the space with its own momentum, building as it goes. Then short again. The opening should breathe.
 
 ### Verify
 
@@ -116,13 +123,22 @@ Build the space through layered sensory detail, populated with life in motion. T
 - The place has opinions: it enables some things, resists others
 - Weave fluidly — not inventory, not list, but discovery
 
-### Avoid
+### Instead Of
 
-- ❌ Atmosphere without participation — if the place is backdrop, not character, it's not earning its space
-- ❌ Listing details without rhythm — inventory kills immersion
-- ❌ Generic materials (stone, wood, cloth) — specificity belongs to this theme
-- ❌ Empty space — life should move through it
-- ❌ Cheap tension tricks ("And then: lights.")
+**Instead of** atmosphere without participation (the room described but never affecting what happens):
+→ The place is a character. The low ceiling forces intimacy. The draft from the window interrupts concentration. The warmth of the floor makes the wanderer reluctant to leave. What the space does should shape what becomes possible.
+
+**Instead of** listing details without rhythm ("The room contained a desk, a chair, a lamp, and several shelves of books"):
+→ Discovery, not inventory. The wanderer notices the desk first — papers weighted with a stone. Then, turning, the shelves. Something catches light from the window. Each detail arrives because attention found it, not because the room is being catalogued.
+
+**Instead of** generic materials ("stone walls," "wooden shelves," "cloth curtains"):
+→ Specificity from this theme. What kind of stone — volcanic? Imported? Warm or cold to the touch? Wood that smells of what? The materials should teach the reader about this world through their particularity.
+
+**Instead of** empty space (no movement, no life, no sense of habitation):
+→ Populate. Someone walks past outside. A sound from elsewhere in the building. Dust moves in a shaft of light. The space should feel inhabited even when the wanderer is alone — alive with traces, with presence.
+
+**Instead of** cheap tension tricks ("And then: lights." / "She turned. And stopped."):
+→ Earned attention. If something matters, let it earn its weight through what precedes it. The dramatic pause, the portentous fragment — these are shortcuts. Build to moments; don't punctuate them into significance.
 
 ### Verify
 
@@ -150,13 +166,22 @@ The reader enters the question rather than receiving a statement.
 - Create gaps the reader wants to fill
 - The speaker should have relationship to their words — history, stake, cost
 
-### Avoid
+### Instead Of
 
-- ❌ Stating theme directly ("This place teaches patience") — theme lives in action, not declaration
-- ❌ Characters explaining what things mean — let meaning emerge
-- ❌ Key moments without buildup — earn the weight
-- ❌ Abstractions without grounding — every idea needs a body
-- ❌ Reader receiving passively — create gaps they want to fill
+**Instead of** stating theme directly ("This place teaches patience" / "Here, we learn that waiting is its own kind of action"):
+→ Show the patience. Someone has been working on the same task for hours. The wanderer notices the wear on their tools, the economy of their movements. The theme lives in what patience looks like when practiced — not in anyone naming it.
+
+**Instead of** characters explaining what things mean ("The gaps represent what can't be known" / "This is how we honor uncertainty"):
+→ Let meaning emerge from encounter. The wanderer sees someone hesitate at a gap in the charts. Watches them trace the edge without filling it. The meaning is in the gesture, the care — not in the explanation that would close it.
+
+**Instead of** key moments without buildup (a profound statement arriving without context):
+→ Earn the weight. Before someone says something that matters, show what brought them here — their hands still, their gaze shifting, the pause that precedes speech. The reader should feel the pressure before the release.
+
+**Instead of** abstractions without grounding ("Connection transcends measurement"):
+→ Every idea needs a body. Who learned this, and how? Show the moment of learning — a measurement that failed, a connection that held despite the numbers. The abstraction earns its place when we've felt the experience that produced it.
+
+**Instead of** the reader receiving passively (meaning delivered complete):
+→ Create gaps they want to fill. Leave something unsaid. Let a glance pass between characters without explanation. The reader leans in when there's space to enter — and pulls back when everything is already explained.
 
 ### Verify
 
@@ -183,12 +208,19 @@ Trust what's been built. Don't explain.
 - Trust the reader to feel what isn't spelled out
 - The wanderer's interiority sustains forward — it doesn't evaporate after the moment passes
 
-### Avoid
+### Instead Of
 
-- ❌ Abstract reflection without physical grounding — tie it to the body
-- ❌ Elaborating what the wanderer feels or realizes — compression is strength
-- ❌ Philosophy floating free of situation — ideas need bodies
-- ❌ Interiority that resets between paragraphs — sustain forward, don't evaporate
+**Instead of** abstract reflection without physical grounding ("In places like this, the distinction often blurred"):
+→ Tie it to the body. The wanderer's hand finds the strap of their pack. Their fingers trace the worn leather. The thought — if it comes at all — arrives through what the body is doing. Philosophy earns its place when the reader feels the hand first.
+
+**Instead of** elaborating what the wanderer feels ("They realized they had been holding their breath, and that the tension in their shoulders had been building since they entered, and that something about this place reminded them of..."):
+→ Compression is strength. "They hadn't noticed they were holding their breath." One sentence. The reader fills the rest. Three sentences of elaboration kill what one sentence of compression lets live.
+
+**Instead of** philosophy floating free of situation ("Perhaps all journeys were like this — the destination mattering less than what was carried"):
+→ Ideas need bodies. What is the wanderer doing when this thought surfaces? What did they just see, touch, hear? The philosophy should feel like it arose from the moment — not like it was applied to it.
+
+**Instead of** interiority that resets between paragraphs (intense moment, then neutral observation):
+→ Sustain forward. If the wanderer just felt something — their hand moving before their mind caught up, a flash of recognition — that feeling in-forms the next paragraph. They see the room differently now. They hear the next words through what just happened. The inner experience doesn't evaporate; it colors what follows.
 
 ### Verify
 
@@ -215,14 +247,25 @@ Responses surprise, reframe, or reach beyond. Something passes between speakers.
 - Compression: what's essential, no more
 - Dialogue sounds like people, not concepts explaining themselves
 
-### Avoid
+### Instead Of
 
-- ❌ Characters explaining how things work — dialogue reveals relationship, not function
-- ❌ Flat acknowledgment that only hears what was said — reach beyond the words
-- ❌ No pause — let what was said land before responding
-- ❌ Dialogue as information delivery — information emerges from exchange
-- ❌ Abstractions not grounded in relationship — ideas need bodies
-- ❌ Every character speaking in polished wisdom — see Character Voice Variation
+**Instead of** characters explaining how things work ("Questions aren't things you carry in a case. But pieces of something incomplete — those are questions in a form this place can work with."):
+→ Dialogue reveals relationship, not function. If Varo must speak about questions, let it come from what he's doing — handling an object, deciding whether to show something. "This one's been here longer than I have." The meaning lives in his relationship to it, not in the explanation.
+
+**Instead of** flat acknowledgment that only hears what was said ("I understand." / "That makes sense."):
+→ Reach beyond the words. The listener perceives something the speaker didn't say — or didn't know they were saying. "You stood on the landing pad for a while." Selin didn't ask about the journey; she noticed what the wanderer did upon arriving.
+
+**Instead of** rushing to response (question immediately answered, no breath):
+→ Let what was said land. A character looks away. Adjusts something. The silence has texture — a sound from elsewhere, a shift in light. Then the response comes, and it's changed by the pause.
+
+**Instead of** dialogue as information delivery ("The viewing chamber is on the upper level. It houses the primary lenses."):
+→ Information emerges from exchange. What someone shares depends on who's asking, what just happened, what they're willing to reveal. The same fact told to a stranger sounds different than told to someone who's earned trust.
+
+**Instead of** abstractions floating free ("Connection can't always be measured."):
+→ Ground ideas in relationship. Who says this, and why now? What happened that made this thought surface? The abstraction lands because the speaker has stake in it — it cost them something to learn.
+
+**Instead of** every character speaking in polished wisdom:
+→ See Character Voice Variation. One character speaks in finished thoughts; another trails off; a third deflects with humor. Vulnerability shows in the struggle to articulate, not in eloquent insight.
 
 ### Verify
 
@@ -248,12 +291,19 @@ The ending builds relationship or opens forward. It never wraps up meaning.
 - Forward pull: curiosity extends beyond this scene
 - Relationship built through what isn't said as much as what is
 
-### Avoid
+### Instead Of
 
-- ❌ Summarizing what happened or what was learned — weight, not summary
-- ❌ Underlining theme or meaning — trust what's been built
-- ❌ Empty form — structure suggesting depth while words carry none
-- ❌ Closing with reflection when action would serve better
+**Instead of** summarizing what happened or what was learned ("The wanderer understood now why Selin had brought them here"):
+→ Weight, not summary. End on what stays — a gesture unreturned, a question left hanging, the particular quality of light as someone turns away. The reader knows what was learned; don't tell them.
+
+**Instead of** underlining theme or meaning ("And so the pattern continued, as it always had"):
+→ Trust what's been built. If the scene carried meaning, the ending doesn't need to announce it. A detail, a silence, a small action — these land harder than any summary.
+
+**Instead of** empty form (structure suggesting depth while words carry none — "And then, the dark." / "Something had changed."):
+→ Earn the weight. If the ending is a single image or fragment, it should arrive from what preceded it. Form without content is posture. The ending should feel inevitable, not dramatic.
+
+**Instead of** closing with reflection when action would serve better ("The wanderer sat with what had been said, turning it over in their mind"):
+→ Presence, not processing. The wanderer doesn't need to reflect for the reader to feel the weight. Sometimes they just stand there. Sometimes they reach for something. The body holds what the mind hasn't yet named.
 
 ### Verify
 
@@ -280,12 +330,19 @@ Draw from the theme's materials. Every world has its own sensory vocabulary.
 - Specific materials from this theme, not generic stand-ins
 - Details that do work — atmosphere, character, narrative
 
-### Avoid
+### Instead Of
 
-- ❌ Details without presence — features listed with no one sensing them
-- ❌ Generic materials — specificity belongs to this theme
-- ❌ Pausing motion to describe — weave detail into movement
-- ❌ Only visual — engage multiple senses
+**Instead of** details without presence ("The room had high ceilings and large windows"):
+→ Someone senses these things. The wanderer looked up — the ceiling higher than expected, the space opening above them. The windows caught movement from outside. Detail arrives through encounter, not inventory.
+
+**Instead of** generic materials ("wooden beams," "stone floor," "fabric curtains"):
+→ Specificity from this theme. The beams were dark with age, or pale and recent. The stone held cold, or had been warmed by the floor beneath. What does this world's fabric feel like? Smell like? The materials should be untranslatable — belonging only here.
+
+**Instead of** pausing motion to describe (character stops, narrative catalogues the room, character resumes):
+→ Weave detail into movement. The wanderer crossed to the window, noticing the desk as they passed — papers weighted, a stylus left mid-stroke. They reached the glass. Cold where their hand touched it. Description lives inside action, not beside it.
+
+**Instead of** only visual detail:
+→ Engage multiple senses. The smell that greeted them — ink, or dust, or something cooking elsewhere. The sound of their footsteps on the floor. The temperature shift as they moved deeper inside. The body knows more than the eyes.
 
 ### Verify
 
@@ -311,12 +368,19 @@ Clarity over blur. The reader should see, not squint.
 - Language that clarifies, not blurs
 - The sudden return to now — breaking from close focus to presence
 
-### Avoid
+### Instead Of
 
-- ❌ Decorative metaphor applied from outside the scene — images must live in the material
-- ❌ Pseudo-poetic language that blurs — clarity over atmosphere
-- ❌ Mechanical structure (first X, then Y, therefore Z) — organic movement
-- ❌ Images that comment on theme rather than inhabit world
+**Instead of** decorative metaphor applied from outside ("Her grief was an ocean, vast and unknowable"):
+→ Images live in the material. What is she actually touching, seeing, doing? The metaphor should emerge from what's present — the way water moves in a basin, the weight of something held. The image earns its place by being found, not imported.
+
+**Instead of** pseudo-poetic language that blurs ("The light fell like memories through the window"):
+→ Clarity over atmosphere. What does the light actually do? It cut across the desk. It warmed one side of her face. The reader should see clearly, not squint through fog. Precision is more poetic than vagueness.
+
+**Instead of** mechanical structure ("First she saw the desk. Then she noticed the window. Therefore she understood the room."):
+→ Organic movement. Attention doesn't move in numbered steps. It catches, drifts, returns. The desk was there, and beyond it the window, and something about the light made her stay longer than she meant to. The prose follows the mind, not a formula.
+
+**Instead of** images that comment on theme ("The broken clock seemed to say that time here moved differently"):
+→ Inhabit, don't comment. The clock is broken — show what that looks like, how someone relates to it, what the wanderer does when they notice. The theme lives in the encounter. The narrator doesn't need to interpret it for the reader.
 
 ### Verify
 
@@ -343,13 +407,22 @@ The reader learns the world by being in it, not by being told about it.
 - When speech carries exposition, the speaker has relationship to their words
 - Space for meaning to settle — not everything explained
 
-### Avoid
+### Instead Of
 
-- ❌ Characters explaining how things work — revelation through encounter, not lecture
-- ❌ Feature lists dressed in atmosphere — inventory kills immersion
-- ❌ Documentation spoken aloud — people don't talk like manuals
-- ❌ Environment described generically — specificity teaches
-- ❌ Reader told rather than placed — put them in the world
+**Instead of** characters explaining how things work ("The cartographers chart distances. This is where I keep what doesn't fit on charts."):
+→ Show them practicing. Selin doesn't explain what the alcove holds — she moves to a shelf, her fingers trace an object without picking it up. The wanderer sees her relationship to these things. What they are emerges from how she handles them, what she reaches for, what she sets aside.
+
+**Instead of** feature lists dressed in atmosphere ("The room held shelves of crystals, a viewing lens, and charts of the outer regions"):
+→ Discovery, not inventory. The wanderer notices one thing, then another catches their attention. Each detail arrives through encounter — reaching for something, a reflection in glass, something that wasn't visible until they moved closer.
+
+**Instead of** documentation spoken aloud ("The lenses show relationship but the relationship won't resolve into coordinates"):
+→ People don't talk like manuals. If a character must explain something technical, ground it in their experience. "I spent three seasons trying to chart that region. The numbers wouldn't hold." The explanation lives in what it cost them, not in the information itself.
+
+**Instead of** environment described generically ("a warm room with wooden shelves"):
+→ Specificity from this theme. What kind of wood? What has it absorbed from years of use? What's the smell — dust, ink, salt, something unnameable? The reader learns this world through its particular materials, not through stand-ins they could imagine anywhere.
+
+**Instead of** telling the reader where they are ("The wanderer entered the archive, a vast repository of the station's records"):
+→ Put them in the body arriving. The door opens onto what? The first breath carries what smell? The footsteps sound how? The reader enters through sensation, not summary.
 
 ### Verify
 
@@ -376,13 +449,22 @@ The closing grounds in the scene while extending beyond it.
 - Or quiet mystery: something unexplained, a small strangeness
 - The wanderer present but not reflecting
 
-### Avoid
+### Instead Of
 
-- ❌ Summarizing what happened — the reader was there
-- ❌ Underlining theme or meaning — trust what's been built
-- ❌ Wrapping up neatly — something should remain open
-- ❌ Reflection that explains — presence, not processing
-- ❌ Ending on abstraction — end on image
+**Instead of** summarizing what happened ("And so the wanderer's first day at the observatory came to a close"):
+→ The reader was there. They don't need a recap. End on what stays — a detail, a question, a small unexplained thing. The summary kills what the chapter built.
+
+**Instead of** underlining theme or meaning ("They understood now that this place held its own kind of time"):
+→ Trust what's been built. If the chapter earned its meaning, the ending doesn't need to announce it. A gesture, a glance, a door left open — these carry more than any conclusion.
+
+**Instead of** wrapping up neatly (all threads resolved, all questions answered):
+→ Something should remain open. A name mentioned but not explained. A look the wanderer couldn't interpret. A sound from somewhere they haven't been. The reader carries a question into the gap between chapters.
+
+**Instead of** reflection that explains ("The wanderer lay in the dark, thinking about what Selin had meant"):
+→ Presence, not processing. The wanderer lies in the dark. The ceiling is higher than they expected. Somewhere, a sound they can't identify. The body is present; the mind doesn't need to narrate what it's doing.
+
+**Instead of** ending on abstraction ("Something had shifted, though they couldn't say what"):
+→ End on image. The light through the window. The weight of the blanket. A sound that stopped. Concrete detail carries mystery better than abstract gestures toward it.
 
 ### Verify
 
@@ -408,12 +490,19 @@ The wanderer carries what just happened into what happens next.
 - Physical echoes: the hand that moved, the breath that caught
 - Perception colored by what came before
 
-### Avoid
+### Instead Of
 
-- ❌ Resetting to neutral observation after an intense moment — carry it forward
-- ❌ Wanderer becoming a camera between scenes — person, not lens
-- ❌ Interiority that appears, then vanishes — sustain the thread
-- ❌ Each paragraph starting fresh — connect to what came before
+**Instead of** resetting to neutral observation after an intense moment:
+→ Carry it forward. The wanderer just felt their hand move before their mind caught up. The next paragraph — even if it describes a room, a person arriving, a change in light — is seen through that unsteadiness. The observation isn't neutral; it's colored by what just passed through them.
+
+**Instead of** the wanderer becoming a camera between scenes (objective description with no inner thread):
+→ Person, not lens. Between moments of action, the wanderer doesn't become an observation device. They're still holding what just happened — it shows in what they notice, what they don't notice, what they reach for without thinking.
+
+**Instead of** interiority that appears then vanishes (a moment of feeling, then prose continues as if nothing happened):
+→ Sustain the thread. If the wanderer recognized something, that recognition persists. It doesn't need to be named again — but the next scene should feel different because of it. The reader senses the continuity even if they can't articulate it.
+
+**Instead of** each paragraph starting fresh (no connection to what came before):
+→ Connect. The last paragraph ended with the wanderer's breath catching. This one doesn't ignore that — it shows what happens next in the body, in the perception. The prose remembers what just happened, even when the wanderer is trying not to.
 
 ### Verify
 
@@ -438,12 +527,19 @@ Both gain dimension through the exchange. Something becomes real in the moment s
 - The listener revealed through what they noticed
 - What becomes real in the moment of perceiving
 
-### Avoid
+### Instead Of
 
-- ❌ Flat acknowledgment that only hears what was said — reach beyond
-- ❌ Responses that reveal nothing about the listener — both gain dimension
-- ❌ Speaker unchanged by how they're heard — hearing transforms
-- ❌ No gap — leave space for the reader to complete
+**Instead of** flat acknowledgment that only hears what was said ("I understand." / "You were about to ask my name." / "That makes sense."):
+→ Reach beyond. The listener perceives something the speaker didn't say — or didn't know they were saying. "You stood on the landing pad for a while." The response completes meaning in an unexpected direction. The speaker learns something about themselves through how they were heard.
+
+**Instead of** responses that reveal nothing about the listener:
+→ Both gain dimension. What the listener noticed tells us who they are. When Selin observes how long the wanderer stood outside, we learn about Selin — her attention, her patience, what she watches for. The exchange reveals both parties.
+
+**Instead of** the speaker unchanged by how they're heard:
+→ Hearing transforms. When someone perceives something in you that you didn't say, you become more real — to the reader, and to yourself. The wanderer doesn't just receive Selin's observation; something shifts in how they understand their own arrival.
+
+**Instead of** no gap (exchange complete, nothing left for reader):
+→ Leave space. The best exchanges don't close meaning — they open it. What passes between characters should leave the reader with a question, a sense that something was communicated that wasn't fully spoken. The reader completes the circuit.
 
 ### Verify
 
@@ -470,13 +566,22 @@ The strangeness accumulates across chapters. No single moment carries the weight
 - Restraint: one or two moments per chapter, no more
 - The pattern builds across chapters, not within them
 
-### Avoid
+### Instead Of
 
-- ❌ Wanderer acknowledging their strangeness ("I don't remember") — external observation only
-- ❌ Character attributing an effect ("You did something to the water") — notice, don't explain
-- ❌ Strangeness explained by local mystery — it must exceed this world
-- ❌ Ghost-story effects (papers lifting, shadows moving) — numinous, not supernatural
-- ❌ More than two moments per chapter — restraint is the constraint
+**Instead of** the wanderer acknowledging their strangeness ("I don't remember how I got here" / "Something happened to me"):
+→ The wanderer simply doesn't engage. If someone mentions something strange about them, the wanderer's response is practical — answering the surface question, changing the subject, or saying nothing. The strangeness is observed from outside, never confirmed from within.
+
+**Instead of** characters attributing effects to the wanderer ("You did something to the water" / "The ink changed when you touched it"):
+→ Characters notice without connecting. "His eyes found the wanderer's hands — the same thing the Mender had watched." Multiple observers notice the same thing, independently. No one says why. The pattern accumulates across chapters, never resolving into explanation.
+
+**Instead of** linking strangeness to local mysteries ("Perhaps you're connected to the rift" / "The old stories speak of ones like you"):
+→ The strangeness must exceed this world's explanations. It points elsewhere — to something no local mythology can name. When a world character tries to fit the wanderer into local understanding, the attempt should feel inadequate, not illuminating.
+
+**Instead of** ghost-story effects (papers lifting, shadows moving, objects reacting visibly):
+→ Numinous, not supernatural. A stillness that settles. A shift in attention. Something almost-felt, never quite seen. The reader senses it because others sense it — through their hesitation, their second glance, their trailing off mid-sentence.
+
+**Instead of** multiple strangeness moments in a single chapter:
+→ One or two, no more. The power lives in restraint and accumulation. Each moment should feel like it could be coincidence. Only across chapters does the pattern become undeniable.
 
 ### Verify
 
@@ -502,18 +607,25 @@ Action reveals; annotation explains.
 - The reader interprets from behavior, not from labels
 - Trust action to convey what words alone can't
 
-### Avoid
+### Instead Of
 
-- ❌ Labeling tone with adverbs ("coldly," "warmly") — let action carry it
-- ❌ Annotating dialogue with how to interpret it — trust the reader
-- ❌ Explaining stance instead of showing it — body, not label
-- ❌ Telling what reader should already feel — they felt it
+**Instead of** labeling tone with adverbs ("she said coldly," "he answered warmly"):
+→ Show stance through what the character does while speaking. A hand withdrawing, a gaze that doesn't lift, continuing to work while answering — action carries tone better than any adverb.
+
+**Instead of** annotating how dialogue should be read ("Not a question." / "A statement, not an accusation."):
+→ Trust the construction. "You're the shuttle" already reads as declarative. If the tone truly needs signaling, show what the speaker does — their eyes moving past the listener, their hands already reaching for the next task.
+
+**Instead of** explaining stance ("She was being careful not to seem dismissive"):
+→ Show the behavior that would make a reader feel this. Does she set something down before answering? Does she turn to face them fully? The body tells the truth; the label tells the reader what to think.
+
+**Instead of** telling what the reader already felt ("The silence was uncomfortable"):
+→ The reader felt the silence. Show what happens in it — someone shifting weight, a sound from elsewhere suddenly audible, someone finding something to do with their hands. The discomfort is already there.
 
 ### Verify
 
 - Is stance shown through action or told through labels?
 - Can the reader feel the tone without being told?
-- Would removing the label strengthen the line?
+- Would removing the annotation strengthen the line?
 
 ---
 
@@ -568,12 +680,19 @@ The reader doesn't need to understand how things work. They need to feel there's
 - History and cost over function and features
 - Leave room for mystery — not everything explained
 
-### Avoid
+### Instead Of
 
-- ❌ Characters explaining how things work — relationship over function
-- ❌ Description of function rather than relationship — cost over capability
-- ❌ Reader told rather than shown — immerse, don't inform
-- ❌ Closing mystery rather than holding it open — leave doors ajar
+**Instead of** characters explaining how things work ("This device measures the distance between stars"):
+→ Show relationship. Someone handles it carefully — or carelessly. They set it aside when a certain person enters. They reach for it in a moment of uncertainty. What the object *is* matters less than what it means to the person holding it.
+
+**Instead of** description of function ("The archive contained records of all departures and arrivals"):
+→ Cost over capability. Someone spent years building this. Someone else refuses to enter it. The records are incomplete in a specific way that still bothers the keeper. Function is cold; relationship is warm.
+
+**Instead of** telling the reader rather than showing ("This was a place of great importance to the community"):
+→ Immerse, don't inform. Show the importance through behavior — how people move through the space, what they touch, what they avoid. The reader feels the importance before they could name it.
+
+**Instead of** closing mystery rather than holding it open ("The symbols meant protection, as Selin explained"):
+→ Leave doors ajar. Selin traces the symbols but doesn't explain them. Later, the wanderer sees the same pattern somewhere unexpected. The mystery deepens rather than resolves. The reader carries a question forward.
 
 ### Verify
 

@@ -452,7 +452,7 @@ Before finishing, check:
 - [ ] **Strangeness restrained**: 1-2 moments maximum, none explained or named?
 - [ ] **Aftermath**: Is the wanderer section purposeless action, not reflection?
 - [ ] **Continuity**: Does the Wanderer section follow plausibly from where the narrative ended? If location or time shifted, is it implied by the narrative's close?
-- [ ] **Immersion**: Every noun arises from the story world, not source material? (See soul.md → The Immersion Test)
+- [ ] **Immersion**: Every noun arises from the story world, not source material? (See qino-scribe-agent.md → Complete Transformation)
 - [ ] **Anti-patterns clear**: No thematic echo, frictionless success, or paraphrase loops?
 - [ ] **Length**: Narrative is 1,200–1,600 words? (See craft.md → Chapter Length)
 

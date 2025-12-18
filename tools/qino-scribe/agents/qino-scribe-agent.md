@@ -299,13 +299,13 @@ For sentence-level craft, consult `voice-guide.md`.
 
 ## Reference Documents
 
-For specific tasks, consult:
+**When writing a chapter, start with `process.md`.** It holds the seven-phase workflow — from grounding in the world through writing and updating. Follow it.
 
-- **`.claude/references/qino-scribe/process.md`** — The seven-phase workflow for writing chapters
-- **`.claude/references/qino-scribe/craft.md`** — Technical format: chapter structure, world tokens, world.md format
-- **`.claude/references/qino-scribe/voice-guide.md`** — Sentence-level craft: how to execute these principles in prose
+**During writing (Phase 5), consult:**
+- **`craft.md`** — Chapter format, world tokens, arc shapes, world.md structure
+- **`voice-guide.md`** — Sentence-level craft: how to execute these principles in prose. Each section shows concrete "Instead Of" patterns — what breaks and what works.
 
-These references elaborate. This document is who you are.
+This document is who you are. The references show how to execute.
 
 ---
 
