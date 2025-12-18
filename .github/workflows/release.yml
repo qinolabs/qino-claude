@@ -15,48 +15,40 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build all-tools.zip
+      - name: Build all-tools.zip (manifest-driven)
         run: |
-          mkdir -p build/all/qino-claude/commands
-          mkdir -p build/all/qino-claude/agents
-          mkdir -p build/all/qino-claude/references
+          # Read manifest and copy files dynamically
+          # This prevents drift between manifest.json and hardcoded paths
 
-          # qino-concept
-          cp -r tools/qino-concept/commands/qino build/all/qino-claude/commands/
-          cp tools/qino-concept/agents/*.md build/all/qino-claude/agents/
-          cp -r tools/qino-concept/references/qino-concept build/all/qino-claude/references/
+          MANIFEST="tools/manifest.json"
+          BUILD_DIR="build/all/qino-claude"
 
-          # qino-dev
-          mkdir -p build/all/qino-claude/commands/qino-dev
-          cp tools/qino-dev/commands/qino-dev/*.md build/all/qino-claude/commands/qino-dev/
-          cp tools/qino-dev/agents/*.md build/all/qino-claude/agents/
-          mkdir -p build/all/qino-claude/references/qino-dev/templates
-          cp -r tools/qino-dev/references/qino-dev/* build/all/qino-claude/references/qino-dev/
-          cp -r tools/qino-dev/templates/* build/all/qino-claude/references/qino-dev/templates/
+          mkdir -p "$BUILD_DIR"
 
-          # qino-scribe
-          mkdir -p build/all/qino-claude/commands/scribe
-          cp tools/qino-scribe/commands/scribe/*.md build/all/qino-claude/commands/scribe/
-          cp -r tools/qino-scribe/references/qino-scribe build/all/qino-claude/references/
+          # Process each tool in manifest (skip archived tools)
+          for tool in $(jq -r '.tools | to_entries[] | select(.value.archived != true) | .key' "$MANIFEST"); do
+            echo "Processing: $tool"
 
-          # qino-eval
-          mkdir -p build/all/qino-claude/commands/eval
-          cp tools/qino-eval/commands/eval/*.md build/all/qino-claude/commands/eval/
-          cp -r tools/qino-eval/references/qino-eval build/all/qino-claude/references/
+            # Copy each file according to manifest
+            jq -r --arg tool "$tool" '.tools[$tool].files[] | "\(.src)|\(.dest)"' "$MANIFEST" | while IFS='|' read -r src dest; do
+              if [ -f "$src" ]; then
+                dest_dir=$(dirname "$BUILD_DIR/$dest")
+                mkdir -p "$dest_dir"
+                cp "$src" "$BUILD_DIR/$dest"
+                echo "  Copied: $dest"
+              else
+                echo "  Warning: $src not found"
+              fi
+            done
+          done
 
-          # design-adventure
-          cp tools/design-adventure/commands/*.md build/all/qino-claude/commands/
-          cp tools/design-adventure/agents/*.md build/all/qino-claude/agents/
-          cp -r tools/design-adventure/references/design-adventure build/all/qino-claude/references/
-
-          # updater
-          cp tools/updater/commands/*.md build/all/qino-claude/commands/
-          mkdir -p build/all/qino-claude/references/updater
-          cp tools/updater/migrations.md build/all/qino-claude/references/updater/
-
+          # Create zip
           cd build/all
           zip -r ../../all-tools.zip qino-claude
           cd ../..
+
+          echo "Build complete. Contents:"
+          find "$BUILD_DIR" -type f | sort
 
       - name: Upload release assets
         uses: softprops/action-gh-release@v1
