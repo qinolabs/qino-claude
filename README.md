@@ -4,7 +4,7 @@
 
 Tools for working with ideas in [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
 
-The tools here are shaped by Gregory and Nora Bateson's work — how communication patterns form, how meaning travels between contexts, and how living systems learn to change.
+The tools here are informed by Gregory and Nora Bateson's work — how communication patterns form, how meaning travels between contexts, and how living systems learn to change.
 
 <details>
 <summary><strong>Companions on the Path: The Pattern That Connects</strong></summary>
