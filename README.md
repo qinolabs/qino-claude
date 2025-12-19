@@ -102,6 +102,69 @@ Same scribe. Different worlds. Different atmospheric registers. Process in each 
 
 ---
 
+## The Ecosystem
+
+Ideas need different conditions at different stages.
+
+An early hunch needs room to wander — structure would crush it. A maturing concept needs stability — too much flux and it never settles. An implementation needs grounding — a vision to build toward without getting lost in features.
+
+The qino ecosystem gives each stage its own space:
+
+```
+                        ┌─────────────────┐
+                        │   TOOL HOME     │
+                        │  qino-claude    │
+                        │                 │
+                        │  tools/         │ ◀── source of all tools
+                        │  .claude/       │ ◀── also uses tools (adapter)
+                        └────────┬────────┘
+                                 │
+        ┌────────────────────────┼────────────────────────┐
+        ▼                        ▼                        ▼
+┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
+│   RESEARCH      │     │    CONCEPTS     │     │ IMPLEMENTATION  │
+│                 │     │                 │     │                 │
+│  explorations   │     │  concepts/      │     │  app repos      │
+│  calibrations   │     │  notes/         │     │  legal docs     │
+│  experiments    │     │  chronicle/     │     │  etc.           │
+└─────────────────┘     └─────────────────┘     └─────────────────┘
+     graduate ──────────────▶  ◀──────────────── capture/test
+```
+
+**Research** is before concepts crystallize — open-ended exploration, controlled experiments, calibrations of aesthetic quality. Work here welcomes uncertainty and accepts inconclusive results as valuable.
+
+**Concepts** is where ideas stabilize. The seven-section structure, the held threads, the notes that weave between them. What arrives here has found its shape, even if it continues to evolve.
+
+**Implementation** is where concepts meet code. Each implementation links back to its concept, so what you build stays connected to why you're building it.
+
+**qino-claude** sits at the top — the source of all tools. But it also *uses* those tools through adapters, so it participates in the ecosystem it enables.
+
+### The Router
+
+A small file called `qino-config.json` tells each tool which space it's in and where to send things:
+
+```json
+{
+  "repoType": "research",
+  "conceptsRepo": "../concepts-repo",
+  "description": "Research space"
+}
+```
+
+The tools read this configuration and adjust their behavior. A capture in a research repo might become an exploration. The same command in an implementation repo sends a note to concepts. The tools stay the same; the context shapes what they do.
+
+### Flow
+
+Research graduates into concepts — either as notes (distilled insights) or as concept seeds (new concepts with origins).
+
+Implementation captures flow back to concepts — observations, test results, things noticed while building.
+
+The chronicle (qino Scribe) watches git changes across any repo and writes the story of what happened.
+
+Everything connects through concepts-repo, but each space keeps its own ecology intact.
+
+---
+
 ## qino Concept
 
 A gentle space for developing ideas.
@@ -387,12 +450,13 @@ Curious collaborator, not judge. You don't know the answer. The tool doesn't kno
 This repository uses its own tools. The source files live in `tools/`, and adapter commands in `.claude/commands/` reference them.
 
 ```
-tools/qino-concept/commands/qino/    → .claude/commands/qino/
-tools/qino-scribe/commands/scribe/   → .claude/commands/scribe/
-tools/qino-attune/commands/attune/   → .claude/commands/attune/
+tools/qino-concept/commands/qino/      → .claude/commands/qino/
+tools/qino-scribe/commands/scribe/     → .claude/commands/scribe/
+tools/qino-attune/commands/attune/     → .claude/commands/attune/
+tools/qino-research/commands/research/ → .claude/commands/research/
 ```
 
-Adapters are thin wrappers that import the source command and adjust paths. This lets us develop tools and use them in the same repository without duplication.
+This is the "adapter" pattern described in The Ecosystem section — qino-claude is both the source of tools and a user of them.
 
 ---
 
