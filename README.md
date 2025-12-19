@@ -508,19 +508,20 @@ This is the "adapter" pattern described in The Ecosystem section — qino-claude
 
 ---
 
-## The Ecosystem in Miniature
+## Ecological Design
 
-qino-claude is a prototype of the larger qino apps ecosystem.
+The same patterns appear at every scale — not because one level copies another, but because ecological design works the same way whether you're building tools, apps, or the relationships between them.
 
-The tools here share the same architecture the apps will share:
-- **Cards as first-class citizens** — concepts, notes, held threads moving between contexts
-- **Modalities** — different ways of encountering the same material (home, explore, capture, test)
-- **Figures that travel** — the wanderer in chronicles, concepts that surface across notes
-- **Mutual seeing** — tools that notice the user, not just serve them
+Each space keeps its own ecology intact:
+- qino-claude has its coherence (tools that develop tools)
+- qino-drops has its coherence (shore-play, presence without seeking)
+- qino-world has its coherence (cards with origin, figures that carry mystery)
 
-The chronicle of this repository (written by qino Scribe) describes its own evolution. The concepts that qino Concept develops include qino Concept itself. The compare sessions that refine chapters become chapters in the chronicle.
+The art is preserving these local identities while moving fluidly between them. A gesture in one context — refining "mutual seeing" in the scribe — deepens understanding that surfaces elsewhere. The compare session that improves a chapter also teaches something about qino-lens. The note captured while building qino-drops informs how discovery-grid handles attunement.
 
-What works here informs qino-drops, qino-walk, qino-world. What's discovered there flows back to refine the tools. The ecosystem learns from itself.
+Every gesture presents an opportunity to progress on other fronts. Not because everything is connected by design, but because ecological patterns recognize each other across boundaries.
+
+This also means qino-claude serves as a proving ground. The patterns that work here — cards moving between contexts, modalities for encountering the same material, figures that travel, mutual seeing — these become the architecture for the apps. What's discovered at tool-scale informs app-scale. The tools are both their own ecology and a prototype of the larger one.
 
 > *"Every concept reflects every other. The membrane grows thin."*
 > — from "indras-net-between-concepts"
