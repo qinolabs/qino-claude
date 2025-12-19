@@ -1,20 +1,20 @@
 # qino Scribe
 
-Adventure emerges from pressure. The chronicle is a living world.
+Story emerges through relationship. The chronicle is a living world.
 
 ---
 
 ## What is this?
 
-Your ecosystem evolves through conversations, explorations, and accumulated work. qino Scribe transforms this evolution into a fantasy chronicle — not documentation with literary flair, but a story world with action, stakes, and consequence.
+Your ecosystem evolves through conversations, explorations, and accumulated work. qino Scribe transforms this evolution into a fantasy chronicle — not documentation with literary flair, but a story world with action, stakes, and relationship.
 
-The key insight: **adventure, not observation**.
+The key insight: **relationship permeates every dimension of story**.
 
 qino Scribe pushes toward:
-- Unexpected locations drawn from the theme's unexplored territory
-- Complications that create stakes
-- Action where the wanderer participates, not just witnesses
-- Pressures that build across chapters
+- Characters who perceive each other, not just exist
+- Stakes between people, not just for them
+- A world that sees back when the wanderer sees it
+- What remains unspoken accumulating across chapters
 
 ---
 
@@ -26,41 +26,56 @@ After you've done some work in your ecosystem:
 /scribe:chapter
 ```
 
-The scribe follows a six-phase process:
+The scribe follows a **staged two-agent architecture**:
 
-1. **Ground** — Inhabit the world before looking at changes
-2. **Observe** — See what changed and feel what it disturbs
-3. **Discover** — Generate four chapter options, choose the most alive
-4. **Propose** — Present the beat for your approval
-5. **Write** — Draft the chapter
-6. **Update** — Evolve world.md with new pressures
+**Prep Agent** (3 interactive checkpoints):
+1. **World Layer** — Inhabit theme and world state → present scene seeds
+2. **Disturbance Layer** — Read git diff → present angles
+3. **Beat Layer** — Define story type and characters → present directions
+
+**Hard Cut** — prep.md complete
+
+**Prose Agent** (receives only prep.md):
+4. **Write** — Draft from constraint, verify against 6 checks
+
+**Post-Prose** (2 summary checkpoints):
+5. **World Update** — Evolve world.md, confirm changes
+6. **Arc Update** — Advance arcs.md, confirm changes
+7. **Snapshot** — Copy state to chapter directory
+
+### Rewind
+
+Made a chapter you want to regenerate?
+
+```
+/scribe:rewind
+```
+
+Restores world state to before the last chapter.
 
 ---
 
 ## Architecture
 
-The scribe is an agent with embodied identity:
+Two agents with a hard cut between them:
 
 ```
 agents/
-└── qino-scribe-agent.md   # The scribe's soul — who it is
+├── scribe-prep.md     # Prep agent — World, Disturbance, Beat layers
+└── scribe-prose.md    # Prose agent — writes from prep.md constraint
 
 commands/scribe/
-└── chapter.md             # Task entry point
+├── chapter.md         # Orchestrates the two-agent flow
+└── rewind.md          # Restore to before last chapter
 
 references/qino-scribe/
-├── craft.md               # Technical format reference
-├── process.md             # The six-phase workflow
-└── voice-guide.md         # Sentence-level prose craft
+├── layers.md          # Layer flow, checkpoints, prep.md structure
+├── craft.md           # Chapter format, world.md template, arc shapes
+├── voice.md           # Sentence-level prose craft
+└── principles.md      # Ten relational principles (reusable)
 ```
 
-**qino-scribe-agent.md** — The scribe's embodied identity. What story is, the author's mind, the wanderer, characters in relationship, the reader's entry, complete transformation. Includes `permissionMode: acceptEdits` for uninterrupted chapter writing.
-
-**craft.md** — Technical reference. Chapter format, world tokens, world.md structure.
-
-**process.md** — The workflow. Six phases that ensure grounding before observation, exploration before execution.
-
-**voice-guide.md** — The craft of prose. How to execute the scribe's principles at the sentence level.
+**The hard cut is the quality mechanism.** The prose agent receives only prep.md — it cannot recycle descriptions from earlier context, must generate fresh from the sensory palette, and invents from constraint.
 
 ---
 
@@ -69,53 +84,70 @@ references/qino-scribe/
 ```
 chronicle/
 ├── manifest.json      # Chapter index and git refs
-├── theme.md           # The world's seed
+├── theme.md           # The world's seed (set once)
 ├── world.md           # Living state with Pressures
+├── arcs.md            # Narrative threads in motion
 └── chapters/
-    └── NNN-slug.md
+    └── NNN-slug/
+        ├── prep.md        # The constraint artifact
+        ├── chapter.md     # The narrative
+        ├── world.md       # Snapshot at write time
+        └── arcs.md        # Snapshot at write time
 ```
 
-### world.md Pressures
+### Relational Tracking in world.md
 
-The key feature: **world.md tracks pressures**, not just state.
+Characters track what they've noticed:
 
 ```markdown
-## Pressures
+### Selin
+First appeared: Chapter 1
+[Who they are, what stays with you about them]
 
-*What's building. What's about to break.*
+*Voice:* Direct. Short sentences. Finishes others' thoughts.
 
-### The Valley Traders Are Late
-They should have arrived two days ago. No word.
-
-### The Third Stack
-Selin still hasn't discussed it. Whatever it contains is changing her.
+**Has been watching:**
+What they've noticed about the wanderer — unspoken
 ```
 
-Pressures are fuel for future chapters. Without them, the story stalls.
+The wanderer tracks what others sense:
+
+```markdown
+## The Wanderer
+
+**What remains unspoken:**
+What others have sensed but not named — accumulating across chapters
+```
 
 ---
 
 ## Key Principles
 
-### Ground Before Observe
-Read theme and world.md *before* looking at the diff. Know what's alive in the world independent of changes.
+### Ten Relational Principles
 
-### Four Options, Choose Most Alive
-For every chapter, generate:
-- **Expected**: The tour-guide version
-- **Unexpected**: Location from theme's unexplored territory
-- **Complication**: What could go wrong
-- **Wild Card**: Something the scribe wouldn't normally try
+Embedded as active constraints in each layer:
 
-Choose the option with the most action, stakes, and wanderer participation.
+1. **Mutual Seeing** — The world must see back
+2. **The Relational Mirror** — Characters gain texture through perceiving each other
+3. **Relationship as Lens** — The world filters through relationship
+4. **What Remains Unspoken** — Relationships accumulate in silence
+5. **The World Has Been Watching** — Someone has been paying attention
+6. **Depth Through Others** — Characters defined by how others perceive them
+7. **Reader as Bond** — Never withhold from the reader
+8. **Responses That Complete** — Meaning completed in unexpected directions
+9. **Mundane Grounding** — The profound interrupts the ordinary
+10. **Relationship, Not Explanation** — What it means to someone, not what it is
 
-### Action Over Explanation
-- One explanatory dialogue exchange maximum per chapter
-- Show through behavior, environment, consequence
-- The wanderer *does* something, doesn't just witness
+### Six Verification Checks
 
-### Pressures Must Evolve
-Every chapter should leave at least one pressure building. If the Pressures section is empty after a chapter, you haven't finished.
+Before presenting a chapter:
+
+1. **Stakes** — Does someone want something they can't easily have?
+2. **Vividness** — Does the environment intrude at least once?
+3. **Dialogue** — Is there one mundane exchange? Can you tell who's speaking?
+4. **Reader** — Is there one gap the reader fills?
+5. **Mutual Seeing** — Does someone perceive something in the wanderer?
+6. **Response Completes** — Does at least one response reach beyond what was said?
 
 ---
 
@@ -126,13 +158,16 @@ Copy to your `.claude/` directory:
 ```
 .claude/
 ├── agents/
-│   └── qino-scribe-agent.md
+│   ├── scribe-prep.md
+│   └── scribe-prose.md
 ├── commands/
 │   └── scribe/
-│       └── chapter.md
+│       ├── chapter.md
+│       └── rewind.md
 └── references/
     └── qino-scribe/
+        ├── layers.md
         ├── craft.md
-        ├── process.md
-        └── voice-guide.md
+        ├── voice.md
+        └── principles.md
 ```

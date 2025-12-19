@@ -24,6 +24,8 @@ The critical insight: **don't let the diff narrow your vision before you've inha
 
 *Before looking at any changes.*
 
+> **Principle:** The world is a character — it shapes what can happen, not just contains it. The world has concerns that predate the wanderer and will outlast them. A world that only worries about the protagonist is a stage set, not a world.
+
 ### 1.1 Inhabit the Theme's Atmosphere
 
 Read `chronicle/theme.md` — not to extract locations, but to feel what kind of world this is. The sensory palette you generate below is your working tool during writing. Return to the theme to re-feel atmosphere, not to check coverage.
@@ -149,6 +151,8 @@ Ask:
 ## Phase 3: Discover the Story
 
 *The critical phase. This is where adventure happens or doesn't.*
+
+> **Principle:** Story lives in what costs something. A chapter succeeds when something is attempted (not just witnessed), someone wants something they can't easily have, the world resists or surprises, and the wanderer is changed (not just informed). Strip away the fantasy vocabulary — is there story left, or just diff in costume?
 
 **OUTPUT NOTHING DURING THIS PHASE.**
 
@@ -452,7 +456,7 @@ Before finishing, check:
 - [ ] **Strangeness restrained**: 1-2 moments maximum, none explained or named?
 - [ ] **Aftermath**: Is the wanderer section purposeless action, not reflection?
 - [ ] **Continuity**: Does the Wanderer section follow plausibly from where the narrative ended? If location or time shifted, is it implied by the narrative's close?
-- [ ] **Immersion**: Every noun arises from the story world, not source material? (See qino-scribe-agent.md → Complete Transformation)
+- [ ] **Immersion**: Every noun arises from the story world, not source material? Would a character who lives in this theme use this word?
 - [ ] **Anti-patterns clear**: No thematic echo, frictionless success, or paraphrase loops?
 - [ ] **Length**: Narrative is 1,200–1,600 words? (See craft.md → Chapter Length)
 
@@ -461,6 +465,18 @@ Before finishing, check:
 - [ ] **Grounded opening**: First paragraph in place and action before interiority?
 - [ ] **Sensory discovery**: New places reveal through concrete detail (architecture, food, custom)?
 - [ ] **Interiority compressed**: Internal reflection in single sentences, grounded by action?
+
+**Vividness checks:**
+
+- [ ] **Sensory palette used**: At least 3 words from Phase 1's palette appear in the prose
+- [ ] **Environment intrudes**: Something from the environment interrupts, shifts, or demands attention at least once per scene (a door sticks, a smell makes them pause, light changes)
+- [ ] **Instance not category**: Details are *this* thing, not *a* thing — not "warm stone" but what this stone feels like now, here
+
+**Dialogue checks:**
+
+- [ ] **Mundane grounding**: At least one exchange per scene about logistics, discomfort, or something unrelated to theme
+- [ ] **Voice differentiation**: Could you tell who's speaking without dialogue tags?
+- [ ] **Not all wisdom**: At least one character struggles to articulate, deflects, or changes the subject
 
 ### The Strangeness Pass
 

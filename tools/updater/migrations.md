@@ -12,6 +12,35 @@ Each version section includes:
 
 ---
 
+## v1.0.0 (qino-scribe)
+
+**Summary**: qino Scribe complete rewrite with two-agent staged architecture. Relational principles embedded as active constraints.
+
+**Delete** (qino-scribe):
+- `.claude/agents/qino-scribe-agent.md` (replaced by scribe-prep.md and scribe-prose.md)
+- `.claude/references/qino-scribe/process.md` (replaced by layers.md)
+- `.claude/references/qino-scribe/voice-guide.md` (replaced by voice.md)
+
+**New** (qino-scribe):
+- `.claude/agents/scribe-prep.md` — prep agent for World, Disturbance, Beat layers
+- `.claude/agents/scribe-prose.md` — prose agent (receives only prep.md, constrained)
+- `.claude/references/qino-scribe/layers.md` — layer flow, checkpoints, prep.md structure
+- `.claude/references/qino-scribe/voice.md` — sentence-level prose craft
+- `.claude/references/qino-scribe/principles.md` — ten relational principles (reusable)
+
+**Changed** (qino-scribe):
+- Two-agent architecture: prep agent builds prep.md through 3 checkpoints, prose agent writes from constraint
+- 6 verification checks (was 4): added mutual seeing and response completes
+- prep.md includes relational fields: The relationship, Mutual seeing, What's unsaid
+- world.md tracks relational state: "Has been watching" for characters, "What remains unspoken" for wanderer
+
+**User action**:
+- Delete old files listed above before updating
+- Existing chronicles work — new chapters use staged architecture
+- Chapter creation flow now has 3 interactive checkpoints (scene seeds, angles, directions)
+
+---
+
 ## v0.13.0
 
 **Summary**: qino Attune replaces qino Eval with a cleaner operation model (compare and calibrate).

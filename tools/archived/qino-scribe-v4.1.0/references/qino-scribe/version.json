@@ -1,0 +1,7 @@
+{
+  "version": "4.1.0",
+  "name": "qino-scribe",
+  "description": "Chronicle generation with ten story types and situation-first selection",
+  "created": "2025-12-18",
+  "status": "stable"
+}

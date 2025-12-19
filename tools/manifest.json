@@ -56,14 +56,17 @@
       ]
     },
     "qino-scribe": {
-      "description": "Chronicle ecosystem evolution through narrative chapters",
+      "description": "Chronicle ecosystem evolution through staged two-agent narrative",
       "files": [
         {"src": "tools/qino-scribe/references/qino-scribe/version.json", "dest": "references/qino-scribe/version.json"},
-        {"src": "tools/qino-scribe/agents/qino-scribe-agent.md", "dest": "agents/qino-scribe-agent.md"},
+        {"src": "tools/qino-scribe/agents/scribe-prep.md", "dest": "agents/scribe-prep.md"},
+        {"src": "tools/qino-scribe/agents/scribe-prose.md", "dest": "agents/scribe-prose.md"},
         {"src": "tools/qino-scribe/commands/scribe/chapter.md", "dest": "commands/scribe/chapter.md"},
+        {"src": "tools/qino-scribe/commands/scribe/rewind.md", "dest": "commands/scribe/rewind.md"},
+        {"src": "tools/qino-scribe/references/qino-scribe/layers.md", "dest": "references/qino-scribe/layers.md"},
         {"src": "tools/qino-scribe/references/qino-scribe/craft.md", "dest": "references/qino-scribe/craft.md"},
-        {"src": "tools/qino-scribe/references/qino-scribe/process.md", "dest": "references/qino-scribe/process.md"},
-        {"src": "tools/qino-scribe/references/qino-scribe/voice-guide.md", "dest": "references/qino-scribe/voice-guide.md"}
+        {"src": "tools/qino-scribe/references/qino-scribe/voice.md", "dest": "references/qino-scribe/voice.md"},
+        {"src": "tools/qino-scribe/references/qino-scribe/principles.md", "dest": "references/qino-scribe/principles.md"}
       ]
     },
     "qino-dev": {

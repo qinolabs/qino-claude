@@ -10,6 +10,32 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.14.0] - 2025-12-19
+
+### qino Scribe
+
+#### Added
+- **Two-agent staged architecture** — prep agent handles World, Disturbance, Beat layers; prose agent writes from constraint (receives only prep.md)
+- **Three interactive checkpoints** — scene seeds, angles, directions; user steers story discovery through choices
+- **Ten relational principles** — Mutual Seeing, Relationship as Lens, What Remains Unspoken, The World Has Been Watching, and more; embedded as active constraints in each layer
+- **Relational fields in prep.md** — "The relationship", "Mutual seeing", "What's unsaid" are required, not optional
+- **World.md relational tracking** — "Has been watching" for characters, "What remains unspoken" for wanderer
+- **`/scribe:rewind` command** — restore world state to before the last chapter for regeneration
+- **Six verification checks** — added mutual seeing and response completes (was 4)
+
+#### Changed
+- **Hard cut between prep and prose** — prose agent cannot access previous context; constraint breeds originality
+- **Layer-based workflow** — World, Disturbance, Beat layers replace seven-phase process
+- **Reference architecture reorganized** — `layers.md` (layer flow), `voice.md` (prose craft), `principles.md` (relational wisdom), `craft.md` (format)
+- **Options as vocabulary** — even rejected checkpoint options help users articulate what they're sensing
+
+#### Removed
+- **Single agent architecture** — `qino-scribe-agent.md` replaced by `scribe-prep.md` and `scribe-prose.md`
+- **process.md** — replaced by `layers.md`
+- **voice-guide.md** — replaced by `voice.md`
+
+---
+
 ## [0.13.4] - 2025-12-18
 
 ### qino Scribe

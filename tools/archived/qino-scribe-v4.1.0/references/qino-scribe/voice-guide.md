@@ -276,6 +276,72 @@ Responses surprise, reframe, or reach beyond. Something passes between speakers.
 
 ---
 
+## Mundane Grounding
+
+### The Principle
+
+Before a character speaks significance, they should speak something else — a practical concern, a complaint, an observation about the immediate. The profound lands harder when it interrupts the ordinary.
+
+When everyone speaks mystery, nothing is mysterious. When everyone speaks wisdom, no one is wise.
+
+### Execute
+
+- At least one exchange per scene about logistics, discomfort, or something unrelated to theme
+- Characters complain, deflect, change the subject
+- Practical needs interrupt important conversations
+- Someone mentions food, weather, an ache, a frustration
+- The profound emerges *from* the mundane, doesn't replace it
+
+### Instead Of
+
+**Instead of** every exchange advancing theme or mystery:
+→ Let characters be ordinary. "The path is longer than I remembered." "Did you eat?" "My shoulder hasn't been right since the climb." These ground characters as bodies with needs, not vessels for meaning.
+
+**Instead of** dialogue that's always significant:
+→ Significance needs contrast. A profound observation lands harder after someone complained about the cold. The mundane is the silence that makes the note audible.
+
+### Verify
+
+- Is there at least one mundane exchange in this scene?
+- Could this conversation happen between tired, hungry people?
+- Does the profound interrupt ordinary life, or replace it?
+
+---
+
+## Character Voice Differentiation
+
+### The Principle
+
+Each character needs a speech signature — not an accent, but a pattern. If two characters' lines can be swapped without noticing, the differentiation has failed.
+
+Characters reveal themselves through *how* they speak as much as *what* they say.
+
+### Execute
+
+For each character, know:
+- **Sentence length**: Long and winding, or short and direct?
+- **Questions vs. statements**: Do they ask or tell?
+- **Completion**: Do they finish thoughts, or trail off?
+- **Directness**: Do they say what they mean, or circle around it?
+- **What they notice**: What do they comment on that others don't?
+- **What they avoid**: What topics make them change the subject?
+
+### Markers That Differentiate
+
+- One character speaks in fragments. Another in complete paragraphs.
+- One asks questions. Another answers questions with statements.
+- One finishes others' sentences. Another waits too long to respond.
+- One talks about things. Another talks about people.
+- One deflects with humor. Another with silence.
+
+### Verify
+
+- If you removed dialogue tags, could a reader tell who's speaking?
+- Does each character have at least one verbal habit that's theirs alone?
+- Do characters sound different from each other, not just different from chapter to chapter?
+
+---
+
 ## Scene Endings
 
 ### The Principle
