@@ -4,6 +4,8 @@
 
 Tools for working with ideas in [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
 
+Gregory and Nora Bateson's work — on communication, pattern, and how living systems learn — has shown me a way of thinking that made a profound difference in my life. These tools are an expression of that continuous process.
+
 <details>
 <summary><strong>Companions on the Path: The Pattern That Connects</strong></summary>
 
@@ -73,16 +75,17 @@ This is the inheritance: from young anthropologists watching rituals on the Sepi
 
 </details>
 
----
+<br>
 
-Gregory and Nora Bateson's work — on communication, pattern, and how living systems learn — has shown me a way of thinking that made a profound difference in my life. These tools are an expression of that continuous process.
+Ideas travel between contexts. What works here echoes there.
+
 
 <details>
-<summary><strong>Ecological Design: How Ideas Flow Between Spaces</strong></summary>
+<summary><strong>An Ecology of Mind</strong></summary>
 
-Ecological design patterns are alive at every level — in each concept, in each repository, in the ecosystem itself. The art is in the design — affordances and cues, sensitive to experience, that naturally protect the integrity of local ecologies while encouraging free movement without accumulating friction. What does accumulate are artifacts and new relational patterns, safely stored in context, ready to surface again when they connect to your next idea. The best ideas can come from anywhere — not centralized — and often while deeply immersed in a different context.
+Ecological design patterns are alive at every level — in each concept, in each repository, in the ecosystem itself. The art is in the design — affordances and cues, sensitive to experience, that naturally protect the integrity of local ecologies while encouraging free movement without accumulating friction. What does accumulate are learnings and notes, either woven into exising concepts, or safely kept, ready to reveal itself fully through the next idea that connects. The best ideas can come from anywhere — not centralized — and often while deeply immersed in a different context.
 
-Figures are a metaphor — in Bateson's sense, not the literary sense. A figure is the snapshot you capture when your friend laughs in a certain way. It's what you think about as you pause at a point of interest on a qino Walk. It's a game design idea captured during a creative qino Meet with friends. In the chronicles, figures are characters like Seren and Lira who perceive the wanderer. Same pattern — a persistent form that carries meaning through return — taking completely different shape in each context. You don't deduce your way to this recognition. You're deep in the scribe, refining how Seren sees the wanderer, and suddenly you recognize something about how figures should work across the apps. The crab teaches you about the lobster. One context illuminates another through pattern, not logic.
+Figures in qino are a metaphor — in Bateson's sense, not the literary sense. A figure is the snapshot you capture when your friend laughs in a certain way. It's what you think about as you pause at a point of interest on a qino Walk. It's a game design idea captured during a creative qino Meet with friends. In the chronicles, figures are characters like Seren and Lira who perceive the wanderer. Same pattern — a persistent form that carries meaning through return — taking completely different shape in each context. You don't deduce your way to this recognition. You're deep in the scribe, refining how Seren sees the wanderer, and suddenly you recognize something about how figures should work across the apps. The crab teaches you about the lobster. One context illuminates another through pattern, not logic.
 
 qino-claude also serves as a proving ground. The patterns that work here — cards moving between contexts, modalities for encountering the same material, figures that travel — become the architecture for the apps. What's discovered at tool-scale informs app-scale.
 
@@ -170,10 +173,9 @@ The `qino:` namespace is not a specific space — it's what you're already in wh
 
 </details>
 
----
+<br>
 
-Ideas travel between contexts. What works here echoes there.
-
+What happens in the ecosystem becomes story. Git changes, transformed into fantasy narrative.
 <details>
 <summary><strong>The Chronicles: Story of an Evolving Ecosystem</strong></summary>
 
@@ -201,9 +203,7 @@ Same scribe. Different worlds. Different atmospheric registers. Process in each 
 
 </details>
 
----
-
-What happens in the ecosystem becomes story. Git changes, transformed into fantasy narrative.
+<br>
 
 ![Chapter view with location popover](docs/images/chronicle/chapter-view.png)
 
