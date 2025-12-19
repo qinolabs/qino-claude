@@ -285,14 +285,34 @@ In this repository's chronicle, the wanderer is ferrying a warming pouch upriver
 
 Your ecosystem evolves through conversations and work that spans sessions. qino Scribe turns that movement into a fantasy chronicle with action, consequence, and a wanderer who acts — not documentation in costume. Each chapter ends with pressures still building so the next one has somewhere to land.
 
-### How the system holds the craft (six phases)
+### How the system holds the craft
 
-- **Ground before diff** — read the theme and world, find where tension already waits
-- **Observe what changed** — read the git range, ask who in-world feels it and what could go wrong
-- **Discover four options** — Expected, Unexpected Location, Complication, Journey; choose the most alive (action + stakes)
-- **Propose → Write** — present the beat, then draft with one explanatory exchange max; the world must act, and the wanderer must risk something
-- **Update world.md** — pressures, wanderer, characters, locations, arcs; add journal entries when arcs complete
-- **Keep the ledger** — world tokens stay small and specific so later chapters can echo them without breaking immersion
+At each layer, the scribe presents options. You choose — or combine, adjust, ask for more. Options are vocabulary; even rejected ones help articulate what's wanted.
+
+```
+─────────────────────────────────────────────────────────────────
+grounding
+
+  theme       brown water, green distance, rope bridges swaying
+  pressure    the pouch warming toward soon
+  arc         The Wanderer's Hands — something in how they hold things
+  last seen   sitting at Orith's Landing, feet over water, eating dark bread
+
+─────────────────────────────────────────────────────────────────
+scene seeds
+
+  1 → Deren notices the wanderer's raw hands — fifteen years of
+      calluses meeting someone who rows like they're outrunning something
+
+  2 → Lira appears at the platform edge — she knew the pouch before,
+      years ago, going the other way
+
+  3 → A child watches from the rope bridge — the same stillness as
+      Seren, that quality of recording without approaching
+
+─────────────────────────────────────────────────────────────────
+[ 1-3 ] or adjust    [ > ] auto-pick    [ >> ] start writing
+```
 
 ```bash
 /qino-scribe:chapter
