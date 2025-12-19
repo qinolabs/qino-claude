@@ -75,6 +75,8 @@ This is the inheritance: from young anthropologists watching rituals on the Sepi
 
 </details>
 
+---
+
 Ideas need different conditions at different stages. Patterns that work at one level echo at others.
 
 <details>
