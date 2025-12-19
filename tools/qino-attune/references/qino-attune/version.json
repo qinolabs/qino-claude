@@ -1,4 +1,5 @@
 {
-  "version": "0.1.0",
-  "tool": "qino-attune"
+  "tool": "qino-attune",
+  "version": "0.13.0",
+  "description": "Training perception through difference"
 }
