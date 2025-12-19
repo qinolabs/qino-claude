@@ -510,7 +510,7 @@ This is the "adapter" pattern described in The Ecosystem section — qino-claude
 
 ## Ecological Design
 
-Ecological design patterns are alive at every level — in each concept, in each repository, in the ecosystem itself. The art is preserving their local ecologies and identity boundaries while leveraging the metaphors to move fluidly between them.
+Ecological design patterns are alive at every level — in each concept, in each repository, in the ecosystem itself. The art is moving about freely without collapsing the local ecologies. To learn with every step. To enable non-linear movements.
 
 "Home" is a metaphor. In qino-claude it means arrival, orientation, receiving before venturing out. That pattern can travel — to qino-drops, to any app — and mean the same thing while taking completely different form. The metaphor carries the pattern across boundaries without flattening what's local.
 
