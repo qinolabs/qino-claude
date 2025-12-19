@@ -4,6 +4,8 @@
 
 Tools for working with ideas in [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
 
+Gregory and Nora Bateson's work on pattern, context, and living systems runs through everything here.
+
 <details>
 <summary><strong>Companions on the Path: The Pattern That Connects</strong></summary>
 
@@ -81,9 +83,6 @@ Figures are a metaphor — in Bateson's sense, not the literary sense. A figure 
 
 qino-claude also serves as a proving ground. The patterns that work here — cards moving between contexts, modalities for encountering the same material, figures that travel — become the architecture for the apps. What's discovered at tool-scale informs app-scale.
 
-> *"Every concept reflects every other. The membrane grows thin."*
-> — from "indras-net-between-concepts"
-
 <details>
 <summary><strong>The Chronicles: Story of an Evolving Ecosystem</strong></summary>
 
@@ -126,13 +125,12 @@ Same scribe. Different worlds. Different atmospheric registers. Process in each 
 
 ---
 
-## The Ecosystem
+Ideas need different conditions at different stages. The qino ecosystem gives each stage its own space.
 
-Ideas need different conditions at different stages.
+<details>
+<summary><strong>The Ecosystem: How Ideas Flow Between Spaces</strong></summary>
 
 An early hunch needs room to wander — structure would crush it. A maturing concept needs stability — too much flux and it never settles. An implementation needs grounding — a vision to build toward without getting lost in features.
-
-The qino ecosystem gives each stage its own space:
 
 ```
                         ┌─────────────────┐
@@ -208,6 +206,8 @@ Everything connects through concepts-repo, but each space keeps its own ecology 
 | `qino-dev:` | Implementation | init, app |
 
 The `qino:` namespace is not a specific space — it's what you're already in when you're anywhere. The suffix is the door you're entering through.
+
+</details>
 
 ---
 
