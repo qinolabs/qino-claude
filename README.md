@@ -7,6 +7,8 @@ Tools for working with ideas in [Claude Code](https://docs.anthropic.com/en/docs
 <details>
 <summary><strong>Companions on the Path: The Pattern That Connects</strong></summary>
 
+![Gregory Bateson](docs/images/gregory-bateson.jpg)
+
 ### The Young Anthropologists and the Question of Fascism
 
 In 1932, Gregory Bateson met Margaret Mead on the Sepik River in New Guinea. Both were in their late twenties. The world was darkening—Mussolini had been in power for a decade, Hitler was ascending, and the patterns of thought that would consume Europe were already taking hold.
