@@ -369,7 +369,7 @@ from here
   there's uncommitted work on authentication
   continue here, or commit what you have?
 
-                        just respond, or /qino:explore board-games
+                        just respond, or /qino-concept:explore board-games
 ```
 
 Not a dashboard. Not a menu. A place to arrive before you work.

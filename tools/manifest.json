@@ -38,16 +38,26 @@
         {"src": "tools/design-adventure/references/design-adventure/atmosphere-guide.md", "dest": "references/design-adventure/atmosphere-guide.md"}
       ]
     },
+    "qino-universal": {
+      "description": "Universal commands for the qino ecosystem — the ecology itself",
+      "files": [
+        {"src": "tools/qino-universal/references/qino-universal/version.json", "dest": "references/qino-universal/version.json"},
+        {"src": "tools/qino-universal/commands/qino/home.md", "dest": "commands/qino/home.md"},
+        {"src": "tools/qino-universal/commands/qino/capture.md", "dest": "commands/qino/capture.md"},
+        {"src": "tools/qino-universal/commands/qino/test.md", "dest": "commands/qino/test.md"},
+        {"src": "tools/qino-universal/commands/qino/attune.md", "dest": "commands/qino/attune.md"},
+        {"src": "tools/qino-universal/commands/qino/compare.md", "dest": "commands/qino/compare.md"},
+        {"src": "tools/qino-universal/references/qino-attune/compare-session.md", "dest": "references/qino-attune/compare-session.md"},
+        {"src": "tools/qino-universal/references/qino-attune/calibrate-process.md", "dest": "references/qino-attune/calibrate-process.md"}
+      ]
+    },
     "qino-concept": {
       "description": "Gentle space for developing ideas through conversation",
       "files": [
         {"src": "tools/qino-concept/references/qino-concept/version.json", "dest": "references/qino-concept/version.json"},
-        {"src": "tools/qino-concept/commands/qino/home.md", "dest": "commands/qino/home.md"},
-        {"src": "tools/qino-concept/commands/qino/explore.md", "dest": "commands/qino/explore.md"},
-        {"src": "tools/qino-concept/commands/qino/import.md", "dest": "commands/qino/import.md"},
-        {"src": "tools/qino-concept/commands/qino/capture.md", "dest": "commands/qino/capture.md"},
-        {"src": "tools/qino-concept/commands/qino/init.md", "dest": "commands/qino/init.md"},
-        {"src": "tools/qino-concept/commands/qino/test.md", "dest": "commands/qino/test.md"},
+        {"src": "tools/qino-concept/commands/qino-concept/explore.md", "dest": "commands/qino-concept/explore.md"},
+        {"src": "tools/qino-concept/commands/qino-concept/import.md", "dest": "commands/qino-concept/import.md"},
+        {"src": "tools/qino-concept/commands/qino-concept/init.md", "dest": "commands/qino-concept/init.md"},
         {"src": "tools/qino-concept/agents/qino-concept-agent.md", "dest": "agents/qino-concept-agent.md"},
         {"src": "tools/qino-concept/references/qino-concept/concept-spec.md", "dest": "references/qino-concept/concept-spec.md"},
         {"src": "tools/qino-concept/references/qino-concept/manifest-project-spec.md", "dest": "references/qino-concept/manifest-project-spec.md"},
@@ -61,12 +71,13 @@
         {"src": "tools/qino-scribe/references/qino-scribe/version.json", "dest": "references/qino-scribe/version.json"},
         {"src": "tools/qino-scribe/agents/scribe-prep.md", "dest": "agents/scribe-prep.md"},
         {"src": "tools/qino-scribe/agents/scribe-prose.md", "dest": "agents/scribe-prose.md"},
-        {"src": "tools/qino-scribe/commands/scribe/chapter.md", "dest": "commands/scribe/chapter.md"},
-        {"src": "tools/qino-scribe/commands/scribe/rewind.md", "dest": "commands/scribe/rewind.md"},
+        {"src": "tools/qino-scribe/commands/qino-scribe/chapter.md", "dest": "commands/qino-scribe/chapter.md"},
+        {"src": "tools/qino-scribe/commands/qino-scribe/rewind.md", "dest": "commands/qino-scribe/rewind.md"},
         {"src": "tools/qino-scribe/references/qino-scribe/layers.md", "dest": "references/qino-scribe/layers.md"},
         {"src": "tools/qino-scribe/references/qino-scribe/craft.md", "dest": "references/qino-scribe/craft.md"},
         {"src": "tools/qino-scribe/references/qino-scribe/voice.md", "dest": "references/qino-scribe/voice.md"},
-        {"src": "tools/qino-scribe/references/qino-scribe/principles.md", "dest": "references/qino-scribe/principles.md"}
+        {"src": "tools/qino-scribe/references/qino-scribe/principles.md", "dest": "references/qino-scribe/principles.md"},
+        {"src": "tools/qino-scribe/references/qino-scribe/disturbance.md", "dest": "references/qino-scribe/disturbance.md"}
       ]
     },
     "qino-dev": {
@@ -96,14 +107,15 @@
       ]
     },
     "qino-attune": {
-      "description": "Training perception through difference",
+      "description": "Training perception through difference (archived - merged into qino-universal)",
+      "archived": true,
       "files": [
-        {"src": "tools/qino-attune/references/qino-attune/version.json", "dest": "references/qino-attune/version.json"},
-        {"src": "tools/qino-attune/agents/qino-attune-agent.md", "dest": "agents/qino-attune-agent.md"},
-        {"src": "tools/qino-attune/commands/attune/compare.md", "dest": "commands/attune/compare.md"},
-        {"src": "tools/qino-attune/commands/attune/calibrate.md", "dest": "commands/attune/calibrate.md"},
-        {"src": "tools/qino-attune/references/qino-attune/compare-session.md", "dest": "references/qino-attune/compare-session.md"},
-        {"src": "tools/qino-attune/references/qino-attune/calibrate-process.md", "dest": "references/qino-attune/calibrate-process.md"}
+        {"src": "tools/archived/qino-attune/references/qino-attune/version.json", "dest": "references/qino-attune/version.json"},
+        {"src": "tools/archived/qino-attune/agents/qino-attune-agent.md", "dest": "agents/qino-attune-agent.md"},
+        {"src": "tools/archived/qino-attune/commands/attune/compare.md", "dest": "commands/attune/compare.md"},
+        {"src": "tools/archived/qino-attune/commands/attune/calibrate.md", "dest": "commands/attune/calibrate.md"},
+        {"src": "tools/archived/qino-attune/references/qino-attune/compare-session.md", "dest": "references/qino-attune/compare-session.md"},
+        {"src": "tools/archived/qino-attune/references/qino-attune/calibrate-process.md", "dest": "references/qino-attune/calibrate-process.md"}
       ]
     },
     "updater": {
@@ -117,10 +129,9 @@
       "description": "Pre-concept research workspace",
       "files": [
         {"src": "tools/qino-research/references/qino-research/version.json", "dest": "references/qino-research/version.json"},
-        {"src": "tools/qino-research/commands/research/home.md", "dest": "commands/research/home.md"},
-        {"src": "tools/qino-research/commands/research/begin.md", "dest": "commands/research/begin.md"},
-        {"src": "tools/qino-research/commands/research/experiment.md", "dest": "commands/research/experiment.md"},
-        {"src": "tools/qino-research/commands/research/graduate.md", "dest": "commands/research/graduate.md"},
+        {"src": "tools/qino-research/commands/qino-research/begin.md", "dest": "commands/qino-research/begin.md"},
+        {"src": "tools/qino-research/commands/qino-research/experiment.md", "dest": "commands/qino-research/experiment.md"},
+        {"src": "tools/qino-research/commands/qino-research/graduate.md", "dest": "commands/qino-research/graduate.md"},
         {"src": "tools/qino-research/agents/qino-research-agent.md", "dest": "agents/qino-research-agent.md"},
         {"src": "tools/qino-research/references/qino-research/research-spec.md", "dest": "references/qino-research/research-spec.md"}
       ]

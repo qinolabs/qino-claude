@@ -43,8 +43,9 @@ The tools read `.claude/qino-config.json` to detect context and adjust behavior.
 Copy to your `.claude/` directory:
 
 ```
-commands/qino/          →  .claude/commands/qino/
-references/qino-attune/ →  .claude/references/qino-attune/
+commands/qino/            →  .claude/commands/qino/
+references/qino-universal/→  .claude/references/qino-universal/
+references/qino-attune/   →  .claude/references/qino-attune/
 ```
 
 For full concept support, also install [qino-concept](../qino-concept/).

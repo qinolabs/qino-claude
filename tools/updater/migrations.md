@@ -12,58 +12,9 @@ Each version section includes:
 
 ---
 
-## v0.16.0 (Context Sensitivity + Hints)
+## v0.15.0 (Command Namespace + Context Sensitivity)
 
-**Summary**: Universal commands now detect workspace context via `repoType` and adapt behavior. `/qino-research:home` absorbed into `/qino:home`. Static hints system added to all confirmation/universal commands.
-
-**Context Detection**:
-
-All universal commands now read `.claude/qino-config.json` and branch behavior based on `repoType`:
-- `"concepts"` or absent → concepts workspace behavior
-- `"research"` → research workspace behavior
-- `"implementation"` → linked concept behavior (unchanged)
-- `"tool"` → tool repository behavior (new)
-
-**Delete** (qino-research):
-- `.claude/commands/qino-research/home.md` (absorbed into qino:home)
-
-**Changed** (qino-universal):
-- `/qino:home` — now detects research context and shows explorations/calibrations/experiments
-- `/qino:capture` — routes to `fragments/` when inside `explorations/[id]/` in research context
-- `/qino:test` — target is now argument-driven (concept, exploration, file, or conversation context)
-- `/qino:attune` — prompts for research-repo path when used outside research workspace
-- `/qino:compare` — detects calibration context and offers to append to `transformations.md`
-
-**Changed** (qino-concept):
-- `/qino-concept:explore` — gracefully refuses in research context with redirect to `/qino-research:begin`
-
-**Hints System**:
-
-All commands now show static hints based on their type:
-- **Universal/Confirmation commands** → cross-space hints (can navigate between spaces)
-- **Space-specific commands** → in-space hints (stay within current space)
-
-Commands with hints:
-- `/qino:home` — cross-space: capture, test, attune, space-specific explore
-- `/qino:capture` — cross-space: home, explore, attune
-- `/qino:test` — cross-space: home, explore, attune
-- `/qino:compare` — cross-space: home, attune
-- `/qino:attune` — cross-space: home, compare
-- `/qino-concept:explore` — in-space: home, explore
-- `/qino-research:begin` — in-space: home, experiment
-- `/qino-research:experiment` — in-space: home, graduate, begin
-- `/qino-research:graduate` — cross-space: home (both repos)
-
-**User action**:
-- Delete `.claude/commands/qino-research/home.md`
-- Use `/qino:home` instead of `/qino-research:home` in research workspaces
-- Ensure `repoType` is set in `.claude/qino-config.json` for correct context detection
-
----
-
-## v0.15.0 (Command Namespace Rename)
-
-**Summary**: Unified command naming based on qino-command-map concept. Universal ecology commands get their own tool (`qino-universal`), concept-specific commands move to `qino-concept:`, and all other tools get full prefixes.
+**Summary**: Unified command naming based on qino-command-map concept. Universal ecology commands get their own tool (`qino-universal`), concept-specific commands move to `qino-concept:`, and all other tools get full prefixes. Universal commands now detect workspace context via `repoType` and adapt behavior. Static hints system added for cross-space navigation.
 
 **Naming Architecture**:
 - `qino:` — universal commands (the ecology itself) — now in `qino-universal` tool
@@ -104,10 +55,39 @@ Commands with hints:
 - `.claude/commands/qino-concept/import.md`
 - `.claude/commands/qino-concept/init.md`
 
+**Context Detection**:
+
+All universal commands now read `.claude/qino-config.json` and branch behavior based on `repoType`:
+- `"concepts"` or absent → concepts workspace behavior
+- `"research"` → research workspace behavior
+- `"implementation"` → linked concept behavior (unchanged)
+- `"tool"` → tool repository behavior (new)
+
+**Delete** (additional):
+- `.claude/commands/qino-research/home.md` (absorbed into qino:home)
+
+**Changed** (qino-universal):
+- `/qino:home` — now detects research context and shows explorations/calibrations/experiments
+- `/qino:capture` — routes to `fragments/` when inside `explorations/[id]/` in research context
+- `/qino:test` — target is now argument-driven (concept, exploration, file, or conversation context)
+- `/qino:attune` — prompts for research-repo path when used outside research workspace
+- `/qino:compare` — detects calibration context and offers to append to `transformations.md`
+
+**Changed** (qino-concept):
+- `/qino-concept:explore` — gracefully refuses in research context with redirect to `/qino-research:begin`
+
+**Hints System**:
+
+All commands now show static hints based on their type:
+- **Universal/Confirmation commands** → cross-space hints (can navigate between spaces)
+- **Space-specific commands** → in-space hints (stay within current space)
+
 **User action**:
 - Delete old command directories: `attune/`, `research/`, `scribe/`
+- Delete `.claude/commands/qino-research/home.md` (absorbed into /qino:home)
 - Create new command directories: `qino-concept/`, `qino-research/`, `qino-scribe/`
 - Universal commands now come from `qino-universal` tool
+- Ensure `repoType` is set in `.claude/qino-config.json` for correct context detection
 - Update any scripts or documentation referencing old command names
 
 ---

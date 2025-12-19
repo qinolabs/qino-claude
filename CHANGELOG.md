@@ -10,6 +10,51 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.15.0] - 2025-12-19
+
+### qino Universal (New Tool)
+
+#### Added
+- **Universal ecology commands** — the connective tissue between spaces; `/qino:home`, `/qino:capture`, `/qino:test`, `/qino:attune`, `/qino:compare`
+- **Context sensitivity** — commands detect `repoType` in `qino-config.json` and adapt behavior automatically
+- **Static hints system** — universal/confirmation commands show cross-space hints; space-specific commands show in-space hints
+- **Research landscape in home** — `/qino:home` now shows explorations, calibrations, and experiments when in research workspace
+- **Fragment routing** — `/qino:capture` routes to `fragments/` when inside an exploration directory
+- **Flexible test targets** — `/qino:test` accepts any target: concept, exploration, file, or conversation context
+- **Calibration integration** — `/qino:compare` offers to append insights to `transformations.md` in calibration context
+
+### qino Concept
+
+#### Changed
+- **Command namespace** — concept-specific commands moved from `/qino:*` to `/qino-concept:*` (`explore`, `import`, `init`)
+- **Universal commands extracted** — `home`, `capture`, `test` now live in qino-universal
+- **Research context awareness** — `/qino-concept:explore` gracefully redirects to `/qino-research:begin` when run in research workspace
+
+### qino Research
+
+#### Changed
+- **Command namespace** — commands renamed from `/research:*` to `/qino-research:*`
+- **Home absorbed** — `/qino-research:home` removed; use `/qino:home` which detects research context automatically
+- **Updated hints** — all commands now show navigation hints with correct namespaces
+
+### qino Scribe
+
+#### Changed
+- **Command namespace** — commands renamed from `/scribe:*` to `/qino-scribe:*`
+- **Disturbance reading redesign** — checkpoint format improvements for staged workflow
+
+### qino Attune
+
+#### Changed
+- **Archived** — merged into qino-universal; commands now available as `/qino:attune` and `/qino:compare`
+
+### Updater
+
+#### Changed
+- **Migration documentation** — comprehensive guide for namespace rename and context sensitivity changes
+
+---
+
 ## [0.14.0] - 2025-12-19
 
 ### qino Scribe
