@@ -452,58 +452,98 @@ The files live in `implementations/` — visible, version-controlled, yours. Not
 
 ## qino Attune
 
-Training perception through difference — now part of the universal `qino:` namespace.
+Training perception through difference — part of the universal `qino:` namespace.
 
 > **Information is "a difference that makes a difference."**
 > — Gregory Bateson
 
-### Compare
+### The process
 
-Two chapters from the qino-claude chronicle. Which works better? Read them side by side and notice what lands differently.
+You start with a hunch — "otherworldliness" or "intimacy" or "tension." You know it when you feel it, but you can't explain why.
 
 ```
-/qino:compare 007-what-stillness-holds/chapter.md 008-the-second-bend/chapter.md
+vague quality     →  notice examples  →  compare pairs  →  articulate differences  →  working specification
+                                                                                               ↓
+                                                                              craft you can teach and protect
+```
+
+**Compare** places two passages side by side. You say what lands differently. The tool helps you find language for what you already sense.
+
+**Calibrate** accumulates those distinctions. What qualifies. What doesn't. Transformations with ratings. The vague quality becomes concrete craft.
+
+### Compare
+
+You have a framework — say, "What Qualifies" for otherworldliness. Two passages from the chronicle. You want to understand why one works and the other doesn't.
+
+```
+/qino:compare chapter-03-line-57.md chapter-01-lines-49-51.md
 
 ─────
 
-what stays with you from each?
+read both. what stays with you?
 
-chapter-07: The Mender's threads spanning walls. Twenty years of questions finding response.
-chapter-08: Seren's margins filling with writing not his own. "If you find out what you are, send word."
+  A: "His eyes found the wanderer's hands — the same thing the Mender had watched."
+  B: "You've done this before." "I don't remember." "I know."
 
 ─────
 
-where does the difference live?
+user: A feels like it's pointing at something. B feels like it's explaining.
 
-chapter-07: The wanderer witnesses. The Mender's solitude made visible.
-chapter-08: The wanderer is witnessed. Seren sees something in them they don't see themselves.
+─────
 
-One is about seeing outward. The other is about being seen.
+let's find what you liked about A in B.
+
+In A, the observation happens externally — Seren watches. No one comments.
+Where's the parallel moment in B? The Mender watching the hands.
+
+  A: Seren watches. Narrative continues. No response.
+  B: Mender asks. Wanderer answers. Exchange completes.
+
+─────
+
+how does it land differently?
+
+A leaves the gap open. B closes it with dialogue.
+The strangeness in A accumulates. In B it resolves into conversation.
 
 ─────
 
                         /qino:capture to hold this
-                        /qino:attune mutual-seeing
+                        /qino:attune otherworldliness
 ```
 
 ### Calibrate
 
-You know "mutual seeing" when you feel it — when the world sees back, when characters perceive each other, not just exist. But you can't teach it without making it concrete.
+You know "otherworldliness" when you feel it — when the wanderer carries weight from crossings no world can articulate. But you can't teach it without making it concrete.
 
 ```
-/qino:attune mutual-seeing
+/qino:attune otherworldliness
 
-calibrations/mutual-seeing/
-├── research.md           # chronicle passages with yes/no/why
-├── transformations.md    # flat scenes → relational scenes
-└── examples/             # candidates being tested
+calibrations/otherworldliness/
+├── otherworldliness-research.md    # what qualifies, what doesn't, why
+├── chronicle-examples.md           # vetted transformations with ratings
+└── examples/                       # candidates being tested
 ```
 
-The process: find candidates from existing chapters, calibrate through feedback, transform failed examples into working ones. The vague quality becomes craft you can protect.
+From `otherworldliness-research.md`:
+
+| ✓ Works | ✗ Doesn't work |
+|---------|----------------|
+| External observation, unremarked | Wanderer's thoughts or reflections |
+| Pattern across multiple observers | Single character's perception |
+| Points to *elsewhere* — larger than this world | Ties to local mystery |
+
+From `chronicle-examples.md` — a transformation rated 5/5:
+
+**Original:** *"The one who came down." Lira's voice was like the river itself. "We felt you pass."*
+
+**Transformed:** *"The one who came down." Lira stepped out. Behind the wanderer, the river had gone quiet — the usual lap of water against platform stilled for a moment before resuming. Lira's eyes moved to the water, then back. "You'll eat with us."*
+
+The vague quality becomes craft you can protect.
 
 ```bash
 /qino:compare path/to/a.md path/to/b.md
-/qino:attune mutual-seeing
+/qino:attune quality-name
 ```
 
 ---
