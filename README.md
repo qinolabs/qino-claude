@@ -512,6 +512,8 @@ This is the "adapter" pattern described in The Ecosystem section — qino-claude
 
 Ecological design patterns are alive at every level — in each concept, in each repository, in the ecosystem itself. The art is preserving their local ecologies and identity boundaries while leveraging the metaphors to move fluidly between them.
 
+"Home" is a metaphor. In qino-claude it means arrival, orientation, receiving before venturing out. That pattern can travel — to qino-drops, to any app — and mean the same thing while taking completely different form. The metaphor carries the pattern across boundaries without flattening what's local.
+
 A gesture in one context presents an opportunity to deepen understanding on other fronts. Refining "mutual seeing" in the scribe teaches something about qino-lens. The note captured while building qino-drops informs how discovery-grid handles attunement. The compare session that improves a chapter becomes a chapter in the chronicle.
 
 qino-claude also serves as a proving ground. The patterns that work here — cards moving between contexts, modalities for encountering the same material, figures that travel — become the architecture for the apps. What's discovered at tool-scale informs app-scale.
