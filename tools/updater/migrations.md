@@ -12,7 +12,7 @@ Each version section includes:
 
 ---
 
-## v1.0.0 (qino-scribe)
+## v5.0.0 (qino-scribe)
 
 **Summary**: qino Scribe complete rewrite with two-agent staged architecture. Relational principles embedded as active constraints.
 
