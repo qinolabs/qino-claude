@@ -512,12 +512,12 @@ This is the "adapter" pattern described in The Ecosystem section — qino-claude
 
 The same patterns appear at every scale — not because one level copies another, but because ecological design works the same way whether you're building tools, apps, or the relationships between them.
 
-Each space keeps its own ecology intact:
-- qino-claude has its coherence (tools that develop tools)
-- qino-drops has its coherence (shore-play, presence without seeking)
-- qino-world has its coherence (cards with origin, figures that carry mystery)
+Local ecologies exist at every level:
+- Each concept has its coherence (qino-drops is shore-play; qino-world is figures with origin)
+- Each repository has its coherence (concepts-repo stabilizes ideas; research-repo welcomes uncertainty)
+- The connections between them have their coherence (graduation, capture, the threads that weave)
 
-The art is preserving these local identities while moving fluidly between them. A gesture in one context — refining "mutual seeing" in the scribe — deepens understanding that surfaces elsewhere. The compare session that improves a chapter also teaches something about qino-lens. The note captured while building qino-drops informs how discovery-grid handles attunement.
+The art is preserving these identities while moving fluidly between scales. A gesture in one context — refining "mutual seeing" in the scribe — deepens understanding that surfaces elsewhere. The compare session that improves a chapter teaches something about qino-lens. The note captured while building qino-drops informs how discovery-grid handles attunement.
 
 Every gesture presents an opportunity to progress on other fronts. Not because everything is connected by design, but because ecological patterns recognize each other across boundaries.
 
