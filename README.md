@@ -469,7 +469,7 @@ vague quality     →  notice examples  →  compare pairs  →  articulate diff
 
 **Compare** places two passages side by side. You say what lands differently. The tool helps you find language for what you already sense.
 
-**Calibrate** accumulates those distinctions. What qualifies. What doesn't. Transformations with ratings. The vague quality becomes concrete craft.
+**Calibrate** accumulates those distinctions. What qualifies. What doesn't. Transformations that work. The vague quality becomes concrete craft.
 
 ### Compare
 
@@ -521,7 +521,7 @@ You know "otherworldliness" when you feel it — when the wanderer carries weigh
 
 calibrations/otherworldliness/
 ├── otherworldliness-research.md    # what qualifies, what doesn't, why
-├── chronicle-examples.md           # vetted transformations with ratings
+├── chronicle-examples.md           # vetted transformations
 └── examples/                       # candidates being tested
 ```
 
@@ -533,7 +533,7 @@ From `otherworldliness-research.md`:
 | Pattern across multiple observers | Single character's perception |
 | Points to *elsewhere* — larger than this world | Ties to local mystery |
 
-From `chronicle-examples.md` — a transformation rated 5/5:
+From `chronicle-examples.md` — a transformation:
 
 **Original:** *"The one who came down." Lira's voice was like the river itself. "We felt you pass."*
 
