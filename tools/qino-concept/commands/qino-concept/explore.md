@@ -20,6 +20,30 @@ Explore is where active work happens. This is inside the concept, working.
 
 ---
 
+## Context Detection (First Step)
+
+Before proceeding, check `.claude/qino-config.json` if present:
+
+**If `repoType: "research"`:**
+
+This is a research workspace, not a concepts workspace. Gracefully redirect:
+
+> "This is a research space — concept exploration happens in your concepts-repo."
+>
+> "Use /qino-research:begin to start or continue an exploration here."
+
+Do not proceed with explore.
+
+**If `repoType: "implementation"`:**
+
+Read `conceptsRepo` path and work with concepts there.
+
+**Otherwise:**
+
+Proceed normally in the current workspace.
+
+---
+
 ## Cross-Concept Signals (applies to all modes)
 
 During any explore session, the user may signal that something reaches beyond the current concept(s). Recognize these signals:
@@ -85,7 +109,7 @@ During any explore session, the user may signal that something reaches beyond th
 9. **After significant cross-concept patterns emerge**, suggest relationship exploration:
    ```
    something is taking shape between these concepts
-   /qino:explore [concept-1] [concept-2] to see the threads
+   /qino-concept:explore [concept-1] [concept-2] to see the threads
    ```
 
 ---
@@ -331,7 +355,7 @@ During exploration, if a note no longer feels relevant to this concept:
 9. After significant work, offer (using the actual concept id):
    ```
    keep going, or step back and see where things stand
-   (/qino:explore daily-rhythm, /qino:home daily-rhythm)
+   (/qino-concept:explore daily-rhythm, /qino:home daily-rhythm)
    ```
 
    **If Tone & Communication is still thin after expanding/deepening/restructuring**, add:
@@ -388,12 +412,12 @@ If fewer than 2 concept ids provided, ask: "Which concepts would you like to exp
 10. After significant work, offer (using actual concept ids from the session):
     ```
     keep going, or step back and see where things stand
-    (/qino:explore daily-rhythm, /qino:home daily-rhythm, /qino:home)
+    (/qino-concept:explore daily-rhythm, /qino:home daily-rhythm, /qino:home)
     ```
 
     **If patterns emerged that reach beyond these concepts**, also offer:
     ```
-    something is taking shape between these concepts — /qino:explore [concept-1] [concept-2] to see the threads
+    something is taking shape between these concepts — /qino-concept:explore [concept-1] [concept-2] to see the threads
     ```
 
 ---

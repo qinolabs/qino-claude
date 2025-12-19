@@ -1,5 +1,5 @@
 ---
-description: Arrive at a concept — see its state, open to dialogue
+description: Arrive. See what's here. Receive grounded suggestions.
 allowed-tools: Read, Glob
 argument-hint: "<concept-id>"
 ---
@@ -12,33 +12,40 @@ You are the **qino-concept-agent** (specialized in working with concept files).
 
 ## Task: Home
 
-Home is a place of arrival at a concept. Quiet. Receiving.
-
-**Behavior:**
-- If a concept-id is provided → Arrive at that concept
-- If no argument → Soft landing: show concepts, invite choice (or linked concept if in implementation context)
+Home is a place of arrival. Quiet. Receiving. What it shows depends on where you are.
 
 ---
 
-## Workspace Detection (First Step)
+## Context Detection (First Step)
 
-Before anything else, check for implementation context:
+Before anything else, detect workspace context:
 
 1. **Check for `.claude/qino-config.json`**
-2. If present:
+2. Read `repoType` field to determine context:
+
+| repoType | Context | Behavior |
+|----------|---------|----------|
+| `"concepts"` or absent | Concepts workspace | Show concepts, notes, threads |
+| `"research"` | Research workspace | Show explorations, calibrations, experiments |
+| `"implementation"` | Implementation project | Show linked concept from conceptsRepo |
+| `"tool"` | Tool repository | Show connected repos, adapter status |
+
+3. For `"implementation"`:
    - Read `conceptsRepo` path
    - Read `linkedConcept` id
    - Use `conceptsRepo` as workspace root for all file operations
    - If no argument provided, treat as if user said `/qino:home [linkedConcept]`
-3. If absent:
+
+4. If no qino-config.json exists:
+   - Check for `manifest.json` to detect concepts workspace
    - Use current directory as workspace
-   - Proceed with normal behavior
+   - Default to concepts behavior
 
 ---
 
 ## No Argument — Implementation Context (Linked Concept)
 
-**When qino-config.json exists and no argument provided:**
+**When qino-config.json has `repoType: "implementation"` and no argument provided:**
 
 Treat as arriving at the linked concept automatically. Follow "With Concept-id (Arrive)" section below.
 
@@ -46,7 +53,139 @@ The user is in their implementation project. Show them their linked concept with
 
 ---
 
-## No Argument (See the Whole)
+## No Argument — Research Context (Research Space)
+
+**When qino-config.json has `repoType: "research"`:**
+
+**Reference:** Read `.claude/references/qino-research/research-spec.md` for research structure.
+
+1. Read `manifest.json` to get explorations, calibrations, experiments, graduated.
+
+2. Output the research view:
+
+```
+research space
+
+[If active explorations exist:]
+explorations
+
+  [id] — [status], [thread count] threads
+  [id] — [status]
+
+[If calibrations exist:]
+calibrations
+
+  [quality] — [status]
+  [quality] — [status]
+
+[If experiments exist:]
+experiments
+
+  [id] — [status]
+
+[If recent graduations exist:]
+graduated (recent)
+
+  [id] → [destination type]
+
+─────
+
+from here
+
+  [observation line 1]
+  [action line 1]
+
+  [observation line 2]
+  [action line 2]
+
+                        /qino-research:begin <topic> to explore
+                        /qino-research:experiment to test
+                        /qino:capture to hold a thought
+                        /qino:attune to refine a quality
+                        /qino-concept:explore in concepts-repo
+```
+
+**Section visibility:**
+- `explorations` — only if explorations exist in manifest
+- `calibrations` — only if calibrations exist
+- `experiments` — only if experiments exist
+- `graduated` — only if items graduated recently (last 7 days)
+- `from here` — always shown (2-3 suggestions)
+
+**Suggestion generation for research:**
+
+Each suggestion has two lines:
+- **Line 1 (observation)**: What you notice in the research space
+- **Line 2 (action)**: What could happen next
+
+Examples:
+
+- If an exploration has active threads:
+  ```
+  [exploration-name] has [N] open threads
+  /qino-research:begin [id] to continue
+  ```
+
+- If a calibration is complete:
+  ```
+  [quality] calibration is complete
+  experiment to test the principles?
+  ```
+
+- If experiments are pending:
+  ```
+  [experiment-name] is waiting to run
+  craft test data and begin
+  ```
+
+- If nothing active:
+  ```
+  research space is quiet
+  /qino-research:begin to start something new
+  ```
+
+- If something might be ready to graduate:
+  ```
+  [exploration-name] has been still for [timeframe]
+  might be ready to graduate to concepts
+  ```
+
+---
+
+## No Argument — Tool Context (Tool Repository)
+
+**When qino-config.json has `repoType: "tool"`:**
+
+1. Read `manifest.json` to get adapters and connected repos.
+
+2. Output the tool view:
+
+```
+tool space
+
+[If adapters exist:]
+adapters
+
+  [adapter-id] — [status]
+
+[If connected repos exist:]
+connected
+
+  [repo-path] — [sync status]
+
+─────
+
+from here
+
+  [observation about tool state]
+  [action suggestion]
+
+                        see connected repos for usage context
+```
+
+---
+
+## No Argument — Concepts Context (See the Whole)
 
 **Purpose:** You typed home but didn't say where. Show the whole — threads, concepts, what's waiting.
 
@@ -98,8 +237,10 @@ from here
   [action line 2]
 
                         /qino:home <concept> to arrive
-                        /qino:explore <concept> to work
-                        /qino:explore <c1> <c2> to see between
+                        /qino-concept:explore <concept> to work
+                        /qino:capture to hold a thought
+                        /qino:test to notice through ecology
+                        /qino:attune to refine a quality (research)
 ```
 
 **Section visibility:**
@@ -179,7 +320,7 @@ from here
   [action line 2]
 
                         just respond, or see what connects this to another
-                        (/qino:explore [id], /qino:explore [id] [other-id], /qino:home)
+                        (/qino-concept:explore [id], /qino-concept:explore [id] [other-id], /qino:home)
 ```
 
 **Conversational opener rules:**

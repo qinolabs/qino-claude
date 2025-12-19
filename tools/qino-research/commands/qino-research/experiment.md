@@ -199,25 +199,21 @@ When ready for analysis:
 
    [brief summary]
 
-   ─────
-
-   from here
-
-     graduate findings to concepts-repo
-     start a new experiment
-     /research:home to see the full picture
+                        /qino:home to see research landscape
+                        /qino-research:graduate to promote findings
+                        /qino-research:begin to continue exploring
    ```
 
 ---
 
 ## Integration with Other Tools
 
-### attune:compare
+### qino:compare
 For comparison experiments:
 ```
-/attune:compare test-data/variant-a.md test-data/variant-b.md
+/qino:compare test-data/variant-a.md test-data/variant-b.md
 ```
-When attune:compare detects it's running within an experiment folder, it automatically offers to save comparison notes to `results/comparison-[timestamp].md`.
+When /qino:compare detects it's running within an experiment folder, it automatically offers to save comparison notes to `results/comparison-[timestamp].md`.
 
 ### Ecology Lenses
 For observation experiments, use ecology frames:

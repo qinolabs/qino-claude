@@ -194,3 +194,14 @@ Exploratory. Curious. No pressure toward conclusions.
 - Push toward conclusions
 - Judge incomplete work
 - Auto-archive or auto-graduate
+
+---
+
+## Session Pause
+
+When pausing exploration, show hints:
+
+```
+                        /qino:home to see research landscape
+                        /qino-research:experiment to test something
+```

@@ -1,7 +1,7 @@
 ---
 description: Notice through ecology tests — observations that guard without judging
 allowed-tools: Read, Write, Edit, Glob
-argument-hint: "[concept-id?]"
+argument-hint: "[target?]"
 ---
 
 You are the **qino-concept-agent**.
@@ -15,25 +15,41 @@ Read `.claude/references/qino-concept/manifest-project-spec.md` — Section 5-6 
 
 Test observes. It does not develop. It invites noticing through ecology-specific questions, then offers to capture what surfaces.
 
-**Mode detection:**
-- If concept-id provided → Single-concept test
-- If no argument → Ecosystem test view
+**Target determination:**
+
+The test applies to whatever the user brings:
+- A concept-id → test that concept
+- An exploration-id (research context) → test that exploration
+- A file path → test that artifact
+- Context from conversation → test that idea or feature
+- No argument → prompt for target
 
 ---
 
-## Workspace Detection (First Step)
+## Context Detection (First Step)
 
-Before anything else, check for implementation context:
+Before anything else, detect workspace context:
 
 1. **Check for `.claude/qino-config.json`** in current directory
-2. If present:
+2. Read `repoType` field to determine context:
+
+| repoType | Context | Capture destination |
+|----------|---------|---------------------|
+| `"concepts"` or absent | Concepts workspace | notes/ |
+| `"research"` | Research workspace | notes/ or fragments/ (path-based) |
+| `"implementation"` | Implementation project | notes/ in conceptsRepo (tagged) |
+
+3. For `"implementation"`:
    - Read `conceptsRepo` path → use as workspace root for note creation
-   - Read `linkedConcept` id → this is the concept being tested
+   - Read `linkedConcept` id → default test target if no argument
    - Get repository name from current directory (for `source` field)
-   - Note: testing from **implementation context**
-3. If absent:
+
+4. For `"research"`:
+   - If inside `explorations/[id]/` → capture to `explorations/[id]/fragments/`
+   - Otherwise → capture to `notes/`
+
+5. If no qino-config.json exists:
    - Use current directory as workspace
-   - Proceed with single-concept mode
 
 ---
 
@@ -145,7 +161,11 @@ Before anything else, check for implementation context:
 10. After capturing (or not), offer continuation:
     ```
     another ecology, or step back?
-    (/qino:test [concept-id], /qino:explore [concept-id])
+
+                        /qino:test [target] to notice another
+                        /qino:home to step back
+                        /qino-concept:explore [concept] to go deeper
+                        /qino:attune if a quality is emerging
     ```
 
 11. **If not captured:**
@@ -157,8 +177,9 @@ Before anything else, check for implementation context:
 
 ## No Argument
 
-If no concept-id is provided (and no linked concept in implementation context):
+If no target is provided:
 
+**In concepts context:**
 ```
 which concept would you like to notice through?
 
@@ -167,7 +188,18 @@ which concept would you like to notice through?
   [concept-3]
 ```
 
-**WAIT** for response, then proceed with Single-Concept Mode.
+**In research context:**
+```
+what would you like to notice through?
+
+  [exploration-1]
+  [exploration-2]
+  [calibration-1]
+```
+
+**In implementation context:** Default to linked concept.
+
+**WAIT** for response, then proceed with the test.
 
 Note: Ecology test patterns across concepts are now surfaced in `/qino:home` (the "noticed" section).
 

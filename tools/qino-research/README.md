@@ -20,7 +20,7 @@ Unlike concepts (which stabilize over time), research moves fast, welcomes uncer
 
 | Command | Purpose |
 |---------|---------|
-| `/qino-research:home` | See the research landscape |
+| `/qino:home` | See the research landscape (universal command, context-aware) |
 | `/qino-research:begin [topic]` | Start or continue an exploration |
 | `/qino-research:experiment [hypothesis]` | Run a controlled test |
 | `/qino-research:graduate [id]` | Promote to concepts-repo |

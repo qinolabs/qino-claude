@@ -38,8 +38,12 @@ Before starting calibration, check `.claude/qino-config.json`:
 - Update `manifest.json` with calibration entry
 
 **Otherwise:**
-- Outputs go to current directory
-- No manifest updates
+- Ask: "Where is your research workspace?"
+- Accept path to research-repo
+- Create calibration there with manifest integration
+- If user says "here" or provides no path:
+  - Outputs go to current directory
+  - No manifest updates (standalone calibration)
 
 ---
 
@@ -204,8 +208,17 @@ These become reference material for craft guidance.
 
 ## Sample Opening
 
+**In research workspace:**
 > I'll help you calibrate "[quality]" — turn that intuition into concrete craft.
 >
+> First, let's find candidates. Where might this quality appear in your existing work? What patterns might indicate it?
+
+**Outside research workspace:**
+> I'll help you calibrate "[quality]" — turn that intuition into concrete craft.
+>
+> Where is your research workspace? (path, or "here" for standalone)
+
+After workspace is established:
 > First, let's find candidates. Where might this quality appear in your existing work? What patterns might indicate it?
 >
 > [Help identify search locations and patterns]
@@ -228,3 +241,14 @@ A vague aesthetic sense → teachable craft:
 - Future work can be evaluated against clear criteria
 
 The calibration refines perception. What follows are discoveries.
+
+---
+
+## Calibration Complete
+
+After Phase 5 outputs are written, show hints:
+
+```
+                        /qino:home to step back
+                        /qino:compare to test the principles
+```

@@ -16,18 +16,33 @@ A thought arrived. Capture it before it fades.
 
 ---
 
-## Workspace Detection (First Step)
+## Context Detection (First Step)
 
-Before anything else, check for implementation context:
+Before anything else, detect workspace context:
 
 1. **Check for `.claude/qino-config.json`** in current directory
-2. If present:
+2. Read `repoType` field to determine context:
+
+| repoType | Context | Capture destination |
+|----------|---------|---------------------|
+| `"concepts"` or absent | Concepts workspace | notes/ |
+| `"research"` | Research workspace | Path-based routing (see below) |
+| `"implementation"` | Implementation project | notes/ in conceptsRepo (tagged) |
+
+3. For `"implementation"`:
    - Read `conceptsRepo` path → use as workspace root
    - Read `linkedConcept` id → remember for auto-tagging
-   - Note: capturing from **implementation context**
-3. If absent:
+   - Notes go to `conceptsRepo/notes/`
+
+4. For `"research"`:
+   - Check current working directory path
+   - If inside `explorations/[id]/` → route to `explorations/[id]/fragments/`
+   - Otherwise → route to `notes/`
+   - See "Research Context Routing" section below
+
+5. If no qino-config.json exists:
    - Use current directory as workspace
-   - Proceed with normal behavior
+   - Route to `notes/`
 
 ---
 
@@ -88,9 +103,56 @@ Silently distill the observation to its essence (5-10 words). This becomes the n
 }
 ```
 
-The auto-tag connects the note to its source concept. Later during `/qino:explore [concept]`, these notes can be surfaced: "You captured something about [essence] while implementing — does it connect here?"
+The auto-tag connects the note to its source concept. Later during `/qino-concept:explore [concept]`, these notes can be surfaced: "You captured something about [essence] while implementing — does it connect here?"
+
+---
+
+## Research Context Routing
+
+**When `repoType: "research"`:**
+
+1. **Path detection:**
+   - Get current working directory
+   - Check if path contains `explorations/[id]/`
+
+2. **Inside an exploration:**
+   - Route to `explorations/[id]/fragments/`
+   - Create fragments/ if it doesn't exist
+   - Fragment file: `fragments/YYYY-MM-DD_fragment-id.md`
+   - Fragments are private to the exploration — they don't appear in home
+   - No manifest entry for fragments (they live only in the folder)
+
+3. **Outside explorations:**
+   - Route to workspace root `notes/`
+   - Add entry to `manifest.json` notes array
+   - Notes appear in `/qino:home`
+
+**Fragment format (research, inside exploration):**
+```markdown
+# [Essence as title]
+
+**Captured:** YYYY-MM-DDTHH:MM:SSZ
+
+[Full observation as provided by user]
+```
+
+**Confirmation for fragments:**
+```
+∴ [essence]
+
+fragment saved to [exploration-id]
+
+                        /qino:home to see research landscape
+                        /qino-research:begin to continue exploring
+```
+
+No connection offer for fragments — they're exploration-private.
+
+---
 
 ### 4. Confirm and Offer Connection
+
+**For concepts and implementation contexts:**
 
 After saving, confirm and offer concept connection:
 
@@ -127,11 +189,15 @@ Add references immediately:
    connected to [concept-1] and [concept-2]
 
    explore one now, or let it settle?
+
+                        /qino:home to see where things stand
+                        /qino-concept:explore [concept] to go deeper
+                        /qino:attune if this is about a quality
    ```
 
 3. **WAIT** for response.
 
-4. If user wants to explore → invoke `/qino:explore [concept]` with note as starting alive thread.
+4. If user wants to explore → invoke `/qino-concept:explore [concept]` with note as starting alive thread.
 
 5. If user lets it settle → done.
 
@@ -139,7 +205,13 @@ Add references immediately:
 
 Any natural phrasing works: "let it settle", "not yet", "no", etc.
 
-> "it'll surface when it has warmth."
+```
+it'll surface when it has warmth.
+
+                        /qino:home to see where things stand
+                        /qino:test to notice through ecology
+                        /qino:attune if this is about a quality
+```
 
 Note stays with empty references. Done.
 

@@ -22,15 +22,25 @@ Read before beginning:
 
 ---
 
-## Experiment Context Detection
+## Context Detection
 
-Check if running within an experiment:
+Check if running within an experiment or calibration:
+
+### Experiment Context
 
 1. Look for `.claude/qino-config.json` with `repoType: "research"`
 2. Check if current path or artifact paths are within `experiments/[id]/`
 3. If in experiment context, offer to save comparison to `experiments/[id]/results/`
 
-This allows `/research:experiment` to use compare as part of controlled testing.
+This allows `/qino-research:experiment` to use compare as part of controlled testing.
+
+### Calibration Context
+
+1. Look for `.claude/qino-config.json` with `repoType: "research"`
+2. Check if current path is within `calibrations/[quality]/`
+3. If in calibration context, offer to append insight to `calibrations/[quality]/transformations.md`
+
+This allows `/qino:attune` to build transformation records during quality calibration.
 
 ---
 
@@ -134,6 +144,32 @@ Format:
 
 This becomes part of the experiment's results for later analysis.
 
+**In calibration context:**
+
+If we detected a calibration context earlier, offer to append to transformations.md:
+```markdown
+
+---
+
+## Comparison: [A] vs [B]
+
+**Date:** YYYY-MM-DDTHH:MM:SSZ
+
+### What We Compared
+
+[Brief description]
+
+### Observations
+
+[What we noticed — specific, grounded]
+
+### Implications for [quality]
+
+[What this tells us about the quality being calibrated]
+```
+
+This builds the transformation record as comparisons accumulate.
+
 ---
 
 ## Adapting to Domain
@@ -177,3 +213,14 @@ Let the domain emerge from the artifacts. Don't impose a framework before you kn
 > [Read artifacts]
 >
 > Ready? Start with the first one. Read it through, and when you're done, tell me: what stayed with you?
+
+---
+
+## Session Complete
+
+After capturing (or declining to capture), show hints:
+
+```
+                        /qino:home to step back
+                        /qino:attune if patterns suggest a quality
+```

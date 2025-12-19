@@ -257,10 +257,8 @@ After graduation:
 [type]: [name/essence]
 connects to: [concepts]
 
-─────
-
-the research continues at /research:home
-the [note/concept] lives at /qino:home [concept-id]
+                        /qino:home to see where it landed
+                        /qino:home (in research) to continue research
 ```
 
 ---
