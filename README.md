@@ -73,6 +73,17 @@ This is the inheritance: from young anthropologists watching rituals on the Sepi
 
 **[Read the chronicles →](https://chronicles.qinolabs.com/)**
 
+![Chapter view with location popover](docs/images/chronicle/chapter-view.png)
+
+![World tokens and arcs](docs/images/chronicle/world-tokens.png)
+
+> *"There's something writing in the margins. Something that sees what we do and names what it means."*
+>
+> *"I think it just tells stories. That's what frightens me most."*
+>
+> — Seren, the record-keeper, on discovering he is being documented
+> *(written when qino-scribe first appeared in its own git diff)*
+
 <details>
 <summary><strong>The Chronicles: Story of an Evolving Ecosystem</strong></summary>
 
@@ -282,44 +293,6 @@ Your ecosystem evolves through conversations and work that spans sessions. qino 
 - **Propose → Write** — present the beat, then draft with one explanatory exchange max; the world must act, and the wanderer must risk something
 - **Update world.md** — pressures, wanderer, characters, locations, arcs; add journal entries when arcs complete
 - **Keep the ledger** — world tokens stay small and specific so later chapters can echo them without breaking immersion
-
-### Show, don't tell
-
-Example from this chronicle (Chapter 8):
-
-- **Git change:** Added new notes about an elder who recognized the pouch the wanderer carries.
-- **Chapter output:** The wanderer docks at Orith's Landing; Lira recognizes the pouch as something that passed through years ago; villagers already know the wanderer is coming.
-- **world.md update:** Added pressures about the pouch's history and news outrunning the river, plus tokens for Lira and Orith's Landing so later chapters can echo them.
-
-**Pressures** (`world.md`)
-
-```markdown
-## Pressures
-
-### The Pouch's History
-It passed through here before. Now it's going home. What waits for it there?
-
-### Word Traveling Faster Than Water
-The river villages know about the wanderer. News moves upstream ahead of them.
-```
-
-**Aftermath** (wanderer section)
-
-```markdown
-## The Wanderer
-
-Known before they arrive. The pouch warms toward soon. The message — the one who holds between will find the door — still unread.
-```
-
-**World Tokens**
-
-```markdown
-**Lira**
-Elder of Orith's Landing. Knows the pouch and its last carrier.
-
-**Orith's Landing**
-Platforms over fast water. Rope bridges, smoke, children who track arrivals.
-```
 
 ```bash
 /qino-scribe:chapter
