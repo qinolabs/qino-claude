@@ -7,7 +7,7 @@ allowed-tools: Read, Write, Edit, Glob, Bash
 
 Rewind the chronicle to before the last chapter was written. This restores `world.md` and `arcs.md` to their previous state, removes the last chapter, and updates the manifest.
 
-Use this when you want to regenerate a chapter — rewind first, then run `/scribe:chapter`.
+Use this when you want to regenerate a chapter — rewind first, then run `/qino-scribe:chapter`.
 
 ## Process
 
@@ -80,7 +80,7 @@ rewound
   restored:    world state from [previous chapter slug]
 
   Ready to write a new chapter from the same git range.
-  Run /scribe:chapter to regenerate.
+  Run /qino-scribe:chapter to regenerate.
 ```
 
 ## Edge Cases
@@ -89,4 +89,4 @@ rewound
 
 **Previous chapter missing snapshots:** This shouldn't happen if chapters were written correctly. If it does, warn and stop — don't partially rewind.
 
-**Git state:** The manifest preserves `git_ref_start` and `git_ref_end` for each chapter. After rewind, running `/scribe:chapter` will use the correct range automatically (from the now-last chapter's `git_ref_end` to HEAD).
+**Git state:** The manifest preserves `git_ref_start` and `git_ref_end` for each chapter. After rewind, running `/qino-scribe:chapter` will use the correct range automatically (from the now-last chapter's `git_ref_end` to HEAD).

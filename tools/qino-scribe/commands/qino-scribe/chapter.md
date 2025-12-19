@@ -4,7 +4,7 @@ allowed-tools: Read, Write, Edit, Glob, Bash
 argument-hint: "(empty for next chapter) | from_ref to_ref"
 ---
 
-# /scribe:chapter
+# /qino-scribe:chapter
 
 Write the next chronicle chapter through a staged two-agent architecture.
 

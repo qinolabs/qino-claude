@@ -20,10 +20,10 @@ Unlike concepts (which stabilize over time), research moves fast, welcomes uncer
 
 | Command | Purpose |
 |---------|---------|
-| `/research:home` | See the research landscape |
-| `/research:begin [topic]` | Start or continue an exploration |
-| `/research:experiment [hypothesis]` | Run a controlled test |
-| `/research:graduate [id]` | Promote to concepts-repo |
+| `/qino-research:home` | See the research landscape |
+| `/qino-research:begin [topic]` | Start or continue an exploration |
+| `/qino-research:experiment [hypothesis]` | Run a controlled test |
+| `/qino-research:graduate [id]` | Promote to concepts-repo |
 
 ---
 
@@ -56,7 +56,7 @@ research-repo/
 
 Works with:
 - **qino-concept** — Graduation destination for mature insights
-- **qino-attune** — Calibrations use attune:calibrate, experiments use attune:compare
+- **qino:** — Calibrations use /qino:attune, experiments use /qino:compare
 
 ---
 
@@ -64,7 +64,7 @@ Works with:
 
 Copy to `.claude/` in your research repo:
 ```
-commands/research/    →  .claude/commands/research/
+commands/qino-research/    →  .claude/commands/qino-research/
 agents/               →  .claude/agents/
 references/qino-research/  →  .claude/references/qino-research/
 ```

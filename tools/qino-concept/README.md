@@ -23,7 +23,7 @@ If you haven't used Claude Code before:
 2. Run `claude` in your terminal to start a session
 3. You interact by typing messages — and Claude can run commands, read files, and help you build things
 
-This tool adds six commands to Claude Code that help with concept development.
+This tool adds commands to Claude Code that help with concept development — some universal across the qino ecosystem, others specific to concept work.
 
 ---
 
@@ -34,23 +34,28 @@ This tool adds six commands to Claude Code that help with concept development.
 **Manual:** Copy these directories into your project's `.claude/`:
 
 ```
-commands/qino/          →  your-project/.claude/commands/qino/
+commands/qino-concept/  →  your-project/.claude/commands/qino-concept/
 agents/                 →  your-project/.claude/agents/
 references/qino-concept/→  your-project/.claude/references/qino-concept/
 ```
+
+For universal commands (`/qino:home`, `/qino:capture`, etc.), also install [qino-universal](../qino-universal/).
 
 You should end up with:
 ```
 your-project/
   .claude/
     commands/
-      qino/
+      qino/                    # From qino-universal
         home.md
+        capture.md
+        test.md
+        attune.md
+        compare.md
+      qino-concept/            # From qino-concept
         explore.md
         import.md
-        capture.md
         init.md
-        test.md
     agents/
       qino-concept-agent.md
     references/
@@ -59,9 +64,12 @@ your-project/
         manifest-project-spec.md
         design-philosophy.md
         ecology-tests.md
+      qino-attune/             # From qino-universal
+        calibrate-process.md
+        compare-session.md
 ```
 
-Start Claude Code in that project folder. The `/qino:...` commands are now available.
+Start Claude Code in that project folder. The `/qino:...` and `/qino-concept:...` commands are now available.
 
 ---
 
@@ -72,7 +80,7 @@ Start Claude Code in that project folder. The `/qino:...` commands are now avail
 Pick a folder where you want to develop concepts, then:
 
 ```
-/qino:init
+/qino-concept:init
 ```
 
 This creates a simple structure — a place for concepts to live.
@@ -82,7 +90,7 @@ This creates a simple structure — a place for concepts to live.
 If you have existing notes about an app idea:
 
 ```
-/qino:import ~/path/to/your/notes.md
+/qino-concept:import ~/path/to/your/notes.md
 ```
 
 The agent will read your notes, ask what part feels alive, and help you place it.
@@ -104,7 +112,7 @@ Home is the center. You'll return here often.
 When something draws your attention:
 
 ```
-/qino:explore concept-name
+/qino-concept:explore concept-name
 ```
 
 The agent asks what feels alive and helps you develop that thread — expanding, deepening, reorganizing, or stepping into moments to discover the concept's voice.
@@ -113,16 +121,25 @@ The agent asks what feels alive and helps you develop that thread — expanding,
 
 ## The commands
 
+### Universal commands (qino:)
+
 | Command | What it does |
 |---------|--------------|
 | `/qino:home` | See the whole — threads between concepts, what's waiting, what's been noticed |
 | `/qino:home concept-name` | Arrive at one concept, see its state, open to dialogue |
-| `/qino:explore concept-name` | Actively work with a concept — deepen, expand, or step into moments to find the voice |
-| `/qino:explore concept-a concept-b` | Explore connections between concepts |
-| `/qino:import path` | Bring in external material — a file or folder |
 | `/qino:capture` | Capture a quick observation — can connect to specific concepts or not |
 | `/qino:test concept-name` | Notice a concept through ecology tests |
-| `/qino:init` | Set up a new workspace (one-time) |
+| `/qino:attune quality` | Refine a vague aesthetic quality into concrete craft |
+| `/qino:compare path-a path-b` | Compare two artifacts to discover what makes the difference |
+
+### Concept commands (qino-concept:)
+
+| Command | What it does |
+|---------|--------------|
+| `/qino-concept:explore concept-name` | Actively work with a concept — deepen, expand, or step into moments to find the voice |
+| `/qino-concept:explore concept-a concept-b` | Explore connections between concepts |
+| `/qino-concept:import path` | Bring in external material — a file or folder |
+| `/qino-concept:init` | Set up a new workspace (one-time) |
 
 ---
 
@@ -159,20 +176,20 @@ You don't fill these out in order. The agent helps you develop whichever section
 ## A typical flow
 
 ```
-/qino:init
+/qino-concept:init
 
-/qino:import ~/Documents/app-idea.md
+/qino-concept:import ~/Documents/app-idea.md
 
 /qino:home
 # see what emerged, follow a suggestion
 
-/qino:explore my-concept
+/qino-concept:explore my-concept
 # work with what's alive
 
 /qino:home
 # return, see where things stand
 
-/qino:explore my-concept other-concept
+/qino-concept:explore my-concept other-concept
 # notice connections between ideas
 
 /qino:home

@@ -47,7 +47,7 @@ When operating from a research repo:
 
 ## Commands
 
-### /research:home — Arrival at Research Space
+### /qino-research:home — Arrival at Research Space
 
 Show the research landscape:
 - Active explorations with their threads
@@ -79,7 +79,7 @@ from here
   [another suggestion]
 ```
 
-### /research:begin [topic] — Start or Continue Exploration
+### /qino-research:begin [topic] — Start or Continue Exploration
 
 **New exploration:**
 1. Ask: "what draws you to this?"
@@ -93,7 +93,7 @@ from here
 3. Ask: "where does energy live right now?"
 4. Work with the alive thread
 
-### /research:experiment [hypothesis] — Controlled Testing
+### /qino-research:experiment [hypothesis] — Controlled Testing
 
 Structure:
 1. Capture hypothesis clearly
@@ -105,7 +105,7 @@ Structure:
 
 Experiments can use ecology lenses from qino:test when observing (not just comparing).
 
-### /research:graduate [id] — Promote to Concepts-Repo
+### /qino-research:graduate [id] — Promote to Concepts-Repo
 
 Two paths:
 
@@ -175,13 +175,13 @@ Always ask: "note or concept seed?"
 
 ## Integration with Other Tools
 
-### attune:calibrate
+### /qino:attune
 When running in research context:
 - Outputs route to `calibrations/[quality]/`
 - Manifest updates automatically
 - Links to linkedConcepts
 
-### attune:compare
+### /qino:compare
 When in experiment context:
 - Comparison saves to `experiments/[id]/results/`
 - Insights feed into analysis.md

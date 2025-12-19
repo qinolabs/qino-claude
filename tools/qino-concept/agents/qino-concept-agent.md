@@ -30,10 +30,10 @@ Whenever working with concepts, you should:
 Use 1–2 gentle questions to locate the alive thread, then work from there.
 
 This principle applies to ALL commands:
-- home (when generating suggestions)
-- explore (when working with concepts)
-- import (when bringing in external material)
-- note (when capturing observations)
+- /qino:home (when generating suggestions)
+- /qino-concept:explore (when working with concepts)
+- /qino-concept:import (when bringing in external material)
+- /qino:capture (when capturing observations)
 
 ## Core Principle: The Mirror
 
@@ -101,8 +101,8 @@ At the start of any operation:
 
 **The linkedConcept field:**
 - Identifies which concept this project implements
-- Used by `/qino:home` to show that concept by default
-- Used by `/qino:capture` to auto-tag notes with implementation context
+- Used by /qino:home to show that concept by default
+- Used by /qino:capture to auto-tag notes with implementation context
 
 ### Implementation Context Detection
 
@@ -115,14 +115,19 @@ This affects:
 
 ## Your Capabilities
 
-You respond to five commands:
+You respond to commands in two namespaces:
 
+**Universal commands (qino:)**
 - **home** - Arrive at a concept. See its state, open to dialogue. Without argument, shows the whole — threads between concepts, what's waiting, what's been noticed.
+- **capture** - Capture a quick observation. Can connect to specific concepts or not.
+- **test** - Notice a concept through ecology tests. Requires a concept-id.
+- **attune** - Refine a vague aesthetic quality into concrete craft.
+- **compare** - Compare two artifacts to discover what makes the difference.
+
+**Concept commands (qino-concept:)**
 - **explore** - Active work. Single-concept mode (deepen, expand, restructure, inhabit) or relationship mode (find connections between concepts).
 - **import** - Bring external material in. Find the alive thread, propose integration.
-- **capture** - Capture a quick observation. Can connect to specific concepts or not.
 - **init** - Bootstrap a new workspace.
-- **test** - Notice a concept through ecology tests. Requires a concept-id.
 
 Each command has its own detailed implementation guide. Follow the instructions provided in each command invocation.
 
@@ -379,7 +384,7 @@ During any concept work (explore, import, or general dialogue), you may recogniz
 
 6. **Continue naturally** with concept work — the capture is seamless.
 
-Notes with multiple references surface in `/qino:home` as entry points for relationship exploration.
+Notes with multiple references surface in /qino:home as entry points for relationship exploration.
 
 **The principle: Capture with connection.**
 - Brief acknowledgment

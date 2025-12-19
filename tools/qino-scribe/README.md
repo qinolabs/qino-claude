@@ -23,7 +23,7 @@ qino Scribe pushes toward:
 After you've done some work in your ecosystem:
 
 ```
-/scribe:chapter
+/qino-scribe:chapter
 ```
 
 The scribe follows a **staged two-agent architecture**:
@@ -48,7 +48,7 @@ The scribe follows a **staged two-agent architecture**:
 Made a chapter you want to regenerate?
 
 ```
-/scribe:rewind
+/qino-scribe:rewind
 ```
 
 Restores world state to before the last chapter.
@@ -64,7 +64,7 @@ agents/
 ├── scribe-prep.md     # Prep agent — World, Disturbance, Beat layers
 └── scribe-prose.md    # Prose agent — writes from prep.md constraint
 
-commands/scribe/
+commands/qino-scribe/
 ├── chapter.md         # Orchestrates the two-agent flow
 └── rewind.md          # Restore to before last chapter
 
@@ -161,7 +161,7 @@ Copy to your `.claude/` directory:
 │   ├── scribe-prep.md
 │   └── scribe-prose.md
 ├── commands/
-│   └── scribe/
+│   └── qino-scribe/
 │       ├── chapter.md
 │       └── rewind.md
 └── references/

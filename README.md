@@ -198,18 +198,18 @@ Your perceiving is the process. The agent isn't extracting information from you 
 Arrive, bring material in, notice what matters, and let the whole system echo back.
 
 - `/qino:home` is the quiet landing. It shows threads between concepts, notes waiting to be woven, and recent movement. It is the easiest way to feel where to go next.
-- `/qino:import` brings outside notes into the manifest. What you don't carry into a concept gets held; Home surfaces those held threads later.
-- `/qino:explore [concept-id]` turns toward one concept (or two at once) and follows the alive thread. Imported notes and captures appear as starting points.
+- `/qino-concept:import` brings outside notes into the manifest. What you don't carry into a concept gets held; Home surfaces those held threads later.
+- `/qino-concept:explore [concept-id]` turns toward one concept (or two at once) and follows the alive thread. Imported notes and captures appear as starting points.
 - `/qino:capture [observation]` is the immediate notebook. Essence is saved, references stay open until you connect them or let them settle. Those captures later appear in Explore suggestions.
 - `/qino:test [concept-id]` runs ecology tests. The noticing becomes a note with ecology metadata, so Home can show what's been quiet and what keeps echoing.
 
 Home, Import, Explore, Capture, and Test feed each other: arrivals reveal what was imported; explorations surface captures; tests seed new captures; everything held quietly reappears the next time you come home.
 
 ```bash
-/qino:init
+/qino-concept:init
 /qino:home
-/qino:explore concept-id [other-concept-id]
-/qino:import path/to/notes.md
+/qino-concept:explore concept-id [other-concept-id]
+/qino-concept:import path/to/notes.md
 /qino:capture [observation]
 /qino:test [concept-id]
 ```
@@ -276,8 +276,8 @@ Platforms over fast water. Rope bridges, smoke, children who track arrivals.
 ```
 
 ```bash
-/scribe:chapter
-/scribe:chapter from_ref to_ref   # retroactive chapter for a git range
+/qino-scribe:chapter
+/qino-scribe:chapter from_ref to_ref   # retroactive chapter for a git range
 ```
 
 *[Source](tools/qino-scribe/) · [Installation](tools/qino-scribe/README.md#installation)*
@@ -437,11 +437,11 @@ By the end, the vague quality has become concrete craft you can recognize, teach
 Curious collaborator, not judge. You don't know the answer. The tool doesn't know the answer. But by placing things side by side and noticing what lands differently, the difference teaches you both.
 
 ```bash
-/attune:compare path/to/a.md path/to/b.md
-/attune:calibrate otherworldliness
+/qino:compare path/to/a.md path/to/b.md
+/qino:attune otherworldliness
 ```
 
-*[Source](tools/qino-attune/) · [Installation](tools/qino-attune/README.md#installation)*
+*Attune commands are now part of the universal qino: namespace, with references in [qino-concept](tools/qino-concept/).*
 
 ---
 
@@ -450,10 +450,10 @@ Curious collaborator, not judge. You don't know the answer. The tool doesn't kno
 This repository uses its own tools. The source files live in `tools/`, and adapter commands in `.claude/commands/` reference them.
 
 ```
-tools/qino-concept/commands/qino/      → .claude/commands/qino/
-tools/qino-scribe/commands/scribe/     → .claude/commands/scribe/
-tools/qino-attune/commands/attune/     → .claude/commands/attune/
-tools/qino-research/commands/research/ → .claude/commands/research/
+tools/qino-universal/commands/qino/        → .claude/commands/qino/
+tools/qino-concept/commands/qino-concept/  → .claude/commands/qino-concept/
+tools/qino-scribe/commands/qino-scribe/    → .claude/commands/qino-scribe/
+tools/qino-research/commands/qino-research/→ .claude/commands/qino-research/
 ```
 
 This is the "adapter" pattern described in The Ecosystem section — qino-claude is both the source of tools and a user of them.

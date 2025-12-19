@@ -12,6 +12,57 @@ Each version section includes:
 
 ---
 
+## v0.15.0 (Command Namespace Rename)
+
+**Summary**: Unified command naming based on qino-command-map concept. Universal ecology commands get their own tool (`qino-universal`), concept-specific commands move to `qino-concept:`, and all other tools get full prefixes.
+
+**Naming Architecture**:
+- `qino:` — universal commands (the ecology itself) — now in `qino-universal` tool
+- `qino-concept:` — concept space commands
+- `qino-research:` — research space commands
+- `qino-scribe:` — narrative commands
+- `qino-dev:` — implementation space commands
+
+**Delete**:
+- `.claude/commands/attune/` (merged into qino:)
+- `.claude/commands/research/` (renamed to qino-research/)
+- `.claude/commands/scribe/` (renamed to qino-scribe/)
+
+**Rename** (commands):
+- `/qino:explore` → `/qino-concept:explore`
+- `/qino:import` → `/qino-concept:import`
+- `/qino:init` → `/qino-concept:init`
+- `/scribe:chapter` → `/qino-scribe:chapter`
+- `/scribe:rewind` → `/qino-scribe:rewind`
+- `/research:home` → `/qino-research:home`
+- `/research:begin` → `/qino-research:begin`
+- `/research:experiment` → `/qino-research:experiment`
+- `/research:graduate` → `/qino-research:graduate`
+- `/attune:calibrate` → `/qino:attune`
+- `/attune:compare` → `/qino:compare`
+
+**New** (qino-universal tool):
+- `tools/qino-universal/` — new tool for universal commands
+- `.claude/commands/qino/home.md` (moved from qino-concept)
+- `.claude/commands/qino/capture.md` (moved from qino-concept)
+- `.claude/commands/qino/test.md` (moved from qino-concept)
+- `.claude/commands/qino/attune.md` (was attune:calibrate)
+- `.claude/commands/qino/compare.md` (was attune:compare)
+- `.claude/references/qino-attune/` (attune references)
+
+**New** (qino-concept):
+- `.claude/commands/qino-concept/explore.md`
+- `.claude/commands/qino-concept/import.md`
+- `.claude/commands/qino-concept/init.md`
+
+**User action**:
+- Delete old command directories: `attune/`, `research/`, `scribe/`
+- Create new command directories: `qino-concept/`, `qino-research/`, `qino-scribe/`
+- Universal commands now come from `qino-universal` tool
+- Update any scripts or documentation referencing old command names
+
+---
+
 ## v0.14.0 (qino-scribe)
 
 **Summary**: qino Scribe complete rewrite with two-agent staged architecture. Relational principles embedded as active constraints.
