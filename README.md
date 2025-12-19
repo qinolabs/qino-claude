@@ -153,6 +153,16 @@ A small file called `qino-config.json` tells each tool which space it's in and w
 
 The tools read this configuration and adjust their behavior. A capture in a research repo might become an exploration. The same command in an implementation repo sends a note to concepts. The tools stay the same; the context shapes what they do.
 
+### Context Sensitivity
+
+The same command adapts to where you are:
+
+| Command | In concepts | In research | In implementation |
+|---------|-------------|-------------|-------------------|
+| `/qino:home` | concepts, notes, threads | explorations, calibrations | linked concept, stack |
+| `/qino:capture` | saves to notes/ | saves to fragments/ | saves to linked concepts-repo |
+| `/qino:test` | tests concept | tests exploration | tests linked concept |
+
 ### Flow
 
 Research graduates into concepts — either as notes (distilled insights) or as concept seeds (new concepts with origins).
@@ -162,6 +172,18 @@ Implementation captures flow back to concepts — observations, test results, th
 The chronicle (qino Scribe) watches git changes across any repo and writes the story of what happened.
 
 Everything connects through concepts-repo, but each space keeps its own ecology intact.
+
+### Command Namespaces
+
+| Prefix | Space | Examples |
+|--------|-------|----------|
+| `qino:` | Universal (ecology itself) | home, capture, test, attune, compare |
+| `qino-concept:` | Concepts | explore, import, init |
+| `qino-research:` | Research | begin, experiment, graduate |
+| `qino-scribe:` | Chronicle | chapter, rewind |
+| `qino-dev:` | Implementation | init, app |
+
+The `qino:` namespace is not a specific space — it's what you're already in when you're anywhere. The suffix is the door you're entering through.
 
 ---
 
@@ -183,15 +205,38 @@ It remembers what you set down so you can forget safely.
 
 ### Home
 
-A place to check in before you venture out.
+A place to check in before you venture out. You arrive, orient, then choose to go somewhere.
 
-You see what's here — movements that happened recently, threads that might be interesting to pull. You're not asked what you want to do. You arrive, orient, then choose to go somewhere. Home receives you before offering paths.
+```
+/qino:home
 
-### The mirror
+threads between
 
-The tool asks a question. You respond. The tool surfaces something back — a reflection, a reframing, a possible direction. And in meeting that response, you discover what you actually think.
+  morning-friction connects daily-rhythm and notification-fatigue
+  the-pause-before connects daily-rhythm and focus-work
 
-Your perceiving is the process. The agent isn't extracting information from you — it's providing a surface where you can meet your own sense of what matters. The dialogue becomes an interface for encountering yourself.
+─────
+
+concepts
+
+  daily-rhythm
+  notification-fatigue
+  focus-work
+
+─────
+
+from here
+
+  morning-friction was touched recently
+  /qino:home morning-friction to arrive
+
+  focus-work has a thin glow section
+  what would make it feel more alive?
+
+                        /qino:home <concept> to arrive
+                        /qino-concept:explore <concept> to work
+                        /qino:capture to hold a thought
+```
 
 ### Working together in practice
 
@@ -290,35 +335,33 @@ A simulated conversation between seven perspectives — an adventure you witness
 
 ### The room after
 
-You don't participate in the conversation. You launch it, then enter the room after it happened.
+You launch it, then enter the room after it happened. Chairs still warm. Ideas still in the air. You discover what emerged — the questions they kept circling back to, what they couldn't resolve.
 
-Chairs still warm. Ideas still in the air. You discover what emerged — the questions they kept circling back to, the moments that shifted everything, what they couldn't resolve.
+Six perspectives think through words. The seventh (World) thinks through environment — a draft scatters someone's diagrams; they gather them differently and that's when the insight arrives.
 
-You weren't there for the heat of debate. You arrive for the clarity that followed, and a world you can continue to explore.
+### What the output looks like
 
-### The seventh perspective
+```
+design-sprints/2024-12-15_collaboration-vs-focus/
+├── __enter-here.md
+├── dialogue.md
+├── q-what-signals-legitimate-interruption.md
+├── q-can-focus-be-collaborative.md
+├── q-who-decides-when-to-break-flow.md
+└── synthesis.md
+```
 
-Six perspectives think through words. The seventh thinks through environment.
+From `q-can-focus-be-collaborative.md`:
 
-A draft cuts through and scatters someone's diagrams. They gather them differently — and that's when the insight arrives. Heat presses in; someone shifts before continuing. The overhead light flickers and when it steadies, something has shifted in the room's geometry.
+> **The Skeptic:** We keep saying "focus time" as if it's always solo. But pair programming is focus. Whiteboard sessions can be deep work.
+>
+> **The Embodied Thinker:** There's a different quality of attention — when you're tracking someone else's rhythm, not just your own.
+>
+> **The World:** *The fluorescent light hums. Someone's pen taps against the table.*
+>
+> **The Synthesizer:** Maybe the question isn't collaboration vs. focus. It's whose rhythm you're in.
 
-The World doesn't comment on the conversation. It interrupts, constrains, grounds. It offers friction when abstraction runs too long. It makes metaphors physical when they're ready to become so.
-
-The room participates. And what it offers shapes what can be said next.
-
-### Thinking, not conclusions
-
-You don't see polished recommendations. You see ideas meet resistance, evolve, surprise themselves. The Skeptic says "wait, no, that's too neat." The Explorer flips the question. The Embodied Thinker circles toward something no one can name yet.
-
-Productive disagreement isn't failure. It's how the real tensions surface — the ones you couldn't have named before the conversation revealed them.
-
-### What you don't know until after
-
-You bring a tension you can't resolve. But you don't know what questions actually matter until the conversation reveals them.
-
-Different runs surface different questions. This isn't noise to filter out. It's the system showing you what matters in this moment, for this challenge, given what these perspectives noticed.
-
-The questions themselves teach you how to think about the problem.
+Different runs surface different questions. The questions themselves teach you how to think about the problem.
 
 ```bash
 /design-adventure How do we balance real-time collaboration with focus time?
@@ -393,55 +436,59 @@ The files live in `implementations/` — visible, version-controlled, yours. Not
 
 ## qino Attune
 
-Training perception through difference.
-
-### The foundation
+Training perception through difference — now part of the universal `qino:` namespace.
 
 > **Information is "a difference that makes a difference."**
 > — Gregory Bateson
 
-Describing one thing teaches less than contrasting two. The comparison does the teaching.
+### Compare
 
-### Compare: place two artifacts side by side
+Two chapters. Two designs. Which works better? Read them side by side and notice what lands differently.
 
-You have two chapters. Two designs. Two approaches to the same problem. Which works better?
+```
+/qino:compare chapter-03.md chapter-04.md
 
-You could analyze each one, list their properties, compare the lists. Or you could read them side by side and notice what *lands* differently.
+─────
 
-The compare session guides you through:
-- **Fresh reading** — what stays with you from each
-- **Felt sense** — gut response before analysis
-- **Specific moments** — passages that illuminate the difference
-- **The parallel mirror** — when insight emerges about A, find the parallel in B
-- **Synthesis** — articulate what you discovered
+what stays with you from each?
 
-The discovery emerges from the gap between contexts. Not from examining one thing, but from what becomes visible when two things meet.
+chapter-03: The wanderer hesitates at the door
+chapter-04: The wanderer walks straight through
 
-### Calibrate: refine a vague quality into concrete craft
+─────
+
+where does the difference live?
+
+chapter-03, line 42: "She reached for the handle, then didn't."
+chapter-04, line 38: "The door was already open. She hadn't noticed."
+
+One is about choice. The other is about attention.
+
+─────
+
+                        /qino:capture to hold this
+                        /qino:attune if a quality is emerging
+```
+
+### Calibrate
 
 You know "otherworldliness" when you feel it. But you can't teach it without making it concrete.
 
-Start with intuition — a quality you recognize but can't yet articulate. Maybe "tension." Maybe "aliveness." Maybe "reader entry."
+```
+/qino:attune otherworldliness
 
-The calibrate process:
-1. **Find candidates** — examples from existing work that might have the quality
-2. **Calibrate through feedback** — yes/no/why for each; your responses teach you what you're looking for
-3. **Build inspiration index** — language and references that capture what you're circling
-4. **Transform iteratively** — failed examples become working ones; the transformation reveals the technique
-5. **Extract principles** — what works, what breaks it, what the quality actually *is*
+calibrations/otherworldliness/
+├── research.md           # examples and your yes/no/why responses
+├── transformations.md    # failed → working examples
+└── examples/             # candidates being tested
+```
 
-By the end, the vague quality has become concrete craft you can recognize, teach, and protect.
-
-### The stance
-
-Curious collaborator, not judge. You don't know the answer. The tool doesn't know the answer. But by placing things side by side and noticing what lands differently, the difference teaches you both.
+The process: find candidates, calibrate through feedback, transform failed examples into working ones. By the end, the vague quality has become concrete craft.
 
 ```bash
 /qino:compare path/to/a.md path/to/b.md
 /qino:attune otherworldliness
 ```
-
-*Attune commands are now part of the universal qino: namespace, with references in [qino-concept](tools/qino-concept/).*
 
 ---
 
