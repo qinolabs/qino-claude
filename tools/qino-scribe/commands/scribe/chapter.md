@@ -66,8 +66,9 @@ The prep agent will:
 
 **Disturbance Layer:**
 - Read git diff (from last_ref or argument)
-- Generate what changed, who perceives, angles
-- Present angles checkpoint → user chooses
+- Read for shape: what quality of change? (appearance, transformation, connection, etc.)
+- Find the resonance: where does this shape want to live in the story world?
+- Present resonances checkpoint → user chooses
 - Append Disturbance section to prep.md
 
 **Beat Layer:**
@@ -293,6 +294,7 @@ Options are vocabulary. Even rejected options help articulate what's wanted.
 
 Consult during execution:
 - `references/layers.md` — Layer definitions, checkpoint formats, prep.md structure
+- `references/disturbance.md` — How to read git diffs for shape and find the rhyme
 - `references/craft.md` — Chapter format, world.md structure, arc shapes
 - `references/voice.md` — Prose craft (for prose agent)
 - `references/principles.md` — Relational principles embedded in layers
@@ -303,17 +305,27 @@ Consult during execution:
 
 When done, announce:
 ```
-chapter NNN complete
+─────────────────────────────────────────────────────────────────
+chapter NNN — [Title]
 
-  title: [Chapter Title]
-  words: [word count]
+  [One or two lines: what happened in the chapter]
 
-  what moved:
-    [arc or pressure that advanced]
+  The wanderer was last seen [where/doing what]
+  [optional: carrying what, in what state]
 
-  what waits:
-    [what's building for next time]
+─────────────────────────────────────────────────────────────────
+  what's building
+
+    [Pressure 1 — narrative tension for next time]
+    [Pressure 2 — atmospheric or relational tension]
+
+─────────────────────────────────────────────────────────────────
+  [word count]                              [Arc Name] (begun/advanced)
 ```
+
+The top half is story — what happened, where the wanderer rests.
+The middle is pressure — what's building, the world's breath.
+The bottom is structure — word count, arc movement (quiet, present but not featured).
 
 ---
 

@@ -26,6 +26,7 @@ When prep.md is complete, hand off to the prose agent.
 
 Consult during your work:
 - `references/layers.md` — Layer flow, checkpoint formats, prep.md structure
+- `references/disturbance.md` — How to read git diffs for shape and find the rhyme
 - `references/craft.md` — Theme, world.md structure, arc shapes
 - `references/principles.md` — Relational principles (embed in your questions)
 
@@ -50,16 +51,25 @@ Consult during your work:
 **Present checkpoint:**
 ```
 ─────────────────────────────────────────────────────────────────
+grounding
+
+  theme       [sensory palette words]
+  pressure    [what's building]
+  arc         [what's in motion]
+  last seen   [where wanderer was, what happened]
+
+─────────────────────────────────────────────────────────────────
 scene seeds
 
   1 → [who + relationship + where + what tension]
   2 → [another relational situation]
   3 → [another relational situation]
 
-                                                    which calls?
+─────────────────────────────────────────────────────────────────
+[ 1-3 ] or empty    [ > ] auto-pick this or 'resonances'    [ >> ] start writing
 ```
 
-**Active constraint:** Each scene seed must name a relationship, not just a situation.
+Scene seeds that name a relationship have more life than situations without people.
 
 **After user chooses:** Write the Grounding section to prep.md:
 ```markdown
@@ -75,6 +85,8 @@ scene seeds
 
 **Read:** Git diff (exclude chronicle directory), the chosen scene seed
 
+**Consult:** `references/disturbance.md` — how to read for shape and find the rhyme
+
 **Get the diff:**
 ```bash
 # Get last_ref from manifest.json
@@ -83,38 +95,68 @@ git diff [last_ref]..HEAD --stat -- . ':!*chronicle*'
 git diff [last_ref]..HEAD -- . ':!*chronicle*'
 ```
 
-**Ask yourself:**
-- What changed in the ecosystem?
-- Who would perceive this change? What would perceiving it cost them?
-- What pressure does this touch?
-- How does the world see back when this change happens?
+**The shift:** The diff is not source material to describe. It's a quality seeking its story-world form.
+
+**Read for shape:** What quality of change happened?
+- Appearance / Disappearance
+- Transformation
+- Connection / Separation
+- Accumulation / Release
+
+**Find the resonance:** Where in the story world does this shape want to live — and rhyme with what happened?
+
+The magic: with imagination, the change in the story can be traced back to what happened in the code. Not literal correspondence — poetic rhyme.
+
+**Hold these questions:**
+- What is the shape of this change?
+- What in the story world carries this shape?
+- Who would feel this — not as information, but as atmosphere?
+- What pressure does this touch? What arc might it move?
 
 **Produce:**
-- What changed (one line)
-- Who perceives it (character + cost of noticing)
-- Angles (3 story directions)
+- Shape (the quality of change)
+- Resonance (where it lives in the story world)
+- Who feels it (who is sensitive to this quality)
+- Angles (3 resonances to choose from)
 
 **Present checkpoint:**
 ```
 ─────────────────────────────────────────────────────────────────
-angles
+grounding
 
-  1 → [story angle — what's at stake, who perceives]
-  2 → [another angle]
-  3 → [another angle]
+  theme       [sensory palette words]
+  pressure    [what's building]
+  scene seed  [the one user picked — who + relationship + where]
 
-                                                   which angle?
+─────────────────────────────────────────────────────────────────
+the diff
+
+  [one line: what literally changed in the ecosystem]
+
+─────────────────────────────────────────────────────────────────
+shape: [the quality — appearance, transformation, connection, etc.]
+
+resonances
+
+  1 → [where this shape could live in the story world]
+  2 → [another resonance]
+  3 → [another resonance]
+
+─────────────────────────────────────────────────────────────────
+[ 1-3 ] or empty    [ > ] auto-pick this or 'directions'    [ >> ] start writing
 ```
 
-**Active constraint:** Angles must include who perceives, not just who's affected.
+Resonances that carry who perceives — not just who's affected — have more weight.
 
 **After user chooses:** Append the Disturbance section to prep.md:
 ```markdown
 ## Disturbance
-**What changed:** [one line]
-**Who perceives it:** [who notices, what it costs them to notice]
-**Angle chosen:** [what user picked]
+**Resonance:** [where the change lives in the story world]
+**Who feels it:** [who is sensitive to this quality]
+**Angle chosen:** [the direction user picked]
 ```
+
+The literal diff and shape helped you find the resonance. They don't travel to prep.md.
 
 ---
 
@@ -142,23 +184,44 @@ angles
 9. The Return — coming back to where we've been
 10. The Ritual — a cultural form holds the chapter
 
-**Present checkpoint:**
+**Present checkpoint (Directions):**
 ```
+─────────────────────────────────────────────────────────────────
+grounding
+
+  theme       [sensory palette words]
+  pressure    [what's building]
+  resonance   [the one user picked — where the change lives]
+
 ─────────────────────────────────────────────────────────────────
 directions
 
-  [Type 1] → [one phrase]
-  [Type 2] → [one phrase]
-  [Type 3] → [one phrase]
+  1 (Confrontation) → [one phrase — what must be faced]
+  2 (Discovery)     → [one phrase — what comes to light]
+  3 (Vigil)         → [one phrase — presence when action is impossible]
 
-                                               which direction?
+─────────────────────────────────────────────────────────────────
+[ 1-3 ] or empty    [ > ] auto-pick this or 'opening'    [ >> ] start writing
 ```
 
-**After user chooses:** Append the Beat section to prep.md:
+**After user chooses direction, present Opening checkpoint:**
+```
+─────────────────────────────────────────────────────────────────
+opening
+
+  1 → [place + time + how we enter]
+  2 → [another opening]
+  3 → [another opening]
+
+─────────────────────────────────────────────────────────────────
+[ 1-3 ] or empty    [ > ] start writing
+```
+
+**After user chooses opening:** Append the Beat section to prep.md:
 ```markdown
 ## Beat
 **Story type:** [chosen type]
-**Opening image:** [where/how we begin]
+**Opening image:** [the chosen opening — place + time + how we enter]
 
 **Who's involved:**
 - [Character]: [what they want] / *Voice: [speech pattern]*
@@ -202,22 +265,24 @@ Options are vocabulary. Even rejected options help users articulate what they wa
 
 ---
 
-## Relational Principles (Active During All Layers)
+## What to Hold at Each Layer
 
-From `principles.md`, hold these as active constraints:
+From `principles.md`, these questions keep the work alive:
 
-**World Layer:**
-- The World Has Been Watching — Who has been observing? What accumulated?
-- Relationship as Lens — Scene seeds are relational situations
+**World Layer**
+- Who has been watching? What have they accumulated?
+- Which relationship could become a scene?
 
-**Disturbance Layer:**
-- Mutual Seeing — Who perceives the change? What does it cost them?
-- The world sees back when change happens
+**Disturbance Layer**
+- What is the shape of the change? What does it want to become?
+- Who perceives this — not just who's affected?
+- What does it cost them to notice?
 
-**Beat Layer:**
-- What Remains Unspoken — Track what's held back
-- Depth Through Others — Define characters by how they perceive each other
-- Voice notes must differentiate how characters speak
+**Beat Layer**
+- What's at stake between people, not just for them?
+- How does each perceive the other — especially what isn't said?
+- What's being held back that the reader will sense?
+- How does each character speak differently from the others?
 
 ---
 

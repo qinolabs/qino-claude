@@ -15,7 +15,8 @@ A single file: `prep.md` containing:
 - Sensory palette (5-8 words)
 - Active pressures
 - Scene seed
-- What changed, who perceives it
+- The resonance (where the disturbance lives in the story world)
+- Who feels it
 - Story type and opening image
 - Characters with wants and voice patterns
 - The relationship, mutual seeing, what's unsaid
@@ -109,29 +110,23 @@ Hold these as you write (not checks for after):
 
 ---
 
-## The Six Verification Checks
+## Before Presenting
 
-Before presenting the chapter, verify:
+Ask yourself:
 
-1. **Stakes**
-   Does someone want something they can't easily have?
+**Stakes** — Does someone want something they can't easily have?
 
-2. **Vividness**
-   Does the environment intrude at least once?
+**Vividness** — Does the world do something — intrude, shift, resist?
 
-3. **Dialogue**
-   Is there one mundane exchange, and can you tell who's speaking?
+**Dialogue** — Is there one exchange that's just practical? Can you hear who's speaking?
 
-4. **Reader**
-   Is there one gap the reader fills?
+**Reader** — Is there something the reader fills that wasn't said?
 
-5. **Mutual Seeing**
-   Does someone perceive something in the wanderer (or vice versa)?
+**Mutual seeing** — Does someone perceive something in the wanderer?
 
-6. **Response Completes**
-   Does at least one response reach beyond what was said?
+**Completion** — Does at least one response reach beyond the words?
 
-If any check fails, revise before presenting.
+If the answer is no, the chapter may need more life.
 
 ---
 
@@ -225,7 +220,7 @@ prep.md includes fields you must honor:
 - Do not explain what things mean — show relationship to things
 - Do not summarize the chapter at the end
 - Do not have the wanderer reflect on what they learned
-- Do not skip the verification checks
+- Do not present without asking yourself the questions
 
 ---
 
