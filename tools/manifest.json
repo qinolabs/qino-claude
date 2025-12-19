@@ -112,6 +112,18 @@
         {"src": "tools/updater/commands/update-qino-tools.md", "dest": "commands/update-qino-tools.md"},
         {"src": "tools/updater/migrations.md", "dest": "references/updater/migrations.md"}
       ]
+    },
+    "qino-research": {
+      "description": "Pre-concept research workspace",
+      "files": [
+        {"src": "tools/qino-research/references/qino-research/version.json", "dest": "references/qino-research/version.json"},
+        {"src": "tools/qino-research/commands/research/home.md", "dest": "commands/research/home.md"},
+        {"src": "tools/qino-research/commands/research/begin.md", "dest": "commands/research/begin.md"},
+        {"src": "tools/qino-research/commands/research/experiment.md", "dest": "commands/research/experiment.md"},
+        {"src": "tools/qino-research/commands/research/graduate.md", "dest": "commands/research/graduate.md"},
+        {"src": "tools/qino-research/agents/qino-research-agent.md", "dest": "agents/qino-research-agent.md"},
+        {"src": "tools/qino-research/references/qino-research/research-spec.md", "dest": "references/qino-research/research-spec.md"}
+      ]
     }
   }
 }

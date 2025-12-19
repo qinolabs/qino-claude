@@ -28,6 +28,21 @@ Read before beginning:
 
 ---
 
+## Workspace Detection (First Step)
+
+Before starting calibration, check `.claude/qino-config.json`:
+
+**If `repoType: "research"`:**
+- This is a research workspace
+- Outputs go to `calibrations/[quality]/`
+- Update `manifest.json` with calibration entry
+
+**Otherwise:**
+- Outputs go to current directory
+- No manifest updates
+
+---
+
 ## Arguments
 
 Arguments: `$ARGUMENTS`
@@ -135,8 +150,6 @@ After all transformations, synthesize:
 The calibration produces two documents:
 
 ### 1. Research Document
-`[quality]-research.md`
-
 Contains:
 - The core principle (one sentence)
 - What qualifies vs. what doesn't (table)
@@ -145,13 +158,45 @@ Contains:
 - Key distinctions
 
 ### 2. Transformations Document
-`[quality]-transformations.md`
-
 Contains:
 - The process record (how we got here)
 - Each example's transformation attempts
 - Summary of what worked
 - Extracted principles and anti-patterns
+
+### Output Paths
+
+**In research workspaces** (`repoType: "research"`):
+```
+calibrations/[quality]/
+├── research.md
+├── transformations.md
+└── examples/           # Test corpus used
+```
+
+Also update `manifest.json`:
+```json
+{
+  "calibrations": [
+    {
+      "id": "[quality]",
+      "name": "[Quality Name]",
+      "path": "calibrations/[quality]/",
+      "quality": "[the aesthetic quality]",
+      "status": "in_progress",
+      "started": "[timestamp]"
+    }
+  ]
+}
+```
+
+When calibration completes, update status to `"complete"` and add `"completed": "[timestamp]"`.
+
+**In other workspaces:**
+```
+[quality]-research.md
+[quality]-transformations.md
+```
 
 These become reference material for craft guidance.
 

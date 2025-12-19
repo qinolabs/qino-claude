@@ -215,9 +215,9 @@ When ready for analysis:
 ### attune:compare
 For comparison experiments:
 ```
-/attune:compare results/output-1.md results/output-2.md
+/attune:compare test-data/variant-a.md test-data/variant-b.md
 ```
-Capture output in results/comparison-notes.md
+When attune:compare detects it's running within an experiment folder, it automatically offers to save comparison notes to `results/comparison-[timestamp].md`.
 
 ### Ecology Lenses
 For observation experiments, use ecology frames:

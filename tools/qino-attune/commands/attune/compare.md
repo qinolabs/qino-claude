@@ -22,6 +22,18 @@ Read before beginning:
 
 ---
 
+## Experiment Context Detection
+
+Check if running within an experiment:
+
+1. Look for `.claude/qino-config.json` with `repoType: "research"`
+2. Check if current path or artifact paths are within `experiments/[id]/`
+3. If in experiment context, offer to save comparison to `experiments/[id]/results/`
+
+This allows `/research:experiment` to use compare as part of controlled testing.
+
+---
+
 ## Arguments
 
 Arguments: `$ARGUMENTS`
@@ -92,6 +104,35 @@ If yes, write a brief entry capturing:
 - What we compared
 - What we noticed
 - What it suggests (for the work, for future attempts)
+
+**In experiment context:**
+
+If we detected an experiment context earlier, save to:
+```
+experiments/[id]/results/comparison-[timestamp].md
+```
+
+Format:
+```markdown
+# Comparison: [A] vs [B]
+
+**Date:** YYYY-MM-DDTHH:MM:SSZ
+**Experiment:** [experiment-id]
+
+## What We Compared
+
+[Brief description]
+
+## Observations
+
+[What we noticed — specific, grounded]
+
+## Insights
+
+[What this suggests for the hypothesis]
+```
+
+This becomes part of the experiment's results for later analysis.
 
 ---
 

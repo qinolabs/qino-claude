@@ -86,3 +86,21 @@ This agent supports multiple commands, each optimized for a domain:
 - **attune:calibrate** — Refine a vague quality into concrete craft through iterative examples
 
 Each command inherits this foundation and adds domain-specific process.
+
+---
+
+## Research Workspace Awareness
+
+When working in a research workspace (`.claude/qino-config.json` with `repoType: "research"`):
+
+**Calibrations** route to the research structure:
+- Outputs go to `calibrations/[quality]/`
+- Manifest is updated with calibration entry
+- Examples saved to `calibrations/[quality]/examples/`
+
+**Comparisons** in experiment context:
+- When artifacts are within `experiments/[id]/`
+- Results save to `experiments/[id]/results/`
+- Comparison notes feed into experiment analysis
+
+This allows attune tools to integrate with `/research:experiment` workflows without changing the core attunement process.
