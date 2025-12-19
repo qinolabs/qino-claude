@@ -224,13 +224,13 @@ What happens in the ecosystem becomes story. Git changes, transformed into fanta
 
 A gentle space for developing ideas.
 
-### The question it asks
+### Discovery through dialogue
 
 Most tools assume you can get to a meaningful output by filling in the sections — complete the template, check the boxes, and the result will have value.
 
 This tool works through dialogue. It asks what draws you, follows that thread, asks again. Each response surfaces something — a connection you hadn't named, a quality you were circling around, a direction that suddenly feels right. You discover what your idea actually holds by staying with it, turning it gently, going deeper where it rewards attention.
 
-### What it holds
+### Nothing gets lost
 
 When you bring in a note, not everything makes it into your concept. The rest isn't lost — it's held. Quietly indexed. No guilt about what you didn't carry forward. Later, if you're stuck, the tool might say: *"There's something held in your origins — about [that theme]. Does it still have warmth?"*
 
@@ -272,7 +272,7 @@ from here
                         /qino:capture to hold a thought
 ```
 
-### Working together in practice
+### How the commands connect
 
 Arrive, bring material in, notice what matters, and let the whole system echo back.
 
@@ -355,7 +355,7 @@ You launch it, then enter the room after it happened. Chairs still warm. Ideas s
 
 Six perspectives think through words. The seventh (World) thinks through environment — a draft scatters someone's diagrams; they gather them differently and that's when the insight arrives.
 
-### What the output looks like
+### What you find
 
 ```
 design-sprints/2024-12-15_collaboration-vs-focus/
@@ -391,7 +391,7 @@ Different runs surface different questions. The questions themselves teach you h
 
 Implementation companion for qino-concept.
 
-### The relationship
+### What gets lost in building
 
 You start with a vision. Requirements absorb it. Tickets fragment it. Somewhere in the building, the feeling fades into features.
 
@@ -399,7 +399,7 @@ This happens when concept and implementation share the same space. Without bound
 
 qino Dev gives them separate places. Your concept stays in concepts-repo. Your implementation lives in the target project. Not to keep them apart, but so they can inform each other without merging. The concept shapes what you build. What you discover while building flows back to shape the concept. Each keeps its own form while the other grows.
 
-### Translation, not discovery
+### From concept to code
 
 When you initialize from a concept, the work isn't to rediscover what you already know. It's to translate.
 
@@ -433,7 +433,7 @@ from here
 
 Not a dashboard. Not a menu. A place to arrive before you work.
 
-### Turn-taking
+### Building in phases
 
 Iterations aren't sprints. They're checkpoints for turn-taking.
 
