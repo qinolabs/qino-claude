@@ -75,7 +75,10 @@ This is the inheritance: from young anthropologists watching rituals on the Sepi
 
 </details>
 
-## Ecological Design
+Ideas need different conditions at different stages. Patterns that work at one level echo at others.
+
+<details>
+<summary><strong>Ecological Design: How Ideas Flow Between Spaces</strong></summary>
 
 Ecological design patterns are alive at every level — in each concept, in each repository, in the ecosystem itself. The art is in the design — affordances and cues, sensitive to experience, that naturally protect the integrity of local ecologies while encouraging free movement without accumulating friction. What does accumulate are artifacts and new relational patterns, safely stored in context, ready to surface again when they connect to your next idea. The best ideas can come from anywhere — not centralized — and often while deeply immersed in a different context.
 
@@ -83,52 +86,10 @@ Figures are a metaphor — in Bateson's sense, not the literary sense. A figure 
 
 qino-claude also serves as a proving ground. The patterns that work here — cards moving between contexts, modalities for encountering the same material, figures that travel — become the architecture for the apps. What's discovered at tool-scale informs app-scale.
 
-<details>
-<summary><strong>The Chronicles: Story of an Evolving Ecosystem</strong></summary>
+> *"Every concept reflects every other. The membrane grows thin."*
+> — from "indras-net-between-concepts"
 
-Each repository in the qino ecosystem tells its own story.
-
-**qino-claude** — Claude-based AI tooling.
-
-> *The wanderer pressed her ear to the workshop wall. Sounds on the other side that weren't there yesterday — someone moving, maybe. Something being made ready. She stayed there a long time, listening.*
-
-**concepts-repo** — concept development.
-
-> *A notebook on the table, open to a page the wanderer didn't remember writing. The handwriting was theirs.*
-
-**qinolabs-repo** — web and mobile applications.
-
-> *Something had shifted in the night. Not the furniture — the distances between things.*
-
-Same scribe. Different worlds. Different atmospheric registers. Process in each informs the others — a co-evolution.
-
-> *The Keeper of Paths looked up from her maps. "Someone's been walking between the Workshop and the Warm Room. Over and over. The ground remembers."*
->
-> *"What are they looking for?"*
->
-> *She smiled. "They'll know when they stop."*
-
-</details>
-
-![Chapter view with location popover](docs/images/chronicle/chapter-view.png)
-
-![World tokens and arcs](docs/images/chronicle/world-tokens.png)
-
-> *"There's something writing in the margins. Something that sees what we do and names what it means."*
->
-> *"I think it just tells stories. That's what frightens me most."*
->
-> — Seren, the record-keeper, on discovering he is being documented
-> *(written when qino-scribe first appeared in its own git diff)*
-
-**[Read the chronicles →](https://chronicles.qinolabs.com/)**
-
----
-
-Ideas need different conditions at different stages. The qino ecosystem gives each stage its own space.
-
-<details>
-<summary><strong>The Ecosystem: How Ideas Flow Between Spaces</strong></summary>
+### The Spaces
 
 An early hunch needs room to wander — structure would crush it. A maturing concept needs stability — too much flux and it never settles. An implementation needs grounding — a vision to build toward without getting lost in features.
 
@@ -208,6 +169,46 @@ Everything connects through concepts-repo, but each space keeps its own ecology 
 The `qino:` namespace is not a specific space — it's what you're already in when you're anywhere. The suffix is the door you're entering through.
 
 </details>
+
+<details>
+<summary><strong>The Chronicles: Story of an Evolving Ecosystem</strong></summary>
+
+Each repository in the qino ecosystem tells its own story.
+
+**qino-claude** — Claude-based AI tooling.
+
+> *The wanderer pressed her ear to the workshop wall. Sounds on the other side that weren't there yesterday — someone moving, maybe. Something being made ready. She stayed there a long time, listening.*
+
+**concepts-repo** — concept development.
+
+> *A notebook on the table, open to a page the wanderer didn't remember writing. The handwriting was theirs.*
+
+**qinolabs-repo** — web and mobile applications.
+
+> *Something had shifted in the night. Not the furniture — the distances between things.*
+
+Same scribe. Different worlds. Different atmospheric registers. Process in each informs the others — a co-evolution.
+
+> *The Keeper of Paths looked up from her maps. "Someone's been walking between the Workshop and the Warm Room. Over and over. The ground remembers."*
+>
+> *"What are they looking for?"*
+>
+> *She smiled. "They'll know when they stop."*
+
+</details>
+
+![Chapter view with location popover](docs/images/chronicle/chapter-view.png)
+
+![World tokens and arcs](docs/images/chronicle/world-tokens.png)
+
+> *"There's something writing in the margins. Something that sees what we do and names what it means."*
+>
+> *"I think it just tells stories. That's what frightens me most."*
+>
+> — Seren, the record-keeper, on discovering he is being documented
+> *(written when qino-scribe first appeared in its own git diff)*
+
+**[Read the chronicles →](https://chronicles.qinolabs.com/)**
 
 ---
 
