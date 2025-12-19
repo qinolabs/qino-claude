@@ -172,7 +172,7 @@ The `qino:` namespace is not a specific space — it's what you're already in wh
 
 ---
 
-Ideas need different conditions at different stages. Patterns that work at one level echo at others.
+Ideas travel between contexts. What works here echoes there.
 
 <details>
 <summary><strong>The Chronicles: Story of an Evolving Ecosystem</strong></summary>
@@ -218,7 +218,7 @@ What happens in the ecosystem becomes story. Git changes, transformed into fanta
 
 **[Read the chronicles →](https://chronicles.qinolabs.com/)**
 
----
+<br>
 
 ## qino Concept
 
@@ -303,7 +303,7 @@ qino Scribe keeps the chronicle alive. It reads the git range, grounds in `world
 
 In this repository's chronicle, the wanderer is ferrying a warming pouch upriver. Villages know about them before they arrive. Lira at Orith's Landing recognizes the pouch from years ago; Seren fears the writing filling his margins; the river itself carries news. The chronicle only moves when the wanderer does — and when the world answers.
 
-### Pressure-first chronicle
+### Built for continuation
 
 Your ecosystem evolves through conversations and work that spans sessions. qino Scribe turns that movement into a fantasy chronicle with action, consequence, and a wanderer who acts — not documentation in costume. Each chapter ends with pressures still building so the next one has somewhere to land.
 
