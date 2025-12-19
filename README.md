@@ -212,26 +212,27 @@ A place to check in before you venture out. You arrive, orient, then choose to g
 
 threads between
 
-  morning-friction connects daily-rhythm and notification-fatigue
-  the-pause-before connects daily-rhythm and focus-work
+  world-tokens-pattern connects qino-scribe, gm-tool, qino-chronicles
+  scribe-as-lens-prototype connects qino-scribe, qino-lens
 
 ─────
 
 concepts
 
-  daily-rhythm
-  notification-fatigue
-  focus-work
+  qino-scribe
+  qino-drops
+  discovery-grid
+  qino-lens
 
 ─────
 
 from here
 
-  morning-friction was touched recently
-  /qino:home morning-friction to arrive
+  qino-drops has active held threads about relational grammar
+  /qino:home qino-drops to arrive
 
-  focus-work has a thin glow section
-  what would make it feel more alive?
+  world-tokens-pattern was captured yesterday
+  explore how tokens move between scribe and chronicles?
 
                         /qino:home <concept> to arrive
                         /qino-concept:explore <concept> to work
@@ -443,51 +444,51 @@ Training perception through difference — now part of the universal `qino:` nam
 
 ### Compare
 
-Two chapters. Two designs. Which works better? Read them side by side and notice what lands differently.
+Two chapters from the qino-claude chronicle. Which works better? Read them side by side and notice what lands differently.
 
 ```
-/qino:compare chapter-03.md chapter-04.md
+/qino:compare 007-what-stillness-holds/chapter.md 008-the-second-bend/chapter.md
 
 ─────
 
 what stays with you from each?
 
-chapter-03: The wanderer hesitates at the door
-chapter-04: The wanderer walks straight through
+chapter-07: The Mender's threads spanning walls. Twenty years of questions finding response.
+chapter-08: Seren's margins filling with writing not his own. "If you find out what you are, send word."
 
 ─────
 
 where does the difference live?
 
-chapter-03, line 42: "She reached for the handle, then didn't."
-chapter-04, line 38: "The door was already open. She hadn't noticed."
+chapter-07: The wanderer witnesses. The Mender's solitude made visible.
+chapter-08: The wanderer is witnessed. Seren sees something in them they don't see themselves.
 
-One is about choice. The other is about attention.
+One is about seeing outward. The other is about being seen.
 
 ─────
 
                         /qino:capture to hold this
-                        /qino:attune if a quality is emerging
+                        /qino:attune mutual-seeing
 ```
 
 ### Calibrate
 
-You know "otherworldliness" when you feel it. But you can't teach it without making it concrete.
+You know "mutual seeing" when you feel it — when the world sees back, when characters perceive each other, not just exist. But you can't teach it without making it concrete.
 
 ```
-/qino:attune otherworldliness
+/qino:attune mutual-seeing
 
-calibrations/otherworldliness/
-├── research.md           # examples and your yes/no/why responses
-├── transformations.md    # failed → working examples
+calibrations/mutual-seeing/
+├── research.md           # chronicle passages with yes/no/why
+├── transformations.md    # flat scenes → relational scenes
 └── examples/             # candidates being tested
 ```
 
-The process: find candidates, calibrate through feedback, transform failed examples into working ones. By the end, the vague quality has become concrete craft.
+The process: find candidates from existing chapters, calibrate through feedback, transform failed examples into working ones. The vague quality becomes craft you can protect.
 
 ```bash
 /qino:compare path/to/a.md path/to/b.md
-/qino:attune otherworldliness
+/qino:attune mutual-seeing
 ```
 
 ---
@@ -504,6 +505,25 @@ tools/qino-research/commands/qino-research/→ .claude/commands/qino-research/
 ```
 
 This is the "adapter" pattern described in The Ecosystem section — qino-claude is both the source of tools and a user of them.
+
+---
+
+## The Ecosystem in Miniature
+
+qino-claude is a prototype of the larger qino apps ecosystem.
+
+The tools here share the same architecture the apps will share:
+- **Cards as first-class citizens** — concepts, notes, held threads moving between contexts
+- **Modalities** — different ways of encountering the same material (home, explore, capture, test)
+- **Figures that travel** — the wanderer in chronicles, concepts that surface across notes
+- **Mutual seeing** — tools that notice the user, not just serve them
+
+The chronicle of this repository (written by qino Scribe) describes its own evolution. The concepts that qino Concept develops include qino Concept itself. The compare sessions that refine chapters become chapters in the chronicle.
+
+What works here informs qino-drops, qino-walk, qino-world. What's discovered there flows back to refine the tools. The ecosystem learns from itself.
+
+> *"Every concept reflects every other. The membrane grows thin."*
+> — from "indras-net-between-concepts"
 
 ---
 
@@ -525,4 +545,4 @@ This is the "adapter" pattern described in The Ecosystem section — qino-claude
 
 ---
 
-*Each tool here was conceived through its own process. What you build will circle back to refine what built it — larger arcs of smaller circles. For example: we used the tools themselves to improve the descriptions of themselves, which we in turn used as a lens to improve the implementation of the tools.*
+*The examples in this README are real. The concepts shown in `/qino:home` are actual concepts in the ecosystem. The chronicle chapters in `/qino:compare` are real chapters written by qino Scribe about this repository's own evolution. The "mutual seeing" calibration references a pattern discovered while developing the scribe. What you build will circle back to refine what built it.*
