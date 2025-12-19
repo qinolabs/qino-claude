@@ -149,17 +149,15 @@ For each changed tool, check for version.json:
 tools/<tool>/references/<tool>/version.json
 ```
 
-**Version bump rules:**
-- **Patch** (1.0.0 → 1.0.1): Bug fixes, internal improvements
-- **Minor** (1.0.0 → 1.1.0): New features, capabilities added
-- **Major** (1.0.0 → 2.0.0): Breaking changes
+**Bundle-aligned versioning:**
+Tools use bundle-aligned versioning — each tool's version matches the bundle release where it was last significantly changed. When a tool changes in this release, set its version to the bundle version.
 
 Show proposed bumps:
 ```
-Version bumps:
+Version bumps (bundle-aligned):
 
-  qino-concept: 1.1.0 → 1.2.0 (minor - new note command)
-  design-adventure: 1.0.0 → 1.0.1 (patch - doc updates)
+  qino-scribe: 0.13.4 → 0.14.0 (changed in this release)
+  qino-concept: 0.11.0 (unchanged)
 
 Apply?
 ```

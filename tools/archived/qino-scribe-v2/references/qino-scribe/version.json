@@ -1,5 +1,5 @@
 {
   "tool": "qino-scribe",
-  "version": "0.4.0",
-  "description": "Chronicles ecosystem evolution from the ecosystem's perspective"
+  "version": "0.6.1",
+  "description": "Chronicles ecosystem evolution (archived v0.7.0 - before adventure-over-observation rewrite)"
 }

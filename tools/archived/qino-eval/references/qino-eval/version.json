@@ -1,7 +1,5 @@
 {
-  "version": "0.2.0",
-  "name": "qino-eval",
-  "description": "Guided evaluation for chronicle chapters",
-  "created": "2025-12-12",
-  "status": "experimental"
+  "tool": "qino-eval",
+  "version": "0.12.0",
+  "description": "Guided evaluation for chronicle chapters (archived v0.13.0 - use qino-attune)"
 }

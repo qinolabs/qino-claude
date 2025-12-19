@@ -1,5 +1,5 @@
 {
   "tool": "dev-assistant",
-  "version": "1.5.0",
-  "description": "Transform app concepts into vision-aligned development environments"
+  "version": "0.8.0",
+  "description": "Transform app concepts into vision-aligned development environments (archived v0.9.0 - use qino-dev)"
 }

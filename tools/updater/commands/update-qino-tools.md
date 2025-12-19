@@ -46,15 +46,17 @@ Report to user:
 ```
 Checking versions...
 
-  dev-assistant: 1.5.0 → 1.6.0 (update available)
-  design-sprint: 2.1.0 (up to date)
-  design-adventure: not installed
-  qino-concept: 1.0.0 (up to date)
-  qino-scribe: 0.2.0 → 0.3.0 (update available)
-  updater: 1.0.0 (up to date)
+  design-adventure: 0.5.2 (up to date)
+  design-sprint: not installed
+  qino-concept: 0.11.0 (up to date)
+  qino-scribe: 0.13.4 → 0.14.0 (update available)
+  qino-attune: 0.13.0 (up to date)
+  qino-dev: 0.9.0 (up to date)
 
-2 tools have updates available.
+1 tool has updates available.
 ```
+
+Note: Tools use bundle-aligned versioning — each tool's version matches the bundle release where it was last significantly changed.
 
 If no tools need updating, report "All tools up to date." and stop.
 
@@ -119,10 +121,9 @@ Report only the tools that were updated:
 
 ```
 Update complete:
-  dev-assistant: 1.5.0 → 1.6.0 (11 files)
-  qino-scribe: 0.2.0 → 0.3.0 (7 files)
+  qino-scribe: 0.13.4 → 0.14.0 (9 files)
 
-18 files updated.
+9 files updated.
 ```
 
 Tools that were already up to date are not mentioned (they weren't touched).
