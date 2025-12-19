@@ -71,18 +71,16 @@ This is the inheritance: from young anthropologists watching rituals on the Sepi
 
 </details>
 
-**[Read the chronicles →](https://chronicles.qinolabs.com/)**
+## Ecological Design
 
-![Chapter view with location popover](docs/images/chronicle/chapter-view.png)
+Ecological design patterns are alive at every level — in each concept, in each repository, in the ecosystem itself. The art is in the design — affordances and cues, sensitive to experience, that naturally protect the integrity of local ecologies while encouraging free movement without accumulating friction. What does accumulate are artifacts and new relational patterns, safely stored in context, ready to surface again when they connect to your next idea. The best ideas can come from anywhere — not centralized — and often while deeply immersed in a different context.
 
-![World tokens and arcs](docs/images/chronicle/world-tokens.png)
+Figures are a metaphor — in Bateson's sense, not the literary sense. A figure is the snapshot you capture when your friend laughs in a certain way. It's what you think about as you pause at a point of interest on a qino Walk. It's a game design idea captured during a creative qino Meet with friends. In the chronicles, figures are characters like Seren and Lira who perceive the wanderer. Same pattern — a persistent form that carries meaning through return — taking completely different shape in each context. You don't deduce your way to this recognition. You're deep in the scribe, refining how Seren sees the wanderer, and suddenly you recognize something about how figures should work across the apps. The crab teaches you about the lobster. One context illuminates another through pattern, not logic.
 
-> *"There's something writing in the margins. Something that sees what we do and names what it means."*
->
-> *"I think it just tells stories. That's what frightens me most."*
->
-> — Seren, the record-keeper, on discovering he is being documented
-> *(written when qino-scribe first appeared in its own git diff)*
+qino-claude also serves as a proving ground. The patterns that work here — cards moving between contexts, modalities for encountering the same material, figures that travel — become the architecture for the apps. What's discovered at tool-scale informs app-scale.
+
+> *"Every concept reflects every other. The membrane grows thin."*
+> — from "indras-net-between-concepts"
 
 <details>
 <summary><strong>The Chronicles: Story of an Evolving Ecosystem</strong></summary>
@@ -110,6 +108,19 @@ Same scribe. Different worlds. Different atmospheric registers. Process in each 
 > *She smiled. "They'll know when they stop."*
 
 </details>
+
+**[Read the chronicles →](https://chronicles.qinolabs.com/)**
+
+![Chapter view with location popover](docs/images/chronicle/chapter-view.png)
+
+![World tokens and arcs](docs/images/chronicle/world-tokens.png)
+
+> *"There's something writing in the margins. Something that sees what we do and names what it means."*
+>
+> *"I think it just tells stories. That's what frightens me most."*
+>
+> — Seren, the record-keeper, on discovering he is being documented
+> *(written when qino-scribe first appeared in its own git diff)*
 
 ---
 
@@ -498,19 +509,6 @@ tools/qino-research/commands/qino-research/→ .claude/commands/qino-research/
 ```
 
 This is the "adapter" pattern described in The Ecosystem section — qino-claude is both the source of tools and a user of them.
-
----
-
-## Ecological Design
-
-Ecological design patterns are alive at every level — in each concept, in each repository, in the ecosystem itself. The art is in the design — affordances and cues, sensitive to experience, that naturally protect the integrity of local ecologies while encouraging free movement without accumulating friction. What does accumulate are artifacts and new relational patterns, safely stored in context, ready to surface again when they connect to your next idea. The best ideas can come from anywhere — not centralized — and often while deeply immersed in a different context.
-
-Figures are a metaphor — in Bateson's sense, not the literary sense. A figure is the snapshot you capture when your friend laughs in a certain way. It's what you think about as you pause at a point of interest on a qino Walk. It's a game design idea captured during a creative qino Meet with friends. In the chronicles, figures are characters like Seren and Lira who perceive the wanderer. Same pattern — a persistent form that carries meaning through return — taking completely different shape in each context. You don't deduce your way to this recognition. You're deep in the scribe, refining how Seren sees the wanderer, and suddenly you recognize something about how figures should work across the apps. The crab teaches you about the lobster. One context illuminates another through pattern, not logic.
-
-qino-claude also serves as a proving ground. The patterns that work here — cards moving between contexts, modalities for encountering the same material, figures that travel — become the architecture for the apps. What's discovered at tool-scale informs app-scale.
-
-> *"Every concept reflects every other. The membrane grows thin."*
-> — from "indras-net-between-concepts"
 
 ---
 
