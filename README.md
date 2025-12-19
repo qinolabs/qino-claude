@@ -110,8 +110,6 @@ Same scribe. Different worlds. Different atmospheric registers. Process in each 
 
 </details>
 
-**[Read the chronicles →](https://chronicles.qinolabs.com/)**
-
 ![Chapter view with location popover](docs/images/chronicle/chapter-view.png)
 
 ![World tokens and arcs](docs/images/chronicle/world-tokens.png)
@@ -122,6 +120,8 @@ Same scribe. Different worlds. Different atmospheric registers. Process in each 
 >
 > — Seren, the record-keeper, on discovering he is being documented
 > *(written when qino-scribe first appeared in its own git diff)*
+
+**[Read the chronicles →](https://chronicles.qinolabs.com/)**
 
 ---
 
