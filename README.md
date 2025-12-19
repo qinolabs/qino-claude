@@ -4,10 +4,6 @@
 
 Tools for working with ideas in [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
 
-Gregory and Nora Bateson's work — on communication, pattern, and how living systems learn — has shown me a way of thinking that made a profound difference in my life. These tools are an expression of that continuous process.
-
----
-
 <details>
 <summary><strong>Companions on the Path: The Pattern That Connects</strong></summary>
 
@@ -77,9 +73,9 @@ This is the inheritance: from young anthropologists watching rituals on the Sepi
 
 </details>
 
-Ideas need different conditions at different stages. Patterns that work at one level echo at others.
-
 ---
+
+Gregory and Nora Bateson's work — on communication, pattern, and how living systems learn — has shown me a way of thinking that made a profound difference in my life. These tools are an expression of that continuous process.
 
 <details>
 <summary><strong>Ecological Design: How Ideas Flow Between Spaces</strong></summary>
@@ -174,9 +170,9 @@ The `qino:` namespace is not a specific space — it's what you're already in wh
 
 </details>
 
-What happens in the ecosystem becomes story. Git changes, transformed into fantasy narrative.
-
 ---
+
+Ideas need different conditions at different stages. Patterns that work at one level echo at others.
 
 <details>
 <summary><strong>The Chronicles: Story of an Evolving Ecosystem</strong></summary>
@@ -204,6 +200,10 @@ Same scribe. Different worlds. Different atmospheric registers. Process in each 
 > *She smiled. "They'll know when they stop."*
 
 </details>
+
+---
+
+What happens in the ecosystem becomes story. Git changes, transformed into fantasy narrative.
 
 ![Chapter view with location popover](docs/images/chronicle/chapter-view.png)
 
