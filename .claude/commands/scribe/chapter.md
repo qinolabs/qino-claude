@@ -1,1 +1,0 @@
-../../../tools/qino-scribe/commands/scribe/chapter.md
