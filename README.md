@@ -7,9 +7,10 @@ Tools for working with ideas in [Claude Code](https://docs.anthropic.com/en/docs
 Gregory and Nora Bateson's work — on communication, pattern, and how living systems learn — has shown me a way of thinking that made a profound difference in my life. These tools are an expression of that continuous process.
 
 <details>
-<summary><strong>Companions on the Path: The Pattern That Connects</strong></summary>
+<summary><strong>Companions on the Path: The Pattern That Connects</strong> (click to expand)</summary>
 
 ![Gregory Bateson](docs/images/gregory-bateson.jpg)
+*Photo: [Barry Schwartz](https://barryschwartzphoto.com/)*
 
 ### The Young Anthropologists and the Question of Fascism
 
@@ -33,13 +34,16 @@ He asked: *What is the pattern that connects the crab to the lobster and the orc
 
 And he defined information not as data, but as *a difference which makes a difference*—something relational, something that only exists in the gap between contexts.
 
-These ideas hum through the tools in this repository:
+Patterns I keep noticing:
 - **Abductive process**: Meaning emerges by casting one context onto another, discovering what was latent
 - **Transcontextuality**: Nothing is "just that and nothing more"—every interaction speaks into multiple contexts simultaneously
 - **The alive thread**: Following what carries energy, what still wants to move
 - **Divergence and convergence**: Living systems need both surprise and coherence; neither alone suffices
 
 ### Nora Bateson: The Unseen Coalescence
+
+![Nora Bateson](docs/images/nora-bateson.jpg)
+*Photo: [NAV Sweden](https://navsweden.se/partner/nora-bateson/)*
 
 Nora Bateson, Gregory's daughter, has extended this work into new territory. She asks: if "insidious" describes how pathology creeps up through unseen combining processes—racism, addiction, corruption—what is the word for the opposite? For how vitality, healing, and creativity coalesce in ways we cannot see?
 
@@ -55,15 +59,15 @@ Her key insight: *One cannot explicitly change that which is implicit.* Direct c
 
 ### What This Means Here
 
-The tools here are experiments in aphanipoietic design—they tend explicit structures so implicit patterns can re-wild. They don't try to fix systems by adjusting parts. They create conditions where aliveness can emerge through dialogue, marking, and the right kind of constraints.
+Something in how the Batesons approach communication, pattern, ecology — it fits. The seeing and the describing keep informing each other. Their work keeps opening doors I didn't know were there.
 
-The Batesonian patterns are not applied as methodology but absorbed as sensibility:
+These tools weren't built from their concepts. They're what made sense to make. Sometimes I notice the patterns rhyme:
 - Questions reveal what you didn't know you were asking
 - The alive thread guides movement more reliably than plans
 - What's held quietly can resurface when needed
 - The human feels what's alive; the system holds what's set down
 
-This is the inheritance: from young anthropologists watching rituals on the Sepik, troubled by how communication can tear worlds apart—to the ongoing question of how living systems learn to change into something they don't yet know how to become.
+Gregory's and Nora's work offered ways of developing a sensitivity for how we participate in an ecology — contributing, not extracting.
 
 #### Sources
 
@@ -79,18 +83,18 @@ This is the inheritance: from young anthropologists watching rituals on the Sepi
 
 Ideas travel between contexts. What works here echoes there.
 
+These tools are part of a larger ecosystem that includes apps — different modalities that meet you where you are as you go about your day. Each offers a way to learn from anything and contribute to your ecology of ideas in the moment spontaneous insight occurs. Live a life you enjoy — find your natural pace, stay curious, keep learning. Don't let your head get in the way of compassion and creativity. Spend more time with what matters to you.
 
 <details>
-<summary><strong>An Ecology of Mind</strong></summary>
+<summary><strong>An Ecology of Mind</strong> (click to expand)</summary>
 
 Ecological design patterns are alive at every level — in each concept, in each repository, in the ecosystem itself. The art is in the design — affordances and cues, sensitive to experience, that naturally protect the integrity of local ecologies while encouraging free movement without accumulating friction. What does accumulate are learnings and notes, either woven into exising concepts, or safely kept, ready to reveal itself fully through the next idea that connects. The best ideas can come from anywhere — not centralized — and often while deeply immersed in a different context.
 
 Figures in qino are a metaphor — in Bateson's sense, not the literary sense. A figure is the snapshot you capture when your friend laughs in a certain way. It's what you think about as you pause at a point of interest on a qino Walk. It's a game design idea captured during a creative qino Meet with friends. In the chronicles, figures are characters like Seren and Lira who perceive the wanderer. Same pattern — a persistent form that carries meaning through return — taking completely different shape in each context. You don't deduce your way to this recognition. You're deep in the scribe, refining how Seren sees the wanderer, and suddenly you recognize something about how figures should work across the apps. The crab teaches you about the lobster. One context illuminates another through pattern, not logic.
 
-qino-claude also serves as a proving ground. The patterns that work here — cards moving between contexts, modalities for encountering the same material, figures that travel — become the architecture for the apps. What's discovered at tool-scale informs app-scale.
+The tools are also the process for developing the apps — and in turn, the tools and apps keep informing each other. A co-evolution. They share design patterns: affordances that guide without forcing, structures that adapt to context while staying recognizable.
 
-> *"Every concept reflects every other. The membrane grows thin."*
-> — from "indras-net-between-concepts"
+> *"From wherever you approach the system, every experience contains all the others. Communication comes effortlessly. The membrane grows thin — without dissolving into sameness."*
 
 ### The Spaces
 
@@ -177,7 +181,7 @@ The `qino:` namespace is not a specific space — it's what you're already in wh
 
 What happens in the ecosystem becomes story. Git changes, transformed into fantasy narrative.
 <details>
-<summary><strong>The Chronicles: Story of an Evolving Ecosystem</strong></summary>
+<summary><strong>The Chronicles: Story of an Evolving Ecosystem</strong> (click to expand)</summary>
 
 Each repository in the qino ecosystem tells its own story.
 
@@ -416,25 +420,37 @@ Discovering the difference that makes a difference — `qino:compare` and `qino:
 
 You have two examples from different sources — different chronicles, different scribe versions, different approaches. Compare helps you find what makes them land differently.
 
-The framework offers lenses and a sequence. "What stays with you?" is a lens. So is "where did your attention drift?" and "which feels more alive?" Each lens surfaces something. The structure disappears into conversation.
+**1 — Surface initial impressions.** Lenses like "what stays with you?" and "where did your attention drift?" Each surfaces something. The structure disappears into conversation.
 
-**The core move is the parallel mirror.** You share what you liked about one example — say, how observation happens without comment. Based on that, the system finds something in the *other* source that looks like it should fit the same pattern. Same structural shape. It presents both and asks: *how do these land differently?*
+**2 — Find the parallel.** You share what you liked about one example. Based on that, the system finds something in the *other* source with the same structural shape. It presents both:
 
-Here's where it gets interesting. The parallel example *looks* like it should work the same way — but if it doesn't, that reveals something deeper. Not just a difference between two passages, but a difference between the two sources they came from. The chronicles have different underlying logics. The parallel that "should" work but doesn't is where you discover that.
+```
+you liked
+  "The river carried news of her before she arrived."
+  Observation without comment. World notices wanderer.
 
-**Responsive mirroring** sharpens your language along the way. You say "A feels personal, B feels like adventure but no pull" — the tool reflects back: "A creates *identification*. B starts as *adventure* but the engagement doesn't convert into investment." Now you have words to build on.
+parallel from B
+  "Seren watched from the doorway, cataloguing."
+  Same structure — external observer, no commentary.
 
-**The process adapts.** If you're analytical, it pulls you back to felt sense: "Before we analyze — which one did you *enjoy* more?" If you're stuck, it offers a dimension: "Let's look at stakes — what could go wrong in each?" If you can't decide, that's data: "What would it take to make one clearly better?"
+─────
+
+How do these land differently?
+```
+
+**3 — Discover what the difference reveals.** The parallel *looks* like it should work the same way — but if it doesn't, that reveals something deeper. Not just a difference between two passages, but a difference between the two sources they came from. The chronicles have different underlying logics. The parallel that "should" work but doesn't is where you discover that.
+
+**4 — Sharpen language through responsive mirroring.** You say "A feels personal, B feels like adventure but no pull." The tool reflects back: "A creates *identification*. B starts as *adventure* but the engagement doesn't convert into investment." Now you have words to build on.
 
 By the end, you've discovered something you couldn't have named at the start.
 
-### Attune: Five Phases to Craft
+### Attune: From Hunch to Craft
 
-You start with a hunch — "otherworldliness" or "tension" or "aliveness." You know it when you feel it, but you can't teach it. The calibration makes implicit knowledge explicit.
+You start with a hunch — an aesthetic quality like "otherworldliness" or "tension" or "aliveness." You know it when you feel it, but you can't teach it. This tool came from that kind of exploration. The calibration tends conditions where implicit knowledge can surface.
 
-**Phase 1 — Find candidates.** Search your existing work for 8-15 potential examples. Cast a wide net.
+**1 — Find candidates.** Search your existing work for 8-15 potential examples. Cast a wide net.
 
-**Phase 2 — Calibrate through feedback.** Go through each candidate one by one. Does this qualify? What makes it work or not? Distinctions emerge:
+**2 — Calibrate through feedback.** Go through each candidate one by one. Does this qualify? What makes it work or not? Distinctions emerge:
 
 ```
 | ✓ Works                            | ✗ Doesn't work                    |
@@ -444,20 +460,20 @@ You start with a hunch — "otherworldliness" or "tension" or "aliveness." You k
 | Points to *elsewhere*              | Ties to local mystery             |
 ```
 
-**Phase 3 — Build inspiration index.** You now know what *doesn't* work. The failures from Phase 2 point toward what's missing. So you search for language that might address those specific gaps — literary terms (numinous, sfumato, negative space), character archetypes who embody the quality (what makes Tom Bombadil work?), techniques from other domains (visual art, music, sculpture). Each source gets documented: what it is, why it's relevant to this quality, how it might guide execution. The index becomes a toolkit for transformation.
+**3 — Build inspiration index.** You now know what *doesn't* work. The failures point toward what's missing. So you search for language that might address those gaps — literary terms (numinous, sfumato, negative space), character archetypes who embody the quality (what makes Tom Bombadil work?), techniques from other domains (visual art, music, sculpture). Each source gets documented: what it is, why it's relevant, how it might guide execution. The index becomes a toolkit for transformation.
 
-**Phase 4 — Transform iteratively.** Take a failed example. Choose a source from the index that seems most likely to address *that specific failure*. Transform. Present for feedback.
+**4 — Transform iteratively.** Take a failed example. Choose a source from the index that seems most likely to address *that specific failure*. Transform. Present for feedback.
 
-Here's where it gets interesting: when a fix fails, your feedback reveals what you actually want. "Sounds like ignoring, not mystery" — that rejection teaches you something about your own aesthetic. You try a different source, now informed by what you just learned. The iteration trains your perception. By the time a transformation works, you understand *why* it works — not just that it does.
+When a fix fails, your feedback reveals what you actually want. "Sounds like ignoring, not mystery" — that rejection teaches you something about your own aesthetic. You try a different source, now informed by what you just learned. The iteration trains your perception. By the time a transformation works, you understand *why* it works — not just that it does.
 
 Some examples won't transform. That's data too. Note what makes them intractable.
 
-**Phase 5 — Extract principles.** Synthesize what worked into techniques and anti-patterns. The accumulated feedback — what landed, what didn't, what you kept reaching for — becomes teachable craft.
+**5 — Formulate guidance.** The distinctions you discovered — what landed, what didn't, what you kept reaching for — become ways of staying sensitive to the difference.
 
 ```
 calibrations/otherworldliness/
 ├── research.md          # what qualifies, distinctions, inspiration index
-├── transformations.md   # every attempt, what worked, extracted principles
+├── transformations.md   # every attempt, what worked, guidance that emerged
 └── examples/            # the corpus tested against
 ```
 
