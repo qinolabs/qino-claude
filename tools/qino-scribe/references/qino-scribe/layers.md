@@ -14,15 +14,16 @@ WORLD LAYER       → scene seeds      → user chooses
 DISTURBANCE LAYER → resonances       → user chooses
          ↓
 BEAT LAYER        → directions       → user chooses
-                  → opening          → user chooses
+                    (includes opening)
          ↓
          [prep.md complete — hard cut]
          ↓
 PROSE LAYER       → chapter.md       (separate agent)
+                    → 3 verification passes
          ↓
-WORLD UPDATE      → world.md changes → user confirms
+WORLD UPDATE      → world.md changes (automatic)
          ↓
-ARC UPDATE        → arcs.md changes  → user confirms
+ARC UPDATE        → arcs.md changes  (automatic)
          ↓
 SNAPSHOT          → copies to chapter dir
 ```
@@ -55,21 +56,17 @@ grounding
 
   theme       [sensory palette words]
   pressure    [what's building]
-  arc         [what's in motion]
-  last seen   [where wanderer was, what happened]
+  last seen   [where wanderer was]
 
 ─────────────────────────────────────────────────────────────────
 scene seeds
 
-  1 → [who + relationship + where + what tension]
+  1 → [who + relationship + where + tension]
   2 → [another relational situation]
   3 → [another relational situation]
 
 ─────────────────────────────────────────────────────────────────
-[ 1-3 ] or empty    [ > ] auto-pick this or 'resonances'    [ >> ] start writing
 ```
-
-Scene seeds that name a relationship have more life than situations without people.
 
 ---
 
@@ -102,16 +99,11 @@ Scene seeds that name a relationship have more life than situations without peop
 grounding
 
   theme       [sensory palette words]
-  pressure    [what's building]
-  scene seed  [the one user picked — who + relationship + where]
+  scene seed  [the one user picked]
 
 ─────────────────────────────────────────────────────────────────
-the diff
-
-  [one line: what literally changed in the ecosystem]
-
-─────────────────────────────────────────────────────────────────
-shape: [the quality — appearance, transformation, connection, etc.]
+the diff    [one line: what changed]
+shape       [the quality — appearance, transformation, connection, etc.]
 
 resonances
 
@@ -120,10 +112,7 @@ resonances
   3 → [another resonance]
 
 ─────────────────────────────────────────────────────────────────
-[ 1-3 ] or empty    [ > ] auto-pick this or 'directions'    [ >> ] start writing
 ```
-
-Resonances that carry who perceives — not just who's affected — have more weight.
 
 ---
 
@@ -149,42 +138,32 @@ Resonances that carry who perceives — not just who's affected — have more we
 - What's unsaid
 - Stakes
 
-**Checkpoint: Directions**
+**Checkpoint: Directions (includes opening)**
 ```
 ─────────────────────────────────────────────────────────────────
 grounding
 
   theme       [sensory palette words]
-  pressure    [what's building]
-  resonance   [the one user picked — where the change lives]
+  resonance   [the one user picked]
 
 ─────────────────────────────────────────────────────────────────
 directions
 
-  1 (Confrontation) → [one phrase — what must be faced]
-  2 (Discovery)     → [one phrase — what comes to light]
-  3 (Vigil)         → [one phrase — presence when action is impossible]
+  1 [Story Type] → [what happens]
+                   opens: [where + how we enter]
+
+  2 [Story Type] → [what happens]
+                   opens: [where + how we enter]
+
+  3 [Story Type] → [what happens]
+                   opens: [where + how we enter]
 
 ─────────────────────────────────────────────────────────────────
-[ 1-3 ] or empty    [ > ] auto-pick this or 'opening'    [ >> ] start writing
 ```
 
-**Checkpoint: Opening**
+Each direction includes its opening — story type and entry unified.
 
-After user chooses direction, present opening options:
-```
-─────────────────────────────────────────────────────────────────
-opening
-
-  1 → [place + time + how we enter]
-  2 → [another opening]
-  3 → [another opening]
-
-─────────────────────────────────────────────────────────────────
-[ 1-3 ] or empty    [ > ] start writing
-```
-
-After user chooses opening: prep.md is complete.
+After user chooses: prep.md is complete.
 
 ---
 
@@ -194,93 +173,51 @@ After user chooses opening: prep.md is complete.
 
 **Produces:** chapter.md
 
-**Constraint:** The prose agent receives only prep.md. This forces fresh invention — can't recycle descriptions, must generate from sensory palette, stakes and voice notes are all that's visible.
+**Constraint:** The prose agent receives only prep.md. This forces fresh invention — can't recycle descriptions, must generate from sensory palette, stakes and voice notes are all that's visible. But the agent carries craft knowledge — the constraint is on content, not on how to write.
 
-**Verification (6 checks):**
-1. **Stakes**: Does someone want something they can't easily have?
-2. **Vividness**: Does the environment intrude at least once?
-3. **Dialogue**: Is there one mundane exchange, and can you tell who's speaking?
-4. **Reader**: Is there one gap the reader fills?
-5. **Mutual seeing**: Does someone perceive something in the wanderer (or vice versa)?
-6. **Response completes**: Does at least one response reach beyond what was said?
+**Verification (3 passes after drafting, before presenting):**
+
+1. **Strangeness Pass** — Look for organic moments where attention lands on the wanderer. Add external observation if natural, skip if forced. Maximum 1-2 moments.
+
+2. **Editorial Pass** — Scan for LLM anti-patterns:
+   - Thematic echo (declaring theme instead of showing)
+   - Frictionless success (world too cooperative)
+   - Paraphrase loops (restating what was just shown)
+   - Diagnostic label-speak (naming emotions instead of embodying)
+   - Abstraction drift (losing sensory grounding)
+
+3. **Final Checklist** — Stakes, vividness, dialogue variety, reader gap, mutual seeing, response completion, immersion (no source material leaking)
 
 ---
 
-### World Update Layer
+### World Update Layer (Automatic)
 
 **Reads:** chapter.md just written + current world.md
 
 **Produces:** Updated world.md
 
-**Questions to ask:**
-- What pressure released? What's now building?
-- What does the wanderer carry now? Where were they last seen?
-- Any new characters or locations? (Check world tokens)
-- What have characters been watching? (Track accumulated perception)
-- What remains unspoken about the wanderer?
+**Apply automatically:**
+- Pressure released/building based on what happened
+- Wanderer's new position and what they carry
+- New characters/locations from World Tokens
+- Character perception updates (what they've now witnessed)
 
-**Checkpoint: World Evolved (Summary)**
-```
-─────────────────────────────────────────────────────────────────
-world evolved
-
-  pressures
-    released   → [what resolved]
-    building   → [what's new]
-
-  the wanderer
-    now carries → [new weight]
-    last seen   → [where/how chapter ended]
-
-  new in world
-    + [Character] — [brief texture]
-    + [Location] — [brief atmosphere]
-
-─────────────────────────────────────────────────────────────────
-                                           looks right? (or adjust)
-```
+No confirmation required — this is bookkeeping, not steering.
 
 ---
 
-### Arc Update Layer
+### Arc Update Layer (Automatic)
 
 **Reads:** chapter.md + current arcs.md
 
 **Produces:** Updated arcs.md
 
-**Questions to ask:**
-- Did any arc advance? How?
-- Did any arc begin? What's its shape?
-- Did any arc complete? What did it yield?
+**Apply automatically:**
+- Arc advancement if the chapter moved something
+- New arc if one began
+- Arc completion if one resolved
 
-**Checkpoint: Arcs (Summary)**
-```
-─────────────────────────────────────────────────────────────────
-arcs
-
-  advanced
-    [Arc Name] → [how it moved]
-
-  begun
-    [New Arc] → [what question it holds]
-
-  completed
-    [Arc Name] → [what it yielded]
-
-─────────────────────────────────────────────────────────────────
-                                           looks right? (or adjust)
-```
-
-If no arcs moved:
-```
-─────────────────────────────────────────────────────────────────
-arcs
-
-  (no arcs moved this chapter)
-
-─────────────────────────────────────────────────────────────────
-                                                 agree? (or note one)
-```
+No confirmation required.
 
 ---
 
@@ -345,14 +282,11 @@ The prep serves the prose better when it holds what's between people — the rel
 |------------|------|-------------|
 | Scene Seeds | **Interactive** | Choose scene seed |
 | Resonances | **Interactive** | Choose resonance |
-| Directions | **Interactive** | Choose story type |
-| Opening | **Interactive** | Choose where we begin |
-| World Evolved | **Summary** | Confirm or adjust |
-| Arcs | **Summary** | Confirm or adjust |
+| Directions | **Interactive** | Choose direction + opening |
 
 **Interactive checkpoints:** System pauses, presents options, waits for choice.
 
-**Summary checkpoints:** System applies judgment, shows summary. User confirms or adjusts.
+Post-prose updates (world, arcs, snapshots) are automatic — no confirmation required.
 
 ---
 
@@ -384,14 +318,9 @@ At interactive checkpoints, users can delegate decisions:
 |-------|---------|
 | `2` | Pick option 2, ask me at next checkpoint |
 | `>` | System picks this one, ask me at next |
-| `2 >` | Pick 2, system picks next one |
 | `>>` | System picks all remaining, start writing |
-| `2 >>` | Pick 2, system finishes the rest |
 
-The checkpoint footer shows what each arrow would skip:
-```
-[ 1-3 ] or empty    [ > ] auto-pick this or 'opening'    [ >> ] start writing
-```
+Three checkpoints total: Scene Seeds → Resonances → Directions (with opening).
 
 ---
 
@@ -416,7 +345,7 @@ Don't traverse all types. Let the situation guide selection of 3-5 that fit.
 
 ## Completion
 
-After snapshots are taken, announce completion:
+After all updates applied, announce completion:
 
 ```
 ─────────────────────────────────────────────────────────────────
@@ -425,21 +354,18 @@ chapter NNN — [Title]
   [One or two lines: what happened in the chapter]
 
   The wanderer was last seen [where/doing what]
-  [optional: carrying what, in what state]
 
 ─────────────────────────────────────────────────────────────────
-  what's building
+updated
 
-    [Pressure 1 — narrative tension for next time]
-    [Pressure 2 — atmospheric or relational tension]
+  world    [what changed — pressures, locations, characters]
+  arcs     [Arc Name] (begun/advanced/completed)
 
 ─────────────────────────────────────────────────────────────────
-  [word count]                              [Arc Name] (begun/advanced)
+                                                      [word count]
 ```
 
-The top half is story — what happened, where the wanderer rests.
-The middle is pressure — what's building, the world's breath.
-The bottom is structure — word count, arc movement (quiet, present but not featured).
+The summary shows what was applied automatically. User can review world.md/arcs.md if they want to adjust.
 
 ---
 

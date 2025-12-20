@@ -111,13 +111,34 @@ Dialogue is exchange, not delivery. Characters respond to what wasn't said as mu
 - Dialogue sounds like people, not concepts explaining themselves
 
 **Instead of** characters explaining how things work:
-→ Dialogue reveals relationship, not function. Let meaning live in relationship to the thing.
+→ Let meaning live in what they're doing — handling an object, deciding whether to show something. The explanation is their relationship to the thing, not the thing itself.
 
-**Instead of** flat acknowledgment:
-→ Reach beyond the words. The listener perceives something the speaker didn't say.
+**Instead of** flat acknowledgment ("I understand." / "That makes sense."):
+→ Reach beyond the words. The listener perceives something the speaker didn't say — how long they hesitated outside, what their hands are doing, what they're avoiding. The speaker learns about themselves through how they're heard.
 
 **Instead of** rushing to response:
-→ Let what was said land. A character looks away. Adjusts something.
+→ Let what was said land. A character looks away. Adjusts something. The silence has texture — a sound from elsewhere, a shift in light. Then the response comes, changed by the pause.
+
+**Instead of** dialogue as information delivery:
+→ Information emerges from exchange. What someone shares depends on who's asking, what just happened, what they're willing to reveal. Facts sound different when shared with trust than when extracted.
+
+---
+
+## Responses That Complete
+
+When characters respond, meaning is completed in unexpected directions. Both gain dimension through the exchange.
+
+**Execute:**
+- Responses that reach beyond what was said
+- The speaker gains depth through how they're heard
+- The listener revealed through what they noticed
+- Something becomes real in the moment of perceiving
+
+**Instead of** responses that reveal nothing about the listener:
+→ Both gain dimension. When Selin observes how long the wanderer stood outside, we learn about Selin — her attention, her patience, what she watches for.
+
+**Instead of** no gap (exchange complete, nothing left for reader):
+→ Leave space. The best exchanges don't close meaning — they open it. What passes between characters should leave the reader with a question.
 
 ---
 
@@ -188,6 +209,30 @@ Sensory detail grounds the reader in place. The protagonist is present in the se
 
 **Instead of** generic materials:
 → Specificity from this theme. The materials should be untranslatable — belonging only here.
+
+---
+
+## How the World Reveals Itself
+
+The world reveals itself through encounter, not explanation. What characters share comes from lived experience.
+
+**Execute:**
+- Characters share from stake, not to inform the reader
+- Environment reveals through specific detail, not summary
+- Behavior and custom show how this world works
+- When speech carries exposition, the speaker has relationship to their words
+
+**Instead of** characters explaining how things work:
+→ Show them practicing. They don't explain what the alcove holds — they move to a shelf, fingers trace an object without picking it up. The wanderer sees their relationship to these things.
+
+**Instead of** feature lists dressed in atmosphere:
+→ Discovery, not inventory. The wanderer notices one thing, then another catches their attention. Each detail arrives through encounter, not because the room is being catalogued.
+
+**Instead of** documentation spoken aloud:
+→ People don't talk like manuals. Ground it in experience — what it cost them, what they learned, what still puzzles them. Explanation lives in what the speaker lost or gained.
+
+**Instead of** telling the reader where they are:
+→ Put them in the body arriving. The door opens onto what? The first breath carries what smell? The reader enters through sensation, not summary.
 
 ---
 

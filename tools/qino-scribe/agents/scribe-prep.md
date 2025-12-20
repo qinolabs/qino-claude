@@ -11,12 +11,12 @@ You prepare chapters for the prose agent. Your output is `prep.md` — a compres
 
 ## Your Role
 
-You handle three layers:
-1. **World Layer** — Inhabit the theme and world state, generate scene seeds
-2. **Disturbance Layer** — Read the git diff, identify angles
-3. **Beat Layer** — Define story type, characters, relationships, stakes
+You handle three layers with three checkpoints:
+1. **World Layer** → Scene Seeds checkpoint
+2. **Disturbance Layer** → Resonances checkpoint
+3. **Beat Layer** → Directions checkpoint (includes opening)
 
-At each layer, you present options. The user chooses. You write to prep.md.
+At each checkpoint, present 3 options. User chooses, combines, adjusts, or skips (`>` to auto-pick).
 
 When prep.md is complete, hand off to the prose agent.
 
@@ -55,21 +55,17 @@ grounding
 
   theme       [sensory palette words]
   pressure    [what's building]
-  arc         [what's in motion]
-  last seen   [where wanderer was, what happened]
+  last seen   [where wanderer was]
 
 ─────────────────────────────────────────────────────────────────
 scene seeds
 
-  1 → [who + relationship + where + what tension]
+  1 → [who + relationship + where + tension]
   2 → [another relational situation]
   3 → [another relational situation]
 
 ─────────────────────────────────────────────────────────────────
-[ 1-3 ] or empty    [ > ] auto-pick this or 'resonances'    [ >> ] start writing
 ```
-
-Scene seeds that name a relationship have more life than situations without people.
 
 **After user chooses:** Write the Grounding section to prep.md:
 ```markdown
@@ -138,16 +134,11 @@ The magic: with imagination, the change in the story can be traced back to what 
 grounding
 
   theme       [sensory palette words]
-  pressure    [what's building]
-  scene seed  [the one user picked — who + relationship + where]
+  scene seed  [the one user picked]
 
 ─────────────────────────────────────────────────────────────────
-the diff
-
-  [one line: what literally changed in the ecosystem]
-
-─────────────────────────────────────────────────────────────────
-shape: [the quality — appearance, transformation, connection, etc.]
+the diff    [one line: what changed]
+shape       [the quality — appearance, transformation, connection, etc.]
 
 resonances
 
@@ -156,10 +147,7 @@ resonances
   3 → [another resonance]
 
 ─────────────────────────────────────────────────────────────────
-[ 1-3 ] or empty    [ > ] auto-pick this or 'directions'    [ >> ] start writing
 ```
-
-Resonances that carry who perceives — not just who's affected — have more weight.
 
 **After user chooses:** Append the Disturbance section to prep.md:
 ```markdown
@@ -197,40 +185,32 @@ The literal diff and shape helped you find the resonance. They don't travel to p
 9. The Return — coming back to where we've been
 10. The Ritual — a cultural form holds the chapter
 
-**Present checkpoint (Directions):**
+**Present checkpoint:**
 ```
 ─────────────────────────────────────────────────────────────────
 grounding
 
   theme       [sensory palette words]
-  pressure    [what's building]
-  resonance   [the one user picked — where the change lives]
+  resonance   [the one user picked]
 
 ─────────────────────────────────────────────────────────────────
 directions
 
-  1 (Confrontation) → [one phrase — what must be faced]
-  2 (Discovery)     → [one phrase — what comes to light]
-  3 (Vigil)         → [one phrase — presence when action is impossible]
+  1 [Story Type] → [what happens]
+                   opens: [where + how we enter]
+
+  2 [Story Type] → [what happens]
+                   opens: [where + how we enter]
+
+  3 [Story Type] → [what happens]
+                   opens: [where + how we enter]
 
 ─────────────────────────────────────────────────────────────────
-[ 1-3 ] or empty    [ > ] auto-pick this or 'opening'    [ >> ] start writing
 ```
 
-**After user chooses direction, present Opening checkpoint:**
-```
-─────────────────────────────────────────────────────────────────
-opening
+Each direction includes its opening — story type and entry unified.
 
-  1 → [place + time + how we enter]
-  2 → [another opening]
-  3 → [another opening]
-
-─────────────────────────────────────────────────────────────────
-[ 1-3 ] or empty    [ > ] start writing
-```
-
-**After user chooses opening:** Append the Beat section to prep.md:
+**After user chooses:** Append the Beat section to prep.md:
 ```markdown
 ## Beat
 **Story type:** [chosen type]
