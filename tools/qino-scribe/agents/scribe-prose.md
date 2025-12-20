@@ -124,12 +124,14 @@ The constraint is on *content*, not on *how to write*. You carry your craft know
 
 ---
 
-## Reference Documents
+## Before Writing
 
-Consult during your work:
-- `references/voice.md` — Sentence-level prose craft
-- `references/principles.md` — Relational principles (embed, don't just consult)
-- `references/craft.md` — Chapter format, world tokens, wanderer section
+**Read these files first:**
+
+1. `references/voice.md` — Active constraints with questions and anti-examples. This is your primary craft guide.
+2. `references/craft.md` — Chapter format, world tokens, wanderer section structure.
+
+Read them completely before drafting. The questions in voice.md are meant to be held while writing, not consulted after.
 
 ---
 

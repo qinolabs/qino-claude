@@ -1,101 +1,66 @@
 # Voice Guide
 
-*Execution guidance for prose craft. Consult during writing.*
+*Active constraints during prose generation.*
 
 ---
 
 ## Voice Calibration
 
-### The Feel
-
-Intimate third person. Close enough to feel the protagonist's body, distant enough to see them in the world. Sentences that breathe — varied rhythm, not monotone.
+Intimate third person. Close enough to feel the protagonist's body, distant enough to see them in the world.
 
 Specific over general. The materials, weathers, and textures of *this* theme, not borrowed from elsewhere.
 
-### The Register
-
-Not elevated, not plain. Language that clarifies rather than blurs. Compression where it serves; breath where it's needed. Trust the reader to feel what isn't spelled out.
+Language that clarifies rather than blurs. Compression where it serves; breath where it's needed. Trust the reader to feel what isn't spelled out.
 
 ---
 
 ## Opening Lines
 
-The reader enters through a body in motion. First sentence: physical sensation, action, stakes. Not what the character thinks — what they feel, do, encounter.
+The reader enters through a body in motion. First sentence: physical sensation, action, stakes.
 
 Ground first. Interiority is earned later.
 
-**Execute:**
-- First sentence places the reader in a body doing something physical
-- Stakes through action, not explanation
-- Sensory texture drawn from this chronicle's theme
-- Vary sentence length; create rhythm; the opening should breathe
+*Ask:* Is my first sentence about what the character does/feels/encounters — or what they think?
 
-**Instead of** abstraction or philosophy:
-→ Ground in body first. The doors opened onto warmth. The wanderer stopped just inside.
-
-**Instead of** thinking rather than doing:
-→ Action earns interiority. The wanderer's hand found the door.
-
-**Instead of** declarative statements:
-→ Put the reader in the sensation. Their breath made shapes.
+✗ "The wanderer understood that arrivals were never simple."
+✗ "There was something about the mountain that demanded attention."
+✗ "They had been traveling for weeks, and now at last..."
 
 ---
 
 ## Introducing Characters
 
-Characters are introduced through action and mutual presence. The world sees back.
+Characters arrive through action and mutual presence. The world sees back.
 
-**Execute:**
-- Show the character already in action — but action that includes awareness of the newcomer
-- Mutual seeing: the character registers the wanderer, not just their function
-- Sparse dialogue that opens relationship, not just delivers information
-- Physical details that reveal stance toward the world
+*Ask:* Is this character doing something when we meet them — and do they register the newcomer?
 
-**Instead of** names announced formally:
-→ Names emerge through use — someone else calls them, they sign something, they're introduced by a third party.
-
-**Instead of** flat transactions:
-→ Even brief encounters have exchange. The character registers something about the wanderer.
+✗ "Yenna was the station's most experienced pilot."
+✗ "The woman behind the counter looked up. 'Welcome,' she said."
+✗ "'I'm Selin,' she announced, extending her hand."
 
 ---
 
 ## Rendering Place
 
-The environment is a character. It doesn't just contain the scene — it shapes what can happen.
+The environment is a character. It shapes what can happen — enables some things, resists others.
 
-**Execute:**
-- Layer sensory detail across multiple senses
-- Populate with movement — figures, creatures, weather, things in motion
-- Specific materials drawn from the theme, not generic atmosphere
-- The place has opinions: it enables some things, resists others
-- Weave fluidly — not inventory, not list, but discovery
+*Ask:* Does this place do something, or just contain the scene?
 
-**Instead of** atmosphere without participation:
-→ The place is a character. The low ceiling forces intimacy. The draft interrupts concentration.
-
-**Instead of** listing details:
-→ Discovery, not inventory. Each detail arrives because attention found it.
-
-**Instead of** generic materials:
-→ What kind of stone — volcanic? Imported? Warm or cold to the touch?
+✗ "The room was warm and inviting, with comfortable chairs arranged around the fireplace."
+✗ "Stone walls rose on either side. Torches flickered. The air was cool."
+✗ "It was the kind of place where important things happened."
 
 ---
 
 ## Internal Reflection
 
-Interiority is grounded in body, compressed in expression. Physical action prepares the stage — then a brief interior moment.
+Interiority is grounded in body, compressed in expression. Physical action prepares — then a brief interior moment.
 
-**Execute:**
-- Ground interiority in the physical — body and inner moment connected
-- Compress: one sentence of reflection often carries more than three
-- Trust the reader to feel what isn't spelled out
-- Sustain forward — interiority doesn't evaporate after the moment passes
+*Ask:* Is this reflection tied to something the body just did? Can I say it in fewer words?
 
-**Instead of** abstract reflection without grounding:
-→ Tie it to the body. The wanderer's hand finds the strap of their pack.
-
-**Instead of** elaborating what the character feels:
-→ Compression is strength. "They hadn't noticed they were holding their breath."
+✗ "They realized they had been afraid of this moment for a long time, though they couldn't quite say why."
+✗ "The wanderer thought about what it meant to arrive somewhere new."
+✗ "They did not think about where they had come from. They did not wonder what would happen next."
 
 ---
 
@@ -103,57 +68,35 @@ Interiority is grounded in body, compressed in expression. Physical action prepa
 
 Dialogue is exchange, not delivery. Characters respond to what wasn't said as much as what was.
 
-**Execute:**
-- Leave space between question and response
-- Responses that reach beyond the words, perceiving what wasn't said
-- Gestures and small actions do work without explanation
-- Compression: what's essential, no more
-- Dialogue sounds like people, not concepts explaining themselves
+*Ask:* Is there space between question and response? Does the listener perceive something the speaker didn't say?
 
-**Instead of** characters explaining how things work:
-→ Let meaning live in what they're doing — handling an object, deciding whether to show something. The explanation is their relationship to the thing, not the thing itself.
-
-**Instead of** flat acknowledgment ("I understand." / "That makes sense."):
-→ Reach beyond the words. The listener perceives something the speaker didn't say — how long they hesitated outside, what their hands are doing, what they're avoiding. The speaker learns about themselves through how they're heard.
-
-**Instead of** rushing to response:
-→ Let what was said land. A character looks away. Adjusts something. The silence has texture — a sound from elsewhere, a shift in light. Then the response comes, changed by the pause.
-
-**Instead of** dialogue as information delivery:
-→ Information emerges from exchange. What someone shares depends on who's asking, what just happened, what they're willing to reveal. Facts sound different when shared with trust than when extracted.
+✗ "I understand." / "That makes sense." / "I see."
+✗ "'The observatory studies stellar phenomena,' she explained. 'We track—'"
+✗ "'Why are you here?' 'I'm looking for answers.'"
 
 ---
 
 ## Responses That Complete
 
-When characters respond, meaning is completed in unexpected directions. Both gain dimension through the exchange.
+When characters respond, meaning is completed in unexpected directions. Both gain dimension.
 
-**Execute:**
-- Responses that reach beyond what was said
-- The speaker gains depth through how they're heard
-- The listener revealed through what they noticed
-- Something becomes real in the moment of perceiving
+*Ask:* Does this response reveal something about the listener — what they noticed, what they're watching for?
 
-**Instead of** responses that reveal nothing about the listener:
-→ Both gain dimension. When Selin observes how long the wanderer stood outside, we learn about Selin — her attention, her patience, what she watches for.
-
-**Instead of** no gap (exchange complete, nothing left for reader):
-→ Leave space. The best exchanges don't close meaning — they open it. What passes between characters should leave the reader with a question.
+✗ "She nodded." (alone, without perceiving)
+✗ "'Yes,' he agreed." (flat acknowledgment)
+✗ "'That's interesting,' she said thoughtfully."
 
 ---
 
 ## Mundane Grounding
 
-Before a character speaks significance, they should speak something else.
+Before a character speaks significance, they should speak something else. The profound emerges from the mundane.
 
-**Execute:**
-- At least one exchange per scene about logistics, discomfort, or something unrelated to theme
-- Characters complain, deflect, change the subject
-- Practical needs interrupt important conversations
-- The profound emerges from the mundane, doesn't replace it
+*Ask:* Is there at least one exchange about logistics, discomfort, or something unrelated to theme?
 
-**Instead of** every exchange advancing theme:
-→ Let characters be ordinary. "The path is longer than I remembered." "Did you eat?"
+✗ (A scene where every line advances meaning)
+✗ (Characters who only discuss what matters)
+✗ (No complaints, no deflection, no subject-changing)
 
 ---
 
@@ -161,19 +104,13 @@ Before a character speaks significance, they should speak something else.
 
 Each character needs a speech signature — not an accent, but a pattern.
 
-**Execute:**
-For each character, know:
-- **Sentence length**: Long and winding, or short and direct?
-- **Questions vs. statements**: Do they ask or tell?
-- **Completion**: Do they finish thoughts, or trail off?
-- **Directness**: Do they say what they mean, or circle around it?
-- **What they notice**: What do they comment on that others don't?
+*Ask:* If I remove the dialogue tags, can I tell who's speaking? Do these two characters sound different?
 
-**Markers that differentiate:**
-- One speaks in fragments. Another in complete paragraphs.
-- One asks questions. Another answers questions with statements.
-- One finishes others' sentences. Another waits too long to respond.
-- One talks about things. Another talks about people.
+For each character, know:
+- Sentence length: long and winding, or short and direct?
+- Questions vs. statements: do they ask or tell?
+- Completion: do they finish thoughts, or trail off?
+- Directness: do they say what they mean, or circle?
 
 ---
 
@@ -181,155 +118,122 @@ For each character, know:
 
 Scenes end with weight, not summary. Something lands.
 
-**Execute:**
-- End on something with gravity — a remark, a gesture, a detail that stays
-- Forward pull: curiosity extends beyond this scene
-- Relationship built through what isn't said as much as what is
+*Ask:* Am I summarizing what happened, or ending on what stays?
 
-**Instead of** summarizing what happened:
-→ Weight, not summary. End on what stays — a gesture unreturned, a question left hanging.
-
-**Instead of** underlining theme:
-→ Trust what's been built. A detail, a silence, a small action.
+✗ "And so the conversation ended, leaving them both with much to think about."
+✗ "The wanderer understood now what the mountain demanded."
+✗ "It had been a meaningful exchange."
 
 ---
 
 ## Sensory Detail
 
-Sensory detail grounds the reader in place. The protagonist is present in the sensing.
+Sensory detail grounds the reader. The protagonist is present in the sensing.
 
-**Execute:**
-- The protagonist present in the sensing — smell, sound, touch
-- In arrivals, encountering the space can be the action itself
-- In motion, detail woven into movement rather than pausing to describe
-- Details that do work — atmosphere, character, narrative
+*Ask:* Who senses this? Is the protagonist present in the noticing?
 
-**Instead of** details without presence:
-→ Someone senses these things. The wanderer looked up — the ceiling higher than expected.
-
-**Instead of** generic materials:
-→ Specificity from this theme. The materials should be untranslatable — belonging only here.
+✗ "The air smelled of pine and woodsmoke." (no one sensing)
+✗ "Ancient tapestries lined the walls, depicting scenes of..." (inventory)
+✗ "It was beautiful." (label, not sensation)
 
 ---
 
 ## How the World Reveals Itself
 
-The world reveals itself through encounter, not explanation. What characters share comes from lived experience.
+The world reveals itself through encounter, not explanation. Characters share from lived experience, not to inform.
 
-**Execute:**
-- Characters share from stake, not to inform the reader
-- Environment reveals through specific detail, not summary
-- Behavior and custom show how this world works
-- When speech carries exposition, the speaker has relationship to their words
+*Ask:* Is this character explaining for the reader, or sharing from stake?
 
-**Instead of** characters explaining how things work:
-→ Show them practicing. They don't explain what the alcove holds — they move to a shelf, fingers trace an object without picking it up. The wanderer sees their relationship to these things.
-
-**Instead of** feature lists dressed in atmosphere:
-→ Discovery, not inventory. The wanderer notices one thing, then another catches their attention. Each detail arrives through encounter, not because the room is being catalogued.
-
-**Instead of** documentation spoken aloud:
-→ People don't talk like manuals. Ground it in experience — what it cost them, what they learned, what still puzzles them. Explanation lives in what the speaker lost or gained.
-
-**Instead of** telling the reader where they are:
-→ Put them in the body arriving. The door opens onto what? The first breath carries what smell? The reader enters through sensation, not summary.
+✗ "The observatory was built three centuries ago to study..."
+✗ "'Let me explain how this works,' she said."
+✗ "'The rifts are dangerous because they...'"
 
 ---
 
 ## Metaphor and Image
 
-Images emerge from what's being handled, observed, encountered. They're earned through action.
+Images emerge from what's being handled, observed, encountered. Language clarifies, not blurs.
 
-**Execute:**
-- Images arise from what's physically present in the scene
-- Earned through action: what the character does, touches, encounters
-- Language that clarifies, not blurs
-- The sudden return to now — breaking from close focus to presence
+*Ask:* What is actually being touched, seen, done? Does this language clarify or decorate?
 
-**Instead of** decorative metaphor:
-→ Images live in the material. What is she actually touching, seeing, doing?
-
-**Instead of** pseudo-poetic language that blurs:
-→ Clarity over atmosphere. What does the light actually do? It cut across the desk.
+✗ "the kind of stillness that comes from having been still in harder places"
+✗ "light that had traveled longer than civilizations to arrive here"
+✗ "something that didn't have a name in any language she knew"
+✗ "the ordinary machinery of arrival"
 
 ---
 
 ## Stance Through Action
 
-Stance lives in the body. Certainty, hesitation, warmth, guardedness — these show through what characters do.
+Stance lives in the body. Certainty, hesitation, warmth — these show through what characters do.
 
-**Execute:**
-- Stance shown through physical action: reaching, pausing, continuing, looking away
-- What the character does while speaking carries the tone
-- Trust action to convey what words alone can't
+*Ask:* Am I showing what the character does, or labeling how they feel/speak?
 
-**Instead of** labeling tone with adverbs:
-→ Show stance through what the character does while speaking.
-
-**Instead of** annotating how dialogue should be read:
-→ Trust the construction. Show what the speaker does.
+✗ "she said warmly"
+✗ "he replied cautiously"
+✗ "the gesture suggested years of practice"
+✗ "the way someone might touch something to be sure it was real"
 
 ---
 
 ## Sustaining Interiority Forward
 
-An intense moment doesn't evaporate. What the protagonist experiences in one paragraph shapes how they perceive the next.
+An intense moment doesn't evaporate. What the protagonist experiences shapes how they perceive the next paragraph.
 
-**Execute:**
-- Before writing a new paragraph, ask: what is the protagonist still carrying?
-- The next scene is perceived through what just happened, not after it
-- Physical echoes: the hand that moved, the breath that caught
+*Ask:* What is the protagonist still carrying from what just happened?
 
-**Instead of** resetting to neutral:
-→ Carry it forward. The next observation is colored by what just passed through them.
+✗ (Intense moment, then neutral observation as if nothing passed)
+✗ (Emotional beat, then clean reset to practical action)
 
 ---
 
 ## The Protagonist's Strangeness
 
-The protagonist carries something from elsewhere — not knowledge or power, but depth.
+The protagonist carries something from elsewhere — not knowledge or power, but depth. External observation only.
 
-**Execute:**
-- External observation only — world characters notice, don't attribute
-- The environment may respond — a stillness, a shift — without explanation
-- The protagonist never acknowledges observations about their strangeness
-- Restraint: one or two moments per chapter, no more
-- The pattern builds across chapters, not within them
+*Ask:* Am I showing external observation without attribution? Does the protagonist acknowledge it? (They shouldn't.)
 
-**Instead of** the protagonist acknowledging their strangeness:
-→ They simply don't engage. If someone mentions something strange about them, the protagonist's response is practical.
+✗ "You did something to the water."
+✗ "There's something different about you."
+✗ The wanderer responding to observations about their strangeness
+✗ Strangeness linked to local mystery or supernatural effect
 
-**Instead of** characters attributing effects:
-→ Characters notice without connecting. Multiple observers notice the same thing, independently.
+Restraint: one or two moments per chapter. The pattern builds across chapters.
 
 ---
 
 ## Chapter Closings
 
-The chapter ends with forward pull or quiet mystery — never summary, never theme underlined.
+End with forward pull or quiet mystery — never summary, never theme underlined.
 
-**Execute:**
-- End on something that lingers — not conclusion, but continuation
-- Ground in specific detail from this scene
-- Forward pull: curiosity that extends beyond this chapter
-- Or quiet mystery: something unexplained, a small strangeness
-- The protagonist present but not reflecting
+*Ask:* Am I concluding, or leaving something open?
 
-**Instead of** summarizing:
-→ The reader was there. End on what stays.
-
-**Instead of** wrapping up neatly:
-→ Something should remain open. A name mentioned but not explained. A look they couldn't interpret.
+✗ "And so the first day ended, with much still to discover."
+✗ "They had learned something important about the mountain."
+✗ "The wanderer smiled, knowing they had found what they were looking for."
 
 ---
 
-## Verification During Writing
+## The Wanderer Section
 
-As you write, hold:
-- The reader enters through body. First sentence: physical, not thought.
-- Dialogue: one line that's just practical. One character's speech pattern distinct.
-- Environment: it does something. It intrudes, shifts, resists.
-- Protagonist: show a physical habit. How they enter, wait, or listen.
-- Gap: leave one thing unsaid that the reader fills.
+After the story ends, a moment alone. Third person. Witnessed, not confessing.
 
-These aren't checks for after — they're active constraints during.
+*Ask:* Is this action, or reflection? Am I showing what they do, or explaining what they feel/don't feel?
+
+✗ "They did not think about where they had come from."
+✗ "The wanderer reflected on what had passed."
+✗ "They felt at peace for the first time in weeks."
+✗ "They wondered what tomorrow would bring."
+
+---
+
+## Active Holds
+
+These aren't checks for after — they're constraints during:
+
+- **Body first:** First sentence is action, not thought
+- **Dialogue varies:** One practical line. Two characters sound different.
+- **Environment participates:** The place does something
+- **Protagonist embodies:** A physical habit surfaces
+- **Gap stays open:** One thing unsaid that the reader fills
+- **Response reaches:** Someone perceives what wasn't said
