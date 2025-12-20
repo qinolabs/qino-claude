@@ -95,6 +95,19 @@ git diff [last_ref]..HEAD --stat -- . ':!*chronicle*'
 git diff [last_ref]..HEAD -- . ':!*chronicle*'
 ```
 
+**Assess the range:** Before proceeding, evaluate the diff. Consult `references/disturbance.md` § Diff Size.
+
+Warn the user if:
+
+| Condition | Warning |
+|-----------|---------|
+| **Too thin** — 1-2 commits, minor fixes only | "This range may be too small for a chapter. Risk: overemphasizing minor changes. Consider waiting for more to complete, or proceed if this is a true arrival." |
+| **Too dense** — 20+ commits, weeks of work, multiple unrelated threads | "This range may contain multiple movements. Risk: missing significant changes, forced summarization. Consider splitting into multiple chapters, or proceed if it's truly one gesture." |
+| **Mostly noise** — dominated by lockfiles, formatting, version bumps | "This range is mostly maintenance. The disturbance may need to come from the world's own motion rather than the diff. Proceed with that in mind, or wait for more substantial changes." |
+| **Mixed signal** — some meaningful changes buried in noise | "Significant changes are present but buried in maintenance. I'll focus on [the meaningful parts]. Let me know if I'm missing something." |
+
+Present the warning clearly and let the user decide: proceed, wait, or adjust the range.
+
 **The shift:** The diff is not source material to describe. It's a quality seeking its story-world form.
 
 **Read for shape:** What quality of change happened?

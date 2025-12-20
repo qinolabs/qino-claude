@@ -1,0 +1,5 @@
+{
+  "tool": "updater",
+  "version": "0.12.0",
+  "description": "Keep tools updated from GitHub"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "qino-claude",
+  "private": true,
+  "scripts": {
+    "sync-manifest": "./scripts/sync-manifest.sh"
+  }
+}

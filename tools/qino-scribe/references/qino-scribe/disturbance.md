@@ -14,6 +14,139 @@ The shift: ask what the change *wants to become*. Not how to mention it. What st
 
 ---
 
+## What to Filter
+
+Not all changes carry story-energy. Some are maintenance, routine, infrastructure.
+
+**Tendentially ignore:**
+
+| Change type | Why |
+|-------------|-----|
+| Version bumps | Numbers changing — no shape |
+| Lockfiles, generated files | Artifacts, not intentions |
+| Formatting / linting | Surface rearrangement |
+| Dependency updates | The world consuming updates — unless a new capability arrives |
+| Build configuration tweaks | Plumbing adjustments |
+| Comments describing what already exists | Annotation, not emergence |
+| Changelog entries | Already a narrative about narrative |
+
+**Tendentially notice:**
+
+| Change type | Why |
+|-------------|-----|
+| New files / concepts appearing | Appearance — something exists that didn't |
+| Files / concepts being removed | Disappearance — something closed or departed |
+| Significant refactors | Transformation — becoming other than it was |
+| New connections (imports, integrations) | Connection — separate things now touch |
+| Patterns breaking or emerging | Pressure shifting |
+
+"Tendentially" means: not absolute rules. A lockfile *could* carry meaning if the shape is right. A new feature *could* be noise if it's just scaffolding. Feel for what's alive.
+
+### Project-Type Nuances
+
+Different project types have different signals. Attune accordingly:
+
+| Project type | Also filter out | Also notice |
+|--------------|-----------------|-------------|
+| **Tools** (commands, agents, references) | Command description tweaks, README polish, CLAUDE.md minor updates | New agent types appearing, instruction refinements that change behavior, template structure shifts, commands moving between namespaces |
+| **Apps** (features, UX, architecture) | Config/env changes, deployment scripts, CSS tweaks (unless design system) | UX copy changes (reveal product direction), component composition patterns, data model shifts |
+| **Concepts** (ideas crystallizing) | Section reordering (unless structural), formatting, manifest updates | New sections appearing (structure evolving), cross-concept references forming, held threads surfacing, concept graduating from notes/ |
+| **Research** (explorations, calibrations) | Methodology notes, data file additions, iteration logs | Calibration completing (distinctions discovered), exploration shifting direction, synthesis moments, negative results (failure is data) |
+
+### Recognizing Noise
+
+Ask: "If I removed this from the diff, would the shape change?"
+
+| Change | Test result |
+|--------|-------------|
+| Lockfile with 500 dependency updates | Shape unchanged — noise (unless one dep enables new capability) |
+| Prettier reformatting 20 files | Shape unchanged — noise |
+| Three typo fixes in user-facing copy | Shape *might* change — accumulation if it reveals care for craft |
+| Config adjusting timeout 30s → 60s | Shape unchanged — noise (unless fixing known issue) |
+| New command appearing | Shape changes — appearance |
+| Agent instructions refined | Shape changes — transformation |
+
+The test: does it complete something, or just maintain it?
+
+**Restructurings** — files moving, folders renaming, packages splitting — need special attention. Ask: does this reflect a conceptual shift, or just tidying?
+
+| Restructuring type | Shape | Signal |
+|--------------------|-------|--------|
+| Tidying / convention alignment | None | Ignore — surface rearrangement |
+| Splitting one thing into many | Separation | Notice if boundaries are being *discovered* |
+| Consolidating many into one | Connection | Notice if scattered things are *recognizing* each other |
+| Renaming to reveal true nature | Transformation | Notice if the project is *understanding itself differently* |
+
+**Tool-specific restructuring patterns:**
+
+| Restructuring | Shape | Signal |
+|---------------|-------|--------|
+| Commands moving between namespaces | Conceptual boundary | Notice if commands are being reclassified (e.g., `qino` → `qino-concept` means scope clarified) |
+| Extracting shared agents/references | Connection | Notice if scattered knowledge is consolidating into reusable form |
+| Agent splitting into prep/prose | Separation | Notice if roles are being distinguished for quality |
+| Template becoming reference | Transformation | Notice if examples are becoming principles |
+
+The test: after the restructuring, does the project see itself the same way? If yes — housekeeping. If no — something happened.
+
+---
+
+## Diff Size
+
+The question isn't how many lines — it's whether the diff contains *one movement*.
+
+**Too small** (single commits, minor fixes):
+- Risk overemphasizing — a typo fix becomes a chapter
+- The chronicle bloats with non-events
+- Better to wait for something to complete
+
+**Too large** (weeks of work, major releases):
+- Risk missing — significant changes buried in volume
+- Forced to summarize rather than feel the shape
+- The movement becomes multiple movements
+
+**Healthy size:**
+- One coherent phase of work — something that *completes*
+- You can hold the whole diff in mind and feel its shape
+- Typically: 3-15 commits, a few days to a week of activity
+- But a single commit can be a chapter if it's a true arrival
+- And 30 commits can be one chapter if they're all one gesture
+
+**Qualitative adjustments:**
+
+| Diff content | Effective weight |
+|--------------|------------------|
+| 500 lines of generated/config | Light — little shape |
+| 50 lines of new concept | Heavy — dense with meaning |
+| Large refactor | Medium — transformation, but often one shape |
+| Many small fixes | Light unless they accumulate into pressure |
+| New feature landing | Heavy — appearance, even if small |
+
+**The feel:** Can you sense what happened? If yes — right size. If you're drowning or grasping — adjust.
+
+### Example: One Movement Across Multiple Files
+
+```
+tools/qino-scribe/commands/qino-scribe/survey.md        (new, 290 lines)
+tools/qino-scribe/references/qino-scribe/disturbance.md (+60 lines)
+tools/qino-scribe/agents/scribe-prep.md                 (+15 lines)
+```
+
+**Assessment:** Three files changed, but one coherent movement.
+
+- Survey command appeared → **Appearance**
+- Disturbance guidance evolved to support it → **Transformation**
+- Prep agent learned to warn about range size → **Connection** (survey's knowledge flows to prep)
+
+These are not three separate events. They're one gesture: "The scribe learns to look before writing."
+
+**Chapter title possibility:** *The Survey* or *Before the First Word*
+
+This is what "one movement" looks like when it touches multiple files. The files serve the movement; the movement doesn't serve the files.
+
+When the diff is mostly maintenance, the shape might be "Accumulation" — small pressures building. Or the chapter might need to find its disturbance elsewhere: in the world's own motion, in what characters were already carrying.
+
+---
+
 ## How to Read
 
 Run the diff commands. See what literally changed.
