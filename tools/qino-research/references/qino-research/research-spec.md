@@ -72,9 +72,13 @@ research-repo/
   "last_touched": "2025-12-19T00:00:00Z",
   "threads": [
     "thread description — atmospheric sense"
-  ]
+  ],
+  "sourceRepo": "../other-repo"
 }
 ```
+
+**Optional fields:**
+- `sourceRepo` — Path to originating repo (only present for cross-repo explorations)
 
 **Status values:**
 - `active` — Currently being explored
@@ -111,9 +115,14 @@ Similar to `held_threads` in concepts, but for research. Open questions being pu
   "path": "experiments/2025-12-19_experiment-id/",
   "hypothesis": "What we're testing",
   "status": "pending",
-  "linked_calibration": "optional-calibration-id"
+  "linked_calibration": "optional-calibration-id",
+  "sourceRepo": "../other-repo"
 }
 ```
+
+**Optional fields:**
+- `linked_calibration` — ID of related calibration
+- `sourceRepo` — Path to originating repo (only present for cross-repo experiments)
 
 **Status values:**
 - `pending` — Not yet started
@@ -404,7 +413,43 @@ Calibrations are typically created by `attune:calibrate`:
 
 ---
 
-## 10. Design Principles
+## 10. Cross-Repo Research
+
+Research commands can be invoked from non-research repos that have a `researchRepo` configured.
+
+### How It Works
+
+When `/qino-research:begin` (or other research commands) runs:
+
+1. Check current repo's `.claude/qino-config.json`
+2. If `repoType: "research"` → use current directory as workspace
+3. If `researchRepo` field exists → use that path as research workspace
+4. If neither → error: "no research workspace configured"
+
+### Example: Tool Repo Config
+
+```json
+{
+  "repoType": "tool",
+  "researchRepo": "../qino-research",
+  "conceptsRepo": "../concepts-repo"
+}
+```
+
+Running `/qino-research:begin` from this repo will:
+- Create explorations in `../qino-research/explorations/`
+- Update manifest at `../qino-research/manifest.json`
+- Record `sourceRepo` in the exploration entry for context
+
+### Why Cross-Repo?
+
+Sometimes you want to research the thing you're working on. Example: researching qino-claude tools while working in qino-claude. The research lives in the research repo, but the context and subject is the current repo.
+
+The `sourceRepo` field in manifest entries preserves this context — when you later continue an exploration, you know where it originated.
+
+---
+
+## 11. Design Principles
 
 ### Research Welcomes Uncertainty
 

@@ -19,8 +19,12 @@ Controlled testing with crafted data. Structured observation.
 ## Workspace Detection (First Step)
 
 1. **Check for `.claude/qino-config.json`**
-2. Verify `repoType: "research"`
-3. Use current directory as research workspace
+2. **Detect research workspace:**
+   - If `repoType: "research"` → use current directory
+   - If `researchRepo` field exists → use that path as research workspace
+   - If neither → error: "no research workspace configured"
+3. All file operations (manifest.json, experiments/, etc.) target the detected research workspace
+4. **If cross-repo:** Remember `sourceRepo` (current directory) for context in manifest entries
 
 ---
 
@@ -106,9 +110,11 @@ Create new experiment.
      "name": "[Experiment Name]",
      "path": "experiments/YYYY-MM-DD_[id]/",
      "hypothesis": "[brief hypothesis statement]",
-     "status": "pending"
+     "status": "pending",
+     "sourceRepo": "[path to originating repo, if cross-repo]"
    }
    ```
+   Note: `sourceRepo` is only included when experiment started from a different repo.
 
 6. Confirm and guide test data creation:
    ```

@@ -23,8 +23,12 @@ Two paths:
 ## Workspace Detection (First Step)
 
 1. **Check for `.claude/qino-config.json`**
-2. Verify `repoType: "research"`
-3. Read `conceptsRepo` path — this is the graduation destination
+2. **Detect research workspace:**
+   - If `repoType: "research"` → use current directory
+   - If `researchRepo` field exists → use that path as research workspace
+   - If neither → error: "no research workspace configured"
+3. Read `conceptsRepo` from the research workspace's qino-config — this is the graduation destination
+4. All file operations on research (manifest.json, graduated/, etc.) target the detected research workspace
 
 ---
 

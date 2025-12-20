@@ -19,8 +19,12 @@ Start a new exploration or continue an existing one.
 ## Workspace Detection (First Step)
 
 1. **Check for `.claude/qino-config.json`**
-2. Verify `repoType: "research"`
-3. Use current directory as research workspace
+2. **Detect research workspace:**
+   - If `repoType: "research"` → use current directory
+   - If `researchRepo` field exists → use that path as research workspace
+   - If neither → error: "no research workspace configured"
+3. All file operations (manifest.json, explorations/, etc.) target the detected research workspace
+4. **If cross-repo:** Remember `sourceRepo` (current directory) for context in manifest entries
 
 ---
 
@@ -137,9 +141,11 @@ where does energy live right now?
      "status": "active",
      "started": "[timestamp]",
      "last_touched": "[timestamp]",
-     "threads": ["[first thread]"]
+     "threads": ["[first thread]"],
+     "sourceRepo": "[path to originating repo, if cross-repo]"
    }
    ```
+   Note: `sourceRepo` is only included when exploration started from a different repo.
 
 6. Confirm:
    ```
