@@ -4,7 +4,7 @@
 
 Tools for working with ideas in [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
 
-Gregory and Nora Bateson's work — on communication, pattern, and how living systems learn — has shown me a way of thinking that made a profound difference in my life. These tools are an expression of that continuous process.
+Gregory and Nora Bateson's work — on communication, pattern, and how living systems learn — a way of thinking that continues to shape how I perceive, learn, and participate in the world.. These tools are an expression of that continuous process.
 
 <details>
 <summary><strong>Companions on the Path: The Pattern That Connects</strong> (click to expand)</summary>
