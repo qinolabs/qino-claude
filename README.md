@@ -4,7 +4,7 @@
 
 Tools for working with ideas in [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
 
-Gregory and Nora Bateson's work — on communication, pattern, and how living systems learn — a way of thinking that continues to shape how I perceive, learn, and participate in the world.. These tools are an expression of that continuous process.
+Gregory and Nora Bateson's work — on communication, pattern, and how living systems learn — a way of thinking that continues to shape how I perceive, learn, and participate in the world. The tools in this project and the process of developing them are an expression of that continuous process.
 
 <details>
 <summary><strong>Companions on the Path: The Pattern That Connects</strong> (click to expand)</summary>
@@ -88,9 +88,15 @@ These tools are part of a larger ecosystem that includes apps — different moda
 <details>
 <summary><strong>An Ecology of Mind</strong> (click to expand)</summary>
 
-Ecological design patterns are alive at every level — in each concept, in each repository, in the ecosystem itself. The art is in the design — affordances and cues, sensitive to experience, that naturally protect the integrity of local ecologies while encouraging free movement without accumulating friction. What does accumulate are learnings and notes, either woven into exising concepts, or safely kept, ready to reveal itself fully through the next idea that connects. The best ideas can come from anywhere — not centralized — and often while deeply immersed in a different context.
+![Tools, apps, community](docs/images/ecosystem-arcs.png)
 
-Figures in qino are a metaphor — in Bateson's sense, not the literary sense. A figure is the snapshot you capture when your friend laughs in a certain way. It's what you think about as you pause at a point of interest on a qino Walk. It's a game design idea captured during a creative qino Meet with friends. In the chronicles, figures are characters like Seren and Lira who perceive the wanderer. Same pattern — a persistent form that carries meaning through return — taking completely different shape in each context. You don't deduce your way to this recognition. You're deep in the scribe, refining how Seren sees the wanderer, and suddenly you recognize something about how figures should work across the apps. The crab teaches you about the lobster. One context illuminates another through pattern, not logic.
+Ecological design patterns are alive at every level — in each concept, in each repository, in the ecosystem itself. The art is in the design — affordances and cues, sensitive to experience, that naturally protect the integrity of local ecologies while encouraging free movement without accumulating friction.
+
+What does accumulate are learnings and notes, either woven into existing concepts, or safely kept, ready to reveal itself fully through the next idea that connects. The best ideas can come from anywhere — not centralized — and often while deeply immersed in a different context.
+
+Figures in qino are a metaphor — in Bateson's sense, not the literary sense. A figure is the snapshot you capture when your friend laughs in a certain way. It's what you think about as you pause at a point of interest on a qino Walk. It's a game design idea captured during a creative qino Meet with friends. In the chronicles, figures are characters like Seren and Lira who perceive the wanderer.
+
+Same pattern — a persistent form that carries meaning through return — taking completely different shape in each context. You don't deduce your way to this recognition. You're deep in the scribe, refining how Seren sees the wanderer, and suddenly you recognize something about how figures should work across the apps. The crab teaches you about the lobster. One context illuminates another through pattern, not logic.
 
 The tools are also the process for developing the apps — and in turn, the tools and apps keep informing each other. A co-evolution. They share design patterns: affordances that guide without forcing, structures that adapt to context while staying recognizable.
 
