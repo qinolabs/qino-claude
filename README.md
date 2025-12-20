@@ -345,48 +345,6 @@ scene seeds
 
 ---
 
-## Design Adventure
-
-A simulated conversation between seven perspectives — an adventure you witness.
-
-### The room after
-
-You launch it, then enter the room after it happened. Chairs still warm. Ideas still in the air. You discover what emerged — the questions they kept circling back to, what they couldn't resolve.
-
-Six perspectives think through words. The seventh (World) thinks through environment — a draft scatters someone's diagrams; they gather them differently and that's when the insight arrives.
-
-### What you find
-
-```
-design-sprints/2024-12-15_collaboration-vs-focus/
-├── __enter-here.md
-├── dialogue.md
-├── q-what-signals-legitimate-interruption.md
-├── q-can-focus-be-collaborative.md
-├── q-who-decides-when-to-break-flow.md
-└── synthesis.md
-```
-
-From `q-can-focus-be-collaborative.md`:
-
-> **The Skeptic:** We keep saying "focus time" as if it's always solo. But pair programming is focus. Whiteboard sessions can be deep work.
->
-> **The Embodied Thinker:** There's a different quality of attention — when you're tracking someone else's rhythm, not just your own.
->
-> **The World:** *The fluorescent light hums. Someone's pen taps against the table.*
->
-> **The Synthesizer:** Maybe the question isn't collaboration vs. focus. It's whose rhythm you're in.
-
-Different runs surface different questions. The questions themselves teach you how to think about the problem.
-
-```bash
-/design-adventure How do we balance real-time collaboration with focus time?
-```
-
-*[Source](tools/design-adventure/) · [Installation](tools/design-adventure/README.md#installation)*
-
----
-
 ## qino Dev
 
 Implementation companion for qino-concept.
@@ -450,101 +408,107 @@ The files live in `implementations/` — visible, version-controlled, yours. Not
 
 ---
 
-## qino Attune
+## Perceiving Difference
 
-Training perception through difference — part of the universal `qino:` namespace.
+Discovering the difference that makes a difference — `qino:compare` and `qino:attune`.
 
-> **Information is "a difference that makes a difference."**
-> — Gregory Bateson
+### Compare: The Parallel Mirror
 
-### The process
+You have two examples from different sources — different chronicles, different scribe versions, different approaches. Compare helps you find what makes them land differently.
 
-You start with a hunch — "otherworldliness" or "intimacy" or "tension." You know it when you feel it, but you can't explain why.
+The framework offers lenses and a sequence. "What stays with you?" is a lens. So is "where did your attention drift?" and "which feels more alive?" Each lens surfaces something. The structure disappears into conversation.
 
-```
-vague quality     →  notice examples  →  compare pairs  →  articulate differences  →  working specification
-                                                                                               ↓
-                                                                              craft you can teach and protect
-```
+**The core move is the parallel mirror.** You share what you liked about one example — say, how observation happens without comment. Based on that, the system finds something in the *other* source that looks like it should fit the same pattern. Same structural shape. It presents both and asks: *how do these land differently?*
 
-**Compare** places two passages side by side. You say what lands differently. The tool helps you find language for what you already sense.
+Here's where it gets interesting. The parallel example *looks* like it should work the same way — but if it doesn't, that reveals something deeper. Not just a difference between two passages, but a difference between the two sources they came from. The chronicles have different underlying logics. The parallel that "should" work but doesn't is where you discover that.
 
-**Calibrate** accumulates those distinctions. What qualifies. What doesn't. Transformations that work. The vague quality becomes concrete craft.
+**Responsive mirroring** sharpens your language along the way. You say "A feels personal, B feels like adventure but no pull" — the tool reflects back: "A creates *identification*. B starts as *adventure* but the engagement doesn't convert into investment." Now you have words to build on.
 
-### Compare
+**The process adapts.** If you're analytical, it pulls you back to felt sense: "Before we analyze — which one did you *enjoy* more?" If you're stuck, it offers a dimension: "Let's look at stakes — what could go wrong in each?" If you can't decide, that's data: "What would it take to make one clearly better?"
 
-You have a framework — say, "What Qualifies" for otherworldliness. Two passages from the chronicle. You want to understand why one works and the other doesn't.
+By the end, you've discovered something you couldn't have named at the start.
 
-```
-/qino:compare chapter-03-line-57.md chapter-01-lines-49-51.md
+### Attune: Five Phases to Craft
 
-─────
+You start with a hunch — "otherworldliness" or "tension" or "aliveness." You know it when you feel it, but you can't teach it. The calibration makes implicit knowledge explicit.
 
-read both. what stays with you?
+**Phase 1 — Find candidates.** Search your existing work for 8-15 potential examples. Cast a wide net.
 
-  A: "His eyes found the wanderer's hands — the same thing the Mender had watched."
-  B: "You've done this before." "I don't remember." "I know."
-
-─────
-
-user: A feels like it's pointing at something. B feels like it's explaining.
-
-─────
-
-let's find what you liked about A in B.
-
-In A, the observation happens externally — Seren watches. No one comments.
-Where's the parallel moment in B? The Mender watching the hands.
-
-  A: Seren watches. Narrative continues. No response.
-  B: Mender asks. Wanderer answers. Exchange completes.
-
-─────
-
-how does it land differently?
-
-A leaves the gap open. B closes it with dialogue.
-The strangeness in A accumulates. In B it resolves into conversation.
-
-─────
-
-                        /qino:capture to hold this
-                        /qino:attune otherworldliness
-```
-
-### Calibrate
-
-You know "otherworldliness" when you feel it — when the wanderer carries weight from crossings no world can articulate. But you can't teach it without making it concrete.
+**Phase 2 — Calibrate through feedback.** Go through each candidate one by one. Does this qualify? What makes it work or not? Distinctions emerge:
 
 ```
-/qino:attune otherworldliness
+| ✓ Works                            | ✗ Doesn't work                    |
+|------------------------------------|-----------------------------------|
+| External observation, unremarked   | Character explains the phenomenon |
+| Pattern across multiple observers  | Single character's perception     |
+| Points to *elsewhere*              | Ties to local mystery             |
+```
 
+**Phase 3 — Build inspiration index.** You now know what *doesn't* work. The failures from Phase 2 point toward what's missing. So you search for language that might address those specific gaps — literary terms (numinous, sfumato, negative space), character archetypes who embody the quality (what makes Tom Bombadil work?), techniques from other domains (visual art, music, sculpture). Each source gets documented: what it is, why it's relevant to this quality, how it might guide execution. The index becomes a toolkit for transformation.
+
+**Phase 4 — Transform iteratively.** Take a failed example. Choose a source from the index that seems most likely to address *that specific failure*. Transform. Present for feedback.
+
+Here's where it gets interesting: when a fix fails, your feedback reveals what you actually want. "Sounds like ignoring, not mystery" — that rejection teaches you something about your own aesthetic. You try a different source, now informed by what you just learned. The iteration trains your perception. By the time a transformation works, you understand *why* it works — not just that it does.
+
+Some examples won't transform. That's data too. Note what makes them intractable.
+
+**Phase 5 — Extract principles.** Synthesize what worked into techniques and anti-patterns. The accumulated feedback — what landed, what didn't, what you kept reaching for — becomes teachable craft.
+
+```
 calibrations/otherworldliness/
-├── otherworldliness-research.md    # what qualifies, what doesn't, why
-├── chronicle-examples.md           # vetted transformations
-└── examples/                       # candidates being tested
+├── research.md          # what qualifies, distinctions, inspiration index
+├── transformations.md   # every attempt, what worked, extracted principles
+└── examples/            # the corpus tested against
 ```
 
-From `otherworldliness-research.md`:
-
-| ✓ Works | ✗ Doesn't work |
-|---------|----------------|
-| External observation, unremarked | Wanderer's thoughts or reflections |
-| Pattern across multiple observers | Single character's perception |
-| Points to *elsewhere* — larger than this world | Ties to local mystery |
-
-From `chronicle-examples.md` — a transformation:
-
-**Original:** *"The one who came down." Lira's voice was like the river itself. "We felt you pass."*
-
-**Transformed:** *"The one who came down." Lira stepped out. Behind the wanderer, the river had gone quiet — the usual lap of water against platform stilled for a moment before resuming. Lira's eyes moved to the water, then back. "You'll eat with us."*
-
-The vague quality becomes craft you can protect.
+What you couldn't explain, you can now teach. What you could only feel, you can now protect.
 
 ```bash
 /qino:compare path/to/a.md path/to/b.md
 /qino:attune quality-name
 ```
+
+---
+
+## Design Adventure
+
+A simulated conversation between seven perspectives — an adventure you witness.
+
+### The room after
+
+You launch it, then enter the room after it happened. Chairs still warm. Ideas still in the air. You discover what emerged — the questions they kept circling back to, what they couldn't resolve.
+
+Six perspectives think through words. The seventh (World) thinks through environment — a draft scatters someone's diagrams; they gather them differently and that's when the insight arrives.
+
+### What you find
+
+```
+design-sprints/2024-12-15_collaboration-vs-focus/
+├── __enter-here.md
+├── dialogue.md
+├── q-what-signals-legitimate-interruption.md
+├── q-can-focus-be-collaborative.md
+├── q-who-decides-when-to-break-flow.md
+└── synthesis.md
+```
+
+From `q-can-focus-be-collaborative.md`:
+
+> **The Skeptic:** We keep saying "focus time" as if it's always solo. But pair programming is focus. Whiteboard sessions can be deep work.
+>
+> **The Embodied Thinker:** There's a different quality of attention — when you're tracking someone else's rhythm, not just your own.
+>
+> **The World:** *The fluorescent light hums. Someone's pen taps against the table.*
+>
+> **The Synthesizer:** Maybe the question isn't collaboration vs. focus. It's whose rhythm you're in.
+
+Different runs surface different questions. The questions themselves teach you how to think about the problem.
+
+```bash
+/design-adventure How do we balance real-time collaboration with focus time?
+```
+
+*[Source](tools/design-adventure/) · [Installation](tools/design-adventure/README.md#installation)*
 
 ---
 
