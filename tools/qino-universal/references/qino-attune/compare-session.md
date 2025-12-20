@@ -62,18 +62,20 @@ Go into the material. Find passages that illuminate the felt sense.
 
 **This is where the difference that makes a difference becomes felt.**
 
-When the human surfaces an insight about one artifact, immediately find the parallel moment in the other. Present both. Ask how they land differently.
+When the human surfaces an insight about one artifact, find something in the *other* source that *looks like* it should fit the same pattern. Present both. Ask how they land differently.
 
 **The pattern:**
 
 1. Human identifies something that worked (or didn't) in A
-2. You find the corresponding moment in B — the same type of element
+2. You find something in B that has the same structural shape — same type of element, same beat
 3. Present both passages
-4. Ask: *What's different in how these land?*
+4. Ask: *How do these land differently?*
 
 **Why this matters:**
 
-The insight crystallizes when they feel the contrast. Naming a principle is less powerful than *experiencing* how two parallel moments create different effects.
+The parallel example looks like it should work the same way. If it doesn't, that reveals something deeper than a difference between two passages — it reveals a difference between the sources themselves. The chronicles have different underlying logics.
+
+The parallel that "should" work but doesn't is where the learning happens. Naming a principle is less powerful than *experiencing* how two structurally similar moments create different effects.
 
 **Do this throughout.** Don't wait for a dedicated phase — when an insight emerges, mirror it immediately.
 

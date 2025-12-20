@@ -85,9 +85,19 @@ The distinctions become sharper as you accumulate examples. Early "maybes" resol
 
 ### The Goal
 
-Find language, references, and archetypes that capture the quality. This becomes a toolkit for transformation work.
+The failures from Phase 2 point toward what's missing. You now know what the quality *isn't* — so you search for language that might address those specific gaps.
 
-### Sources to Explore
+### From Hunch to Sources
+
+1. Start with the user's loose aesthetic hunch (e.g., "otherworldliness")
+2. Ask: what does this quality feel like? What other works evoke it?
+3. Search for concepts that might produce or capture that feeling
+4. Look across domains — the most useful sources often come from unexpected places
+5. For each potential source, ask: could this address what's missing in the failed examples?
+
+The sources you find are *inferred* from the hunch — hypotheses about what might produce the quality. They're guesses, not answers.
+
+### Where to Look
 
 **Literary/artistic terms:**
 - Technical vocabulary (numinous, sfumato, negative space)
@@ -110,8 +120,8 @@ Find language, references, and archetypes that capture the quality. This becomes
 
 For each source:
 - The concept and its definition
-- Why it's relevant
-- How it might guide execution
+- Why it might be relevant to this quality
+- How it might guide a transformation
 
 ### The Index Format
 
@@ -122,8 +132,10 @@ For each source:
 
 **Why relevant:** [Connection to the quality]
 
-**How to apply:** [Guidance for execution]
+**How to apply:** [Guidance for transformation]
 ```
+
+This becomes a toolkit of hypotheses — each source a potential approach to test in Phase 4.
 
 ---
 
@@ -131,32 +143,44 @@ For each source:
 
 ### The Goal
 
-Take failed examples and transform them into working ones. Track what works.
+Take failed examples and transform them into working ones. The agent drives the iteration; the user provides aesthetic judgment.
 
 ### The Process
 
-For each failed example:
+For each failed example, the agent drives the transformation attempts:
 
-1. **Identify the failure mode** — What specifically doesn't work?
-2. **Select a source** from the inspiration index most likely to address it
-3. **Transform** — Rewrite the passage using that approach
-4. **Present** for feedback
-5. **Iterate** — If it fails, try a different source. If it works, note why.
+1. **Agent identifies the failure mode** — What specifically doesn't work?
+2. **Agent selects a source** from the inspiration index — the one most likely to address this specific failure
+3. **Agent transforms** — Rewrites the passage using that approach
+4. **Agent presents** the transformation for user feedback
+5. **If rejected:** Agent documents the feedback, selects a different source, tries again
+6. **If accepted:** Record the working version and which source made it work
+
+### Why the Agent Drives
+
+The agent knows the full inspiration index and can systematically work through approaches. The user provides the aesthetic judgment — does this land? — while the agent handles the iteration.
+
+### Why Failed Fixes Matter
+
+When a transformation fails, the feedback reveals what the user actually wants. "Sounds like ignoring, not mystery" — that rejection teaches something about their aesthetic. The agent tries a different source, now informed by what was rejected.
+
+The iteration trains perception on both sides. By the time a transformation works, you understand *why* it works — not just that it does. Each rejected attempt narrows the space, sharpens the distinctions.
 
 ### Tracking Attempts
 
-| Attempt | Source | Transformed Text | Feedback |
-|---------|--------|------------------|----------|
+| Attempt | Source | Transformation | Feedback |
+|---------|--------|----------------|----------|
 | 1 | Mary Poppins (refusal) | "The wanderer's hands kept moving..." | "Sounds like ignoring" |
-| 2 | Negative space | "The Mender watched for a long moment. Then she handed them another stack." | "Works. 4.5/5" |
+| 2 | Negative space | "The Mender watched for a long moment. Then she handed them another stack." | "Works — the gap stays open" |
 
 ### When to Stop
 
-- **Success**: The transformation works (4+ rating)
-- **Diminishing returns**: Multiple attempts fail, different approaches don't help
-- **Wrong example**: The original can't carry this quality (note why, move on)
+Continue until:
+- **Success**: A transformation works
+- **Sources exhausted**: No more sources to try
+- **User moves on**: Some passages aren't fixable — note why and continue
 
-Some examples won't transform. That's data — record what makes them intractable.
+Some examples won't transform. That's data — record what makes them intractable and move on.
 
 ---
 
@@ -164,26 +188,28 @@ Some examples won't transform. That's data — record what makes them intractabl
 
 ### The Goal
 
-Synthesize what you learned into teachable guidance.
+Synthesize what you learned into teachable guidance. Look at which sources worked — they tell you what the quality actually *is*. You started with a loose hunch; now you know which hypotheses proved true.
+
+The accumulated feedback — what landed, what didn't, which sources you kept reaching for — becomes craft you can teach and protect.
 
 ### Successful Techniques Table
 
-| Example | Rating | Technique |
-|---------|--------|-----------|
-| Ex. 1 | 4.5 | **Negative space** — observation happens but isn't verbalized |
-| Ex. 4 | 5 | **World responds** — environment shifts, not character perception |
-| Ex. 6 | 5 | **Simultaneity + scale** — elsewhere and present at once |
+| Example | Rating | Source | Technique |
+|---------|--------|--------|-----------|
+| Ex. 1 | 4.5 | Negative space | Observation happens but isn't verbalized |
+| Ex. 4 | 5 | World agency | Environment shifts, not character perception |
+| Ex. 6 | 5 | Simultaneity | Elsewhere and present at once |
 
 ### Key Principles
 
-Derived from what worked:
+Derived from the sources that succeeded:
 
 1. **[Principle name]** — [What to do]
 2. **[Principle name]** — [What to do]
 
 ### Anti-Patterns
 
-Derived from what failed:
+Derived from sources that consistently failed:
 
 - **[Pattern name]** — [What to avoid and why]
 - **[Pattern name]** — [What to avoid and why]

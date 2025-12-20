@@ -90,11 +90,13 @@ Follow the session guide phases:
 
 This is the core move. When the human surfaces an insight about one artifact:
 
-1. Find the corresponding moment in the other — the same beat, the same type of element
+1. Find something in the *other* source that *looks like* it should fit the same pattern — same structural shape, same type of element
 2. Present both passages
-3. Ask: *What's different in how these land?*
+3. Ask: *How do these land differently?*
 
-The insight crystallizes in the contrast. Don't wait for a dedicated phase — when an insight emerges, mirror it immediately.
+**Why this matters:** The parallel example looks like it should work the same way. If it doesn't, that reveals something deeper than a difference between two passages — it reveals a difference between the sources themselves. The chronicles have different underlying logics. The parallel that "should" work but doesn't is where the learning happens.
+
+Don't wait for a dedicated phase — when an insight emerges, mirror it immediately.
 
 ### 5. Capture Insights
 
