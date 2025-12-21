@@ -202,6 +202,28 @@ These commands work across all spaces (Concepts, Research, Implementation) but b
 | `/qino:compare` | Structural comparison between two sources.                | [Perceiving Difference](#perceiving-difference) |
 | `/qino:attune`  | Calibrate aesthetic qualities (e.g., "otherworldliness"). | [Attune](#attune-from-hunch-to-craft)           |
 
+#### Home Example
+
+`/qino:home` is context specific. In the concepts space, it shows the active threads.
+
+```
+/qino:home
+
+threads between
+
+  world-tokens-pattern connects qino-scribe, gm-tool, qino-chronicles
+  scribe-as-lens-prototype connects qino-scribe, qino-lens
+
+─────
+
+concepts
+
+  qino-scribe
+  qino-drops
+  discovery-grid
+  qino-lens
+```
+
 </details>
 
 <br>
@@ -268,40 +290,39 @@ When you bring in a note, not everything makes it into your concept. The rest is
 
 It remembers what you set down so you can forget safely.
 
-### Home
+### Explore
 
-A place to check in before you venture out. You arrive, orient, then choose to go somewhere.
+You turn toward a concept to develop it. The agent helps you follow the alive thread.
 
 ```
-/qino:home
+/qino-concept:explore qino-scribe
 
-threads between
+(agent) qino-scribe
+        grounding in story, writing tools, git-as-chronicle
 
-  world-tokens-pattern connects qino-scribe, gm-tool, qino-chronicles
-  scribe-as-lens-prototype connects qino-scribe, qino-lens
+        Last touch: 2 days ago
+        Active thread: "the membrane between the wanderer and the reader"
 
-─────
+        There is also a new note from yesterday:
+        "git-weather-pattern" (captured from research)
 
-concepts
+        What part of this feels alive right now?
 
-  qino-scribe
-  qino-drops
-  discovery-grid
-  qino-lens
+(user)  the way code churn feels like weather. a big refactor should feel like a storm.
 
-─────
+(agent) That’s a strong impulse — code changes aren't just metadata, they are "Disturbance."
 
-from here
+        If we follow that... does this belong in "Ecosystem Integration"?
+        Or is this a "new Glowing Connection"?
 
-  qino-drops has active held threads about relational grammar
-  /qino:home qino-drops to arrive
+(user)  it's a glowing connection. the git diff becomes world behavior.
 
-  world-tokens-pattern was captured yesterday
-  explore how tokens move between scribe and chronicles?
+(agent) Adding that to Glowing Connections.
 
-                        /qino:home <concept> to arrive
-                        /qino-concept:explore <concept> to work
-                        /qino:capture to hold a thought
+        "The git diff becomes world behavior. Code churn translates into storms,
+         stuck doors, or sudden clearings."
+
+        Does that change how we read the repository?
 ```
 
 ### Specific Commands
