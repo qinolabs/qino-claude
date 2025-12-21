@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "Ref": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@refdotai/mcp"
+      ],
+      "description": "Documentation search and reading from public sources and private repositories"
+    }
+  }
+}

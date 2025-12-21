@@ -7,3 +7,21 @@
 .claude/commands/
 .claude/references/
 .claude/settings.local.json
+
+# Dependencies
+node_modules/
+.npm/
+
+# Secrets
+.env
+.env.local
+.env.*.local
+*.env
+
+# History (Engine Logs)
+.claude/History/
+*.log
+
+# System
+.DS_Store
+**/.DS_Store
