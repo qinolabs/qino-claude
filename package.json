@@ -1,6 +1,7 @@
 {
   "name": "qino-claude",
   "private": true,
+  "type": "module",
   "scripts": {
     "sync-manifest": "./scripts/sync-manifest.sh"
   },
@@ -8,5 +9,9 @@
     "@google/genai": "^1.34.0",
     "openai": "^6.15.0",
     "replicate": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "bun-types": "^1.3.5"
   }
 }
