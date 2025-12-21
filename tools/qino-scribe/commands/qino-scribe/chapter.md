@@ -66,16 +66,18 @@ The prep agent will:
 
 **Disturbance Layer:**
 - Read git diff (from last_ref or argument)
-- Read for shape: what quality of change?
-- Find the resonance: where does this shape want to live in the story world?
-- **Checkpoint 2:** Resonances → user chooses
-- Append Disturbance section to prep.md
+- Two passes: stats for shape, messages for texture + keywords
+- Synthesize: Shape + Texture (e.g., "Transformation — clarifying")
+- Ask: What would the world DO if it felt this way?
+- Draw from domains: material, spatial, temporal, creature, object, human background
+- **Checkpoint 2:** World behavior options (from different domains) → user chooses
+- Append World Behavior section to prep.md
 
 **Beat Layer:**
-- Read chosen resonance
-- Generate story types with opening images, characters, stakes
-- **Checkpoint 3:** Directions (each includes its opening) → user chooses
-- Append Beat section (including relational fields) to prep.md
+- Read the pressure that's moving
+- Generate story types with opening situations, characters with wants/protecting, stakes
+- **Checkpoint 3:** Directions (each includes its opening situation) → user chooses
+- Append Beat section to prep.md
 
 **Completion:**
 - Announce "prep.md complete — ready for prose agent"
@@ -95,10 +97,11 @@ The prose agent reads ONLY: chronicle/chapters/NNN-slug/prep.md
 **Critical:** The prose agent receives ONLY prep.md. This constraint is the quality mechanism — it forces fresh invention, prevents recycling, makes the brief fully generative.
 
 The prose agent will:
-1. Inhabit the prep (sensory palette, voice notes, relational fields)
-2. Write the chapter following voice.md craft
-3. Verify against 6 checks (stakes, vividness, dialogue, reader, mutual seeing, response completes)
-4. Write chapter.md
+1. Inhabit the prep (sensory palette, world behavior, what characters want/protect)
+2. Weave world behavior into background (characters experience as ordinary)
+3. Write the chapter following voice.md craft
+4. Verify against checks (stakes, vividness, dialogue variety, reader gap, narration trusts dialogue, immersion)
+5. Write chapter.md
 
 ---
 
@@ -229,10 +232,10 @@ chronicle/chapters/NNN-slug/
 | Checkpoint | Type | User Action |
 |------------|------|-------------|
 | Scene Seeds | Interactive | Choose or skip |
-| Resonances | Interactive | Choose or skip |
+| World Behavior | Interactive | Choose from different domains |
 | Directions | Interactive | Choose or skip |
 
-**Interactive:** Present 3 options. User chooses, combines, adjusts, or skips (`>` to auto-pick).
+**Interactive:** Present 3 options (from different domains for World Behavior). User chooses, combines, adjusts, or skips (`>` to auto-pick).
 
 Post-prose updates (world, arcs, snapshots, manifest) are automatic — no confirmation required.
 

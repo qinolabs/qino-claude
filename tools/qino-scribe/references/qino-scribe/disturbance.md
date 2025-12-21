@@ -1,257 +1,243 @@
 # Reading the Disturbance
 
-*How to find story in what changed.*
+*How git diffs become world behavior.*
 
 ---
 
-## The Shift
+## The Interpretation
 
-The diff is not source material to describe. It's a quality seeking its story-world form.
-
-The instinct is to ask "what changed" and find relevance. This produces documentation with narrative flair — not story.
-
-The shift: ask what the change *wants to become*. Not how to mention it. What story it's trying to tell.
-
----
-
-## What to Filter
-
-Not all changes carry story-energy. Some are maintenance, routine, infrastructure.
-
-**Tendentially ignore:**
-
-| Change type | Why |
-|-------------|-----|
-| Version bumps | Numbers changing — no shape |
-| Lockfiles, generated files | Artifacts, not intentions |
-| Formatting / linting | Surface rearrangement |
-| Dependency updates | The world consuming updates — unless a new capability arrives |
-| Build configuration tweaks | Plumbing adjustments |
-| Comments describing what already exists | Annotation, not emergence |
-| Changelog entries | Already a narrative about narrative |
-
-**Tendentially notice:**
-
-| Change type | Why |
-|-------------|-----|
-| New files / concepts appearing | Appearance — something exists that didn't |
-| Files / concepts being removed | Disappearance — something closed or departed |
-| Significant refactors | Transformation — becoming other than it was |
-| New connections (imports, integrations) | Connection — separate things now touch |
-| Patterns breaking or emerging | Pressure shifting |
-
-"Tendentially" means: not absolute rules. A lockfile *could* carry meaning if the shape is right. A new feature *could* be noise if it's just scaffolding. Feel for what's alive.
-
-### Project-Type Nuances
-
-Different project types have different signals. Attune accordingly:
-
-| Project type | Also filter out | Also notice |
-|--------------|-----------------|-------------|
-| **Tools** (commands, agents, references) | Command description tweaks, README polish, CLAUDE.md minor updates | New agent types appearing, instruction refinements that change behavior, template structure shifts, commands moving between namespaces |
-| **Apps** (features, UX, architecture) | Config/env changes, deployment scripts, CSS tweaks (unless design system) | UX copy changes (reveal product direction), component composition patterns, data model shifts |
-| **Concepts** (ideas crystallizing) | Section reordering (unless structural), formatting, manifest updates | New sections appearing (structure evolving), cross-concept references forming, held threads surfacing, concept graduating from notes/ |
-| **Research** (explorations, calibrations) | Methodology notes, data file additions, iteration logs | Calibration completing (distinctions discovered), exploration shifting direction, synthesis moments, negative results (failure is data) |
-
-### Recognizing Noise
-
-Ask: "If I removed this from the diff, would the shape change?"
-
-| Change | Test result |
-|--------|-------------|
-| Lockfile with 500 dependency updates | Shape unchanged — noise (unless one dep enables new capability) |
-| Prettier reformatting 20 files | Shape unchanged — noise |
-| Three typo fixes in user-facing copy | Shape *might* change — accumulation if it reveals care for craft |
-| Config adjusting timeout 30s → 60s | Shape unchanged — noise (unless fixing known issue) |
-| New command appearing | Shape changes — appearance |
-| Agent instructions refined | Shape changes — transformation |
-
-The test: does it complete something, or just maintain it?
-
-**Restructurings** — files moving, folders renaming, packages splitting — need special attention. Ask: does this reflect a conceptual shift, or just tidying?
-
-| Restructuring type | Shape | Signal |
-|--------------------|-------|--------|
-| Tidying / convention alignment | None | Ignore — surface rearrangement |
-| Splitting one thing into many | Separation | Notice if boundaries are being *discovered* |
-| Consolidating many into one | Connection | Notice if scattered things are *recognizing* each other |
-| Renaming to reveal true nature | Transformation | Notice if the project is *understanding itself differently* |
-
-**Tool-specific restructuring patterns:**
-
-| Restructuring | Shape | Signal |
-|---------------|-------|--------|
-| Commands moving between namespaces | Conceptual boundary | Notice if commands are being reclassified (e.g., `qino` → `qino-concept` means scope clarified) |
-| Extracting shared agents/references | Connection | Notice if scattered knowledge is consolidating into reusable form |
-| Agent splitting into prep/prose | Separation | Notice if roles are being distinguished for quality |
-| Template becoming reference | Transformation | Notice if examples are becoming principles |
-
-The test: after the restructuring, does the project see itself the same way? If yes — housekeeping. If no — something happened.
-
----
-
-## Diff Size
-
-The question isn't how many lines — it's whether the diff contains *one movement*.
-
-**Too small** (single commits, minor fixes):
-- Risk overemphasizing — a typo fix becomes a chapter
-- The chronicle bloats with non-events
-- Better to wait for something to complete
-
-**Too large** (weeks of work, major releases):
-- Risk missing — significant changes buried in volume
-- Forced to summarize rather than feel the shape
-- The movement becomes multiple movements
-
-**Healthy size:**
-- One coherent phase of work — something that *completes*
-- You can hold the whole diff in mind and feel its shape
-- Typically: 3-15 commits, a few days to a week of activity
-- But a single commit can be a chapter if it's a true arrival
-- And 30 commits can be one chapter if they're all one gesture
-
-**Qualitative adjustments:**
-
-| Diff content | Effective weight |
-|--------------|------------------|
-| 500 lines of generated/config | Light — little shape |
-| 50 lines of new concept | Heavy — dense with meaning |
-| Large refactor | Medium — transformation, but often one shape |
-| Many small fixes | Light unless they accumulate into pressure |
-| New feature landing | Heavy — appearance, even if small |
-
-**The feel:** Can you sense what happened? If yes — right size. If you're drowning or grasping — adjust.
-
-### Example: One Movement Across Multiple Files
+The diff doesn't become story content. It becomes **world behavior** — how the world acts today, what it does differently, what's happening in the background of the story. Characters experience this as natural. The reader who knows the source perceives the rhyme.
 
 ```
-tools/qino-scribe/commands/qino-scribe/survey.md        (new, 290 lines)
-tools/qino-scribe/references/qino-scribe/disturbance.md (+60 lines)
-tools/qino-scribe/agents/scribe-prep.md                 (+15 lines)
+Diff
+  ↓
+Shape + Texture (observed)
+  ↓
+World Behavior (what the world does)
+  ↓
+Characters live in it; Reader perceives pattern
 ```
 
-**Assessment:** Three files changed, but one coherent movement.
+This is interpretation, not translation. Translation is mechanical mapping. Interpretation finds what *rhymes* — what carries the same quality in this world's specific vocabulary.
 
-- Survey command appeared → **Appearance**
-- Disturbance guidance evolved to support it → **Transformation**
-- Prep agent learned to warn about range size → **Connection** (survey's knowledge flows to prep)
-
-These are not three separate events. They're one gesture: "The scribe learns to look before writing."
-
-**Chapter title possibility:** *The Survey* or *Before the First Word*
-
-This is what "one movement" looks like when it touches multiple files. The files serve the movement; the movement doesn't serve the files.
-
-When the diff is mostly maintenance, the shape might be "Accumulation" — small pressures building. Or the chapter might need to find its disturbance elsewhere: in the world's own motion, in what characters were already carrying.
+The generative question is not "What weather matches this shape?" but **"What would the world DO if it felt this way?"**
 
 ---
 
-## How to Read
+## Two Passes
 
-Run the diff commands. See what literally changed.
+### Pass 1: Stats (Structural Shape)
 
-Then step back.
+```bash
+git diff --stat [range]
+git log --oneline [range]
+```
 
-**First, the shape.** What quality of change happened?
+Observe without reading code:
 
-| Shape | The feel |
-|-------|----------|
-| **Appearance** | Something exists that didn't — arrival, emergence, birth |
-| **Disappearance** | Something no longer exists — loss, departure, closing |
-| **Transformation** | Something became other than it was — growth, revelation |
-| **Connection** | Separate things now touch — meeting, recognition, bridge |
-| **Separation** | Joined things now apart — rupture, boundary, independence |
-| **Accumulation** | More of what was building — pressure, weight, gathering |
-| **Release** | What was held is now free — resolution, gift, collapse |
+| Signal | What it shows |
+|--------|---------------|
+| **Density** | Few files (concentrated) vs many (diffuse) |
+| **Flow** | Net insertions (growth) vs deletions (release) |
+| **Location** | Core files vs edges, logic vs config |
+| **New/Existing** | Files appearing, disappearing, or only modified |
+| **Rhythm** | Many small commits (incremental) vs few large (punctuated) |
 
-A diff may carry more than one shape. Sense the dominant quality.
+### Pass 2: Messages (Texture + Keywords)
 
-**Second, the resonance.** Where in the story world does this shape want to live?
+Read commit messages with project understanding. Extract:
 
-Not: what corresponds to the files.
-But: what already carries this quality — and rhymes with what happened?
+**Texture** — the quality of the gesture (freely inferred, no fixed list):
+- clarifying, tentative, completing, discovering, releasing, preparing...
+
+**Keywords** — concrete nouns and domain terms:
+- Functional: point to domain (parser, config, auth, navigation)
+- Resonant: carry metaphorical weight (chronicle, memory, threshold, seed, mirror)
 
 ---
 
-## The Rhyme
+## Shape + Texture
 
-The magic: with a bit of imagination, the change in the story can be traced back to what happened in the code.
+The abstract shapes remain. Texture qualifies them.
 
-```
-chronicling tool appears
-        ↓
-    (imagination)
-        ↓
-characters sense being watched
-```
+| Shape | The movement |
+|-------|--------------|
+| **Appearance** | Something exists that didn't |
+| **Disappearance** | Something no longer exists |
+| **Transformation** | Something became other than it was |
+| **Connection** | Separate things now touch |
+| **Separation** | Joined things now apart |
+| **Accumulation** | More of what was building |
+| **Release** | What was held is now free |
 
-The shape matches (appearance, observation begins). The lineage is traceable (chronicling → being chronicled → being watched). No literal correspondence. Total poetic resonance.
-
-This is translation, not transcription. A good translation preserves meaning while completely changing the words. Someone who reads both languages can trace the etymology. Someone who reads only one experiences a complete work.
+Texture makes the shape specific:
+- "Transformation — clarifying at the core"
+- "Appearance — tentative, at the edges"
+- "Release — after long pressure"
 
 ---
 
-## Finding the Resonance
+## Keywords
 
-Hold the literal content and the shape together. Ask:
+**Functional keywords** point to domain — help locate where in story-world the conditions manifest, which characters might be sensitive.
 
-- What in the story world carries this shape?
-- What rhymes with what actually changed?
-- Who would feel this — not as information, but as atmosphere?
-- What pressure does this touch? What arc might it move?
+**Resonant keywords** carry metaphorical weight — their quality can inform the texture of world conditions without the word itself appearing.
 
-The resonance must honor both the shape *and* the lineage. Not just "any appearance" — an appearance that rhymes with what appeared.
+| Resonant keyword | Quality it carries |
+|------------------|-------------------|
+| chronicle, scribe, record | Being observed, mattering enough to hold |
+| memory, cache | Persistence, what refuses to leave |
+| threshold, gate | Boundaries, who may pass |
+| seed, initial | Beginning, not yet what it will become |
+| mirror, reflect | Self-seeing, recursion |
+| bridge, connect | Spanning, things finding each other |
+
+The word never travels. Its essence might.
+
+---
+
+## Domains of World Behavior
+
+The world is not just weather. Every domain can express a quality:
+
+| Domain | What it includes |
+|--------|------------------|
+| **Material** | How substances respond — wood swells, metal sings, water refuses to settle, ink runs |
+| **Spatial** | How distances feel — sounds carry, the far shore visible, a door you've never noticed |
+| **Temporal** | How time moves — morning that won't end, night that comes early, something late |
+| **Creature** | What animals do — migration starting, unusual stillness, something in the water |
+| **Object** | What cooperates or resists — stuck drawer opens, rope frays, tools find hands |
+| **Human background** | What unnamed people do — quiet industry, debts settled, someone cleaning who never cleans |
+
+The diff quality leaks into how the world *behaves*, not just how it looks. Weather is one domain. There are many others.
+
+---
+
+## Shape + Texture → World Behavior
+
+The question: **What would the world DO if it felt this way?**
+
+Draw from any domain. Be specific to this world's vocabulary.
+
+### Transformation — clarifying
+
+| Domain | World behavior |
+|--------|----------------|
+| Weather | Light sharper than yesterday *(easy reach — try others first)* |
+| Material | The grain in driftwood suddenly legible. Patterns in the floor you've walked over a hundred times. |
+| Object | The stuck drawer opens. The tangled rope unknots under your hands. |
+| Human | Quiet industry everywhere. People organizing shelves, settling accounts, finally writing the letter. |
+
+### Appearance — tentative
+
+| Domain | World behavior |
+|--------|----------------|
+| Weather | Morning mist, might burn off *(easy reach)* |
+| Spatial | A path visible at low tide that wasn't there yesterday. A door in the warehouse wall you've never noticed. |
+| Creature | A bird that hasn't been seen this season. Waiting on the piling. Not announcing itself. |
+| Human | A stranger in town. Hasn't introduced themselves. The innkeeper doesn't know what to make of them. |
+
+### Release — after pressure
+
+| Domain | World behavior |
+|--------|----------------|
+| Weather | Rain finally falling *(easy reach)* |
+| Material | The timber that's been swelling for weeks finally cracks. You hear it from across the harbor. |
+| Creature | Migration beginning. The birds that were waiting have finally left. The sky feels empty. |
+| Human | Conversations that were held are finally happening. Two people who haven't spoken in months, sitting together. |
+
+### The principle
+
+Every domain can express the quality. The agent's job is to find where it wants to leak through *in this specific world* — using the theme's vocabulary, materials, creatures, and rhythms.
+
+Resonant keywords add texture without appearing literally:
+- "chronicle" → sense of being observed, things mattering enough to hold
+- "memory" → persistence, what refuses to leave, stillness
+- "threshold" → boundaries felt, edges that matter
 
 ---
 
 ## What Travels Forward
 
-The prep.md Disturbance section holds:
+The prep.md receives:
 
 ```markdown
-## Disturbance
-**What happened:** [the literal change — for your reference, not the prose agent's]
-**Shape:** [appearance, transformation, connection, etc.]
-**Resonance:** [where this lives in the story world]
-**Who feels it:** [who is sensitive to this quality]
+## World Behavior
+**Shape:** [Transformation — clarifying]
+**The world does:** [The stuck drawer in the chart room finally opens. People settling small debts. The grain in old wood suddenly legible.]
+**Points toward:** [understanding, interpretation — characters who make sense of things]
 ```
 
-The prose agent receives only the resonance and who feels it. The literal content and shape are working notes — they helped you find the rhyme.
+The prose agent weaves this into background behavior. Characters experience it as ordinary. They don't know why today feels different — but it does.
+
+---
+
+## The Matrix Dimension
+
+The reader perceives what characters don't:
+- World behavior rhymes with something outside
+- The world responds to invisible forces
+- Characters live naturally in a patterned world
+
+This creates layers of knowing:
+- **Reader**: sees the pattern clearly (knows the diff)
+- **Wanderer**: senses something, can't name it (meta-perception)
+- **World characters**: experience the world as ordinary
+
+The wanderer's otherworldliness is grounded here — they have some access to the meta-layer that others don't.
+
+---
+
+## Process
+
+1. **Get stats**: `git diff --stat`, observe structure
+2. **Read messages**: infer texture, extract keywords
+3. **Synthesize**: Shape + Texture
+4. **Ask**: What would the world DO if it felt this way?
+5. **Draw from domains**: Material, spatial, temporal, creature, object, human background
+6. **Be specific**: Use this world's vocabulary from the theme
+7. **Note pointers**: Which domain? Which characters might be sensitive?
+
+Output options that span domains:
+
+```
+Shape: Transformation — clarifying
+
+1 → The stuck drawer in the chart room finally opens. Old debts being settled at the trading post.
+    points toward: the record-keepers, the accountants of memory
+
+2 → The grain in driftwood suddenly legible. Patterns in stone you've walked over a hundred times.
+    points toward: those who read surfaces, who notice what's always been there
+
+3 → Sounds carrying further than usual. The far shore visible. Conversations audible across the water.
+    points toward: listeners, those at edges
+```
 
 ---
 
 ## The Test
 
-Two tests, both must pass:
+**Standalone:** Someone who's never seen the source experiences a coherent, living world.
 
-**Standalone:** Could someone who's never seen the source experience this as complete story?
+**Rhyme:** Someone who knows the source recognizes the pattern — the connection between what changed and what the world did.
 
-**Traceable:** Could someone who knows the source follow the thread with imagination?
-
-If only the first passes — the transformation drifted too free.
-If only the second passes — the transformation stayed too literal.
-If both pass — the rhyme exists.
+Both must pass. The world is the interpretation layer.
 
 ---
 
-## Instead Of
+## What to Filter
 
-**Instead of** describing what changed in story-world terms:
-→ Find what quality of change happened, then where that quality wants to live.
+Not all changes carry world-energy. Filter:
 
-**Instead of** forcing correspondence between files and story elements:
-→ Let the shape guide you. The resonance may land somewhere the diff never mentioned.
+**Ignore:** Version bumps, lockfiles, formatting, config tweaks
+**Notice:** New files appearing, significant refactors, new connections, patterns shifting
 
-**Instead of** abstracting so far the lineage disappears:
-→ Honor the literal. The rhyme must be traceable with imagination.
+When the diff is mostly maintenance, the world might behave ordinarily — and the chapter's energy comes from pressure alone.
 
 ---
 
 ## The Deeper Principle
 
-The diff provides energy — something happened, the system must respond.
+The continuous substrate (what the diff touches, what shifts in the system) leaks into discrete world-experience through behavior. Characters live in the named world. But qualities seep through — in what materials do, in what creatures notice, in what objects resist or cooperate, in what unnamed people are suddenly doing.
 
-The story provides form — where that energy can live and become meaning.
-
-The craft is finding where they meet.
+The wanderer feels these leaks. The reader sees them clearly. The world acts in response to what it cannot know.

@@ -9,21 +9,21 @@
 Story evolves in layers. Each layer produces an artifact. The next layer works from that artifact, not full context. User steers via choices at checkpoints.
 
 ```
-WORLD LAYER       → scene seeds      → user chooses
+WORLD LAYER       → scene seeds        → user chooses
          ↓
-DISTURBANCE LAYER → resonances       → user chooses
+DISTURBANCE LAYER → world behavior     → user chooses
          ↓
-BEAT LAYER        → directions       → user chooses
+BEAT LAYER        → directions         → user chooses
                     (includes opening)
          ↓
          [prep.md complete — hard cut]
          ↓
-PROSE LAYER       → chapter.md       (separate agent)
+PROSE LAYER       → chapter.md         (separate agent)
                     → 3 verification passes
          ↓
-WORLD UPDATE      → world.md changes (automatic)
+WORLD UPDATE      → world.md changes   (automatic)
          ↓
-ARC UPDATE        → arcs.md changes  (automatic)
+ARC UPDATE        → arcs.md changes    (automatic)
          ↓
 SNAPSHOT          → copies to chapter dir
 ```
@@ -72,69 +72,68 @@ scene seeds
 
 ### Disturbance Layer
 
-**Reads:** Git diff, World Snapshot (from World Layer)
+**Reads:** Git diff, theme.md for project understanding
 
-**Produces:** Disturbance section of prep.md
+**Produces:** World Behavior section of prep.md
 
-**Consult:** `references/disturbance.md` — how to read for shape and find the rhyme
+**Consult:** `references/disturbance.md` — how git diffs become world behavior
 
-**The shift:** The diff is not source material to describe. It's a quality seeking its story-world form. Ask what it *wants to become*.
+**The role of the diff:** The diff doesn't become story content. It becomes **world behavior** — what the world does differently today. Characters experience this as ordinary. The reader who knows the source perceives the rhyme.
 
-**Questions to hold:**
-- What is the shape of the change? (appearance, transformation, connection, etc.)
-- What in the story world carries this shape — and rhymes with what happened?
-- Who would feel this — not as information, but as atmosphere?
-- What pressure does this touch? What arc might it move?
+**Two Passes:**
+1. **Stats** — structural shape: density, flow direction, location, rhythm
+2. **Messages** — texture + keywords (functional and resonant)
 
-**Outputs:**
-- What happened (the literal — for your reference)
-- Shape (the quality of change)
-- Resonance (where it lives in the story world)
-- Who feels it (who is sensitive to this quality)
-- Angles (3 story directions)
+**Process:**
+1. Observe stats for structural shape
+2. Read messages for texture, extract keywords
+3. Synthesize: Shape + Texture (e.g., "Transformation — clarifying")
+4. Ask: What would the world DO if it felt this way?
+5. Draw from domains: material, spatial, temporal, creature, object, human background
+6. Be specific to this world's vocabulary from the theme
 
-**Checkpoint: Resonances**
+**Checkpoint: World Behavior**
 ```
 ─────────────────────────────────────────────────────────────────
 grounding
 
-  theme       [sensory palette words]
   scene seed  [the one user picked]
+  shape       [Transformation — clarifying]
 
 ─────────────────────────────────────────────────────────────────
-the diff    [one line: what changed]
-shape       [the quality — appearance, transformation, connection, etc.]
+world behavior
 
-resonances
+  1 → [what the world does — from one domain]
+      points toward: [who/what might be sensitive]
 
-  1 → [where this shape could live in the story world]
-  2 → [another resonance]
-  3 → [another resonance]
+  2 → [what the world does — from another domain]
+      points toward: [who/what might be sensitive]
+
+  3 → [what the world does — from another domain]
+      points toward: [who/what might be sensitive]
 
 ─────────────────────────────────────────────────────────────────
 ```
+
+The diff becomes behavior. Characters live in it as ordinary.
 
 ---
 
 ### Beat Layer
 
-**Reads:** Chosen angle, Disturbance section
+**Reads:** The pressure that's moving, accumulated prep.md
 
 **Produces:** Beat section of prep.md
 
 **Questions to ask:**
 - What story type serves this moment?
-- What's the opening image — where/how we begin?
-- Who's involved, what do they want, how do they speak?
-- What's at stake between them, not just for them?
-- How does each perceive the other — especially what isn't said?
+- What's the opening situation — where/who/what's happening?
+- Who's involved, what do they want, what are they protecting?
 - What's being held back that the reader will sense?
 
 **Outputs:**
-- Story type and opening image
-- Characters with wants and voice patterns
-- The relationship (what's at stake between them)
-- Mutual seeing (how each perceives the other)
+- Story type and opening situation
+- Characters with wants and what they're protecting
 - What's unsaid
 - Stakes
 
@@ -144,24 +143,24 @@ resonances
 grounding
 
   theme       [sensory palette words]
-  resonance   [the one user picked]
+  pressure    [what's moving]
 
 ─────────────────────────────────────────────────────────────────
 directions
 
   1 [Story Type] → [what happens]
-                   opens: [where + how we enter]
+                   opens: [situation — where + who + what's happening]
 
   2 [Story Type] → [what happens]
-                   opens: [where + how we enter]
+                   opens: [situation — where + who + what's happening]
 
   3 [Story Type] → [what happens]
-                   opens: [where + how we enter]
+                   opens: [situation — where + who + what's happening]
 
 ─────────────────────────────────────────────────────────────────
 ```
 
-Each direction includes its opening — story type and entry unified.
+Each direction includes its opening situation — story type and entry unified.
 
 After user chooses: prep.md is complete.
 
@@ -173,20 +172,22 @@ After user chooses: prep.md is complete.
 
 **Produces:** chapter.md
 
-**Constraint:** The prose agent receives only prep.md. This forces fresh invention — can't recycle descriptions, must generate from sensory palette, stakes and voice notes are all that's visible. But the agent carries craft knowledge — the constraint is on content, not on how to write.
+**Constraint:** The prose agent receives only prep.md. This forces fresh invention — can't recycle descriptions, must generate from sensory palette, character wants and protections are all that's visible. But the agent carries craft knowledge — the constraint is on content, not on how to write.
 
 **Verification (3 passes after drafting, before presenting):**
 
 1. **Strangeness Pass** — Look for organic moments where attention lands on the wanderer. Add external observation if natural, skip if forced. Maximum 1-2 moments.
 
-2. **Editorial Pass** — Scan for LLM anti-patterns:
+2. **Editorial Pass** — Scan for common failures:
+   - Narrated dialogue (explaining what a line means after it lands)
    - Thematic echo (declaring theme instead of showing)
    - Frictionless success (world too cooperative)
    - Paraphrase loops (restating what was just shown)
    - Diagnostic label-speak (naming emotions instead of embodying)
    - Abstraction drift (losing sensory grounding)
+   - Dramatic devices (manufactured intensity through fragments/punctuation)
 
-3. **Final Checklist** — Stakes, vividness, dialogue variety, reader gap, mutual seeing, response completion, immersion (no source material leaking)
+3. **Final Checklist** — Stakes, vividness, dialogue variety, reader gap, narration trusts dialogue, immersion (no source material leaking)
 
 ---
 
@@ -238,27 +239,23 @@ The artifact that travels from prep agent to prose agent:
 ```markdown
 # Chapter NNN Prep
 
-## World Snapshot
-**Sensory palette:** [5-8 words]
-**Active pressures:** [2-3 bullets]
-**Scene seed chosen:** [the one user picked]
+## Grounding
+**Sensory palette:** [concrete nouns — materials, textures, weathers]
+**Pressures:** [what's building in the world]
+**Scene seed:** [the one user picked]
 
-## Disturbance
-**Resonance:** [where the change lives in the story world]
-**Who feels it:** [who is sensitive to this quality]
-**Angle chosen:** [the direction user picked]
+## World Behavior
+**Shape:** [Transformation — clarifying]
+**The world does:** [The stuck drawer opens. Quiet industry. Debts being settled.]
+**Points toward:** [understanding, interpretation — who might be sensitive]
 
 ## Beat
 **Story type:** [chosen type]
-**Opening image:** [where/how we begin]
+**Opening situation:** [where + who + what's happening — no prose fragments]
 
 **Who's involved:**
-- [Character]: [what they want] / *Voice: [speech pattern]*
-- [Character]: [what they want] / *Voice: [speech pattern]*
-
-**The relationship:** [what's at stake between them, not just for them]
-
-**Mutual seeing:** [how each perceives the other — especially what isn't said]
+- [Character]: wants [what they want] / protecting [what they won't say]
+- [Character]: wants [what they want] / protecting [what they won't say]
 
 **What's unsaid:** [what's being held back that the reader will sense]
 
@@ -268,23 +265,23 @@ The artifact that travels from prep agent to prose agent:
 **What is NOT in prep.md:**
 - Full world.md content
 - Full arcs.md content
-- The literal git diff or shape (these helped find the resonance, but don't travel)
+- The literal git diff content (only world behavior travels)
 - Recent chapter content
 - Reasoning or process notes
-
-The prep serves the prose better when it holds what's between people — the relationship, what each perceives in the other, what's being held back. These dimensions give the prose its relational life.
+- Prose fragments or sentences (give situations, not drafts)
+- Diff vocabulary (interpret to behavior, not words)
 
 ---
 
 ## Checkpoint Types
 
-| Checkpoint | Type | User Action |
-|------------|------|-------------|
+| Layer | Type | User Action |
+|-------|------|-------------|
 | Scene Seeds | **Interactive** | Choose scene seed |
-| Resonances | **Interactive** | Choose resonance |
+| World Behavior | **Interactive** | Choose how the world behaves today |
 | Directions | **Interactive** | Choose direction + opening |
 
-**Interactive checkpoints:** System pauses, presents options, waits for choice.
+**Interactive checkpoints:** System pauses, presents 3 options from different domains, waits for choice.
 
 Post-prose updates (world, arcs, snapshots) are automatic — no confirmation required.
 
@@ -320,7 +317,7 @@ At interactive checkpoints, users can delegate decisions:
 | `>` | System picks this one, ask me at next |
 | `>>` | System picks all remaining, start writing |
 
-Three checkpoints total: Scene Seeds → Resonances → Directions (with opening).
+Three interactive checkpoints: Scene Seeds → World Behavior → Directions.
 
 ---
 

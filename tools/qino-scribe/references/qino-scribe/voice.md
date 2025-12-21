@@ -76,6 +76,20 @@ Dialogue is exchange, not delivery. Characters respond to what wasn't said as mu
 
 ---
 
+## Narrated Dialogue
+
+Let dialogue land. Don't explain what it means immediately after.
+
+*Ask:* Did I just interpret this line for the reader? Does the narration trust the dialogue?
+
+✗ "Depends on the angle." Not an evasion. A fact. The wanderer heard it in the tone — technical ease, words chosen for accuracy not warmth.
+✗ "I'll think about it." Which meant no. The wanderer recognized the deflection.
+✗ "We'll see," she said, in a way that closed the subject.
+
+If the dialogue works, the narration doesn't need to annotate it. If it doesn't work, fix the dialogue.
+
+---
+
 ## Responses That Complete
 
 When characters respond, meaning is completed in unexpected directions. Both gain dimension.
@@ -92,7 +106,7 @@ When characters respond, meaning is completed in unexpected directions. Both gai
 
 Before a character speaks significance, they should speak something else. The profound emerges from the mundane.
 
-*Ask:* Is there at least one exchange about logistics, discomfort, or something unrelated to theme?
+*Ask:* Is every line carrying weight? If so, something's wrong.
 
 ✗ (A scene where every line advances meaning)
 ✗ (Characters who only discuss what matters)
@@ -160,6 +174,22 @@ Images emerge from what's being handled, observed, encountered. Language clarifi
 ✗ "light that had traveled longer than civilizations to arrive here"
 ✗ "something that didn't have a name in any language she knew"
 ✗ "the ordinary machinery of arrival"
+
+---
+
+## Dramatic Devices
+
+Prose earns its weight through what happens, not through typographical drama.
+
+*Ask:* Am I using structure to manufacture intensity the content doesn't carry?
+
+✗ "Then: light."
+✗ "And then — nothing."
+✗ "One word: gone."
+✗ "Silence. Long. Unbroken."
+✗ "They waited. And waited. And waited."
+
+Sentence fragments, em-dash interruptions, and repetition-for-effect are cheap when the content is thin. If the moment matters, write it. If it doesn't, no punctuation trick will save it.
 
 ---
 
@@ -232,8 +262,8 @@ After the story ends, a moment alone. Third person. Witnessed, not confessing.
 These aren't checks for after — they're constraints during:
 
 - **Body first:** First sentence is action, not thought
-- **Dialogue varies:** One practical line. Two characters sound different.
+- **Dialogue varies:** Not every line advances meaning. Characters sound different from each other.
 - **Environment participates:** The place does something
-- **Protagonist embodies:** A physical habit surfaces
-- **Gap stays open:** One thing unsaid that the reader fills
-- **Response reaches:** Someone perceives what wasn't said
+- **Protagonist embodies:** Physical habits surface
+- **Gap stays open:** Something unsaid that the reader fills
+- **Narration trusts:** Dialogue lands without annotation

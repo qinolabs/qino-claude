@@ -94,7 +94,7 @@ The profound lands harder when it interrupts the ordinary.
 
 Before a character speaks significance, they should speak something else — a practical concern, a complaint, an observation about the immediate. When everyone speaks mystery, nothing is mysterious. When everyone speaks wisdom, no one is wise.
 
-**In practice:** At least one exchange per scene about logistics, discomfort, or something unrelated to theme. The profound emerges from the mundane, doesn't replace it.
+**In practice:** If every line in a scene carries weight, something's wrong. The profound emerges from the mundane, doesn't replace it.
 
 ---
 
@@ -110,19 +110,18 @@ How they hold it, what they do with it, what it costs them. Relationship reveals
 
 ## The Accumulation Pattern
 
-Some principles are per-scene (Mundane Grounding — each scene needs it).
-Some principles accumulate (The World Has Been Watching — builds across scenes).
+Some principles are per-scene — their absence in any scene is a signal.
+Some principles accumulate — they build across scenes, surfacing when ready.
 
-**Per-scene (enforced each time):**
-- Mundane Grounding
-- Mutual Seeing
-- Responses That Complete
-- Reader as Bond
+**Per-scene (absence is a signal):**
+- Mundane Grounding — if every line carries weight, something's wrong
+- Reader as Bond — if the protagonist seems to withhold, the bond frays
+- Responses That Complete — if exchanges just acknowledge, they flatten
 
-**Accumulating (tracked, surfacing occasionally):**
-- The World Has Been Watching
-- What Remains Unspoken
-- Depth Through Others
+**Accumulating (surfacing when ready):**
+- The World Has Been Watching — builds across encounters
+- What Remains Unspoken — gathers weight over time
+- Depth Through Others — emerges through accumulated perception
 
 The accumulating principles require state to be tracked — not just "who exists" but "who has been perceiving what."
 
