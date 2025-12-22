@@ -349,9 +349,43 @@ qino Scribe keeps the chronicle alive. It reads the git range, grounds in `world
 
 In this repository's chronicle, the wanderer is ferrying a warming pouch upriver. Villages know about them before they arrive. Lira at Orith's Landing recognizes the pouch from years ago; Seren fears the writing filling his margins; the river itself carries news. The chronicle only moves when the wanderer does — and when the world answers.
 
-### Chapters that continue
+### A Chronicles That Accumulates
 
-Your ecosystem evolves through conversations and work that spans sessions. qino Scribe turns that movement into a fantasy chronicle with action, consequence, and a wanderer who acts — not documentation in costume. Each chapter ends with pressures still building so the next one has somewhere to land.
+Your ecosystem evolves through conversations and work that spans sessions. qino Scribe turns that movement into a fantasy chronicle that **gathers weight**. It doesn't just append new chapters; it remembers what has been seen, what remains unspoken, and how the world has been watching.
+
+### The World's Disturbance
+
+The Disturbance Layer is more than just the world responding to changes in the source material. It is a space that creates a special relationship between the reader and the wanderer.
+
+When you act, the world reacts. A bug isn't just a failure; it's a gate rusted shut. A lost gap isn't just an error; it's a map torn away by a whiteout wind. This responsiveness establishes the **contextual density** of the chronicle, but the core of the layer is relational.
+
+### The Wanderer's Presence
+
+The wanderer carries a depth no single world can hold. They are not oblivious to the world beyond (your source material), but they do not voice it. This silence creates a bond of recognition and trust.
+
+They are defined not by power, but by **exposure**. They can be hurt, confused, or wrong.
+
+> **The Injury** > _Performance:_ The knife slipped. The wanderer watched the blood, marveling at the vivid red of life.
+> _Presence:_ The knife slipped. The cold had stolen the feeling from their fingers, so they only felt the warmth of the blood first. It hit the snow in bright, steaming drops. The wanderer dropped the wood and pressed their palm into the drift, counting the seconds until the numbness returned.
+
+A higher-order presence shines through in **how** they respond to this exposure. This is not a performance of "grace" or "wisdom," but **embodied presence**. They meet friction by staying fully present with the obstacle—not retreating into memory or abstraction.
+
+> **The Gate** > _Performance:_ The wanderer bowed to the locked gate, honoring its resistance.
+> _Presence:_ The wind screamed through the iron. The lock was a solid lump of oxidation. The wanderer didn't rattle it. They let their hand drop, the cold lingering on their glove, and turned their back to the wind.
+
+They do not fight the world, but they also do not detach from it. They simply inhabit the moment with full attention.
+
+> **The Map** > _Presence:_ The wind tore the map from their hands. It was gone before they could take a step. The wanderer didn't waste heat shouting. They turned their collar up and kept walking.
+
+### Mutual Revealing
+
+The central principle of the chronicle is **mutual revealing**: through the implicit response of one entity to the action (or inaction) of another, something is revealed about each.
+
+This applies to everything in the world, not just the wanderer. When a merchant refuses a coin, the refusal reveals the coin's worth _and_ the merchant's fear. When the fog swallows a sound, it reveals the fog's density _and_ the sound's fragility. Meaning emerges from the friction between things.
+
+### Complete Transformation
+
+The chronicle must work for a reader who has never heard of the source material. Technical names never leak into the prose. `AuthService` becomes "the gatekeeper's ledger." A database migration becomes "preservation efforts in the archives." The story guards its own reality.
 
 ### How chapters take shape
 

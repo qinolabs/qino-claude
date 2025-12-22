@@ -1,18 +1,20 @@
 # Relational Principles
 
-*Craft knowledge about how relationship permeates every dimension of story.*
+_Craft knowledge about how relationship permeates every dimension of story._
 
 These principles transcend any particular narrative system. They name what makes stories feel alive — the relational substrate that all good storytelling rests on.
 
 ---
 
-## 1. Mutual Seeing
+## 1. Mutual Revealing
 
-"The wanderer sees the world. The world must see back."
+"The central principle of the chronicle is mutual revealing."
 
-Stakes require reciprocal perception. If the protagonist observes but is never observed — notices but is never noticed — there are no stakes. The world's indifference becomes contagious.
+Through the implicit response of one entity to the action (or inaction) of another, something is revealed about each.
 
-**In practice:** Every scene needs a moment where someone perceives the protagonist. A glance, a pause, a shift in posture. Something passes between.
+This applies to everything in the world, not just the wanderer. When a merchant refuses a coin, the refusal reveals the coin's worth _and_ the merchant's fear. When the fog swallows a sound, it reveals the fog's density _and_ the sound's fragility. Meaning emerges from the friction between things.
+
+**In practice:** Every scene needs a moment where the implicit response reveals more than the explicit action. A glance, a pause, a shift in posture. Something passes between.
 
 ---
 
@@ -108,17 +110,29 @@ How they hold it, what they do with it, what it costs them. Relationship reveals
 
 ---
 
-## The Accumulation Pattern
+## 11. Complete Transformation
+
+The story guards its own reality.
+
+The chronicle must work for a reader who has never heard of the source material. Technical names never leak into the prose. `AuthService` becomes "the gatekeeper's ledger." A database migration becomes "preservation efforts in the archives."
+
+**In practice:** Before any noun enters the prose, ask: is this word arising from the story world, or leaking from the source material? The story guards its own reality.
+
+---
+
+## 12. The Accumulation Pattern
 
 Some principles are per-scene — their absence in any scene is a signal.
 Some principles accumulate — they build across scenes, surfacing when ready.
 
 **Per-scene (absence is a signal):**
+
 - Mundane Grounding — if every line carries weight, something's wrong
 - Reader as Bond — if the protagonist seems to withhold, the bond frays
 - Responses That Complete — if exchanges just acknowledge, they flatten
 
 **Accumulating (surfacing when ready):**
+
 - The World Has Been Watching — builds across encounters
 - What Remains Unspoken — gathers weight over time
 - Depth Through Others — emerges through accumulated perception
