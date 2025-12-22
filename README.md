@@ -160,22 +160,21 @@ Each space has its own `chronicle/` directory. Git changes in any repo become ch
 
 #### Flow Between Spaces
 
-**Routed flows** — the command automatically sends content to the right place based on `qino-config.json`:
+**Routed flows** — content automatically goes to the right place based on `qino-config.json`:
 
 ```
-RESEARCH ──graduate──▶ CONCEPTS        /qino-research:graduate sends to conceptsRepo
-RESEARCH ──capture───▶ CONCEPTS        /qino:capture in research routes insights to concepts
+RESEARCH ──graduate──▶ CONCEPTS        /qino-research:graduate creates note or concept seed
+RESEARCH ──capture───▶ CONCEPTS        /qino:capture routes insights as notes
 
-CONCEPTS ──init──────▶ IMPLEMENTATION  /qino-dev:init reads concept, creates linked project
+CONCEPTS ──init──────▶ IMPLEMENTATION  /qino-dev:init creates linked project from concept
 
-IMPLEMENTATION ──capture──▶ CONCEPTS   /qino:capture routes to linked conceptsRepo
-IMPLEMENTATION ──explore──▶ CONCEPTS   /qino-concept:explore works on linked concept
+IMPLEMENTATION ──capture──▶ CONCEPTS   /qino:capture routes observations to conceptsRepo
 ```
 
 **Initiated flows** — you notice something and start a command:
 
 ```
-CONCEPTS ────────────▶ RESEARCH        You realize a distinction needs calibrating → /qino:attune
+CONCEPTS ────────────▶ RESEARCH        /qino:attune creates calibration in research space
 ```
 
 ### The Router
