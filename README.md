@@ -4,9 +4,9 @@
 
 Tools for working with ideas in [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
 
-This work reflects the way of thinking that found it's seed in the work of Gregory and Nora Bateson, and continues to shape how I perceive, learn, and participate in the world. The tools in this project are expressions of that living process and a practical way of deepening our understanding of it.
+This work reflects a way of thinking that found its seed in Gregory and Nora Bateson's work. The tools don't explain their ideas—they _practice_ them.
 
-They help us notice what connects, learn without extracting, and participate in an ecology larger than ourselves that co-evolves with us as we pay attention to the journey.
+They help us notice what connects, learn without extracting, and participate in an ecology that co-evolves with us as we pay attention to the journey.
 
 <details>
 <summary><strong>Companions on the Path: The Pattern That Connects</strong> (click to expand)</summary>
