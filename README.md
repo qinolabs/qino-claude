@@ -4,7 +4,9 @@
 
 Tools for working with ideas in [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
 
-Gregory and Nora Bateson's work — on communication, pattern, and how living systems learn — a way of thinking that continues to shape how I perceive, learn, and participate in the world. The tools in this project and the process of developing them are an expression of that continuous process.
+This work reflects the way of thinking that found it's seed in the work of Gregory and Nora Bateson, and continues to shape how I perceive, learn, and participate in the world. The tools in this project are expressions of that living process and a practical way of deepening our understanding of it.
+
+They help us notice what connects, learn without extracting, and participate in an ecology larger than ourselves that co-evolves with us as we pay attention to the journey.
 
 <details>
 <summary><strong>Companions on the Path: The Pattern That Connects</strong> (click to expand)</summary>
@@ -179,6 +181,7 @@ Everything connects through concepts-repo, but each space keeps its own ecology 
 | `qino-concept:`  | Concepts                   | explore, import, init                |
 | `qino-research:` | Research                   | begin, experiment, graduate          |
 | `qino-scribe:`   | Chronicle                  | chapter, rewind                      |
+| `qino-lens:`     | Quality of Attention       | wanderer, narrator                   |
 | `qino-dev:`      | Implementation             | init, app                            |
 
 The `qino:` namespace is not a specific space — it's what you're already in when you're anywhere. The suffix is the door you're entering through.
@@ -422,6 +425,57 @@ scene seeds
 ```
 
 _[Source](tools/qino-scribe/) · [Installation](tools/qino-scribe/README.md#installation)_
+
+---
+
+## qino Lens
+
+The Qualities of Attention.
+
+Style resists decoration. It is not paint applied to surface; it is a **quality of attention**. A shift in _what is noticed_.
+
+qino-lens pushed its way out of the work. Scribe needed to see the world differently—to perceive friction where there was only plot, to sense agency where there was only setting. We didn't design a library; we extracted the ways of seeing that the chronicle demanded.
+
+**The tool is a prototype for the technology.**
+
+The logic of "Attunement"—how perception shifts, how noise is filtered—is the spine of the future ecosystem apps. By working it out here, in text, the `qino-lens` command tests the technology's weight before it ever becomes application code.
+
+The "Wanderer's Lens" didn't arrive; it accumulated. We began by exploring the nature of the "Wanderer's presence" within Scribe. We leveraged `qino:attune` to understand that mysterious quality better and find a language for it. Then, we `qino:capture`d the vital connection: this new "Quality of Attention" framing was exactly what the dormant `qino-lens` technology concept had been waiting for.
+
+This is not a pipeline; it is an ecology. We do not build the tool, then the technology. We refine the **tool** (lens), the **technology** (attunement), and the **process** (ecological design) in the same breath.
+
+_(Note: We used the `qino-lens:narrator` tool that emerged from this process to refine this very section, closing the loop in real-time.)_
+
+### Two Ways of Seeing
+
+The chronicle changes depending on who watches it:
+
+#### The Narrator's Lens (World as Participant)
+
+- **Sensitivity:** Physics, Agency, Active Anticipation.
+- **The World Acts:** The fog doesn't just hang; it _withholds_. The room doesn't just contain; it _shapes_.
+- **The Construction:** This lens ensures the world is solid enough to push back.
+
+> _Example:_ "The corridor didn't just lead to the chamber; it constricted. The ceiling dropped low, forcing a bow, while the walls leaned in to strip away any thought of turning back. The architecture demanded submission before arrival."
+
+#### The Wanderer's Lens (Sensitivity to Friction)
+
+- **Sensitivity:** Exposure, Consequence, Absence of Abstraction.
+- **The Body Knows:** It notices not the beauty of the ice, but the _numbness_ in the fingers. Not the meaning of silence, but its _weight_.
+- **The Inhabitation:** This lens grounds high fantasy in immediate physical cost.
+
+> _Example:_ "The fog pressed against the river, a heavy, wet burden. The ferry wasn't coming. The wanderer unbuckled the strap and slid the pack down the piling, guiding it until it touched the wet wood. They straightened. The sudden lightness made them sway, their shoulders rising into the damp space where the straps had been."
+
+_(This specific quality of attention—the Wanderer's sensitivity to friction—is what informed the "Companions on the Path" introduction at the top of this readme.)_
+
+### Commands
+
+| Command               | Purpose                                                                                            |
+| :-------------------- | :------------------------------------------------------------------------------------------------- |
+| `/qino-lens:wanderer` | Attune text to the Wanderer's sensitivity. Pipe logs or summaries to see them through consequence. |
+| `/qino-lens:narrator` | Attune scenes to the Narrator's sensitivity. Activate the environment.                             |
+
+_[Source](tools/qino-lens/) · [References](tools/qino-lens/references/)_
 
 ---
 

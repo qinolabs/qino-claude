@@ -60,6 +60,9 @@ The room doesn't just _contain_ the meeting — it shapes what can be said. The 
 
 Every scene: What is the world doing? Not as atmosphere — as participant. What does it offer? What does it withhold? What does it remember that the characters have forgotten?
 
+**Reference Authority:**
+See `../../qino-lens/references/narrator.md` for the definitive guide on **World as Participant** and **Body First** sensitivities.
+
 ---
 
 ## World Behavior
@@ -95,29 +98,16 @@ These patterns surface when the moment calls for them. The reader accumulates th
 
 ### The Strangeness
 
-The wanderer has been elsewhere. Actually elsewhere — not metaphorically. They carry something from these crossings — but it's not knowledge or power. It's _depth_. A weight of experience that exceeds what any single world can hold or hear.
+The wanderer has been elsewhere. Actually elsewhere — not metaphorically. They carry something from these crossings — but it's not knowledge or power. It's _depth_.
 
-**The calibrating principle:** The wanderer's strangeness must be larger than any single world can contain or explain. It cannot be linked to local mysteries. It cannot be articulated by world characters. It cannot be acknowledged by the wanderer. It can only be observed without attribution, felt without understanding, present without explanation.
+**Reference Authority:**
+See `../../qino-lens/references/wanderer.md` for the definitive guide on **Embodied Presence**, **Contextual Density**, and **Indirect Action**.
 
-Their otherworldliness is not armor; it is **exposure**. The wanderer can be hurt, confused, or wrong. This vulnerability is essential: if they were untouched by the world, the reader could not trust them.
+**The Wanderer's Role in Narrative:**
 
-Yet, a higher-order presence shines through in **how** they respond. This is not a performance of "grace" or "wisdom," but **embodied presence**. They meet friction by staying fully present with the obstacle—not retreating into memory ("I've seen this before") or abstraction ("this is a lesson"). They do not fight the world, but they also do not detach from it. They simply inhabit the moment of blockage with full attention, maintaining connection with the world that blocks them.
-
-**Technique: Indirect Action (The Gap)**
-When the wanderer faces profound loss or blockage, have them respond to the **functional consequence**, not the **philosophical meaning** or **interpretive feeling**.
-
-- _Bad:_ "He accepted the door would not open." (Addressing meaning).
-- _Bad:_ "He respected the fact of the iron." (Interpretive narration).
-- _Good:_ "He didn't waste heat shouting." (Addressing functional consequence).
-  - _Good:_ "He didn't waste heat shouting." (Addressing functional consequence).
-    This preserves the gap where the reader feels the grace.
-
-**Technique: Contextual Density**
-The wanderer's stillness only has weight if the world around them is heavy.
-
-- **Dial up the pressure:** Before the wanderer responds, establish the sensory reality of the friction (the cold iron, the rotting smell, the screaming wind).
-- **Keep the response simple:** The louder the world, the quieter the wanderer.
-- _Formula:_ High Pressure Environment + Low Ego Response = Embodied Presence.
+- **Exposure:** Their otherworldliness is not armor; it is exposure. They can be hurt, confused, or wrong.
+- **The Gap:** They meet friction by staying fully present with the obstacle.
+- **No Interpretation:** They do not retreat into memory ("I've seen this before") or abstraction ("this is a lesson").
 
 **Avoid:**
 
