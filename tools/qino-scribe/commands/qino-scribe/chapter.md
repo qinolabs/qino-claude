@@ -302,4 +302,4 @@ These commonly fail. Keep visible:
 - "The wanderer" is narrative voice, never spoken
 - Not everyone speaks wisdom — vary character registers
 - Pressures section not empty when you finish
-- At least one moment of mutual seeing
+- At least one moment of mutual revealing

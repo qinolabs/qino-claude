@@ -42,10 +42,12 @@ Consult during your work:
 - Who has been watching? What have they accumulated?
 - Which relationship could become a scene?
 - How would the world filter through this relationship?
+- **Newcomer's eyes:** What would someone notice on their first day here that locals walk past without a glance? (Consult: `qino-lens/references/newcomer.md`)
 
 **Produce:**
 - Sensory palette (5-8 concrete nouns from the theme)
 - Active pressures (2-3 from world.md)
+- The world's strangeness (what a newcomer would notice)
 - Scene seeds (3 relational situations)
 
 **Present checkpoint:**
@@ -55,6 +57,7 @@ grounding
 
   theme       [sensory palette words]
   pressure    [what's building]
+  strangeness [what a newcomer would notice that locals walk past]
   last seen   [where wanderer was]
 
 ─────────────────────────────────────────────────────────────────
@@ -72,6 +75,7 @@ scene seeds
 ## Grounding
 **Sensory palette:** [concrete nouns — materials, textures, weathers]
 **Pressures:** [what's building in the world]
+**The world's strangeness:** [what a newcomer would notice that locals walk past]
 **Scene seed:** [the one user picked]
 ```
 
@@ -166,23 +170,27 @@ world behavior
 
 **Read:** World Behavior, the pressures from world.md, accumulated prep.md
 
+**Consult:** `references/qino-scribe/story-lenses.md` for the twelve lenses and their sensitivities.
+
 **Ask yourself:**
-- What story type serves this moment? (Select 3 from the ten types)
+- What story lens serves this moment? (Select 3 from the twelve lenses)
 - What's the opening situation — where/how we begin?
 - Who's involved, what do they want, what are they protecting?
 - What's being held back that the reader will sense?
 
-**Story types to consider:**
-1. The Complication — the change creates a problem
+**The twelve story lenses:**
+1. The Arrival — being received
 2. The Journey — leaving known ground
-3. The Confrontation — something must be faced
+3. The Return — coming back to where we've been
 4. The Discovery — something hidden comes to light
-5. The Crisis — the pressure breaks now
-6. The Arrival — being received
+5. The Confrontation — something must be faced
+6. The Crisis — the pressure breaks now
 7. The Loss — someone or something departs
 8. The Vigil — presence when action is impossible
-9. The Return — coming back to where we've been
-10. The Ritual — a cultural form holds the chapter
+9. The Ritual — a cultural form holds the chapter
+10. The Complication — the change creates a problem
+11. The Work — making together, shared labor
+12. The Gathering — multiple threads convene
 
 **Present checkpoint:**
 ```
@@ -196,24 +204,37 @@ grounding
 ─────────────────────────────────────────────────────────────────
 directions
 
-  1 [Story Type] → [what happens]
+  1 [Story Lens] → [what happens]
                    opens: [situation — where + who + what's happening]
 
-  2 [Story Type] → [what happens]
+  2 [Story Lens] → [what happens]
                    opens: [situation — where + who + what's happening]
 
-  3 [Story Type] → [what happens]
+  3 [Story Lens] → [what happens]
                    opens: [situation — where + who + what's happening]
 
 ─────────────────────────────────────────────────────────────────
 ```
 
-Each direction includes its opening situation — story type and entry unified.
+Each direction includes its opening situation — story lens and entry unified.
 
-**After user chooses:** Append the Beat section to prep.md:
+**After user chooses:** Append the Story Lens and Beat sections to prep.md:
 ```markdown
+## Story Lens
+
+**Lens:** [chosen lens name]
+
+**Foreground these sensitivities:**
+- [Sensitivity 1] — [brief description]
+- [Sensitivity 2] — [brief description]
+- [Sensitivity 3] — [brief description]
+
+**Territory:** [chosen territory, or "agent's choice" if user didn't specify]
+
+**Craft note:** [from story-lenses.md]
+
 ## Beat
-**Story type:** [chosen type]
+
 **Opening situation:** [where + who + what's happening — no prose fragments]
 
 **Who's involved:**
@@ -225,11 +246,13 @@ Each direction includes its opening situation — story type and entry unified.
 **Stakes:** [what could be lost/gained]
 ```
 
+Copy the sensitivity descriptions from `story-lenses.md` — the prose agent needs this information to write through the correct perceptual mode.
+
 ---
 
 ## Complete the Prep
 
-After Beat section is written, prep.md is complete. Announce:
+After Story Lens and Beat sections are written, prep.md is complete. Announce:
 
 ```
 prep.md complete — ready for prose agent
@@ -237,7 +260,11 @@ prep.md complete — ready for prose agent
 ─────────────────────────────────────────────────────────────────
 ```
 
-The prose agent will receive only prep.md. Nothing else from your context travels forward.
+**What travels to the prose agent:**
+- prep.md — the constraint (what to write, how to perceive)
+- theme.md — the seed (the world's origin and generative grammar)
+
+Nothing else from your context travels forward. World.md, arcs.md, git diff — these inform the prep but don't cross the threshold. The chronicle develops its own life — new areas discovered, new characters emerging. Continuity is preserved via world.md and arcs.md (which you update after prose is written).
 
 ---
 

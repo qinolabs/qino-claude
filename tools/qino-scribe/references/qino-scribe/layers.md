@@ -43,10 +43,12 @@ SNAPSHOT          → copies to chapter dir
 - What pressures are building in the world right now?
 - Who has been watching? What have they accumulated?
 - Which relationship could become a scene?
+- **Newcomer's eyes:** What would someone notice on their first day here that locals walk past without a glance?
 
 **Outputs:**
 - Sensory palette (5-8 concrete nouns from the theme)
 - Active pressures (2-3 from world.md)
+- The world's strangeness (what a newcomer would notice)
 - Scene seeds (3 relational situations)
 
 **Checkpoint: Scene Seeds**
@@ -56,6 +58,7 @@ grounding
 
   theme       [sensory palette words]
   pressure    [what's building]
+  strangeness [what a newcomer would notice that locals walk past]
   last seen   [where wanderer was]
 
 ─────────────────────────────────────────────────────────────────
@@ -123,16 +126,19 @@ The diff becomes behavior. Characters live in it as ordinary.
 
 **Reads:** The pressure that's moving, accumulated prep.md
 
-**Produces:** Beat section of prep.md
+**Produces:** Story Lens and Beat sections of prep.md
+
+**Consult:** `references/qino-scribe/story-lenses.md` — the twelve lenses and their sensitivities
 
 **Questions to ask:**
-- What story type serves this moment?
+- What story lens serves this moment? (Select 3 from the twelve lenses)
 - What's the opening situation — where/who/what's happening?
 - Who's involved, what do they want, what are they protecting?
 - What's being held back that the reader will sense?
 
 **Outputs:**
-- Story type and opening situation
+- Story lens with foregrounded sensitivities and territory
+- Opening situation
 - Characters with wants and what they're protecting
 - What's unsaid
 - Stakes
@@ -143,36 +149,45 @@ The diff becomes behavior. Characters live in it as ordinary.
 grounding
 
   theme       [sensory palette words]
-  pressure    [what's moving]
+  behavior    [what the world is doing today]
+  pressure    [from world.md — what's ready to move]
 
 ─────────────────────────────────────────────────────────────────
 directions
 
-  1 [Story Type] → [what happens]
+  1 [Story Lens] → [what happens]
                    opens: [situation — where + who + what's happening]
 
-  2 [Story Type] → [what happens]
+  2 [Story Lens] → [what happens]
                    opens: [situation — where + who + what's happening]
 
-  3 [Story Type] → [what happens]
+  3 [Story Lens] → [what happens]
                    opens: [situation — where + who + what's happening]
 
 ─────────────────────────────────────────────────────────────────
 ```
 
-Each direction includes its opening situation — story type and entry unified.
+Each direction includes its opening situation — story lens and entry unified.
 
-After user chooses: prep.md is complete.
+After user chooses: append Story Lens and Beat sections to prep.md.
 
 ---
 
 ### Prose Layer
 
-**Reads:** ONLY prep.md (hard cut from previous context)
+**Reads:** prep.md AND theme.md (hard cut from other context)
 
 **Produces:** chapter.md
 
-**Constraint:** The prose agent receives only prep.md. This forces fresh invention — can't recycle descriptions, must generate from sensory palette, character wants and protections are all that's visible. But the agent carries craft knowledge — the constraint is on content, not on how to write.
+**What travels to the prose agent:**
+- **prep.md** — the constraint (what to write, how to perceive)
+- **theme.md** — the seed (the world's origin and generative grammar)
+
+**The Story Lens:** prep.md carries a Story Lens section that tells the prose agent HOW to perceive the world for this chapter. The lens declares which sensitivities to foreground and includes a territory (the creative direction within the lens). The prose agent reads the lens, consults the linked qino-lens reference files, and writes through that perceptual mode.
+
+**Theme as seed:** theme.md is a seed, not a container. It establishes the key signature — the atmosphere's origin — but the chronicle grows beyond it. New locations emerge, characters surface, mysteries compound. The prose agent reads the theme to feel what kind of world this began as, then invents freely within that generative grammar. Continuity lives in world.md and arcs.md.
+
+**Constraint:** The prose agent receives only prep.md and theme.md. This forces fresh invention — can't recycle descriptions, must generate from sensory palette, character wants and protections are all that's visible. But the agent carries craft knowledge — the constraint is on content, not on how to write.
 
 **Verification (3 passes after drafting, before presenting):**
 
@@ -187,7 +202,7 @@ After user chooses: prep.md is complete.
    - Abstraction drift (losing sensory grounding)
    - Dramatic devices (manufactured intensity through fragments/punctuation)
 
-3. **Final Checklist** — Stakes, vividness, dialogue variety, reader gap, narration trusts dialogue, immersion (no source material leaking)
+3. **Final Checklist** — Stakes, vividness, strangeness (world's particular quality appears), dialogue variety, reader gap, narration trusts dialogue, immersion (no source material leaking)
 
 ---
 
@@ -242,6 +257,7 @@ The artifact that travels from prep agent to prose agent:
 ## Grounding
 **Sensory palette:** [concrete nouns — materials, textures, weathers]
 **Pressures:** [what's building in the world]
+**The world's strangeness:** [what a newcomer would notice that locals walk past]
 **Scene seed:** [the one user picked]
 
 ## World Behavior
@@ -249,8 +265,20 @@ The artifact that travels from prep agent to prose agent:
 **The world does:** [The stuck drawer opens. Quiet industry. Debts being settled.]
 **Points toward:** [understanding, interpretation — who might be sensitive]
 
+## Story Lens
+
+**Lens:** [chosen lens name]
+
+**Foreground these sensitivities:**
+- [Sensitivity 1] — [brief description]
+- [Sensitivity 2] — [brief description]
+- [Sensitivity 3] — [brief description]
+
+**Territory:** [chosen territory, or "agent's choice" if user didn't specify]
+
+**Craft note:** [from story-lenses.md]
+
 ## Beat
-**Story type:** [chosen type]
 **Opening situation:** [where + who + what's happening — no prose fragments]
 
 **Who's involved:**
@@ -321,22 +349,26 @@ Three interactive checkpoints: Scene Seeds → World Behavior → Directions.
 
 ---
 
-## The Ten Story Types
+## The Twelve Story Lenses
 
-Used in Beat Layer to generate direction options:
+Used in Beat Layer to generate direction options. Each lens foregrounds specific sensitivities from qino-lens.
 
-1. **The Complication** — What if the change creates a problem?
+See `references/qino-scribe/story-lenses.md` for full details including sensitivities, territories, and craft notes.
+
+1. **The Arrival** — What if this chapter is about being received?
 2. **The Journey** — What if this chapter leaves known ground?
-3. **The Confrontation** — What if something must be faced?
+3. **The Return** — What if we come back to where we've been?
 4. **The Discovery** — What if something hidden comes to light?
-5. **The Crisis** — What if the pressure breaks now?
-6. **The Arrival** — What if this chapter is about being received?
+5. **The Confrontation** — What if something must be faced?
+6. **The Crisis** — What if the pressure breaks now?
 7. **The Loss** — What if something or someone departs?
 8. **The Vigil** — What if action is impossible and presence is all?
-9. **The Return** — What if we come back to where we've been?
-10. **The Ritual** — What if a cultural form holds the chapter?
+9. **The Ritual** — What if a cultural form holds the chapter?
+10. **The Complication** — What if the change creates a problem?
+11. **The Work** — What if this chapter is about making together?
+12. **The Gathering** — What if multiple threads convene?
 
-Don't traverse all types. Let the situation guide selection of 3-5 that fit.
+Don't traverse all lenses. Let the situation guide selection of 3 that fit.
 
 ---
 

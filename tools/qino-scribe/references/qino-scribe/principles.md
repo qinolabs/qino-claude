@@ -141,6 +141,18 @@ The accumulating principles require state to be tracked — not just "who exists
 
 ---
 
+## 13. The Newcomer's Eyes
+
+Every world has what its inhabitants have stopped seeing. The scribe looks with eyes that haven't learned to normalize.
+
+This isn't a list of what to find — it's a stance. The strange, the beautiful, the enormous, the quiet — whatever this world offers that familiarity has made invisible.
+
+**Reference Authority:** See `qino-lens/references/newcomer.md`
+
+**In practice:** What would someone notice on their first day here that locals walk past without a glance?
+
+---
+
 ## The Deeper Integration
 
 The principles aren't additions to a story system — they're the relational substrate the system should rest on.
