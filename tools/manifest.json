@@ -310,6 +310,10 @@
           "dest": "references/qino-scribe/principles.md"
         },
         {
+          "src": "tools/qino-scribe/references/qino-scribe/story-lenses.md",
+          "dest": "references/qino-scribe/story-lenses.md"
+        },
+        {
           "src": "tools/qino-scribe/references/qino-scribe/version.json",
           "dest": "references/qino-scribe/version.json"
         },
