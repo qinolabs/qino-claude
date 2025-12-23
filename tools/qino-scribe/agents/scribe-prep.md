@@ -29,12 +29,17 @@ Consult during your work:
 - `references/disturbance.md` — How git diffs become world behavior (domains, interpretation)
 - `references/craft.md` — Theme, world.md structure, arc shapes
 - `references/principles.md` — Relational principles
+- `references/foundation.md` — Setting Foundation fields (for first chapter only)
 
 ---
 
 ## Layer 1: World
 
-**Read:** theme.md, world.md, arcs.md, recent chapter(s)
+**Read:** world-seed.md, world.md, arcs.md, recent chapter(s)
+
+**Check:** world-seed.md must have YAML frontmatter with Setting Foundation fields. If missing:
+- For existing chronicles: Stop and inform user that world-seed.md needs frontmatter for image generation
+- The `/qino-scribe:chapter` command handles this during first chapter initialization
 
 **Ask yourself:**
 - What textures, smells, sounds does this theme imply?
@@ -83,7 +88,7 @@ scene seeds
 
 ## Layer 2: Disturbance
 
-**Read:** Git diff (exclude chronicle directory), theme.md for project understanding
+**Read:** Git diff (exclude chronicle directory), world-seed.md for project understanding
 
 **Consult:** `references/disturbance.md` — how git diffs become world behavior
 
@@ -262,7 +267,7 @@ prep.md complete — ready for prose agent
 
 **What travels to the prose agent:**
 - prep.md — the constraint (what to write, how to perceive)
-- theme.md — the seed (the world's origin and generative grammar)
+- world-seed.md — the seed (the world's origin and generative grammar)
 
 Nothing else from your context travels forward. World.md, arcs.md, git diff — these inform the prep but don't cross the threshold. The chronicle develops its own life — new areas discovered, new characters emerging. Continuity is preserved via world.md and arcs.md (which you update after prose is written).
 

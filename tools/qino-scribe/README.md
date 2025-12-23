@@ -84,7 +84,7 @@ references/qino-scribe/
 ```
 chronicle/
 ├── manifest.json      # Chapter index and git refs
-├── theme.md           # The world's seed (set once)
+├── world-seed.md      # The world's seed (set once)
 ├── world.md           # Living state with Pressures
 ├── arcs.md            # Narrative threads in motion
 └── chapters/

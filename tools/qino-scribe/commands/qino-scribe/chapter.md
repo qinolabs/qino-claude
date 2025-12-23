@@ -42,9 +42,28 @@ If no chronicle exists, this is the first chapter — see First Chapter Initiali
 
 ```bash
 cat chronicle/manifest.json
+cat chronicle/world-seed.md
 ```
 
 Get `last_chapter.git_ref` — this is where the git diff starts (unless overridden by arguments).
+
+### Validate world-seed.md Frontmatter
+
+Check if world-seed.md starts with `---`. If frontmatter is missing:
+
+```
+─────────────────────────────────────────────────────────────────
+world-seed.md needs Setting Foundation
+
+Image generation requires YAML frontmatter in world-seed.md with Setting Foundation fields.
+This chronicle was created before frontmatter was required.
+
+Would you like me to propose foundation fields based on your existing world seed?
+(y/n)
+─────────────────────────────────────────────────────────────────
+```
+
+If yes: Read the prose, propose fields using the checkpoint format from First Chapter Initialization (step 3), get user confirmation, then prepend frontmatter to world-seed.md.
 
 ---
 
@@ -59,7 +78,7 @@ Use agent: scribe-prep
 The prep agent will:
 
 **World Layer:**
-- Read theme.md, world.md, arcs.md, recent chapters
+- Read world-seed.md, world.md, arcs.md, recent chapters
 - Generate sensory palette, active pressures, scene seeds
 - **Checkpoint 1:** Scene seeds → user chooses
 - Write Grounding section to prep.md
@@ -157,10 +176,68 @@ When no chronicle exists:
    mkdir -p chronicle/chapters
    ```
 
-3. **Create theme.md**
-   Write the theme as evocative prose — brief enough to read once and carry.
+3. **Populate Setting Foundation** (required for image generation)
 
-4. **Create manifest.json**
+   Based on the theme prose, propose SettingFoundation fields to the user:
+
+   ```
+   ─────────────────────────────────────────────────────────────────
+   setting foundation
+
+   Based on your theme, here's how I'd characterize the world:
+
+     genre         [science-fiction | fantasy | contemporary | horror | hybrid]
+     subgenre      [tone + tradition, e.g., "contemplative space opera"]
+
+     scale         [narrative scope]
+     geography     [terrain, climate, sky]
+     era           [visual time period]
+     architecture  [built environment style]
+     lighting      [dominant light quality]
+
+     technology    [tech visual vocabulary]
+     transport     [vehicle vocabulary — critical for image generation]
+
+     flora         [plants/vegetation or "none — reason"]
+     fauna         [animals/creatures or "none — reason"]
+
+     inhabitants   [who populates this world]
+
+     magic         [how it looks, not what it does — or "none — reason"]
+
+   ─────────────────────────────────────────────────────────────────
+   ```
+
+   User reviews and adjusts. This is a checkpoint — wait for confirmation.
+
+   See `references/qino-scribe/foundation.md` for field details.
+
+4. **Create world-seed.md with frontmatter**
+
+   Write the foundation as YAML frontmatter, followed by the prose:
+
+   ```markdown
+   ---
+   genre: [value]
+   subgenre: [value]
+   scale: [value]
+   geography: [value]
+   era: [value]
+   architecture: [value]
+   lighting: [value]
+   technology: [value]
+   transport: [value]
+   flora: [value]
+   fauna: [value]
+   inhabitants: [value]
+   magic: [value]
+   ---
+   # World Seed
+
+   [prose description of the world]
+   ```
+
+5. **Create manifest.json**
    ```json
    {
      "version": 1,
@@ -169,21 +246,21 @@ When no chronicle exists:
    }
    ```
 
-5. **Create initial world.md**
+6. **Create initial world.md**
    Use template from craft.md:
    - Empty Pressures section
    - World's Breath based on theme
    - Sparse Wanderer section (just arrived)
    - Unexplored locations from theme
 
-6. **Create initial arcs.md**
+7. **Create initial arcs.md**
    ```markdown
    # Arcs
 
    *No arcs yet. The first chapter will begin them.*
    ```
 
-7. **Proceed with chapter creation**
+8. **Proceed with chapter creation**
    For first chapter, use recent commits as diff source.
 
 ---

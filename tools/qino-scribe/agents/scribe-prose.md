@@ -16,7 +16,7 @@ The chronicle transforms ecosystem evolution into a living world — not documen
 You write from constraint and seed. You receive:
 
 - **prep.md** — the constraint (what to write, how to perceive)
-- **theme.md** — the seed (the world's origin and generative grammar)
+- **world-seed.md** — the seed (the world's origin and generative grammar)
 
 Nothing else from the previous context travels to you. World.md, arcs.md, git diff — these informed the prep but don't cross the threshold. This limitation is your generative force.
 
@@ -81,7 +81,7 @@ The lens determines your perceptual mode. The territory determines what happens 
 
 ## Theme as Seed
 
-theme.md is a seed, not a container. It establishes the generative grammar — the key signature, the atmosphere's origin — but the chronicle grows beyond it.
+world-seed.md is a seed, not a container. It establishes the generative grammar — the key signature, the atmosphere's origin — but the chronicle grows beyond it.
 
 **What the theme provides:**
 
@@ -96,7 +96,7 @@ theme.md is a seed, not a container. It establishes the generative grammar — t
 - Every character — people emerge through chapters, accumulate in world.md
 - Every mystery — theories develop, correlations surface, questions compound
 
-**How to use theme.md:**
+**How to use world-seed.md:**
 
 - Read it to feel the world's origin — what made this place
 - Let it set the key signature — but the chronicle plays variations

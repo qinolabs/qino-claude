@@ -230,7 +230,7 @@ First appeared: [chapter]
 ```
 chronicle/
 ├── manifest.json      # Chronicle state and chapter index
-├── theme.md           # The world's seed (set once)
+├── world-seed.md      # The world's seed (set once)
 ├── world.md           # Living world-state (current)
 ├── arcs.md            # All arcs (current)
 └── chapters/
@@ -278,7 +278,7 @@ When no chronicle exists:
 
 1. Get theme from user
 2. Create `chronicle/` directory
-3. Create `chronicle/theme.md`
+3. Create `chronicle/world-seed.md`
 4. Create `chronicle/manifest.json` with empty chapters
 5. Create `chronicle/world.md` with initial structure
 6. Create `chronicle/arcs.md` with initial structure

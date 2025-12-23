@@ -335,6 +335,10 @@
           "dest": "references/qino-scribe/disturbance.md"
         },
         {
+          "src": "tools/qino-scribe/references/qino-scribe/foundation.md",
+          "dest": "references/qino-scribe/foundation.md"
+        },
+        {
           "src": "tools/qino-scribe/references/qino-scribe/layers.md",
           "dest": "references/qino-scribe/layers.md"
         },

@@ -306,7 +306,7 @@ For retroactive mode, the saved plan is essential — it captures chapter bounda
 
 ## What This Command MAY Do
 
-- If chronicle exists (advance mode), may read theme.md to inform working titles
+- If chronicle exists (advance mode), may read world-seed.md to inform working titles
 - If chronicle exists, may read world.md to assess what pressures could carry a thin diff
 
 ---

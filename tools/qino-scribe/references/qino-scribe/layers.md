@@ -34,7 +34,7 @@ SNAPSHOT          → copies to chapter dir
 
 ### World Layer
 
-**Reads:** theme.md, world.md, arcs.md, recent chapters
+**Reads:** world-seed.md, world.md, arcs.md, recent chapters
 
 **Produces:** Grounding section of prep.md
 
@@ -75,7 +75,7 @@ scene seeds
 
 ### Disturbance Layer
 
-**Reads:** Git diff, theme.md for project understanding
+**Reads:** Git diff, world-seed.md for project understanding
 
 **Produces:** World Behavior section of prep.md
 
@@ -175,19 +175,19 @@ After user chooses: append Story Lens and Beat sections to prep.md.
 
 ### Prose Layer
 
-**Reads:** prep.md AND theme.md (hard cut from other context)
+**Reads:** prep.md AND world-seed.md (hard cut from other context)
 
 **Produces:** chapter.md
 
 **What travels to the prose agent:**
 - **prep.md** — the constraint (what to write, how to perceive)
-- **theme.md** — the seed (the world's origin and generative grammar)
+- **world-seed.md** — the seed (the world's origin and generative grammar)
 
 **The Story Lens:** prep.md carries a Story Lens section that tells the prose agent HOW to perceive the world for this chapter. The lens declares which sensitivities to foreground and includes a territory (the creative direction within the lens). The prose agent reads the lens, consults the linked qino-lens reference files, and writes through that perceptual mode.
 
-**Theme as seed:** theme.md is a seed, not a container. It establishes the key signature — the atmosphere's origin — but the chronicle grows beyond it. New locations emerge, characters surface, mysteries compound. The prose agent reads the theme to feel what kind of world this began as, then invents freely within that generative grammar. Continuity lives in world.md and arcs.md.
+**Theme as seed:** world-seed.md is a seed, not a container. It establishes the key signature — the atmosphere's origin — but the chronicle grows beyond it. New locations emerge, characters surface, mysteries compound. The prose agent reads the theme to feel what kind of world this began as, then invents freely within that generative grammar. Continuity lives in world.md and arcs.md.
 
-**Constraint:** The prose agent receives only prep.md and theme.md. This forces fresh invention — can't recycle descriptions, must generate from sensory palette, character wants and protections are all that's visible. But the agent carries craft knowledge — the constraint is on content, not on how to write.
+**Constraint:** The prose agent receives only prep.md and world-seed.md. This forces fresh invention — can't recycle descriptions, must generate from sensory palette, character wants and protections are all that's visible. But the agent carries craft knowledge — the constraint is on content, not on how to write.
 
 **Verification (3 passes after drafting, before presenting):**
 
@@ -412,7 +412,7 @@ chronicle/chapters/NNN-slug/
 **Chronicle root:**
 ```
 chronicle/
-├── theme.md         ← Set once, never changes
+├── world-seed.md    ← Set once, never changes
 ├── world.md         ← Canonical, updated after each chapter
 ├── arcs.md          ← Canonical, updated after each chapter
 └── manifest.json    ← Chapter index and state
