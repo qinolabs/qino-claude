@@ -394,9 +394,15 @@ qino Scribe keeps the chronicle alive. It reads the git range, grounds in `world
 
 In this repository's chronicle, the wanderer is ferrying a warming pouch upriver. Villages know about them before they arrive. Lira at Orith's Landing recognizes the pouch from years ago; Seren fears the writing filling his margins; the river itself carries news. The chronicle only moves when the wanderer does — and when the world answers.
 
-### A Chronicles That Accumulates
+### A Chronicle That Accumulates
 
 Your ecosystem evolves through conversations and work that spans sessions. qino Scribe turns that movement into a fantasy chronicle that **gathers weight**. It doesn't just append new chapters; it remembers what has been seen, what remains unspoken, and how the world has been watching.
+
+### Theme as Seed
+
+The theme establishes the generative grammar — the key signature, atmosphere's origin. But the chronicle grows beyond it. New locations emerge, characters surface, mysteries compound.
+
+Continuity lives in `world.md` and `arcs.md`. The theme is where it started; the chronicle is where it's going.
 
 ### The World's Disturbance
 
@@ -427,6 +433,29 @@ They do not fight the world, but they also do not detach from it. They simply in
 The central principle of the chronicle is **mutual revealing**: through the implicit response of one entity to the action (or inaction) of another, something is revealed about each.
 
 This applies to everything in the world, not just the wanderer. When a merchant refuses a coin, the refusal reveals the coin's worth _and_ the merchant's fear. When the fog swallows a sound, it reveals the fog's density _and_ the sound's fragility. Meaning emerges from the friction between things.
+
+### Story Lenses
+
+Each chapter is written through a story lens — a perceptual mode that shapes what the prose agent notices. The lens determines which sensitivities to foreground: what to attend to, what to let recede.
+
+| Lens | The Question |
+|------|--------------|
+| **Arrival** | What if this chapter is about being received? |
+| **Journey** | What if this chapter leaves known ground? |
+| **Return** | What if we come back to where we've been? |
+| **Discovery** | What if something hidden comes to light? |
+| **Confrontation** | What if something must be faced? |
+| **Crisis** | What if the pressure breaks now? |
+| **Loss** | What if something or someone departs? |
+| **Vigil** | What if action is impossible and presence is all? |
+| **Ritual** | What if a cultural form holds the chapter? |
+| **Complication** | What if the change creates a problem? |
+| **Work** | What if this chapter is about making together? |
+| **Gathering** | What if multiple threads convene? |
+
+Each lens foregrounds specific sensitivities from qino-lens. The Arrival lens foregrounds Newcomer's Eyes — everything noticed, nothing normalized. The Journey lens foregrounds Companion's Lens — world filtered through who you travel with.
+
+At the directions checkpoint, the prep agent presents three lenses that fit the current moment. You choose which perceptual mode shapes the chapter.
 
 ### Complete Transformation
 
@@ -488,9 +517,9 @@ This is not a pipeline; it is an ecology. I do not build the tool, then the tech
 
 _(Note: I used the `qino-lens:narrator` tool that emerged from this process to refine this very section — the tool shaping the documentation that explains the tool.)_
 
-### Two Ways of Seeing
+### Ways of Seeing
 
-The chronicle changes depending on who watches it:
+The chronicle changes depending on who watches it. These lenses accumulate — discovered through the work, not designed in advance:
 
 #### The Narrator's Lens (World as Participant)
 
@@ -512,12 +541,34 @@ _([Reference: narrator.md](tools/qino-lens/references/narrator.md))_
 
 _([Reference: wanderer.md](tools/qino-lens/references/wanderer.md))_
 
+#### The Newcomer's Lens (Finding What's Become Invisible)
+
+- **Sensitivity:** What inhabitants have stopped seeing.
+- **The Question:** What would someone notice on their first day here that locals walk past without a glance?
+- **The Stance:** This is observation, not interpretation. Not "the architecture suggests a culture that values..." but "the ceilings are so high you can't see them in the dark."
+
+> _Example:_ "The market stalls closed at the same hour every day, whether anyone was buying or not. The wanderer watched them fold their awnings in unison. No one else looked up."
+
+_([Reference: newcomer.md](tools/qino-lens/references/newcomer.md))_
+
+#### The Companion's Lens (World Through Relationship)
+
+- **Sensitivity:** How companionship shapes perception.
+- **What Changes:** Attention splits between world and person. Things get pointed out ("Look at that"). Things get avoided. Silence gains texture. Pace synchronizes — or doesn't.
+- **The Failure Mode:** The companion walks beside, unmentioned. They vanish into function. The world arrives as if the wanderer were alone.
+
+> _Example:_ "Selin steered them past the copper-sellers without slowing. The wanderer caught the smell of dried fish before they saw the stalls — Selin was already pointing at something else."
+
+_([Reference: companion.md](tools/qino-lens/references/companion.md))_
+
 ### Commands
 
 | Command               | Purpose                                                                                            |
 | :-------------------- | :------------------------------------------------------------------------------------------------- |
 | `/qino-lens:wanderer` | Attune text to the Wanderer's sensitivity. Pipe logs or summaries to see them through consequence. |
 | `/qino-lens:narrator` | Attune scenes to the Narrator's sensitivity. Activate the environment.                             |
+
+The Newcomer's and Companion's Lenses are reference sensitivities — they don't have dedicated commands but are foregrounded by story lenses in qino-scribe when appropriate (Arrival chapters foreground Newcomer's Eyes; Journey chapters foreground Companion's Lens).
 
 _[Source](tools/qino-lens/) · [References](tools/qino-lens/references/)_
 
