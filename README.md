@@ -476,17 +476,17 @@ How a tool emerged from a chronicle, tested its weight in text, and became the t
 
 Style resists decoration. It is not paint applied to surface; it is a **quality of attention**. A shift in _what is noticed_.
 
-qino-lens pushed its way out of the work. Scribe needed to see the world differently—to perceive friction where there was only plot, to sense agency where there was only setting. We didn't design a library; we extracted the ways of seeing that the chronicle demanded.
+qino-lens pushed its way out of the work. Scribe needed to see the world differently—to perceive friction where there was only plot, to sense agency where there was only setting. I didn't design a library; I extracted the ways of seeing that the chronicle demanded.
 
 **The tool is a prototype for the technology.**
 
 The logic of "Attunement"—how perception shifts, how noise is filtered—is the spine of the future ecosystem apps. By working it out here, in text, the `qino-lens` command tests the technology's weight before it ever becomes application code.
 
-The "Wanderer's Lens" didn't arrive; it accumulated. We began by exploring the nature of the "Wanderer's presence" within Scribe. We leveraged `qino:attune` to understand that mysterious quality better and find a language for it. Then, we `qino:capture`d the vital connection: this new "Quality of Attention" framing was exactly what the dormant `qino-lens` technology concept had been waiting for.
+The "Wanderer's Lens" didn't arrive; it accumulated. I began by exploring the nature of the "Wanderer's presence" within Scribe. I leveraged `qino:attune` to understand that mysterious quality better and find a language for it. Then, I `qino:capture`d the vital connection: this new "Quality of Attention" framing was exactly what the dormant `qino-lens` technology concept had been waiting for.
 
-This is not a pipeline; it is an ecology. We do not build the tool, then the technology. We refine the **tool** (lens), the **technology** (attunement), and the **process** (ecological design) in the same breath.
+This is not a pipeline; it is an ecology. I do not build the tool, then the technology. I refine the **tool** (lens), the **technology** (attunement), and the **process** (ecological design) in the same breath.
 
-_(Note: We used the `qino-lens:narrator` tool that emerged from this process to refine this very section — the tool shaping the documentation that explains the tool.)_
+_(Note: I used the `qino-lens:narrator` tool that emerged from this process to refine this very section — the tool shaping the documentation that explains the tool.)_
 
 ### Two Ways of Seeing
 
