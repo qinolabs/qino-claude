@@ -10,6 +10,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.17.0] - 2025-12-23
+
+### qino Scribe
+
+#### Added
+
+- **Setting Foundation** — structured YAML frontmatter in world-seed.md enables consistent image generation across chapters; 13 fields capture the world's visual vocabulary: genre, subgenre, scale, geography, era, architecture, lighting, technology, transport, flora, fauna, inhabitants, magic
+- **foundation.md reference** — comprehensive guide to Setting Foundation fields with examples showing how explicit positive descriptions prevent image generation drift
+
+#### Changed
+
+- **Renamed theme.md to world-seed.md** — clearer name reflects its purpose: the seed from which the chronicle grows, not a theme to apply
+- **First chapter initialization enhanced** — now includes Setting Foundation checkpoint where user reviews and confirms proposed foundation fields before chronicle creation
+- **Migration path for existing chronicles** — when world-seed.md lacks frontmatter, chapter command prompts to add foundation fields based on existing prose
+
+---
+
 ## [0.16.1] - 2025-12-23
 
 ### qino Scribe

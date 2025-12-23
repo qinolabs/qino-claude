@@ -72,7 +72,8 @@ references/qino-scribe/
 ├── layers.md          # Layer flow, checkpoints, prep.md structure
 ├── craft.md           # Chapter format, world.md template, arc shapes
 ├── voice.md           # Sentence-level prose craft
-└── principles.md      # Ten relational principles (reusable)
+├── principles.md      # Ten relational principles (reusable)
+└── foundation.md      # Setting Foundation for image generation
 ```
 
 **The hard cut is the quality mechanism.** The prose agent receives only prep.md — it cannot recycle descriptions from earlier context, must generate fresh from the sensory palette, and invents from constraint.
