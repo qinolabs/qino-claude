@@ -203,6 +203,39 @@
         }
       ]
     },
+    "qino-lens": {
+      "description": "Qualities of Attention lens library",
+      "files": [
+        {
+          "src": "tools/qino-lens/commands/narrator.md",
+          "dest": "commands/qino-lens/narrator.md"
+        },
+        {
+          "src": "tools/qino-lens/commands/wanderer.md",
+          "dest": "commands/qino-lens/wanderer.md"
+        },
+        {
+          "src": "tools/qino-lens/references/companion.md",
+          "dest": "references/qino-lens/companion.md"
+        },
+        {
+          "src": "tools/qino-lens/references/narrator.md",
+          "dest": "references/qino-lens/narrator.md"
+        },
+        {
+          "src": "tools/qino-lens/references/newcomer.md",
+          "dest": "references/qino-lens/newcomer.md"
+        },
+        {
+          "src": "tools/qino-lens/references/qino-lens/version.json",
+          "dest": "references/qino-lens/version.json"
+        },
+        {
+          "src": "tools/qino-lens/references/wanderer.md",
+          "dest": "references/qino-lens/wanderer.md"
+        }
+      ]
+    },
     "qino-eval": {
       "description": "Discover what makes chronicle chapters work (archived - use qino-attune)",
       "archived": true,

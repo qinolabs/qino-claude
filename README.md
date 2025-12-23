@@ -517,7 +517,7 @@ This is not a pipeline; it is an ecology. I do not build the tool, then the tech
 
 _(Note: I used the `qino-lens:narrator` tool that emerged from this process to refine this very section — the tool shaping the documentation that explains the tool.)_
 
-### Ways of Seeing
+### qino Lens | Ways of Seeing
 
 The chronicle changes depending on who watches it. These lenses accumulate — discovered through the work, not designed in advance:
 
