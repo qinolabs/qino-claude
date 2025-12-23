@@ -386,7 +386,7 @@ You turn toward a concept to develop it. The agent helps you follow what carries
 
 _[Source](tools/qino-concept/) · [Installation](tools/qino-concept/README.md#installation)_
 
----
+<br>
 
 ## qino Scribe
 
@@ -468,7 +468,7 @@ scene seeds
 
 _[Source](tools/qino-scribe/) · [Installation](tools/qino-scribe/README.md#installation)_
 
----
+<br>
 
 ## The Ecology at Work: Qualities of Attention
 
@@ -521,7 +521,7 @@ _([Reference: wanderer.md](tools/qino-lens/references/wanderer.md))_
 
 _[Source](tools/qino-lens/) · [References](tools/qino-lens/references/)_
 
----
+<br>
 
 ## qino Dev
 
@@ -584,7 +584,7 @@ The files live in `implementations/` — visible, version-controlled, yours. Not
 
 _[Source](tools/qino-dev/) · [Installation](tools/qino-dev/README.md#installation)_
 
----
+<br>
 
 ## Ecological Testing
 
@@ -646,6 +646,8 @@ The test observes. It does not develop. It invites you to pause and see. You can
 ```
 
 When you capture, the noticing becomes a note with ecology metadata (`user: heavy stack demands sorting`). This metadata allows `/qino:home` to show you which ecologies are echoing and which have been silent.
+
+<br>
 
 ## Perceiving Difference
 
@@ -721,7 +723,7 @@ _(The [Qualities of Attention](#the-ecology-at-work-qualities-of-attention) sect
 /qino:attune quality-name
 ```
 
----
+<br>
 
 ## qino Research
 
@@ -753,7 +755,7 @@ When an exploration finds its shape, it graduates to Concepts. The insight stabi
 
 _[Source](tools/qino-research/) · [Installation](tools/qino-research/README.md#installation)_
 
----
+<br>
 
 ## Design Adventure
 
@@ -797,7 +799,7 @@ Different runs surface different questions. The questions themselves teach you h
 
 _[Source](tools/design-adventure/) · [Installation](tools/design-adventure/README.md#installation)_
 
----
+<br>
 
 ## Adapters
 
@@ -814,7 +816,7 @@ tools/qino-research/commands/qino-research/→ .claude/commands/qino-research/
 
 This is the "adapter" pattern described in The Ecosystem section. The self-use is the point — the tools shape the work that shapes the tools.
 
----
+<br>
 
 ## Installation
 
