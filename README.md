@@ -545,19 +545,19 @@ _([Reference](tools/qino-lens/references/wanderer.md))_
 
 - **Sensitivity:** What inhabitants have stopped seeing.
 - **The Question:** What would someone notice on their first day here that locals walk past without a glance?
-- **The Stance:** This is observation, not interpretation. Not "the architecture suggests a culture that values..." but "the ceilings are so high you can't see them in the dark."
+- **The Craft:** The dwelling is the noticing. Don't explain that others don't see — let the prose linger. The reader feels the strangeness through the attention given to it.
 
-> _Example:_ "The market stalls closed at the same hour every day, whether anyone was buying or not. The wanderer watched them fold their awnings in unison. No one else looked up."
+> _Example:_ "The oldest woman at the table was served last. Plates circled toward younger faces. She waited, hands folded. When her plate came, she lifted her fork. Then the others began to eat."
 
 _([Reference](tools/qino-lens/references/newcomer.md))_
 
 #### `companion` — World Through Relationship
 
 - **Sensitivity:** How companionship shapes perception.
-- **What Changes:** Attention splits between world and person. Things get pointed out ("Look at that"). Things get avoided. Silence gains texture. Pace synchronizes — or doesn't.
-- **The Failure Mode:** The companion walks beside, unmentioned. They vanish into function. The world arrives as if the wanderer were alone.
+- **What Changes:** Attention splits between world and person. Things get pointed out. Things get avoided. Silence gains texture. Pace synchronizes — or doesn't.
+- **The Craft:** Show relationship through action, not description. Don't label emotional shifts — embody them in what characters do.
 
-> _Example:_ "Selin steered them past the copper-sellers without slowing. The wanderer caught the smell of dried fish before they saw the stalls — Selin was already pointing at something else."
+> _Example:_ "Varo stopped at a stall. Copper bowls, dented. She picked one up, ran her thumb across a dent. 'My mother had one like this.' Set it back. Moved on. The wanderer lifted the same bowl, found the dent, felt where her thumb had been."
 
 _([Reference](tools/qino-lens/references/companion.md))_
 

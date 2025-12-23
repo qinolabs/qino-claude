@@ -52,3 +52,16 @@ The newcomer doesn't analyze. They notice.
 **But:** "The stones are worn smooth in the middle, like water has run here for centuries." (attending)
 
 The strangeness lives in specific detail, not in summary. What catches the eye, not what it means.
+
+---
+
+## Craft Guidance
+
+**The dwelling is the noticing.** Don't explain that others don't notice — let the prose linger on the detail. The reader feels the strangeness through the attention given to it.
+
+**Not:** "The oldest woman was served last. No one else seemed to notice." (explaining the contrast)
+**Not:** "Across the hall, no one else had paused." (telling the reader what to see)
+
+**But:** "The oldest woman at the table was served last. Plates circled toward younger faces. She waited, hands folded. When her plate came, she lifted her fork. Then the others began to eat."
+
+The attention dwells. The reader feels what's strange. No need to contrast with what locals missed — the showing is enough.

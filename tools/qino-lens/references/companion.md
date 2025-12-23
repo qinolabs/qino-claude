@@ -58,3 +58,17 @@ The companion should:
 **But:** "Selin steered them past the copper-sellers without slowing. The wanderer caught the smell of dried fish before they saw the stalls — Selin was already pointing at something else."
 
 The companion is present in how the world is encountered, not just present in the scene.
+
+---
+
+## Craft Guidance
+
+**Show relationship through action, not description.** Don't label emotional states or shifts — embody them in what characters do.
+
+**Not:** "The space between them was different now." (labeling)
+**Not:** "Something had shifted in the walking." (describing effect)
+**Not:** "The wanderer felt closer to her after that." (interiority)
+
+**But:** "Varo stopped at a stall. Copper bowls, dented. She picked one up, ran her thumb across a dent. 'My mother had one like this.' Set it back. Moved on. The wanderer lifted the same bowl, found the dent, felt where her thumb had been."
+
+The connection is shown through the action of tracing what she touched. The emotional undercurrent is implicit — the reader feels it without being told.
