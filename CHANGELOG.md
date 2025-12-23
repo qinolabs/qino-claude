@@ -10,6 +10,39 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.16.1] - 2025-12-23
+
+### qino Scribe
+
+#### Added
+
+- **Story Lenses** — twelve lenses (Arrival, Journey, Return, Discovery, Confrontation, Crisis, Loss, Vigil, Ritual, Complication, Work, Gathering) that shape how the prose agent perceives for each chapter
+- **Lens sensitivities** — each lens foregrounds specific qino-lens sensitivities with paths to reference files
+- **Territories** — creative directions within each lens (e.g., The Arrival has "warmth before understanding", "invited deeper", etc.)
+- **Theme as seed** — theme.md is generative grammar, not container; chronicle develops its own life with new locations and characters
+- **Newcomer's Eyes** — World Layer now captures "what a newcomer would notice that locals walk past"
+- **Strangeness field** — prep.md and checkpoints now include the world's particular quality
+
+#### Changed
+
+- **Prose agent receives theme.md** — now reads both prep.md (constraint) and theme.md (seed); continuity preserved via world.md and arcs.md
+- **Story types renamed** — now called "Story Lenses" with expanded structure including sensitivities, territories, and craft notes
+- **Final checklist enhanced** — "Strangeness" check added: does the world's particular quality appear at least once?
+
+### qino Lens
+
+#### Added
+
+- **Newcomer sensitivity** (`references/newcomer.md`) — finding what inhabitants have stopped seeing; the question "what would someone notice on their first day here?"
+- **Companion sensitivity** (`references/companion.md`) — world filtered through relationship; attention split between task and person
+
+#### Changed
+
+- **Now distributed** — qino-lens added to manifest for installation via updater
+- **Craft guidance** — enhanced examples in narrator.md and wanderer.md with structural agency and resonance patterns
+
+---
+
 ## [0.16.0] - 2025-12-22
 
 ### fabric-reference (New Tool)
