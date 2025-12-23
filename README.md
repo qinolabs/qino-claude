@@ -91,6 +91,8 @@ These tools are part of a larger **ecosystem**—a living network of **tools, co
 
 ∴ _Return your attention to what inspires you right now. Let the system take care of the rest. Things naturally surface when they're ready._
 
+<br>
+
 <details>
 <summary><strong>An Ecology of Mind: The Ecosystem Map</strong><br>(click to expand)</summary>
 
