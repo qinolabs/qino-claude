@@ -9,7 +9,7 @@ This work reflects a way of thinking that found its seed in Gregory and Nora Bat
 They help us notice what connects, learn without extracting, and participate in an ecology co-evolving through our attention.
 
 <details>
-<summary><strong>Companions on the Path: The Pattern That Connects</strong> (click to expand)</summary>
+<summary><strong>Companions on the Path: The Pattern That Connects</strong><br>(click to expand)</summary>
 
 ![Gregory Bateson](docs/images/gregory-bateson.jpg)
 _Photo: [Barry Schwartz](https://barryschwartzphoto.com/)_
@@ -36,13 +36,6 @@ He asked: _What is the pattern that connects the crab to the lobster and the orc
 
 And he defined information not as data, but as _a difference which makes a difference_—something relational, something that only exists in the gap between contexts.
 
-Patterns I keep noticing:
-
-- **Abductive process**: Meaning emerges by casting one context onto another, discovering what was latent
-- **Transcontextuality**: Nothing is "just that and nothing more"—every interaction speaks into multiple contexts simultaneously
-- **The alive thread**: Following what carries energy, what still wants to move
-- **Divergence and convergence**: Living systems need both surprise and coherence; neither alone suffices
-
 ### Nora Bateson: The Unseen Coalescence
 
 ![Nora Bateson](docs/images/nora-bateson.jpg)
@@ -60,21 +53,6 @@ Her key insight: _One cannot explicitly change that which is implicit._ Direct c
 
 **Warm Data** is her term for the kind of information that can hold this complexity: "transcontextual information about the interrelationships that integrate a complex system." Not cold data extracted from context, but living information that shifts within the mutual learning of systems.
 
-### What This Means Here
-
-Something in how the Batesons approach communication, pattern, ecology — it fits. The seeing and the describing keep informing each other. Their work keeps opening doors I didn't know were there.
-
-These tools weren't built from their concepts. They're what made sense to make. Sometimes I notice the patterns rhyme:
-
-- Questions reveal what you didn't know you were asking — `/qino-concept:explore`
-- What carries energy guides movement more reliably than plans — `/qino:home`
-- What's held quietly can resurface when needed — `/qino:capture`
-- The human feels what's alive; the system holds what's set down — the ecosystem architecture itself
-
-Gregory's and Nora's work offered ways of developing a sensitivity for how we participate in an ecology — contributing, not extracting.
-
-The patterns they describe — abductive process, transcontextuality, the unseen coalescence — aren't just background philosophy. They're what the tools practice. The comparison that illuminates, the router that adapts, the tests that guard what's implicit.
-
 #### Sources
 
 - [Library of Congress: Margaret Mead in Bali](https://www.loc.gov/exhibits/mead/field-bali.html)
@@ -87,14 +65,34 @@ The patterns they describe — abductive process, transcontextuality, the unseen
 
 <br>
 
-Ideas travel between contexts. What works here echoes there.
+<details>
+<summary><strong>More on How the Tools Practice the Philosophy</strong><br>(click to expand)</summary>
 
-These tools are part of a larger **ecosystem**—a living network of **tools, concepts, apps, and chronicles** that evolve together. Each offers a way to learn from anything and contribute to your ecology of ideas in the moment spontaneous insight occurs.
+It’s not just that the philosophy fits the code. It’s that the code started demanding the philosophy.
 
-Return your attention to what has pull. Let the system hold the rest.
+As these tools evolved, they stopped being just utilities for "managing knowledge" and became ways of **participating in a system that is learning**. The "User" isn't an operator; they are part of the ecology.
+
+The rhymes have deepened into structural necessities:
+
+- **Abduction**: The logic of the system isn't deduction (proving true/false), but abduction (finding the pattern that connects). `qino:compare` and `qino:attune` don't give you answers; they place two contexts side-by-side so meaning can emerge from the double description.
+- **Transcontextuality**: An idea does not follow a straight line. It meanders—from a sudden hunch while coding, to a note in research, to a concept that stabilizes weeks later. The system doesn't force a pipeline; it preserves the living thread across contexts, so you can follow the meaning wherever it leads.
+- **Aphanipoiesis (Unseen Coalescence)**: `qino-scribe` and `qino:capture` assume that the most important changes happen _before_ they are explicit. They allow understanding to accumulate in the margins until it's ready to be named.
+- **Warm Data**: We don't extract "facts" from our work; we keep the context attached. The system doesn't show you a to-do list; it shows you **what has pull**, what is connected, and what is waiting.
+
+This ecosystem is an attempt to build software that knows it is part of a larger mind—yours, the project's, and the connections between them. It doesn't try to organize your thinking; it tries to learn how to move with it.
+
+</details>
+
+<br>
+
+∴ _Creativity, learning and integration doesn't stop at the boundary of a single repository._
+
+These tools are part of a larger **ecosystem**—a living network of **tools, concepts, apps, research and chronicles** that evolve together. Each offers a way to learn from anything and contribute to your ecology of ideas in the moment spontaneous insight occurs.
+
+∴ _Return your attention to what inspires you right now. Let the system take care of the rest. Things naturally surface when they're ready._
 
 <details>
-<summary><strong>An Ecology of Mind</strong> (click to expand)</summary>
+<summary><strong>An Ecology of Mind: The Ecosystem Map</strong><br>(click to expand)</summary>
 
 ![Tools, apps, community](docs/images/ecosystem-arcs.png)
 
@@ -272,7 +270,7 @@ concepts
 What happens in the ecosystem becomes story. Git changes, transformed into fantasy narrative.
 
 <details>
-<summary><strong>The Chronicles: Story of an Evolving Ecosystem</strong> (click to expand)</summary>
+<summary><strong>Stories of an Evolving Ecosystem chronicling itself</strong><br>(click to expand)</summary>
 
 Each repository in the qino ecosystem tells its own story.
 
