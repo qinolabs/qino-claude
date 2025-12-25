@@ -189,20 +189,9 @@ After user chooses: append Story Lens and Beat sections to prep.md.
 
 **Constraint:** The prose agent receives only prep.md and world-seed.md. This forces fresh invention — can't recycle descriptions, must generate from sensory palette, character wants and protections are all that's visible. But the agent carries craft knowledge — the constraint is on content, not on how to write.
 
-**Verification (3 passes after drafting, before presenting):**
+**Output:** The prose agent writes the chapter and presents it to the orchestrator. It does NOT self-edit or verify — that's the editorial agent's job.
 
-1. **Strangeness Pass** — Look for organic moments where attention lands on the wanderer. Add external observation if natural, skip if forced. Maximum 1-2 moments.
-
-2. **Editorial Pass** — Scan for common failures:
-   - Narrated dialogue (explaining what a line means after it lands)
-   - Thematic echo (declaring theme instead of showing)
-   - Frictionless success (world too cooperative)
-   - Paraphrase loops (restating what was just shown)
-   - Diagnostic label-speak (naming emotions instead of embodying)
-   - Abstraction drift (losing sensory grounding)
-   - Dramatic devices (manufactured intensity through fragments/punctuation)
-
-3. **Final Checklist** — Stakes, vividness, strangeness (world's particular quality appears), dialogue variety, reader gap, narration trusts dialogue, immersion (no source material leaking)
+**Editorial Review:** After the prose agent presents its draft, the orchestrator spawns a separate editorial agent (scribe-editorial) to review. The editorial agent sees only the draft chapter file — not prep.md, not world.md. This separation is intentional: it evaluates execution on its own terms. See chapter.md Phase 2.5 for the full editorial flow.
 
 ---
 

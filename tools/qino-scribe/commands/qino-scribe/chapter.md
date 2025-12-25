@@ -14,10 +14,12 @@ Chapter creation flows through layers:
 
 1. **Prep Agent** — World, Disturbance, Beat layers with 3 steering checkpoints
 2. **Hard cut** — prep.md complete
-3. **Prose Agent** — receives only prep.md, writes the chapter
-4. **Post-prose** — automatic (world update, arc update, snapshots, manifest)
+3. **Prose Agent** — receives only prep.md, writes draft chapter
+4. **Editorial Agent** — reviews draft in separate context, returns edits or approval
+5. **Revision** (if needed) — prose agent applies specific edits
+6. **Post-prose** — automatic (world update, arc update, snapshots, manifest)
 
-User steers creative direction. Bookkeeping is automatic.
+User steers creative direction. Editorial and bookkeeping are automatic.
 
 ---
 
@@ -67,12 +69,44 @@ If yes: Read the prose, propose fields using the checkpoint format from First Ch
 
 ---
 
+## Initialize Process Log
+
+Before spawning the prep agent, create the chapter directory and process.md:
+
+```bash
+mkdir -p chronicle/chapters/NNN-slug
+```
+
+Write the initial process.md:
+
+```markdown
+# Process Log — Chapter NNN
+
+## Metadata
+- **Created:** [ISO timestamp]
+- **Git range:** [last_ref]..HEAD
+- **Commits:** [count from git log]
+
+---
+
+## Prep Layer
+```
+
+This file will be appended to by the prep agent and editorial agent.
+
+---
+
 ## Phase 1: Prep Agent
 
 Spawn the prep agent to handle World, Disturbance, and Beat layers:
 
 ```
 Use agent: scribe-prep
+ultrathink: Synthesis work benefits from deliberation.
+
+Pass to agent:
+- The chapter directory path: chronicle/chapters/NNN-slug
+- The git range: [last_ref]..HEAD
 ```
 
 The prep agent will:
@@ -119,8 +153,114 @@ The prose agent will:
 1. Inhabit the prep (sensory palette, world behavior, what characters want/protect)
 2. Weave world behavior into background (characters experience as ordinary)
 3. Write the chapter following voice.md craft
-4. Verify against checks (stakes, vividness, dialogue variety, reader gap, narration trusts dialogue, immersion)
-5. Write chapter.md
+4. Present draft to orchestrator (no self-editing)
+
+---
+
+## Phase 2.5: Editorial Review
+
+When the prose agent presents its draft, spawn the editorial agent in a **separate context**:
+
+```
+Use agent: scribe-editorial
+ultrathink: Careful review benefits from deliberation.
+
+Pass to agent:
+- The path to the draft: chronicle/chapters/NNN-slug/chapter.md
+- The path to process.md: chronicle/chapters/NNN-slug/process.md
+- The pass number: 1 (or 2 for second pass)
+- Do NOT pass prep.md, world.md, or arcs.md
+```
+
+**Critical:** The editorial agent sees ONLY the draft file. This separation is intentional — it evaluates execution without knowing the constraints that shaped it. The editorial agent logs its decisions to process.md.
+
+The editorial agent will:
+1. Read the draft chapter file
+2. Check against voice.md patterns
+3. Return either `APPROVED` or a list of specific line-level edits
+
+---
+
+## Phase 2.6: Revision Loop
+
+**If APPROVED:** Proceed to Phase 3.
+
+**If NEEDS REVISION returned:**
+
+1. Editorial returns edits in format:
+   ```
+   NEEDS REVISION (N issues)
+
+   Line 23: "She smiled warmly" → show warmth through action
+   Line 45: dialogue needs beat between question and response
+   Line 78: wanderer reflects instead of acts — convert to action
+   ```
+
+2. Pass edit list to prose agent with instruction:
+   ```
+   Apply these specific edits to chronicle/chapters/NNN-slug/chapter.md
+   Do not rewrite sections not flagged.
+   ```
+
+3. Prose agent applies edits directly to chapter.md
+
+4. **Log the revisions:** After prose agent completes, append "After" text to each issue in process.md:
+   ```markdown
+   > After: "[the revised text — quote the same scope as Before]"
+   ```
+
+   This creates a complete before/after record for each flagged issue.
+
+5. **Second editorial pass:**
+   - Send revised chapter.md to editorial agent (fresh context)
+   - If APPROVED → proceed to Phase 3
+   - If NEEDS REVISION with ≤5 issues → apply and proceed to Phase 3
+   - If NEEDS REVISION with >5 issues → Catastrophic Failure (see below)
+
+**Maximum 2 editorial passes per chapter.**
+
+---
+
+## Phase 2.7: Catastrophic Failure Recovery
+
+If editorial flags 10+ issues on first pass, or >5 issues on second pass:
+
+1. **Save artifacts:**
+   ```bash
+   mv chronicle/chapters/NNN-slug/chapter.md chronicle/chapters/NNN-slug/draft-failed.md
+   ```
+
+2. **Present user with options:**
+   ```
+   ─────────────────────────────────────────────────────────────────
+   draft failed editorial review
+
+     issues: [count]
+     saved:  chronicle/chapters/NNN-slug/draft-failed.md
+
+   ─────────────────────────────────────────────────────────────────
+   options
+
+     1 → restart from Beat Layer (same grounding, new direction)
+     2 → restart from World Layer (new scene seeds)
+     3 → manually edit draft-failed.md and continue
+     4 → proceed anyway (override editorial)
+
+   ─────────────────────────────────────────────────────────────────
+   ```
+
+3. **If restart chosen:**
+   - Option 1: Return to Phase 1, Beat Layer checkpoint
+   - Option 2: Return to Phase 1, World Layer checkpoint
+
+4. **If manual edit chosen:**
+   - User edits draft-failed.md
+   - Rename to chapter.md when ready
+   - Skip editorial, proceed to Phase 3
+
+5. **If override chosen:**
+   - Rename draft-failed.md to chapter.md
+   - Proceed to Phase 3 with warning logged
 
 ---
 
@@ -162,6 +302,22 @@ Update `chronicle/manifest.json`:
 - Update last_chapter with new chapter info
 - Set git_ref_end to current HEAD commit
 
+### Log Post-Prose Updates
+
+Append to `chronicle/chapters/NNN-slug/process.md`:
+
+```markdown
+---
+
+## Post-Prose
+
+**World updates:**
+- [Added/Updated]: [what changed]
+
+**Arc updates:**
+- [Arc Name]: [what changed]
+```
+
 ---
 
 ## First Chapter Initialization
@@ -202,6 +358,7 @@ When no chronicle exists:
      fauna         [animals/creatures or "none — reason"]
 
      inhabitants   [who populates this world]
+     disposition   [hospitable | guarded | indifferent | hostile]
 
      magic         [how it looks, not what it does — or "none — reason"]
 
@@ -230,6 +387,7 @@ When no chronicle exists:
    flora: [value]
    fauna: [value]
    inhabitants: [value]
+   disposition: [value]
    magic: [value]
    ---
    # World Seed
@@ -292,7 +450,8 @@ Each chapter gets its own directory:
 
 ```
 chronicle/chapters/NNN-slug/
-├── prep.md          ← Built through checkpoints
+├── process.md       ← Process log (created at start, appended throughout)
+├── prep.md          ← Built through checkpoints (kept as artifact)
 ├── chapter.md       ← From prose agent
 ├── world.md         ← Snapshot after updates
 └── arcs.md          ← Snapshot after updates
@@ -337,7 +496,7 @@ Consult during execution:
 - `references/layers.md` — Layer definitions, checkpoint formats, prep.md structure
 - `references/disturbance.md` — How to read git diffs for shape and find the rhyme
 - `references/craft.md` — Chapter format, world.md structure, arc shapes
-- `references/voice.md` — Prose craft (for prose agent)
+- `references/voice.md` — Prose craft and patterns (used by both prose and editorial agents)
 - `references/principles.md` — Relational principles embedded in layers
 
 ---
