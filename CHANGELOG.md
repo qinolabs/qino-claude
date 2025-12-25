@@ -10,6 +10,47 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.18.0] - 2025-12-25
+
+### qino Scribe
+
+#### Added
+
+- **Editorial agent** — new `scribe-editorial.md` agent reviews prose output with complete separation from prep context; sees only the draft chapter file, evaluating execution on its own terms
+- **Disposition configuration** — world hospitality is now configurable in world-seed.md via `disposition` field (hospitable, guarded, indifferent, hostile); moved from universal principle to world-specific setting
+- **Diagnostic command** (`/qino-scribe:diagnose`) — assess system integrity after changes; checks seven categories: Specificity/Universality, Proportionality, Signal/Noise, Principle/Example Coherence, Agent Architecture, Terminology Consistency, Reference Authority
+- **Calibration notes** — working document capturing craft devices discovered through prose exploration: Temporal Quality, Negative Space, Meaningful Gesture, Parallel Action, Restraint
+- **Craft devices in voice.md** — five new craft techniques for rendering experience, with structure templates, quality markers, and ask questions
+- **Chapter-level patterns** — Continuous Dream, Movement, Crowding/Leaping, World Presence, Balance of Modes, Rhythm; patterns for evaluating whole-chapter quality
+- **Connection moments** — guidance for stranger encounters, shared attention, and unspoken recognition
+
+#### Changed
+
+- **Merged voice.md and success-patterns.md** — unified voice reference with line-level and chapter-level patterns, plus diagnostic questions
+- **Editorial architecture clarified** — layers.md now reflects three-agent architecture (prep, prose, editorial) with clear context boundaries
+- **Hospitality removed from principles** — disposition is now a world configuration, not a universal storytelling principle
+- **Reference paths normalized** — agents now use consistent `references/qino-scribe/` paths
+
+#### Removed
+
+- **Archived scribe versions** — cleaned up `tools/archived/qino-scribe-command` and `tools/archived/qino-scribe-v1`
+- **success-patterns.md** — content merged into voice.md
+
+### qino Lens
+
+#### Changed
+
+- **Enhanced companion sensitivity** — richer guidance for world filtered through relationship, attention split between task and person
+- **Enhanced wanderer sensitivity** — expanded examples for friction, consequence, and embodied presence
+
+### General
+
+#### Changed
+
+- **docs/tools-overview.md rewritten** — updated for current tooling landscape
+
+---
+
 ## [0.17.0] - 2025-12-23
 
 ### qino Scribe
