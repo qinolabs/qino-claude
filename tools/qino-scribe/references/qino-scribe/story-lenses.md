@@ -303,3 +303,35 @@ A story lens determines which sensitivities to foreground. The lens shapes HOW y
 **Step 3: Present to user** with one-line descriptions.
 
 **Step 4: User chooses.** They may also choose a territory, or let the prose agent select.
+
+---
+
+## Stakes Calibration by Lens Type
+
+The Active Hold "stakes visible" applies to all lenses — but visible stakes look different in contemplative vs. dramatic chapters.
+
+### Dramatic Lenses (Crisis, Confrontation, Complication)
+Stakes are external and urgent. What could be lost is obvious.
+
+### Contemplative Lenses (Vigil, Arrival, Work)
+Stakes are relational and subtle. What could be lost is connection, trust, or presence.
+
+**Vigil stakes examples:**
+- What could be lost: the dying person's sense that they weren't alone
+- What could be lost: the wanderer's ability to stay present without retreating
+- What could be lost: the quiet trust that someone chose to stay
+
+**Arrival stakes examples:**
+- What could be lost: the warmth of the welcome if the wanderer misreads it
+- What could be lost: the chance to be taken in before being understood
+- What could be lost: the invitation to go deeper
+
+**Work stakes examples:**
+- What could be lost: the rhythm of together if someone withdraws
+- What could be lost: the thing taking shape if attention fractures
+- What could be lost: what the work makes possible to say
+
+### First Chapter Stakes
+The first chapter has inherent stakes: will this world feel worth returning to? The wanderer's initial encounter with the world determines reader investment. Stakes are: does this place have depth, do these people matter, does the wanderer have room to be a person here?
+
+**The test:** Strip away the contemplative vocabulary. Is there still something at risk — something the reader doesn't want to see lost?

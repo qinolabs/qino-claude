@@ -186,6 +186,13 @@ When an arc begins, sense its shape:
 **What remains unspoken:**
 [What others have sensed but not named — accumulating across chapters]
 
+**Strangeness observed:**
+[Physical details noticed by characters — tracked for pattern accumulation]
+- Ch N: [who noticed] — "[what they saw]"
+- Ch M: [who noticed] — "[what they saw, should rhyme with earlier]"
+
+*The power lives in accumulation. These observations echo across chapters without explanation.*
+
 ---
 
 ## Characters
@@ -220,6 +227,8 @@ First appeared: [chapter]
 ### Relational Fields
 
 **`What remains unspoken`** (in Wanderer section): Tracks what others have sensed about the wanderer but not articulated. Accumulates across chapters.
+
+**`Strangeness observed`** (in Wanderer section): Logs specific physical details that characters notice about the wanderer — how they wait, what their hands do, how they enter rooms. Multiple characters noticing similar details creates pattern. The prep agent should reference this when planning new observations, choosing to echo earlier ones or introduce new physical tells. Maximum 1-2 new observations per chapter.
 
 **`Has been watching`** (in Character entries): Tracks what each character has noticed about the wanderer or others — perceptions they haven't spoken. This is the "World Has Been Watching" principle in action.
 
