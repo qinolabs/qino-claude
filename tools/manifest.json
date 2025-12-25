@@ -323,6 +323,10 @@
           "dest": "commands/qino-scribe/chapter.md"
         },
         {
+          "src": "tools/qino-scribe/commands/qino-scribe/diagnose.md",
+          "dest": "commands/qino-scribe/diagnose.md"
+        },
+        {
           "src": "tools/qino-scribe/commands/qino-scribe/rewind.md",
           "dest": "commands/qino-scribe/rewind.md"
         },
@@ -355,8 +359,8 @@
           "dest": "references/qino-scribe/story-lenses.md"
         },
         {
-          "src": "tools/qino-scribe/references/qino-scribe/success-patterns.md",
-          "dest": "references/qino-scribe/success-patterns.md"
+          "src": "tools/qino-scribe/references/qino-scribe/calibration-notes.md",
+          "dest": "references/qino-scribe/calibration-notes.md"
         },
         {
           "src": "tools/qino-scribe/references/qino-scribe/version.json",
