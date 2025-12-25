@@ -51,7 +51,7 @@ jobs:
           payload = {
               "repoName": repo_name,
               "world": read_text(chronicle_path / "world.md"),
-              "theme": read_text(chronicle_path / "theme.md"),
+              "theme": read_text(chronicle_path / "world-seed.md"),
               "arcs": read_text(chronicle_path / "arcs.md"),
               "force": force_flag,
           }
