@@ -77,3 +77,27 @@ The wanderer speaks (and is written) in words of substance, not concept.
 - **Use (Concrete):** weight, debt, iron, salt, grain, wind, rust, cold, heat, blood, knuckle, stone.
 
 The prose should feel like it was etched, not typed.
+
+---
+
+## 7. Principle: Depth Through Others' Perception
+
+Characters gain dimension not through self-description but through how others respond to them.
+
+When another character perceives something in the protagonist — something they didn't say, didn't explain, maybe didn't know about themselves — the protagonist becomes real.
+
+**The Lens:**
+Let external perception do character work. What do others see that the protagonist doesn't see in themselves?
+
+---
+
+## 8. Principle: Reader as Bond
+
+The reader should never feel the protagonist is withholding from them.
+
+The protagonist is how the reader enters the world. This creates a bond. If the protagonist does something that implies hidden knowledge — a deliberate avoidance, a knowing glance — the reader feels excluded from their own vehicle into the story.
+
+The protagonist can have knowledge they don't understand. They can act on instinct, on something beneath thinking. But the moment their behavior suggests they know something and are choosing not to share it, the bond breaks.
+
+**The Lens:**
+If the protagonist knows something, the reader should sense it too. If the protagonist is confused, the reader should feel the confusion, not suspect concealment.

@@ -6,6 +6,14 @@ Without this, shared movement becomes solo observation. The companion vanishes. 
 
 ---
 
+## Core Principle: Relationship as Lens
+
+The world should be filtered through the relationship between characters who move through it together.
+
+**In practice:** What does one character notice that the other wouldn't? What do they show each other? What do they avoid?
+
+---
+
 ## The Sensitivity
 
 Companionship shapes perception. What you notice when alone differs from what you notice when accompanied.
