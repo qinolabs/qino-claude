@@ -1,26 +1,26 @@
 ---
 genre: fantasy
 subgenre: gentle secondary world — patient wonder, age of sail
-scale: intimate and local — a single coastal town where river meets sea
-geography: coastal estuary, slow river delta, hills with ancient ruins behind, warm summer light
+scale: intimate and local — settlements along a river delta where the water meets the sea
+geography: coastal estuary, river delta with branching arms, thick forests and swampland upriver, hills with ancient ruins behind
 era: age of sail — wooden ships, stone buildings, pre-industrial warmth
 architecture: harbor buildings of weathered stone and timber, wharves and jetties, old towers on the hills
-lighting: golden summer light, salt-hazed afternoons, warm evenings with oil lamps and cooking fires
-technology: sailing vessels with canvas and rope, hand tools, traditional crafts
-transport: sailing ships, rowing boats, river barges, foot travel on dusty roads
-flora: olive groves on hillsides, harbor-side gardens, salt-tolerant grasses, wildflowers in ruins
-fauna: seabirds wheeling over the harbor, creatures from the depths, beings that drift on unseen currents
-inhabitants: humans and others — traders, scholars, children, beings without familiar shapes
-magic: subtle and patient — presence rather than power, understanding earned through stillness
+lighting: golden summer light, salt-hazed afternoons, warm evenings with oil lamps
+technology: sailing vessels, hand tools, traditional crafts
+transport: sailing ships, rowing boats, river barges, foot travel
+flora: olive groves, salt grasses near the delta, dense forest upriver, swamp where the river becomes maze
+fauna: seabirds, creatures from the depths, and at the fringes—shapes hunters won't name
+inhabitants: humans and other peoples — traders, scholars, seafarers of different kinds, each with their own customs
+magic: subtle — presence rather than power, understanding earned through stillness
 ---
 # Theme
 
-A coastal town where a slow river meets the sea, in an age of sail and summer light.
+A river delta where slow water branches into many arms before meeting the sea, in an age of sail and summer light.
 
-The hills behind hold ruins older than anyone's memory—stone circles, empty towers, carvings in languages the scholars argue over. Whatever lived here before is gone, or quiet, or waiting.
+Several settlements line the channels—fishing villages, trading posts, a harbor town at the coast. Humans share these waters with other peoples who sail their own ships, keep their own traditions. Understanding between them is never complete, but it deepens with time. Patience is the delta's currency.
 
-Now the harbor belongs to humans and others: creatures who swam up from depths, beings who drifted in on currents only they can feel, intelligences that don't wear familiar shapes. The warm air smells of salt, olive wood, and cooking from a dozen traditions.
+Behind the settlements, ruins dot the hills—carvings no one can read, towers no one remembers building.
 
-People here have learned not to rush understanding. A trader sits with something that has no words, sharing bread, watching for meaning in the way it moves. Children grow up knowing that patience is the town's first currency.
+Upriver is another matter. Past where the channels converge, forest closes in. Further still, swampland where even experienced pilots lose their way. Stories come down from there—old stories of caravans that never arrived, and newer ones the hunters bring back, speaking carefully of what they saw at the fringes. It is said artifacts were found once, from the old. Who kept them is no longer known.
 
-The river carries things down from the interior—silt, timber, sometimes strangers who speak of what they found in the old places. The sea carries things too. The town holds space for all of it.
+The settlements don't go looking. But lately the rumors come more often, and the river flows only one way.
