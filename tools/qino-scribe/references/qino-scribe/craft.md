@@ -114,6 +114,38 @@ Works:
 
 ---
 
+### Visibility Annotations
+
+Some tokens exist in the narrative but should NOT be visualized concretely. Their mystery is part of their presence.
+
+**Format:** Add a visibility annotation after the token name:
+
+```markdown
+**The Specimen** *(unspecified)*
+Features that shouldn't coexist. Patterns on its surface that change when you look away.
+```
+
+**Visibility levels:**
+
+| Annotation | Meaning | Image Generation |
+|------------|---------|------------------|
+| *(none)* | Fully realized | Render concretely based on presence text |
+| *(partial)* | Some aspects hidden | Render visible aspects, obscure what's unknown |
+| *(glimpsed)* | Edge of perception | Render as distant, fragmentary, or peripheral |
+| *(unspecified)* | Form is narratively undefined | Do NOT invent specific form — render as abstract presence, effect, or context |
+
+**When to use visibility annotations:**
+
+- **unspecified**: The narrative deliberately avoids defining this. Its mystery is the point. Example: "The Specimen" that "defies every taxonomy" — visualizing it as a skull-like object would lift the veil prematurely.
+- **glimpsed**: The thing has been perceived but never directly. Something at the edge of vision, a sound that might be footsteps, a shape in the fog.
+- **partial**: The thing has been seen, but not completely. Half-revealed, lit from one side, never fully exposed.
+
+**The principle:** If the prose works to keep something mysterious, the visualization should honor that mystery. The annotation signals intent to the image generation system.
+
+**Default:** No annotation means full visibility — the token can be rendered as concretely as the presence text describes
+
+---
+
 ## Arc Shapes
 
 When an arc begins, sense its shape:

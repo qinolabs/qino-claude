@@ -340,6 +340,7 @@ Crystallize what's new. Evocative fragments, not summaries:
 - Characters: capture how they land in the senses
 - Locations: carry scale if the wanderer experienced scale
 - The wanderer is never included in tokens
+- **Visibility annotations**: If a token's mystery is part of its presence — if the narrative deliberately avoids defining it — add a visibility annotation: `**Name** *(unspecified)*` or `*(glimpsed)*` or `*(partial)*`. See craft.md for details
 
 ---
 
