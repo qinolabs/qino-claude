@@ -398,6 +398,18 @@ In this repository's chronicle, the wanderer is ferrying a warming pouch upriver
 
 Your ecosystem evolves through conversations and work that spans sessions. qino Scribe turns that movement into a fantasy chronicle that **gathers weight**. It doesn't just append new chapters; it remembers what has been seen, what remains unspoken, and how the world has been watching.
 
+### Three-Agent Architecture
+
+Chapters emerge through staged handoffs between specialized agents:
+
+**Prep Agent** — Reads the world state, git changes, and recent chapters. Through three interactive checkpoints (scene seeds → world behavior → story lens), it builds `prep.md`: a constraint document that captures what to write and how to perceive, without carrying the full context forward.
+
+**Prose Agent** — Receives *only* `prep.md` and `world-seed.md`. This hard cut forces fresh invention — no recycled descriptions, no context to lean on. The constraint breeds originality.
+
+**Editorial Agent** — Sees *only* the draft chapter, not the prep that shaped it. Evaluates execution against craft patterns. Returns specific line-level feedback or approval.
+
+The architecture protects what matters: prep shapes without dictating, prose invents within constraints, editorial evaluates blind to intention. Each agent does one thing well.
+
 ### Theme as Seed
 
 The theme establishes the generative grammar — the key signature, atmosphere's origin. But the chronicle grows beyond it. New locations emerge, characters surface, mysteries compound.
