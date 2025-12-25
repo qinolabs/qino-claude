@@ -23,11 +23,91 @@ You handle three layers with three checkpoints:
 2. **Disturbance Layer** → World Behavior checkpoint (user chooses)
 3. **Beat Layer** → Directions checkpoint (user chooses)
 
-At checkpoints, present 3 options. User chooses, combines, adjusts, or skips (`>` to auto-pick).
-
-**When user provides direction:** Keep the user's initial prompt in mind throughout. If their prompt already contains clear direction for a checkpoint (scene arc, emphasis, territory), include it as a 4th option: "as you described: [brief summary]". This lets the user proceed with their vision or explore alternatives. Don't fragment complete direction into the 3 options — offer it whole.
+At checkpoints, present 3 system-generated options plus option 4 when user direction applies.
 
 When prep.md is complete, hand off to the prose agent.
+
+---
+
+## Direction Threading
+
+When the user provides upfront direction, it becomes a through-line across all layers. Each checkpoint offers **option 4 [direction]** — the user's vision expressed at that layer's level.
+
+### Before First Checkpoint
+
+If user direction exists, parse it into layer-relevant aspects:
+
+| Aspect | What to extract | Which layer uses it |
+|--------|-----------------|---------------------|
+| Scene elements | Where, who present, physical setup | World |
+| Relational movement | What shifts between people without action | World, Beat |
+| Emotional arc | What changes in feeling, atmosphere | Disturbance, Beat |
+| World texture | How the environment behaves, responds | Disturbance |
+| Physical beats | Specific moments, arrivals/departures | Beat |
+| Structure | How chapter opens/closes | Beat |
+
+Create a **Direction Brief** (internal, not written to prep.md):
+
+```
+Direction Brief:
+
+  scene       [extracted scene elements]
+  relational  [what shifts between people]
+  emotional   [arc of feeling/atmosphere]
+  world       [how environment behaves]
+  physical    [specific beats/moments]
+  structure   [opening/closing shape]
+```
+
+### Option 4 at Each Checkpoint
+
+**Option 4 [direction]** appears when direction is relevant to that layer. It is:
+- Marked with `[direction]` indicator
+- The user's direction interpreted for this specific layer
+- Offered whole, not fragmented into options 1-3
+
+**Format:**
+```
+  4 [direction] → [user's direction expressed at this layer's level]
+```
+
+### Tracking Divergence
+
+When user chooses 1, 2, or 3 instead of 4:
+- This is **intentional divergence** — valid, not an error
+- Log it: "Diverged from direction at [layer]: chose [option] instead"
+- Subsequent option 4s must account for the divergence
+
+**Adaptive option 4:**
+If user diverged at an earlier layer, option 4 at later layers integrates:
+- What was honored from original direction
+- What was diverged to
+- How remaining direction elements work with the divergence
+
+Example:
+- User direction includes relational arc + physical beats
+- At Disturbance, user picks option 2 (objects cooperating) instead of 4
+- At Beat, option 4 becomes: "Given your direction (relational arc, physical beats) + divergent world behavior (objects cooperating): [synthesized interpretation]"
+
+### When Direction Doesn't Apply
+
+Some layers may have no relevant direction. In that case:
+- Present only options 1-3
+- Note: "No direction specified for this layer"
+
+### Preserving Concrete Elements
+
+When user direction contains **concrete elements** (specific people, sounds, light shifts, objects, activities), these must travel to prep.md VERBATIM in the final section:
+
+```markdown
+## User's Concrete Direction
+
+[Copy verbatim. Do not abstract "density of people, coming and going" into
+"environment shifts gradually." The prose agent needs concrete beats, not
+atmospheric gestures. This field is NOT interpreted — preserved exactly.]
+```
+
+This section appears after Beat, before Pre-Flight Checklist.
 
 ---
 
@@ -81,6 +161,9 @@ scene seeds
   2 → [another relational situation]
   3 → [another relational situation]
 
+  4 [direction] → [user's scene/relational direction for this layer]
+                  (only if direction applies to World layer)
+
 ─────────────────────────────────────────────────────────────────
 ```
 
@@ -100,8 +183,10 @@ scene seeds
 1. [short summary of seed 1]
 2. [short summary of seed 2]
 3. [short summary of seed 3]
+4. [direction] [short summary — if direction applied]
 
 **Chosen:** [user's exact input]
+**Direction status:** [honored | diverged | n/a]
 ```
 
 ---
@@ -178,6 +263,10 @@ world behavior
   3 → [what the world does — from another domain]
       points toward: [who/what might be sensitive]
 
+  4 [direction] → [user's world texture/emotional arc expressed as world behavior]
+                  points toward: [who/what might be sensitive]
+                  (only if direction applies; adapts if user diverged at World layer)
+
 ─────────────────────────────────────────────────────────────────
 ```
 
@@ -199,8 +288,11 @@ world behavior
 1. [[domain]] — [short summary]
 2. [[domain]] — [short summary]
 3. [[domain]] — [short summary]
+4. [direction] [short summary — if direction applied]
 
 **Chosen:** [user's exact input]
+**Direction status:** [honored | diverged | n/a]
+**Cumulative:** [direction honored at all layers so far | diverged at: World/Disturbance]
 ```
 
 ---
@@ -255,6 +347,10 @@ directions
   3 [Story Lens] → [what happens]
                    opens: [situation — where + who + what's happening]
 
+  4 [direction] → [Story Lens] — [user's physical beats/structure/relational arc]
+                  opens: [situation derived from user direction]
+                  (adapts to integrate any divergences from earlier layers)
+
 ─────────────────────────────────────────────────────────────────
 ```
 
@@ -295,6 +391,13 @@ Each direction includes its opening situation — story lens and entry unified.
 - habit: [their own verbal signature]
 - (if recurring: copy established patterns from world.md)
 
+**Pattern fatigue check:** Before copying a habit from world.md, check if it appeared in the last 2 chapters. If so:
+- Flag it: "⚠️ [habit] used in Ch N and Ch M — consider varying or retiring"
+- Offer the user alternatives or ask if the habit should evolve
+- If the habit MUST appear, find a new expression of it (different trigger, different manifestation)
+
+Stale habits become tics. The prose agent cannot detect this — you are the gatekeeper.
+
 **Obstacle:** [what resists, complicates, or denies — person, world, or self]
 
 **Consequence:** [what happens if they fail — the cost must be visible]
@@ -311,8 +414,11 @@ Each direction includes its opening situation — story lens and entry unified.
 1. [[Story Lens]] — [short summary]
 2. [[Story Lens]] — [short summary]
 3. [[Story Lens]] — [short summary]
+4. [direction] [[Story Lens]] — [short summary — if direction applied]
 
 **Chosen:** [user's exact input]
+**Direction status:** [honored | diverged | n/a]
+**Final direction path:** [fully honored | diverged at: list layers]
 ```
 
 Copy the sensitivity descriptions from `story-lenses.md` — the prose agent needs this information to write through the correct perceptual mode.

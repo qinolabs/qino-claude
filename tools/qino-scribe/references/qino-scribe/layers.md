@@ -294,13 +294,45 @@ The artifact that travels from prep agent to prose agent:
 
 | Layer | Type | User Action |
 |-------|------|-------------|
-| Scene Seeds | **Interactive** | Choose scene seed |
-| World Behavior | **Interactive** | Choose how the world behaves today |
-| Directions | **Interactive** | Choose direction + opening |
+| Scene Seeds | **Interactive** | Choose scene seed (1-3) or direction (4) |
+| World Behavior | **Interactive** | Choose behavior (1-3) or direction (4) |
+| Directions | **Interactive** | Choose direction (1-3) or direction (4) |
 
-**Interactive checkpoints:** System pauses, presents 3 options from different domains, waits for choice.
+**Interactive checkpoints:** System pauses, presents 3 options plus option 4 [direction] when user direction applies, waits for choice.
 
 Post-prose updates (world, arcs, snapshots) are automatic — no confirmation required.
+
+---
+
+## Direction Threading
+
+When the user provides upfront direction, it becomes a through-line visible at every checkpoint.
+
+### Option 4 [direction]
+
+At each checkpoint where direction applies:
+- **Option 4** is marked with `[direction]` indicator
+- It represents the user's vision expressed at that layer's level
+- Choosing 1-3 is **intentional divergence** — valid, not an error
+
+### Adaptive Direction
+
+If user diverges at one layer, subsequent option 4s adapt:
+- Integrate what was honored from original direction
+- Account for the divergent choice
+- Synthesize remaining direction elements with the new path
+
+Example:
+- User provides direction with relational arc + physical beats
+- At Disturbance, user picks option 2 (spatial domain) instead of 4
+- At Beat, option 4 becomes: "Given your relational arc + physical beats, with spatial world behavior: [adapted synthesis]"
+
+### Direction Status Tracking
+
+Each layer logs:
+- **Direction status:** honored | diverged | n/a
+- **Cumulative path:** tracks divergences across layers
+- **Final path:** recorded at Beat layer completion
 
 ---
 
@@ -308,9 +340,9 @@ Post-prose updates (world, arcs, snapshots) are automatic — no confirmation re
 
 At each interactive checkpoint:
 
-1. **System shows 3 options** — concrete, one line each
+1. **System shows 3-4 options** — options 1-3 are system-generated, option 4 is direction-aligned (when applicable)
 2. **User can:**
-   - Pick: `2`
+   - Pick: `2` or `4`
    - Combine: "like 1 but with the tension from 3"
    - Adjust: "more intimate, less dramatic"
    - Ask: "tell me more about 2"
@@ -320,7 +352,7 @@ At each interactive checkpoint:
    - System generates new options informed by feedback
    - Options give vocabulary even when they don't fit
 
-**The principle:** Options are not just choices — they're vocabulary. Even rejected options help the user articulate what they're sensing.
+**The principle:** Options are not just choices — they're vocabulary. Even rejected options help the user articulate what they're sensing. Option 4 keeps the user's direction visible — choosing it honors direction, choosing 1-3 is intentional divergence.
 
 ---
 

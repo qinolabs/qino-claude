@@ -11,6 +11,7 @@ transport: sailing ships, rowing boats, river barges, foot travel
 flora: olive groves, salt grasses near the delta, dense forest upriver, swamp where the river becomes maze
 fauna: seabirds, creatures from the depths, and at the fringes—shapes hunters won't name
 inhabitants: humans and other peoples — traders, scholars, seafarers of different kinds, each with their own customs
+disposition: hospitable — everyone's welcome in the delta, though some arrivals are watched more carefully than others
 magic: subtle — presence rather than power, understanding earned through stillness
 ---
 # Theme
