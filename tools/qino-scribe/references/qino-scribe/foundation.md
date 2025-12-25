@@ -43,6 +43,9 @@ fauna: distant silhouettes of large winged creatures, small scurrying things
 # Cultural
 inhabitants: scholars, explorers, scientists from across the galaxy
 
+# Social
+disposition: hospitable — warmth, curiosity, welcome
+
 # Supernatural
 magic: none — this is hard science fiction
 ---
@@ -93,6 +96,21 @@ A mountain observatory on a planet on the outer edges of explored space...
 | Field | Purpose | Examples |
 |-------|---------|----------|
 | inhabitants | Who populates the world | `scholars, explorers, scientists from across the galaxy` |
+
+### Social
+
+| Field | Purpose | Examples |
+|-------|---------|----------|
+| disposition | Default stance of inhabitants toward strangers | `hospitable — warmth, curiosity, welcome`, `guarded — suspicion, caution, earned trust`, `indifferent — preoccupied, distracted, neutral` |
+
+**Disposition shapes how unnamed characters and first encounters default.** Major characters can deviate, but the baseline should be intentional:
+
+- **hospitable:** Strangers are welcomed. People lean in when someone shares. Help is offered before asked.
+- **guarded:** Strangers are assessed. Trust is earned. Questions are deflected until intentions are clear.
+- **indifferent:** Strangers are tolerated. People are busy with their own concerns. Neither warm nor cold.
+- **hostile:** Strangers are threats. Suspicion is the default. Safety comes first.
+
+This is not a constraint on individual characters — it's the world's texture. A hospitable world can have a guarded character; their guardedness becomes notable. A hostile world can have a warm character; their warmth becomes precious.
 
 ### Supernatural
 
