@@ -6,7 +6,7 @@ palette: muted earth tones
 
 # Visual Direction
 
-Everything weathered, nothing pristine. Light comes from practical sources — fires, lamps, windows. Rooms have character, and visible traces of personal stories. The environment has something mysterious and uncanny.
+A secondary world — not Earth, but somewhere with its own history and peoples. Fantasy grounded in texture and atmosphere rather than spectacle. Everything weathered, nothing pristine. Light comes from practical sources — fires, lamps, windows. Rooms have character, and visible traces of personal stories. The environment has something mysterious and uncanny. Magic is presence, not display — felt in the quality of light, the weight of old places, what the water reflects.
 
 ## References
 
@@ -20,6 +20,6 @@ Everything weathered, nothing pristine. Light comes from practical sources — f
 - Photorealistic rendering
 - Oversaturated colors
 - Clean, sterile surfaces
-- Generic fantasy tropes
+- Fantasy clichés (glowing runes, ethereal elves, obvious magic effects) — not fantasy itself
 - Action-movie drama
 - Obviously AI-generated look
