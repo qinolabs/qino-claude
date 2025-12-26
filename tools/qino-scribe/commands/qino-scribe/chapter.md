@@ -71,11 +71,13 @@ If yes: Read the prose, propose fields using the checkpoint format from First Ch
 
 ## Initialize Process Log
 
-Before spawning the prep agent, create the chapter directory and process.md:
+Before spawning the prep agent, create the chapter **working directory**:
 
 ```bash
-mkdir -p chronicle/chapters/NNN-slug
+mkdir -p chronicle/chapters/NNN-wip
 ```
+
+The `wip` suffix indicates work-in-progress. The directory will be renamed after the chapter title is known (see Phase 2.8).
 
 Write the initial process.md:
 
@@ -105,7 +107,7 @@ Use agent: scribe-prep
 ultrathink: Synthesis work benefits from deliberation.
 
 Pass to agent:
-- The chapter directory path: chronicle/chapters/NNN-slug
+- The chapter directory path: chronicle/chapters/NNN-wip
 - The git range: [last_ref]..HEAD
 ```
 
@@ -144,7 +146,7 @@ When prep.md is complete, spawn the prose agent:
 ```
 Use agent: scribe-prose
 
-The prose agent reads ONLY: chronicle/chapters/NNN-slug/prep.md
+The prose agent reads ONLY: chronicle/chapters/NNN-wip/prep.md
 ```
 
 **Critical:** The prose agent receives ONLY prep.md. This constraint is the quality mechanism — it forces fresh invention, prevents recycling, makes the brief fully generative.
@@ -166,8 +168,8 @@ Use agent: scribe-editorial
 ultrathink: Careful review benefits from deliberation.
 
 Pass to agent:
-- The path to the draft: chronicle/chapters/NNN-slug/chapter.md
-- The path to process.md: chronicle/chapters/NNN-slug/process.md
+- The path to the draft: chronicle/chapters/NNN-wip/chapter.md
+- The path to process.md: chronicle/chapters/NNN-wip/process.md
 - The pass number: 1 (or 2 for second pass)
 - Do NOT pass prep.md, world.md, or arcs.md
 ```
@@ -198,7 +200,7 @@ The editorial agent will:
 
 2. Pass edit list to prose agent with instruction:
    ```
-   Apply these specific edits to chronicle/chapters/NNN-slug/chapter.md
+   Apply these specific edits to chronicle/chapters/NNN-wip/chapter.md
    Do not rewrite sections not flagged.
    ```
 
@@ -227,7 +229,7 @@ If editorial flags 10+ issues on first pass, or >5 issues on second pass:
 
 1. **Save artifacts:**
    ```bash
-   mv chronicle/chapters/NNN-slug/chapter.md chronicle/chapters/NNN-slug/draft-failed.md
+   mv chronicle/chapters/NNN-wip/chapter.md chronicle/chapters/NNN-wip/draft-failed.md
    ```
 
 2. **Present user with options:**
@@ -236,7 +238,7 @@ If editorial flags 10+ issues on first pass, or >5 issues on second pass:
    draft failed editorial review
 
      issues: [count]
-     saved:  chronicle/chapters/NNN-slug/draft-failed.md
+     saved:  chronicle/chapters/NNN-wip/draft-failed.md
 
    ─────────────────────────────────────────────────────────────────
    options
@@ -260,7 +262,27 @@ If editorial flags 10+ issues on first pass, or >5 issues on second pass:
 
 5. **If override chosen:**
    - Rename draft-failed.md to chapter.md
-   - Proceed to Phase 3 with warning logged
+   - Proceed to Phase 2.8 with warning logged
+
+---
+
+## Phase 2.8: Finalize Directory
+
+After editorial approval (or override), rename the working directory to match the chapter title:
+
+1. **Extract title** from chapter.md (the `# Title` heading)
+2. **Convert to kebab-case slug:** "The Counting Room" → "the-counting-room"
+3. **Rename directory:**
+   ```bash
+   mv chronicle/chapters/NNN-wip chronicle/chapters/NNN-slug
+   ```
+
+**Example:**
+- Working: `chronicle/chapters/002-wip/`
+- Title extracted: "The Counting Room"
+- Final: `chronicle/chapters/002-the-counting-room/`
+
+This ensures the directory name always matches the chapter title. All subsequent Phase 3 operations use the final path.
 
 ---
 
@@ -459,7 +481,13 @@ chronicle/chapters/NNN-slug/
 
 **Naming:**
 - NNN = 3-digit chapter number, zero-padded (001, 002, ...)
-- slug = kebab-case of chapter title
+- During prep/prose/editorial: `NNN-wip` (work-in-progress)
+- After Phase 2.8: `NNN-slug` where slug = kebab-case of chapter title
+
+**Example lifecycle:**
+1. Created as `002-wip` at prep start
+2. Renamed to `002-the-counting-room` after editorial approval
+3. All post-prose operations use the final name
 
 ---
 
