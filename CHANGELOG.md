@@ -10,6 +10,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.19.0] - 2025-12-26
+
+### qino Scribe
+
+#### Added
+
+- **Visual style configuration** — new `visual-style.md` file for author-controlled image aesthetics; structured frontmatter (style, fidelity, palette) plus prose sections (direction, references, avoid); replaces AI-distilled style guessing with intentional aesthetic choices
+- **Visual style command** (`/qino-scribe:visual-style`) — interactive creation of visual-style.md with guided prompts for rendering approach (cinematic, illustrated, painterly, atmospheric, stylized), detail level, color philosophy, and artistic references
+- **Visibility annotations** — world tokens can now include annotations like *(unspecified)*, *(glimpsed)*, *(partial)* to preserve narrative mystery in image generation; prevents the image system from visualizing deliberately mysterious elements as concrete objects
+- **WIP directory naming** — chapter directories use NNN-wip during creation, renamed to NNN-slug after title is known; prevents guessing at slug before chapter content exists
+
+#### Changed
+
+- **Prep agent enhanced** — expanded instructions for disturbance layer and character analysis
+- **Layers reference refined** — clarified checkpoint structure and world layer details
+
+---
+
 ## [0.18.0] - 2025-12-25
 
 ### qino Scribe
