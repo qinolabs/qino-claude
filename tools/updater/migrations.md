@@ -12,6 +12,27 @@ Each version section includes:
 
 ---
 
+## v0.19.0 (qino-scribe visual-style)
+
+**Summary**: qino Scribe adds visual-style.md for author-controlled image aesthetics, replacing AI-distilled style guessing.
+
+**New** (qino-scribe):
+- `.claude/commands/qino-scribe/visual-style.md` — interactive visual style configuration
+- `.claude/references/qino-scribe/visual-style.md` — format documentation and examples
+
+**Integration**:
+- `visual-style.md` stored in `chronicle/` alongside world-seed.md
+- GitHub workflow publishes to qino-chronicles-backend
+- Backend uses visual-style.md instead of AI distillation when present
+- All images share consistent author-defined aesthetic
+
+**User action**:
+- Run `/qino-scribe:visual-style` to create visual-style.md for your chronicle
+- Existing chronicles work — visual style is optional (falls back to genre defaults)
+- Use `force: true` in publish workflow to regenerate images with new style
+
+---
+
 ## v0.15.0 (Command Namespace + Context Sensitivity)
 
 **Summary**: Unified command naming based on qino-command-map concept. Universal ecology commands get their own tool (`qino-universal`), concept-specific commands move to `qino-concept:`, and all other tools get full prefixes. Universal commands now detect workspace context via `repoType` and adapt behavior. Static hints system added for cross-space navigation.

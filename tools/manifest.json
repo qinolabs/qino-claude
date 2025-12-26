@@ -335,6 +335,10 @@
           "dest": "commands/qino-scribe/survey.md"
         },
         {
+          "src": "tools/qino-scribe/commands/qino-scribe/visual-style.md",
+          "dest": "commands/qino-scribe/visual-style.md"
+        },
+        {
           "src": "tools/qino-scribe/references/qino-scribe/craft.md",
           "dest": "references/qino-scribe/craft.md"
         },
@@ -365,6 +369,10 @@
         {
           "src": "tools/qino-scribe/references/qino-scribe/version.json",
           "dest": "references/qino-scribe/version.json"
+        },
+        {
+          "src": "tools/qino-scribe/references/qino-scribe/visual-style.md",
+          "dest": "references/qino-scribe/visual-style.md"
         },
         {
           "src": "tools/qino-scribe/references/qino-scribe/voice.md",
