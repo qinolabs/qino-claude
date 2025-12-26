@@ -1,10 +1,10 @@
 {
   "version": 1,
   "last_chapter": {
-    "id": "001-arrival",
-    "title": "What the Water Shows",
-    "written": "2025-12-25T17:30:00Z",
-    "git_ref": "1e806da"
+    "id": "002-the-counting-room",
+    "title": "The Counting Room",
+    "written": "2025-12-26T10:30:00Z",
+    "git_ref": "cd29298"
   },
   "chapters": [
     {
@@ -13,6 +13,14 @@
       "written": "2025-12-25T17:30:00Z",
       "git_ref_start": null,
       "git_ref_end": "1e806da",
+      "scribe_version": "0.18.0"
+    },
+    {
+      "slug": "002-the-counting-room",
+      "title": "The Counting Room",
+      "written": "2025-12-26T10:30:00Z",
+      "git_ref_start": "1e806da",
+      "git_ref_end": "cd29298",
       "scribe_version": "0.18.0"
     }
   ]
