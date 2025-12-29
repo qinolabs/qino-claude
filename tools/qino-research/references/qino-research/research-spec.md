@@ -13,10 +13,9 @@ Research is **pre-concept** work:
 - Accepts inconclusive results as valuable data
 
 Research workspaces answer:
-- What explorations are active?
-- What qualities have been calibrated?
-- What experiments are running?
-- What has graduated to concepts-repo?
+- What inquiries are active?
+- What qualities have been refined?
+- What arcs have been captured?
 
 ---
 
@@ -25,48 +24,62 @@ Research workspaces answer:
 ```
 research-repo/
 ├── manifest.json              # Central registry
-├── explorations/              # Open-ended research threads
+├── inquiries/                 # Open-ended research threads (was: explorations)
 │   └── [id]/
-│       ├── thread.md          # Living exploration document
+│       ├── thread.md          # Living inquiry document
 │       └── fragments/         # Collected material
-├── calibrations/              # Quality refinement outputs
+├── qualities/                 # Aesthetic refinement (was: calibrations)
 │   └── [quality]/
 │       ├── research.md        # Core principles, distinctions
 │       ├── transformations.md # Transformation attempts
 │       └── examples/          # Test corpus
-├── experiments/               # Controlled tests
-│   └── [date]_[id]/
-│       ├── hypothesis.md      # What we're testing
-│       ├── test-data/         # Crafted inputs
-│       ├── results/           # Outputs and observations
-│       └── analysis.md        # What we learned
-└── graduated/                 # Archive of promoted work
-    └── [date]_[id]/
-        └── graduation-record.md
+└── arcs/                      # Emergence patterns
+    └── YYYY-MM-DD_[id].md     # Arc capture
 ```
 
 ---
 
-## 3. Manifest Schema
+## 3. Three Experiential Types
+
+### Inquiries (following threads)
+
+Open-ended following of threads. An inquiry starts with a question and accumulates observations, connections, partial answers.
+
+**When to create:** When a question feels alive enough to hold across sessions.
+
+### Qualities (refining aesthetics)
+
+Aesthetic sensibility refinement. A quality starts vague and accumulates examples until principles crystallize.
+
+**When to create:** When an aesthetic quality matters but isn't yet speakable.
+
+### Arcs (emergence patterns)
+
+How inquiry moved through the ecosystem — what touched what, what crystallized.
+
+**When to create:** After a session where multiple threads connected, or something emerged that wasn't planned.
+
+---
+
+## 4. Manifest Schema
 
 ```json
 {
   "version": 1,
   "type": "research",
-  "explorations": [...],
-  "calibrations": [...],
-  "experiments": [...],
-  "graduated": [...]
+  "inquiries": [...],
+  "qualities": [...],
+  "arcs": [...]
 }
 ```
 
-### 3.1 Exploration Entry
+### 4.1 Inquiry Entry
 
 ```json
 {
-  "id": "exploration-id",
+  "id": "inquiry-id",
   "name": "Human Readable Name",
-  "path": "explorations/exploration-id/thread.md",
+  "path": "inquiries/inquiry-id/thread.md",
   "status": "active",
   "started": "2025-12-19T00:00:00Z",
   "last_touched": "2025-12-19T00:00:00Z",
@@ -78,97 +91,79 @@ research-repo/
 ```
 
 **Optional fields:**
-- `sourceRepo` — Path to originating repo (only present for cross-repo explorations)
+- `sourceRepo` — Path to originating repo (only present for cross-repo inquiries)
 
 **Status values:**
 - `active` — Currently being explored
 - `paused` — Set aside, may return
-- `graduated` — Moved to concepts-repo
-- `archived` — No longer active, kept for reference
+- `complete` — Finished (conclusions reached or question dissolved)
 
 **Threads:**
-Similar to `held_threads` in concepts, but for research. Open questions being pursued.
+Open questions being pursued within the inquiry.
 
-### 3.2 Calibration Entry
+### 4.2 Quality Entry
 
 ```json
 {
   "id": "quality-name",
   "name": "Quality Name",
-  "path": "calibrations/quality-name/",
-  "quality": "the aesthetic quality being calibrated",
+  "path": "qualities/quality-name/",
+  "quality": "the aesthetic quality being refined",
   "status": "complete",
   "completed": "2025-12-19T00:00:00Z"
 }
 ```
 
 **Status values:**
-- `in_progress` — Calibration ongoing
+- `in_progress` — Refinement ongoing
 - `complete` — Principles extracted
 
-### 3.3 Experiment Entry
+### 4.3 Arc Entry
 
 ```json
 {
-  "id": "experiment-id",
-  "name": "Experiment Name",
-  "path": "experiments/2025-12-19_experiment-id/",
-  "hypothesis": "What we're testing",
-  "status": "pending",
-  "linked_calibration": "optional-calibration-id",
-  "sourceRepo": "../other-repo"
+  "id": "arc-id",
+  "title": "Arc Title",
+  "path": "arcs/2025-12-29_arc-id.md",
+  "span": {
+    "start": "2025-12-29",
+    "end": "2025-12-29"
+  },
+  "repos": ["concepts-repo", "qino-research"],
+  "status": "captured"
 }
 ```
 
-**Optional fields:**
-- `linked_calibration` — ID of related calibration
-- `sourceRepo` — Path to originating repo (only present for cross-repo experiments)
+**Key fields for querying:**
+- `span` — date range (for git matching when scribe queries)
+- `repos` — which repos were involved (for scoping)
 
 **Status values:**
-- `pending` — Not yet started
-- `running` — In progress
-- `complete` — Finished with conclusions
-- `inconclusive` — Finished without clear conclusions (still valuable)
-
-### 3.4 Graduated Entry
-
-```json
-{
-  "id": "graduated-item-id",
-  "type": "note",
-  "destination": "concepts-repo/notes/2025-12-19_item.md",
-  "graduated": "2025-12-19T00:00:00Z",
-  "source": "original-exploration-id"
-}
-```
-
-**Type values:**
-- `note` — Graduated as a note in concepts-repo
-- `concept` — Graduated as a concept seed
+- `captured` — Arc recorded
 
 ---
 
-## 4. Exploration Format
+## 5. Inquiry Format
 
 ### thread.md
 
 ```markdown
-# [Exploration Title]
+# [Inquiry Title]
 
 **Started:** YYYY-MM-DD
-**Status:** active|paused|graduated|archived
+**Status:** active|paused|complete
 
 ---
 
 ## The Question
 
-[What drew you to this exploration?]
+[What drew you to this inquiry?]
 
 ---
 
 ## [Section 1]
 
-[Exploration content...]
+[Inquiry content...]
 
 ---
 
@@ -184,11 +179,11 @@ Similar to `held_threads` in concepts, but for research. Open questions being pu
 - [Thread 2 — atmospheric description]
 ```
 
-Explorations are freeform. Sections emerge from the work, not from a template.
+Inquiries are freeform. Sections emerge from the work, not from a template.
 
 ### fragments/
 
-Collected material that feeds the exploration:
+Collected material that feeds the inquiry:
 - External sources
 - Notes from other contexts
 - Screenshots, diagrams
@@ -196,9 +191,9 @@ Collected material that feeds the exploration:
 
 ---
 
-## 5. Calibration Format
+## 6. Quality Format
 
-Calibrations follow the structure produced by `attune:calibrate`:
+Qualities follow the structure produced by `attune:calibrate`:
 
 ### research.md
 
@@ -234,7 +229,7 @@ Calibrations follow the structure produced by `attune:calibrate`:
 
 ## Process
 
-[How calibration was conducted]
+[How refinement was conducted]
 
 ## Transformation Attempts
 
@@ -260,137 +255,80 @@ Calibrations follow the structure produced by `attune:calibrate`:
 
 ### examples/
 
-Test corpus used during calibration.
+Test corpus used during refinement.
 
 ---
 
-## 6. Experiment Format
-
-### hypothesis.md
+## 7. Arc Format
 
 ```markdown
-# Hypothesis
+# [Arc Title]
 
-[Clear statement of what we're testing]
-
-## Background
-
-[Context that led to this experiment]
-
-## Method
-
-[How we'll test this]
-
-## Expected Outcomes
-
-[What we expect to find if hypothesis is correct/incorrect]
-```
-
-### test-data/
-
-Crafted inputs for the experiment. Named clearly.
-
-### results/
-
-Outputs and observations. May include:
-- Generated outputs
-- Comparison notes (from attune:compare)
-- Screenshots
-- Metrics
-
-### analysis.md
-
-```markdown
-# Analysis
-
-## Observations
-
-[What we noticed]
-
-## Conclusions
-
-[What we learned — or "inconclusive" with notes on why]
-
-## Implications
-
-[What this suggests for future work]
-```
+**Span:** YYYY-MM-DD (to YYYY-MM-DD if multi-day)
+**Essence:** [One sentence — what moved]
 
 ---
 
-## 7. Graduation
+## The Chain
 
-When research crystallizes into something worth preserving in concepts-repo.
+- [starting point] — where inquiry began
+- → [what it touched] — concept, inquiry, note
+- → [what it touched]
+- → [emergence] — what crystallized
 
-### To Note
+## The Shape
 
-1. Distill to essence (5-10 words)
-2. Create note file in concepts-repo
-3. Add references to relevant concepts
-4. Archive source in graduated/
-5. Update research manifest
+[Narrative of how the arc traveled — not transcript, but shape of movement.
+What pattern does this arc embody? Confluence? Divergence? Graduation?]
 
-### To Concept Seed
+## What Emerged
 
-1. Create minimal concept.md (just Real-World Impulse)
-2. Copy relevant material to origins/
-3. Add held_threads from exploration
-4. Archive source in graduated/
-5. Update both manifests
+**Artifacts:**
+- [notes created or touched]
+- [inquiries opened or updated]
+- [concepts touched]
 
-### graduation-record.md
+**Threads:**
+- [questions opened for future inquiry]
 
-```markdown
-# Graduation: [title]
+## Scribe Context
 
-**Graduated:** YYYY-MM-DDTHH:MM:SSZ
-**Destination:** [path in concepts-repo]
-**Type:** note|concept
-
-## What Moved
-
-[Essence or summary]
-
-## What Remains
-
-[Threads or material that stayed in research]
-
-## Why Now
-
-[What made this ready]
+[Only if relevant to implementation work:]
+- Repo: [which repo]
+- Relevant commits: [if known]
+- Chapter context: [what scribe should know]
 ```
+
+### Arc Patterns
+
+- **Confluence** — multiple threads discovered they were asking the same question
+- **Divergence** — one question opened into multiple threads
+- **Graduation** — exploration matured, moved toward concepts
+- **Recognition** — something was seen that couldn't be seen before
+- **Crystallization** — vague quality became speakable
+- **Not knowing yet** — arc stayed uncertain, accumulated observations
 
 ---
 
-## 8. Lifecycle Rules
+## 8. Information Flow
 
-### Exploration Creation
+### Into arcs (capture)
 
-1. Create folder `explorations/[id]/`
-2. Initialize thread.md with starting question
-3. Create fragments/ directory
-4. Add entry to manifest with status "active"
+Session work → artifacts created → arc capture (`/qino:arc`)
 
-### Exploration Update
+Arcs record:
+- What dates this work spanned
+- What repos were involved
+- What artifacts were created (verifiable links)
+- The narrative shape (for understanding)
 
-When exploration evolves:
-- Update thread.md content
-- Update last_touched in manifest
-- Add/update threads array as open questions emerge
+### Out of arcs (query)
 
-### Calibration Creation
+**For scribe:** Query arcs by date range + repo to get inquiry context for chapter writing.
 
-Calibrations are typically created by `attune:calibrate`:
-1. Create folder `calibrations/[quality]/`
-2. Generate research.md and transformations.md
-3. Add entry to manifest
+**For journal:** Query arcs by recency to find material for research transmissions.
 
-### Experiment Lifecycle
-
-1. **pending** — Created, not started
-2. **running** — Test data created, in progress
-3. **complete** — Analysis written, conclusions drawn
-4. **inconclusive** — Analysis written, no clear conclusions
+The matching is agent work, not deterministic code. Arcs provide context; the agent decides relevance.
 
 ---
 
@@ -407,7 +345,7 @@ Calibrations are typically created by `attune:calibrate`:
 
 **Fields:**
 - `repoType` — Must be "research"
-- `conceptsRepo` — Path to graduation destination
+- `conceptsRepo` — Path to concepts destination
 - `linkedConcepts` — Array of related concept IDs
 - `description` — Human-readable purpose
 
@@ -437,15 +375,9 @@ When `/qino-research:begin` (or other research commands) runs:
 ```
 
 Running `/qino-research:begin` from this repo will:
-- Create explorations in `../qino-research/explorations/`
+- Create inquiries in `../qino-research/inquiries/`
 - Update manifest at `../qino-research/manifest.json`
-- Record `sourceRepo` in the exploration entry for context
-
-### Why Cross-Repo?
-
-Sometimes you want to research the thing you're working on. Example: researching qino-claude tools while working in qino-claude. The research lives in the research repo, but the context and subject is the current repo.
-
-The `sourceRepo` field in manifest entries preserves this context — when you later continue an exploration, you know where it originated.
+- Record `sourceRepo` in the inquiry entry for context
 
 ---
 
@@ -453,20 +385,20 @@ The `sourceRepo` field in manifest entries preserves this context — when you l
 
 ### Research Welcomes Uncertainty
 
-Unlike concepts (which stabilize), research can remain uncertain indefinitely. An exploration without conclusions is still valuable — it maps the territory.
+Unlike concepts (which stabilize), research can remain uncertain indefinitely. An inquiry without conclusions is still valuable — it maps the territory.
 
-### Graduation is Optional
+### Arcs are Evidence
 
-Not all research becomes concepts. Some explorations inform thinking without ever graduating. That's fine.
+Arcs don't need maintenance — they're evidence of ecosystem participation. They accumulate as ecosystem memory without requiring upkeep.
 
 ### Fast Iteration
 
-Research moves faster than concept development. Experiments can be created, run, and concluded in a single session.
+Research moves faster than concept development. Inquiries can evolve rapidly; arcs capture the shape of movement.
 
 ### Accept Inconclusive Results
 
-"Inconclusive" is a valid experiment outcome. It means we learned that this approach doesn't yield clear answers — useful data.
+An inquiry without clear conclusions is still valuable. It means we learned something about the territory.
 
 ### Threads are Lightweight
 
-Unlike concepts' 7-section structure, explorations have whatever sections emerge. Threads are just open questions, not requirements.
+Unlike concepts' 7-section structure, inquiries have whatever sections emerge. Threads are just open questions, not requirements.

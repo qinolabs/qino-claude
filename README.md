@@ -140,9 +140,9 @@ An early hunch needs room to wander — structure would crush it. A maturing con
 ┌───────────────────┐     ┌───────────────────┐     ┌───────────────────┐
 │     RESEARCH      │     │     CONCEPTS      │     │  IMPLEMENTATION   │
 │                   │     │                   │     │                   │
-│  explorations/    │     │  concepts/        │     │  (varies by repo) │
-│  calibrations/    │     │  notes/           │     │                   │
-│  experiments/     │     │                   │     │                   │
+│  inquiries/       │     │  concepts/        │     │  (varies by repo) │
+│  qualities/       │     │  notes/           │     │                   │
+│  arcs/            │     │                   │     │                   │
 │  chronicle/       │     │  chronicle/       │     │  chronicle/       │
 │  qino-config.json │     │  qino-config.json │     │  qino-config.json │
 └───────────────────┘     └───────────────────┘     └───────────────────┘
@@ -150,7 +150,7 @@ An early hunch needs room to wander — structure would crush it. A maturing con
 
 Each space has its own `chronicle/` directory. Git changes in any repo become chapters — all chronicles are published together on **[qino-chronicles](https://chronicles.qinolabs.com/)**.
 
-**Research** — before concepts crystallize. Open-ended exploration, controlled experiments, calibrations of distinctions. Welcomes uncertainty.
+**Research** — before concepts crystallize. Inquiries follow threads, qualities refine aesthetics, arcs capture emergence. Welcomes uncertainty.
 
 **Concepts** — where ideas stabilize. The held threads, the notes that weave between them. What arrives here has found its shape.
 
@@ -163,8 +163,8 @@ Each space has its own `chronicle/` directory. Git changes in any repo become ch
 **Routed flows** — content automatically goes to the right place based on `qino-config.json`:
 
 ```
-RESEARCH ──graduate──▶ CONCEPTS        /qino-research:graduate creates note or concept seed
 RESEARCH ──capture───▶ CONCEPTS        /qino:capture routes insights as notes
+RESEARCH ──arc───────▶ RESEARCH        /qino:arc captures emergence in arcs/
 
 CONCEPTS ──init──────▶ IMPLEMENTATION  /qino-dev:init creates linked project from concept
 
@@ -174,7 +174,8 @@ IMPLEMENTATION ──capture──▶ CONCEPTS   /qino:capture routes observatio
 **Initiated flows** — you notice something and start a command:
 
 ```
-CONCEPTS ────────────▶ RESEARCH        /qino:attune creates calibration in research space
+CONCEPTS ────────────▶ RESEARCH        /qino:attune creates quality refinement in research
+ANYWHERE ────────────▶ RESEARCH        /qino:arc captures emergence patterns
 ```
 
 ### The Router
@@ -189,7 +190,7 @@ A small file called `qino-config.json` tells each tool which space it's in and w
 }
 ```
 
-The tools read this configuration and adjust their behavior. A capture in a research repo might become an exploration. The same command in an implementation repo sends a note to concepts. The tools stay the same; the context shapes what they do.
+The tools read this configuration and adjust their behavior. A capture in a research repo might become a fragment feeding an inquiry. The same command in an implementation repo sends a note to concepts. The tools stay the same; the context shapes what they do.
 
 ### Context Sensitivity
 
@@ -197,30 +198,30 @@ The same command adapts to where you are:
 
 | Command         | In concepts              | In research                | In implementation             |
 | --------------- | ------------------------ | -------------------------- | ----------------------------- |
-| `/qino:home`    | concepts, notes, threads | explorations, calibrations | linked concept, stack         |
+| `/qino:home`    | concepts, notes, threads | inquiries, qualities, arcs | linked concept, stack         |
 | `/qino:capture` | saves to notes/          | saves to fragments/        | saves to linked concepts-repo |
-| `/qino:test`    | tests concept            | tests exploration          | tests linked concept          |
+| `/qino:test`    | tests concept            | tests inquiry              | tests linked concept          |
 
 ### Flow
 
-Research graduates into concepts — either as notes (distilled insights) or as concept seeds (new concepts with origins).
+Research informs concepts — insights captured as notes, arcs recording emergence patterns that may later seed new concepts.
 
 Implementation captures flow back to concepts — observations, test results, things noticed while building.
 
-The chronicle (qino Scribe) watches git changes across any repo and writes the story of what happened.
+The chronicle (qino Scribe) watches git changes across any repo and writes the story of what happened. Scribe can query arcs by date range to understand the inquiry context behind commits.
 
 Everything connects through concepts-repo, but each space keeps its own ecology intact.
 
 ### Command Namespaces
 
-| Prefix           | Space                      | Examples                             |
-| ---------------- | -------------------------- | ------------------------------------ |
-| `qino:`          | Universal (ecology itself) | home, capture, test, attune, compare |
-| `qino-concept:`  | Concepts                   | explore, import, init                |
-| `qino-research:` | Research                   | begin, experiment, graduate          |
-| `qino-scribe:`   | Chronicle                  | chapter, rewind                      |
-| `qino-lens:`     | Quality of Attention       | wanderer, narrator                   |
-| `qino-dev:`      | Implementation             | init, app                            |
+| Prefix           | Space                      | Examples                                  |
+| ---------------- | -------------------------- | ----------------------------------------- |
+| `qino:`          | Universal (ecology itself) | home, capture, test, attune, compare, arc |
+| `qino-concept:`  | Concepts                   | explore, import, init                     |
+| `qino-research:` | Research                   | begin                                     |
+| `qino-scribe:`   | Chronicle                  | chapter, rewind                           |
+| `qino-lens:`     | Quality of Attention       | wanderer, narrator                        |
+| `qino-dev:`      | Implementation             | init, app                                 |
 
 The `qino:` namespace is not a specific space — it's what you're already in when you're anywhere. The suffix is the door you're entering through.
 
@@ -288,7 +289,7 @@ Each repository in the qino ecosystem tells its own story.
 
 > _Something had shifted in the night. Not the furniture — the distances between things._
 
-**qino-research** — explorations and calibrations.
+**qino-research** — inquiries, qualities, and arcs.
 
 > _Loose pages everywhere. Half-finished questions. The wanderer turned one over: the same handwriting on both sides, arguing with itself._
 
@@ -766,7 +767,7 @@ Some examples won't transform. That's data too. Note what makes them intractable
 **5 — Formulate guidance.** The distinctions you discovered — what landed, what didn't, what you kept reaching for — become ways of staying sensitive to the difference.
 
 ```
-calibrations/otherworldliness/
+qualities/otherworldliness/
 ├── research.md          # what qualifies, distinctions, inspiration index
 ├── transformations.md   # every attempt, what worked, guidance that emerged
 └── examples/            # the corpus tested against
@@ -789,29 +790,117 @@ A space for open-ended research — before ideas become concepts.
 
 ### What is this?
 
-Research is where ideas are too fluid for structure to help:
+Research is pre-concept work. Three experiential types, each with its own relationship to uncertainty:
 
-- **Explorations** — Open-ended inquiry without structure pressure.
-- **Calibrations** — Refining distinctions and building sensitivity to subtle differences. _(See [Attune](#attune-from-hunch-to-craft).)_
-- **Experiments** — Controlled tests with crafted data.
-- **Graduation** — Moving insights to concepts-repo when ready.
+- **Inquiries** — Open-ended following of threads. A question that stays alive across sessions.
+- **Qualities** — Refining aesthetic sensibilities into speakable craft. _(See [Attune](#attune-from-hunch-to-craft).)_
+- **Arcs** — Emergence patterns. How inquiry moved through the ecosystem — what touched what, what crystallized. _(See [Arcs](#arcs--evidence-of-emergence).)_
 
 Unlike concepts (which stabilize over time), research moves fast, welcomes uncertainty, and accepts inconclusive results as valuable data.
 
 ### Commands
 
-| Command                                  | Purpose                                                |
-| ---------------------------------------- | ------------------------------------------------------ |
-| `/qino:home`                             | See the research landscape (explorations vs concepts). |
-| `/qino-research:begin [topic]`           | Start or continue an exploration.                      |
-| `/qino-research:experiment [hypothesis]` | Run a controlled test.                                 |
-| `/qino-research:graduate [id]`           | Promote to concepts-repo.                              |
+| Command                        | Purpose                                               |
+| ------------------------------ | ----------------------------------------------------- |
+| `/qino:home`                   | See the research landscape (context-aware).           |
+| `/qino-research:begin [topic]` | Start or continue an inquiry.                         |
+| `/qino:arc [title]`            | Capture an emergence pattern — how inquiry moved.     |
 
-### Graduation
+### What accumulates
 
-When an exploration finds its shape, it graduates to Concepts. The insight stabilizes; the uncertainty doesn't disappear — it just has a home.
+An inquiry without conclusions is still valuable — it maps the territory. Arcs don't need maintenance — they're evidence of ecosystem participation. They accumulate as ecosystem memory.
 
 _[Source](tools/qino-research/) · [Installation](tools/qino-research/README.md#installation)_
+
+<br>
+
+## Arcs | Evidence of Emergence
+
+How the arc itself emerged — and what it captures.
+
+### The session that needed a name
+
+This very section is evidence of its own emergence. During a session refining qino-research architecture, multiple threads touched:
+
+- **qino-world concept exploration** — re-imagining how World works
+- **ecosystem-modality tension** — holding both metaphorical and technical levels
+- **ecology language question** — can tests speak about indirect recognition?
+- **ecosystem-language inquiry** — a new research thread opened
+- **qino-journal seed** — making research accessible through avatars
+
+None of these were planned. They surfaced through the work. The session had a _shape_ — a confluence arc, where separate questions discovered they were asking related things. The insight about "recognition through indirection" became the connective tissue.
+
+But there was nowhere to capture this. Notes are for single thoughts. Inquiries are for questions. What emerged was a _pattern of movement_ — and that needed its own form.
+
+### What arcs record
+
+An arc is not a transcript. It's the _shape_ of how inquiry traveled:
+
+```
+                        ┌─────────────────────────────────────────────────────┐
+                        │                    THE CHAIN                        │
+                        │                                                     │
+                        │  qino-world exploration                             │
+                        │        ↓                                            │
+                        │  ecosystem-modality tension — holding both levels   │
+                        │        ↓                                            │
+                        │  ecology language question — can tests notice this? │
+                        │        ↓                                            │
+                        │  ecosystem-language inquiry — new thread opened     │
+                        │        ↓                                            │
+                        │  qino-journal seed — making research accessible     │
+                        │                                                     │
+                        └─────────────────────────────────────────────────────┘
+```
+
+The arc captures:
+- **Span** — when this happened (for scribe to query by git range)
+- **Repos** — which repositories were involved
+- **Chain** — what touched what
+- **Shape** — what pattern the movement embodied
+- **Artifacts** — notes, inquiries, concepts created or touched
+- **Threads** — questions opened for future inquiry
+
+### Arc patterns
+
+Not all movement has the same shape. These patterns help name what happened:
+
+| Pattern | What it means |
+|---------|---------------|
+| **Confluence** | Multiple threads discovered they were asking the same question |
+| **Divergence** | One question opened into multiple threads |
+| **Graduation** | Exploration matured, moved toward concepts |
+| **Recognition** | Something was seen that couldn't be seen before |
+| **Crystallization** | Vague quality became speakable |
+| **Not knowing yet** | Arc stayed uncertain, accumulated observations |
+
+### Information flow
+
+**Into arcs (capture):**
+```
+Session work → artifacts created → arc capture (/qino:arc)
+```
+
+**Out of arcs (query):**
+- **Scribe** queries by date range + repo — gets inquiry context for chapter writing
+- **Journal** queries by recency — finds material for research transmissions
+
+The matching is agent work, not deterministic code. Arcs provide context; the agent decides relevance.
+
+### When to capture
+
+After a session where:
+- Multiple threads connected
+- Something emerged that wasn't planned
+- The shape of movement feels significant enough to record
+
+Not every session needs an arc. But the ones that _move_ — where you end somewhere you couldn't have predicted — those deserve evidence.
+
+```bash
+/qino:arc Recognition Through Indirection
+```
+
+_([First arc](https://github.com/qinolabs/qino-research/blob/main/arcs/2025-12-29_recognition-through-indirection.md) — the session that discovered it needed arcs)_
 
 <br>
 

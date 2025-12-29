@@ -18,6 +18,7 @@ The `qino:` namespace is not a specific space within the ecosystem. It's what yo
 |---------|--------------|
 | `/qino:home` | Arrive. See what's here. Receive grounded suggestions. |
 | `/qino:capture [observation]` | Capture a thought before it fades. Routes to the right place based on context. |
+| `/qino:arc [title]` | Capture an emergence pattern — how inquiry moved through the ecosystem. |
 | `/qino:test [concept-id]` | Notice through ecology lenses. Eight dimensions of coherence. |
 | `/qino:attune [quality]` | Refine a vague aesthetic quality into concrete craft. |
 | `/qino:compare [path-a] [path-b]` | Place two artifacts side by side. Discover what makes the difference. |
