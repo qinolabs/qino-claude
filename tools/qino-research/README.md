@@ -63,8 +63,21 @@ Arcs are evidence. They don't need maintenance — they accumulate as ecosystem 
 
 Works with:
 - **qino-concept** — Notes can reference inquiry insights
-- **qino-scribe** — Queries arcs for chapter context
-- **qino-journal** — Draws from arcs for research transmissions
+- **qino-scribe** — Queries arcs for chapter context (see below)
+- **qino-journal** — Draws from arcs for research transmissions (planned)
+
+### Scribe Integration
+
+When scribe-prep prepares a chapter, it queries research arcs by date range + repo:
+
+1. Gets the git range for the chapter (commits to chronicle)
+2. Extracts date range from commits
+3. Finds arcs where `span` overlaps and `repos` includes current repo
+4. Includes relevant inquiry context in the chapter prep
+
+This reveals what inquiry was happening alongside the code changes — conceptual work that may illuminate what's being chronicled.
+
+**Requires:** The repo running scribe must have `researchRepo` configured in `.claude/qino-config.json`.
 
 ---
 

@@ -126,6 +126,21 @@ Consult during your work:
 
 **Read:** world-seed.md, world.md, arcs.md, recent chapter(s)
 
+**Query research arcs:** If `.claude/qino-config.json` has a `researchRepo` field:
+1. Get the date range from the git range (earliest and latest commit dates)
+2. Read the research repo's `manifest.json`
+3. Find arcs where:
+   - `span.start` ≤ latest commit date AND `span.end` ≥ earliest commit date
+   - `repos` array contains current repo name (or is empty)
+4. Read matching arc files for inquiry context
+
+**Include in prep if relevant:** If research arcs exist for this date range, they reveal what inquiry was happening alongside the code changes. This context can:
+- Inform scene seeds (what conceptual work was being explored)
+- Suggest character sensitivity (who might perceive the inquiry's echoes)
+- Add depth to world behavior (the ecosystem was learning something)
+
+**Note:** Not all chapters need research context. If arcs don't illuminate the commits, omit them.
+
 **Check:** world-seed.md must have YAML frontmatter with Setting Foundation fields. If missing:
 - For existing chronicles: Stop and inform user that world-seed.md needs frontmatter for image generation
 - The `/qino-scribe:chapter` command handles this during first chapter initialization
@@ -142,6 +157,7 @@ Consult during your work:
 - Sensory palette (5-8 concrete nouns from the theme)
 - Active pressures (2-3 from world.md)
 - The world's strangeness (what a newcomer would notice)
+- Inquiry context (if research arcs illuminate this period)
 - Scene seeds (3 relational situations)
 
 **Present checkpoint:**
@@ -152,6 +168,7 @@ grounding
   theme       [sensory palette words]
   pressure    [what's building]
   strangeness [what a newcomer would notice that locals walk past]
+  inquiry     [arc title — what was being explored]  ← only if arc found
   last seen   [where wanderer was]
 
 ─────────────────────────────────────────────────────────────────
@@ -173,12 +190,15 @@ scene seeds
 **Sensory palette:** [concrete nouns — materials, textures, weathers]
 **Pressures:** [what's building in the world]
 **The world's strangeness:** [what a newcomer would notice that locals walk past]
+**Inquiry context:** [if research arc found: arc essence + chain summary — what was being explored alongside these commits. Omit if no arc or not relevant.]
 **Scene seed:** [the one user picked]
 ```
 
 **Log to process.md:** Append to `[chapter-dir]/process.md`:
 ```markdown
 ### World Layer
+**Research arc:** [arc title if found, "none" if no matching arc]
+
 **Scene seeds presented:**
 1. [short summary of seed 1]
 2. [short summary of seed 2]

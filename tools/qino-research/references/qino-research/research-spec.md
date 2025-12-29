@@ -324,11 +324,33 @@ Arcs record:
 
 ### Out of arcs (query)
 
-**For scribe:** Query arcs by date range + repo to get inquiry context for chapter writing.
+**For scribe (chapter prep):**
 
-**For journal:** Query arcs by recency to find material for research transmissions.
+When scribe-prep agent prepares a chapter:
 
-The matching is agent work, not deterministic code. Arcs provide context; the agent decides relevance.
+1. Get git range from manifest (`last_ref..HEAD`)
+2. Extract date range from commits (earliest to latest commit dates)
+3. Check if current repo has `researchRepo` configured in `.claude/qino-config.json`
+4. If yes, query research manifest for arcs where:
+   - `span.start` ≤ latest commit date AND `span.end` ≥ earliest commit date
+   - `repos` array contains current repo name (or is empty)
+5. Read matching arc files
+6. Include relevant inquiry context in prep.md Grounding section
+
+This reveals what inquiry was happening alongside the code changes — the conceptual work that may illuminate the commits.
+
+**For journal (research transmissions):**
+
+When journal creates a transmission:
+
+1. Query arcs by recency (most recent first)
+2. Find arcs that haven't been transmitted
+3. Use arc's narrative shape to structure transmission
+4. Avatar moves through the arc's chain, helping readers connect
+
+_(Journal integration is conceptual — qino-journal not yet implemented.)_
+
+**Key principle:** The matching is agent work, not deterministic code. Arcs provide context; the agent decides relevance.
 
 ---
 
