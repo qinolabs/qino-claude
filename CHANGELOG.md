@@ -10,6 +10,53 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.20.0] - 2025-12-29
+
+### qino Util (New Tool)
+
+#### Added
+
+- **Development utilities for tool authors** — new tool to automate the workflow of adding commands and detecting drift
+- **`/qino-util:add-command`** — guided workflow for adding a new command with optional agent scaffolding; auto-updates README, syncs manifest, offers version bump
+- **`/qino-util:verify`** — detect drift between files, manifest, and READMEs before releases; catches manifest entries pointing to missing files or commands missing documentation
+
+### qino Research
+
+#### Changed
+
+- **Restructured to three research types** — explorations → inquiries, calibrations → qualities, experiments/graduation removed
+- **`/qino:arc` command added** (in qino-universal) — captures emergence patterns: how inquiry moved through the ecosystem, what touched what, what crystallized
+- **Scribe integration** — research arcs can now inform chapter prep when `researchRepo` is configured; reveals what inquiry was happening alongside code changes
+
+#### Removed
+
+- **`/qino-research:experiment`** — removed (controlled experiments pattern deprecated)
+- **`/qino-research:graduate`** — removed (graduation to concepts now happens through notes)
+
+### qino Scribe
+
+#### Changed
+
+- **Research arc integration** — scribe-prep agent now queries research arcs by date range; if arcs overlap with chapter commits, their context can inform scene seeds and world behavior
+- **Prep checkpoint enhanced** — inquiry context line added when research arc illuminates the period being chronicled
+
+#### Removed
+
+- **success-patterns.md** — content previously merged into voice.md (cleanup)
+
+### qino Universal
+
+#### Added
+
+- **`/qino:arc [title]`** — capture emergence patterns in research workspace; conversational gathering of chain, essence, span, and related artifacts
+
+#### Changed
+
+- **`/qino:capture` enhanced** — improved routing and context detection
+- **`/qino:home` enhanced** — better context awareness across repo types
+
+---
+
 ## [0.19.0] - 2025-12-26
 
 ### qino Scribe

@@ -1,5 +1,5 @@
 {
   "tool": "qino-util",
-  "version": "0.1.0",
+  "version": "0.20.0",
   "description": "Development utilities for qino tool authors"
 }
