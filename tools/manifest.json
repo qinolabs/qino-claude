@@ -203,39 +203,6 @@
         }
       ]
     },
-    "qino-lens": {
-      "description": "Qualities of Attention lens library",
-      "files": [
-        {
-          "src": "tools/qino-lens/commands/narrator.md",
-          "dest": "commands/qino-lens/narrator.md"
-        },
-        {
-          "src": "tools/qino-lens/commands/wanderer.md",
-          "dest": "commands/qino-lens/wanderer.md"
-        },
-        {
-          "src": "tools/qino-lens/references/companion.md",
-          "dest": "references/qino-lens/companion.md"
-        },
-        {
-          "src": "tools/qino-lens/references/narrator.md",
-          "dest": "references/qino-lens/narrator.md"
-        },
-        {
-          "src": "tools/qino-lens/references/newcomer.md",
-          "dest": "references/qino-lens/newcomer.md"
-        },
-        {
-          "src": "tools/qino-lens/references/qino-lens/version.json",
-          "dest": "references/qino-lens/version.json"
-        },
-        {
-          "src": "tools/qino-lens/references/wanderer.md",
-          "dest": "references/qino-lens/wanderer.md"
-        }
-      ]
-    },
     "qino-eval": {
       "description": "Discover what makes chronicle chapters work (archived - use qino-attune)",
       "archived": true,
@@ -274,6 +241,39 @@
         }
       ]
     },
+    "qino-lens": {
+      "description": "Qualities of Attention lens library",
+      "files": [
+        {
+          "src": "tools/qino-lens/commands/narrator.md",
+          "dest": "commands/narrator.md"
+        },
+        {
+          "src": "tools/qino-lens/commands/wanderer.md",
+          "dest": "commands/wanderer.md"
+        },
+        {
+          "src": "tools/qino-lens/references/companion.md",
+          "dest": "references/companion.md"
+        },
+        {
+          "src": "tools/qino-lens/references/narrator.md",
+          "dest": "references/narrator.md"
+        },
+        {
+          "src": "tools/qino-lens/references/newcomer.md",
+          "dest": "references/newcomer.md"
+        },
+        {
+          "src": "tools/qino-lens/references/qino-lens/version.json",
+          "dest": "references/qino-lens/version.json"
+        },
+        {
+          "src": "tools/qino-lens/references/wanderer.md",
+          "dest": "references/wanderer.md"
+        }
+      ]
+    },
     "qino-research": {
       "description": "Pre-concept research workspace",
       "files": [
@@ -284,14 +284,6 @@
         {
           "src": "tools/qino-research/commands/qino-research/begin.md",
           "dest": "commands/qino-research/begin.md"
-        },
-        {
-          "src": "tools/qino-research/commands/qino-research/experiment.md",
-          "dest": "commands/qino-research/experiment.md"
-        },
-        {
-          "src": "tools/qino-research/commands/qino-research/graduate.md",
-          "dest": "commands/qino-research/graduate.md"
         },
         {
           "src": "tools/qino-research/references/qino-research/research-spec.md",
@@ -339,6 +331,10 @@
           "dest": "commands/qino-scribe/visual-style.md"
         },
         {
+          "src": "tools/qino-scribe/references/qino-scribe/calibration-notes.md",
+          "dest": "references/qino-scribe/calibration-notes.md"
+        },
+        {
           "src": "tools/qino-scribe/references/qino-scribe/craft.md",
           "dest": "references/qino-scribe/craft.md"
         },
@@ -363,10 +359,6 @@
           "dest": "references/qino-scribe/story-lenses.md"
         },
         {
-          "src": "tools/qino-scribe/references/qino-scribe/calibration-notes.md",
-          "dest": "references/qino-scribe/calibration-notes.md"
-        },
-        {
           "src": "tools/qino-scribe/references/qino-scribe/version.json",
           "dest": "references/qino-scribe/version.json"
         },
@@ -383,6 +375,10 @@
     "qino-universal": {
       "description": "Universal commands for the qino ecosystem — the ecology itself",
       "files": [
+        {
+          "src": "tools/qino-universal/commands/qino/arc.md",
+          "dest": "commands/qino/arc.md"
+        },
         {
           "src": "tools/qino-universal/commands/qino/attune.md",
           "dest": "commands/qino/attune.md"
@@ -418,6 +414,31 @@
         {
           "src": "tools/qino-universal/references/qino-universal/version.json",
           "dest": "references/qino-universal/version.json"
+        }
+      ]
+    },
+    "qino-util": {
+      "description": "Development utilities for qino tool authors",
+      "files": [
+        {
+          "src": "tools/qino-util/commands/qino-util/add-command.md",
+          "dest": "commands/qino-util/add-command.md"
+        },
+        {
+          "src": "tools/qino-util/commands/qino-util/verify.md",
+          "dest": "commands/qino-util/verify.md"
+        },
+        {
+          "src": "tools/qino-util/references/qino-util/agent-template.md",
+          "dest": "references/qino-util/agent-template.md"
+        },
+        {
+          "src": "tools/qino-util/references/qino-util/command-template.md",
+          "dest": "references/qino-util/command-template.md"
+        },
+        {
+          "src": "tools/qino-util/references/qino-util/version.json",
+          "dest": "references/qino-util/version.json"
         }
       ]
     },

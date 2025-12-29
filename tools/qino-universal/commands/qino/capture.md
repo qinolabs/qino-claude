@@ -59,7 +59,24 @@ If no observation provided:
 
 Silently distill the observation to its essence (5-10 words). This becomes the note's title and the `essence` field in the manifest.
 
-### 3. Save
+### 3. Detect Explicit Connections
+
+Before saving, check if the observation **explicitly names concepts**:
+
+1. Read `manifest.json` to get list of existing concept IDs
+2. Scan the observation text for direct mentions of those concept IDs
+3. If concepts are mentioned explicitly → remember them for auto-connection
+
+**Example detection:**
+- User writes: "gm-tool could use this pattern" → detects `gm-tool`
+- User writes: "this connects to qino-scribe" → detects `qino-scribe`
+- User writes: "interesting thought about state" → no explicit concepts detected
+
+This affects step 4 (the confirmation flow).
+
+---
+
+### 4. Save
 
 1. Generate note id from essence (lowercase, hyphenated)
 2. Create `notes/` directory if it doesn't exist
@@ -95,15 +112,15 @@ Silently distill the observation to its essence (5-10 words). This becomes the n
   "essence": "[distilled essence]",
   "references": [
     {
-      "scope": "implementation",
       "concept": "[linkedConcept from qino-config]",
-      "context": "captured during implementation"
+      "woven": "YYYY-MM-DDTHH:MM:SSZ",
+      "context": "captured during [app-name] implementation"
     }
   ]
 }
 ```
 
-The auto-tag connects the note to its source concept. Later during `/qino-concept:explore [concept]`, these notes can be surfaced: "You captured something about [essence] while implementing — does it connect here?"
+The auto-tag connects the note to its source concept. The context field captures where the note originated. Later during `/qino-concept:explore [concept]`, these notes can be surfaced: "You captured something about [essence] while implementing — does it connect here?"
 
 ---
 
@@ -150,58 +167,46 @@ No connection offer for fragments — they're exploration-private.
 
 ---
 
-### 4. Confirm and Offer Connection
+### 5. Confirm and Offer Connection
 
 **For concepts and implementation contexts:**
 
-After saving, confirm and offer concept connection:
+After saving, confirm and offer concept connection. The flow depends on whether concepts were explicitly mentioned (from step 3):
+
+**A. If concepts were explicitly mentioned in the observation:**
 
 ```
 ∴ [essence]
 
-does this connect to something?
+connecting to [concept-1] and [concept-2]
 
-  [concept-1] (touched [timeframe])
-  [concept-2] (touched [timeframe])
-
-or name another, or let it settle
-```
-
-The `∴` signals: captured, held, safe.
-
-**WAIT** for response.
-
-### 5. If User Names Concepts
-
-Add references immediately:
-
-1. For each concept named, add a reference to the note:
-   ```json
-   {
-     "concept": "[concept-id]",
-     "woven": "[timestamp]",
-     "context": "connected at capture"
-   }
-   ```
-
-2. Confirm:
-   ```
-   connected to [concept-1] and [concept-2]
-
-   explore one now, or let it settle?
+explore one now, or let it settle?
 
                         /qino:home to see where things stand
                         /qino-concept:explore [concept] to go deeper
-                        /qino:attune if this is about a quality
-   ```
+```
 
-3. **WAIT** for response.
+Auto-connect immediately by adding references to the note (see step 6). Don't ask "does this connect?" — the user already told you.
 
-4. If user wants to explore → invoke `/qino-concept:explore [concept]` with note as starting alive thread.
+**WAIT** for response. If user wants to explore → invoke explore. If settle → done.
 
-5. If user lets it settle → done.
+**B. If no concepts were explicitly mentioned:**
 
-### 6. If User Lets It Settle
+```
+∴ [essence]
+
+held.
+
+                        /qino:home to see where things stand
+```
+
+The `∴` signals: captured, held, safe. No questions — the note will find its connections during `/explore` when warmth is present.
+
+Done. No waiting for response.
+
+---
+
+### 6. If User Lets It Settle (Flow A only)
 
 Any natural phrasing works: "let it settle", "not yet", "no", etc.
 

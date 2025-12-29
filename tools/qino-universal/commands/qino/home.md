@@ -1,6 +1,6 @@
 ---
 description: Arrive. See what's here. Receive grounded suggestions.
-allowed-tools: Read, Glob
+allowed-tools: Read, Glob, Bash
 argument-hint: "<concept-id>"
 ---
 
@@ -32,9 +32,10 @@ Before anything else, detect workspace context:
 
 3. For `"implementation"`:
    - Read `conceptsRepo` path
-   - Read `linkedConcept` id
+   - Check for `linkedConcept` (string) OR `linkedConcepts` (object for monorepos)
    - Use `conceptsRepo` as workspace root for all file operations
-   - If no argument provided, treat as if user said `/qino:home [linkedConcept]`
+   - If `linkedConcept` (singular): treat as if user said `/qino:home [linkedConcept]`
+   - If `linkedConcepts` (object): detect app context or show monorepo overview
 
 4. If no qino-config.json exists:
    - Check for `manifest.json` to detect concepts workspace
@@ -47,9 +48,49 @@ Before anything else, detect workspace context:
 
 **When qino-config.json has `repoType: "implementation"` and no argument provided:**
 
+### Single-concept repo (`linkedConcept`: string)
+
 Treat as arriving at the linked concept automatically. Follow "With Concept-id (Arrive)" section below.
 
 The user is in their implementation project. Show them their linked concept without asking.
+
+### Monorepo (`linkedConcepts`: object)
+
+When `linkedConcepts` is an object mapping app names to concept IDs:
+
+1. **Detect current app context** by checking recent file activity:
+   - Run `git diff --name-only HEAD~5 2>/dev/null | head -20` to see recently touched files
+   - Look for patterns like `apps/[app-name]/` in the paths
+   - If a single app dominates recent activity, use that app's linked concept
+
+2. **If app detected and has a linked concept:**
+   - Show the linked concept using "With Concept-id (Arrive)" section
+   - Add context line: `(via [app-name])`
+
+3. **If no app detected or multiple apps active, show monorepo overview:**
+
+```
+implementation space
+
+apps
+
+  [app-name] → [concept-name]
+  [app-name] → [concept-name]
+  [app-name] — no linked concept
+
+─────
+
+from here
+
+  [observation about recent activity]
+  [action suggestion]
+
+                        /qino:home <concept-id> to arrive at a concept
+                        /qino-concept:explore <concept-id> to work
+```
+
+4. **If argument provided** (e.g., `/qino:home qino-chronicles`):
+   - Treat as concept ID, show that concept directly
 
 ---
 
