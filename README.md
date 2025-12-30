@@ -221,6 +221,7 @@ Everything connects through concepts-repo, but each space keeps its own ecology 
 | `qino-research:` | Research                   | begin                                     |
 | `qino-scribe:`   | Chronicle                  | chapter, rewind                           |
 | `qino-lens:`     | Quality of Attention       | wanderer, narrator                        |
+| `qino-relay:`    | Journal                    | transmit                                  |
 | `qino-dev:`      | Implementation             | init, app                                 |
 
 The `qino:` namespace is not a specific space — it's what you're already in when you're anywhere. The suffix is the door you're entering through.
@@ -883,9 +884,11 @@ Session work → artifacts created → arc capture (/qino:arc)
 
 **Out of arcs (query):**
 - **Scribe** queries by date range + repo — gets inquiry context for chapter writing
-- **Journal** queries by recency — finds material for research transmissions
+- **Relay** selects arcs for transmission — follows pointers to artifacts, voices for readers
 
-The matching is agent work, not deterministic code. Arcs provide context; the agent decides relevance.
+The arc is a map; the artifacts it points to are the territory. Scribe uses arcs as context for chapter writing. Relay follows arc pointers to gather the actual material — notes, concepts — then bridges that material for external readers through the journal.
+
+The matching is agent work, not deterministic code. Arcs provide structure; the artifacts provide substance; the agents decide what serves each context.
 
 ### When to capture
 
@@ -901,6 +904,61 @@ Not every session needs an arc. But the ones that _move_ — where you end somew
 ```
 
 _([First arc](https://github.com/qinolabs/qino-research/blob/main/arcs/2025-12-29_recognition-through-indirection.md) — the session that discovered it needed arcs)_
+
+<br>
+
+## qino Relay
+
+Sharing research with readers who weren't there.
+
+### Two bridges, different crossings
+
+Scribe and Relay solve the same problem differently: making internal work accessible to readers who weren't there.
+
+| | Scribe | Relay |
+|---|--------|-------|
+| **Source** | Git commits | Research arcs |
+| **Voice** | The wanderer in a fictional world | The Student as reader companion |
+| **Transformation** | Complete — code becomes weather, bugs become stuck gates | Partial — arc structure stays visible, material gets grounded |
+| **Reader experience** | Story that stands alone | Learning alongside someone who knows the way |
+
+Scribe transforms completely. A reader never sees `AuthService` — they see "the gatekeeper's ledger." The chronicle guards its own reality.
+
+Relay preserves structure. The arc's chain remains recognizable — dates, connections, what emerged. But the Student walks alongside a reader encountering it, asking their questions, making abstract concrete.
+
+Both bridge the gap between internal work and external readers. The crossing is different because the territory is different.
+
+### The bridge problem
+
+Arcs capture how inquiry moved — the shape, the chain, what touched what. But arcs are written for the researcher. They assume context. A reader encountering "ecosystem-modality tension" or "recognition through indirection" has no way in.
+
+The journal exists to share meaningful findings. But sharing isn't just publishing the arc. It's voicing the reader's encounter with the material — their questions, their struggle, what needs to be made concrete.
+
+### Map and territory
+
+The arc is a map. It points to artifacts — the notes and concepts created during the work. Those artifacts contain the concrete moments, the examples, the texture of discovery.
+
+Relay follows the pointers:
+
+```
+Arc (shape)                    Artifacts (material)
+─────────────                  ────────────────────
+chain: what connected    →     notes with examples
+essence: what emerged    →     concepts touched
+threads: what opened     →     questions in context
+```
+
+The prose agent receives both. It voices the reader's journey through material that actually exists — grounding abstract insights through concrete moments found in the source.
+
+### The Student
+
+The journal's voice is the Student — a reader companion who has learned this material and walks alongside readers as they encounter it. Not a teacher explaining, not a researcher reporting. Someone who remembers what it was like not to know, asking the questions readers would ask.
+
+```bash
+/qino-relay:transmit qualities-of-attention
+```
+
+_[Source](tools/qino-relay/)_
 
 <br>
 
