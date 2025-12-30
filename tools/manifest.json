@@ -203,6 +203,39 @@
         }
       ]
     },
+    "qino-journal": {
+      "description": "Research transmissions through the Student's voice",
+      "files": [
+        {
+          "src": "tools/qino-journal/agents/journal-editorial.md",
+          "dest": "agents/journal-editorial.md"
+        },
+        {
+          "src": "tools/qino-journal/agents/journal-prose.md",
+          "dest": "agents/journal-prose.md"
+        },
+        {
+          "src": "tools/qino-journal/commands/qino-journal/transmit.md",
+          "dest": "commands/qino-journal/transmit.md"
+        },
+        {
+          "src": "tools/qino-journal/references/qino-journal/student-guide.md",
+          "dest": "references/qino-journal/student-guide.md"
+        },
+        {
+          "src": "tools/qino-journal/references/qino-journal/transmission-format.md",
+          "dest": "references/qino-journal/transmission-format.md"
+        },
+        {
+          "src": "tools/qino-journal/references/qino-journal/version.json",
+          "dest": "references/qino-journal/version.json"
+        },
+        {
+          "src": "tools/qino-journal/references/qino-journal/voice.md",
+          "dest": "references/qino-journal/voice.md"
+        }
+      ]
+    },
     "qino-eval": {
       "description": "Discover what makes chronicle chapters work (archived - use qino-attune)",
       "archived": true,
