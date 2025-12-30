@@ -4,22 +4,23 @@ allowed-tools: Read, Write, Edit, Glob, Bash
 argument-hint: "(arc-id) | (arc-id arc-id ...)"
 ---
 
-# /qino-journal:transmit
+# /qino-relay:transmit
 
-Create a research transmission — the Student voicing arc material for readers.
+Create a research transmission — the Student walking alongside readers through arc material.
 
 ## Overview
 
-The journal stays close to source. Arcs are content, not fuel. The Student's job is to *encounter* the material with genuine uncertainty, not to invent from constraint.
+The journal shares meaningful findings from your internal research process. The Student is a **reader companion** — someone who has learned this material and walks alongside readers as they encounter it.
 
 **Flow:**
 1. **Arc selection** — which arc(s) to transmit
 2. **Gather context** — arc files + student.md + recent transmissions
-3. **Prose agent** — writes in Student's voice (sees everything)
-4. **Editorial agent** — reviews voice integrity
-5. **Post-prose** — update student.md, manifest, snapshots
+3. **Reader journey prep** — notes on what readers would struggle with
+4. **Prose agent** — writes in Student's voice (as companion)
+5. **Editorial agent** — reviews voice integrity and reader-companionship
+6. **Post-prose** — update student.md, manifest, snapshots
 
-No prep layer. The prose agent sees the arc directly. The constraint is *voice*, not *content*.
+The prose agent sees everything. The constraint is *voice for the reader* — not just voicing the arc, but voicing the reader's journey through it.
 
 ---
 
@@ -119,6 +120,35 @@ Read and hold:
 
 ---
 
+## Phase 2.5: Reader Journey Prep
+
+Before spawning the prose agent, create reader journey notes. The Student is a reader companion — these notes help voice the reader's encounter with the material.
+
+1. **Consider the reader**: Someone curious but without comprehensive qino knowledge
+2. **Write brief notes** to `[transmission-dir]/reader-journey.md`:
+
+```markdown
+# Reader Journey — Transmission NNN
+
+## They Won't Already Know
+- [Concepts, vocabulary, context they're missing]
+
+## They Might Struggle With
+- [Abstractions, non-obvious connections, subtle distinctions]
+
+## Questions They'd Ask
+- [What a curious newcomer would genuinely want to know]
+
+## Make Concrete
+- [What needs examples or grounding]
+```
+
+3. **Pass these notes to the prose agent** along with arc content
+
+See `references/qino-relay/reader-journey-guide.md` for detailed guidance.
+
+---
+
 ## Phase 3: Initialize Working Directory
 
 Create the transmission working directory:
@@ -146,7 +176,7 @@ Write initial process.md:
 Spawn the prose agent with full context:
 
 ```
-Use agent: journal-prose
+Use agent: relay-prose
 ultrathink: Voice work benefits from deliberation.
 
 Pass to agent:
@@ -154,16 +184,18 @@ Pass to agent:
 - The arc file content(s) — full text
 - The student.md content
 - Recent transmission content (for threading)
+- The reader journey notes
 - The next transmission number
 ```
 
 The prose agent:
 - Reads the arc(s) as source material
 - Knows the Student's current state
-- Writes the transmission in the Student's voice
+- Uses reader journey notes to voice the reader's encounter
+- Writes the transmission in the Student's companion voice
 - Presents draft to orchestrator
 
-**No prep layer.** The prose agent sees everything. The constraint is voice, not content.
+**The constraint is voice for the reader.** The prose agent sees everything. The Student walks alongside a reader encountering this material — asking their questions, voicing their struggle, making abstract concrete.
 
 ---
 
@@ -172,7 +204,7 @@ The prose agent:
 When the prose agent presents its draft, spawn the editorial agent:
 
 ```
-Use agent: journal-editorial
+Use agent: relay-editorial
 ultrathink: Careful review benefits from deliberation.
 
 Pass to agent:
@@ -346,32 +378,36 @@ updated
 
 ---
 
-## Why No Prep Layer
+## Why No Prep Layer (But Reader Journey Notes)
 
-The prep layer in qino-scribe exists because git commits must be *transformed* into story material. Commits are raw; they need interpretation. The prose agent must NOT see "parser refactor" — only the world behavior that emerged from prep.
+The prep layer in qino-scribe exists because git commits must be *transformed* into story material. Commits are raw; they need interpretation.
 
-Arcs are different. Arcs are already interpreted. They have essence, chain, shape. The arc IS the content — it just needs to be voiced.
+Arcs are different. Arcs are already interpreted. They have essence, chain, shape. The arc IS the content.
 
-**The constraint in qino-journal is voice, not content.**
+**But the Student is a reader companion, not just a voice.**
 
-The prose agent sees the arc directly. The Student encounters the actual material. The editorial agent ensures voice integrity. No transformation layer needed.
+The Student has learned this material. But readers haven't. Reader journey notes help the prose agent voice the *reader's* encounter with the material — their questions, their struggle, their need for concreteness.
+
+This isn't a transformation layer. The arc content stays visible. But the Student walks alongside a reader, not just through the material.
 
 ---
 
 ## Reference Documents
 
-- `references/qino-journal/voice.md` — The Student's voice patterns
-- `references/qino-journal/student-guide.md` — How the Student works
-- `references/qino-journal/transmission-format.md` — Format specification
+- `references/qino-relay/voice.md` — The Student's voice patterns
+- `references/qino-relay/student-guide.md` — How the Student works
+- `references/qino-relay/transmission-format.md` — Format specification
+- `references/qino-relay/reader-journey-guide.md` — Reader journey prep
 
 ---
 
 ## Guardrails
 
-- Student discovers, not explains
-- Genuine uncertainty, not performed humility
+- Student is a companion, not a discoverer — voices the reader's journey
+- Uncertainty is genuine to the reader's experience, not performed
 - Arc content stays recognizable (dates, names, chains)
-- Questions open, not close
+- Questions are ones a reader would ask
 - First person, present tense
-- Confusion isn't edited out
-- Something new is noticed, not just reported
+- Difficulty is visible, not edited out
+- Abstract material gets made concrete
+- Reader feels accompanied, not lectured

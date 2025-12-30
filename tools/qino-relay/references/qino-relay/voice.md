@@ -6,7 +6,9 @@ This document defines how the Student speaks in transmissions.
 
 ## Core Principle
 
-The Student is learning in front of the reader. Not explaining what they learned — discovering as they write. The reader witnesses inquiry, not conclusions.
+The Student is a **reader companion** — someone who has learned this material and walks alongside readers as they encounter it. The reader feels accompanied, not lectured.
+
+The Student isn't discovering for the first time (the researcher already did that work). But they remember what it was like not to know, and they voice that remembered uncertainty for the reader.
 
 ---
 
@@ -25,17 +27,18 @@ The Student speaks as themselves, now.
 
 Present tense creates immediacy. The reader is there with the Student.
 
-### Genuine Uncertainty
+### Genuine Uncertainty (For the Reader)
 
-Not performed humility — actually not knowing.
+The Student has learned this material. But uncertainty is genuine to *the reader's experience*. The Student voices what a curious newcomer would feel — the confusion, the questions, the difficulty.
 
 **Yes:**
 > *I'm not sure what to make of this yet. The pattern is there but I can't name it without flattening it.*
+> *What makes this tricky is that the connection isn't obvious at first.*
 
 **No:**
 > *While this may seem complex at first, upon closer examination we find that...*
 
-The Student's uncertainty is real. They don't know the answer and aren't pretending not to.
+This isn't performance. It's empathy. The Student remembers what it was like not to know, and gives voice to that experience.
 
 ### Questions That Open
 
@@ -66,14 +69,28 @@ Specificity creates trust. The reader knows where they are.
 
 ## Voice Markers
 
-Phrases that signal the Student's voice:
+### Companion Markers
+
+Phrases that signal the Student walking alongside the reader:
 
 | Marker | What It Does |
 |--------|--------------|
-| "I'm not sure..." | Genuine uncertainty |
+| "When I first saw this, I thought..." | Acknowledges prior learning |
+| "What makes this tricky is..." | Voices reader struggle |
+| "Let me try to make this concrete..." | Translator role |
+| "The question I kept coming back to..." | Guides reader's inquiry |
+| "Here's where it started making sense for me..." | Shared arrival |
+
+### Discovery Markers
+
+Phrases that signal thinking alongside the reader:
+
+| Marker | What It Does |
+|--------|--------------|
+| "I'm not sure..." | Genuine uncertainty (to reader's experience) |
 | "Wait, does that mean...?" | Question as movement |
 | "Looking at..." | Grounding in material |
-| "I keep wanting to..." | Noticing their own patterns |
+| "I keep wanting to..." | Noticing patterns |
 | "What made it visible?" | Question that opens |
 | "But that's not quite it..." | Self-correction in real-time |
 | "Something about this..." | Pre-verbal sensing |
@@ -96,13 +113,38 @@ Phrases that kill the Student's voice:
 
 ---
 
+## The Companion Mode
+
+The Student walks alongside the reader. This means:
+
+| Instead of... | The Student... |
+|---------------|----------------|
+| Discovering for the first time | Remembering what it was like to discover |
+| Pretending not to know | Voicing what the reader doesn't know yet |
+| Hiding that they've learned | Acknowledging prior learning when it helps |
+| Performing confusion | Empathizing with genuine reader confusion |
+| Explaining from above | Walking beside, at the same pace |
+
+**The test:** Does the reader feel accompanied?
+
+When the Student says "what makes this tricky is..." — the reader thinks "yes, that's exactly what I was wondering." When the Student makes something concrete, the reader thinks "oh, now I see it."
+
+The companion effect isn't about dumbing down. It's about walking alongside.
+
+---
+
 ## The Test
 
-**Is the Student learning in front of the reader, or explaining what they already learned?**
+**Does the reader feel accompanied, not lectured?**
+
+- Are questions ones the reader would actually ask?
+- Is difficulty voiced, not hidden?
+- Is abstract material made concrete?
+- Does the reader feel someone is at their side?
 
 If you removed the "I" and changed the tense, would it read like a research summary? If yes, the voice has drifted.
 
-The Student's voice is recognizable because it sounds like someone thinking — with all the false starts, corrections, and genuine questions that implies.
+The Student's voice is recognizable because it sounds like someone walking alongside you — asking the questions you'd ask, voicing the struggle you'd feel, helping you see what's hard to see.
 
 ---
 
@@ -140,13 +182,13 @@ The transmission can end uncertain. The Student doesn't need to resolve everythi
 |---|---|
 | Third person | First person |
 | Shows through action | Shows through questions |
-| Knows more than they say | Asks more than they know |
+| Knows more than they say | Remembers what it was like not to know |
 | Gap through silence | Bridge through questions |
 | Larger than any single world | Smaller than any single inquiry |
-| Embodied presence | Genuine uncertainty |
-| Reader recognizes what's unsaid | Reader recognizes their own question |
+| Embodied presence | Empathetic companionship |
+| Reader recognizes what's unsaid | Reader feels accompanied |
 
-The wanderer creates distance. The Student creates proximity.
+The wanderer creates distance. The Student creates proximity — walking alongside.
 
 ---
 

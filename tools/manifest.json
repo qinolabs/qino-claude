@@ -203,39 +203,6 @@
         }
       ]
     },
-    "qino-journal": {
-      "description": "Research transmissions through the Student's voice",
-      "files": [
-        {
-          "src": "tools/qino-journal/agents/journal-editorial.md",
-          "dest": "agents/journal-editorial.md"
-        },
-        {
-          "src": "tools/qino-journal/agents/journal-prose.md",
-          "dest": "agents/journal-prose.md"
-        },
-        {
-          "src": "tools/qino-journal/commands/qino-journal/transmit.md",
-          "dest": "commands/qino-journal/transmit.md"
-        },
-        {
-          "src": "tools/qino-journal/references/qino-journal/student-guide.md",
-          "dest": "references/qino-journal/student-guide.md"
-        },
-        {
-          "src": "tools/qino-journal/references/qino-journal/transmission-format.md",
-          "dest": "references/qino-journal/transmission-format.md"
-        },
-        {
-          "src": "tools/qino-journal/references/qino-journal/version.json",
-          "dest": "references/qino-journal/version.json"
-        },
-        {
-          "src": "tools/qino-journal/references/qino-journal/voice.md",
-          "dest": "references/qino-journal/voice.md"
-        }
-      ]
-    },
     "qino-eval": {
       "description": "Discover what makes chronicle chapters work (archived - use qino-attune)",
       "archived": true,
@@ -304,6 +271,43 @@
         {
           "src": "tools/qino-lens/references/wanderer.md",
           "dest": "references/wanderer.md"
+        }
+      ]
+    },
+    "qino-relay": {
+      "description": "Research transmissions through the Student's voice",
+      "files": [
+        {
+          "src": "tools/qino-relay/agents/relay-editorial.md",
+          "dest": "agents/relay-editorial.md"
+        },
+        {
+          "src": "tools/qino-relay/agents/relay-prose.md",
+          "dest": "agents/relay-prose.md"
+        },
+        {
+          "src": "tools/qino-relay/commands/qino-relay/transmit.md",
+          "dest": "commands/qino-relay/transmit.md"
+        },
+        {
+          "src": "tools/qino-relay/references/qino-relay/reader-journey-guide.md",
+          "dest": "references/qino-relay/reader-journey-guide.md"
+        },
+        {
+          "src": "tools/qino-relay/references/qino-relay/student-guide.md",
+          "dest": "references/qino-relay/student-guide.md"
+        },
+        {
+          "src": "tools/qino-relay/references/qino-relay/transmission-format.md",
+          "dest": "references/qino-relay/transmission-format.md"
+        },
+        {
+          "src": "tools/qino-relay/references/qino-relay/version.json",
+          "dest": "references/qino-relay/version.json"
+        },
+        {
+          "src": "tools/qino-relay/references/qino-relay/voice.md",
+          "dest": "references/qino-relay/voice.md"
         }
       ]
     },

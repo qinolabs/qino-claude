@@ -31,52 +31,41 @@ date: 2025-12-29
 arcs:
   - id: recognition-through-indirection
     title: Recognition Through Indirection
+    essence: How metaphorical distance can preserve meaning
   - id: qualities-of-attention
     title: Qualities of Attention
+    essence: Style as a quality of seeing
 threads:
-  - ecosystem-modality tension
-  - ecology language question
-  - crystallization
-reflection: |
-  The pattern came before the naming. I keep forgetting this.
-  When I try to name too early, the pattern goes rigid.
+  - name: ecosystem-modality tension
+    context: Holding both levels without collapsing either. The ecosystem has its logic; individual tools have theirs.
+  - name: crystallization
+    context: When vague quality becomes speakable. Not definition — recognition.
 ---
 
-## Abstract
+# Recognition Through Indirection
 
-*Moving through two arcs today: "Recognition Through Indirection" and "Qualities of Attention."
-Both emerged from building qino-world — the first about meaning preserved through distance,
-the second about style as a quality of seeing.*
+*Dec 29. Walking through two arcs today—both emerged from building qino-world,
+but I'm starting to see they're asking the same question from different angles.*
 
----
-
-[Transmission body — 600-900 words]
+[Body continues — 600-900 words]
 
 [The Student's field notes. First person, present tense.
-Questions, discoveries, confusion. Thinking aloud.]
+Questions and discoveries woven into the prose.
+Ends with weight, not summary.]
 
 ---
 
-## The Student
+## Where I Am Now
 
-**Questions I'm holding:**
+**Still holding:**
 - Does naming enable perception, or close it?
-- What happens at the membrane between levels?
 
-**Connections I've noticed:**
+**Starting to see:**
 - The tension between ecosystem and modality keeps appearing...
 
----
-
-## Threads
-
-**[[ecosystem-modality tension]]**
-Holding both levels without collapsing either. The ecosystem has its logic;
-individual tools have theirs. The tension is generative, not a problem to solve.
-
-**[[crystallization]]**
-When vague quality becomes speakable. Not definition — recognition.
-The moment when "I know it when I see it" becomes "here is what makes it work."
+**What I'm noticing about this:**
+The pattern came before the naming. I keep forgetting this.
+When I try to name too early, the pattern goes rigid.
 ```
 
 ---
@@ -92,21 +81,28 @@ The moment when "I know it when I see it" becomes "here is what makes it work."
 | `arcs` | array | Arcs this transmission moves through |
 | `arcs[].id` | string | Arc identifier |
 | `arcs[].title` | string | Arc title |
-| `threads` | array | Thread names referenced in body |
-| `reflection` | string | Student's meta-learning note (multiline) |
+| `arcs[].essence` | string | One-line description of what the arc is about |
+| `threads` | array | Threads referenced in body (with context for hover) |
+| `threads[].name` | string | Thread name (used for highlighting) |
+| `threads[].context` | string | 1-2 sentence context (shown on hover) |
 
 ---
 
 ## Sections
 
-### Abstract
+### Opening (No Separate Abstract)
 
-1-3 sentences orienting the reader:
-- What arcs are being explored
-- What question opens
-- Contextualizes without spoiling
+The transmission begins directly with the Student's voice. The opening lines ARE the entry—not a separate abstract to get through.
 
-The abstract is *not* a summary. It's an invitation.
+**Good opening:**
+> *Dec 29. Walking through two arcs today—both emerged from building qino-world,
+> but I'm starting to see they're asking the same question from different angles.*
+
+**Avoid:**
+> ## Abstract
+> *This transmission explores the relationship between...*
+
+The reader joins the Student mid-thought. No barrier.
 
 ### Body
 
@@ -123,20 +119,41 @@ The Student's field notes. 600-900 words.
 - Arc names
 - Concrete observations
 
-### The Student Section
+**Questions and connections woven in:**
+Questions emerge naturally in the prose, not listed afterward. Connections are discovered in the writing.
 
-The Student's state at this moment:
-- Questions held
-- Connections noticed
+### Where I Am Now (Coda)
 
-This is temporal — reflects where the Student was when writing.
+A light coda acknowledging where the Student is after the journey:
 
-### Threads Section
+```markdown
+## Where I Am Now
 
-Definitions for threads referenced in the body:
-- 2-3 lines each
-- For hover/click context
-- Written for readers who haven't seen the thread before
+**Still holding:**
+- [Questions that remain open]
+
+**Starting to see:**
+- [Connections emerging]
+
+**What I'm noticing about this:**
+[Meta-learning — what the Student is learning about their own learning]
+```
+
+This is NOT a heavy summary. It's a light acknowledgment:
+- Questions appeared in the prose; this notes they're still carried
+- Connections were discovered in writing; this acknowledges them
+- Meta-learning is visible here, not hidden in frontmatter
+
+### Threads (No Separate Section)
+
+Thread definitions live in frontmatter, not a body section. The surface renders them as inline hover cards.
+
+In body text, mark threads with double brackets:
+```markdown
+The [[ecosystem-modality tension]] keeps appearing.
+```
+
+Reader hovers → sees context from frontmatter. No scrolling to find definitions.
 
 ---
 
@@ -168,12 +185,13 @@ Parser extracts `{{arc-id}}` for arc hover cards.
 
 | Section | Target |
 |---------|--------|
-| Abstract | 30-60 words |
+| Opening lines | 20-40 words |
 | Body | 600-900 words |
-| The Student | 50-100 words |
-| Threads | 30-50 words each |
+| Where I Am Now | 50-100 words |
 
-Total transmission: ~800-1200 words
+Total transmission: ~700-1000 words
+
+Thread context in frontmatter: 1-2 sentences each (not counted toward body)
 
 ---
 
@@ -252,8 +270,13 @@ When transmission is complete, add to `journal/manifest.json`:
   "slug": "recognition-through-indirection",
   "title": "Recognition Through Indirection",
   "date": "2025-12-29",
-  "arcs": ["recognition-through-indirection", "qualities-of-attention"],
-  "threads": ["ecosystem-modality tension", "ecology language question"],
-  "reflection": "The pattern came before the naming..."
+  "arcs": [
+    { "id": "recognition-through-indirection", "title": "Recognition Through Indirection", "essence": "How metaphorical distance can preserve meaning" },
+    { "id": "qualities-of-attention", "title": "Qualities of Attention", "essence": "Style as a quality of seeing" }
+  ],
+  "threads": [
+    { "name": "ecosystem-modality tension", "context": "Holding both levels without collapsing either." },
+    { "name": "crystallization", "context": "When vague quality becomes speakable." }
+  ]
 }
 ```
