@@ -30,10 +30,10 @@ title: Recognition Through Indirection
 date: 2025-12-29
 arcs:
   - id: recognition-through-indirection
-    title: Recognition Through Indirection
+    name: Recognition Through Indirection
     essence: How metaphorical distance can preserve meaning
   - id: qualities-of-attention
-    title: Qualities of Attention
+    name: Qualities of Attention
     essence: Style as a quality of seeing
 threads:
   - name: ecosystem-modality tension
@@ -80,7 +80,7 @@ When I try to name too early, the pattern goes rigid.
 | `date` | string | ISO date (YYYY-MM-DD) |
 | `arcs` | array | Arcs this transmission moves through |
 | `arcs[].id` | string | Arc identifier |
-| `arcs[].title` | string | Arc title |
+| `arcs[].name` | string | Arc name |
 | `arcs[].essence` | string | One-line description of what the arc is about |
 | `threads` | array | Threads referenced in body (with context for hover) |
 | `threads[].name` | string | Thread name (used for highlighting) |
@@ -271,8 +271,8 @@ When transmission is complete, add to `journal/manifest.json`:
   "title": "Recognition Through Indirection",
   "date": "2025-12-29",
   "arcs": [
-    { "id": "recognition-through-indirection", "title": "Recognition Through Indirection", "essence": "How metaphorical distance can preserve meaning" },
-    { "id": "qualities-of-attention", "title": "Qualities of Attention", "essence": "Style as a quality of seeing" }
+    { "id": "recognition-through-indirection", "name": "Recognition Through Indirection", "essence": "How metaphorical distance can preserve meaning" },
+    { "id": "qualities-of-attention", "name": "Qualities of Attention", "essence": "Style as a quality of seeing" }
   ],
   "threads": [
     { "name": "ecosystem-modality tension", "context": "Holding both levels without collapsing either." },

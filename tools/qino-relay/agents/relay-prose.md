@@ -230,7 +230,7 @@ title: [Title]
 date: [YYYY-MM-DD]
 arcs:
   - id: [arc-id]
-    title: [Arc Title]
+    name: [Arc Name]
     essence: [One line description]
 threads:
   - name: [thread-name]
