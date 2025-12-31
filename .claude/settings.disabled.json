@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "_note": "PAI hooks integration - hooks live in qino-claude, history is centralized in ~/.qino",
+  "env": {
+    "PAI_DIR": "/Users/picard/Code/qinolabs/qino-claude/.claude",
+    "HISTORY_DIR": "/Users/picard/.qino/history",
+    "DA": "qino",
+    "TIME_ZONE": "America/Los_Angeles"
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${PAI_DIR}/Hooks/security-validator.ts"
+          }
+        ]
+      },
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${PAI_DIR}/Hooks/capture-all-events.ts --event-type PreToolUse"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${PAI_DIR}/Hooks/capture-all-events.ts --event-type PostToolUse"
+          },
+          {
+            "type": "command",
+            "command": "${PAI_DIR}/Hooks/update-tab-on-action.ts"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${PAI_DIR}/Hooks/capture-session-summary.ts"
+          },
+          {
+            "type": "command",
+            "command": "${PAI_DIR}/Hooks/capture-all-events.ts --event-type SessionEnd"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${PAI_DIR}/Hooks/update-tab-titles.ts"
+          },
+          {
+            "type": "command",
+            "command": "${PAI_DIR}/Hooks/capture-all-events.ts --event-type UserPromptSubmit"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${PAI_DIR}/Hooks/capture-all-events.ts --event-type SessionStart"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${PAI_DIR}/Hooks/stop-hook.ts"
+          },
+          {
+            "type": "command",
+            "command": "${PAI_DIR}/Hooks/capture-all-events.ts --event-type Stop"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${PAI_DIR}/Hooks/subagent-stop-hook.ts"
+          },
+          {
+            "type": "command",
+            "command": "${PAI_DIR}/Hooks/capture-all-events.ts --event-type SubagentStop"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${PAI_DIR}/Hooks/context-compression-hook.ts"
+          },
+          {
+            "type": "command",
+            "command": "${PAI_DIR}/Hooks/capture-all-events.ts --event-type PreCompact"
+          }
+        ]
+      }
+    ]
+  }
+}

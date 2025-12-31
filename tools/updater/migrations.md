@@ -12,6 +12,45 @@ Each version section includes:
 
 ---
 
+## v0.21.0 (qino-relay)
+
+**Summary**: qino-journal renamed to qino-relay with evolved Student identity. The Student now walks alongside readers as a companion who has learned the material, rather than pretending uncertainty.
+
+**Delete** (qino-journal):
+- `.claude/agents/journal-editorial.md`
+- `.claude/agents/journal-prose.md`
+- `.claude/commands/qino-journal/transmit.md`
+- `.claude/references/qino-journal/student-guide.md`
+- `.claude/references/qino-journal/transmission-format.md`
+- `.claude/references/qino-journal/version.json`
+- `.claude/references/qino-journal/voice.md`
+
+**New** (qino-relay):
+- `.claude/agents/relay-editorial.md` — reviews voice integrity and reader-companionship
+- `.claude/agents/relay-prose.md` — voices arc material through the Student
+- `.claude/commands/qino-relay/transmit.md` — create research transmission
+- `.claude/references/qino-relay/reader-journey-guide.md` — reader journey prep guide (new)
+- `.claude/references/qino-relay/student-guide.md` — how the Student works
+- `.claude/references/qino-relay/transmission-format.md` — format specification
+- `.claude/references/qino-relay/version.json`
+- `.claude/references/qino-relay/voice.md` — Student's voice patterns
+
+**Rename**:
+- `/qino-journal:transmit` → `/qino-relay:transmit`
+
+**Changed** (Student identity):
+- From "genuine uncertainty" to "reader companionship"
+- Student has learned the material and walks alongside readers
+- Remembers what it was like not to know, voices that for readers
+- Creates bridge through questions, not gap through uncertainty
+
+**User action**:
+- Delete all qino-journal files before updating
+- Use `/qino-relay:transmit` instead of `/qino-journal:transmit`
+- Existing transmissions continue to work
+
+---
+
 ## v0.19.0 (qino-scribe visual-style)
 
 **Summary**: qino Scribe adds visual-style.md for author-controlled image aesthetics, replacing AI-distilled style guessing.

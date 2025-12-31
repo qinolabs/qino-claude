@@ -221,7 +221,7 @@ Everything connects through concepts-repo, but each space keeps its own ecology 
 | `qino-research:` | Research                   | begin                                     |
 | `qino-scribe:`   | Chronicle                  | chapter, rewind                           |
 | `qino-lens:`     | Quality of Attention       | wanderer, narrator                        |
-| `qino-relay:`    | Journal                    | transmit                                  |
+| `qino-relay:`    | Research Transmissions     | transmit                                  |
 | `qino-dev:`      | Implementation             | init, app                                 |
 
 The `qino:` namespace is not a specific space — it's what you're already in when you're anywhere. The suffix is the door you're entering through.

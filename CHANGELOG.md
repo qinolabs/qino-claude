@@ -10,6 +10,44 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.21.0] - 2025-12-30
+
+### qino Relay (New Tool)
+
+#### Added
+
+- **Research transmissions through the Student's voice** — share meaningful findings in a voice that walks alongside readers, helping them approach demanding material with curiosity and delight
+- **`/qino-relay:transmit`** — create a research transmission from specific arcs; generates Student-voiced prose with reader journey notes
+- **Reader Journey Notes** — instead of a full prep layer, relay uses reader journey notes: what readers won't know, will struggle with, would ask; the prose agent sees everything plus these notes
+- **Two-agent architecture** — `relay-prose.md` (voices arc material through the Student) and `relay-editorial.md` (reviews voice integrity and reader-companionship)
+
+#### The Student's Evolution
+
+The Student has evolved from "genuine uncertainty" (v0.20.0 qino-journal concept) to "reader companionship":
+- No longer pretending not to know — they *have learned* the material
+- Walks alongside readers encountering research, not alongside researchers learning
+- Remembers what it was like not to know, and voices that remembered uncertainty for the reader
+- Creates bridge through questions, not gap through uncertainty
+
+| The Wanderer | The Student |
+|---|---|
+| Knows more than they say | Remembers what it was like not to know |
+| Creates gap through silence | Creates bridge through questions |
+| Reader recognizes what's unsaid | Reader feels accompanied |
+
+#### References
+
+- `references/qino-relay/voice.md` — Student's voice patterns
+- `references/qino-relay/student-guide.md` — how the Student works
+- `references/qino-relay/transmission-format.md` — format specification
+- `references/qino-relay/reader-journey-guide.md` — reader journey prep guide
+
+### Breaking Changes
+
+- **qino-journal renamed to qino-relay** — `/qino-journal:transmit` → `/qino-relay:transmit`
+
+---
+
 ## [0.20.0] - 2025-12-29
 
 ### qino Util (New Tool)
