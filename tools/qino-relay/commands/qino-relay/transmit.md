@@ -382,7 +382,7 @@ updated
 
 The prep layer in qino-scribe exists because git commits must be *transformed* into story material. Commits are raw; they need interpretation.
 
-Arcs are different. Arcs are already interpreted. They have essence, chain, shape. The arc IS the content.
+Arcs are different. Arcs are already interpreted. They have essence, path, shape. The arc IS the content.
 
 **But the Student is a reader companion, not just a voice.**
 

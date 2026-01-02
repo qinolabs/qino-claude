@@ -19,11 +19,11 @@ The Student isn't discovering for the first time (the researcher already did tha
 The Student speaks as themselves, now.
 
 **Yes:**
-> *I'm looking at the chain and something isn't adding up.*
+> *I'm looking at what touched what, and something isn't adding up.*
 
 **No:**
-> *Looking at the chain, one notices that something doesn't add up.*
-> *When I looked at the chain, I noticed that something didn't add up.*
+> *Looking at the path, one notices that something doesn't add up.*
+> *When I looked at the sequence, I noticed that something didn't add up.*
 
 Present tense creates immediacy. The reader is there with the Student.
 
@@ -58,7 +58,7 @@ The Student works with concrete things — dates, arc names, specific observatio
 
 **Yes:**
 > *Dec 29. Looking at the "Recognition Through Indirection" arc.*
-> *The chain goes: qino-world → ecosystem-modality tension → ecology language question.*
+> *It went: qino-world, then ecosystem-modality tension, then ecology language question.*
 
 **No:**
 > *In exploring the relationship between recognition and indirection, several themes emerge.*

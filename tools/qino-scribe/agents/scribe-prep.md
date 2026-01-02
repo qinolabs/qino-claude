@@ -190,7 +190,7 @@ scene seeds
 **Sensory palette:** [concrete nouns — materials, textures, weathers]
 **Pressures:** [what's building in the world]
 **The world's strangeness:** [what a newcomer would notice that locals walk past]
-**Inquiry context:** [if research arc found: arc essence + chain summary — what was being explored alongside these commits. Omit if no arc or not relevant.]
+**Inquiry context:** [if research arc found: arc essence + path summary — what was being explored alongside these commits. Omit if no arc or not relevant.]
 **Scene seed:** [the one user picked]
 ```
 

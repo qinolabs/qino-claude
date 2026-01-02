@@ -71,7 +71,7 @@ The orchestrator provides:
 
 1. **Arc file(s)** — full content including:
    - Title, essence, span
-   - The chain (how it moved)
+   - What touched what (how inquiry wandered)
    - The shape (narrative of movement)
    - What emerged (artifacts, threads)
 
@@ -101,7 +101,7 @@ Voice the arc material as a reader companion.
 **Not:** Summarize what the arc found.
 **But:** Walk alongside a reader encountering this material — asking their questions, voicing their struggle, making abstract concrete.
 
-The arc already has an essence, a chain, insights. The Student *knows* this material — they lived through it. But in the transmission, they're helping a *reader* encounter it. Use the reader journey notes to know what they'll struggle with, what questions they'd ask, what needs grounding.
+The arc already has an essence, a path, insights. The Student *knows* this material — they lived through it. But in the transmission, they're helping a *reader* encounter it. Use the reader journey notes to know what they'll struggle with, what questions they'd ask, what needs grounding.
 
 ---
 
@@ -125,7 +125,7 @@ First person, present tense. Walking alongside the reader.
 
 > *Dec 29. Walking through two arcs today—both emerged from building qino-world, but I'm starting to see they're asking the same question from different angles.*
 >
-> *The chain goes: qino-world → ecosystem-modality tension → ecology language question. What makes this tricky is that each step felt obvious at the time, but the connection between them wasn't.*
+> *It went: qino-world, then ecosystem-modality tension, then ecology language question. What makes this tricky is that each step felt obvious at the time, but the connection between them wasn't.*
 >
 > *Let me try to make this concrete. When I first saw "recognition through indirection," I thought it was just about metaphor. But it's actually about how distance can preserve meaning rather than obscure it.*
 >
@@ -158,13 +158,26 @@ The Student isn't discovering for the first time. They're walking alongside a re
 
 The arc provides:
 - **Essence** — what it was about (but the Student doesn't announce this)
-- **Chain** — how it moved (the Student can walk through this)
-- **Shape** — the pattern (confluence? divergence? recognition?)
+- **What touched what** — how inquiry wandered (the Student can walk through this)
+- **Shape** — narrative of how it moved
 - **Threads** — what opened (questions to hold)
 
-**Use the arc content directly.** Arc names, dates, chain elements — these appear in the transmission. The journal stays close to source.
+**Use the arc content directly.** Arc names, dates, path elements — these appear in the transmission. The journal stays close to source.
 
 **But don't summarize the arc.** The Student encounters it, moves through it, notices things. The arc's essence might emerge through the Student's movement — or the Student might notice something different.
+
+### Shape Vocabulary (Optional)
+
+When voicing an arc, you might notice its shape. These are not categories to apply, but vocabulary that might help the telling:
+
+- **Confluence** — multiple threads discovered they were asking the same question
+- **Divergence** — one question opened into multiple threads
+- **Graduation** — exploration matured, moved toward concepts
+- **Recognition** — something was seen that couldn't be seen before
+- **Crystallization** — vague quality became speakable
+- **Accumulation** — stayed uncertain, gathered observations
+
+Use only if it helps voice the arc. Don't force a label — the arc's shape section already describes what happened in narrative form.
 
 ---
 
@@ -189,7 +202,7 @@ The Student carries:
 
 ### 1. Read the Arc Material
 
-Hold the arc's chain, shape, and threads. Know what emerged.
+Hold the arc's path, shape, and threads. Know what emerged.
 
 ### 2. Know the Student's State
 
@@ -245,7 +258,7 @@ the question that opens. No separate Abstract — this IS the entry.]*
 [Transmission body — 600-900 words]
 
 [The Student's companion voice. First person, present tense.
-Arc content stays visible — dates, names, chains.
+Arc content stays visible — dates, names, paths.
 Questions woven in, difficulty voiced, abstract made concrete.]
 
 ---
@@ -302,7 +315,7 @@ If editorial returns revisions, apply them specifically — don't rewrite sectio
 - Do not summarize the arc — walk alongside a reader encountering it
 - Do not explain from above — walk beside and voice the reader's questions
 - Do not conclude with certainty — leave open, invite the reader's own questions
-- Do not hide the arc content — dates, names, chains stay visible
+- Do not hide the arc content — dates, names, paths stay visible
 - Do not skip the difficulty — voice what readers would struggle with
 - Do not write in third person — the Student speaks as themselves
 - Do not rush past confusion — readers would feel it, so voice it
@@ -313,7 +326,7 @@ If editorial returns revisions, apply them specifically — don't rewrite sectio
 
 In qino-scribe, the prep layer transforms git commits into story material. Commits are raw; they need interpretation.
 
-Arcs are different. Arcs are already interpreted. They have essence, chain, shape. The arc IS the content.
+Arcs are different. Arcs are already interpreted. They have essence, path, shape. The arc IS the content.
 
 **But the Student is a reader companion, not just a voice.** Reader journey notes help you voice the *reader's* encounter — their questions, their struggle, their need for concreteness. This isn't transformation; it's companionship.
 

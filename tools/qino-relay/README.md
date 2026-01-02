@@ -48,7 +48,7 @@ The transcontextual figure — as the wanderer moves through chronicles, the Stu
 
 In qino-scribe, the prep layer transforms git commits into story material. Commits are raw; they need interpretation.
 
-Arcs are different. Arcs are already interpreted. They have essence, chain, shape. **The arc IS the content** — it just needs to be voiced *for the reader*.
+Arcs are different. Arcs are already interpreted. They have essence, path, shape. **The arc IS the content** — it just needs to be voiced *for the reader*.
 
 Reader journey notes help the prose agent voice the *reader's* encounter with the material — their questions, their struggle, their need for concreteness. The Student walks alongside readers, not just through the material.
 

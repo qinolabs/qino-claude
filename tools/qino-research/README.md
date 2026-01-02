@@ -1,15 +1,15 @@
 # qino Research
 
-A space for open-ended research — before ideas become concepts.
+A space for open-ended research — where ideas can move before they stabilize.
 
 ---
 
 ## What is this?
 
-Research is pre-concept work:
-- **Inquiries** — Open-ended following of threads (was: explorations)
-- **Qualities** — Refining aesthetic sensibilities into speakable craft (was: calibrations)
-- **Arcs** — Capturing emergence patterns, how inquiry moved through the ecosystem
+Research is exploratory work:
+- **Inquiries** — Open-ended following of threads
+- **Qualities** — Refining aesthetic sensibilities into speakable craft
+- **Arcs** — Capturing how inquiry moved through the ecosystem
 
 Unlike concepts (which stabilize over time), research moves fast, welcomes uncertainty, and accepts inconclusive results as valuable data.
 
@@ -115,6 +115,6 @@ Create `manifest.json`:
 
 ## Philosophy
 
-Research welcomes uncertainty. Not all inquiries become concepts — and that's fine. The research space is where ideas can wander before they crystallize.
+Research welcomes uncertainty. Not all inquiries become concepts — and that's fine. Research and concepts coexist, interact, activate each other.
 
-Arcs are evidence of ecosystem participation. They show how the system moves through itself.
+Arcs are evidence of ecosystem participation. They capture how inquiry moved — what touched what, what emerged.

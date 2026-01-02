@@ -6,9 +6,9 @@ This document defines the structure and semantics of research workspaces.
 
 ## 1. Purpose of Research Workspaces
 
-Research is **pre-concept** work:
+Research is where ideas can **move before they stabilize**:
 - Explorative, uncertain, provisional
-- May never become a concept
+- May never become a concept — and that's fine
 - Moves faster than concept development
 - Accepts inconclusive results as valuable data
 
@@ -269,17 +269,17 @@ Test corpus used during refinement.
 
 ---
 
-## The Chain
+## What Touched What
 
 - [starting point] — where inquiry began
-- → [what it touched] — concept, inquiry, note
-- → [what it touched]
-- → [emergence] — what crystallized
+- [what it touched] — concept, inquiry, note
+- [what it touched]
+- [what emerged]
 
 ## The Shape
 
-[Narrative of how the arc traveled — not transcript, but shape of movement.
-What pattern does this arc embody? Confluence? Divergence? Graduation?]
+[Narrative of how the arc traveled — not transcript, but the shape of movement.
+Describe what happened without categorizing it.]
 
 ## What Emerged
 
@@ -298,15 +298,6 @@ What pattern does this arc embody? Confluence? Divergence? Graduation?]
 - Relevant commits: [if known]
 - Chapter context: [what scribe should know]
 ```
-
-### Arc Patterns
-
-- **Confluence** — multiple threads discovered they were asking the same question
-- **Divergence** — one question opened into multiple threads
-- **Graduation** — exploration matured, moved toward concepts
-- **Recognition** — something was seen that couldn't be seen before
-- **Crystallization** — vague quality became speakable
-- **Not knowing yet** — arc stayed uncertain, accumulated observations
 
 ---
 
@@ -339,16 +330,16 @@ When scribe-prep agent prepares a chapter:
 
 This reveals what inquiry was happening alongside the code changes — the conceptual work that may illuminate the commits.
 
-**For journal (research transmissions):**
+**For relay (research transmissions):**
 
-When journal creates a transmission:
+When relay creates a transmission:
 
 1. Query arcs by recency (most recent first)
 2. Find arcs that haven't been transmitted
 3. Use arc's narrative shape to structure transmission
-4. Avatar moves through the arc's chain, helping readers connect
+4. The Student walks alongside readers through the arc's path
 
-_(Journal integration is conceptual — qino-journal not yet implemented.)_
+See `qino-relay` for implementation.
 
 **Key principle:** The matching is agent work, not deterministic code. Arcs provide context; the agent decides relevance.
 

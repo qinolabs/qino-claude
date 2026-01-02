@@ -47,7 +47,7 @@ The arc needs these elements. Gather them conversationally, not as a checklist:
 - **Title** — a phrase that names the arc (from argument or first exchange)
 - **Essence** — one sentence summary of what moved
 - **Span** — date(s) this happened
-- **Chain** — what touched what (the sequence of connections)
+- **Path** — what touched what (how inquiry wandered)
 
 **Optional (surface if relevant):**
 - **Repos** — which repos were involved (default: current repo)
@@ -91,17 +91,17 @@ Create `arcs/YYYY-MM-DD_arc-id.md` in research workspace:
 
 ---
 
-## The Chain
+## What Touched What
 
 - [starting point] — where inquiry began
-- → [what it touched] — concept, inquiry, note
-- → [what it touched]
-- → [emergence] — what crystallized
+- [what it touched] — concept, inquiry, note
+- [what it touched]
+- [what emerged]
 
 ## The Shape
 
-[Narrative of how the arc traveled — not transcript, but shape of movement.
-What pattern does this arc embody? Confluence? Divergence? Graduation?]
+[Narrative of how the arc traveled — not transcript, but the shape of movement.
+Describe what happened without categorizing it.]
 
 ## What Emerged
 
@@ -170,23 +170,10 @@ Spacious. This is about seeing the shape of what happened.
 
 ---
 
-## Arc Patterns
-
-When writing "The Shape" section, consider which pattern the arc embodies:
-
-- **Confluence** — multiple threads discovered they were asking the same question
-- **Divergence** — one question opened into multiple threads
-- **Graduation** — exploration matured, moved toward concepts
-- **Recognition** — something was seen that couldn't be seen before
-- **Crystallization** — vague quality became speakable
-- **Not knowing yet** — arc stayed uncertain, accumulated observations
-
----
-
 ## Do NOT:
 
 - Treat gathering as a form to fill out
 - Ask for each field explicitly
 - Skip the essence confirmation
 - Create arcs for single thoughts (that's what /qino:capture is for)
-- Impose a pattern if one doesn't naturally fit
+- Categorize the shape — let the narrative describe what happened
