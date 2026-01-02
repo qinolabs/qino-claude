@@ -40,7 +40,7 @@ cat chronicle/manifest.json 2>/dev/null
 
 | Arguments | Manifest exists? | Mode |
 |-----------|------------------|------|
-| (empty) | Yes | Advance — from `last_chapter.git_ref` to HEAD |
+| (empty) | Yes | Advance — from last chapter's `git_ref_end` to HEAD |
 | (empty) | No | Retroactive — full history |
 | `--full` | Either | Retroactive — full history |
 | `from_ref` | Either | Specific — from ref to HEAD |

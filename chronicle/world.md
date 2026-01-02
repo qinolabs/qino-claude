@@ -1,6 +1,6 @@
 # The World
 
-*Last updated: Chapter 3*
+*Last updated: Chapter 2*
 
 ## Pressures
 
@@ -8,7 +8,7 @@
 
 ### The Stranger from Upriver
 
-A wanderer has arrived — alone, in a small boat, from the direction no one travels alone. They confirmed it: "Upriver." Said like closing a door. The upriver question has a living witness who won't speak of what they saw. Mari has made first contact through shared work — an invitation extended, not yet accepted. "Nets need turning at midday. You can come back. Or not." The wanderer claimed they're not here to bring trouble. Mari's reply: "Trouble doesn't always know what it's bringing."
+A wanderer has arrived — alone, in a small boat, from the direction no one travels alone. The upriver question, usually distant rumor, now has a living witness. Mari noticed. Others will wonder. What did they see? Why did they come? The silence around the upriver holds, but it has a face now.
 
 ### A Child Reading Silences
 
@@ -32,33 +32,28 @@ Upriver, the forest waits.
 
 ## The Wanderer
 
-*Updated after Chapter 3*
+*Updated after Chapter 2*
 
 A figure who arrived by small boat from upriver — from the direction of the swamps and the ruins. They move without hurry but without hesitation. Someone who knows how to arrive in new places.
 
 **What pulls at them:**
-- Unknown — they said only "I'm not here to bring trouble"
-- They studied the water's unusual clarity "the way you study something you don't trust"
+- Unknown — they have not spoken of why they came
 
 **Carries now:**
 - A weathered pack, canvas worn but carefully maintained
 - Whatever they witnessed upriver
 - The weight of incomplete answers
-- Knowledge of harbor etiquette — rope coiled properly, nets carried correctly
-- Hands already rough with older damage, healed over
-- An invitation: Mari's offer to return at midday
+- Knowledge of harbor etiquette — rope coiled properly, hung where it belongs
 
-**Last seen:** Standing among the drying racks after Mari walked away. The smell of salt grass and clear water all around them. The upriver path invisible from here — just trees, just hills, just ordinary land.
+**Last seen:** Walking the stone quay after coiling an abandoned rope. A woman mending nets nearby nodded once, unsurprised. The wanderer nodded back and kept walking.
 
 **What remains unspoken:**
-They confirmed "upriver" but closed the door on further questions. Mari pressed once about what trouble they might bring; they held her gaze but offered only denial. The invitation to return is the first real opening — whether they take it will tell something.
+Mari recognized the significance of their origin. She marked the arrival as different but didn't press. The settlement welcomed the stranger, but the upriver question hangs. Now Kael is asking too.
 
 **Strangeness observed:**
 - Ch 1: Mari — noticed how their eyes moved when they arrived: "finding the paths between buildings, the positions of people, where the slope offered higher ground"
 - Ch 1: Mari — their hands stayed loose at their sides, "the way they held themselves"
 - Ch 2: The net-mending woman — nodded once when the wanderer coiled rope properly, "unsurprised" — as if she'd expected competence
-- Ch 3: Mari — how they hold things: "Careful. Like everything might be taken back."
-- Ch 3: Mari — "Their body remembering something Mari could only guess at" — ease with the work that speaks of practice elsewhere
 
 ---
 
@@ -69,7 +64,11 @@ First appeared: Ch 1, the wharf at first light
 
 Nine or ten years old, with the restless energy of someone who wants to see everything first. Has their mother's eyes — grey-green like the delta water on overcast days. Leans forward when they want something.
 
-*Voice:* Direct, persistent. Asks questions that adults avoid. Doesn't accept deflection: "You stopped counting." "But there's something."
+*Voice:* (Ch 1-2 — questioning adults, seeking what's close)
+- "Where'd you come from?"
+- "You stopped counting."
+- "But there's something."
+- "Because I don't care about far. I care about here. About what's close."
 
 **Has been watching:**
 The minnows. The clear water. The stranger's boat. And now — the silences. The way adults change when upriver is mentioned. What Daven admitted: that he's afraid, and doesn't know of what.
@@ -77,19 +76,27 @@ The minnows. The clear water. The stranger's boat. And now — the silences. The
 ### Mari
 First appeared: Ch 1, the wharf at first light
 
-Fisher, middle years, hands that work nets without needing her eyes. Watches approaches. Knows what the upriver direction means. Local, rooted, patient. Her skill is waiting — questions asked too soon come back empty.
+Fisher, middle years, hands that work nets without needing her eyes. Watches approaches. Knows what the upriver direction means. Local, rooted, patient.
 
-*Voice:* Efficient, no wasted words. Statements that sound like observations but carry weight: "Not many come from that direction." "Trouble doesn't always know what it's bringing." Doesn't ask questions — waits for information, or creates openings.
+*Voice:* (Ch 1 — watching the stranger's arrival)
+- "Don't know yet."
+- "Not many come from that direction."
+- "They're welcome here. Everyone's welcome here. That's how the delta works."
+- "So can I." (looking at the water, but not at the fish)
 
 **Has been watching:**
-The stranger's hands. How they hold things — "Careful. Like everything might be taken back." Their competence with nets, their body remembering work done elsewhere. She extended an invitation: return at midday, or don't. The work's there either way.
+The stranger's hands. How they held themselves. How their eyes found exits and high ground before anything else. She marked this arrival as different.
 
 ### Daven
 First appeared: Ch 1, the wharf at first light
 
 Merchant, younger, three years settled in the delta. Welcomes before he understands. Keeps careful ledgers — salt bushels, lamp oil by the barrel, the steady work of knowing what the delta has and needs. Still learning what the silences mean.
 
-*Voice:* Deflects with questions and offers. When pressed: admits more than he intended. Told Kael the truth — that he's afraid of upriver, and doesn't know why, and has never gone.
+*Voice:* (Ch 1-2 — deflecting, then admitting)
+- "Early for traders. The tide's not even turned."
+- "Welcome. Long way to travel alone."
+- "Someone has to know how much rope we have."
+- "Because I'm afraid. And I don't even know of what."
 
 **Has been watching:**
 His ledger. His counting. The work of staying in place. But now a child has seen through his protection to the fear underneath.
@@ -114,16 +121,6 @@ A child, friend of Kael's. Their father went upriver once, years ago. He came ba
 **Has been watching:**
 Unknown.
 
-### Kael's Mother
-First mentioned: Ch 3 (by Mari)
-
-Keeps Kael home when strangers come "from certain directions." Her fear is visible through her actions — she usually sends Kael to help Mari with the nets, but not today.
-
-*Voice:* Not yet heard directly.
-
-**Has been watching:**
-The wanderer. The direction they came from. What it might mean for her child.
-
 ---
 
 ## Locations
@@ -147,11 +144,6 @@ Where the merchant keeps his ledgers. A window facing the harbor — distant sou
 First appeared: Ch 2
 
 Where the canal meets weathered stone, worn smooth by decades of rope and boot. Harbor etiquette applies here — you don't leave rope on the ground. Someone mends nets nearby.
-
-### The Drying Racks
-First appeared: Ch 3
-
-Weathered timber frames at the water's edge where nets are spread to dry. Salt grass whispers at the edges of the path. The trading post is nearby — its door often open, oil lamp warmth spilling out. You can hear the settlement's small sounds from here: the baker's stall, the cooper's hammer, voices calling names.
 
 ### Unexplored
 

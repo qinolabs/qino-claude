@@ -8,10 +8,32 @@ A story lens determines which sensitivities to foreground. The lens shapes HOW y
 
 ## How to Use This Document
 
-1. **Prep agent:** Select 3 lenses that fit the current situation, present to user
-2. **User chooses:** A lens and optionally a territory
-3. **Prep agent:** Writes the lens section to prep.md with sensitivities
-4. **Prose agent:** Reads the lens, consults the linked sensitivities, writes through that perceptual mode
+1. **Prep agent:** At Lens Layer, consider both chronicle flow and diff resonance
+2. **Select 3 lenses:** That serve the moment (story needs + material suggests)
+3. **Present with "rhymes with":** Explain why each lens fits
+4. **User chooses:** A lens (territory is discovered later, not chosen)
+5. **World behavior generated through lens:** The lens shapes what we notice
+6. **Prose agent:** Reads the lens, consults linked sensitivities, writes through that mode
+
+---
+
+## Diff Resonance
+
+Each lens has natural resonance with certain types of source material changes. Use this to inform lens selection — but chronicle flow matters too.
+
+| Diff Shape | Natural Resonance |
+|------------|-------------------|
+| New features, new modules | The Arrival, The Discovery, The Work |
+| Deletions, removals, deprecations | The Loss, The Confrontation |
+| Refactoring, revisiting old code | The Return, The Work |
+| Bug fixes, corrections | The Complication (what went wrong), The Work |
+| Integration, merging | The Gathering |
+| Blocked state, waiting | The Vigil |
+| Breaking changes | The Crisis, The Confrontation |
+| Collaborative commits | The Work, The Gathering |
+| Quiet periods, small changes | The Vigil, The Arrival (breathing space) |
+
+**Note:** Resonance suggests, doesn't constrain. A deletion could become "The Work" (careful dismantling) rather than "The Loss" if that's what the chronicle needs.
 
 ---
 

@@ -58,7 +58,10 @@ First appeared: Ch 1, the wharf at first light
 
 Nine or ten years old, with the restless energy of someone who wants to see everything first. Crouches at water's edge, bare feet on timber, reaching toward what they can't quite touch. Saw the boat first.
 
-*Voice:* Direct, no filter. Calls out immediately. Questions without preamble: "Where'd you come from?"
+*Voice:* (Ch 1 — at the wharf, watching the arrival)
+- "Boat coming!"
+- "Who is it?"
+- "Where'd you come from?"
 
 **Has been watching:**
 The minnows. The clear water. The stranger's boat — its weathered wood, the scrapes along the waterline.
@@ -68,7 +71,11 @@ First appeared: Ch 1, the wharf at first light
 
 Fisher, middle years, hands that work nets without needing her eyes. Watches approaches. Knows what the upriver direction means. Local, rooted, patient.
 
-*Voice:* Efficient, no wasted words. Statements that sound like observations but carry weight: "Not many come from that direction." Doesn't ask questions — waits for information.
+*Voice:* (Ch 1 — watching the stranger's arrival)
+- "Don't know yet."
+- "Not many come from that direction."
+- "They're welcome here. Everyone's welcome here. That's how the delta works."
+- "So can I." (looking at the water, but not at the fish)
 
 **Has been watching:**
 The stranger's hands. How they held themselves. How their eyes found exits and high ground before anything else. She marked this arrival as different.
@@ -78,7 +85,11 @@ First appeared: Ch 1, the wharf at first light
 
 Merchant, younger, three years settled in the delta. Welcomes before he understands. Hands extended for mooring lines, help offered before it's asked for. Still learning what the silences mean.
 
-*Voice:* Direct questions, offers help, fills silence with welcome: "Do you need anything?" "There's food at the market if you're hungry."
+*Voice:* (Ch 1 — welcoming the stranger)
+- "Early for traders. The tide's not even turned."
+- "Welcome. Long way to travel alone."
+- "The Anchor has rooms. Up the main path, can't miss it."
+- "You must be hungry. The market opens soon. Fresh bread, if you want it."
 
 **Has been watching:**
 A newcomer to welcome. He noticed Mari's attention but doesn't yet understand what it means.

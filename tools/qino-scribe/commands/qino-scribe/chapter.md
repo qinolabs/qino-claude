@@ -12,14 +12,18 @@ Write the next chronicle chapter through a staged two-agent architecture.
 
 Chapter creation flows through layers:
 
-1. **Prep Agent** — World, Disturbance, Beat layers with 3 steering checkpoints
+1. **Prep Agent** — Lens-first architecture with 2 steering checkpoints
+   - Lens Layer → story direction (user chooses)
+   - World Behavior → generated through lens (automatic)
+   - Scene Layer → scene seeds (user chooses)
+   - Beat → derived (automatic)
 2. **Hard cut** — prep.md complete
 3. **Prose Agent** — receives only prep.md, writes draft chapter
 4. **Editorial Agent** — reviews draft in separate context, returns edits or approval
 5. **Revision** (if needed) — prose agent applies specific edits
 6. **Post-prose** — automatic (world update, arc update, snapshots, manifest)
 
-User steers creative direction. Editorial and bookkeeping are automatic.
+User steers story direction and scene. World behavior and beat are derived.
 
 ---
 
@@ -47,7 +51,7 @@ cat chronicle/manifest.json
 cat chronicle/world-seed.md
 ```
 
-Get `last_chapter.git_ref` — this is where the git diff starts (unless overridden by arguments).
+Get the last chapter's `git_ref_end` from the chapters array — this is where the git diff starts (unless overridden by arguments).
 
 ### Validate world-seed.md Frontmatter
 
@@ -100,7 +104,7 @@ This file will be appended to by the prep agent and editorial agent.
 
 ## Phase 1: Prep Agent
 
-Spawn the prep agent to handle World, Disturbance, and Beat layers:
+Spawn the prep agent to handle Lens, World Behavior, Scene, and Beat layers:
 
 ```
 Use agent: scribe-prep
@@ -111,28 +115,31 @@ Pass to agent:
 - The git range: [last_ref]..HEAD
 ```
 
-The prep agent will:
+The prep agent handles four layers with two checkpoints:
 
-**World Layer:**
-- Read world-seed.md, world.md, arcs.md, recent chapters
-- Generate sensory palette, active pressures, scene seeds
-- **Checkpoint 1:** Scene seeds → user chooses
-- Write Grounding section to prep.md
+**Lens Layer:**
+- Read recent chapters, arcs.md, git diff (first-pass stats), world.md
+- Assess chronicle position (early, mid-journey, approaching resolution)
+- Consider both chronicle flow and diff resonance
+- **Checkpoint 1:** Story direction → user chooses from 3 lenses
+- Write Story Lens section to prep.md (with sensitivities and craft note)
 
-**Disturbance Layer:**
-- Read git diff (from last_ref or argument)
-- Two passes: stats for shape, messages for texture + keywords
-- Synthesize: Shape + Texture (e.g., "Transformation — clarifying")
-- Ask: What would the world DO if it felt this way?
-- Draw from domains: material, spatial, temporal, creature, object, human background
-- **Checkpoint 2:** World behavior options (from different domains) → user chooses
-- Append World Behavior section to prep.md
+**World Behavior (Automatic):**
+- Read git diff in detail through chosen lens sensitivities
+- Two passes: stats (shape) and messages (texture + keywords)
+- Generate behavior that serves the story direction — through the lens
+- Append World Behavior section to prep.md (no checkpoint)
 
-**Beat Layer:**
-- Read the pressure that's moving
-- Generate story types with opening situations, characters with wants/protecting, stakes
-- **Checkpoint 3:** Directions (each includes its opening situation) → user chooses
-- Append Beat section to prep.md
+**Scene Layer:**
+- Read world.md, arcs.md, lens + world behavior
+- Generate sensory palette, active pressures, world's strangeness
+- **Checkpoint 2:** Scene seeds → user chooses
+- Append Grounding section to prep.md
+
+**Beat (Derived):**
+- Discover territory from lens + scene + material
+- Derive opening, characters, obstacle, stakes, what's unsaid
+- Append Beat section to prep.md (no checkpoint)
 
 **Completion:**
 - Announce "prep.md complete — ready for prose agent"
@@ -321,8 +328,7 @@ cp chronicle/arcs.md chronicle/chapters/NNN-slug/arcs.md
 
 Update `chronicle/manifest.json`:
 - Add new chapter to chapters array
-- Update last_chapter with new chapter info
-- Set git_ref_end to current HEAD commit
+- Set the new chapter's git_ref_end to current HEAD commit
 
 ### Log Post-Prose Updates
 
@@ -421,7 +427,6 @@ When no chronicle exists:
    ```json
    {
      "version": 1,
-     "last_chapter": null,
      "chapters": []
    }
    ```
@@ -493,13 +498,14 @@ chronicle/chapters/NNN-slug/
 
 ## Checkpoint Summary
 
-| Checkpoint | Type | User Action |
-|------------|------|-------------|
-| Scene Seeds | Interactive | Choose or skip |
-| World Behavior | Interactive | Choose from different domains |
-| Directions | Interactive | Choose or skip |
+| Layer | Type | User Action |
+|-------|------|-------------|
+| Lens | **Interactive** | Choose story direction (1-3) or describe own |
+| World Behavior | Automatic | None — generated through lens |
+| Scene | **Interactive** | Choose scene seed (1-3) or describe own |
+| Beat | Automatic | None — derived from above |
 
-**Interactive:** Present 3 options (from different domains for World Behavior). User chooses, combines, adjusts, or skips (`>` to auto-pick).
+Two interactive checkpoints. Each shows "certainty" (what's derived so far) to inspire user intuition.
 
 Post-prose updates (world, arcs, snapshots, manifest) are automatic — no confirmation required.
 
@@ -521,11 +527,12 @@ Options are vocabulary. Even rejected options help articulate what's wanted.
 ## Reference Documents
 
 Consult during execution:
-- `references/layers.md` — Layer definitions, checkpoint formats, prep.md structure
-- `references/disturbance.md` — How to read git diffs for shape and find the rhyme
-- `references/craft.md` — Chapter format, world.md structure, arc shapes
-- `references/voice.md` — Prose craft and patterns (used by both prose and editorial agents)
-- `references/principles.md` — Relational principles embedded in layers
+- `references/qino-scribe/layers.md` — Lens-first architecture, checkpoints, prep.md structure
+- `references/qino-scribe/story-lenses.md` — The twelve lenses, sensitivities, diff resonance
+- `references/qino-scribe/disturbance.md` — How to read git diffs for shape and texture
+- `references/qino-scribe/craft.md` — Chapter format, world.md structure, arc shapes
+- `references/qino-scribe/voice.md` — Prose craft and patterns (used by prose and editorial agents)
+- `references/qino-scribe/principles.md` — Relational principles embedded in layers
 
 ---
 

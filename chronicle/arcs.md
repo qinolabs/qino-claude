@@ -3,30 +3,30 @@
 ## The Upriver Question
 
 *Shape:* hidden
-*Chapters:* 1-3
+*Chapters:* 1-
 
 **In motion:**
-*Holds:* The wanderer confirmed it — "Upriver." Said like closing a door, soft but final. They claimed they're not here to bring trouble. But they studied the water's unusual clarity like something they don't trust. What did they see? What are they not saying?
-*Moves toward:* The silence holds but has cracked slightly. The wanderer won't tell, but they've admitted the direction. Others may piece together what they won't say — the water's strangeness, the wanderer's wariness, what connects them.
+*Holds:* What did the wanderer see upriver? Why did they come alone from a direction no stranger travels?
+*Moves toward:* The silence may break — through the wanderer's own telling, through what others piece together, or through what the upriver sends next. Now Kael is seeking answers too — a child who prefers close questions to far stories.
 
 ---
 
 ## The Watcher's Attention
 
 *Shape:* between
-*Chapters:* 1-3
+*Chapters:* 1-
 
 **In motion:**
-*Holds:* Mari approached through shared work — carrying nets, not questions. She offered an opening: "Nets need turning at midday. You can come back. Or not." The wanderer hasn't answered yet.
-*Moves toward:* Whether the wanderer returns. Whether they can build trust through labor before words. Mari is patient; she can wait. But she also warned: "Trouble doesn't always know what it's bringing."
+*Holds:* Mari marked this arrival as different. She noticed what Daven didn't. What will she do with what she's seen?
+*Moves toward:* The relationship between Mari and the wanderer — whether she asks, whether she waits, whether she tells others what she noticed.
 
 ---
 
 ## A Child Reading Silences
 
 *Shape:* building
-*Chapters:* 2-3
+*Chapters:* 2-
 
 **In motion:**
-*Holds:* Kael was kept home by his mother — she does that "when strangers come from certain directions." The protection is visible now: adults fear the upriver, and they're shielding their children from it. Kael knows more than before, but he's also being held back.
-*Moves toward:* What happens when Kael learns he was kept home because of the wanderer. Whether his mother's fear becomes his own, or whether it sharpens his questions. Whether he finds a way to the stranger despite the protection.
+*Holds:* Kael has learned that adults fear what they don't understand. Daven admitted he's afraid of upriver — and doesn't know why. The protection became the telling.
+*Moves toward:* What Kael does with this knowledge. Whether they seek the wanderer next. Whether they tell Mirin, whose father came back changed.

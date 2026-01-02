@@ -289,11 +289,6 @@ chronicle/
 ```json
 {
   "version": 1,
-  "last_chapter": {
-    "id": "chapter-003",
-    "written": "2025-12-07T18:00:00Z",
-    "git_ref": "abc1234"
-  },
   "chapters": [
     {
       "slug": "001-first-light",

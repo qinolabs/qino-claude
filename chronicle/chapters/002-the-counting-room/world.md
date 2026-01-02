@@ -64,7 +64,11 @@ First appeared: Ch 1, the wharf at first light
 
 Nine or ten years old, with the restless energy of someone who wants to see everything first. Has their mother's eyes — grey-green like the delta water on overcast days. Leans forward when they want something.
 
-*Voice:* Direct, persistent. Asks questions that adults avoid. Doesn't accept deflection: "You stopped counting." "But there's something."
+*Voice:* (Ch 1-2 — questioning adults, seeking what's close)
+- "Where'd you come from?"
+- "You stopped counting."
+- "But there's something."
+- "Because I don't care about far. I care about here. About what's close."
 
 **Has been watching:**
 The minnows. The clear water. The stranger's boat. And now — the silences. The way adults change when upriver is mentioned. What Daven admitted: that he's afraid, and doesn't know of what.
@@ -74,7 +78,11 @@ First appeared: Ch 1, the wharf at first light
 
 Fisher, middle years, hands that work nets without needing her eyes. Watches approaches. Knows what the upriver direction means. Local, rooted, patient.
 
-*Voice:* Efficient, no wasted words. Statements that sound like observations but carry weight: "Not many come from that direction." Doesn't ask questions — waits for information.
+*Voice:* (Ch 1 — watching the stranger's arrival)
+- "Don't know yet."
+- "Not many come from that direction."
+- "They're welcome here. Everyone's welcome here. That's how the delta works."
+- "So can I." (looking at the water, but not at the fish)
 
 **Has been watching:**
 The stranger's hands. How they held themselves. How their eyes found exits and high ground before anything else. She marked this arrival as different.
@@ -84,7 +92,11 @@ First appeared: Ch 1, the wharf at first light
 
 Merchant, younger, three years settled in the delta. Welcomes before he understands. Keeps careful ledgers — salt bushels, lamp oil by the barrel, the steady work of knowing what the delta has and needs. Still learning what the silences mean.
 
-*Voice:* Deflects with questions and offers. When pressed: admits more than he intended. Told Kael the truth — that he's afraid of upriver, and doesn't know why, and has never gone.
+*Voice:* (Ch 1-2 — deflecting, then admitting)
+- "Early for traders. The tide's not even turned."
+- "Welcome. Long way to travel alone."
+- "Someone has to know how much rope we have."
+- "Because I'm afraid. And I don't even know of what."
 
 **Has been watching:**
 His ledger. His counting. The work of staying in place. But now a child has seen through his protection to the fear underneath.

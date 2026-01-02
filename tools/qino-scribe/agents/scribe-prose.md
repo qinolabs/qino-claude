@@ -123,9 +123,16 @@ See `../../qino-lens/references/companion.md` for **Companion's Lens** — world
 
 ---
 
-## World Behavior
+## World Behavior Through the Lens
 
-prep.md includes **World Behavior** — what the world does differently today. Not just weather, but behavior across domains: how materials respond, what creatures do, what objects cooperate or resist, what unnamed people are doing in the background.
+prep.md includes **World Behavior** — what the world does differently today, already seen through your foregrounded sensitivities. The prep agent generated this behavior through the lens, so it's shaped by how you'll perceive.
+
+The World Behavior section tells you:
+- What the world does today — through this lens's sensitivities
+- What becomes visible — what this lens foregrounds
+- What recedes — what's present but not the focus
+
+This is your perceptual guide. The behavior is already synthesized with the lens.
 
 Characters experience this as ordinary. They don't know _why_ the stuck drawer finally opens, or why everyone seems to be settling accounts today. They just live in it.
 
@@ -227,12 +234,10 @@ Something costs the wanderer to notice. Something reveals them without their con
 
 A single file: `prep.md` containing:
 
-- Sensory palette (concrete nouns from the theme)
-- World conditions (environment, atmosphere — how today feels different)
-- Story type and opening situation
-- Characters with wants and what they're protecting
-- What's unsaid
-- Stakes
+- **Story Lens** — which sensitivities to foreground (with qino-lens paths)
+- **World Behavior** — what the world does today, seen through the lens
+- **Grounding** — sensory palette, active pressures, world's strangeness, scene seed
+- **Beat** — territory, opening situation, characters with wants/protecting, obstacle, stakes, what's unsaid
 
 This is your material. You cannot access world.md, arcs.md, or previous conversation.
 

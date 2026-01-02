@@ -1,11 +1,5 @@
 {
   "version": 1,
-  "last_chapter": {
-    "id": "003-what-the-nets-carry",
-    "title": "What the Nets Carry",
-    "written": "2025-12-30T10:30:00Z",
-    "git_ref": "65b5c65"
-  },
   "chapters": [
     {
       "slug": "001-what-the-water-shows",
@@ -21,14 +15,6 @@
       "written": "2025-12-26T10:30:00Z",
       "git_ref_start": "1e806da",
       "git_ref_end": "cd29298",
-      "scribe_version": "0.18.0"
-    },
-    {
-      "slug": "003-what-the-nets-carry",
-      "title": "What the Nets Carry",
-      "written": "2025-12-30T10:30:00Z",
-      "git_ref_start": "cd29298",
-      "git_ref_end": "65b5c65",
       "scribe_version": "0.18.0"
     }
   ]

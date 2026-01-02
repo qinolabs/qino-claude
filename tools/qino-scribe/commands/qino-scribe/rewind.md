@@ -69,7 +69,6 @@ On confirmation:
 
 3. **Update manifest.json:**
    - Remove the last entry from `chapters` array
-   - Update `last_chapter` to reference the previous chapter's info
 
 ### 5. Report
 

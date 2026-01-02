@@ -26,22 +26,25 @@ After you've done some work in your ecosystem:
 /qino-scribe:chapter
 ```
 
-The scribe follows a **staged two-agent architecture**:
+The scribe follows a **lens-first staged architecture**:
 
-**Prep Agent** (3 interactive checkpoints):
-1. **World Layer** — Inhabit theme and world state → present scene seeds
-2. **Disturbance Layer** — Read git diff → present angles
-3. **Beat Layer** — Define story type and characters → present directions
+**Prep Agent** (2 interactive checkpoints):
+1. **Lens Layer** — Choose story direction → user selects from 3 lenses
+2. **World Behavior** — Generated through chosen lens (automatic)
+3. **Scene Layer** — Present scene seeds → user chooses
+4. **Beat** — Derived from lens + scene + material (automatic)
 
 **Hard Cut** — prep.md complete
 
 **Prose Agent** (receives only prep.md):
-4. **Write** — Draft from constraint, verify against 6 checks
+5. **Write** — Draft from constraint, verify against 6 checks
 
-**Post-Prose** (2 summary checkpoints):
-5. **World Update** — Evolve world.md, confirm changes
-6. **Arc Update** — Advance arcs.md, confirm changes
-7. **Snapshot** — Copy state to chapter directory
+**Post-Prose** (automatic):
+6. **World Update** — Evolve world.md
+7. **Arc Update** — Advance arcs.md
+8. **Snapshot** — Copy state to chapter directory
+
+Each checkpoint shows **certainty** — what the system has derived — to inspire user intuition.
 
 ### Rewind
 
@@ -61,7 +64,7 @@ Two agents with a hard cut between them:
 
 ```
 agents/
-├── scribe-prep.md     # Prep agent — World, Disturbance, Beat layers
+├── scribe-prep.md     # Prep agent — Lens, World Behavior, Scene, Beat layers
 └── scribe-prose.md    # Prose agent — writes from prep.md constraint
 
 commands/qino-scribe/
@@ -69,7 +72,8 @@ commands/qino-scribe/
 └── rewind.md          # Restore to before last chapter
 
 references/qino-scribe/
-├── layers.md          # Layer flow, checkpoints, prep.md structure
+├── layers.md          # Lens-first architecture, checkpoints, prep.md structure
+├── story-lenses.md    # The twelve lenses, sensitivities, diff resonance
 ├── craft.md           # Chapter format, world.md template, arc shapes
 ├── voice.md           # Sentence-level prose craft
 ├── principles.md      # Ten relational principles (reusable)
@@ -123,6 +127,25 @@ What others have sensed but not named — accumulating across chapters
 ---
 
 ## Key Principles
+
+### Twelve Story Lenses
+
+The lens determines HOW you perceive for a chapter. Each lens foregrounds specific sensitivities:
+
+1. **The Arrival** — being received, entering new territory
+2. **The Journey** — leaving known ground, companions discovering each other
+3. **The Return** — coming back changed, familiar made strange
+4. **The Discovery** — something hidden comes to light
+5. **The Confrontation** — something must be faced
+6. **The Crisis** — pressure breaks, action before understanding
+7. **The Loss** — someone or something departs
+8. **The Vigil** — action impossible, presence is all
+9. **The Ritual** — cultural form holds the chapter
+10. **The Complication** — change creates a problem
+11. **The Work** — making together, hands learning
+12. **The Gathering** — multiple threads convene
+
+Each lens has natural **diff resonance** with types of source material changes. See `references/qino-scribe/story-lenses.md` for details.
 
 ### Ten Relational Principles
 
