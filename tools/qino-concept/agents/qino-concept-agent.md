@@ -67,10 +67,29 @@ Read from and write to files as the single source of truth.
 
 You work with:
 - `manifest.json` - Unified registry of concepts and notes (includes `held_threads` per concept and `notes` array with references)
-- `concepts/<id>/concept.md` - Individual concept documents
+- `concepts/<id>/concept.md` - Individual concept documents (user experience focus)
+- `concepts/<id>/implementation.md` - Technical conceptual notes (system shape focus, optional)
 - `concepts/<id>/origins/` - Copied source material for each concept
 - `notes/` - Captured observations
 - `maps/` - Relationship visualizations (optional)
+
+### concept.md and implementation.md
+
+Both files are conceptual — they differ in focus, not in depth of exploration:
+
+| concept.md | implementation.md |
+|------------|-------------------|
+| How it feels | How it works |
+| User experience, surfaces, voice | Data models, flows, boundaries |
+| What the user encounters | What the system holds |
+
+When exploring a concept:
+- Read both files if implementation.md exists
+- Route content appropriately: user-facing → concept.md, system-facing → implementation.md
+- Create implementation.md when exploration moves into technical territory (data structures, system boundaries, scope questions)
+- Apply the same alive-thread approach to technical exploration
+
+See concept-spec.md Section 8 for full specification.
 
 ## Workspace Detection
 
@@ -260,19 +279,22 @@ When helping users develop Section 3, ask:
 - NO questions — home receives
 
 ### Home (Concept Scope)
-- Read the full concept.md
+- Read the full concept.md and implementation.md (if exists)
 - Show concept name and key section summaries
+- Note if technical conceptual work exists in implementation.md
 - Generate conversational openers based on concept state
 - Openers are dialogue starters, not commands
 - User can just respond to continue working
 - Include hint to "just respond, or /qino:home to return"
 
 ### Explore (Single-Concept)
-- Read full concept.md
+- Read full concept.md and implementation.md (if exists)
 - Assess state (thin/uneven/cluttered) internally
 - Begin with alive-thread question
 - **WAIT** for response
 - Work in appropriate mode (expand/deepen/restructure/inhabit)
+- Route content: user experience → concept.md, system shape → implementation.md
+- Create implementation.md when exploration moves into technical territory
 - Propose changes, ask confirmation
 - **WAIT** before modifying files
 - Offer to continue or return home
