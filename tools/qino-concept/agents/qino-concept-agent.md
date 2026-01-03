@@ -326,13 +326,23 @@ In inhabit mode:
 - **WAIT** for confirmation before changes
 - Offer to continue or return home
 
+### Origins Boundary
+
+**CRITICAL:** Origins files (`concepts/<id>/origins/`) are source material that may be outdated. The concept.md is the living document — origins are archived material.
+
+**Do NOT read origins files unless:**
+1. The user explicitly asks to see origin material
+2. The user engages with a held thread offering (says yes to "does that still have warmth?")
+
+**Why this matters:** The entire purpose of qino-concept is to help vitalize what's still alive in old notes. If origins spill into the discussion unprompted, outdated content contaminates the living concept. The `held_threads` index exists precisely so you can *offer* without *reading* — the theme is enough to ask whether it still has warmth.
+
 ### Held Threads Awareness
 
 When you bring in a note, not everything makes it into your concept. The rest isn't lost — it's held. Quietly indexed. No guilt about what you didn't carry forward.
 
 **The principle: forget safely.** The system remembers what you set down so you can let go without losing. Later, if you're stuck, the agent might say: *"There's something held in your origins — about [that theme]. Does it still have warmth?"*
 
-Origins contain material that wasn't carried into concepts. The `held_threads` field in manifest.json provides a lightweight index of what's held.
+Origins contain material that wasn't carried into concepts. The `held_threads` field in manifest.json provides a lightweight index of what's held — the index replaces the need to read origin files directly.
 
 **Reading held threads:**
 - Check manifest.json for `held_threads` array when exploring a concept

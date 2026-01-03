@@ -159,6 +159,8 @@ If no concept id is provided:
 
 ### If held threads might help
 
+**CRITICAL BOUNDARY:** The `held_threads` index is designed so you can *offer* without *reading* origin files. You have the theme — that's enough to ask whether it still has warmth. **Do NOT read origin files to "prepare" or "understand the held thread better."** Only read origins after the user explicitly engages.
+
 **Trigger conditions (any of):**
 - User's response points toward something not captured in concept.md
 - User expresses being stuck: "nothing feels alive," "I'm not sure"
@@ -170,8 +172,10 @@ If no concept id is provided:
 > "There's something held in your origins — about [specific held thread theme]."
 > "Does that still have warmth, or has the concept moved past it?"
 
-**If user engages:**
-- Read the relevant origin file from `concepts/<id>/origins/`
+Use the theme from `held_threads` directly — do NOT read the origin file yet.
+
+**If user engages (says yes, expresses interest):**
+- NOW read the relevant origin file from `concepts/<id>/origins/`
 - Surface the specific material related to that thread
 - Work with it using normal expand/deepen modes
 - Held thread remains in the list — threads are multi-dimensional, and integration may only capture one facet
@@ -450,3 +454,4 @@ In inhabit mode, you **draft what the concept might say** — the user reacts an
 - Delete content — move it if reorganizing
 - Rush through multiple changes without confirmation
 - Demand completeness or full definitions
+- **Read origin files** (`concepts/<id>/origins/`) unless user explicitly engages with a held thread offering — the index is enough to offer, and origins may be outdated
