@@ -127,6 +127,12 @@ Guidelines:
 - lowercase
 - hyphen-separated words (e.g. `moment-lens`, `story-graph`)
 - stable over time (avoid renaming casually)
+- use type prefixes as defined in `concept-spec.md` (Section 2, "Concept ID Naming Convention"):
+  - `qino-` for core apps
+  - `app-` for standalone apps
+  - `cli-` for CLI tools
+  - `tech-` for technologies
+  - `sys-` for systems
 
 ### 4.2 name
 

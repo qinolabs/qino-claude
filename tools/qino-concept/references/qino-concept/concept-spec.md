@@ -29,6 +29,27 @@ concepts/<concept-id>/
   origins/           # copied source material (optional)
 ```
 
+### Concept ID Naming Convention
+
+Concept IDs use prefixes to indicate the type of concept:
+
+| Prefix | Type | Description | Examples |
+|--------|------|-------------|----------|
+| `qino-` | Core app | Core qino ecosystem apps | `qino-world`, `qino-walk`, `qino-drops`, `qino-journey` |
+| `app-` | Standalone app | Apps not part of core qino suite | `app-gmtool`, `app-qino-frame`, `app-qino-journal` |
+| `cli-` | CLI tool | Command-line tools for creators/developers | `cli-qino-scribe`, `cli-qino-relay`, `cli-qino-concept` |
+| `tech-` | Technology | Core technologies and UI patterns | `tech-qino-lens`, `tech-discovery-grid` |
+| `sys-` | System | Foundational systems and conventions | `sys-qino-design`, `sys-qino-commands` |
+| (none) | Project/other | Project-specific concepts | `qinolabs-homepage` |
+
+**Guidelines:**
+- Keep "qino" in the name if it's part of the product name (e.g., `app-qino-frame` not `app-frame`)
+- Core apps use `qino-` prefix (these are the main ecosystem apps that deeply integrate)
+- Standalone apps use `app-` prefix (independent apps that may connect to the ecosystem)
+- CLI tools use `cli-` prefix (developer/creator-facing command-line tools)
+- Technologies use `tech-` prefix (underlying capabilities that power multiple apps)
+- Systems use `sys-` prefix (foundational patterns and conventions)
+
 The `origins/` directory contains copies of external notes that were integrated into this concept. This keeps references self-contained within the repository.
 
 The `implementation.md` file holds implementation-specific details that complement what concept.md describes. See Section 8 for details.
