@@ -207,7 +207,8 @@ your-workspace/
   manifest.json              # keeps track of concepts and notes
   concepts/
     my-app-idea/
-      concept.md             # the developing concept
+      concept.md             # user experience focus (how it feels)
+      implementation.md      # technical focus (how it works) — optional
       origins/               # source material you brought in
         original-notes.md
     another-idea/

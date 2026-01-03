@@ -12,6 +12,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [0.21.0] - 2025-12-30
 
+### qino Concept
+
+#### Added
+
+- **`implementation.md` as concept companion** — technical conceptual notes now live alongside `concept.md`; concept.md holds user experience (how it feels), implementation.md holds system shape (how it works); same alive-thread approach applies to both
+
+#### Fixed
+
+- **Origins boundary** — explicit prohibition on reading origin files (`concepts/<id>/origins/`) unless user explicitly engages with a held thread offering; the `held_threads` index exists so the agent can offer without reading — theme is enough to ask "does that still have warmth?"
+
 ### qino Relay (New Tool)
 
 #### Added
