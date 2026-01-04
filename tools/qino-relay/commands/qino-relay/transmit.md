@@ -312,20 +312,59 @@ When no journal exists:
    ```markdown
    # The Student
 
+   This file holds the Student's accumulated learning across transmissions. Some sections flow into each transmission's "Where I Am Now" coda; others are context for the prose agent.
+
+   ---
+
    ## Reflections
-   *Short internal meta-learning notes. The Student's own noticing.*
+
+   *What the Student notices about their own learning. Meta-learning, not content insights.*
+
+   **Format:** Dated entries, 1-2 sentences each. First person.
+   **Flows to:** `metaLearning` field in transmission coda (most recent relevant reflection).
+
+   ### [Date]
+   [What the Student noticed about how they're learning, not what they learned]
+
+   ---
 
    ## What Has Been Transmitted
-   *Vocabulary readers know. The Student can reference without re-explaining.*
+
+   *Vocabulary readers now share. The Student can reference without re-explaining.*
+
+   **Format:** `term` — definition (Transmission NNN)
+   **Flows to:** Prose agent context only. Not in transmission StudentState.
+   **Purpose:** Threading. The Student knows what words readers already have.
+
+   ---
 
    ## Connections Noticed
-   *Cross-transmission insights. Accumulated seeing.*
+
+   *Cross-transmission insights. Patterns that recur across different material.*
+
+   **Format:** Statement with transmission references. One line each.
+   **Flows to:** `connectionsNoticed[]` in transmission coda (relevant subset).
+   **Quality:** Names a connection, not just lists related things.
+
+   ---
 
    ## Questions Held
-   *Uncertainties carried forward. May resolve, may remain open.*
+
+   *Uncertainties the Student carries forward. May resolve, may transform, may remain open.*
+
+   **Format:** Question or tension. Brief context optional.
+   **Flows to:** `questionsHeld[]` in transmission coda (relevant subset).
+   **Lifecycle:** Some close, some stay open, some transform into new questions.
+
+   ---
 
    ## Recent Memory
-   *Threading context. Recent transmissions vivid, older ones echoes.*
+
+   *Threading context. What's vivid enough to reference without re-explaining.*
+
+   **Format:** `Transmission NNN: [title]` — 1-2 sentence summary of key movement.
+   **Flows to:** Prose agent context only. Not in transmission StudentState.
+   **Lifecycle:** Keep 2-3 most recent. Older transmissions migrate their vocabulary, connections, and questions to other sections.
    ```
 
 3. **Create manifest.json**

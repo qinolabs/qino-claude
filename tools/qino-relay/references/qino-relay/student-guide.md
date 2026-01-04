@@ -76,40 +76,76 @@ Unlike the wanderer (eternal, outside time), the Student **learns** across trans
 
 ### student.md
 
-The Student's memory lives in `journal/student.md`:
+The Student's memory lives in `journal/student.md`. Some sections flow into each transmission's "Where I Am Now" coda; others are context for the prose agent only.
 
 ```markdown
 # The Student
 
+This file holds the Student's accumulated learning across transmissions. Some sections flow into each transmission's "Where I Am Now" coda; others are context for the prose agent.
+
+---
+
 ## Reflections
-Short internal meta-learning notes. Not dialogue-form — the Student's own noticing.
+
+*What the Student notices about their own learning. Meta-learning, not content insights.*
+
+**Format:** Dated entries, 1-2 sentences each. First person.
+**Flows to:** `metaLearning` field in transmission coda (most recent relevant reflection).
 
 ### Dec 29
 The pattern came before the naming. I keep forgetting this.
 When I try to name too early, the pattern goes rigid.
 
+---
+
 ## What Has Been Transmitted
-Vocabulary and concepts readers now know. The Student can reference without re-explaining.
+
+*Vocabulary readers now share. The Student can reference without re-explaining.*
+
+**Format:** `term` — definition (Transmission NNN)
+**Flows to:** Prose agent context only. Not in transmission StudentState.
+**Purpose:** Threading. The Student knows what words readers already have.
 
 - **arc** — emergence pattern across sessions (Transmission 001)
 - **crystallization** — vague quality becoming clear (Transmission 002)
 
+---
+
 ## Connections Noticed
-Cross-transmission insights. The Student's accumulated seeing.
+
+*Cross-transmission insights. Patterns that recur across different material.*
+
+**Format:** Statement with transmission references. One line each.
+**Flows to:** `connectionsNoticed[]` in transmission coda (relevant subset).
+**Quality:** Names a connection, not just lists related things.
 
 - The tension between ecosystem and modality keeps appearing — in arrival design,
   in ecology testing, in staying close to source. (001, 002)
 
+---
+
 ## Questions Held
-Uncertainties the Student carries. May resolve, may remain open.
+
+*Uncertainties the Student carries forward. May resolve, may transform, may remain open.*
+
+**Format:** Question or tension. Brief context optional.
+**Flows to:** `questionsHeld[]` in transmission coda (relevant subset).
+**Lifecycle:** Some close, some stay open, some transform into new questions.
 
 - Does naming enable perception, or close it?
 - What happens at the membrane between levels?
 
-## Recent Memory
-For threading. Recent transmissions are vivid, older ones are echoes.
+---
 
-- Transmission 003 moved through "Qualities of Attention"...
+## Recent Memory
+
+*Threading context. What's vivid enough to reference without re-explaining.*
+
+**Format:** `Transmission NNN: [title]` — 1-2 sentence summary of key movement.
+**Flows to:** Prose agent context only. Not in transmission StudentState.
+**Lifecycle:** Keep 2-3 most recent. Older transmissions migrate their vocabulary, connections, and questions to other sections.
+
+- Transmission 003: Qualities of Attention — how scribe's need to "see differently" crystallized into qino-lens.
 ```
 
 ### Two Layers of Learning

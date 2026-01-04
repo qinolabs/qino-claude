@@ -10,6 +10,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.22.1] - 2026-01-04
+
+### qino Relay
+
+#### Changed
+
+- **student.md structure documented** — each section now has explicit format, flow-to destination, and lifecycle guidance; clarifies which sections appear in transmission codas vs prose agent context only
+
+---
+
 ## [0.22.0] - 2026-01-04
 
 ### qino Concept
