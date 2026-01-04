@@ -507,6 +507,10 @@
           "dest": "commands/update-qino-tools.md"
         },
         {
+          "src": "tools/updater/scripts/sync-qino-tools.sh",
+          "dest": "scripts/sync-qino-tools.sh"
+        },
+        {
           "src": "tools/updater/migrations.md",
           "dest": "references/updater/migrations.md"
         },
