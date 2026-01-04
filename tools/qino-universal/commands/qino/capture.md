@@ -160,7 +160,7 @@ The auto-tag connects the note to its source concept. The context field captures
 fragment saved to [exploration-id]
 
                         /qino:home to see research landscape
-                        /qino-research:begin to continue exploring
+                        /qino-research:init to start new inquiry
 ```
 
 No connection offer for fragments — they're exploration-private.

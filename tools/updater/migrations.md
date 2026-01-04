@@ -12,6 +12,42 @@ Each version section includes:
 
 ---
 
+## v0.22.0 (Command Naming Standardization)
+
+**Summary**: Standardized command naming across namespaces. Each namespace now has `:setup` (one-time workspace scaffolding) and `:init` (create new item). The old `:init` commands that created workspaces are now `:setup`, and `:init` creates new items within the workspace.
+
+**Naming Pattern**:
+- `<namespace>:setup` — One-time workspace scaffolding
+- `<namespace>:init` — Create new item (concept, app, inquiry)
+
+**Delete** (renamed commands):
+- `.claude/commands/qino-concept/init.md` (was workspace setup, now `:setup`)
+- `.claude/commands/qino-dev/init.md` (was workspace + app creation, now split)
+- `.claude/commands/qino-research/begin.md` (renamed to `:init`)
+
+**New**:
+- `.claude/commands/qino-concept/setup.md` — workspace scaffolding
+- `.claude/commands/qino-concept/init.md` — create new concept from impulse
+- `.claude/commands/qino-dev/setup.md` — workspace scaffolding
+- `.claude/commands/qino-dev/init.md` — create app from concept or standalone
+- `.claude/commands/qino-research/setup.md` — workspace scaffolding
+- `.claude/commands/qino-research/init.md` — create new inquiry
+
+**Rename**:
+- `/qino-concept:init` (workspace) → `/qino-concept:setup`
+- `/qino-dev:init` (workspace + app) → `/qino-dev:setup` + `/qino-dev:init`
+- `/qino-research:begin` → `/qino-research:init`
+
+**User action**:
+- Delete old command files before updating
+- Use `/qino-concept:setup` to set up workspace (was `/qino-concept:init`)
+- Use `/qino-concept:init` to create new concepts (new capability)
+- Use `/qino-dev:setup` to set up workspace, then `/qino-dev:init` to create apps
+- Use `/qino-research:setup` to set up workspace (new capability)
+- Use `/qino-research:init` instead of `/qino-research:begin`
+
+---
+
 ## v0.21.0 (qino-relay)
 
 **Summary**: qino-journal renamed to qino-relay with evolved Student identity. The Student now walks alongside readers as a companion who has learned the material, rather than pretending uncertainty.

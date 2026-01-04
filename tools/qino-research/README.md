@@ -19,8 +19,9 @@ Unlike concepts (which stabilize over time), research moves fast, welcomes uncer
 
 | Command | Purpose |
 |---------|---------|
+| `/qino-research:setup` | Set up research workspace (one-time) |
+| `/qino-research:init [topic]` | Create a new inquiry |
 | `/qino:home` | See the research landscape (universal command, context-aware) |
-| `/qino-research:begin [topic]` | Start or continue an inquiry |
 | `/qino:arc [title]` | Capture an emergence pattern |
 
 ---

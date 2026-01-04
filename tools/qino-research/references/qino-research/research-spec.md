@@ -370,7 +370,7 @@ Research commands can be invoked from non-research repos that have a `researchRe
 
 ### How It Works
 
-When `/qino-research:begin` (or other research commands) runs:
+When `/qino-research:init` (or other research commands) runs:
 
 1. Check current repo's `.claude/qino-config.json`
 2. If `repoType: "research"` → use current directory as workspace
@@ -387,7 +387,7 @@ When `/qino-research:begin` (or other research commands) runs:
 }
 ```
 
-Running `/qino-research:begin` from this repo will:
+Running `/qino-research:init` from this repo will:
 - Create inquiries in `../qino-research/inquiries/`
 - Update manifest at `../qino-research/manifest.json`
 - Record `sourceRepo` in the inquiry entry for context

@@ -139,7 +139,7 @@ from here
   [observation line 2]
   [action line 2]
 
-                        /qino-research:begin <topic> to explore
+                        /qino-research:init <topic> to start inquiry
                         /qino-research:experiment to test
                         /qino:capture to hold a thought
                         /qino:attune to refine a quality
@@ -164,7 +164,7 @@ Examples:
 - If an exploration has active threads:
   ```
   [exploration-name] has [N] open threads
-  /qino-research:begin [id] to continue
+  /qino-research:init [topic] to start inquiry
   ```
 
 - If a calibration is complete:
@@ -182,7 +182,7 @@ Examples:
 - If nothing active:
   ```
   research space is quiet
-  /qino-research:begin to start something new
+  /qino-research:init to start something new
   ```
 
 - If something might be ready to graduate:

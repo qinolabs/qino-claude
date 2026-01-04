@@ -55,7 +55,8 @@ your-project/
       qino-concept/            # From qino-concept
         explore.md
         import.md
-        init.md
+        setup.md
+        create.md
     agents/
       qino-concept-agent.md
     references/
@@ -80,7 +81,7 @@ Start Claude Code in that project folder. The `/qino:...` and `/qino-concept:...
 Pick a folder where you want to develop concepts, then:
 
 ```
-/qino-concept:init
+/qino-concept:setup
 ```
 
 This creates a simple structure — a place for concepts to live.
@@ -136,10 +137,11 @@ The agent asks what feels alive and helps you develop that thread — expanding,
 
 | Command | What it does |
 |---------|--------------|
+| `/qino-concept:setup` | Set up a new workspace (one-time) |
+| `/qino-concept:init name` | Create a new concept from an impulse |
 | `/qino-concept:explore concept-name` | Actively work with a concept — deepen, expand, or step into moments to find the voice |
 | `/qino-concept:explore concept-a concept-b` | Explore connections between concepts |
 | `/qino-concept:import path` | Bring in external material — a file or folder |
-| `/qino-concept:init` | Set up a new workspace (one-time) |
 
 ---
 
@@ -176,7 +178,7 @@ You don't fill these out in order. The agent helps you develop whichever section
 ## A typical flow
 
 ```
-/qino-concept:init
+/qino-concept:setup
 
 /qino-concept:import ~/Documents/app-idea.md
 

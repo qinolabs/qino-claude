@@ -152,7 +152,7 @@ Add entry to research workspace `manifest.json` arcs array:
 captured: [essence]
 
                         /qino:home to see research landscape
-                        /qino-research:begin to continue an inquiry
+                        /qino-research:init to start new inquiry
 ```
 
 Done.

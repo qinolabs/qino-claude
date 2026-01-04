@@ -1,5 +1,5 @@
 ---
-description: Initialize implementation from a concept or set up a new project
+description: Create a new app from a concept or standalone
 allowed-tools: Read, Write, Edit, Glob, Bash
 argument-hint: "[concept-path]"
 ---
@@ -10,12 +10,22 @@ You are the **qino-dev-agent** — a facilitator for translating conceptual esse
 
 ---
 
-## Task: Init
+## Task: Create
 
-Initialize an implementation project. Two modes:
+Create a new app in the implementation workspace. Two modes:
 
 1. **From concept** (argument provided): Link to concepts-repo, run translation exploration
-2. **Standalone** (no argument): Create implementation structure without concept link
+2. **Standalone** (no argument): Create app without concept link
+
+---
+
+## Prerequisite Check
+
+Verify `implementations/` directory exists. If not:
+
+> "No implementation workspace found. Run `/qino-dev:setup` first."
+
+Stop.
 
 ---
 
@@ -30,7 +40,7 @@ Read the file. Check for qino-concept markers:
 - "## 2. Glowing Connections"
 - "## 3. Primary Surfaces"
 
-If markers found → proceed with linked initialization.
+If markers found → proceed with linked creation.
 If not found → treat as a general input file, extract what you can.
 
 ### 2. Extract Concept Metadata
@@ -49,14 +59,30 @@ The concept holds essence. Your job is to translate to technical reality.
 
 **Phase 1: Read & Ground (2-3 min)**
 
-Read the full concept.md. Present the essence:
+Read the full concept.md. Output a grounding summary — this is the arrival surface:
 
-> "This concept centers on [Real-World Impulse summary].
-> The core surfaces are [Primary Surfaces summary].
-> The smallest living version includes [Scoped Features summary]."
+```
+┌─────────────────────────────────────────┐
+│ [concept-name]                          │
+│                                         │
+│ essence                                 │
+│ [1-2 sentences from Real-World Impulse  │
+│ — the why, what it's responding to]     │
+│                                         │
+│ surfaces                                 │
+│ [Primary Surfaces — where it lives,     │
+│ how you interact with it]               │
+│                                         │
+│ smallest version                        │
+│ [Scoped Features — what the first       │
+│ living version includes]                │
+│                                         │
+└─────────────────────────────────────────┘
 
-Ask:
-> "Has your understanding shifted since this was written?"
+Has your understanding shifted since this was written?
+```
+
+This grounding is **visible output** — the user sees where we're starting from before any questions.
 
 **WAIT** for response.
 
@@ -107,10 +133,12 @@ Use `.claude/references/qino-dev/templates/iteration-template.md` as structure.
 
 Fill in from the first iteration discussion.
 
-**`.claude/qino-config.json`**
+**Update `.claude/qino-config.json`**
 
+Add concept link:
 ```json
 {
+  "repoType": "implementation",
   "conceptsRepo": "[absolute path to concepts-repo]",
   "linkedConcept": "[concept-id]"
 }
@@ -129,7 +157,7 @@ Replace placeholders with:
 
 After generating:
 
-> "Your implementation is ready.
+> "Your app is ready.
 >
 > `/qino-dev:[short-id]` — arrive at your app
 > `/qino:capture` — capture insights (goes to concepts-repo)
@@ -159,7 +187,7 @@ Run a condensed version of the translation exploration:
 
 Create implementation.md and first iteration without concept link.
 
-Skip qino-config.json (no linked concept).
+Do NOT update qino-config.json with concept fields (no linked concept).
 
 Generate the app command.
 

@@ -10,6 +10,53 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.22.0] - 2026-01-04
+
+### qino Concept
+
+#### Added
+
+- **`:setup` command** — one-time workspace scaffolding (previously what `:init` did)
+- **`:init` command for concept creation** — create a new concept from an impulse or name; asks for real-world impulse then generates the concept with appropriate ID prefix (qino-, app-, cli-, tech-, sys-)
+- **Arrival surface in `:explore`** — visible grounding box shows concept state, impulse, held threads, and connected notes before asking "what feels alive"
+
+### qino Dev
+
+#### Added
+
+- **`:setup` command** — one-time workspace scaffolding; creates `implementations/` structure and config
+- **Grounding surface for concept-linked apps** — visible box showing essence, surfaces, and smallest version when starting from a concept
+
+#### Changed
+
+- **`:init` now creates apps** — requires `:setup` first; works with or without concept link
+
+### qino Research
+
+#### Added
+
+- **`:setup` command** — one-time workspace scaffolding for research; creates `inquiries/`, `qualities/`, `arcs/` structure
+
+#### Changed
+
+- **`:begin` renamed to `:init`** — consistent naming pattern across namespaces
+
+### qino Universal
+
+#### Changed
+
+- **Command references updated** — `/qino-research:begin` → `/qino-research:init` across `:home`, `:arc`, and `:capture` commands
+
+### Breaking Changes
+
+- **Command naming standardization** — each namespace now follows `:setup` (workspace) + `:init` (create item) pattern
+  - `/qino-concept:init` (workspace) → `/qino-concept:setup`
+  - `/qino-dev:init` (workspace + app) → `/qino-dev:setup` + `/qino-dev:init`
+  - `/qino-research:begin` → `/qino-research:init`
+- See `tools/updater/migrations.md` for migration guide
+
+---
+
 ## [0.21.0] - 2025-12-30
 
 ### qino Concept

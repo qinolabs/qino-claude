@@ -139,19 +139,39 @@ If no concept id is provided:
 
 2. Read the full `concept.md` using the `path` field.
 
-3. **Silently** assess the concept's state (produce NO output for this step):
+3. Assess the concept's state:
    - **Thin**: Fewer than 3 sections have substance → likely needs expanding
    - **Uneven**: Some sections rich, others empty → likely needs deepening
    - **Cluttered**: All sections have content but feel disorganized → likely needs restructuring
    - **Has held threads**: Check manifest for `held_threads` array — material from origins that wasn't carried forward
    - **Has notes**: Check manifest `notes` array for entries where any `reference.scope` = this concept id and status suggests active (not "integrated", not "dormant")
 
-   This assessment informs your approach but is NEVER output as text. The user does not see "Currently, the concept has..." or any summary of your analysis.
+4. Output an arrival surface — this is **visible output** showing where we're starting:
 
-4. Begin with the alive-thread question (this is your FIRST visible output):
-   > "What part of this feels most alive right now?"
+```
+┌─────────────────────────────────────────┐
+│ [concept-name]                          │
+│                                         │
+│ impulse                                 │
+│ [1-2 sentences from Real-World Impulse] │
+│                                         │
+│ state                                   │
+│ [what's here — e.g., "surfaces defined, │
+│ tone still quiet, 3 held threads"]      │
+│                                         │
+│ held threads (if any)                   │
+│ · [thread 1 theme]                      │
+│ · [thread 2 theme]                      │
+│                                         │
+│ connected notes (if any)                │
+│ · [note essence]                        │
+│                                         │
+└─────────────────────────────────────────┘
 
-   This question is more important than your state assessment. The user's response reveals what's actually needed.
+What part of this feels most alive right now?
+```
+
+The arrival surface grounds both of you — you see where things stand before deciding where to go.
 
 5. **WAIT** for the user's response.
 

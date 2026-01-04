@@ -149,6 +149,10 @@
           "dest": "commands/qino-concept/init.md"
         },
         {
+          "src": "tools/qino-concept/commands/qino-concept/setup.md",
+          "dest": "commands/qino-concept/setup.md"
+        },
+        {
           "src": "tools/qino-concept/references/qino-concept/concept-spec.md",
           "dest": "references/qino-concept/concept-spec.md"
         },
@@ -180,6 +184,10 @@
         {
           "src": "tools/qino-dev/commands/qino-dev/init.md",
           "dest": "commands/qino-dev/init.md"
+        },
+        {
+          "src": "tools/qino-dev/commands/qino-dev/setup.md",
+          "dest": "commands/qino-dev/setup.md"
         },
         {
           "src": "tools/qino-dev/references/qino-dev/home-pattern.md",
@@ -319,8 +327,12 @@
           "dest": "agents/qino-research-agent.md"
         },
         {
-          "src": "tools/qino-research/commands/qino-research/begin.md",
-          "dest": "commands/qino-research/begin.md"
+          "src": "tools/qino-research/commands/qino-research/init.md",
+          "dest": "commands/qino-research/init.md"
+        },
+        {
+          "src": "tools/qino-research/commands/qino-research/setup.md",
+          "dest": "commands/qino-research/setup.md"
         },
         {
           "src": "tools/qino-research/references/qino-research/research-spec.md",

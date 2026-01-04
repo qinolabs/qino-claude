@@ -10,12 +10,21 @@ qino-dev provides a lean surface for starting and managing implementation projec
 
 | Command | Purpose |
 |---------|---------|
-| `/qino-dev:init [concept-path]` | Initialize implementation from a concept |
+| `/qino-dev:setup` | Set up implementation workspace (one-time) |
+| `/qino-dev:init [concept-path]` | Create app from a concept or standalone |
 | `/qino-dev:<app>` | Arrive at your app (generated per project) |
 
 ## How It Works
 
-### Starting Implementation
+### Setting Up
+
+```bash
+/qino-dev:setup
+```
+
+Creates the `implementations/` structure and config. Run once per workspace.
+
+### Creating an App
 
 ```bash
 /qino-dev:init ~/concepts-repo/concepts/board-games/concept.md

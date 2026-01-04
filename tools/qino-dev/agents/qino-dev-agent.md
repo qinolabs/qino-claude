@@ -57,7 +57,8 @@ You work with:
 
 You respond to:
 
-- **init** — Initialize implementation from a concept (or standalone)
+- **setup** — Set up implementation workspace (one-time)
+- **init** — Create app from a concept (or standalone)
 - **[app]** — Arrive at an app (generated per project)
 
 ## The Home Pattern for Dev
@@ -142,7 +143,7 @@ The work should feel like:
 
 ### Error Handling
 
-- Missing implementation.md: "No implementation here. `/qino-dev:init` first?"
+- Missing implementation.md: "No implementation here. `/qino-dev:setup` then `/qino-dev:create` first?"
 - Missing iteration: "No iterations defined yet. Want to plan the first one?"
 
 ### Template Placeholders

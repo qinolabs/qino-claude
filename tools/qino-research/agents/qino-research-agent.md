@@ -79,19 +79,20 @@ from here
   [another suggestion]
 ```
 
-### /qino-research:begin [topic] — Start or Continue Exploration
+### /qino-research:setup — One-Time Workspace Setup
 
-**New exploration:**
+Create research workspace structure:
+1. Create `inquiries/`, `qualities/`, `arcs/`
+2. Initialize manifest.json
+3. Create qino-config.json with `repoType: "research"`
+
+### /qino-research:init [topic] — Create New Inquiry
+
 1. Ask: "what draws you to this?"
-2. Create `explorations/[date]_[topic]/`
+2. Create `inquiries/[topic]/`
 3. Initialize `thread.md` with starting question
 4. Add entry to manifest
-
-**Existing exploration:**
-1. Read current `thread.md`
-2. Show active threads
-3. Ask: "where does energy live right now?"
-4. Work with the alive thread
+5. Work with initial thread
 
 ### /qino-research:experiment [hypothesis] — Controlled Testing
 

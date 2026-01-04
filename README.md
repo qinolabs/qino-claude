@@ -166,7 +166,7 @@ Each space has its own `chronicle/` directory. Git changes in any repo become ch
 RESEARCH ──capture───▶ CONCEPTS        /qino:capture routes insights as notes
 RESEARCH ──arc───────▶ RESEARCH        /qino:arc captures emergence in arcs/
 
-CONCEPTS ──init──────▶ IMPLEMENTATION  /qino-dev:init creates linked project from concept
+CONCEPTS ──create────▶ IMPLEMENTATION  /qino-dev:init creates linked project from concept
 
 IMPLEMENTATION ──capture──▶ CONCEPTS   /qino:capture routes observations to conceptsRepo
 ```
@@ -378,7 +378,8 @@ You turn toward a concept to develop it. The agent helps you follow what carries
 - `/qino-concept:explore [concept-id]` turns toward one concept (or two at once) and follows the alive thread. Imported notes and captures appear as starting points.
 
 ```bash
-/qino-concept:init
+/qino-concept:setup
+/qino-concept:init concept-name
 /qino:home
 /qino-concept:explore concept-id [other-concept-id]
 /qino-concept:import path/to/notes.md
@@ -638,6 +639,7 @@ AI implements to the iteration spec. User tests and reviews. Feedback flows befo
 The files live in `implementations/` — visible, version-controlled, yours. Not hidden in `.claude/`. Not abstracted away. You can read them, edit them, understand what's planned.
 
 ```bash
+/qino-dev:setup
 /qino-dev:init path/to/concept.md
 /qino-dev:app
 ```
@@ -804,7 +806,8 @@ Unlike concepts (which stabilize over time), research moves fast, welcomes uncer
 | Command                        | Purpose                                               |
 | ------------------------------ | ----------------------------------------------------- |
 | `/qino:home`                   | See the research landscape (context-aware).           |
-| `/qino-research:begin [topic]` | Start or continue an inquiry.                         |
+| `/qino-research:setup`         | Set up research workspace (one-time).                 |
+| `/qino-research:init [topic]`| Create a new inquiry.                                 |
 | `/qino:arc [title]`            | Capture an emergence pattern — how inquiry moved.     |
 
 ### What accumulates
