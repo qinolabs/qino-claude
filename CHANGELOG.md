@@ -10,6 +10,46 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.22.3] - 2026-01-04
+
+### qino Relay
+
+#### Added
+
+- **Encounter Mode** — the Student now encounters arc material rather than just translating it; reader witnesses the encounter through texture shifts, dialogue with phrases, and inhabited edges
+- **Source moments** — `source-moments.md` reference for working with specific passages that have their own voice
+- **Being Affected** — relay-prose and relay-editorial now assess whether the Student is genuinely affected by material, not just processing it
+
+#### Changed
+
+- **Phrase syntax in transmissions** — specific patterns for encountering phrases ("'Meaning-searching versus meaning-finding.' There's something in that hyphen...")
+- **Inhabited coda** — "Where I Am Now" section now requires genuine stops rather than marked openness
+- **Reference paths** — all cross-references now use `.claude/references/` prefix for correct resolution in target workspaces
+
+### qino Scribe
+
+#### Fixed
+
+- **Reference paths** — all references to qino-lens and qino-scribe files now use `.claude/references/` prefix
+
+### qino Util
+
+#### Fixed
+
+- **Reference paths** — template references now use `.claude/references/` prefix
+
+### Updater
+
+#### Added
+
+- **Bash sync script** — `sync-qino-tools.sh` replaces ~35 tool invocations with a single deterministic script; handles manifest parsing, version comparison, file copying, and -dev suffix marking
+
+#### Changed
+
+- **Simplified command** — `/update-qino-tools` now bootstraps and runs the script rather than orchestrating file-by-file
+
+---
+
 ## [0.22.2] - 2026-01-04
 
 ### qino Lens

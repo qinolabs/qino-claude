@@ -965,6 +965,18 @@ _[Source](tools/qino-relay/)_
 
 <br>
 
+![Transmission view with arc highlighting](docs/images/journal/transmission-view.png)
+
+![Student coda and thread references](docs/images/journal/student-coda.png)
+
+> _"What makes this tricky is — you can't see it happening until after. Something shifted here. The vague thing became speakable. When I first saw this arc, I thought it was about metaphor. But let me try to make it concrete..."_
+>
+> — The Student, walking alongside a reader through "Recognition Through Indirection"
+
+**[Read the journal →](https://journal.qinolabs.com/)**
+
+<br>
+
 ## Design Adventure
 
 A design conversation that already happened. You arrive afterward.

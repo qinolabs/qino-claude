@@ -261,28 +261,28 @@
           "dest": "commands/wanderer.md"
         },
         {
-          "src": "tools/qino-lens/references/companion.md",
-          "dest": "references/companion.md"
+          "src": "tools/qino-lens/references/qino-lens/companion.md",
+          "dest": "references/qino-lens/companion.md"
         },
         {
-          "src": "tools/qino-lens/references/narrator.md",
-          "dest": "references/narrator.md"
+          "src": "tools/qino-lens/references/qino-lens/narrator.md",
+          "dest": "references/qino-lens/narrator.md"
         },
         {
-          "src": "tools/qino-lens/references/newcomer.md",
-          "dest": "references/newcomer.md"
+          "src": "tools/qino-lens/references/qino-lens/newcomer.md",
+          "dest": "references/qino-lens/newcomer.md"
+        },
+        {
+          "src": "tools/qino-lens/references/qino-lens/student.md",
+          "dest": "references/qino-lens/student.md"
         },
         {
           "src": "tools/qino-lens/references/qino-lens/version.json",
           "dest": "references/qino-lens/version.json"
         },
         {
-          "src": "tools/qino-lens/references/student.md",
-          "dest": "references/student.md"
-        },
-        {
-          "src": "tools/qino-lens/references/wanderer.md",
-          "dest": "references/wanderer.md"
+          "src": "tools/qino-lens/references/qino-lens/wanderer.md",
+          "dest": "references/qino-lens/wanderer.md"
         }
       ]
     },
@@ -308,6 +308,10 @@
         {
           "src": "tools/qino-relay/references/qino-relay/reader-journey-guide.md",
           "dest": "references/qino-relay/reader-journey-guide.md"
+        },
+        {
+          "src": "tools/qino-relay/references/qino-relay/source-moments.md",
+          "dest": "references/qino-relay/source-moments.md"
         },
         {
           "src": "tools/qino-relay/references/qino-relay/student-guide.md",
