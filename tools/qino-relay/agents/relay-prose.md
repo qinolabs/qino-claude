@@ -386,20 +386,17 @@ Questions woven in, difficulty voiced, abstract made concrete.]
 
 ## Where I Am Now
 
-**Still holding:**
-- [Question that remains open]
-
-**Starting to see:**
-- [Connection emerging]
-
-**What I'm noticing about this:**
-[Meta-learning — what the Student is learning about their own learning]
+[Prose coda — continues the Student's voice. No labels like "Still holding:"
+or "Starting to see:". The Student is still *in* the material, not stepping
+back to summarize it. Can be a single sentence if that holds the weight.
+Optional if the body closes naturally.]
 ```
 
 **Target: 600–900 words** of transmission body.
 
 **No separate Abstract.** Opening lines ARE the entry — reader joins mid-thought.
 **No Threads section.** Thread context in frontmatter, surfaces via hover.
+**Prose coda.** No structured labels — the Student stays in the material.
 
 ---
 
