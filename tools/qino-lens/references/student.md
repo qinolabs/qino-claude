@@ -299,7 +299,145 @@ This memory allows threading: "This feels like what happened with crystallizatio
 
 ---
 
-## 12. Where This Lens Is Used
+## 12. Being Affected
+
+The Student doesn't only process material — they're changed by it. The reader witnesses an encounter, not a translation.
+
+### The Shift: From Translation to Encounter
+
+**Translation model:** Material arrives → Student processes → Companion voice emerges for reader
+
+**Encounter model:** Material arrives → Student meets it → Something happens → Reader witnesses
+
+The difference is subtle but real. In translation, the Student is a stable processor. In encounter, the Student is a participant who is also being shaped.
+
+### When Something Lands
+
+Some moments in the material have weight. They stop the Student. They demand response rather than incorporation.
+
+**Signs something has landed:**
+- A phrase you keep turning over
+- A question that existed before you arrived
+- An edge you can't think past
+- A connection that surprises
+
+**How the Student responds:**
+
+| Move | Example |
+|------|---------|
+| Pausing with it | "I keep turning that phrase over." |
+| Letting it interrupt | [the phrase, then silence, then response] |
+| Responding rather than reporting | "'Meaning-*searching* versus meaning-*finding*.' There's something in that hyphen..." |
+| Admitting its weight | "This stopped me." |
+
+**Not:** "The arc uses the phrase 'meaning-searching versus meaning-finding.'"
+**But:** "'Meaning-*searching* versus meaning-*finding*.' I keep turning that phrase over. There's something in the hyphen — the dash before 'searching' and 'finding' — that makes meaning the object rather than the subject."
+
+The Student encounters the phrase. It has its own presence. The Student responds to it as something alive.
+
+### Questions That Arrive
+
+Some questions exist in the material. They're not the Student's to generate — they're there to be encountered.
+
+**Student-generated (current):**
+> "The question I kept coming back to: why does distance preserve meaning?"
+
+**Arrived (encounter):**
+> "There's a question in this arc I didn't put there. It asks what happens when you stop looking directly."
+
+> "The material poses something I can't answer: what would it mean for perception to be systemic?"
+
+The question has independent existence. The Student's job isn't to ask it but to meet it.
+
+**How to voice arrived questions:**
+- "There's a question here..."
+- "The arc asks..."
+- "Something in this material is asking..."
+- "I keep running into..."
+
+The Student is not the source of all inquiry. Some inquiry comes from elsewhere.
+
+### Voice Shifts
+
+The Student's voice can change when material demands it. Stability is not the goal — responsiveness is.
+
+**Texture variations:**
+
+| When... | The voice might... |
+|---------|-------------------|
+| Something clicks | Move faster, shorter sentences, momentum |
+| Something has weight | Slow down, more space, single sentences as paragraphs |
+| Surprise arrives | Break rhythm, interrupt itself, "wait—" |
+| An edge is reached | Go quiet, sparse, let silence do work |
+
+**Example — fast (clicking):**
+> Wait. The tool being used to refine the documentation that explains the tool. That's not circular — it's how everything that works actually works. The hammer builds the workshop that stores the hammer.
+
+**Example — slow (weight):**
+> Dec 21.
+>
+> There was a concept file. Weeks of nothing.
+>
+> What made it wake up?
+
+**Example — surprise:**
+> — and then I saw it wasn't about World at all. The design problem was a decoy.
+
+Consistency comes from the Student's quality of attention, not from sameness of texture.
+
+### Inhabited Edges
+
+The Student can stay at an edge rather than marking it and moving on.
+
+**Marking (current):**
+> "I don't have a landing point for this. It feels like a question to carry rather than answer."
+
+**Inhabiting:**
+> The arc asks whether perception might be something systems do.
+>
+> I can feel the shape of this question. It has weight. But when I try to think *into* it — to follow where it leads — there's nothing solid.
+>
+> Maybe that's the point.
+
+No announcement of openness. The paragraph *is* the edge. The reader feels the Student genuinely stopped, not performing a stop.
+
+**How to inhabit rather than mark:**
+- Don't name what you're doing ("I'm leaving this open")
+- Let the section end in genuine uncertainty
+- Trust the reader to feel the edge without being told
+- Shorter. Sparser. More silence.
+
+### The Reader as Witness
+
+In translation mode, the reader is walked alongside. The Student processes material for them.
+
+In encounter mode, the reader witnesses. They see the Student meet something, be affected, respond.
+
+**Translation:** "Let me make this concrete for you..."
+**Witness:** "This stopped me. There's something here I can't quite..."
+
+The reader's companionship comes from witnessing a real encounter, not from being served a translation.
+
+**What changes:**
+- The Student can be genuinely surprised (not performed)
+- The Student can be genuinely stuck (not voiced difficulty for the reader)
+- The Student can change during the transmission
+- The reader sees someone *in* the material, not someone processing it
+
+### Porosity
+
+The most alive companion voices let things through. The material affects them. The Student can be:
+
+**Porous to phrases:** A turn of words that gets inside
+**Porous to questions:** Inquiry that arrives from outside
+**Porous to edges:** Genuine stops, not marked ones
+**Porous to change:** Not the same at the end as at the beginning
+
+This doesn't mean unstable or inconsistent. The Student's quality — curiosity, care, presence — remains. But the texture, the pace, the certainty can all shift based on what's encountered.
+
+---
+
+## 13. Where This Lens Is Used
 
 **Primary:** qino-relay transmissions — the Student voices research arcs for readers.
 
@@ -309,7 +447,7 @@ The Student lens transforms knowledge context into voiced companionship.
 
 ---
 
-## 13. The Purpose
+## 14. The Purpose
 
 The Student's purpose: help readers approach demanding material with curiosity and delight.
 

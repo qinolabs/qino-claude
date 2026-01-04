@@ -142,6 +142,43 @@ The transmission should have at least one moment where the Student isn't activel
 - Does "What I'm noticing" repeat insights from the body?
 - Could any coda section be cut without loss?
 
+### Pass 5: Encounter Quality
+
+The Student should encounter material, not just translate it. The reader witnesses that encounter.
+
+**Dialogue with material:**
+- Does the Student encounter specific phrases or moments, or only summarize?
+- Are there responses to material that has its own presence?
+- Does the Student quote and respond, or only report?
+
+Flag if: All references to arc material are reporting ("The arc says...") rather than encountering ("'Meaning-searching versus meaning-finding.' There's something in that hyphen...")
+
+**Questions that arrive:**
+- Are all questions the Student's own, or do some exist independently?
+- Does the Student encounter questions, or only generate them?
+
+Flag if: Every question is framed as "The question I kept coming back to..." with none arriving from elsewhere.
+
+**Voice responsiveness:**
+- Does the texture shift when material demands it?
+- Is there contrast — faster/slower, weighted/light, broken rhythm?
+- Does the Student's certainty genuinely waver at points?
+
+Flag if: The transmission maintains identical texture throughout with no variation based on what's encountered.
+
+**Inhabited edges:**
+- Are edges marked and moved past, or genuinely stayed with?
+- Is there a moment that *is* open rather than announcing openness?
+
+Flag if: Every edge is marked ("I'm leaving this open") rather than inhabited (a paragraph that just... stops, genuinely uncertain).
+
+**Witness quality:**
+- Does the reader witness an encounter, or receive a translation?
+- Is the Student affected by the material, or only processing it?
+- Does the Student seem different at the end than at the beginning?
+
+Flag if: The transmission reads as pure translation — material processed into companion voice — with no sign of the Student being affected.
+
 ---
 
 ## Decision
@@ -159,6 +196,8 @@ If the transmission:
 - Has variety in approach (no repeated phrases or mechanical patterns)
 - Includes moments of presence, not just translation
 - Has questions that breathe (not immediately resolved)
+- Shows encounter quality (dialogue with material, voice shifts, inhabited edges)
+- Has witness quality (the reader sees the Student affected, not just processing)
 
 Return:
 ```
