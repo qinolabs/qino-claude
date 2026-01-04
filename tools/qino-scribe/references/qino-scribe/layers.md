@@ -467,7 +467,7 @@ Two interactive checkpoints: Lens → Scene.
 
 Used in Lens Layer to generate story direction options. Each lens foregrounds specific sensitivities from qino-lens.
 
-See `references/qino-scribe/story-lenses.md` for full details including sensitivities, territories, diff resonance, and craft notes.
+See `.claude/references/qino-scribe/story-lenses.md` for full details including sensitivities, territories, diff resonance, and craft notes.
 
 1. **The Arrival** — What if this chapter is about being received?
 2. **The Journey** — What if this chapter leaves known ground?

@@ -2,7 +2,7 @@
 
 *Transmission-specific craft for the Student's voice.*
 
-**Core craft devices live in:** `qino-lens/references/student.md`
+**Core craft devices live in:** `.claude/references/qino-lens/student.md`
 
 The lens defines: Questions That Don't Resolve, Trailing Off, The Gap, Restraint, Specificity as Trust. Read the lens first. This document adds transmission-specific guidance.
 
@@ -124,5 +124,5 @@ When prose feels mechanical, ask:
 
 ## See Also
 
-- `qino-lens/references/student.md` — Core craft devices (Questions That Don't Resolve, Trailing Off, The Gap, Restraint, Specificity)
-- `references/qino-relay/voice.md` — Relay voice application
+- `.claude/references/qino-lens/student.md` — Core craft devices (Questions That Don't Resolve, Trailing Off, The Gap, Restraint, Specificity)
+- `.claude/references/qino-relay/voice.md` — Relay voice application

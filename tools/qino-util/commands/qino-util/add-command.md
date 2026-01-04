@@ -83,7 +83,7 @@ Wait for response → determines agent scaffolding.
 
 ### 6. Scaffold Command File
 
-Read `references/qino-util/command-template.md` for structure reference.
+Read `.claude/references/qino-util/command-template.md` for structure reference.
 
 Create command file at `tools/{tool-name}/commands/{namespace}/{command-name}.md`:
 
@@ -136,7 +136,7 @@ Wait for response.
 
 Wait for response.
 
-Read `references/qino-util/agent-template.md` for structure reference.
+Read `.claude/references/qino-util/agent-template.md` for structure reference.
 
 Create agent file at `tools/{tool-name}/agents/{agent-name}.md`:
 

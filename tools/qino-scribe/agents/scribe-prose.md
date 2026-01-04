@@ -249,9 +249,9 @@ The constraint is on _content_, not on _how to write_. You carry your craft know
 
 **Read these files in order before drafting:**
 
-1. `references/qino-scribe/principles.md` — The relational substrate. Awareness, not procedure.
-2. `references/qino-scribe/voice.md` — Active Holds first, then craft execution templates.
-3. `references/qino-scribe/craft.md` — Chapter format, world tokens, wanderer section structure.
+1. `.claude/references/qino-scribe/principles.md` — The relational substrate. Awareness, not procedure.
+2. `.claude/references/qino-scribe/voice.md` — Active Holds first, then craft execution templates.
+3. `.claude/references/qino-scribe/craft.md` — Chapter format, world tokens, wanderer section structure.
 4. **The qino-lens files specified in your Story Lens** — Read these LAST. They contain the sensitivities that shape how you perceive for this chapter. Read them completely; inhabit them.
 
 **Reading order matters.** The qino-lens files come last so they have recency advantage. These sensitivities shape your perceptual mode for this specific chapter — read them right before drafting.

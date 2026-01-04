@@ -41,19 +41,19 @@ Read these files to understand the current system state:
 - `agents/scribe-editorial.md` — Review and verification
 
 ### References
-- `references/qino-scribe/voice.md` — Craft devices, line-level and chapter-level patterns
-- `references/qino-scribe/craft.md` — Chapter format, world.md structure, arc shapes
-- `references/qino-scribe/principles.md` — Relational substrate
-- `references/qino-scribe/foundation.md` — World-seed configuration fields
-- `references/qino-scribe/layers.md` — Layer flow, checkpoint formats
-- `references/qino-scribe/disturbance.md` — Git diff interpretation
-- `references/qino-scribe/story-lenses.md` — Twelve story lenses and sensitivities
+- `.claude/references/qino-scribe/voice.md` — Craft devices, line-level and chapter-level patterns
+- `.claude/references/qino-scribe/craft.md` — Chapter format, world.md structure, arc shapes
+- `.claude/references/qino-scribe/principles.md` — Relational substrate
+- `.claude/references/qino-scribe/foundation.md` — World-seed configuration fields
+- `.claude/references/qino-scribe/layers.md` — Layer flow, checkpoint formats
+- `.claude/references/qino-scribe/disturbance.md` — Git diff interpretation
+- `.claude/references/qino-scribe/story-lenses.md` — Twelve story lenses and sensitivities
 
 ### Lens Integration
-- `../../qino-lens/references/narrator.md`
-- `../../qino-lens/references/wanderer.md`
-- `../../qino-lens/references/companion.md`
-- `../../qino-lens/references/newcomer.md`
+- `.claude/references/qino-lens/narrator.md`
+- `.claude/references/qino-lens/wanderer.md`
+- `.claude/references/qino-lens/companion.md`
+- `.claude/references/qino-lens/newcomer.md`
 
 ---
 

@@ -145,7 +145,7 @@ Before spawning the prose agent, create reader journey notes. The Student is a r
 
 3. **Pass these notes to the prose agent** along with arc content
 
-See `references/qino-relay/reader-journey-guide.md` for detailed guidance.
+See `.claude/references/qino-relay/reader-journey-guide.md` for detailed guidance.
 
 ---
 
@@ -433,10 +433,10 @@ This isn't a transformation layer. The arc content stays visible. But the Studen
 
 ## Reference Documents
 
-- `references/qino-relay/voice.md` — The Student's voice patterns
-- `references/qino-relay/student-guide.md` — How the Student works
-- `references/qino-relay/transmission-format.md` — Format specification
-- `references/qino-relay/reader-journey-guide.md` — Reader journey prep
+- `.claude/references/qino-relay/voice.md` — The Student's voice patterns
+- `.claude/references/qino-relay/student-guide.md` — How the Student works
+- `.claude/references/qino-relay/transmission-format.md` — Format specification
+- `.claude/references/qino-relay/reader-journey-guide.md` — Reader journey prep
 
 ---
 

@@ -395,7 +395,7 @@ When no chronicle exists:
 
    User reviews and adjusts. This is a checkpoint — wait for confirmation.
 
-   See `references/qino-scribe/foundation.md` for field details.
+   See `.claude/references/qino-scribe/foundation.md` for field details.
 
 4. **Create world-seed.md with frontmatter**
 
@@ -527,12 +527,12 @@ Options are vocabulary. Even rejected options help articulate what's wanted.
 ## Reference Documents
 
 Consult during execution:
-- `references/qino-scribe/layers.md` — Lens-first architecture, checkpoints, prep.md structure
-- `references/qino-scribe/story-lenses.md` — The twelve lenses, sensitivities, diff resonance
-- `references/qino-scribe/disturbance.md` — How to read git diffs for shape and texture
-- `references/qino-scribe/craft.md` — Chapter format, world.md structure, arc shapes
-- `references/qino-scribe/voice.md` — Prose craft and patterns (used by prose and editorial agents)
-- `references/qino-scribe/principles.md` — Relational principles embedded in layers
+- `.claude/references/qino-scribe/layers.md` — Lens-first architecture, checkpoints, prep.md structure
+- `.claude/references/qino-scribe/story-lenses.md` — The twelve lenses, sensitivities, diff resonance
+- `.claude/references/qino-scribe/disturbance.md` — How to read git diffs for shape and texture
+- `.claude/references/qino-scribe/craft.md` — Chapter format, world.md structure, arc shapes
+- `.claude/references/qino-scribe/voice.md` — Prose craft and patterns (used by prose and editorial agents)
+- `.claude/references/qino-scribe/principles.md` — Relational principles embedded in layers
 
 ---
 
