@@ -277,6 +277,10 @@
           "dest": "references/qino-lens/version.json"
         },
         {
+          "src": "tools/qino-lens/references/student.md",
+          "dest": "references/student.md"
+        },
+        {
           "src": "tools/qino-lens/references/wanderer.md",
           "dest": "references/wanderer.md"
         }
@@ -296,6 +300,10 @@
         {
           "src": "tools/qino-relay/commands/qino-relay/transmit.md",
           "dest": "commands/qino-relay/transmit.md"
+        },
+        {
+          "src": "tools/qino-relay/references/qino-relay/craft.md",
+          "dest": "references/qino-relay/craft.md"
         },
         {
           "src": "tools/qino-relay/references/qino-relay/reader-journey-guide.md",

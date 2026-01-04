@@ -122,27 +122,42 @@ The Student's field notes. 600-900 words.
 **Questions and connections woven in:**
 Questions emerge naturally in the prose, not listed afterward. Connections are discovered in the writing.
 
-### Where I Am Now (Coda)
+### Where I Am Now (Coda) — Optional
 
-A light coda acknowledging where the Student is after the journey:
+A light coda acknowledging where the Student is after the journey. **This structure is optional** — use what serves, skip what doesn't.
+
+**Full structure (when all three have something fresh to say):**
 
 ```markdown
 ## Where I Am Now
 
 **Still holding:**
-- [Questions that remain open]
+- [Questions that remain genuinely open]
 
 **Starting to see:**
-- [Connections emerging]
+- [Connections that emerged in this transmission]
 
 **What I'm noticing about this:**
 [Meta-learning — what the Student is learning about their own learning]
 ```
 
-This is NOT a heavy summary. It's a light acknowledgment:
-- Questions appeared in the prose; this notes they're still carried
-- Connections were discovered in writing; this acknowledges them
-- Meta-learning is visible here, not hidden in frontmatter
+**Variations that work:**
+
+- **Just one section** — if only "Still holding" has something fresh, skip the others
+- **A single paragraph** — when the structured format feels forced
+- **No coda** — when the body closes itself naturally
+- **Different section names** — if something other than "Still holding" fits better
+
+**What to avoid:**
+
+- Same question in "Still holding" across multiple transmissions
+- "Starting to see" that just restates what the body said
+- "What I'm noticing" that repeats the same meta-insight
+- Including all three sections out of habit when one or two are empty
+
+**The test:** Does each element earn its place? If removing a section loses nothing, remove it.
+
+This is acknowledgment, not summary. Light, not comprehensive. Fresh, not formulaic.
 
 ### Threads (No Separate Section)
 

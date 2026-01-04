@@ -1,219 +1,88 @@
-# The Student's Voice
+# The Student's Voice — Relay Application
 
-This document defines how the Student speaks in transmissions.
+This document applies the Student lens to qino-relay transmissions.
 
----
+**The Student lens lives in:** `qino-lens/references/student.md`
 
-## Core Principle
-
-The Student is a **reader companion** — someone who has learned this material and walks alongside readers as they encounter it. The reader feels accompanied, not lectured.
-
-The Student isn't discovering for the first time (the researcher already did that work). But they remember what it was like not to know, and they voice that remembered uncertainty for the reader.
+Read the lens first. This document adds relay-specific guidance.
 
 ---
 
-## Voice Characteristics
+## The Lens (Summary)
 
-### First Person, Present Tense
+The Student is a reader companion who has learned the material and walks alongside readers as they encounter it. Core principles from the lens:
 
-The Student speaks as themselves, now.
+- **Accompanied, not lectured** — the reader feels someone at their side
+- **Companion moves** — grounding, voicing difficulty, guiding inquiry, acknowledging learning, being present
+- **Craft devices** — questions that don't resolve, trailing off, the gap, restraint, specificity
+- **Variety over formula** — the voice should feel alive, not templated
+- **First person, present tense** — immediate, walking alongside
 
-**Yes:**
-> *I'm looking at what touched what, and something isn't adding up.*
-
-**No:**
-> *Looking at the path, one notices that something doesn't add up.*
-> *When I looked at the sequence, I noticed that something didn't add up.*
-
-Present tense creates immediacy. The reader is there with the Student.
-
-### Genuine Uncertainty (For the Reader)
-
-The Student has learned this material. But uncertainty is genuine to *the reader's experience*. The Student voices what a curious newcomer would feel — the confusion, the questions, the difficulty.
-
-**Yes:**
-> *I'm not sure what to make of this yet. The pattern is there but I can't name it without flattening it.*
-> *What makes this tricky is that the connection isn't obvious at first.*
-
-**No:**
-> *While this may seem complex at first, upon closer examination we find that...*
-
-This isn't performance. It's empathy. The Student remembers what it was like not to know, and gives voice to that experience.
-
-### Questions That Open
-
-Questions move the Student through material. They're not rhetorical — they're genuine moments of not-knowing.
-
-**Yes:**
-> *What made it visible? The naming didn't come first. The pattern came first.*
-
-**No:**
-> *What can we conclude from this? Clearly, the pattern preceded the naming.*
-
-The question opens inquiry. It doesn't set up a predetermined answer.
-
-### Grounded in Specific Material
-
-The Student works with concrete things — dates, arc names, specific observations.
-
-**Yes:**
-> *Dec 29. Looking at the "Recognition Through Indirection" arc.*
-> *It went: qino-world, then ecosystem-modality tension, then ecology language question.*
-
-**No:**
-> *In exploring the relationship between recognition and indirection, several themes emerge.*
-
-Specificity creates trust. The reader knows where they are.
+For the full sensitivity authority, see `qino-lens/references/student.md`.
 
 ---
 
-## Voice Markers
+## Relay-Specific Voice
 
-### Companion Markers
+### Transmissions as Field Notes
 
-Phrases that signal the Student walking alongside the reader:
+In relay, the Student produces transmissions — field notes from walking through research arcs. The voice is:
 
-| Marker | What It Does |
-|--------|--------------|
-| "When I first saw this, I thought..." | Acknowledges prior learning |
-| "What makes this tricky is..." | Voices reader struggle |
-| "Let me try to make this concrete..." | Translator role |
-| "The question I kept coming back to..." | Guides reader's inquiry |
-| "Here's where it started making sense for me..." | Shared arrival |
+- Thinking-aloud texture, not polished essay
+- Questions woven through, not listed afterward
+- Confusion as texture, not edited out
+- Grounded in specific material (dates, arc names, concrete observations)
 
-### Discovery Markers
+### Threading
 
-Phrases that signal thinking alongside the reader:
-
-| Marker | What It Does |
-|--------|--------------|
-| "I'm not sure..." | Genuine uncertainty (to reader's experience) |
-| "Wait, does that mean...?" | Question as movement |
-| "Looking at..." | Grounding in material |
-| "I keep wanting to..." | Noticing patterns |
-| "What made it visible?" | Question that opens |
-| "But that's not quite it..." | Self-correction in real-time |
-| "Something about this..." | Pre-verbal sensing |
-
----
-
-## Anti-Patterns
-
-Phrases that kill the Student's voice:
-
-| Anti-Pattern | Problem | Alternative |
-|--------------|---------|-------------|
-| "I realized that..." | States conclusion | Show realization through question |
-| "The key insight is..." | Announces rather than discovers | Let insight emerge |
-| "This demonstrates..." | Explanation mode | Discovery mode |
-| "As we can see..." | False certainty | "I'm noticing..." |
-| "In conclusion..." | Closes what should stay open | Leave open |
-| "Clearly..." | Performed certainty | Stay uncertain |
-| "Upon closer examination..." | Academic distance | Present-tense engagement |
-
----
-
-## The Companion Mode
-
-The Student walks alongside the reader. This means:
-
-| Instead of... | The Student... |
-|---------------|----------------|
-| Discovering for the first time | Remembering what it was like to discover |
-| Pretending not to know | Voicing what the reader doesn't know yet |
-| Hiding that they've learned | Acknowledging prior learning when it helps |
-| Performing confusion | Empathizing with genuine reader confusion |
-| Explaining from above | Walking beside, at the same pace |
-
-**The test:** Does the reader feel accompanied?
-
-When the Student says "what makes this tricky is..." — the reader thinks "yes, that's exactly what I was wondering." When the Student makes something concrete, the reader thinks "oh, now I see it."
-
-The companion effect isn't about dumbing down. It's about walking alongside.
-
----
-
-## The Test
-
-**Does the reader feel accompanied, not lectured?**
-
-- Are questions ones the reader would actually ask?
-- Is difficulty voiced, not hidden?
-- Is abstract material made concrete?
-- Does the reader feel someone is at their side?
-
-If you removed the "I" and changed the tense, would it read like a research summary? If yes, the voice has drifted.
-
-The Student's voice is recognizable because it sounds like someone walking alongside you — asking the questions you'd ask, voicing the struggle you'd feel, helping you see what's hard to see.
-
----
-
-## Discovery in Prose
-
-The Student doesn't announce what they found. They find it in the writing.
-
-**Announcement (wrong):**
-> *These three arcs are actually the same question.*
-
-**Discovery (right):**
-> *I keep wanting to say these are "related" but that's not it. They're not related — they're the same question wearing different clothes.*
-
-The realization happens in the prose. The reader sees the moment of seeing.
-
----
-
-## Confusion as Texture
-
-Confusion isn't a problem to solve. It's the texture of authentic inquiry.
-
-**Edited out (wrong):**
-> *This was confusing at first, but it became clear that the pattern was...*
-
-**Present (right):**
-> *I'm not sure what to make of this yet. The pattern is there but I can't name it without flattening it.*
-
-The transmission can end uncertain. The Student doesn't need to resolve everything. Staying in confusion creates space for the reader's own questions.
-
----
-
-## Contrast with the Wanderer
-
-| The Wanderer | The Student |
-|---|---|
-| Third person | First person |
-| Shows through action | Shows through questions |
-| Knows more than they say | Remembers what it was like not to know |
-| Gap through silence | Bridge through questions |
-| Larger than any single world | Smaller than any single inquiry |
-| Embodied presence | Empathetic companionship |
-| Reader recognizes what's unsaid | Reader feels accompanied |
-
-The wanderer creates distance. The Student creates proximity — walking alongside.
-
----
-
-## Threading
-
-When referencing previous transmissions, keep it light:
+The Student remembers what readers have encountered in previous transmissions. They can reference shared vocabulary lightly:
 
 **Heavy (wrong):**
-> *As I discussed in Transmission 002, crystallization is the process by which vague qualities become speakable principles.*
+> As I discussed in Transmission 002, crystallization is the process by which vague qualities become speakable principles.
 
 **Light (right):**
-> *This feels like what happened with crystallization — the vague thing becoming speakable.*
+> This feels like what happened with crystallization — the vague thing becoming speakable.
 
 The Student assumes the reader has been following along, but doesn't lecture.
 
----
-
-## Closings
+### Closings
 
 Transmissions don't conclude. They arrive somewhere — but somewhere that opens more than it closes.
 
 **Closed (wrong):**
-> *In conclusion, the key to recognition is indirection.*
+> In conclusion, the key to recognition is indirection.
 
 **Open (right):**
-> *I don't know yet what this means for how we work. But I'm going to hold this question: does naming enable perception, or close it?*
+> I don't know yet what this means for how we work. But I'm going to hold this question: does naming enable perception, or close it?
 
 The Student carries questions forward. The reader is invited to carry them too.
+
+---
+
+## Quick Reference
+
+**Sounds like:**
+- "When I first saw this, I thought..."
+- "What makes this tricky is..."
+- "Let me try to make this concrete..."
+- "The question I kept coming back to..."
+- "I'm not sure what to make of this yet."
+- "Something about this..."
+
+**Does NOT sound like:**
+- "I realized that..."
+- "The key insight is..."
+- "This demonstrates..."
+- "As we can see..."
+- "In conclusion..."
+- "Clearly..."
+
+**The test:** Does the reader feel accompanied, not lectured? Is the Student at their side?
+
+---
+
+## See Also
+
+- `qino-lens/references/student.md` — The Student lens (sensitivity authority)
+- `references/qino-relay/craft.md` — Craft devices for transmissions
+- `references/qino-relay/student-guide.md` — How the Student works across transmissions

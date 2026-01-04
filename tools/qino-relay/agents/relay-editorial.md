@@ -32,7 +32,11 @@ Read the draft transmission. Do not read other files.
 ## Reference
 
 Before reviewing, read:
-- `references/qino-relay/voice.md` — The Student's voice patterns
+- `qino-lens/references/student.md` — The Student lens (sensitivity authority)
+- `references/qino-relay/voice.md` — Relay-specific voice application
+- `references/qino-relay/craft.md` — Transmission-specific craft
+
+The Student lens is the source of truth for voice principles. The relay files add transmission-specific guidance.
 
 ---
 
@@ -97,6 +101,47 @@ Ask specifically about the reader's experience:
 - Do questions help the reader catch up?
 - Does the Student ask questions the reader is thinking?
 
+### Pass 4: Pattern Detection
+
+Watch for mechanical patterns that make the voice feel templated:
+
+**Phrase repetition within transmission:**
+Flag if any characteristic phrase appears more than once:
+- "Let me try to make this concrete..."
+- "The question I kept coming back to..."
+- "What makes this [tricky/hard/difficult]..."
+- "What surprised me was..."
+- "Here's where it started making sense..."
+
+**One use maximum per transmission.**
+
+**Move repetition:**
+Flag if the same companion move appears more than twice:
+- Multiple grounding attempts (suggests over-explaining)
+- Multiple difficulty-voicing moves (suggests performed struggle)
+- Multiple guiding-inquiry questions that all resolve immediately
+
+**Questions that resolve too fast:**
+Flag any question followed immediately by its answer:
+
+> The question I kept coming back to: why does X?
+> [immediate explanation of why X]
+
+Questions should breathe. At least one section break or change of direction before resolution.
+
+**Missing presence:**
+Flag if there's no moment of the Student just *being* with the material:
+- All translation, no space
+- All grounding, no silence
+- All questions, no sitting-with
+
+The transmission should have at least one moment where the Student isn't actively translating.
+
+**Coda staleness:**
+- Does "Still holding" contain a question that appeared in previous transmissions?
+- Does "What I'm noticing" repeat insights from the body?
+- Could any coda section be cut without loss?
+
 ---
 
 ## Decision
@@ -111,6 +156,9 @@ If the transmission:
 - Voices difficulty readers would experience
 - Feels like someone at the reader's side
 - Stays grounded in specific material
+- Has variety in approach (no repeated phrases or mechanical patterns)
+- Includes moments of presence, not just translation
+- Has questions that breathe (not immediately resolved)
 
 Return:
 ```

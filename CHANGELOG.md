@@ -10,6 +10,34 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.22.2] - 2026-01-04
+
+### qino Lens
+
+#### Added
+
+- **Student lens** (`references/student.md`) — reusable sensitivity authority for reader companionship; extracted from qino-relay as a shared lens alongside wanderer, narrator, newcomer, and companion
+
+#### Changed
+
+- **Lens table in README** — now documents all five lenses with their sensitivities and consumers
+
+### qino Relay
+
+#### Added
+
+- **craft.md** — transmission-specific craft guidance: variation across transmissions (openings, structures, closings), pacing through structure, returning to moments, coda freshness, diagnostic questions
+- **Material Sensitivity** — relay-prose now adjusts posture based on arc type: conceptual (more grounding), technical (show stakes), personal (more presence), connection (show before name)
+- **Pattern Detection** — relay-editorial Pass 4 catches phrase repetition, move repetition, questions resolving too fast, and missing presence
+
+#### Changed
+
+- **Student voice extracted to qino-lens** — voice.md is now a thin wrapper referencing `qino-lens/references/student.md`; relay-specific guidance (threading, closings) remains
+- **Coda made optional** — "Where I Am Now" section is now optional emphasis, not required summary; skip if body closes itself
+- **Companion moves with variety** — voice guidance now emphasizes "one use maximum per transmission" for characteristic phrases; includes "when NOT to" guidance for each move
+
+---
+
 ## [0.22.1] - 2026-01-04
 
 ### qino Relay
