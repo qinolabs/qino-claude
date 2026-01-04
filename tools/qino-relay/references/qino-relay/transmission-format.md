@@ -40,6 +40,11 @@ threads:
     context: Holding both levels without collapsing either. The ecosystem has its logic; individual tools have theirs.
   - name: crystallization
     context: When vague quality becomes speakable. Not definition — recognition.
+phrases:
+  - text: meaning-searching versus meaning-finding
+    source: Recognition Through Indirection
+  - text: the between-level space
+    source: Recognition Through Indirection
 ---
 
 # Recognition Through Indirection
@@ -49,6 +54,10 @@ but I'm starting to see they're asking the same question from different angles.*
 
 [Body continues — 600-900 words]
 
+The arc uses the phrase >>meaning-searching versus meaning-finding<<. There's
+something in that hyphen — the dash before "searching" and "finding" — that
+makes meaning the object rather than the subject.
+
 [The Student's field notes. First person, present tense.
 Questions and discoveries woven into the prose.
 Ends with weight, not summary.]
@@ -57,15 +66,11 @@ Ends with weight, not summary.]
 
 ## Where I Am Now
 
-**Still holding:**
-- Does naming enable perception, or close it?
-
-**Starting to see:**
-- The tension between ecosystem and modality keeps appearing...
-
-**What I'm noticing about this:**
 The pattern came before the naming. I keep forgetting this.
 When I try to name too early, the pattern goes rigid.
+
+Something about >>the between-level space<< — where the meaning actually lives.
+I can feel its shape but not its edges yet.
 ```
 
 ---
@@ -85,6 +90,9 @@ When I try to name too early, the pattern goes rigid.
 | `threads` | array | Threads referenced in body (with context for hover) |
 | `threads[].name` | string | Thread name (used for highlighting) |
 | `threads[].context` | string | 1-2 sentence context (shown on hover) |
+| `phrases` | array | Phrases from arc material that landed (colored inline) |
+| `phrases[].text` | string | The exact phrase text (for matching) |
+| `phrases[].source` | string | Where it came from (arc name, optional) |
 
 ---
 
@@ -122,42 +130,42 @@ The Student's field notes. 600-900 words.
 **Questions and connections woven in:**
 Questions emerge naturally in the prose, not listed afterward. Connections are discovered in the writing.
 
-### Where I Am Now (Coda) — Optional
+### Where I Am Now (Coda)
 
-A light coda acknowledging where the Student is after the journey. **This structure is optional** — use what serves, skip what doesn't.
-
-**Full structure (when all three have something fresh to say):**
+The coda continues the Student's voice — it **inhabits** rather than announces. No labels like "Still holding:" or "Starting to see:". The Student is still *in* the material, not stepping back to summarize it.
 
 ```markdown
+---
+
 ## Where I Am Now
 
-**Still holding:**
-- [Questions that remain genuinely open]
+The question about perception as something systems do — I can feel its shape but not its edges. When I try to follow where it leads, the ground isn't solid yet.
 
-**Starting to see:**
-- [Connections that emerged in this transmission]
+Something about how the arc stayed indirect even when explaining indirection. That feels intentional. Like the teaching and the content are the same thing.
 
-**What I'm noticing about this:**
-[Meta-learning — what the Student is learning about their own learning]
+I don't know what to do with this yet.
 ```
 
-**Variations that work:**
+**What makes this work:**
+- No bullet lists announcing what's held or seen
+- Continues the texture of the prose — same voice, same uncertainty
+- Can end at an edge without marking it
+- Meta-learning happens *in* the writing, not labeled afterward
 
-- **Just one section** — if only "Still holding" has something fresh, skip the others
-- **A single paragraph** — when the structured format feels forced
-- **No coda** — when the body closes itself naturally
-- **Different section names** — if something other than "Still holding" fits better
+**The principle:** If the body ends with weight, the coda should hold that weight. If the body ends at an edge, the coda should inhabit that edge. The coda doesn't step outside to describe — it stays inside.
 
-**What to avoid:**
+**When the Student is genuinely uncertain, let the coda be uncertain:**
+```markdown
+---
 
-- Same question in "Still holding" across multiple transmissions
-- "Starting to see" that just restates what the body said
-- "What I'm noticing" that repeats the same meta-insight
-- Including all three sections out of habit when one or two are empty
+## Where I Am Now
 
-**The test:** Does each element earn its place? If removing a section loses nothing, remove it.
+Maybe that's the point.
+```
 
-This is acknowledgment, not summary. Light, not comprehensive. Fresh, not formulaic.
+A single sentence can be a coda if it holds the weight.
+
+**Optional:** When the body closes itself naturally, the coda can be omitted entirely.
 
 ### Threads (No Separate Section)
 
@@ -193,6 +201,26 @@ Looking at the {{recognition-through-indirection}} arc today.
 ```
 
 Parser extracts `{{arc-id}}` for arc hover cards.
+
+### Phrase References (Phrases That Land)
+
+When the Student encounters a phrase from the arc material that has weight, mark it with double angle brackets:
+
+```markdown
+The arc uses the phrase >>meaning-searching versus meaning-finding<<. There's something in that hyphen...
+```
+
+Parser extracts `>>phrase<<` and renders in color (cycling through phrase colors like arc colors in chronicles). The phrase must match an entry in the `phrases` frontmatter array.
+
+**When to use:**
+- Phrases the Student pauses with, responds to
+- Turns of words from the arc that have weight
+- Material that has its own voice
+
+**Not for:**
+- All quotes — only phrases that *land*
+- The Student's own phrasing
+- Generic descriptions
 
 ---
 
@@ -292,6 +320,10 @@ When transmission is complete, add to `journal/manifest.json`:
   "threads": [
     { "name": "ecosystem-modality tension", "context": "Holding both levels without collapsing either." },
     { "name": "crystallization", "context": "When vague quality becomes speakable." }
+  ],
+  "phrases": [
+    { "text": "meaning-searching versus meaning-finding", "source": "Recognition Through Indirection" },
+    { "text": "the between-level space", "source": "Recognition Through Indirection" }
   ]
 }
 ```
