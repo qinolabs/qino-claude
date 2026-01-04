@@ -255,7 +255,7 @@ pattern: [what recurred]
 seeds: [count] threads remain alive
 
                         /qino:home to see research landscape
-                        /qino-research:begin to follow a seed
+                        /qino-research:init to start new inquiry
 ```
 
 Done.
