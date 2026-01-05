@@ -26,6 +26,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - **Inhabited coda** — "Where I Am Now" section now requires genuine stops rather than marked openness
 - **Reference paths** — all cross-references now use `.claude/references/` prefix for correct resolution in target workspaces
 
+#### Fixed
+
+- **Prose coda template** — relay-prose agent now uses prose coda (staying in material) instead of structured labels that contradicted spec
+
 ### qino Scribe
 
 #### Fixed
