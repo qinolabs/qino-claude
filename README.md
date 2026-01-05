@@ -965,13 +965,11 @@ _[Source](tools/qino-relay/)_
 
 <br>
 
-![Transmission view with arc highlighting](docs/images/journal/transmission-view.png)
+![qino Journal — transmission view](docs/images/journal/transmission-view.png)
 
-![Student coda and thread references](docs/images/journal/student-coda.png)
-
-> _"What makes this tricky is — you can't see it happening until after. Something shifted here. The vague thing became speakable. When I first saw this arc, I thought it was about metaphor. But let me try to make it concrete..."_
+> _"What makes this hard to explain is the recursion. The qino-lens:narrator tool — once it existed — was used to refine the documentation that explains the tool. The thing being made helped explain how to make it. This sounds circular. But I am not sure it is. Something about the tool shaping the hands that shape the tool."_
 >
-> — The Student, walking alongside a reader through "Recognition Through Indirection"
+> — From a journal transmission on Qualities of Attention
 
 **[Read the journal →](https://journal.qinolabs.com/)**
 
