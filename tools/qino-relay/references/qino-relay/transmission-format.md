@@ -100,9 +100,12 @@ Frontmatter is **prose only**. Metadata lives in manifest.
 
 ## The Arrival Section
 
-The transmission includes a prose section called "The Arrival" — the emergence story of how inquiry reached this point. This section appears between the H1 title and the Student's body, separated by a horizontal rule.
+The transmission includes "The Arrival" — two distinct parts that together create immersion:
 
-The journal app extracts this section and renders it in a device frame. The Student reads the arrival alongside the reader — both witness how inquiry traveled.
+1. **The Interruption Frame** — where the Student is, what they're doing, the device announcing
+2. **The Emergence Story** — how inquiry reached this point (rendered on the device)
+
+The Student has a device — a tablet with retro sci-fi aesthetic. Transmissions arrive on this device. The Student has a life, a place; they're not just a voice narrating. This creates world-building without exposition.
 
 ### Structure
 
@@ -111,8 +114,15 @@ The journal app extracts this section and renders it in a device frame. The Stud
 
 ## The Arrival
 
-[2-4 paragraphs of prose showing how inquiry moved — uses existing
-markup syntax for concepts, tools, arcs]
+*[1-3 sentences: place, moment, activity — the Student grounded in their world]*
+
+*[Device notification — brief, the interruption]*
+
+---
+
+[Emergence content — 2-4 paragraphs showing how inquiry moved.
+Uses existing markup syntax for concepts, tools, arcs.
+This is what appears on the device screen.]
 
 ---
 
@@ -124,9 +134,30 @@ markup syntax for concepts, tools, arcs]
 ### Parsing Rules
 
 - **H1** = Transmission title
-- **`## The Arrival`** = Emergence section (parser extracts content under this heading)
-- **`---`** = Separator marking end of arrival, beginning of Student's body
-- **Italic opening** = Student's voice begins
+- **`## The Arrival`** = Arrival section begins
+- **Italic text before first `---`** = Interruption Frame (rendered outside device)
+- **Content between `---` markers** = Emergence Story (rendered inside device frame)
+- **Second `---`** = End of arrival, beginning of Student's body
+- **Italic opening after second `---`** = Student's voice begins
+
+### Backend Parsing
+
+The qino-journal backend parses The Arrival into a structured type:
+
+```typescript
+interface Arrival {
+  interruption: string;  // Interruption Frame prose
+  emergence: string;     // Emergence Story content
+}
+```
+
+The parser:
+1. Extracts content before first `---` as `interruption`
+2. Extracts content between first and second `---` as `emergence`
+3. Strips the entire Arrival section from body content
+4. Falls back to legacy format (single `---`) for older transmissions
+
+**Image generation** uses the Interruption Frame to ground hero images in the Student's world. Environmental details (place, time of day, atmosphere) are extracted and used to inflect the image's light quality and feeling.
 
 ### Example
 
@@ -134,6 +165,13 @@ markup syntax for concepts, tools, arcs]
 # What You Notice
 
 ## The Arrival
+
+*The library was quiet. Morning light through tall windows, mate cooling
+on the table. Halfway through transcribing yesterday's field notes when—*
+
+*A soft chime. The device.*
+
+---
 
 [Scribe](qino:concept/cli-qino-scribe) needed to see differently. The
 chronicle prose kept coming out flat — describing events rather than
@@ -163,15 +201,25 @@ Attention. It started with a problem: the prose kept coming out flat.*
 
 ### App Rendering
 
-The journal app renders The Arrival in a device frame:
+The journal app renders The Arrival with two layers:
 
 ```
+*The library was quiet. Morning light through tall windows,
+mate cooling on the table. Halfway through transcribing
+yesterday's field notes when—*
+
+*A soft chime. The device.*
+
 ╭────────────────────────────────────────────────────────────╮
 │  ◈  INCOMING                                               │
 │                                                            │
 │  What You Notice                                           │
 │                                                            │
-│  [The Arrival content rendered here]                       │
+│  Scribe needed to see differently. The chronicle prose    │
+│  kept coming out flat — describing events rather than     │
+│  inhabiting them...                                       │
+│                                                            │
+│  [emergence story continues]                               │
 │                                                            │
 │  Concepts and tools get hover behavior from existing       │
 │  markup: [text](qino:concept/id), /tool:command            │
@@ -179,11 +227,51 @@ The journal app renders The Arrival in a device frame:
 ╰────────────────────────────────────────────────────────────╯
 ```
 
-The Student reads this alongside the reader — both may find it cryptic (tool names are real ecosystem elements), and both learn from repeated exposure across transmissions.
+The Interruption Frame lives outside the device frame as narrative. The Emergence Story is what appears on the device screen. The Student reads this alongside the reader — both witness how inquiry traveled.
 
-### Writing Guidelines
+### The Interruption Frame
 
-The Arrival narrative (2-4 paragraphs) should show:
+The Interruption Frame grounds the Student in their world. 1-3 sentences showing:
+
+- **Place** — where the Student is
+- **Activity** — what they were doing
+- **The interruption** — device notification, shift of attention
+
+**Variation across transmissions** (avoid formula):
+
+| Element | Options |
+|---------|---------|
+| Place | library, apartment balcony, café, park bench, kitchen, quiet street, study |
+| Activity | transcribing notes, reading, staring at a question, mid-conversation, walking, watching light move |
+| Time/Light | morning light, afternoon, evening, 5am darkness, sunset |
+| Notification | soft chime, familiar pulse, light at edge of vision, gentle hum, screen waking |
+
+**Brevity spectrum:**
+
+Sometimes elaborate:
+> *The apartment was still dark. 5am, couldn't sleep. Making coffee when the counter lit up — the device, face-down, glowing through.*
+
+Sometimes minimal:
+> *Afternoon light. The device pulsed.*
+
+**Resonance (optional, not forced):**
+
+When the interruption context echoes the transmission content naturally:
+- Transmission about attention → interrupted during focused work
+- Transmission about emergence → caught tending to something growing
+- Transmission about uncertainty → paused in a moment of transition
+
+**Where variations come from:**
+
+The Interruption Frame is grounded in deliberate Environment prep during Phase 2.5 of `/qino-relay:transmit`. The orchestrator captures place, activity, time/light, detail, and potential moments in `reader-journey.md`. The prose agent uses these notes to write the frame.
+
+See `.claude/references/qino-relay/reader-journey-guide.md` for how to prepare Environment notes.
+
+Across transmissions, this variety builds the Student's lived-in world. By transmission 10, readers know the library's tall windows, Elena's way of sitting down, the mate that's always cooling.
+
+### The Emergence Story
+
+The Emergence Story (2-4 paragraphs) shows how inquiry traveled:
 
 1. **What started it** — the initial impulse or charge
 2. **Sideways turns** — unexpected connections, byproducts becoming inquiries
@@ -196,7 +284,7 @@ The Arrival narrative (2-4 paragraphs) should show:
 - `[text](qino:arc/id)` — arc references
 - `[text](qino:thread/name)` — thread references
 
-**Voice:** Present tense. Show the shape of how inquiry travels, not just what was found. The arrival is prose, not structured data — it tells the emergence story.
+**Voice:** Present tense. Show the shape of how inquiry travels, not just what was found.
 
 ### Parallel Learning
 
@@ -204,6 +292,8 @@ The Arrival narrative (2-4 paragraphs) should show:
 |-------|--------------|---------|
 | Student (in-world) | the material — the arc content | encountering transmissions on their device |
 | Reader (real-world) | the qino ecosystem — tools, arcs, how emergence happens | encountering the same arrival |
+
+Over transmissions, the reader accumulates a sense of the Student's world — their rhythm, their places, the device as companion.
 
 ---
 

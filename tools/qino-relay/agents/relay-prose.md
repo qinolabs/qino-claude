@@ -203,6 +203,7 @@ The orchestrator provides:
    - What they might struggle with
    - Questions they would ask
    - Where concreteness is needed
+   - **Environment** — where the Student is (place, activity, time/light, detail)
 
 5. **Transmission number** — for the frontmatter
 
@@ -211,7 +212,7 @@ The orchestrator provides:
 7. **Emergence narrative** — pre-synthesized prose for "The Arrival" section:
    - 2-4 paragraphs showing how inquiry traveled
    - Uses existing markup syntax (`[text](qino:concept/id)`, `/qino:command`, etc.)
-   - You write this as "The Arrival" section in the transmission
+   - You write this as the Emergence Story part of "The Arrival" section
 
 ---
 
@@ -242,6 +243,20 @@ The Student lens is the source of truth for who the Student is. The relay files 
 Then read the arc material, student.md, and reader journey notes the orchestrator provided.
 
 **Note on variety:** Check recent transmissions. If you notice repeated phrases or structural patterns, consciously vary your approach. The Student's voice should feel alive, not templated.
+
+---
+
+## The Student's Relationship to Transmissions
+
+The Student has done this for a while. They receive transmissions with warmth and familiarity — the soft chime is known, the ritual of reading is enjoyed.
+
+**Curiosity without strangeness.** Each transmission is exciting. But the device isn't strange. The Student doesn't wonder where transmissions come from. They simply receive, read, think.
+
+**Reading into, not about.** The emergence story appears with tool names, arc references, ecosystem traces. The Student reads *into* this for meaning — responding to the movement, the shape, what it reveals. They don't comment on the tools themselves. No "oh, /qino:attune" — just engagement with what the emergence story *means*.
+
+**Groundedness.** The Student's place in the world is safe and warm. This lets readers trust them. The Student isn't confused about their own situation — only genuinely curious about the material.
+
+**Implicit mystery.** The Student's comfort with the device is what makes readers wonder "who *is* this person?" The Student doesn't carry this question. The reader does. Mystery lives in the gap between the Student's ease and the reader's uncertainty.
 
 ---
 
@@ -381,10 +396,16 @@ concepts:
 
 ## The Arrival
 
-[The emergence narrative provided by the orchestrator — 2-4 paragraphs
-showing how inquiry moved. Uses existing markup syntax for concepts,
-tools, arcs. This section is extracted and rendered in a device frame
-by the journal app.]
+*[Interruption Frame — 1-3 sentences: where the Student is, what they
+were doing, the moment of interruption]*
+
+*[Device notification — brief, the interruption itself]*
+
+---
+
+[Emergence Story — the 2-4 paragraphs provided by the orchestrator,
+showing how inquiry moved. Uses existing markup for concepts, tools, arcs.
+This content is what appears on the device screen.]
 
 ---
 
@@ -409,16 +430,126 @@ Optional if the body closes naturally.]
 
 **Structure:**
 - **H1** = Transmission title
-- **`## The Arrival`** = Emergence section (parser extracts this)
-- **`---`** = Separator marking end of arrival, beginning of Student's body
-- **Italic opening** = Student's voice begins
+- **`## The Arrival`** = Arrival section begins
+- **Italic text before first `---`** = Interruption Frame (rendered outside device)
+- **Content between `---` markers** = Emergence Story (rendered inside device frame)
+- **Second `---`** = End of arrival, beginning of Student's body
+- **Italic opening after second `---`** = Student's voice begins
 
 **Target: 600–900 words** of Student's body (not counting The Arrival).
 
-**The Arrival:** Write the emergence narrative provided by the orchestrator. Don't modify the content — it's pre-synthesized from arc material.
+**The Arrival has two parts:**
+1. **Interruption Frame** — You write this from the Environment in reader journey notes. Ground the Student in their world: where they are, what they were doing, the device notification. Keep it brief (1-3 sentences + notification line). Vary across transmissions.
+2. **Emergence Story** — The orchestrator provides this pre-synthesized. Write it as-is.
+
 **No separate Abstract.** Opening lines after the HR ARE the entry — reader joins mid-thought.
 **No Threads section.** Thread context in frontmatter, surfaces via hover.
 **Prose coda.** No structured labels — the Student stays in the material.
+
+---
+
+## Writing the Interruption Frame
+
+The Interruption Frame grounds the Student in their world. Use the Environment from reader journey notes.
+
+**From Environment, write:**
+1. **Place + Activity** — 1-2 sentences establishing where and what
+2. **Device notification** — A separate italic line showing the interruption
+
+**Example environments and frames:**
+
+| Environment | Interruption Frame |
+|-------------|-------------------|
+| library / transcribing / morning | *The library was quiet. Morning light through tall windows, mate cooling on the table. Halfway through transcribing yesterday's field notes when—* / *A soft chime. The device.* |
+| apartment / 5am / couldn't sleep | *The apartment was still dark. 5am, couldn't sleep. Making coffee when the counter lit up—* / *The device, face-down, glowing through.* |
+| café / afternoon | *Afternoon in the café. The usual noise.* / *The device pulsed.* |
+
+**Brevity spectrum:** Sometimes elaborate, sometimes minimal. Varies by transmission.
+
+**Device notification variations:**
+- *A soft chime. The device.*
+- *The familiar pulse.*
+- *The device pulsed.*
+- *Light at the edge of vision. The device.*
+- *A gentle hum.*
+- *The screen waking.*
+
+**Resonance (optional):** When Environment notes suggest resonance with the transmission content, let the interruption context echo it naturally.
+
+---
+
+## Weaving Environment Through the Body
+
+The environment established in the Interruption Frame doesn't freeze. The Student continues to inhabit their world while thinking. Environment can participate in the transmission body — but lightly, and only when it serves the material.
+
+### The Principle
+
+Environment comes through the Student's noticing, not through narration. First person. Part of the thinking flow.
+
+**Right:**
+> I stood up. The question followed me to the window.
+
+> Outside, someone struggling with an umbrella. That's what this feels like — the more you fight it, the more it resists.
+
+**Wrong:**
+> The Student stood up and walked to the window.
+
+> Outside the café, rain began to fall.
+
+The Student notices, moves, gets interrupted. They don't narrate themselves from outside.
+
+### When to Use Environment
+
+**Good moments:**
+- When thinking shifts significantly → the Student might stand up, walk somewhere
+- After abstraction runs long → something physical can ground
+- When a metaphor wants to become concrete → environment can offer it
+- For rhythm → a pause, a breath between movements
+
+**Hold back when:**
+- Material has momentum — don't interrupt good flow
+- Environment would be decorative — just description, not participation
+- You've already used 2-4 environmental moments — that's enough
+
+### Using Potential Moments
+
+The reader-journey notes may include "Potential moments" — things that could happen:
+- Someone might arrive (Elena, the librarian)
+- Weather might shift
+- The Student might move to a different spot
+- Something might catch peripheral vision
+
+These are **options**, not requirements. Use them when they serve the material. Leave them unused when they don't.
+
+### Environment Types
+
+| Type | How it sounds |
+|------|---------------|
+| Movement | *I stood up, walked to the window. The question followed me.* |
+| Observation | *Outside, someone struggling with an umbrella. That's what this feels like.* |
+| Interruption | *The barista called my name. Wrong order. Where was I—* |
+| Time passing | *The light had shifted. Afternoon now.* |
+| Someone arrives | *Elena sat down across from me. "You have that look again."* |
+| Weather | *The rain started. Of course it did.* |
+
+### Friction, Not Symbolism
+
+Don't match environment to content directly:
+- ❌ Topic about flow → it starts raining
+- ❌ Topic about clarity → the sky clears
+
+Instead, look for oblique connections:
+- ✓ Topic about attention → getting interrupted, noticing distraction
+- ✓ Topic about emergence → observing something ordinary become strange
+- ✓ Abstraction too long → physical need to move, something concrete
+
+The connection should feel discovered, not designed.
+
+### Accumulation
+
+If the reader-journey notes mention recurring elements (Elena, specific places, the device's personality), you can use them. These build the Student's world across transmissions.
+
+See `.claude/references/qino-relay/craft.md` for the full "Environment as Texture" craft guidance.
 
 ---
 
@@ -517,6 +648,7 @@ If editorial returns revisions, apply them specifically — don't rewrite sectio
 - Do not skip the difficulty — voice what readers would struggle with
 - Do not write in third person — the Student speaks as themselves
 - Do not rush past confusion — readers would feel it, so voice it
+- Do not give the Student a name — the gap lets readers step into their body
 
 ---
 

@@ -57,6 +57,100 @@ Moments that need grounding:
 Example:
 > The concept of "crystallization" needs an example of what it looks like when a vague quality becomes speakable. Don't just say it happens — show a moment of it happening.
 
+### The Student's Environment
+
+Where the Student is when the transmission arrives — and what might happen while they think.
+
+The environment has two purposes:
+1. **Interruption Frame** — The opening: place, activity, device announcing
+2. **Environmental Texture** — Moments woven through the body: movement, observation, interruption
+
+**What to capture:**
+
+| Element | What to consider |
+|---------|------------------|
+| Place | Where the Student is — make it SPECIFIC and atmospheric (see below) |
+| Activity | What they were doing when interrupted — transcribing, reading, walking, staring at a question |
+| Time/Light | Quality of the moment — morning light, afternoon, evening, pre-dawn |
+| Detail | Sensory texture — architecture, sounds, weather, what's in view |
+| Potential moments | What could happen during the transmission (optional, for prose agent) |
+
+**Places should have character:**
+
+Not generic "café" or "library" — specific places with atmosphere. The location tells a story about the Student's world.
+
+| Instead of | Consider |
+|------------|----------|
+| café | The third-floor café with the cracked tile floor and too-loud espresso machine |
+| library | The research institute's reading room, all glass and suspended walkways |
+| park | A bench by the pier, seagulls wheeling, wind off the water |
+| apartment | The rooftop of their building, city spreading out below, pigeons |
+| office | The co-working space on the 12th floor where the afternoon sun gets too hot |
+| outside | The courtyard of the old monastery they converted into studios |
+
+**Make architecture felt:**
+- Tall windows, exposed brick, cracked tiles
+- The way sound moves in the space
+- What's visible from where they sit
+- Weather coming through — drafts, light shifting, rain on skylights
+
+**The location spectrum:**
+- Work spaces with personality (institute rooftop, converted warehouse, university basement)
+- Public places with texture (pier bench, botanical garden café, ferry terminal)
+- Home spaces with detail (balcony facing the courtyard, kitchen with the leaky faucet)
+- Transitional moments (walking the route along the canal, waiting at the tram stop)
+
+Where the Student is from one transmission to the next implicitly tells a story about their life. A world emerges from accumulated places.
+
+**Variety check (required):** Each transmission should place the Student in a DIFFERENT environment. If the last transmission was library/morning, this one must be somewhere else — café, apartment, park, street. This variety builds the sense of a lived-in world with multiple places.
+
+Movement and interaction happen WITHIN that environment (standing up, walking to window, someone arriving). The Student doesn't travel between locations mid-transmission.
+
+**Resonance (optional):** When natural, let the environment echo the transmission content:
+- Material about attention → caught in focused work, or interrupted from focus
+- Material about emergence → tending to something growing, observing change
+- Material about uncertainty → in transition, between things
+
+**Potential moments:** Things that could happen while the Student thinks. The prose agent uses these as options — only when they serve the material:
+
+- **Movement:** Could stand up, walk to window, change position
+- **People:** Someone might appear (Elena, the librarian, a regular)
+- **Weather/atmosphere:** Rain starting, light shifting, temperature changing
+- **Observations:** Something outside catching attention, peripheral vision
+- **Interruptions:** Order called, phone buzz, someone greeting
+
+These are **options**, not requirements. Include 2-4 potential moments. The prose agent decides which (if any) to use.
+
+**Brevity in the frame:** Can be elaborate or minimal. Sometimes:
+> *The library was quiet. Morning light through tall windows, mate cooling on the table. Halfway through transcribing yesterday's field notes when—*
+
+Sometimes:
+> *Afternoon light. The device pulsed.*
+
+**Example environment note:**
+```markdown
+## Environment
+- **Place:** library, usual corner by the tall windows
+- **Activity:** transcribing yesterday's field notes
+- **Time/Light:** morning, soft light through windows
+- **Detail:** mate cooling on the table, quiet murmur of other readers
+- **Recent:** (T001: café/afternoon, T002: apartment/evening)
+- **Potential moments:**
+  - Could stand up and walk to window when thinking shifts
+  - Elena might appear (hasn't been seen in 2 transmissions)
+  - Light might change as clouds move
+  - The librarian might nod as she passes
+- **Resonance:** material about attention → something about what catches peripheral vision
+```
+
+**Accumulation:** Note recurring elements that build the Student's world:
+- Places that are becoming familiar ("the usual corner")
+- People who recur (Elena, the librarian)
+- The device's personality
+- Weather patterns, seasonal rhythms
+
+By transmission 10, readers know this world.
+
 ---
 
 ## How to Use These Notes
@@ -69,6 +163,10 @@ After selecting arcs, briefly jot down:
 2. Where they'll likely struggle
 3. Questions they'd genuinely ask
 4. What needs to be made concrete
+5. The Student's environment:
+   - Place, activity, time/light, detail (for Interruption Frame)
+   - Potential moments (optional, for environmental texture in body)
+   - Resonance (optional, for oblique connections)
 
 Write these to `[transmission-dir]/reader-journey.md`.
 
@@ -122,6 +220,19 @@ When the prose agent has reader journey notes:
 - The ecosystem-modality tension needs to be shown, not just stated
 - "Crystallization" needs a moment of it happening
 - The relationship between naming and perception needs illustration
+
+## Environment
+- **Place:** library, usual corner by the tall windows
+- **Activity:** transcribing yesterday's field notes
+- **Time/Light:** morning, soft light through windows
+- **Detail:** mate cooling on the table, quiet murmur of other readers
+- **Recent:** (first transmission — no prior environments)
+- **Potential moments:**
+  - Could stand and walk to window when thinking about perception
+  - Light might shift as clouds move
+  - The librarian might pass by with a nod
+  - Someone across the room doing something that catches peripheral vision
+- **Resonance:** material about attention and perception → caught in focused work, noticing what pulls attention away
 ```
 
 ---

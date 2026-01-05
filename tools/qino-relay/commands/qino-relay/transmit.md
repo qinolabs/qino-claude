@@ -165,7 +165,13 @@ See `.claude/references/qino-relay/transmission-format.md` for The Arrival secti
 Before spawning the prose agent, create reader journey notes. The Student is a reader companion — these notes help voice the reader's encounter with the material.
 
 1. **Consider the reader**: Someone curious but without comprehensive qino knowledge
-2. **Write brief notes** to `[transmission-dir]/reader-journey.md`:
+
+2. **Check recent environments** (for variety):
+   - Read last 2-3 transmissions' `reader-journey.md` files
+   - Note their Environment settings (place, activity, time/light)
+   - This transmission should vary from recent ones
+
+3. **Write brief notes** to `[transmission-dir]/reader-journey.md`:
 
 ```markdown
 # Reader Journey — Transmission NNN
@@ -181,9 +187,32 @@ Before spawning the prose agent, create reader journey notes. The Student is a r
 
 ## Make Concrete
 - [What needs examples or grounding]
+
+## Environment
+- **Place:** [where the Student is — library, apartment, café, park, etc.]
+- **Activity:** [what they were doing when interrupted]
+- **Time/Light:** [morning, afternoon, evening, etc.]
+- **Detail:** [one sensory note — mate cooling, street sounds, tall windows]
+- **Recent:** [what last 2 transmissions used, for variety check]
+- **Potential moments:** [optional — things that could happen during the transmission]
+  - [Movement: could stand up, walk to window, change position]
+  - [People: someone might appear — Elena, librarian, a regular]
+  - [Weather/atmosphere: rain starting, light shifting]
+  - [Observations: something catching peripheral vision]
+- **Resonance:** [optional — if environment echoes transmission content obliquely]
 ```
 
-3. **Pass these notes to the prose agent** along with arc content
+4. **Pass these notes to the prose agent** along with arc content
+
+**Environment variety (required)**: Each transmission places the Student in a DIFFERENT environment. Never repeat the same place from the previous transmission. Alternate between:
+- Focused work spaces: library, study
+- Home: apartment, balcony, kitchen
+- Public: café, park, street
+- Transitional: walking, watching light, early morning
+
+Movement and interaction happen WITHIN that environment during the transmission (standing up, walking to window, someone arriving). The Student doesn't travel between locations mid-transmission.
+
+**Potential moments**: Optional but valuable. Give the prose agent 2-4 things that *could* happen during the transmission. These are options, not requirements — the prose agent uses them when they serve the material.
 
 See `.claude/references/qino-relay/reader-journey-guide.md` for detailed guidance.
 
@@ -224,7 +253,7 @@ Pass to agent:
 - The arc file content(s) — full text
 - The student.md content
 - Recent transmission content (for threading)
-- The reader journey notes
+- The reader journey notes (including Environment section)
 - The emergence narrative (synthesized in Phase 2.3)
 - The next transmission number
 - The concepts registry (concepts.md) — what concepts readers already know
@@ -232,7 +261,9 @@ Pass to agent:
 ```
 
 The prose agent:
-- Writes "The Arrival" section using the emergence narrative
+- Writes "The Arrival" section with two parts:
+  - **Interruption Frame** — uses Environment from reader journey notes (place, activity, device notification)
+  - **Emergence Story** — uses emergence narrative from Phase 2.3
 - Reads the arc(s) as source material
 - Knows the Student's current state
 - Uses reader journey notes to voice the reader's encounter

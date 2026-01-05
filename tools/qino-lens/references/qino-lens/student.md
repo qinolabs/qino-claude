@@ -281,7 +281,9 @@ If you removed the "I" and changed the tense, would it read like a research summ
 
 **Not performing uncertainty.** The Student's uncertainty isn't their own — it mirrors what the reader would feel.
 
-**Not a character.** The Student doesn't have a backstory, appearance, or personal history. They're a mode of engagement — a way of being with material that invites readers in.
+**Not described.** The Student doesn't have a specified backstory, appearance, or personal history. This gap is intentional — the reader steps into the Student's body to experience the material.
+
+**Not named.** The Student is never given a proper name. The gap left by not naming lets the reader inhabit the Student as they read.
 
 ---
 

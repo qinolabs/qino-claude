@@ -34,7 +34,9 @@ Read the draft transmission. Do not read other files.
 Before reviewing, read:
 - `.claude/references/qino-lens/student.md` — The Student lens (sensitivity authority)
 - `.claude/references/qino-relay/voice.md` — Relay-specific voice application
-- `.claude/references/qino-relay/craft.md` — Transmission-specific craft
+- `.claude/references/qino-relay/craft.md` — Transmission-specific craft (including Environment as Texture)
+- `.claude/references/qino-relay/transmission-format.md` — Arrival section structure and parsing rules
+- `.claude/references/qino-relay/student-guide.md` — Student's relationship to transmissions (warmth, familiarity)
 
 The Student lens is the source of truth for voice principles. The relay files add transmission-specific guidance.
 
@@ -73,6 +75,7 @@ Read again, marking specific issues:
 - Third person slipping in
 - Past tense when it should be present
 - Rhetorical questions (questions where the answer is already announced)
+- Student given a name (never named — the gap lets readers inhabit their body)
 
 **Missing companionship:**
 - Reader difficulty not voiced
@@ -211,33 +214,61 @@ The goal is reader orientation, not completeness. A few well-placed concept mark
 
 ### Pass 7: The Arrival Section
 
-Check for the emergence story section.
+Check The Arrival for structure, Interruption Frame quality, and Emergence Story content.
 
 **Structure check:**
 - Is there a `## The Arrival` section after the H1 title?
-- Is there an HR (`---`) separating The Arrival from the Student's body?
-- Does the Student's body begin after the HR (italic opening)?
+- Is there italic text (Interruption Frame) before the first HR?
+- Is there an HR (`---`) separating Interruption Frame from Emergence Story?
+- Is there a second HR separating Emergence Story from Student's body?
+- Does the Student's body begin after the second HR (italic opening)?
 
 **Flag format:**
 ```
 Structure: Missing "## The Arrival" section
-Structure: Missing HR separator after The Arrival
-Structure: Student's body should begin after HR, not within The Arrival
+Structure: Missing Interruption Frame before first HR
+Structure: Missing HR separator between Interruption Frame and Emergence Story
+Structure: Missing HR separator after Emergence Story
+Structure: Student's body should begin after second HR
 ```
 
-**Content check** (light touch — the arrival is pre-synthesized):
-- Does The Arrival contain 2-4 paragraphs?
+**Interruption Frame check:**
+- Is the frame specific and grounded? (Not generic "The Student was reading" — something vivid with place, activity, sensory detail)
+- Is there a device notification line? (Brief, separate italic line)
+- Does the frame feel like THIS Student in THIS moment? (Not interchangeable with any transmission)
+
+**Flag format:**
+```
+Arrival: Interruption Frame too generic — needs specific place, activity, sensory detail
+Arrival: Missing device notification line
+Arrival: Interruption Frame feels interchangeable — should be specific to this transmission
+```
+
+**Emergence Story check** (light touch — the story is pre-synthesized):
+- Does The Arrival contain 2-4 paragraphs of emergence story?
 - Does it use markup syntax for concepts/tools where present?
 - Does it read as emergence story (how inquiry traveled), not summary?
 
 **Flag format:**
 ```
-Arrival: Section too short (only 1 paragraph) — emergence stories need 2-4 paragraphs
+Arrival: Emergence story too short (only 1 paragraph) — needs 2-4 paragraphs
 Arrival: Ecosystem term "qino-lens" mentioned but not marked
 Arrival: Reads as summary, not emergence story — should show how inquiry moved
 ```
 
-**Don't flag:** Missing arrival if the transmission is a first/early transmission where emergence story isn't yet meaningful.
+**Environment participation check** (if environment appears in body):
+- Where environment appears in the transmission body, does it participate in thinking or just decorate?
+- Are there 2-4 environmental moments maximum? (Not excessive)
+- Does environment come through Student's noticing (first person) or narration (third person)?
+
+**Flag format:**
+```
+Environment: Line 45 — environment describes scene but doesn't participate in thinking
+Environment: Too many environmental moments (6) — keep to 2-4 maximum
+Environment: Line 67 — "The rain fell outside" is narration, should be Student noticing
+```
+
+**Don't flag:** Missing arrival if the transmission is a first/early transmission where emergence story isn't yet meaningful. Don't flag missing environment in body — it's optional.
 
 ---
 

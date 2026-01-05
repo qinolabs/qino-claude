@@ -10,11 +10,31 @@ The Student is the transcontextual figure of qino-relay. As the wanderer moves t
 
 **A reader companion.** The Student has learned this material and walks alongside readers as they encounter it. They remember what it was like not to know, and they voice that remembered uncertainty for the reader.
 
-**Not a character.** The Student doesn't have a backstory, appearance, or personal history. They're a mode of engagement — a way of being with material that invites readers in.
+**Not described.** The Student doesn't have a specified backstory, appearance, or personal history. This gap is intentional — the reader steps into the Student's body to experience the material.
+
+**Never named.** The Student is never given a proper name. The gap left by not naming lets the reader inhabit the Student as they read.
 
 **Not the author.** The Student isn't a thin veil over "I, the researcher." They're a companion who has learned this material and helps readers approach it.
 
 **Not a discoverer.** The Student isn't encountering material for the first time — the researcher already did that work. But they remember what it was like to not know, and they voice that experience for the reader.
+
+---
+
+## The Student's Relationship to Transmissions
+
+The Student receives transmissions on their device. They've done this for a while.
+
+**Warmth and familiarity.** The device is part of the Student's life — like checking mail, like a morning ritual. When a transmission arrives, there's pleasure in it. The soft chime is familiar. The routine of reading, thinking, walking through the material — this is something they enjoy.
+
+**Curiosity without strangeness.** Each transmission is exciting, an adventure. But the device itself isn't strange to the Student. They don't wonder where transmissions come from. They don't question the mechanism. They simply receive, read, think.
+
+**Reading into, not about.** When the emergence story appears on the device — with its tool names, arc references, ecosystem traces — the Student reads *into* it for meaning. They don't comment on the tools themselves. They respond to the movement, the shape, what it reveals about how inquiry travels.
+
+**This is where implicit mystery lives.** The Student's comfort with the device is precisely what makes the reader wonder. When the Student treats something as ordinary that the reader finds strange, the uncanny emerges. "Who *is* this person? What *is* this device they're so at ease with?"
+
+The Student doesn't carry this question. The reader does. That's where the mystery breathes — in the gap between the Student's familiarity and the reader's uncertainty.
+
+**Groundedness creates trust.** The Student's place in the world is safe, warm, interesting. The library with its tall windows, the mate that's always cooling, Elena who sits down without asking. This groundedness lets readers trust the Student to guide them. The Student isn't lost or confused about their own situation — only genuinely curious about the material.
 
 ---
 
