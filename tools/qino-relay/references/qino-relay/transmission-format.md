@@ -55,7 +55,7 @@ but I'm starting to see they're asking the same question from different angles.*
 
 [Body continues — 600-900 words]
 
-The arc uses the phrase >>meaning-searching versus meaning-finding<<. There's
+The arc uses the phrase [meaning-searching versus meaning-finding](qino:phrase/meaning-searching%20versus%20meaning-finding). There's
 something in that hyphen — the dash before "searching" and "finding" — that
 makes meaning the object rather than the subject.
 
@@ -70,7 +70,7 @@ Ends with weight, not summary.]
 The pattern came before the naming. I keep forgetting this.
 When I try to name too early, the pattern goes rigid.
 
-Something about >>the between-level space<< — where the meaning actually lives.
+Something about [the between-level space](qino:phrase/the%20between-level%20space) — where the meaning actually lives.
 I can feel its shape but not its edges yet.
 ```
 
@@ -135,7 +135,7 @@ markup syntax for concepts, tools, arcs]
 
 ## The Arrival
 
-<concept:cli-qino-scribe>Scribe</concept> needed to see differently. The
+[Scribe](qino:concept/cli-qino-scribe) needed to see differently. The
 chronicle prose kept coming out flat — describing events rather than
 inhabiting them. The wanderer was being reported on, not *being* somewhere.
 
@@ -148,7 +148,7 @@ Then something strange happened. A question used to generate world behavior
 shifts attention from description to agency. The forest isn't just trees
 and shadow; it's patient, waiting, indifferent to your passing.
 
-And <concept:tech-qino-lens>qino-lens</concept> — dormant for weeks,
+And [qino-lens](qino:concept/tech-qino-lens) — dormant for weeks,
 undefined — suddenly woke up. Not through more definition. Through being
 needed. Through /qino:attune refining what "wanderer's presence" meant.
 Through use.
@@ -174,7 +174,7 @@ The journal app renders The Arrival in a device frame:
 │  [The Arrival content rendered here]                       │
 │                                                            │
 │  Concepts and tools get hover behavior from existing       │
-│  markup: <concept:id>, /tool:command                       │
+│  markup: [text](qino:concept/id), /tool:command            │
 │                                                            │
 ╰────────────────────────────────────────────────────────────╯
 ```
@@ -191,10 +191,10 @@ The Arrival narrative (2-4 paragraphs) should show:
 4. **Pattern recognition** — when scattered things revealed themselves as one thing
 
 **Use existing markup syntax:**
-- `<concept:id>text</concept>` — ecosystem concepts (hover shows shape + context)
+- `[text](qino:concept/id)` — ecosystem concepts (hover shows shape + context)
 - `/qino:command` — tool commands (app can add hover behavior)
-- `{{arc-id}}` — arc references
-- `[[thread-name]]` — thread references
+- `[text](qino:arc/id)` — arc references
+- `[text](qino:thread/name)` — thread references
 
 **Voice:** Present tense. Show the shape of how inquiry travels, not just what was found. The arrival is prose, not structured data — it tells the emergence story.
 
@@ -293,35 +293,45 @@ Reader hovers → sees context from frontmatter. No scrolling to find definition
 
 ## Reference Syntax
 
+All references use Markdown links with `qino:` schemes. Display text appears in the link text and can be customized.
+
 ### Thread References
 
-In body text, mark threads with double brackets:
+Mark threads with `[text](qino:thread/name)` links:
 
 ```markdown
-The [[ecosystem-modality tension]] keeps appearing.
+The [ecosystem-modality tension](qino:thread/ecosystem-modality-tension) keeps appearing.
 ```
 
-Parser extracts `[[thread-name]]` for highlighting.
+Parser extracts `[text](qino:thread/id)` for highlighting. Display text is what readers see; the id matches the thread definition in frontmatter.
+
+**When to use:**
+- Important threads that recur in the transmission
+- Terms that need contextual explanation
 
 ### Arc References
 
-In body text, mark arcs with double braces:
+Mark arcs with `[text](qino:arc/id)` links:
 
 ```markdown
-Looking at the {{recognition-through-indirection}} arc today.
+Looking at the [recognition through indirection](qino:arc/recognition-through-indirection) arc today.
 ```
 
-Parser extracts `{{arc-id}}` for arc hover cards.
+Parser extracts `[text](qino:arc/id)` for arc hover cards. Display text is shown to readers.
+
+**When to use:**
+- References to specific arcs being walked through
+- First or most meaningful mention of an arc
 
 ### Phrase References (Phrases That Land)
 
-When the Student encounters a phrase from the arc material that has weight, mark it with double angle brackets:
+When the Student encounters a phrase from the arc material that has weight, mark it with `[text](qino:phrase/...)` links:
 
 ```markdown
-The arc uses the phrase >>meaning-searching versus meaning-finding<<. There's something in that hyphen...
+The arc uses the phrase [meaning-searching versus meaning-finding](qino:phrase/meaning-searching%20versus%20meaning-finding). There's something in that hyphen...
 ```
 
-Parser extracts `>>phrase<<` and renders in color (cycling through phrase colors like arc colors in chronicles). The phrase must match an entry in the `phrases` frontmatter array.
+Parser extracts `[text](qino:phrase/...)` and renders as bold. The phrase text (in the URL) must match an entry in the `phrases` frontmatter array.
 
 **When to use:**
 - Phrases the Student pauses with, responds to
@@ -335,10 +345,10 @@ Parser extracts `>>phrase<<` and renders in color (cycling through phrase colors
 
 ### Concept References
 
-Mark ecosystem concepts with XML-style syntax:
+Mark ecosystem concepts with `[text](qino:concept/id)` links:
 
 ```markdown
-The <concept:qino-world>World</concept> revealed something unexpected about indirection.
+The [World](qino:concept/qino-world) revealed something unexpected about indirection.
 ```
 
 - `id` comes from the ecosystem manifest (concepts registry)

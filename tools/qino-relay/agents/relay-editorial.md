@@ -191,7 +191,7 @@ Scan for ecosystem terms that should be marked as concepts.
 **Flag format:**
 ```
 Line 45: "World" mentioned but not marked as concept
-Line 67: "Relay" appears — consider marking as <concept:qino-relay>
+Line 67: "Relay" appears — consider marking as [Relay](qino:concept/qino-relay)
 Line 89: "scribe" referenced — ecosystem term, may need concept markup
 ```
 

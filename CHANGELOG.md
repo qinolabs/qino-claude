@@ -16,7 +16,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 #### Added
 
-- **Ecosystem concept marking** — mark ecosystem terms with `<concept:id>display text</concept>` syntax; readers see hoverable terms with shape (stable) + context (per-transmission)
+- **Ecosystem concept marking** — mark ecosystem terms with `[display text](qino:concept/id)` syntax; readers see hoverable terms with shape (stable) + context (per-transmission)
 - **Editorial Pass 6: Concept Coverage** — flags unmarked ecosystem terms for author review
 - **concepts.md registry management** — transmit command now updates the concepts registry when new ecosystem terms appear
 - **Concepts registry input** — prose agent receives available concepts for marking guidance

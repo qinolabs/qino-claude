@@ -210,7 +210,7 @@ The orchestrator provides:
 
 7. **Emergence narrative** — pre-synthesized prose for "The Arrival" section:
    - 2-4 paragraphs showing how inquiry traveled
-   - Uses existing markup syntax (`<concept:id>`, `/qino:command`, etc.)
+   - Uses existing markup syntax (`[text](qino:concept/id)`, `/qino:command`, etc.)
    - You write this as "The Arrival" section in the transmission
 
 ---
@@ -445,7 +445,7 @@ Looking at the {{recognition-through-indirection}} arc today.
 Mark ecosystem concepts with XML-style syntax:
 
 ```markdown
-The <concept:qino-world>World</concept> revealed something unexpected.
+The [World](qino:concept/qino-world) revealed something unexpected.
 ```
 
 **When to mark:**
@@ -488,13 +488,13 @@ concepts:
 
 # The Indirect Path
 
-*Dec 30. Something about building <concept:qino-world>World</concept> keeps
+*Dec 30. Something about building [World](qino:concept/qino-world) keeps
 surfacing — the way indirect language preserved what direct explanation would
 have flattened.*
 
 [...body continues...]
 
-Later, when I started working with <concept:qino-relay>Relay</concept>, the
+Later, when I started working with [Relay](qino:concept/qino-relay), the
 same pattern appeared in a different form.
 ```
 

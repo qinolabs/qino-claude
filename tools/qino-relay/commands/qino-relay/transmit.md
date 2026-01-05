@@ -147,10 +147,10 @@ From Ground and The Recurring, write 2-4 paragraphs showing:
 **Voice:** Present tense. Show the shape of how inquiry travels, not just what was found.
 
 **Use existing markup syntax:**
-- `<concept:id>text</concept>` — ecosystem concepts
+- `[text](qino:concept/id)` — ecosystem concepts
 - `/qino:command` — tool commands
-- `{{arc-id}}` — arc references
-- `[[thread-name]]` — thread references
+- `[text](qino:arc/id)` — arc references
+- `[text](qino:thread/name)` — thread references
 
 ### Pass to Prose Agent
 

@@ -16,6 +16,14 @@
       "git_ref_start": "1e806da",
       "git_ref_end": "cd29298",
       "scribe_version": "0.18.0"
+    },
+    {
+      "slug": "003-what-the-water-gives-back",
+      "title": "What the Water Gives Back",
+      "written": "2026-01-03T10:00:00Z",
+      "git_ref_start": "v0.1.0",
+      "git_ref_end": "65b5c65",
+      "scribe_version": "0.21.0"
     }
   ]
 }
