@@ -12,6 +12,28 @@ Each version section includes:
 
 ---
 
+## v0.22.4 (Lean Journal Manifest)
+
+**Summary**: Journal manifest simplified to index-only format. All prose (arc essence, thread context, concept context) now lives exclusively in transmission.md frontmatter. Manifest stores only IDs for cross-referencing.
+
+**Changed** (qino-relay):
+- `journal/manifest.json` format changed from objects with prose to ID arrays
+- Before: `"arcs": [{ "id": "...", "name": "...", "essence": "..." }]`
+- After: `"arcs": ["arc-id-1", "arc-id-2"]`
+- Same change applies to `threads` and `concepts` arrays
+
+**Architecture**:
+- Manifest answers "where does X appear?" (index)
+- Transmission frontmatter answers "what does X mean here?" (prose)
+- concepts.md answers "what is X?" (stable shape)
+
+**User action**:
+- Existing transmissions work — frontmatter already has all prose
+- Update `journal/manifest.json` to lean format (IDs only)
+- Backend publish workflow updated to read prose from transmission frontmatter
+
+---
+
 ## v0.22.0 (Command Naming Standardization)
 
 **Summary**: Standardized command naming across namespaces. Each namespace now has `:setup` (one-time workspace scaffolding) and `:init` (create new item). The old `:init` commands that created workspaces are now `:setup`, and `:init` creates new items within the workspace.

@@ -341,8 +341,22 @@ cp [journal]/student.md [journal]/transmissions/NNN-slug/student.md
 ### Update Manifest
 
 Update `[research-workspace]/journal/manifest.json`:
-- Add new transmission to transmissions array
+- Add new transmission to transmissions array (lean format — IDs only, no prose)
 - Update lastTransmission number
+
+```json
+{
+  "number": 1,
+  "slug": "what-you-notice",
+  "title": "What You Notice",
+  "date": "2026-01-05",
+  "arcs": ["qualities-of-attention"],
+  "threads": ["activation-through-use", "tool-shapes-hands"],
+  "concepts": ["tech-qino-lens", "cli-qino-scribe"]
+}
+```
+
+The manifest is an index — prose (context, essence) lives in transmission frontmatter.
 
 ---
 

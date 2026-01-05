@@ -343,7 +343,9 @@ Line 67: too certain
 
 ## Manifest Entry
 
-When transmission is complete, add to `journal/manifest.json`:
+When transmission is complete, add to `journal/manifest.json`.
+
+The manifest is a **lean index** — it stores IDs only, not content. All prose (context, essence, etc.) lives in the transmission frontmatter.
 
 ```json
 {
@@ -351,17 +353,27 @@ When transmission is complete, add to `journal/manifest.json`:
   "slug": "recognition-through-indirection",
   "title": "Recognition Through Indirection",
   "date": "2025-12-29",
-  "arcs": [
-    { "id": "recognition-through-indirection", "name": "Recognition Through Indirection", "essence": "How metaphorical distance can preserve meaning" },
-    { "id": "qualities-of-attention", "name": "Qualities of Attention", "essence": "Style as a quality of seeing" }
-  ],
-  "threads": [
-    { "name": "ecosystem-modality tension", "context": "Holding both levels without collapsing either." },
-    { "name": "crystallization", "context": "When vague quality becomes speakable." }
-  ],
-  "phrases": [
-    { "text": "meaning-searching versus meaning-finding", "source": "Recognition Through Indirection" },
-    { "text": "the between-level space", "source": "Recognition Through Indirection" }
-  ]
+  "arcs": ["recognition-through-indirection", "qualities-of-attention"],
+  "threads": ["ecosystem-modality tension", "crystallization"],
+  "concepts": ["qino-world", "tech-qino-lens"]
 }
 ```
+
+**What each field provides:**
+
+| Field | Purpose |
+|-------|---------|
+| `arcs` | Which arcs this transmission walks through |
+| `threads` | Which threads are introduced/referenced |
+| `concepts` | Which ecosystem concepts appear |
+
+**Where prose lives:**
+
+| Content | Location |
+|---------|----------|
+| Arc essence | transmission.md frontmatter |
+| Thread context | transmission.md frontmatter |
+| Concept context | transmission.md frontmatter |
+| Concept shape | concepts.md |
+
+The manifest answers "where does X appear?" — the transmission answers "what does X mean here?"
