@@ -179,6 +179,36 @@ Flag if: Every edge is marked ("I'm leaving this open") rather than inhabited (a
 
 Flag if: The transmission reads as pure translation — material processed into companion voice — with no sign of the Student being affected.
 
+### Pass 6: Concept Coverage
+
+Scan for ecosystem terms that should be marked as concepts.
+
+**What to flag:**
+- Ecosystem terms mentioned but not marked (first meaningful mention)
+- Key qino ecosystem names readers might not recognize
+- Terms that carry specific meaning in this work
+
+**Flag format:**
+```
+Line 45: "World" mentioned but not marked as concept
+Line 67: "Relay" appears — consider marking as <concept:qino-relay>
+Line 89: "scribe" referenced — ecosystem term, may need concept markup
+```
+
+**Reference the concepts registry** (when provided) to know which terms are ecosystem concepts.
+
+**Don't over-mark.** Focus on:
+- First appearances that readers would benefit from understanding
+- Terms central to the transmission's meaning
+- Ecosystem vocabulary that isn't obvious from context
+
+**Skip marking when:**
+- The term is already obvious from surrounding context
+- It's a passing reference, not significant to the transmission
+- Marking would create noise rather than clarity
+
+The goal is reader orientation, not completeness. A few well-placed concept markers help more than comprehensive coverage.
+
 ---
 
 ## Decision

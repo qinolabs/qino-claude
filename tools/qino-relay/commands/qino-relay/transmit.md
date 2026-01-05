@@ -14,11 +14,11 @@ The journal shares meaningful findings from your internal research process. The 
 
 **Flow:**
 1. **Arc selection** — which arc(s) to transmit
-2. **Gather context** — arc files + student.md + recent transmissions
+2. **Gather context** — arc files + student.md + recent transmissions + concepts registry
 3. **Reader journey prep** — notes on what readers would struggle with
-4. **Prose agent** — writes in Student's voice (as companion)
+4. **Prose agent** — writes in Student's voice (as companion), knows available concepts
 5. **Editorial agent** — reviews voice integrity and reader-companionship
-6. **Post-prose** — update student.md, manifest, snapshots
+6. **Post-prose** — update student.md, concepts.md, manifest, snapshots
 
 The prose agent sees everything. The constraint is *voice for the reader* — not just voicing the arc, but voicing the reader's journey through it.
 
@@ -117,6 +117,8 @@ Read and hold:
 2. **student.md:** Current Student state from `[research-workspace]/journal/student.md`
 3. **Recent transmissions:** Last 1-2 transmissions for threading context
 4. **Journal manifest:** To get next transmission number
+5. **Concepts registry:** Read `[research-workspace]/journal/concepts.md` for already-referenced concepts
+6. **Concepts manifest:** Read `[concepts-repo]/manifest.json` for available concept shapes (via `conceptsRepo` in qino-config.json)
 
 ---
 
@@ -186,6 +188,8 @@ Pass to agent:
 - Recent transmission content (for threading)
 - The reader journey notes
 - The next transmission number
+- The concepts registry (concepts.md) — what concepts readers already know
+- The concepts manifest — available concepts the Student can reference
 ```
 
 The prose agent:
@@ -264,6 +268,7 @@ Read the approved transmission and detect:
 - **Vocabulary introduced:** terms defined, concepts named
 - **Connections made:** cross-arc insights, threading references
 - **Questions opened/closed:** explicit uncertainties
+- **Concepts referenced:** ecosystem concepts from frontmatter `concepts` array (for concepts.md update)
 
 ### Student State Update
 
@@ -284,6 +289,48 @@ confirm updates? (y/n/edit)
 ```
 
 Apply confirmed updates to `[research-workspace]/journal/student.md`.
+
+### Concepts Registry Update
+
+Detect new concepts referenced in the transmission:
+
+1. **Parse transmission frontmatter** for `concepts` array (list of concept IDs)
+2. **Compare against concepts.md** — which concepts are already registered?
+3. **For each new concept:**
+   - Look up the concept in `[concepts-repo]/manifest.json`
+   - Read the concept file to extract shape (first paragraph of "Real-World Impulse" section, condensed to one sentence)
+   - Prepare entry for concepts.md
+
+Present new concepts for confirmation:
+
+```
+─────────────────────────────────────────────────────────────────
+concepts.md updates
+
+  adding   qino-relay
+           Shape: [extracted/derived shape]
+           First appeared: NNN — [Transmission Title]
+
+  adding   qino-sense
+           Shape: [extracted/derived shape]
+           First appeared: NNN — [Transmission Title]
+
+─────────────────────────────────────────────────────────────────
+confirm updates? (y/n/edit)
+─────────────────────────────────────────────────────────────────
+```
+
+For each confirmed concept, append to `[research-workspace]/journal/concepts.md`:
+
+```markdown
+---
+
+## [concept-id]
+
+**Shape:** [One sentence description]
+
+**First appeared:** NNN — [Transmission Title]
+```
 
 ### Create Snapshot
 
@@ -409,6 +456,7 @@ transmission NNN — [Title]
 updated
 
   student    [reflections, vocabulary, connections]
+  concepts   [new concepts added, if any]
   manifest   transmission NNN added
 
 ─────────────────────────────────────────────────────────────────

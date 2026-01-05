@@ -45,6 +45,9 @@ phrases:
     source: Recognition Through Indirection
   - text: the between-level space
     source: Recognition Through Indirection
+concepts:
+  - id: qino-world
+    context: "The app that revealed recognition-through-indirection"
 ---
 
 # Recognition Through Indirection
@@ -93,6 +96,9 @@ I can feel its shape but not its edges yet.
 | `phrases` | array | Phrases from arc material that landed (colored inline) |
 | `phrases[].text` | string | The exact phrase text (for matching) |
 | `phrases[].source` | string | Where it came from (arc name, optional) |
+| `concepts` | array | Ecosystem concepts referenced in this transmission |
+| `concepts[].id` | string | Concept identifier (from ecosystem manifest) |
+| `concepts[].context` | string | Transmission-specific framing (1-2 sentences) |
 
 ---
 
@@ -221,6 +227,38 @@ Parser extracts `>>phrase<<` and renders in color (cycling through phrase colors
 - All quotes — only phrases that *land*
 - The Student's own phrasing
 - Generic descriptions
+
+### Concept References
+
+Mark ecosystem concepts with XML-style syntax:
+
+```markdown
+The <concept:qino-world>World</concept> revealed something unexpected about indirection.
+```
+
+- `id` comes from the ecosystem manifest (concepts registry)
+- Display text is what readers see (can differ from the concept name)
+- The concept must have an entry in the `concepts` frontmatter array
+
+**Frontmatter entry:**
+
+```yaml
+concepts:
+  - id: qino-world
+    context: "The app that revealed recognition-through-indirection"
+```
+
+The `context` field provides transmission-specific framing — how this concept matters to *this* transmission. This context appears on hover, helping readers understand the concept's role here.
+
+**When to use:**
+- Ecosystem terms readers might not know
+- Key concepts that carry specific meaning in this work
+- First significant mention of a concept in a transmission
+
+**Not for:**
+- Every mention — mark the first or most meaningful appearance
+- Generic terms that happen to match concept names
+- Terms already obvious from context
 
 ---
 

@@ -206,6 +206,8 @@ The orchestrator provides:
 
 5. **Transmission number** — for the frontmatter
 
+6. **Concepts registry** — ecosystem concepts that may appear in this material (when available)
+
 ---
 
 ## Your Task
@@ -416,6 +418,64 @@ In body text, mark arcs with double braces:
 
 ```markdown
 Looking at the {{recognition-through-indirection}} arc today.
+```
+
+### Concept References
+
+Mark ecosystem concepts with XML-style syntax:
+
+```markdown
+The <concept:qino-world>World</concept> revealed something unexpected.
+```
+
+**When to mark:**
+- First meaningful mention of an ecosystem concept
+- Key terms readers might not know
+- Terms that carry specific meaning in this work
+
+**Not every mention.** Mark the first or most significant appearance. Over-marking creates noise.
+
+**Frontmatter entry:**
+
+For each concept marked in the body, add an entry to the `concepts` array in frontmatter:
+
+```yaml
+concepts:
+  - id: qino-world
+    context: "The app that revealed recognition-through-indirection"
+```
+
+The `context` field is your transmission-specific framing — how this concept matters *here*. Not a definition, but a contextual anchor. This appears on hover.
+
+**Example — inline markup and frontmatter together:**
+
+```markdown
+---
+number: 3
+slug: the-indirect-path
+title: The Indirect Path
+date: 2025-12-30
+arcs:
+  - id: recognition-through-indirection
+    name: Recognition Through Indirection
+    essence: How metaphorical distance can preserve meaning
+concepts:
+  - id: qino-world
+    context: "Where the pattern of indirection first became visible"
+  - id: qino-relay
+    context: "The transmission system that carries meaning across contexts"
+---
+
+# The Indirect Path
+
+*Dec 30. Something about building <concept:qino-world>World</concept> keeps
+surfacing — the way indirect language preserved what direct explanation would
+have flattened.*
+
+[...body continues...]
+
+Later, when I started working with <concept:qino-relay>Relay</concept>, the
+same pattern appeared in a different form.
 ```
 
 ---
