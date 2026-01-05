@@ -122,6 +122,44 @@ Read and hold:
 
 ---
 
+## Phase 2.3: Extract Emergence Story
+
+Before reader journey prep, synthesize the emergence story from arc(s). This becomes "The Arrival" section in the transmission.
+
+### Read Arc Sections
+
+For each selected arc, read:
+- **Ground** — the initial impulse or charge
+- **The Recurring** — patterns appearing across surfaces
+- **The Between** — quality of connection between disparate elements
+- **Traces** — tools, concepts, inquiries touched
+- **What Composted** — before → after transformations
+
+### Synthesize Movement Narrative
+
+From Ground and The Recurring, write 2-4 paragraphs showing:
+
+1. **What started it** — the initial impulse or charge
+2. **Sideways turns** — unexpected connections, byproducts becoming inquiries
+3. **Questions that drove forward** — the epistemic bias made visible
+4. **Pattern recognition** — when scattered things revealed themselves as one thing
+
+**Voice:** Present tense. Show the shape of how inquiry travels, not just what was found.
+
+**Use existing markup syntax:**
+- `<concept:id>text</concept>` — ecosystem concepts
+- `/qino:command` — tool commands
+- `{{arc-id}}` — arc references
+- `[[thread-name]]` — thread references
+
+### Pass to Prose Agent
+
+Include the synthesized emergence narrative in context. The prose agent writes it as "The Arrival" section in transmission.md.
+
+See `.claude/references/qino-relay/transmission-format.md` for The Arrival section specification.
+
+---
+
 ## Phase 2.5: Reader Journey Prep
 
 Before spawning the prose agent, create reader journey notes. The Student is a reader companion — these notes help voice the reader's encounter with the material.
@@ -187,16 +225,18 @@ Pass to agent:
 - The student.md content
 - Recent transmission content (for threading)
 - The reader journey notes
+- The emergence narrative (synthesized in Phase 2.3)
 - The next transmission number
 - The concepts registry (concepts.md) — what concepts readers already know
 - The concepts manifest — available concepts the Student can reference
 ```
 
 The prose agent:
+- Writes "The Arrival" section using the emergence narrative
 - Reads the arc(s) as source material
 - Knows the Student's current state
 - Uses reader journey notes to voice the reader's encounter
-- Writes the transmission in the Student's companion voice
+- Writes the Student's body in their companion voice
 - Presents draft to orchestrator
 
 **The constraint is voice for the reader.** The prose agent sees everything. The Student walks alongside a reader encountering this material — asking their questions, voicing their struggle, making abstract concrete.

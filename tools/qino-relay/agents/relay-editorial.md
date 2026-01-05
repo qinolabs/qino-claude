@@ -209,6 +209,36 @@ Line 89: "scribe" referenced — ecosystem term, may need concept markup
 
 The goal is reader orientation, not completeness. A few well-placed concept markers help more than comprehensive coverage.
 
+### Pass 7: The Arrival Section
+
+Check for the emergence story section.
+
+**Structure check:**
+- Is there a `## The Arrival` section after the H1 title?
+- Is there an HR (`---`) separating The Arrival from the Student's body?
+- Does the Student's body begin after the HR (italic opening)?
+
+**Flag format:**
+```
+Structure: Missing "## The Arrival" section
+Structure: Missing HR separator after The Arrival
+Structure: Student's body should begin after HR, not within The Arrival
+```
+
+**Content check** (light touch — the arrival is pre-synthesized):
+- Does The Arrival contain 2-4 paragraphs?
+- Does it use markup syntax for concepts/tools where present?
+- Does it read as emergence story (how inquiry traveled), not summary?
+
+**Flag format:**
+```
+Arrival: Section too short (only 1 paragraph) — emergence stories need 2-4 paragraphs
+Arrival: Ecosystem term "qino-lens" mentioned but not marked
+Arrival: Reads as summary, not emergence story — should show how inquiry moved
+```
+
+**Don't flag:** Missing arrival if the transmission is a first/early transmission where emergence story isn't yet meaningful.
+
 ---
 
 ## Decision
@@ -218,7 +248,9 @@ After review, decide:
 ### APPROVED
 
 If the transmission:
-- Maintains the Student's companion voice throughout
+- Has proper structure (H1 title, `## The Arrival` section, HR separator, Student's body)
+- The Arrival reads as emergence story (how inquiry traveled)
+- Maintains the Student's companion voice throughout the body
 - Makes abstract material concrete
 - Voices difficulty readers would experience
 - Feels like someone at the reader's side

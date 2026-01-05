@@ -208,6 +208,11 @@ The orchestrator provides:
 
 6. **Concepts registry** — ecosystem concepts that may appear in this material (when available)
 
+7. **Emergence narrative** — pre-synthesized prose for "The Arrival" section:
+   - 2-4 paragraphs showing how inquiry traveled
+   - Uses existing markup syntax (`<concept:id>`, `/qino:command`, etc.)
+   - You write this as "The Arrival" section in the transmission
+
 ---
 
 ## Your Task
@@ -360,10 +365,6 @@ Write the transmission to `[transmission-dir]/transmission.md`:
 
 ```markdown
 ---
-number: [NNN]
-slug: [kebab-case-title]
-title: [Title]
-date: [YYYY-MM-DD]
 arcs:
   - id: [arc-id]
     name: [Arc Name]
@@ -371,9 +372,21 @@ arcs:
 threads:
   - name: [thread-name]
     context: [1-2 sentence context for hover]
+concepts:
+  - id: [concept-id]
+    context: [Transmission-specific framing]
 ---
 
 # [Title]
+
+## The Arrival
+
+[The emergence narrative provided by the orchestrator — 2-4 paragraphs
+showing how inquiry moved. Uses existing markup syntax for concepts,
+tools, arcs. This section is extracted and rendered in a device frame
+by the journal app.]
+
+---
 
 *[Opening lines — invite the reader in. Date, arcs being walked through,
 the question that opens. No separate Abstract — this IS the entry.]*
@@ -394,9 +407,16 @@ back to summarize it. Can be a single sentence if that holds the weight.
 Optional if the body closes naturally.]
 ```
 
-**Target: 600–900 words** of transmission body.
+**Structure:**
+- **H1** = Transmission title
+- **`## The Arrival`** = Emergence section (parser extracts this)
+- **`---`** = Separator marking end of arrival, beginning of Student's body
+- **Italic opening** = Student's voice begins
 
-**No separate Abstract.** Opening lines ARE the entry — reader joins mid-thought.
+**Target: 600–900 words** of Student's body (not counting The Arrival).
+
+**The Arrival:** Write the emergence narrative provided by the orchestrator. Don't modify the content — it's pre-synthesized from arc material.
+**No separate Abstract.** Opening lines after the HR ARE the entry — reader joins mid-thought.
 **No Threads section.** Thread context in frontmatter, surfaces via hover.
 **Prose coda.** No structured labels — the Student stays in the material.
 

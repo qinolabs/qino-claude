@@ -98,6 +98,115 @@ Frontmatter is **prose only**. Metadata lives in manifest.
 
 ---
 
+## The Arrival Section
+
+The transmission includes a prose section called "The Arrival" — the emergence story of how inquiry reached this point. This section appears between the H1 title and the Student's body, separated by a horizontal rule.
+
+The journal app extracts this section and renders it in a device frame. The Student reads the arrival alongside the reader — both witness how inquiry traveled.
+
+### Structure
+
+```markdown
+# [Title]
+
+## The Arrival
+
+[2-4 paragraphs of prose showing how inquiry moved — uses existing
+markup syntax for concepts, tools, arcs]
+
+---
+
+*[Opening lines — Student's voice begins]*
+
+[Body continues]
+```
+
+### Parsing Rules
+
+- **H1** = Transmission title
+- **`## The Arrival`** = Emergence section (parser extracts content under this heading)
+- **`---`** = Separator marking end of arrival, beginning of Student's body
+- **Italic opening** = Student's voice begins
+
+### Example
+
+```markdown
+# What You Notice
+
+## The Arrival
+
+<concept:cli-qino-scribe>Scribe</concept> needed to see differently. The
+chronicle prose kept coming out flat — describing events rather than
+inhabiting them. The wanderer was being reported on, not *being* somewhere.
+
+The obvious fix would be technique. Better sentences. Stronger verbs. But
+the question that surfaced was different: how do you shift what you notice?
+Not paint applied afterward — perception itself changing.
+
+Then something strange happened. A question used to generate world behavior
+— "What would the world DO?" — turned out to be the answer. That question
+shifts attention from description to agency. The forest isn't just trees
+and shadow; it's patient, waiting, indifferent to your passing.
+
+And <concept:tech-qino-lens>qino-lens</concept> — dormant for weeks,
+undefined — suddenly woke up. Not through more definition. Through being
+needed. Through /qino:attune refining what "wanderer's presence" meant.
+Through use.
+
+---
+
+*Dec 18. There's an arc I've been walking through called Qualities of
+Attention. It started with a problem: the prose kept coming out flat.*
+
+[Student's body continues — 600-900 words]
+```
+
+### App Rendering
+
+The journal app renders The Arrival in a device frame:
+
+```
+╭────────────────────────────────────────────────────────────╮
+│  ◈  INCOMING                                               │
+│                                                            │
+│  What You Notice                                           │
+│                                                            │
+│  [The Arrival content rendered here]                       │
+│                                                            │
+│  Concepts and tools get hover behavior from existing       │
+│  markup: <concept:id>, /tool:command                       │
+│                                                            │
+╰────────────────────────────────────────────────────────────╯
+```
+
+The Student reads this alongside the reader — both may find it cryptic (tool names are real ecosystem elements), and both learn from repeated exposure across transmissions.
+
+### Writing Guidelines
+
+The Arrival narrative (2-4 paragraphs) should show:
+
+1. **What started it** — the initial impulse or charge
+2. **Sideways turns** — unexpected connections, byproducts becoming inquiries
+3. **Questions that drove forward** — the epistemic bias made visible
+4. **Pattern recognition** — when scattered things revealed themselves as one thing
+
+**Use existing markup syntax:**
+- `<concept:id>text</concept>` — ecosystem concepts (hover shows shape + context)
+- `/qino:command` — tool commands (app can add hover behavior)
+- `{{arc-id}}` — arc references
+- `[[thread-name]]` — thread references
+
+**Voice:** Present tense. Show the shape of how inquiry travels, not just what was found. The arrival is prose, not structured data — it tells the emergence story.
+
+### Parallel Learning
+
+| Layer | Learns about | Through |
+|-------|--------------|---------|
+| Student (in-world) | the material — the arc content | encountering transmissions on their device |
+| Reader (real-world) | the qino ecosystem — tools, arcs, how emergence happens | encountering the same arrival |
+
+---
+
 ## Sections
 
 ### Opening (No Separate Abstract)
