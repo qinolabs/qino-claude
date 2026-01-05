@@ -24,6 +24,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 #### Changed
 
 - **Lean manifest format** — `journal/manifest.json` now stores IDs only (not objects with prose); all context/essence lives in transmission frontmatter
+- **Prose-only frontmatter** — transmission frontmatter contains prose only (arcs, threads, concepts with context); metadata (number, slug, title, date) now lives in manifest
+- **relay_version tracking** — manifest includes `relay_version` field for version tracking
 - **Architecture clarification** — manifest answers "where does X appear?" / transmission answers "what does X mean here?" / concepts.md answers "what is X?"
 
 ### Updater

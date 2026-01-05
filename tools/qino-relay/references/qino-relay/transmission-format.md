@@ -22,12 +22,10 @@ research-workspace/journal/transmissions/NNN-slug/
 
 ## transmission.md Structure
 
+Frontmatter contains **prose only** — content with context for hover cards and highlighting. All metadata (number, slug, title, date, version) lives in `journal/manifest.json`.
+
 ```markdown
 ---
-number: 1
-slug: recognition-through-indirection
-title: Recognition Through Indirection
-date: 2025-12-29
 arcs:
   - id: recognition-through-indirection
     name: Recognition Through Indirection
@@ -80,12 +78,10 @@ I can feel its shape but not its edges yet.
 
 ## Frontmatter Fields
 
+Frontmatter is **prose only**. Metadata lives in manifest.
+
 | Field | Type | Description |
 |-------|------|-------------|
-| `number` | integer | Transmission number (1, 2, 3...) |
-| `slug` | string | URL-safe identifier |
-| `title` | string | Human-readable title |
-| `date` | string | ISO date (YYYY-MM-DD) |
 | `arcs` | array | Arcs this transmission moves through |
 | `arcs[].id` | string | Arc identifier |
 | `arcs[].name` | string | Arc name |
@@ -353,6 +349,7 @@ The manifest is a **lean index** — it stores IDs only, not content. All prose 
   "slug": "recognition-through-indirection",
   "title": "Recognition Through Indirection",
   "date": "2025-12-29",
+  "relay_version": "0.22.4",
   "arcs": ["recognition-through-indirection", "qualities-of-attention"],
   "threads": ["ecosystem-modality tension", "crystallization"],
   "concepts": ["qino-world", "tech-qino-lens"]
@@ -363,6 +360,7 @@ The manifest is a **lean index** — it stores IDs only, not content. All prose 
 
 | Field | Purpose |
 |-------|---------|
+| `relay_version` | Version of qino-relay that wrote this transmission |
 | `arcs` | Which arcs this transmission walks through |
 | `threads` | Which threads are introduced/referenced |
 | `concepts` | Which ecosystem concepts appear |

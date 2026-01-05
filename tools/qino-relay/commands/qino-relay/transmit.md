@@ -342,6 +342,7 @@ cp [journal]/student.md [journal]/transmissions/NNN-slug/student.md
 
 Update `[research-workspace]/journal/manifest.json`:
 - Add new transmission to transmissions array (lean format — IDs only, no prose)
+- Include `relay_version` from `.claude/references/qino-relay/version.json`
 - Update lastTransmission number
 
 ```json
@@ -350,6 +351,7 @@ Update `[research-workspace]/journal/manifest.json`:
   "slug": "what-you-notice",
   "title": "What You Notice",
   "date": "2026-01-05",
+  "relay_version": "0.22.4",
   "arcs": ["qualities-of-attention"],
   "threads": ["activation-through-use", "tool-shapes-hands"],
   "concepts": ["tech-qino-lens", "cli-qino-scribe"]

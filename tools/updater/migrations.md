@@ -12,25 +12,31 @@ Each version section includes:
 
 ---
 
-## v0.22.4 (Lean Journal Manifest)
+## v0.22.4 (Lean Journal Manifest + Prose-Only Frontmatter)
 
-**Summary**: Journal manifest simplified to index-only format. All prose (arc essence, thread context, concept context) now lives exclusively in transmission.md frontmatter. Manifest stores only IDs for cross-referencing.
+**Summary**: Journal manifest simplified to index-only format. Transmission frontmatter is now prose-only. Metadata (number, slug, title, date) moved to manifest. Manifest also tracks relay_version.
 
 **Changed** (qino-relay):
 - `journal/manifest.json` format changed from objects with prose to ID arrays
 - Before: `"arcs": [{ "id": "...", "name": "...", "essence": "..." }]`
 - After: `"arcs": ["arc-id-1", "arc-id-2"]`
 - Same change applies to `threads` and `concepts` arrays
+- Manifest now includes `relay_version` field
+
+**Frontmatter changes**:
+- Metadata (number, slug, title, date) removed from transmission.md frontmatter
+- Frontmatter now contains prose only (arcs, threads, concepts with context)
+- Metadata lives in manifest.json per-transmission entry
 
 **Architecture**:
-- Manifest answers "where does X appear?" (index)
-- Transmission frontmatter answers "what does X mean here?" (prose)
+- Manifest answers "where does X appear?" (index + metadata)
+- Transmission frontmatter answers "what does X mean here?" (prose only)
 - concepts.md answers "what is X?" (stable shape)
 
 **User action**:
-- Existing transmissions work — frontmatter already has all prose
-- Update `journal/manifest.json` to lean format (IDs only)
-- Backend publish workflow updated to read prose from transmission frontmatter
+- Update `journal/manifest.json` to lean format (IDs only, add relay_version)
+- Remove metadata from transmission.md frontmatter (keep prose)
+- Backend publish workflow updated to read prose from frontmatter, metadata from manifest
 
 ---
 
