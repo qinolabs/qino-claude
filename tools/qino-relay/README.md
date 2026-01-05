@@ -41,7 +41,7 @@ The transcontextual figure — as the wanderer moves through chronicles, the Stu
 3. Reader journey prep — what readers won't know, will struggle with, would ask
 4. Prose agent — writes in Student's voice (sees everything + reader journey notes)
 5. Editorial agent — reviews voice integrity and reader-companionship
-6. Post-prose — update student.md, manifest, snapshots
+6. Post-prose — update student.md, concepts.md, manifest, snapshots
 ```
 
 ### Why Reader Journey Notes?
@@ -62,6 +62,7 @@ qino-research/
 ├── arcs/
 └── journal/
     ├── student.md             # Living state (evolves)
+    ├── concepts.md            # Ecosystem concepts registry
     ├── manifest.json          # Transmission index
     └── transmissions/
         └── 001-recognition-through-indirection/

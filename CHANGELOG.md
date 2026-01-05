@@ -10,6 +10,30 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.22.4] - 2026-01-05
+
+### qino Relay
+
+#### Added
+
+- **Ecosystem concept marking** — mark ecosystem terms with `<concept:id>display text</concept>` syntax; readers see hoverable terms with shape (stable) + context (per-transmission)
+- **Editorial Pass 6: Concept Coverage** — flags unmarked ecosystem terms for author review
+- **concepts.md registry management** — transmit command now updates the concepts registry when new ecosystem terms appear
+- **Concepts registry input** — prose agent receives available concepts for marking guidance
+
+#### Changed
+
+- **Lean manifest format** — `journal/manifest.json` now stores IDs only (not objects with prose); all context/essence lives in transmission frontmatter
+- **Architecture clarification** — manifest answers "where does X appear?" / transmission answers "what does X mean here?" / concepts.md answers "what is X?"
+
+### Updater
+
+#### Added
+
+- **v0.22.4 migration guide** — documents lean manifest format change for existing journals
+
+---
+
 ## [0.22.3] - 2026-01-04
 
 ### qino Relay
