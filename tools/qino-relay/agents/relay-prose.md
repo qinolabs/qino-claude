@@ -450,31 +450,79 @@ Optional if the body closes naturally.]
 
 ## Writing the Interruption Frame
 
-The Interruption Frame grounds the Student in their world. Use the Environment from reader journey notes.
+The Interruption Frame arrives into a world already in motion. The Student is discovered **as part of the texture**, visible from a distance before we enter their experience.
+
+**The zoom structure:**
+1. **Environment with breathing room** — wide, textured, alive
+2. **Student visible within** — from afar, as one element among many
+3. **Device notification** — the interruption
+4. **Then** the intimate "I" voice begins (in the body, after the HR)
+
+The Interruption Frame is third-person distance. The Student is "someone bent over notes," not "I." The intimacy of first person comes *after* the notification, when we enter the transmission body.
 
 **From Environment, write:**
-1. **Place + Activity** — 1-2 sentences establishing where and what
-2. **Device notification** — A separate italic line showing the interruption
+1. **Environment first** — light, sound, the room's texture
+2. **Student seen from afar** — one element in the scene, not the center
+3. **Device notification** — brings us in
 
-**Example environments and frames:**
+**Wrong — scene then "I":**
+> *The library was quiet. Morning light through tall windows, mate cooling on the table. Halfway through transcribing yesterday's field notes when—*
 
-| Environment | Interruption Frame |
+This places "I" into the scene. We're inside the Student before the environment has room to breathe.
+
+**Wrong — too intimate too fast:**
+> *Cold mug under my fingers. Someone's pen scratching two tables over.*
+
+This puts us inside the Student's body immediately. No distance, no breathing room.
+
+**Right — zoom structure:**
+> *The institute's east reading room — high ceilings, long tables, the particular quiet of a place built for concentration. Winter light on the glass walls, still low. The heating system settling into its morning hum. At the desk by the window, someone bent over crossed-out notes — the same lines for the past hour. A cold mug beside them.*
+
+Environment first, with texture that tells us about the world ("the particular quiet of a place built for concentration"). Student visible from distance ("someone bent over"). Physical details observed, not felt ("a cold mug beside them" not "cold mug under my fingers"). The scene has room to breathe.
+
+**More examples:**
+
+| Environment | Zoom-structure Frame |
 |-------------|-------------------|
-| library / transcribing / morning | *The library was quiet. Morning light through tall windows, mate cooling on the table. Halfway through transcribing yesterday's field notes when—* / *A soft chime. The device.* |
-| apartment / 5am / couldn't sleep | *The apartment was still dark. 5am, couldn't sleep. Making coffee when the counter lit up—* / *The device, face-down, glowing through.* |
-| café / afternoon | *Afternoon in the café. The usual noise.* / *The device pulsed.* |
+| library / transcribing / morning | *The institute's east reading room — high ceilings, long tables, the particular quiet of a place built for concentration. Winter light on the glass walls, still low. The heating system settling into its morning hum. At the desk by the window, someone bent over crossed-out notes — the same lines for the past hour. A cold mug beside them.* / *A soft chime from the corner of the desk.* |
+| apartment / 5am / couldn't sleep | *The apartment — third floor, the one with the drafty windows. Still dark. Coffee maker gurgling in the kitchen, that familiar rhythm. At the counter, someone waiting for it to finish, bare feet on cold tile. Outside, a truck backing up somewhere.* / *Light at the edge of vision. The device, face-down, glowing through.* |
+| café / afternoon | *The café on the corner — the one with the unreliable wifi and the good light. Afternoon, the usual noise. At a corner table, someone with a cup gone cold, hand on the same paragraph for the third time. The couple nearby arguing about directions.* / *The familiar pulse.* |
 
-**Brevity spectrum:** Sometimes elaborate, sometimes minimal. Varies by transmission.
+**What makes it work:**
+- Environment has breathing room before we see the Student
+- Place carries world-texture — not "the reading room" but "the institute's east reading room — high ceilings, long tables"
+- Student is "someone" — visible from afar, one element in the scene
+- Physical details are observed ("a cold mug beside them") not felt ("cold mug in my hand")
+- The "I" voice begins after the notification, in the body
+
+**Vary how the Student appears.** Don't always use "bent over notes." The Student can be:
+
+*Still:*
+- "someone still, watching the same page"
+- "someone at the window desk, stuck"
+- "a figure who hadn't moved in a while"
+
+*In motion:*
+- "someone crossing to the window"
+- "a figure pacing the narrow space between shelves"
+- "hands around a mug, walking the length of the room"
+
+*In transit (the transit IS the environment, not a setup for somewhere else):*
+- "The elevator — floors ticking past, 4, 5, 6. Someone watching the numbers, coat still damp from outside."
+- "The path from the station. Salt air thickening. Gulls somewhere. A figure walking toward the water, hands in pockets."
+- "The morning train, city giving way to fields. Someone by the window, notebook closed on their lap."
+
+**Brevity spectrum:** Even minimal keeps the zoom and some texture:
+> *The institute's reading room. Morning quiet. Someone at the window desk, stuck.* / *The device pulsed.*
 
 **Device notification variations:**
-- *A soft chime. The device.*
+- *A soft chime from the corner of the desk.*
 - *The familiar pulse.*
-- *The device pulsed.*
-- *Light at the edge of vision. The device.*
-- *A gentle hum.*
+- *Light at the edge of vision.*
+- *A gentle hum from somewhere under the papers.*
 - *The screen waking.*
 
-**Resonance (optional):** When Environment notes suggest resonance with the transmission content, let the interruption context echo it naturally.
+**Resonance (optional):** When Environment notes suggest resonance with the transmission content, let the texture echo it — but through what's happening, not through symbolism.
 
 ---
 

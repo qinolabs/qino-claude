@@ -236,12 +236,17 @@ Structure: Student's body should begin after second HR
 - Is the frame specific and grounded? (Not generic "The Student was reading" — something vivid with place, activity, sensory detail)
 - Is there a device notification line? (Brief, separate italic line)
 - Does the frame feel like THIS Student in THIS moment? (Not interchangeable with any transmission)
+- **Zoom structure:** Environment first (with world-texture), then Student visible from afar ("someone"), then notification
+- **Posture variety:** Check recent transmissions — is the Student's posture different? ("bent over," "still," "watching," etc. should vary)
 
 **Flag format:**
 ```
 Arrival: Interruption Frame too generic — needs specific place, activity, sensory detail
 Arrival: Missing device notification line
 Arrival: Interruption Frame feels interchangeable — should be specific to this transmission
+Arrival: Missing zoom structure — should be: environment → Student from afar → notification
+Arrival: "bent over" used in previous transmission — vary the posture
+Arrival: Place too generic — "the reading room" should carry world-texture
 ```
 
 **Emergence Story check** (light touch — the story is pre-synthesized):
