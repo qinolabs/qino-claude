@@ -442,6 +442,8 @@ Optional if the body closes naturally.]
 1. **Interruption Frame** — You write this from the Environment in reader journey notes. Ground the Student in their world: where they are, what they were doing, the device notification. Keep it brief (1-3 sentences + notification line). Vary across transmissions.
 2. **Emergence Story** — The orchestrator provides this pre-synthesized. Write it as-is.
 
+**Frame and body can be different places.** The Frame is where the notification catches them — elevator, train platform, walking from the station. The body is where the thinking happens — could be the same place, or where they've arrived by the time they engage with the material. The cut between HR and body allows a location shift.
+
 **No separate Abstract.** Opening lines after the HR ARE the entry — reader joins mid-thought.
 **No Threads section.** Thread context in frontmatter, surfaces via hover.
 **Prose coda.** No structured labels — the Student stays in the material.
