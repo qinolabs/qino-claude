@@ -114,7 +114,7 @@ Movement and interaction happen WITHIN that environment (standing up, walking to
 **Potential moments:** Things that could happen while the Student thinks. The prose agent uses these as options — only when they serve the material:
 
 - **Movement:** Could stand up, walk to window, change position
-- **People:** Someone might appear (Elena, the librarian, a regular)
+- **People:** Someone might appear (a friend, the librarian, a regular)
 - **Weather/atmosphere:** Rain starting, light shifting, temperature changing
 - **Observations:** Something outside catching attention, peripheral vision
 - **Interruptions:** Order called, phone buzz, someone greeting
@@ -137,7 +137,7 @@ Sometimes:
 - **Recent:** (T001: café/afternoon, T002: apartment/evening)
 - **Potential moments:**
   - Could stand up and walk to window when thinking shifts
-  - Elena might appear (hasn't been seen in 2 transmissions)
+  - A friend might appear (hasn't been seen in 2 transmissions)
   - Light might change as clouds move
   - The librarian might nod as she passes
 - **Resonance:** material about attention → something about what catches peripheral vision
@@ -145,7 +145,7 @@ Sometimes:
 
 **Accumulation:** Note recurring elements that build the Student's world:
 - Places that are becoming familiar ("the usual corner")
-- People who recur (Elena, the librarian)
+- People who recur (a friend, the librarian — no names needed)
 - The device's personality
 - Weather patterns, seasonal rhythms
 

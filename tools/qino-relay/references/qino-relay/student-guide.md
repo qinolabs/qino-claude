@@ -34,7 +34,7 @@ The Student receives transmissions on their device. They've done this for a whil
 
 The Student doesn't carry this question. The reader does. That's where the mystery breathes — in the gap between the Student's familiarity and the reader's uncertainty.
 
-**Groundedness creates trust.** The Student's place in the world is safe, warm, interesting. The library with its tall windows, the mate that's always cooling, Elena who sits down without asking. This groundedness lets readers trust the Student to guide them. The Student isn't lost or confused about their own situation — only genuinely curious about the material.
+**Groundedness creates trust.** The Student's place in the world is safe, warm, interesting. The library with its tall windows, the mate that's always cooling, the friend who sits down without asking. This groundedness lets readers trust the Student to guide them. The Student isn't lost or confused about their own situation — only genuinely curious about the material.
 
 ---
 

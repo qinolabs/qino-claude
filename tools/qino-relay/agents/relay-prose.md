@@ -266,15 +266,19 @@ First person, present tense. Walking alongside the reader.
 
 **The texture:**
 
-> *Dec 29. Walking through two arcs today—both emerged from building qino-world, but I'm starting to see they're asking the same question from different angles.*
+> *"Recognition through indirection." I kept turning that phrase over. There's something in it I almost have.*
 >
-> *It went: qino-world, then ecosystem-modality tension, then ecology language question. What makes this tricky is that each step felt obvious at the time, but the connection between them wasn't.*
+> *What makes this tricky is — the obvious reading is about metaphor. But that's not quite it. It's about how distance can preserve meaning rather than obscure it.*
 >
-> *Let me try to make this concrete. When I first saw "recognition through indirection," I thought it was just about metaphor. But it's actually about how distance can preserve meaning rather than obscure it.*
+> *The café was crowded today. Voices overlapping, half-conversations bleeding into each other. I stopped trying to follow any single thread.*
 >
-> *The question I kept coming back to: why does naming too early close rather than open perception?*
+> *Oh.*
+>
+> *Maybe that's what the arc is saying. Meaning isn't always in the direct line.*
 
-The Student isn't discovering for the first time. They're walking alongside a reader encountering this material — asking the questions readers would ask, voicing the struggle they might feel.
+The Student dives into material. The Arrival already established context (which arcs, when, where). The body doesn't re-establish — it inhabits.
+
+**Note:** No dated re-intro ("Dec 29. Walking through the X arc today..."). The Arrival handles that context. The body starts *in* the thinking.
 
 **Companion voice markers:**
 - "When I first saw this, I thought..." — acknowledges prior learning
@@ -294,6 +298,9 @@ The Student isn't discovering for the first time. They're walking alongside a re
 - "The key insight is..." — announces rather than walks alongside
 - "This demonstrates..." — explanation mode
 - "As we can see..." — false certainty
+- "Something about..." — hedges without commitment (say what the something is, or sit with genuine uncertainty)
+- "There's something in..." — same problem (name it or stay genuinely open)
+- "Something shifted" — vague gesture at change (show the shift through action or perception)
 
 ---
 
@@ -528,78 +535,161 @@ Environment first, with texture that tells us about the world ("the particular q
 
 ---
 
-## Weaving Environment Through the Body
+## Environment as Presence
 
-The environment established in the Interruption Frame doesn't freeze. The Student continues to inhabit their world while thinking. Environment can participate in the transmission body — but lightly, and only when it serves the material.
+The environment established in the Interruption Frame doesn't freeze. The Student continues to inhabit their world while thinking. Environment participates in the transmission — not as decoration, but as texture that shapes the thinking.
 
-### The Principle
+**See the Student lens (sections 13-16)** for the full environment sensitivity. This section covers relay-specific application.
 
-Environment comes through the Student's noticing, not through narration. First person. Part of the thinking flow.
+---
 
-**Right:**
+### The Core Principle
+
+The Student has a body and a location. The world continues while they think — light shifts, sounds happen, the body moves. Environment and thought are not separate tracks.
+
+**What environment can do:**
+
+| Action | Effect |
+|--------|--------|
+| **Ground** | Physical sensation anchors abstract thought |
+| **Mirror** | Environment echoes thought obliquely (without explanation) |
+| **Interrupt** | Something breaks the flow — and that's useful |
+| **Continue** | Time passes, things change, the world doesn't wait |
+
+---
+
+### Two Modes of Environmental Presence
+
+**1. First-person noticing** — The Student notices, moves, is affected. Part of the thinking flow.
+
+> My coffee had gone cold. How long had I been here?
+
 > I stood up. The question followed me to the window.
 
-> Outside, someone struggling with an umbrella. That's what this feels like — the more you fight it, the more it resists.
+**2. Third-person zoom** — Brief moments that show the Student from distance. World-building, breathing room.
+
+> At the desk, someone who hadn't moved in an hour. The light had shifted around them.
+
+Use third-person sparingly — it creates a beat, a pause. Then return to first-person.
+
+---
+
+### Implicit Mirroring
+
+When environment and thought rhyme, let them rhyme without annotation. The reader makes the connection.
+
+**Right:**
+> The café was crowded. Voices overlapping, half-conversations. I stopped trying to follow any single thread.
+>
+> Oh.
 
 **Wrong:**
-> The Student stood up and walked to the window.
+> The café was crowded — which is actually like what I'm reading about indirection. The meaning isn't in any single voice.
 
-> Outside the café, rain began to fall.
+The positive trusts the reader. The negative explains the metaphor.
 
-The Student notices, moves, gets interrupted. They don't narrate themselves from outside.
+---
+
+### Environment Becomes Example
+
+Sometimes what's happening around the Student illuminates the material — not as announced metaphor, but as lived instance.
+
+**Right:**
+> There's someone at the next table. They keep almost saying something to their companion. Leaning forward, then back. The words not quite arriving.
+>
+> That's what this concept is like. The meaning hovering.
+
+**Wrong:**
+> There's someone at the next table who keeps almost speaking. This is exactly like the concept of "sensing before speaking" — you can feel the thing before you can name it.
+
+One light touch. Not a full explanation.
+
+---
+
+### Contextual Density
+
+The Student's thinking has weight when environment has texture. Sparse environment = floating thought.
+
+**Flat:**
+> I was thinking about the concept. The café was busy.
+
+**Dense:**
+> The café's morning rush. Espresso machine hissing. Someone's bag bumping the back of my chair. I had the same sentence open — the one about naming closing perception. My coffee getting cold. I didn't reach for it.
+
+A few well-chosen details create more texture than a catalogue.
+
+---
+
+### Grounding Through Body
+
+Interiority shows through action and sensation, not statement.
+
+**Right:**
+- "I'd been staring at the same crack in the ceiling." (stuck)
+- "My hand was on the same paragraph for the third time." (can't move past)
+- "My shoulders were tight. When did that happen?" (processing without knowing)
+
+**Wrong:**
+- "I felt stuck on this concept."
+- "I was deeply absorbed in the material."
+
+The body reveals what statement would flatten.
+
+---
 
 ### When to Use Environment
 
 **Good moments:**
-- When thinking shifts significantly → the Student might stand up, walk somewhere
 - After abstraction runs long → something physical can ground
-- When a metaphor wants to become concrete → environment can offer it
+- When thinking shifts significantly → movement, change of position
+- When material wants to become concrete → environment can offer the example
 - For rhythm → a pause, a breath between movements
 
 **Hold back when:**
 - Material has momentum — don't interrupt good flow
 - Environment would be decorative — just description, not participation
-- You've already used 2-4 environmental moments — that's enough
+- You've already used 3-4 environmental moments — that's usually enough
+
+---
+
+### Resonance, Not Symbolism
+
+Don't match environment to content directly:
+- ❌ Thinking about clarity → the sky clears
+- ❌ Stuck on a concept → physically stuck somewhere
+
+Instead, look for oblique friction:
+- ✓ Struggling with abstraction → interrupted by something concrete
+- ✓ Trying to hold multiple threads → voices overlapping nearby
+- ✓ Looking for the right word → someone else searching for something
+
+The rhyme should feel discovered, not designed.
+
+---
 
 ### Using Potential Moments
 
 The reader-journey notes may include "Potential moments" — things that could happen:
-- Someone might arrive (Elena, the librarian)
+- Someone might arrive (a friend, the librarian)
 - Weather might shift
 - The Student might move to a different spot
 - Something might catch peripheral vision
 
-These are **options**, not requirements. Use them when they serve the material. Leave them unused when they don't.
+These are **options**, not requirements. Use them when they serve the material.
 
-### Environment Types
+---
 
-| Type | How it sounds |
-|------|---------------|
-| Movement | *I stood up, walked to the window. The question followed me.* |
-| Observation | *Outside, someone struggling with an umbrella. That's what this feels like.* |
-| Interruption | *The barista called my name. Wrong order. Where was I—* |
-| Time passing | *The light had shifted. Afternoon now.* |
-| Someone arrives | *Elena sat down across from me. "You have that look again."* |
-| Weather | *The rain started. Of course it did.* |
+### Seeds in the Arc
 
-### Friction, Not Symbolism
+The best examples often come from the arc itself — concrete moments already in the source material.
 
-Don't match environment to content directly:
-- ❌ Topic about flow → it starts raining
-- ❌ Topic about clarity → the sky clears
+Before reaching for external examples (analogies, memories), look for seeds in the arc:
+- A design that failed in a specific way
+- A tool interaction that revealed something
+- A phrase that had weight
+- A moment when something clicked
 
-Instead, look for oblique connections:
-- ✓ Topic about attention → getting interrupted, noticing distraction
-- ✓ Topic about emergence → observing something ordinary become strange
-- ✓ Abstraction too long → physical need to move, something concrete
-
-The connection should feel discovered, not designed.
-
-### Accumulation
-
-If the reader-journey notes mention recurring elements (Elena, specific places, the device's personality), you can use them. These build the Student's world across transmissions.
-
-See `.claude/references/qino-relay/craft.md` for the full "Environment as Texture" craft guidance.
+These seeds can be re-lived through the Student, not just reported.
 
 ---
 

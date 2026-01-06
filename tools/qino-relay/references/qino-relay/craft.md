@@ -12,11 +12,14 @@ The lens defines: Questions That Don't Resolve, Trailing Off, The Gap, Restraint
 
 The Student's voice should be recognizable but not repetitive. Across transmissions, vary:
 
-**Opening moves:**
-- Date + arc name (common, don't overuse)
+**Opening moves** (the body, after The Arrival):
+- A phrase from the material that stopped you
 - A question that's been sitting
 - Returning to something from last time
 - Starting in the middle of a thought
+- An environmental moment that leads into thinking
+
+**Note:** The Arrival handles context (which arcs, when, where). The body doesn't re-establish — it dives in. No dated re-intro ("Dec 29. Walking through the X arc today...").
 
 **Structural shapes:**
 - Linear movement through one arc
@@ -100,102 +103,162 @@ The coda is optional emphasis, not required summary. If the transmission closes 
 
 ---
 
-## Environment as Texture
+## Environment as Presence
 
-The Student inhabits a world. They're not a disembodied voice — they're sitting somewhere, doing something, present in a place. The environment established in the Interruption Frame doesn't freeze while they think.
+The Student inhabits a world. They're not a disembodied voice — they have a body, a location, a world that continues while they think.
 
-### The Principle
+**Core environment principles live in:** `.claude/references/qino-lens/student.md` (sections 13-16)
 
-Environment should **participate** in the thinking, not just accompany it. But unlike Design Adventure (where The World is a separate persona acting between exchanges), here the Student is the only voice. Environment is woven INTO the first-person thinking-aloud.
+This section adds transmission-specific application.
 
-The Student notices their environment as part of processing. They move as part of how they think. Their world continues to exist while they're in it.
+---
 
-### How Environment Enters the Voice
+### The Core Principle
 
-Environment comes through the Student's noticing, not through narration:
+Environment and thought are not separate tracks. The Student thinks *while* inhabiting a place. The place shapes what can be thought — not symbolically, but through the friction of being somewhere.
 
-**Right (Student noticing):**
+The world continues: light shifts, sounds happen, the body moves. The Student's interiority is grounded in this ongoing world.
+
+---
+
+### Two Modes of Environmental Presence
+
+**1. First-person noticing** — The Student notices, moves, is affected. Part of the thinking flow.
+
+> My coffee had gone cold. How long had I been here?
+
 > I stood up. The question followed me to the window.
 
-> Outside, someone was struggling with an umbrella. That's what this feels like — the more you fight it, the more it resists.
+**2. Third-person zoom** — Brief moments that show the Student from distance. World-building, breathing room.
 
-> The barista called my name. Wrong order, but close enough. Where was I—
+> At the desk, someone who hadn't moved in an hour. The light had shifted around them.
 
-**Wrong (narrator describing):**
-> The Student stood up and walked to the window, thinking deeply.
+Use third-person sparingly — it creates a beat, then return to first-person.
 
-> Outside the café, rain began to fall on the busy street.
-
-The environment is experienced, not reported. First person. Part of the thinking flow.
+---
 
 ### When Environment Participates
 
 **Good moments:**
-- **Inflection points** — when thinking shifts significantly, movement often accompanies
-- **After abstraction** — when the prose has been conceptual too long, something physical can ground
-- **When a metaphor wants to become concrete** — environment can offer the literalization
-- **For rhythm** — a pause, a breath between movements of the argument
+- **After abstraction** — when thinking has been conceptual too long, something physical can ground
+- **Inflection points** — when thinking shifts significantly, movement can accompany
+- **When material wants to become concrete** — environment can offer the example
+- **For rhythm** — a pause, a breath between movements
 
-**Signs to hold back:**
-- Material has momentum — don't interrupt productive thinking
-- Environment would be decorative — just describing, not participating
-- Too much already — 2-4 moments per transmission, not more
+**Hold back when:**
+- Material has momentum — don't interrupt good flow
+- Environment would be decorative — description without participation
+- You've already used 3-4 moments — that's usually enough
 
-### What Environment Can Do
+---
 
-| Type | Example | What it offers |
-|------|---------|----------------|
-| Movement | *I stood up, walked to the window. The question followed me.* | Marks shift, creates physical pause |
-| Observation | *Outside, someone struggling with an umbrella. That's what this feels like.* | Oblique grounding, unexpected connection |
-| Interruption | *The barista called my name. Wrong order. Where was I—* | Breaks abstraction, creates rhythm |
-| Time passing | *The light had shifted. Afternoon now.* | Duration, the transmission takes real time |
-| Someone arrives | *Elena sat down across from me. "You have that look again."* | Relational texture, world accumulation |
-| Weather/atmosphere | *The rain started. Of course it did.* | World responding |
+### Implicit Mirroring
 
-### Friction, Not Symbolism
+When environment and thought rhyme, let them rhyme without annotation. The reader makes the connection.
 
-Environment doesn't mirror content directly. That's too obvious:
-- ❌ Topic about flow → it starts raining
-- ❌ Topic about clarity → the sky clears
+**Right:**
+> The café was crowded. Voices overlapping, half-conversations. I stopped trying to follow any single thread.
+>
+> Oh.
 
-Instead, environment offers friction or oblique resonance:
-- ✓ Topic about attention → interrupted by something, noticing what distraction feels like
-- ✓ Topic about emergence → observing something ordinary that's becoming strange
-- ✓ Abstraction running long → physical discomfort, need to move, something concrete
+**Wrong:**
+> The café was crowded — which is like what I'm reading about indirection. The meaning isn't in any single voice.
 
-The connection should feel discovered, not matched.
+Trust the reader. Don't explain the metaphor.
+
+---
+
+### Environment Becomes Example
+
+Sometimes what's happening around the Student illuminates the material — as lived instance, not announced metaphor.
+
+**Right:**
+> There's someone at the next table. They keep almost saying something. Leaning forward, then back. The words not quite arriving.
+>
+> That's what this concept is like. The meaning hovering.
+
+**Wrong:**
+> There's someone at the next table who keeps almost speaking. This is exactly like the concept of "sensing before speaking."
+
+One light touch. Not a full explanation.
+
+---
+
+### Contextual Density
+
+The Student's thinking has weight when environment has texture.
+
+**Flat:**
+> I was thinking about the concept. The café was busy.
+
+**Dense:**
+> The café's morning rush. Espresso machine hissing. Someone's bag bumping the back of my chair. I had the same sentence open — the one about naming closing perception. My coffee getting cold. I didn't reach for it.
+
+A few well-chosen details create more texture than a catalogue.
+
+---
+
+### Grounding Through Body
+
+Interiority shows through action and sensation, not statement.
+
+**Right:**
+- "I'd been staring at the same crack in the ceiling." (stuck)
+- "My hand was on the same paragraph for the third time." (can't move past)
+- "My shoulders were tight. When did that happen?" (processing without knowing)
+
+**Wrong:**
+- "I felt stuck on this concept."
+- "I was deeply absorbed."
+
+The body reveals what statement would flatten.
+
+---
+
+### Resonance, Not Symbolism
+
+Don't match environment to content directly:
+- ❌ Thinking about clarity → the sky clears
+- ❌ Stuck on a concept → physically stuck somewhere
+
+Instead, look for oblique friction:
+- ✓ Struggling with abstraction → interrupted by something concrete
+- ✓ Trying to hold multiple threads → voices overlapping nearby
+- ✓ Looking for the right word → someone else searching for something
+
+The rhyme should feel discovered, not designed.
+
+---
 
 ### Two Scales of Variation
 
-**Across transmissions:** The Student is in a different environment each time. Library one transmission, café the next, apartment balcony the next. This variety builds the sense of a lived-in world with multiple places.
+**Across transmissions:** Different environment each time. Library one transmission, café the next, apartment balcony the next. Builds a lived-in world.
 
-**Within a transmission:** The Student moves and interacts within THAT environment. They might stand up, walk to the window, notice something outside, get interrupted by someone arriving. But they don't leave the café to go to the library mid-transmission.
+**Within a transmission:** Movement and interaction within THAT environment. The Student might stand up, walk to the window, notice something outside. But they don't leave mid-transmission.
 
-The Interruption Frame establishes where we are. Environmental texture through the body shows the Student inhabiting that place while thinking.
+**Note:** The Interruption Frame can be a different place than the body (elevator → café, train platform → home). The cut between HR and body allows a location shift.
+
+---
 
 ### Accumulation
 
 The Student's world builds across transmissions:
 - Places become familiar — "the usual corner," "the library's tall windows"
-- People recur — Elena, the librarian who nods
+- People recur — a friend, the librarian who nods (no names needed)
 - The device has personality — its sounds, its timing
 - Rhythms emerge — morning vs late night, weather patterns
 
-By transmission 10, readers know this world. The environment becomes a character through accumulation.
+---
 
-### Integration with Other Craft
+### Diagnostic Questions
 
-Environment participates in **pacing** — a physical moment creates breath, pause, shift.
+*Does the environment participate in the thinking, or is it just setting?*
 
-Environment can **return** — something noticed early (the rain, the cooling mate) can reappear differently.
+*Is this moment earned, or decorative?*
 
-Environment can mark **closing** — ending not just with thought but with physical position.
+*Does the reader feel the Student in a place, or just reading a voice?*
 
-*Ask:* Does the environment participate in the thinking, or is it just setting?
-
-*Ask:* Is this moment earned, or decorative?
-
-*Ask:* Does the reader feel the Student in a place, or just reading a voice?
+*Does the body reveal interiority, or does statement flatten it?*
 
 ---
 

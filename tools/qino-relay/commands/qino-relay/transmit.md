@@ -196,7 +196,7 @@ Before spawning the prose agent, create reader journey notes. The Student is a r
 - **Recent:** [what last 2 transmissions used, for variety check]
 - **Potential moments:** [optional — things that could happen during the transmission]
   - [Movement: could stand up, walk to window, change position]
-  - [People: someone might appear — Elena, librarian, a regular]
+  - [People: someone might appear — a friend, the librarian, a regular]
   - [Weather/atmosphere: rain starting, light shifting]
   - [Observations: something catching peripheral vision]
 - **Resonance:** [optional — if environment echoes transmission content obliquely]

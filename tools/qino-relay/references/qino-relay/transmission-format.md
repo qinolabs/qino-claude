@@ -50,8 +50,8 @@ concepts:
 
 # Recognition Through Indirection
 
-*Dec 29. Walking through two arcs today—both emerged from building qino-world,
-but I'm starting to see they're asking the same question from different angles.*
+*"Recognition through indirection." I kept turning that phrase over. There's
+something in it I almost have.*
 
 [Body continues — 600-900 words]
 
@@ -267,7 +267,7 @@ The Interruption Frame is grounded in deliberate Environment prep during Phase 2
 
 See `.claude/references/qino-relay/reader-journey-guide.md` for how to prepare Environment notes.
 
-Across transmissions, this variety builds the Student's lived-in world. By transmission 10, readers know the library's tall windows, Elena's way of sitting down, the mate that's always cooling.
+Across transmissions, this variety builds the Student's lived-in world. By transmission 10, readers know the library's tall windows, the friend who sits down without asking, the mate that's always cooling.
 
 ### The Emergence Story
 
@@ -299,19 +299,28 @@ Over transmissions, the reader accumulates a sense of the Student's world — th
 
 ## Sections
 
-### Opening (No Separate Abstract)
+### Opening (No Separate Abstract, No Dated Re-Intro)
 
 The transmission begins directly with the Student's voice. The opening lines ARE the entry—not a separate abstract to get through.
 
-**Good opening:**
-> *Dec 29. Walking through two arcs today—both emerged from building qino-world,
-> but I'm starting to see they're asking the same question from different angles.*
+**Important:** The Arrival handles context (which arcs, when, where). The body doesn't re-establish — it dives into the material.
+
+**Good openings:**
+> *"Recognition through indirection." I kept turning that phrase over. There's something in it I almost have.*
+
+> *What makes this hard is — the obvious reading is about metaphor. But that's not quite it.*
+
+> *The café was crowded. Voices overlapping, half-conversations. I stopped trying to follow any single thread.*
 
 **Avoid:**
+> *Dec 29. Walking through two arcs today...*
+
 > ## Abstract
 > *This transmission explores the relationship between...*
 
-The reader joins the Student mid-thought. No barrier.
+The dated re-intro ("Dec 29. Walking through the X arc today...") was necessary before The Arrival existed. Now that The Arrival establishes context, the body starts *in* the thinking.
+
+The reader joins the Student mid-thought. No barrier, no re-establishing.
 
 ### Body
 

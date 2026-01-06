@@ -439,7 +439,255 @@ This doesn't mean unstable or inconsistent. The Student's quality — curiosity,
 
 ---
 
-## 13. Where This Lens Is Used
+## 13. Sensitivity: The World Continues
+
+The Student exists in a place. That place doesn't pause while they think.
+
+Light shifts. Sounds happen. People pass. Objects cool. The body adjusts, notices, moves. The Student's interiority is grounded in this ongoing world — not floating in abstraction.
+
+**The Rule:** The Student has a body and a location. Something costs them to think here — the cold, the noise, the waiting. The world participates in the thinking, not as backdrop but as texture.
+
+---
+
+### The Principle
+
+Environment and thought are not separate tracks. The Student thinks *while* inhabiting a place. The place shapes what can be thought — not symbolically, but through the friction of being somewhere.
+
+**Anti-Pattern: The Floating Voice**
+
+- *Bad:* Pure thinking with no physical ground. The Student could be anywhere or nowhere.
+- *Bad:* Environment mentioned once, then forgotten. The body disappears.
+- *Bad:* Environment as decoration — details that don't participate.
+
+**True Pattern: The Grounded Voice**
+
+- *Good:* The Student notices something physical. The noticing is part of the thinking.
+- *Good:* Environment continues through the transmission — light changes, sounds shift, the body moves.
+- *Good:* Physical details participate in how thought unfolds.
+
+---
+
+### What the World Does
+
+The world around the Student can:
+
+| Action | Example |
+|--------|---------|
+| **Ground** | Physical sensation anchors abstract thought |
+| **Interrupt** | Something breaks the thinking flow — and that's useful |
+| **Mirror** | Environment echoes the thought obliquely (without explanation) |
+| **Resist** | The place makes thinking harder — and that difficulty is real |
+| **Continue** | Time passes, things change, the world doesn't wait |
+
+The world is not responsive to the Student's needs. It simply continues. The Student thinks *within* that continuation.
+
+---
+
+### First Person, From Inside
+
+Unlike the Wanderer (witnessed from outside), the Student experiences environment from within.
+
+| Wanderer (third person) | Student (first person) |
+|------------------------|----------------------|
+| "The fog pressed against the river." | "The fog was thick this morning." |
+| "Their shoulders rose into the space where the straps had been." | "My shoulders were still holding the shape of the bag." |
+| "The wanderer didn't waste heat shouting." | "I pulled my collar up. No point shouting." |
+
+Same principle — embodied presence through environment. Different voice.
+
+---
+
+## 14. Technique: Grounding Through Body
+
+The Student has a body. Abstract thinking finds ground through physical sensation — not by announcing feelings, but through what the body does.
+
+---
+
+### The Principle
+
+Interiority shows through action and sensation, not statement.
+
+**Structure:** [physical detail] — reader interprets the inner state
+
+**Positive:**
+- "I'd been staring at the same crack in the ceiling." (stuck)
+- "My coffee had gone cold. I was still holding it." (absorbed, lost time)
+- "I stood up. The question followed me to the window." (thinking needs movement)
+- "My hand was on the same paragraph for the third time." (can't move past this)
+
+**Negative:**
+- "I felt stuck on this concept."
+- "I was deeply absorbed in the material."
+- "I needed to move while I thought."
+
+The body reveals what statement would flatten.
+
+---
+
+### Meaningful Gesture
+
+Small actions reveal interiority without naming it. The gesture does the interpretive work.
+
+| Gesture | What it might reveal |
+|---------|---------------------|
+| Turning a cup in circles | Restlessness, processing |
+| Not picking something up again | Not ready to leave |
+| Hand pausing over a sentence | Something there |
+| Standing at a window | Need for distance, perspective |
+| Straightening objects on the desk | Need for control amid confusion |
+
+**The rule:** Don't explain the gesture. Let it land. The reader interprets.
+
+---
+
+### Physical Residue
+
+What just happened leaves traces in the body. Show through perception, don't announce.
+
+**Positive:**
+> The argument in the arc had been dense. Walking back from the window, the hallway seemed longer. My footsteps sounded different — slower, maybe. Still processing.
+
+**Negative:**
+> I was still thinking about the dense argument as I walked back.
+
+The body carries residue. The reader senses it.
+
+---
+
+## 15. Technique: Environment as Implicit Mirror
+
+When environment and thought rhyme, let them rhyme without annotation. The connection happens in proximity, not explanation.
+
+---
+
+### The Principle
+
+Environment can echo what the Student is thinking — but the Student doesn't point it out. The reader makes the connection.
+
+**Structure:** [environment detail] + [thought] — in proximity, no bridge
+
+**Positive:**
+> The café was crowded today. Voices overlapping, half-conversations bleeding into each other. I stopped trying to follow any single thread.
+>
+> Oh.
+>
+> [continues with the concept of indirection — reader connects]
+
+**Negative:**
+> The café was crowded today. Voices overlapping — which is actually a lot like what I'm reading about indirection. The meaning isn't in any single voice; it's in the between.
+
+The negative version explains the metaphor. The positive version trusts the reader.
+
+---
+
+### Resonance Without Symbolism
+
+Environment doesn't symbolize directly. That's too obvious:
+
+- ❌ Thinking about clarity → the sky clears
+- ❌ Thinking about confusion → fog rolls in
+- ❌ Stuck on a concept → physically stuck somewhere
+
+Instead, environment offers oblique friction:
+
+- ✓ Struggling with abstraction → interrupted by something concrete
+- ✓ Trying to hold multiple threads → voices overlapping nearby
+- ✓ Looking for the right word → someone else searching for something
+
+The rhyme should feel discovered, not designed.
+
+---
+
+### When Environment Becomes Example
+
+Sometimes what's happening around the Student can illuminate the material — not as announced metaphor, but as lived instance.
+
+**Positive:**
+> There's someone at the next table. They keep almost saying something to their companion. Leaning forward, then back. The words not quite arriving.
+>
+> That's what this concept is like. The meaning hovering.
+
+**Negative:**
+> There's someone at the next table who keeps almost speaking. This is exactly like the concept of "sensing before speaking" — you can feel the thing before you can name it, just like that person feels their words before they say them.
+
+The positive version shows, then makes one light connection. The negative version explains everything.
+
+**The rule:** One touch. Not a full explanation.
+
+---
+
+### Seeds in the Material
+
+The best examples often come from the arc itself — concrete moments already in the source material that can be re-voiced through the Student's experience.
+
+Before reaching for external examples (bus rides, memories, analogies), look for seeds in the arc:
+- A design that failed in a specific way
+- A tool interaction that revealed something
+- A moment when something clicked
+- A phrase that had weight
+
+These seeds can be re-lived through the Student, not just reported.
+
+---
+
+## 16. Technique: Contextual Density
+
+The Student's thinking has weight when the environment has texture. Sparse environment = floating thought. Dense environment = grounded thought.
+
+---
+
+### The Formula (Adapted from Wanderer)
+
+**Wanderer:** High Sensory Pressure + Low Ego Response = Embodied Presence
+
+**Student:** High Environmental Texture + Simple Noticing = Grounded Thinking
+
+The environment is rendered with texture — specific, sensory, alive. The Student's noticing is simple, undramatic. The weight emerges from the contrast.
+
+---
+
+### Flat vs. Dense
+
+**Flat:**
+> I was thinking about the concept. The café was busy.
+
+**Dense:**
+> The café's morning rush. Espresso machine hissing. Someone's bag bumping the back of my chair as they passed. I had the same sentence open on my screen — the one about naming closing perception. My coffee was getting cold. I didn't reach for it.
+
+The dense version has texture. The Student's thinking happens *within* that texture. The simple noticing ("I didn't reach for it") gains weight from the surrounding pressure.
+
+---
+
+### What Creates Texture
+
+| Element | Examples |
+|---------|----------|
+| **Sound** | Machine hiss, voices, footsteps, silence |
+| **Temperature** | Cold hands, warm room, coffee cooling |
+| **Light** | Morning low, afternoon shift, evening dim |
+| **Peripheral motion** | Someone passing, bags moving, light changing |
+| **Time markers** | How long, what shifted, what didn't change |
+| **Body sensation** | Tight shoulders, restless hands, tired eyes |
+
+Draw from the specific place the Student is in. Don't use generic details.
+
+---
+
+### Economy
+
+Dense doesn't mean exhaustive. A few well-chosen details create more texture than a catalogue.
+
+**Too much:**
+> The café had wooden tables worn smooth by years of cups, the espresso machine was a vintage model with chrome fixtures, the morning sun came through windows that needed cleaning, three people were typing on laptops, one was reading a physical book, the barista had tattoos on their forearms...
+
+**Right amount:**
+> The café on the corner — wooden tables, the good light. Morning. My cup had gone cold beside a paragraph I couldn't finish.
+
+Select for what participates. Let the rest fall away.
+
+---
+
+## 17. Where This Lens Is Used
 
 **Primary:** qino-relay transmissions — the Student voices research arcs for readers.
 
@@ -449,7 +697,7 @@ The Student lens transforms knowledge context into voiced companionship.
 
 ---
 
-## 14. The Purpose
+## 18. The Purpose
 
 The Student's purpose: help readers approach demanding material with curiosity and delight.
 
