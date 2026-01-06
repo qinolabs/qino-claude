@@ -55,10 +55,31 @@ Go through each candidate with the human. Build distinctions between what qualif
 
 For each candidate:
 
-1. Present the passage with its context
-2. Ask: *Does this qualify as [quality]?*
-3. Listen to their response — the reasoning matters more than yes/no
-4. Note what they say in their words
+1. **Present** the passage with its context
+2. **Ask**: *Does this qualify as [quality]?*
+3. **Listen** to their response — the reasoning matters more than yes/no
+4. **Interpret** — voice what you heard, restate their response in your own words
+5. **Space** — pause here. Don't present the next candidate yet. This is an invitation for refinement
+6. **Refinement** — if they push back, the distinction sharpens. If they let it stand, move on
+7. **Capture** — note the response, your interpretation, and any refinement
+
+### The Interpretive Loop
+
+**This is where calibration actually happens.** Not in the user's initial response, not in the final extracted distinction, but in the exchange between interpretation and refinement.
+
+When you voice an interpretation, you create a surface the user can push against:
+
+> **User:** "This one feels off. There's something self-important about it."
+>
+> **Facilitator:** "So the quality needs to *earn* its weight — not announce it?"
+>
+> *[space — wait for response]*
+>
+> **User:** "Not quite. It can be dense. It's more that the depth should come from the material itself, not from how it's being presented."
+
+The facilitator's interpretation — even though it was *wrong* — created the condition for refinement. The distinction "depth from material vs. depth from presentation" wouldn't have emerged from the initial response alone.
+
+**Critical:** After voicing interpretation, *pause*. Don't immediately present the next candidate. The space is where refinement becomes possible. Without it, the user has to reach back through new material to respond to your interpretation — cognitive overload that closes the window for refinement.
 
 ### Building Distinctions
 
@@ -216,25 +237,59 @@ Derived from sources that consistently failed:
 
 ---
 
-## Output Documents
+## Output Document
 
-The calibration produces two documents:
+The calibration produces a single document with two parts: trace first, synthesis at end.
 
-### Research Document (`[quality]-research.md`)
+### Why This Structure
 
-- The core principle (one sentence)
-- What qualifies vs. what doesn't (distinctions table)
-- The one qualifying example (if rare) or key examples
-- Failed examples with analysis
-- Inspiration index
-- Key distinctions
+The trace preserves *reasoning in motion* — how understanding evolved. The synthesis extracts for reference. Both serve different purposes:
 
-### Transformations Document (`[quality]-transformations.md`)
+- **Trace** answers: "How did we learn this?"
+- **Synthesis** answers: "What did we learn?"
 
-- The process record (phases, what happened)
-- Each example's transformation attempts
-- Summary of successful techniques
-- Extracted principles and anti-patterns
+The trace is what you need when extending or revisiting the calibration later. The synthesis is what you need when applying the learnings to new work.
+
+### Calibration Document (`[quality]-calibration.md`)
+
+#### Part 1: Calibration Trace
+
+Chronological record of the session. For each candidate:
+
+```markdown
+### Candidate N: [description/location]
+
+**Passage:**
+> [the passage being evaluated]
+
+**Response:** [user's response — kept with texture, in their words]
+
+**Interpretation:** [facilitator's restatement of what they heard]
+
+**Refinement:** [user's refinement, if any — what pushed back or sharpened]
+
+**Distinction emerged:** [what was learned from this exchange]
+```
+
+The trace preserves:
+- The passage that sparked the exchange
+- The user's response with its texture
+- The facilitator's interpretation (even if wrong)
+- The refinement that followed (if any)
+- What was discovered
+
+This is the reasoning in motion. Without it, the distinctions become unmoored — you know *what* was learned but not *how*.
+
+#### Part 2: Synthesis
+
+Organized for reference. Extracted from the trace:
+
+- **Core principle** (one sentence)
+- **What qualifies vs. what doesn't** (distinctions table)
+- **Inspiration index** (sources used, which worked)
+- **Successful techniques** (what produced the quality)
+- **Anti-patterns** (what undermines it)
+- **Key examples** (the passages that worked, with why)
 
 ---
 
@@ -243,9 +298,12 @@ The calibration produces two documents:
 1. **Start with rough intuition** — what quality are we after?
 2. **Find candidates** — search existing material
 3. **Calibrate through feedback** — go through examples one by one
+   - Present → Ask → Listen → *Interpret* → *Space* → Refinement → Capture
+   - The interpretive loop is where calibration happens
 4. **Build distinctions** — what does/doesn't qualify?
 5. **Gather inspiration** — find language and references
 6. **Transform iteratively** — apply sources, get feedback
 7. **Extract principles** — what techniques work? what to avoid?
+8. **Output as trace + synthesis** — preserve reasoning, extract for reference
 
 This process refines a vague aesthetic intuition into concrete, teachable craft.

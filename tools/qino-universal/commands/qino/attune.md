@@ -76,12 +76,29 @@ Collect 8-15 candidates with their locations (file, line numbers).
 
 ### Phase 2: Calibrate Through Feedback
 
-Go through each candidate one by one.
+Go through each candidate one by one. For each:
 
-For each, present the passage and ask:
-- Does this qualify?
-- If yes: what makes it work?
-- If no: what's missing? Why doesn't it land?
+1. **Present** the passage with context
+2. **Ask**: Does this qualify? What makes it work (or not)?
+3. **Listen** — their reasoning matters more than yes/no
+4. **Interpret** — voice what you heard, restate in your words
+5. **Space** — pause here. Don't present next candidate yet
+6. **Refinement** — if they push back, the distinction sharpens
+7. **Capture** — note response, interpretation, and any refinement
+
+**The interpretive loop is where calibration happens.** When you voice an interpretation, you create a surface the user can push against:
+
+> **User:** "This feels off. Something self-important about it."
+>
+> **Facilitator:** "So the quality needs to *earn* its weight?"
+>
+> *[space — wait]*
+>
+> **User:** "Not quite. It's more that depth should come from the material itself, not how it's presented."
+
+The facilitator's interpretation — even though wrong — created the condition for refinement. "Depth from material vs. presentation" wouldn't have emerged from the initial response alone.
+
+**Critical:** After voicing interpretation, *pause*. The space is where refinement becomes possible. Without it, the user has to reach back through new material — cognitive overload that closes the refinement window.
 
 **Build distinctions as you go.** After several rounds, patterns emerge:
 - "This is mysterious but not [quality]"
@@ -175,30 +192,54 @@ Derived from sources that consistently failed:
 
 ## Outputs
 
-The calibration produces two documents:
+The calibration produces a single document with two parts: **trace first, synthesis at end**.
 
-### 1. Research Document
-Contains:
-- The core principle (one sentence)
+### Why This Structure
+
+- **Trace** preserves *reasoning in motion* — how understanding evolved
+- **Synthesis** extracts for reference — what was learned
+
+The trace is what you need when extending or revisiting. The synthesis is what you need when applying to new work.
+
+### The Calibration Document
+
+#### Part 1: Calibration Trace
+
+Chronological record. For each candidate:
+
+```markdown
+### Candidate N: [description]
+
+**Passage:**
+> [the passage evaluated]
+
+**Response:** [user's response — kept with texture]
+
+**Interpretation:** [facilitator's restatement]
+
+**Refinement:** [user's refinement, if any]
+
+**Distinction emerged:** [what was learned]
+```
+
+This preserves the exchanges that produced the distinctions. Without it, refinements become unmoored — you know *what* was learned but not *how*.
+
+#### Part 2: Synthesis
+
+Organized for reference:
+- Core principle (one sentence)
 - What qualifies vs. what doesn't (table)
-- Failed examples with analysis
 - Inspiration index with sources
-- Key distinctions
-
-### 2. Transformations Document
-Contains:
-- The process record (how we got here)
-- Each example's transformation attempts
-- Summary of what worked
-- Extracted principles and anti-patterns
+- Successful techniques
+- Anti-patterns
+- Key examples with why they work
 
 ### Output Paths
 
 **In research workspaces** (`repoType: "research"`):
 ```
 calibrations/[quality]/
-├── research.md
-├── transformations.md
+├── calibration.md      # Trace + Synthesis
 └── examples/           # Test corpus used
 ```
 
@@ -222,11 +263,10 @@ When calibration completes, update status to `"complete"` and add `"completed": 
 
 **In other workspaces:**
 ```
-[quality]-research.md
-[quality]-transformations.md
+[quality]-calibration.md    # Trace + Synthesis
 ```
 
-These become reference material for craft guidance.
+This becomes reference material for craft guidance.
 
 ---
 
