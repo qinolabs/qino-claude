@@ -80,11 +80,18 @@ Each concept.md must follow the structure below:
 ## 7. Build Plan (Rough)
 <High-level implementation notes if desired—kept rough and optional.>
 
+## 8. Open Threads
+<What's unresolved—questions being wondered about, territories to explore, things the concept doesn't yet know about itself.>
+
+## Concept-Specific (optional)
+### [Section Name]
+<Rare additions that don't fit the base structure.>
+
 ## Sources
 <Optional list of raw notes or external references linked to this concept.>
 ```
 
-All sections **must exist**, though some may be empty when a concept is new.
+All base sections (1-8 and Sources) **must exist**, though some may be empty when a concept is new. The `## Concept-Specific` section is optional and only appears when needed.
 
 Spacing rules:
 - Exactly one `#` title at the top
@@ -243,6 +250,60 @@ Optional for early concepts. Should stay high-level and non-binding.
 
 ---
 
+### **8. Open Threads**
+This is the concept's **living edge** — what's unresolved, what's being wondered about, what invites further exploration. Open Threads keep the concept alive by holding what it doesn't yet know about itself.
+
+**What belongs here:**
+- Questions that emerged during exploration
+- Territories not yet mapped
+- Design tensions not yet resolved
+- Future possibilities held lightly
+
+**What doesn't belong:**
+- Implementation tasks (those go in iterations)
+- Technical specs (those go in implementation.md)
+- Things that belong elsewhere in the base structure
+
+**Temperature matters:**
+Some threads are cool — future territories, someday explorations. Some threads are hot — active questions guiding current work. Both belong here. The distinction isn't marked explicitly; it emerges through context.
+
+**Example:**
+```
+- Inhabiting and encountering residues — what remains after each gesture?
+- Theme creation — where do new themes come from? Can figures become themes?
+- Life-figures vs story-figures — how do figures captured from real moments participate differently?
+```
+
+Open Threads grow during `/explore` as questions surface. They may resolve into other sections, or remain as ongoing inquiries.
+
+---
+
+### **Concept-Specific (optional)**
+The base structure provides essential lenses for any concept. Occasionally, a concept develops material that truly doesn't fit any base section. In these rare cases, concept-specific sections may be added.
+
+**Structure:**
+All concept-specific sections are grouped under a single heading:
+
+```
+## Concept-Specific
+
+### Memory
+[Content specific to this concept]
+
+### Another Section
+[If needed]
+```
+
+**Discipline:**
+Before creating a concept-specific section, the agent must ask: does this fit in Primary Surfaces? Ecosystem Integration? Open Threads? Only if the answer is genuinely "no" should a custom section be proposed.
+
+**Examples:**
+- Memory (in qino-world) — a distinct territory that emerged from the concept's nature
+
+Concept-specific sections should be rare. Most concepts work entirely within the base structure.
+
+---
+
 ### **Sources**
 The **lineage** — where did this concept come from? Sources maintain connection to the raw material, honoring the origin while allowing the concept to evolve beyond it.
 
@@ -310,7 +371,6 @@ Possible optional sections the agent may someday support:
 
 - `## Narrative Examples`
 - `## Energetic Qualities`
-- `## Questions to Revisit`
 
 None are required or recognized today.
 
