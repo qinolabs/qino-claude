@@ -261,16 +261,31 @@ Arrival: Ecosystem term "qino-lens" mentioned but not marked
 Arrival: Reads as summary, not emergence story — should show how inquiry moved
 ```
 
-**Environment participation check** (if environment appears in body):
-- Where environment appears in the transmission body, does it participate in thinking or just decorate?
-- Are there 2-4 environmental moments maximum? (Not excessive)
-- Does environment come through Student's noticing (first person) or narration (third person)?
+**Environment check (ambient holding):**
+
+Environment should hold space for thinking, not compete with it. Student is figure; environment is ground.
+
+**Contact, not action:**
+- Does the Student have presence through contact ("The mate, still warm against my hands") rather than recounting movement ("I stood up. Walked to the window")?
+- Past tense first-person recounting ("I looked up. I walked.") takes readers out — flag this
+
+**Moment function test:**
+- Does each environmental moment have purpose? "Why mention this now?"
+- Flag moments that are decorative — just description without function
+
+**Anti-patterns to flag:**
+- Inventory of sensory content (listing sounds, smells, textures)
+- Fixating on a detail (physical pressure competing with intellectual)
+- Arbitrary movement (stands up for no reason)
+- Careless characterization (forgetting drink, drinking cold bitter mate anyway)
 
 **Flag format:**
 ```
-Environment: Line 45 — environment describes scene but doesn't participate in thinking
+Environment: Line 45 — recounting action ("I stood up. Walked to the window.") — use contact, not action
+Environment: Line 67 — moment has no function ("Why mention this now?")
+Environment: Line 89 — inventory of sensory content — environment competing with thinking
+Environment: Lines 102-108 — fixating on espresso machine detail — physical pressure competing with intellectual
 Environment: Too many environmental moments (6) — keep to 2-4 maximum
-Environment: Line 67 — "The rain fell outside" is narration, should be Student noticing
 ```
 
 **Don't flag:** Missing arrival if the transmission is a first/early transmission where emergence story isn't yet meaningful. Don't flag missing environment in body — it's optional.
@@ -296,6 +311,7 @@ If the transmission:
 - Has questions that breathe (not immediately resolved)
 - Shows encounter quality (dialogue with material, voice shifts, inhabited edges)
 - Has witness quality (the reader sees the Student affected, not just processing)
+- Environment holds without competing (contact not action, no inventory of sensory content)
 
 Return:
 ```

@@ -166,10 +166,13 @@ The parser:
 
 ## The Arrival
 
-*The library was quiet. Morning light through tall windows, mate cooling
-on the table. Halfway through transcribing yesterday's field notes when—*
+*The library's west wing — tall windows running floor to ceiling, late
+morning light stretching across the reading tables. The particular quiet
+of old wood and dust and concentration. At a desk near the stacks, someone
+bent over a notebook, pen paused mid-word. A mate cooling beside them,
+untouched.*
 
-*A soft chime. The device.*
+*A gentle hum from somewhere under the papers.*
 
 ---
 
@@ -193,8 +196,8 @@ Through use.
 
 ---
 
-*Dec 18. There's an arc I've been walking through called Qualities of
-Attention. It started with a problem: the prose kept coming out flat.*
+*There's a writing problem in this arc that I recognize. The prose kept
+falling flat. Accurate but lifeless.*
 
 [Student's body continues — 600-900 words]
 ```
@@ -204,11 +207,13 @@ Attention. It started with a problem: the prose kept coming out flat.*
 The journal app renders The Arrival with two layers:
 
 ```
-*The library was quiet. Morning light through tall windows,
-mate cooling on the table. Halfway through transcribing
-yesterday's field notes when—*
+*The library's west wing — tall windows running floor to ceiling,
+late morning light stretching across the reading tables. The
+particular quiet of old wood and dust and concentration. At a
+desk near the stacks, someone bent over a notebook, pen paused
+mid-word. A mate cooling beside them, untouched.*
 
-*A soft chime. The device.*
+*A gentle hum from somewhere under the papers.*
 
 ╭────────────────────────────────────────────────────────────╮
 │  ◈  INCOMING                                               │
@@ -254,12 +259,13 @@ Sometimes elaborate:
 Sometimes minimal:
 > *Afternoon light. The device pulsed.*
 
-**Resonance (optional, not forced):**
+**Ambient holding (not symbolic matching):**
 
-When the interruption context echoes the transmission content naturally:
-- Transmission about attention → interrupted during focused work
-- Transmission about emergence → caught tending to something growing
-- Transmission about uncertainty → paused in a moment of transition
+The environment holds space for thinking. It should NOT symbolically echo content:
+- ❌ Transmission about clarity → sky clears
+- ❌ Transmission about attention → interrupted during focused work
+
+Instead, environment creates conditions for concentration. The place the Student chooses reveals character — which spaces they seek out for thinking.
 
 **Where variations come from:**
 

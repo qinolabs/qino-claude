@@ -531,165 +531,151 @@ Environment first, with texture that tells us about the world ("the particular q
 - *A gentle hum from somewhere under the papers.*
 - *The screen waking.*
 
-**Resonance (optional):** When Environment notes suggest resonance with the transmission content, let the texture echo it — but through what's happening, not through symbolism.
+**Ambient holding (not symbolic matching):** The environment holds space for thinking. Don't match environment to transmission content (e.g., transmission about clarity → sky clears). Instead, environment creates conditions for concentration. The place the Student chooses reveals character.
 
 ---
 
 ## Environment as Presence
 
-The environment established in the Interruption Frame doesn't freeze. The Student continues to inhabit their world while thinking. Environment participates in the transmission — not as decoration, but as texture that shapes the thinking.
+The environment established in the Interruption Frame doesn't freeze. The Student continues to inhabit their world while thinking. But environment in Relay works differently than in chronicle prose — it holds rather than acts.
 
 **See the Student lens (sections 13-16)** for the full environment sensitivity. This section covers relay-specific application.
 
 ---
 
-### The Core Principle
+### The Core Principle: Ambient Holding
 
-The Student has a body and a location. The world continues while they think — light shifts, sounds happen, the body moves. Environment and thought are not separate tracks.
+**The Student is figure; environment is ground.** When environment becomes too present, it competes with the research material. Abstract philosophical content needs room to breathe.
 
-**What environment can do:**
+The environment's job is to hold space for thinking without stealing the show. World as mood, not tale. Implied relationship, not displayed content.
 
-| Action | Effect |
-|--------|--------|
-| **Ground** | Physical sensation anchors abstract thought |
-| **Mirror** | Environment echoes thought obliquely (without explanation) |
-| **Interrupt** | Something breaks the flow — and that's useful |
-| **Continue** | Time passes, things change, the world doesn't wait |
-
----
-
-### Two Modes of Environmental Presence
-
-**1. First-person noticing** — The Student notices, moves, is affected. Part of the thinking flow.
-
-> My coffee had gone cold. How long had I been here?
-
-> I stood up. The question followed me to the window.
-
-**2. Third-person zoom** — Brief moments that show the Student from distance. World-building, breathing room.
-
-> At the desk, someone who hadn't moved in an hour. The light had shifted around them.
-
-Use third-person sparingly — it creates a beat, a pause. Then return to first-person.
+| Scribe Environment | Relay Environment |
+|---|---|
+| World participates, acts | World settles, supports |
+| High sensory pressure | Quiet conditions |
+| Environment as character | Environment as chosen container |
+| "What would the world DO?" | "What conditions does this person seek?" |
 
 ---
 
-### Implicit Mirroring
+### Contact, Not Action
 
-When environment and thought rhyme, let them rhyme without annotation. The reader makes the connection.
+The Student has presence without recounting movement. Sensory contact, not narrated action.
 
 **Right:**
-> The café was crowded. Voices overlapping, half-conversations. I stopped trying to follow any single thread.
->
-> Oh.
+> The mate, still warm against my hands.
+
+> Light shifting across the page.
 
 **Wrong:**
-> The café was crowded — which is actually like what I'm reading about indirection. The meaning isn't in any single voice.
+> I stood up. Walked toward the window. Picked up my coffee.
 
-The positive trusts the reader. The negative explains the metaphor.
+> I looked up from the notebook. Someone had passed through the stacks, footsteps fading. I read what I'd written.
 
----
+Past tense first-person recounting ("I looked up. I walked.") takes readers out of the experience. A truly present Student doesn't narrate what they're doing.
 
-### Environment Becomes Example
+**Spatial relationship establishes presence:** "Outside" implies inside. Perspective without "I."
 
-Sometimes what's happening around the Student illuminates the material — not as announced metaphor, but as lived instance.
-
-**Right:**
-> There's someone at the next table. They keep almost saying something to their companion. Leaning forward, then back. The words not quite arriving.
->
-> That's what this concept is like. The meaning hovering.
-
-**Wrong:**
-> There's someone at the next table who keeps almost speaking. This is exactly like the concept of "sensing before speaking" — you can feel the thing before you can name it.
-
-One light touch. Not a full explanation.
+> Outside, slow clouds passing the tall windows.
 
 ---
 
-### Contextual Density
+### Two Modes
 
-The Student's thinking has weight when environment has texture. Sparse environment = floating thought.
+| During Thinking Flow | During Explicit Pause |
+|---------------------|----------------------|
+| Ambient, minimal | Can have more shape |
+| Doesn't compete | Environment steps forward |
+| Incidental details | Richer presence permitted |
+| Student absorbed | Student has disengaged |
 
-**Flat:**
-> I was thinking about the concept. The café was busy.
+**During flow** — environmental moments are brief, incidental, peripheral. They don't demand attention.
 
-**Dense:**
-> The café's morning rush. Espresso machine hissing. Someone's bag bumping the back of my chair. I had the same sentence open — the one about naming closing perception. My coffee getting cold. I didn't reach for it.
+> Light shifting across the page. Outside, slow clouds passing the tall windows.
 
-A few well-chosen details create more texture than a catalogue.
+**During explicit pause** — when the Student consciously disengages, environment can step forward with more presence.
 
----
+> I set that thought aside for a moment. The library with its afternoon sounds — footsteps somewhere in the stacks, the soft shuffle of pages, a chair shifting. Familiar rhythms.
 
-### Grounding Through Body
-
-Interiority shows through action and sensation, not statement.
-
-**Right:**
-- "I'd been staring at the same crack in the ceiling." (stuck)
-- "My hand was on the same paragraph for the third time." (can't move past)
-- "My shoulders were tight. When did that happen?" (processing without knowing)
-
-**Wrong:**
-- "I felt stuck on this concept."
-- "I was deeply absorbed in the material."
-
-The body reveals what statement would flatten.
+The pause gives environment permission to have more shape. Still familiar, not competing — but more present than during flow.
 
 ---
 
-### When to Use Environment
+### Quality of Response
 
-**Good moments:**
-- After abstraction runs long → something physical can ground
-- When thinking shifts significantly → movement, change of position
-- When material wants to become concrete → environment can offer the example
-- For rhythm → a pause, a breath between movements
+Environmental contact can show how the Student meets difficulty — not explained, felt.
 
-**Hold back when:**
-- Material has momentum — don't interrupt good flow
-- Environment would be decorative — just description, not participation
-- You've already used 3-4 environmental moments — that's usually enough
+> The mate, still warm against my hands.
+
+If this follows a thought that's still ringing, the warmth meeting the uncertainty creates resonance. The physical mirrors inner state without announcing it.
+
+This is subtle, not symbolic. The reader feels the resonance; the Student doesn't name it.
 
 ---
 
-### Resonance, Not Symbolism
+### When Environment Is Needed
 
-Don't match environment to content directly:
-- ❌ Thinking about clarity → the sky clears
-- ❌ Stuck on a concept → physically stuck somewhere
+- When material becomes abstract, dense
+- When reader's connection might weaken
+- When patience and curiosity need support
 
-Instead, look for oblique friction:
-- ✓ Struggling with abstraction → interrupted by something concrete
-- ✓ Trying to hold multiple threads → voices overlapping nearby
-- ✓ Looking for the right word → someone else searching for something
-
-The rhyme should feel discovered, not designed.
+**Environment holds the reader through difficulty.** After dense abstract sections, a grounding moment gives space to settle before returning.
 
 ---
 
-### Using Potential Moments
+### When Environment Is Optional
 
-The reader-journey notes may include "Potential moments" — things that could happen:
-- Someone might arrive (a friend, the librarian)
-- Weather might shift
-- The Student might move to a different spot
-- Something might catch peripheral vision
+- When material is strong — creates its own contrast, sparks curiosity
+- When the arc has momentum
+- When concrete examples are already woven in
 
-These are **options**, not requirements. Use them when they serve the material.
+**Strong material carries itself.** Don't interrupt with environment when the research content is doing its work.
+
+---
+
+### Moment Function Test
+
+Every environmental moment must have purpose. Ask: "Why mention this now?"
+
+**Moments that pass:**
+- Breathing room after density
+- Time marking (light has shifted)
+- Grounding before returning to material
+- Quality of response (physical echoing inner state)
+
+**Moments that fail:**
+- No function — "why mention this now?" has no answer
+- Fixating on a detail — physical pressure competing with intellectual
+- Decorative — just description, not participation
+
+If no purpose, cut it.
+
+---
+
+### Anti-Patterns
+
+| Pattern | Problem |
+|---------|---------|
+| Inventory of sensory content | Demands attention, pulls toward something |
+| First-person recounting | "I looked up. I walked." — takes reader out |
+| Fixating on a detail | Physical pressure competing with intellectual |
+| Arbitrary movement | Stands up for no reason |
+| Careless characterization | Forgetting drink exists, drinking cold bitter mate |
+| No function | "Why mention this now?" becomes noise |
 
 ---
 
 ### Seeds in the Arc
 
-The best examples often come from the arc itself — concrete moments already in the source material.
+The best grounding often comes from the arc itself — concrete moments already in the source material.
 
-Before reaching for external examples (analogies, memories), look for seeds in the arc:
+Before reaching for external examples, look for seeds in the arc:
 - A design that failed in a specific way
 - A tool interaction that revealed something
 - A phrase that had weight
 - A moment when something clicked
 
-These seeds can be re-lived through the Student, not just reported.
+These seeds can become ground, not just illustration.
 
 ---
 

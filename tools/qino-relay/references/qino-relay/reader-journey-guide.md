@@ -59,95 +59,94 @@ Example:
 
 ### The Student's Environment
 
-Where the Student is when the transmission arrives — and what might happen while they think.
+Where the Student is when the transmission arrives.
+
+**Ambient holding principle:** Environment is ground, not figure. It holds space for thinking without competing with research material. The Student is the intriguing thing; the environment supports without stealing the show.
 
 The environment has two purposes:
 1. **Interruption Frame** — The opening: place, activity, device announcing
-2. **Environmental Texture** — Moments woven through the body: movement, observation, interruption
+2. **Woven moments** — Brief texture in the body: contact, time passing, grounding
 
 **What to capture:**
 
 | Element | What to consider |
 |---------|------------------|
-| Place | Where the Student is — make it SPECIFIC and atmospheric (see below) |
-| Activity | What they were doing when interrupted — transcribing, reading, walking, staring at a question |
-| Time/Light | Quality of the moment — morning light, afternoon, evening, pre-dawn |
-| Detail | Sensory texture — architecture, sounds, weather, what's in view |
-| Potential moments | What could happen during the transmission (optional, for prose agent) |
+| Place | Where the Student is — quality of the space, not inventory of details |
+| Activity | What they were doing when interrupted |
+| Time/Light | Quality of the moment — morning light, afternoon, evening |
+| Density | How much environment this material needs (see below) |
 
-**Places should have character:**
+**What places reveal about the Student:**
 
-Not generic "café" or "library" — specific places with atmosphere. The location tells a story about the Student's world.
+Which places do they seek out? Environment choice reveals character:
+- The quiet corner, not the busy center
+- The library with the tall windows
+- The café where they can think
 
-| Instead of | Consider |
-|------------|----------|
-| café | The third-floor café with the cracked tile floor and too-loud espresso machine |
-| library | The research institute's reading room, all glass and suspended walkways |
-| park | A bench by the pier, seagulls wheeling, wind off the water |
-| apartment | The rooftop of their building, city spreading out below, pigeons |
-| office | The co-working space on the 12th floor where the afternoon sun gets too hot |
-| outside | The courtyard of the old monastery they converted into studios |
-
-**Make architecture felt:**
-- Tall windows, exposed brick, cracked tiles
-- The way sound moves in the space
-- What's visible from where they sit
-- Weather coming through — drafts, light shifting, rain on skylights
+Where the Student is implicitly tells a story about what conditions they seek for thinking.
 
 **The location spectrum:**
-- Work spaces with personality (institute rooftop, converted warehouse, university basement)
-- Public places with texture (pier bench, botanical garden café, ferry terminal)
-- Home spaces with detail (balcony facing the courtyard, kitchen with the leaky faucet)
-- Transitional moments (walking the route along the canal, waiting at the tram stop)
+- Work spaces with personality (institute reading room, converted warehouse)
+- Public places where thinking happens (pier bench, botanical garden café)
+- Home spaces (balcony facing the courtyard)
+- Transitional moments (walking, waiting at the tram stop)
 
-Where the Student is from one transmission to the next implicitly tells a story about their life. A world emerges from accumulated places.
+A world emerges from accumulated places.
 
-**Variety check (required):** Each transmission should place the Student in a DIFFERENT environment. If the last transmission was library/morning, this one must be somewhere else — café, apartment, park, street. This variety builds the sense of a lived-in world with multiple places.
+**Variety check (required):** Each transmission should place the Student in a DIFFERENT environment. This variety builds the sense of a lived-in world.
 
-Movement and interaction happen WITHIN that environment (standing up, walking to window, someone arriving). The Student doesn't travel between locations mid-transmission.
+---
 
-**Resonance (optional):** When natural, let the environment echo the transmission content:
-- Material about attention → caught in focused work, or interrupted from focus
-- Material about emergence → tending to something growing, observing change
-- Material about uncertainty → in transition, between things
+**When Environment Is Needed:**
 
-**Potential moments:** Things that could happen while the Student thinks. The prose agent uses these as options — only when they serve the material:
+- When material becomes abstract, dense
+- When reader's connection might weaken
+- When patience and curiosity need support
 
-- **Movement:** Could stand up, walk to window, change position
-- **People:** Someone might appear (a friend, the librarian, a regular)
-- **Weather/atmosphere:** Rain starting, light shifting, temperature changing
-- **Observations:** Something outside catching attention, peripheral vision
-- **Interruptions:** Order called, phone buzz, someone greeting
+Environment holds the reader through difficulty. After dense abstract sections, a grounding moment gives space to settle.
 
-These are **options**, not requirements. Include 2-4 potential moments. The prose agent decides which (if any) to use.
+**When Environment Is Optional:**
 
-**Brevity in the frame:** Can be elaborate or minimal. Sometimes:
-> *The library was quiet. Morning light through tall windows, mate cooling on the table. Halfway through transcribing yesterday's field notes when—*
+- When material is strong — creates its own contrast, sparks curiosity
+- When the arc has momentum
+- When concrete examples are already woven in
 
-Sometimes:
-> *Afternoon light. The device pulsed.*
+Strong material carries itself. Don't prescribe environmental moments if the research content is doing its work.
+
+---
+
+**Potential moments:** Things that could happen while the Student thinks. Include 1-2 options with clear function:
+
+- **Time passing:** Light shifting — marks duration, gives breathing room
+- **Grounding after density:** Something physical — grounds abstract thinking
+- **Quality of response:** Physical contact that echoes inner state
+
+Every moment must have purpose. "Why mention this now?" must have an answer.
+
+**NOT potential moments:**
+- Movement for its own sake (stands up for no reason)
+- Inventory of sensory content (listing sounds, smells, textures)
+- Fixation on details (physical pressure competing with intellectual)
+
+---
 
 **Example environment note:**
 ```markdown
 ## Environment
-- **Place:** library, usual corner by the tall windows
+- **Place:** library, the usual corner by the tall windows
 - **Activity:** transcribing yesterday's field notes
 - **Time/Light:** morning, soft light through windows
-- **Detail:** mate cooling on the table, quiet murmur of other readers
 - **Recent:** (T001: café/afternoon, T002: apartment/evening)
+- **Density:** Dense abstract material in this arc — will need grounding moments
 - **Potential moments:**
-  - Could stand up and walk to window when thinking shifts
-  - A friend might appear (hasn't been seen in 2 transmissions)
-  - Light might change as clouds move
-  - The librarian might nod as she passes
-- **Resonance:** material about attention → something about what catches peripheral vision
+  - Light might shift as time passes (marks duration)
+  - The mate, still warm — if needed to ground after abstraction
 ```
 
 **Accumulation:** Note recurring elements that build the Student's world:
 - Places that are becoming familiar ("the usual corner")
-- People who recur (a friend, the librarian — no names needed)
 - The device's personality
-- Weather patterns, seasonal rhythms
+- Rhythms — morning vs late night
 
 By transmission 10, readers know this world.
 
@@ -222,17 +221,14 @@ When the prose agent has reader journey notes:
 - The relationship between naming and perception needs illustration
 
 ## Environment
-- **Place:** library, usual corner by the tall windows
+- **Place:** library, the usual corner by the tall windows
 - **Activity:** transcribing yesterday's field notes
 - **Time/Light:** morning, soft light through windows
-- **Detail:** mate cooling on the table, quiet murmur of other readers
 - **Recent:** (first transmission — no prior environments)
+- **Density:** Abstract material about perception — may need grounding moments
 - **Potential moments:**
-  - Could stand and walk to window when thinking about perception
-  - Light might shift as clouds move
-  - The librarian might pass by with a nod
-  - Someone across the room doing something that catches peripheral vision
-- **Resonance:** material about attention and perception → caught in focused work, noticing what pulls attention away
+  - Light might shift as time passes (marks duration)
+  - The mate, still warm — if needed to ground after abstraction
 ```
 
 ---
