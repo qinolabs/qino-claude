@@ -129,9 +129,8 @@ An early hunch needs room to wander — structure would crush it. A maturing con
                         │     TOOL HOME       │
                         │    qino-claude      │
                         │                     │
-                        │  tools/             │ ◀── source of all tools
-                        │  plugins/           │ ◀── marketplace distribution
-                        │  qino-config.json   │ ◀── router configuration
+                        │  plugins/           │ ◀── source of all tools
+                        │  tools/archived/    │ ◀── deprecated tools
                         │  chronicle/         │
                         └──────────┬──────────┘
                                    │
@@ -156,7 +155,7 @@ Each space has its own `chronicle/` directory. Git changes in any repo become ch
 
 **Implementation** — where concepts meet code. Structure varies by project domain. Links back to its concept.
 
-**qino-claude** — the source of all tools, distributed through the Claude plugin marketplace.
+**qino-claude** — source of all plugins, distributed through the Claude plugin marketplace.
 
 #### Flow Between Spaces
 
@@ -335,7 +334,7 @@ You turn toward a concept to develop it. qino helps you follow what carries ener
 - **explore** turns toward one concept (or two at once) and follows the alive thread. Imported notes and captures appear as starting points.
 - **capture** saves thoughts immediately to the active context.
 
-_[Source](tools/qino/)_
+_[Source](plugins/qino/)_
 
 <br>
 
@@ -375,7 +374,7 @@ _Notice: World interrupts without words. The hum and tap are pressure._
 
 Different runs surface different questions. The questions themselves teach you how to think about the problem.
 
-_[Source](tools/design-adventure/)_
+_[Source](plugins/design-adventure/)_
 
 <br>
 
@@ -503,7 +502,7 @@ scene seeds
 [ 1-3 ] or adjust    [ > ] auto-pick    [ >> ] start writing
 ```
 
-_[Source](tools/qino-prose/)_
+_[Source](plugins/qino-prose/)_
 
 <br>
 
@@ -613,7 +612,7 @@ The Student encounters these: "'Meaning-*searching* versus meaning-*finding*.' T
 
 No prep layer in the Scribe sense. The arc IS the content — it just needs to be voiced *for the reader*.
 
-_[Source](tools/qino-prose/)_
+_[Source](plugins/qino-prose/)_
 
 <br>
 
@@ -647,7 +646,7 @@ The chronicle changes depending on who watches it. These lenses accumulate — d
 
 > _Example:_ "The corridor didn't just lead to the chamber; it constricted. The ceiling dropped low, forcing a bow, while the walls leaned in to strip away any thought of turning back. The architecture demanded submission before arrival."
 
-_([Reference](tools/qino-prose/references/qino-lens/narrator.md))_
+_([Reference](plugins/qino-prose/references/qino-lens/narrator.md))_
 
 #### `wanderer` — Sensitivity to Friction
 
@@ -657,7 +656,7 @@ _([Reference](tools/qino-prose/references/qino-lens/narrator.md))_
 
 > _Example:_ "The fog pressed against the river, a heavy, wet burden. The ferry wasn't coming. The wanderer unbuckled the strap and slid the pack down the piling, guiding it until it touched the wet wood. They straightened. The sudden lightness made them sway, their shoulders rising into the damp space where the straps had been."
 
-_([Reference](tools/qino-prose/references/qino-lens/wanderer.md))_
+_([Reference](plugins/qino-prose/references/qino-lens/wanderer.md))_
 
 #### `newcomer` — Finding What's Become Invisible
 
@@ -667,7 +666,7 @@ _([Reference](tools/qino-prose/references/qino-lens/wanderer.md))_
 
 > _Example:_ "The oldest woman at the table was served last. Plates circled toward younger faces. She waited, hands folded. When her plate came, she lifted her fork. Then the others began to eat."
 
-_([Reference](tools/qino-prose/references/qino-lens/newcomer.md))_
+_([Reference](plugins/qino-prose/references/qino-lens/newcomer.md))_
 
 #### `companion` — World Through Relationship
 
@@ -677,9 +676,9 @@ _([Reference](tools/qino-prose/references/qino-lens/newcomer.md))_
 
 > _Example:_ "Varo stopped at a stall. Copper bowls, dented. She picked one up, ran her thumb across a dent. 'My mother had one like this.' Set it back. Moved on. The wanderer lifted the same bowl, found the dent, felt where her thumb had been."
 
-_([Reference](tools/qino-prose/references/qino-lens/companion.md))_
+_([Reference](plugins/qino-prose/references/qino-lens/companion.md))_
 
-_[Source](tools/qino-prose/)_
+_[Source](plugins/qino-prose/)_
 
 <br>
 
@@ -710,7 +709,7 @@ The art skill routes to specialized workflows based on what you need:
 
 Just describe what you want to visualize. The skill determines the appropriate workflow and generates images using the unified aesthetic.
 
-_[Source](tools/qino-art/)_
+_[Source](plugins/qino-art/)_
 
 <br>
 
@@ -776,7 +775,7 @@ AI implements to the iteration spec. User tests and reviews. Feedback flows befo
 
 The files live in `implementations/` — visible, version-controlled, yours. Not hidden in `.claude/`. Not abstracted away. You can read them, edit them, understand what's planned.
 
-_[Source](tools/qino/)_
+_[Source](plugins/qino/)_
 
 <br>
 
@@ -861,7 +860,7 @@ Unlike concepts (which stabilize over time), research moves fast, welcomes uncer
 
 An inquiry without conclusions is still valuable — it maps the territory. Arcs don't need maintenance — they're evidence of ecosystem participation. They accumulate as ecosystem memory.
 
-_[Source](tools/qino/)_
+_[Source](plugins/qino/)_
 
 <br>
 
