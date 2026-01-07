@@ -264,7 +264,7 @@ Same scribe. Different worlds. Different atmospheric registers. Process in each 
 
 **Research** — [Following Threads](#following-threads) · [Arcs](#arcs--evidence-of-emergence) · [Compare](#compare--the-parallel-mirror) · [Attune](#attune--from-hunch-to-craft)
 
-**Story** — [Scribe](#qino-scribe--git-becomes-story) · [Relay](#qino-relay--bridging-to-readers) · [Lens](#qino-lens--ways-of-seeing)
+**Story** — [Scribe](#qino-scribe--git-becomes-story) · [Relay](#qino-relay--bridging-to-readers) · [Lens](#qino-lens--ways-of-seeing) · [Art](#qino-art--visual-content-system)
 
 **Ecology** — [Language](#ecology-language) · [Test](#ecological-testing)
 
@@ -383,7 +383,9 @@ _[Source](tools/design-adventure/)_
 
 ## Story
 
-Bridges that create story out of raw material. Scribe transforms git into fantasy chronicle; Relay voices research for newcomers; Lens provides the perceptual frameworks both draw from.
+Bridges that create story out of raw material. Scribe transforms git into fantasy chronicle; Relay voices research for newcomers; Lens provides the perceptual frameworks both draw from. Art generates visual content with a unified aesthetic.
+
+_These capabilities are consolidated in the `qino-prose` plugin (Scribe, Relay, Lens) and `qino-art` plugin (visual content)._
 
 _From story's view: [Implementation](#implementation) generates the commits that Scribe transforms. [Research](#research) provides the arcs that Relay transmits. Both draw perceptual frameworks from Lens — and [Concept](#concept) work shapes the world that gives the story its ground._
 
@@ -501,7 +503,7 @@ scene seeds
 [ 1-3 ] or adjust    [ > ] auto-pick    [ >> ] start writing
 ```
 
-_[Source](tools/qino-scribe/)_
+_[Source](tools/qino-prose/)_
 
 <br>
 
@@ -611,7 +613,7 @@ The Student encounters these: "'Meaning-*searching* versus meaning-*finding*.' T
 
 No prep layer in the Scribe sense. The arc IS the content — it just needs to be voiced *for the reader*.
 
-_[Source](tools/qino-relay/)_
+_[Source](tools/qino-prose/)_
 
 <br>
 
@@ -645,7 +647,7 @@ The chronicle changes depending on who watches it. These lenses accumulate — d
 
 > _Example:_ "The corridor didn't just lead to the chamber; it constricted. The ceiling dropped low, forcing a bow, while the walls leaned in to strip away any thought of turning back. The architecture demanded submission before arrival."
 
-_([Reference](tools/qino-lens/references/qino-lens/narrator.md))_
+_([Reference](tools/qino-prose/references/qino-lens/narrator.md))_
 
 #### `wanderer` — Sensitivity to Friction
 
@@ -655,7 +657,7 @@ _([Reference](tools/qino-lens/references/qino-lens/narrator.md))_
 
 > _Example:_ "The fog pressed against the river, a heavy, wet burden. The ferry wasn't coming. The wanderer unbuckled the strap and slid the pack down the piling, guiding it until it touched the wet wood. They straightened. The sudden lightness made them sway, their shoulders rising into the damp space where the straps had been."
 
-_([Reference](tools/qino-lens/references/qino-lens/wanderer.md))_
+_([Reference](tools/qino-prose/references/qino-lens/wanderer.md))_
 
 #### `newcomer` — Finding What's Become Invisible
 
@@ -665,7 +667,7 @@ _([Reference](tools/qino-lens/references/qino-lens/wanderer.md))_
 
 > _Example:_ "The oldest woman at the table was served last. Plates circled toward younger faces. She waited, hands folded. When her plate came, she lifted her fork. Then the others began to eat."
 
-_([Reference](tools/qino-lens/references/qino-lens/newcomer.md))_
+_([Reference](tools/qino-prose/references/qino-lens/newcomer.md))_
 
 #### `companion` — World Through Relationship
 
@@ -675,9 +677,40 @@ _([Reference](tools/qino-lens/references/qino-lens/newcomer.md))_
 
 > _Example:_ "Varo stopped at a stall. Copper bowls, dented. She picked one up, ran her thumb across a dent. 'My mother had one like this.' Set it back. Moved on. The wanderer lifted the same bowl, found the dent, felt where her thumb had been."
 
-_([Reference](tools/qino-lens/references/qino-lens/companion.md))_
+_([Reference](tools/qino-prose/references/qino-lens/companion.md))_
 
-_[Source](tools/qino-lens/)_
+_[Source](tools/qino-prose/)_
+
+<br>
+
+### qino Art | Visual Content System
+
+A complete visual content system with a distinctive aesthetic: **Tron-meets-Excalidraw** — dark slate backgrounds, neon accents (orange warmth, cyan tech), hand-drawn sketch lines, subtle glows.
+
+#### Workflow routing
+
+The art skill routes to specialized workflows based on what you need:
+
+| Need | Workflow |
+|------|----------|
+| Unsure which approach | Visualize (analyzes & orchestrates) |
+| Flowcharts, sequences | Mermaid |
+| Abstract metaphor | Editorial illustration |
+| System architecture | Technical diagram |
+| Categories in grid | Taxonomy |
+| Change over time | Timeline |
+| 2x2 matrix | Framework |
+| Side-by-side contrast | Comparison |
+| Screenshot markup | Annotated screenshot |
+| Step-by-step process | Recipe card |
+| Quote as visual | Aphorism |
+| Idea territories | Conceptual map |
+| Single striking number | Stat card |
+| Multi-panel story | Comic |
+
+Just describe what you want to visualize. The skill determines the appropriate workflow and generates images using the unified aesthetic.
+
+_[Source](tools/qino-art/)_
 
 <br>
 
@@ -1010,7 +1043,7 @@ _(The [qino Lens](#qino-lens--ways-of-seeing) section is a product of this proce
 
 # Install what you need
 /plugin install qino@qinolabs/qino-claude           # Core ecology
-/plugin install qino-scribe@qinolabs/qino-claude    # Chronicles
+/plugin install qino-prose@qinolabs/qino-claude     # Chronicles, transmissions, lenses
 /plugin install qino-art@qinolabs/qino-claude       # Visuals
 /plugin install design-adventure@qinolabs/qino-claude
 ```
@@ -1019,11 +1052,9 @@ Updates happen automatically when you pull from the marketplace.
 
 **Available plugins:**
 - `qino` — Core ecology (concepts, research, implementation)
-- `qino-scribe` — Chronicle writing from git history
-- `qino-relay` — Research transmissions
+- `qino-prose` — Chronicle writing, research transmissions, prose lenses
 - `qino-art` — Visual content system
 - `design-adventure` — Seven-perspective design exploration
-- `qino-lens` — Qualities of Attention lens library
 
 ## Requirements
 
