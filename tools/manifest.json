@@ -129,8 +129,199 @@
         }
       ]
     },
+    "qino-art": {
+      "description": "Visual content system with Tron-meets-Excalidraw aesthetic",
+      "files": [
+        {
+          "src": "tools/qino-art/SKILL.md",
+          "dest": "skills/qino-art.md"
+        },
+        {
+          "src": "tools/qino-art/workflows/AnnotatedScreenshots.md",
+          "dest": "references/qino-art/workflows/AnnotatedScreenshots.md"
+        },
+        {
+          "src": "tools/qino-art/workflows/Aphorisms.md",
+          "dest": "references/qino-art/workflows/Aphorisms.md"
+        },
+        {
+          "src": "tools/qino-art/workflows/Comics.md",
+          "dest": "references/qino-art/workflows/Comics.md"
+        },
+        {
+          "src": "tools/qino-art/workflows/Comparisons.md",
+          "dest": "references/qino-art/workflows/Comparisons.md"
+        },
+        {
+          "src": "tools/qino-art/workflows/Frameworks.md",
+          "dest": "references/qino-art/workflows/Frameworks.md"
+        },
+        {
+          "src": "tools/qino-art/workflows/Maps.md",
+          "dest": "references/qino-art/workflows/Maps.md"
+        },
+        {
+          "src": "tools/qino-art/workflows/Mermaid.md",
+          "dest": "references/qino-art/workflows/Mermaid.md"
+        },
+        {
+          "src": "tools/qino-art/workflows/RecipeCards.md",
+          "dest": "references/qino-art/workflows/RecipeCards.md"
+        },
+        {
+          "src": "tools/qino-art/workflows/Stats.md",
+          "dest": "references/qino-art/workflows/Stats.md"
+        },
+        {
+          "src": "tools/qino-art/workflows/Taxonomies.md",
+          "dest": "references/qino-art/workflows/Taxonomies.md"
+        },
+        {
+          "src": "tools/qino-art/workflows/TechnicalDiagrams.md",
+          "dest": "references/qino-art/workflows/TechnicalDiagrams.md"
+        },
+        {
+          "src": "tools/qino-art/workflows/Timelines.md",
+          "dest": "references/qino-art/workflows/Timelines.md"
+        },
+        {
+          "src": "tools/qino-art/workflows/Visualize.md",
+          "dest": "references/qino-art/workflows/Visualize.md"
+        },
+        {
+          "src": "tools/qino-art/workflows/Workflow.md",
+          "dest": "references/qino-art/workflows/Workflow.md"
+        },
+        {
+          "src": "tools/qino-art/tools/generate-prompt.ts",
+          "dest": "references/qino-art/tools/generate-prompt.ts"
+        },
+        {
+          "src": "tools/qino-art/tools/generate-ulart-image.ts",
+          "dest": "references/qino-art/tools/generate-ulart-image.ts"
+        },
+        {
+          "src": "tools/qino-art/references/qino-art/aesthetic.md",
+          "dest": "references/qino-art/aesthetic.md"
+        },
+        {
+          "src": "tools/qino-art/references/qino-art/version.json",
+          "dest": "references/qino-art/version.json"
+        }
+      ]
+    },
+    "qino": {
+      "description": "The qino ecology — natural language companion for developing ideas",
+      "files": [
+        {
+          "src": "tools/qino/SKILL.md",
+          "dest": "skills/qino/SKILL.md"
+        },
+        {
+          "src": "tools/qino/workflows/home.md",
+          "dest": "skills/qino/workflows/home.md"
+        },
+        {
+          "src": "tools/qino/workflows/capture.md",
+          "dest": "skills/qino/workflows/capture.md"
+        },
+        {
+          "src": "tools/qino/workflows/explore.md",
+          "dest": "skills/qino/workflows/explore.md"
+        },
+        {
+          "src": "tools/qino/workflows/test.md",
+          "dest": "skills/qino/workflows/test.md"
+        },
+        {
+          "src": "tools/qino/workflows/attune.md",
+          "dest": "skills/qino/workflows/attune.md"
+        },
+        {
+          "src": "tools/qino/workflows/compare.md",
+          "dest": "skills/qino/workflows/compare.md"
+        },
+        {
+          "src": "tools/qino/workflows/arc.md",
+          "dest": "skills/qino/workflows/arc.md"
+        },
+        {
+          "src": "tools/qino/workflows/concept-setup.md",
+          "dest": "skills/qino/workflows/concept-setup.md"
+        },
+        {
+          "src": "tools/qino/workflows/concept-init.md",
+          "dest": "skills/qino/workflows/concept-init.md"
+        },
+        {
+          "src": "tools/qino/workflows/import.md",
+          "dest": "skills/qino/workflows/import.md"
+        },
+        {
+          "src": "tools/qino/workflows/research-setup.md",
+          "dest": "skills/qino/workflows/research-setup.md"
+        },
+        {
+          "src": "tools/qino/workflows/research-init.md",
+          "dest": "skills/qino/workflows/research-init.md"
+        },
+        {
+          "src": "tools/qino/workflows/dev-setup.md",
+          "dest": "skills/qino/workflows/dev-setup.md"
+        },
+        {
+          "src": "tools/qino/workflows/dev-init.md",
+          "dest": "skills/qino/workflows/dev-init.md"
+        },
+        {
+          "src": "tools/qino/agents/qino-concept-agent.md",
+          "dest": "agents/qino-concept-agent.md"
+        },
+        {
+          "src": "tools/qino/agents/qino-research-agent.md",
+          "dest": "agents/qino-research-agent.md"
+        },
+        {
+          "src": "tools/qino/agents/qino-dev-agent.md",
+          "dest": "agents/qino-dev-agent.md"
+        },
+        {
+          "src": "tools/qino/references/qino-concept/concept-spec.md",
+          "dest": "references/qino-concept/concept-spec.md"
+        },
+        {
+          "src": "tools/qino/references/qino-concept/design-philosophy.md",
+          "dest": "references/qino-concept/design-philosophy.md"
+        },
+        {
+          "src": "tools/qino/references/qino-concept/ecology-tests.md",
+          "dest": "references/qino-concept/ecology-tests.md"
+        },
+        {
+          "src": "tools/qino/references/qino-concept/manifest-project-spec.md",
+          "dest": "references/qino-concept/manifest-project-spec.md"
+        },
+        {
+          "src": "tools/qino/references/qino-research/research-spec.md",
+          "dest": "references/qino-research/research-spec.md"
+        },
+        {
+          "src": "tools/qino/references/qino-dev/home-pattern.md",
+          "dest": "references/qino-dev/home-pattern.md"
+        },
+        {
+          "src": "tools/qino/references/qino-attune/calibrate-process.md",
+          "dest": "references/qino-attune/calibrate-process.md"
+        },
+        {
+          "src": "tools/qino/references/qino-attune/compare-session.md",
+          "dest": "references/qino-attune/compare-session.md"
+        }
+      ]
+    },
     "qino-concept": {
-      "description": "Gentle space for developing ideas through conversation",
+      "description": "Gentle space for developing ideas through conversation (archived - use qino)",
+      "archived": true,
       "files": [
         {
           "src": "tools/qino-concept/agents/qino-concept-agent.md",
@@ -175,7 +366,8 @@
       ]
     },
     "qino-dev": {
-      "description": "Implementation companion for qino-concept",
+      "description": "Implementation companion for qino-concept (archived - use qino)",
+      "archived": true,
       "files": [
         {
           "src": "tools/qino-dev/agents/qino-dev-agent.md",
@@ -332,7 +524,8 @@
       ]
     },
     "qino-research": {
-      "description": "Pre-concept research workspace",
+      "description": "Pre-concept research workspace (archived - use qino)",
+      "archived": true,
       "files": [
         {
           "src": "tools/qino-research/agents/qino-research-agent.md",
@@ -434,7 +627,8 @@
       ]
     },
     "qino-universal": {
-      "description": "Universal commands for the qino ecosystem — the ecology itself",
+      "description": "Universal commands for the qino ecosystem (archived - use qino)",
+      "archived": true,
       "files": [
         {
           "src": "tools/qino-universal/commands/qino/arc.md",
