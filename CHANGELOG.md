@@ -35,7 +35,9 @@ Consolidates: qino-concept, qino-dev, qino-research, qino-universal
 #### Added
 
 - **Unified routing** — single skill handles concept exploration, dev implementation, research inquiry, and universal commands (home, capture, test, attune, compare, arc)
-- **19 workflows** — arc, attune, capture, compare, concept-init, concept-setup, dev-init, dev-setup, explore, home, import, research-init, research-setup, test, and more
+- **20 workflows** — arc, attune, capture, compare, concept-init, concept-setup, dev-init, dev-setup, explore, home, import, orientation, research-init, research-setup, test, and more
+- **Orientation workflow** — context-aware ecology overview; shows where you are and what else exists; available from any workspace via "orient me" or "what can qino do"
+- **Bidirectional discovery** — implementation workspaces can now discover concepts and vice versa
 
 ### qino-prose (Unified Plugin)
 
