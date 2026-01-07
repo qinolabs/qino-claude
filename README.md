@@ -68,15 +68,15 @@ Her key insight: _One cannot explicitly change that which is implicit._ Direct c
 <details>
 <summary><strong>More on How the Tools Practice the Philosophy</strong><br>(click to expand)</summary>
 
-It’s not just that the philosophy fits the code. It’s that the code started demanding the philosophy.
+It's not just that the philosophy fits the code. It's that the code started demanding the philosophy.
 
 As these tools evolved, they stopped being just utilities for "managing knowledge" and became ways of **participating in a system that is learning**. The "User" isn't an operator; they are part of the ecology.
 
 The rhymes have deepened into structural necessities:
 
-- **Abduction**: The logic of the system isn't deduction (proving true/false), but abduction (finding the pattern that connects). `qino:compare` and `qino:attune` don't give you answers; they place two contexts side-by-side so meaning can emerge from the double description.
+- **Abduction**: The logic of the system isn't deduction (proving true/false), but abduction (finding the pattern that connects). Compare and attune don't give you answers; they place two contexts side-by-side so meaning can emerge from the double description.
 - **Transcontextuality**: An idea does not follow a straight line. It meanders—from a sudden hunch while coding, to a note in research, to a concept that stabilizes weeks later. The system doesn't force a pipeline; it preserves the living thread across contexts, so you can follow the meaning wherever it leads.
-- **Aphanipoiesis (Unseen Coalescence)**: `qino-scribe` and `qino:capture` assume that the most important changes happen _before_ they are explicit. They allow understanding to accumulate in the margins until it's ready to be named.
+- **Aphanipoiesis (Unseen Coalescence)**: Scribe and capture assume that the most important changes happen _before_ they are explicit. They allow understanding to accumulate in the margins until it's ready to be named.
 - **Warm Data**: We don't extract "facts" from our work; we keep the context attached. The system doesn't show you a to-do list; it shows you **what has pull**, what is connected, and what is waiting.
 
 This ecosystem is an attempt to build software that knows it is part of a larger mind—yours, the project's, and the connections between them. It doesn't try to organize your thinking; it tries to learn how to move with it.
@@ -130,7 +130,7 @@ An early hunch needs room to wander — structure would crush it. A maturing con
                         │    qino-claude      │
                         │                     │
                         │  tools/             │ ◀── source of all tools
-                        │  .claude/           │ ◀── also uses tools (adapter)
+                        │  plugins/           │ ◀── marketplace distribution
                         │  qino-config.json   │ ◀── router configuration
                         │  chronicle/         │
                         └──────────┬──────────┘
@@ -156,26 +156,26 @@ Each space has its own `chronicle/` directory. Git changes in any repo become ch
 
 **Implementation** — where concepts meet code. Structure varies by project domain. Links back to its concept.
 
-**qino-claude** — the source of all tools, but also _uses_ those tools through adapters.
+**qino-claude** — the source of all tools, distributed through the Claude plugin marketplace.
 
 #### Flow Between Spaces
 
 **Routed flows** — content automatically goes to the right place based on `qino-config.json`:
 
 ```
-RESEARCH ──capture───▶ CONCEPTS        /qino:capture routes insights as notes
-RESEARCH ──arc───────▶ RESEARCH        /qino:arc captures emergence in arcs/
+RESEARCH ──capture───▶ CONCEPTS        capture routes insights as notes
+RESEARCH ──arc───────▶ RESEARCH        arc captures emergence in arcs/
 
-CONCEPTS ──create────▶ IMPLEMENTATION  /qino-dev:init creates linked project from concept
+CONCEPTS ──create────▶ IMPLEMENTATION  implement creates linked project from concept
 
-IMPLEMENTATION ──capture──▶ CONCEPTS   /qino:capture routes observations to conceptsRepo
+IMPLEMENTATION ──capture──▶ CONCEPTS   capture routes observations to conceptsRepo
 ```
 
-**Initiated flows** — you notice something and start a command:
+**Initiated flows** — you notice something and start:
 
 ```
-CONCEPTS ────────────▶ RESEARCH        /qino:attune creates quality refinement in research
-ANYWHERE ────────────▶ RESEARCH        /qino:arc captures emergence patterns
+CONCEPTS ────────────▶ RESEARCH        attune creates quality refinement in research
+ANYWHERE ────────────▶ RESEARCH        arc captures emergence patterns
 ```
 
 ### The Router
@@ -190,82 +190,17 @@ A small file called `qino-config.json` tells each tool which space it's in and w
 }
 ```
 
-The tools read this configuration and adjust their behavior. A capture in a research repo might become a fragment feeding an inquiry. The same command in an implementation repo sends a note to concepts. The tools stay the same; the context shapes what they do.
+The tools read this configuration and adjust their behavior. A capture in a research repo might become a fragment feeding an inquiry. The same action in an implementation repo sends a note to concepts. The tools stay the same; the context shapes what they do.
 
 ### Context Sensitivity
 
-The same command adapts to where you are:
+The same words adapt to where you are:
 
-| Command         | In concepts              | In research                | In implementation             |
-| --------------- | ------------------------ | -------------------------- | ----------------------------- |
-| `/qino:home`    | concepts, notes, threads | inquiries, qualities, arcs | linked concept, stack         |
-| `/qino:capture` | saves to notes/          | saves to fragments/        | saves to linked concepts-repo |
-| `/qino:test`    | tests concept            | tests inquiry              | tests linked concept          |
-
-### Flow
-
-Research informs concepts — insights captured as notes, arcs recording emergence patterns that may later seed new concepts.
-
-Implementation captures flow back to concepts — observations, test results, things noticed while building.
-
-The chronicle (qino Scribe) watches git changes across any repo and writes the story of what happened. Scribe can query arcs by date range to understand the inquiry context behind commits.
-
-Everything connects through concepts-repo, but each space keeps its own ecology intact.
-
-### Command Namespaces
-
-| Prefix           | Space                      | Examples                                  |
-| ---------------- | -------------------------- | ----------------------------------------- |
-| `qino:`          | Universal (ecology itself) | home, capture, test, attune, compare, arc |
-| `qino-concept:`  | Concepts                   | explore, import, init                     |
-| `qino-research:` | Research                   | begin                                     |
-| `qino-scribe:`   | Chronicle                  | chapter, rewind                           |
-| `qino-lens:`     | Quality of Attention       | wanderer, narrator                        |
-| `qino-relay:`    | Research Transmissions     | transmit                                  |
-| `qino-dev:`      | Implementation             | init, app                                 |
-
-The `qino:` namespace is not a specific space — it's what you're already in when you're anywhere. The suffix is the door you're entering through.
-
-### Universal Interface
-
-These commands work across all spaces (Concepts, Research, Implementation) but behave differently depending on where you are.
-
-#### Essential Flow
-
-| Command         | Purpose                                                      | Context                                                   |
-| --------------- | ------------------------------------------------------------ | --------------------------------------------------------- |
-| `/qino:home`    | Context-aware entry point. Shows you what matters right now. | [Concept](#qino-concept), [Research](#qino-research)      |
-| `/qino:capture` | Immediate notebook. Saves ideas to the active context.       | [Concept](#nothing-gets-lost), [Research](#qino-research) |
-| `/qino:test`    | Runs ecology tests to see what's echoing.                    | [Testing](#ecological-testing)                            |
-
-#### Perceiving Difference
-
-| Command         | Purpose                                                   | Context                                         |
-| --------------- | --------------------------------------------------------- | ----------------------------------------------- |
-| `/qino:compare` | Structural comparison between two sources.                | [Perceiving Difference](#perceiving-difference) |
-| `/qino:attune`  | Calibrate aesthetic qualities (e.g., "otherworldliness"). | [Attune](#attune-from-hunch-to-craft)           |
-
-#### Home Example
-
-`/qino:home` is context specific. In the concepts space, it shows the active threads.
-
-```
-/qino:home
-
-threads between
-
-  world-tokens-pattern connects qino-scribe, gm-tool, qino-chronicles
-  scribe-as-lens-prototype connects qino-scribe, qino-lens
-
-─────
-
-concepts
-
-  qino-scribe
-  qino-drops
-  discovery-grid
-  qino-lens
-```
+| Action | In concepts | In research | In implementation |
+|--------|-------------|-------------|-------------------|
+| "where am I" | concepts, notes, threads | inquiries, qualities, arcs | linked concept, stack |
+| "capture" | saves to notes/ | saves to fragments/ | saves to linked concepts-repo |
+| "test" | tests concept | tests inquiry | tests linked concept |
 
 </details>
 
@@ -323,15 +258,15 @@ Same scribe. Different worlds. Different atmospheric registers. Process in each 
 
 ## Finding Your Way
 
-**Concept** — [Giving Shape](#qino-concept--giving-shape-to-what-has-pull) · [Design Adventure](#design-adventure--the-room-after)
+**Concept** — [Giving Shape](#qino--giving-shape-to-what-has-pull) · [Design Adventure](#design-adventure--the-room-after)
 
-**Implementation** — [Building from Concepts](#qino-dev--building-from-concepts)
+**Implementation** — [Building from Concepts](#building-from-concepts)
 
-**Research** — [Following Threads](#qino-research--following-threads) · [Arcs](#arcs--evidence-of-emergence) · [Compare](#qino-compare--the-parallel-mirror) · [Attune](#qino-attune--from-hunch-to-craft)
+**Research** — [Following Threads](#following-threads) · [Arcs](#arcs--evidence-of-emergence) · [Compare](#compare--the-parallel-mirror) · [Attune](#attune--from-hunch-to-craft)
 
 **Story** — [Scribe](#qino-scribe--git-becomes-story) · [Relay](#qino-relay--bridging-to-readers) · [Lens](#qino-lens--ways-of-seeing)
 
-**Ecology** — [Language](#ecology-language) · [Test](#qino-test--noticing-the-whole)
+**Ecology** — [Language](#ecology-language) · [Test](#ecological-testing)
 
 <br>
 
@@ -343,7 +278,7 @@ Where ideas come before code. Giving shape to what has pull — exploring possib
 
 _From concept's view: Ideas sometimes arrive from [Research](#research) — an inquiry that crystallized enough to become something to build. When a concept is ready, [Implementation](#implementation) carries it forward. And [Story](#story) shows what becomes of it in the world._
 
-### qino Concept | Giving Shape to What Has Pull
+### qino | Giving Shape to What Has Pull
 
 A gentle space for giving shape to what already has pull.
 
@@ -357,16 +292,16 @@ This assumes resonance guides structure. It asks what draws you, follows that th
 
 When you bring in a note, not everything makes it into your concept. The rest isn't lost — it's held. Each thought is captured as a note with its relevant context preserved, quietly indexed, ready to surface when it matters. No guilt about what you didn't carry forward. Later, if you're stuck, the tool might say: _"There's something held in your origins — about [that theme]. Should we bring it in?"_
 
-It remembers what you set down so you can forget safely. _(This is `/qino:capture` in action — ideas appearing from the held archive.)_
+It remembers what you set down so you can forget safely. _(This is capture in action — ideas appearing from the held archive.)_
 
 #### Explore
 
-You turn toward a concept to develop it. The agent helps you follow what carries energy — the _alive thread_.
+You turn toward a concept to develop it. qino helps you follow what carries energy — the _alive thread_.
 
 ```
-/qino-concept:explore qino-scribe
+(you)   explore qino-scribe
 
-(agent) qino-scribe
+(qino)  qino-scribe
         grounding in story, writing tools, git-as-chronicle
 
         Last touch: 2 days ago
@@ -377,16 +312,16 @@ You turn toward a concept to develop it. The agent helps you follow what carries
 
         What part of this feels alive right now?
 
-(user)  the way code churn feels like weather. a big refactor should feel like a storm.
+(you)   the way code churn feels like weather. a big refactor should feel like a storm.
 
-(agent) That’s a strong impulse — code changes aren't just metadata, they are "Disturbance."
+(qino)  That's a strong impulse — code changes aren't just metadata, they are "Disturbance."
 
         If we follow that... does this belong in "Ecosystem Integration"?
         Or is this a "new Glowing Connection"?
 
-(user)  it's a glowing connection. the git diff becomes world behavior.
+(you)   it's a glowing connection. the git diff becomes world behavior.
 
-(agent) Adding that to Glowing Connections.
+(qino)  Adding that to Glowing Connections.
 
         "The git diff becomes world behavior. Code churn translates into storms,
          stuck doors, or sudden clearings."
@@ -394,22 +329,13 @@ You turn toward a concept to develop it. The agent helps you follow what carries
         Does that change how we read the repository?
 ```
 
-#### Commands
+#### Import and capture
 
-- `/qino-concept:import` brings outside notes into the manifest. What you don't carry into a concept gets held; Home surfaces those held threads later.
-- `/qino-concept:explore [concept-id]` turns toward one concept (or two at once) and follows the alive thread. Imported notes and captures appear as starting points.
+- **import** brings outside notes into the manifest. What you don't carry into a concept gets held; home surfaces those held threads later.
+- **explore** turns toward one concept (or two at once) and follows the alive thread. Imported notes and captures appear as starting points.
+- **capture** saves thoughts immediately to the active context.
 
-```bash
-/qino-concept:setup
-/qino-concept:init concept-name
-/qino:home
-/qino-concept:explore concept-id [other-concept-id]
-/qino-concept:import path/to/notes.md
-/qino:capture [observation]
-/qino:test [concept-id]
-```
-
-_[Source](tools/qino-concept/) · [Installation](tools/qino-concept/README.md#installation)_
+_[Source](tools/qino/)_
 
 <br>
 
@@ -449,11 +375,7 @@ _Notice: World interrupts without words. The hum and tap are pressure._
 
 Different runs surface different questions. The questions themselves teach you how to think about the problem.
 
-```bash
-/design-adventure How do we balance real-time collaboration with focus time?
-```
-
-_[Source](tools/design-adventure/) · [Installation](tools/design-adventure/README.md#installation)_
+_[Source](tools/design-adventure/)_
 
 <br>
 
@@ -579,12 +501,7 @@ scene seeds
 [ 1-3 ] or adjust    [ > ] auto-pick    [ >> ] start writing
 ```
 
-```bash
-/qino-scribe:chapter
-/qino-scribe:chapter from_ref to_ref   # retroactive chapter for a git range
-```
-
-_[Source](tools/qino-scribe/) · [Installation](tools/qino-scribe/README.md#installation)_
+_[Source](tools/qino-scribe/)_
 
 <br>
 
@@ -694,12 +611,7 @@ The Student encounters these: "'Meaning-*searching* versus meaning-*finding*.' T
 
 No prep layer in the Scribe sense. The arc IS the content — it just needs to be voiced *for the reader*.
 
-```bash
-/qino-relay:transmit recognition-through-indirection
-/qino-relay:transmit    # suggests recent arcs
-```
-
-_[Source](tools/qino-relay/) · [Installation](tools/qino-relay/README.md#installation)_
+_[Source](tools/qino-relay/)_
 
 <br>
 
@@ -719,9 +631,9 @@ Style resists decoration. It is not paint applied to surface; it is a **quality 
 
 qino-lens pushed its way out of the work. Scribe needed to see the world differently—to perceive friction where there was only plot, to sense agency where there was only setting. I didn't design a library; I extracted the ways of seeing that the chronicle demanded.
 
-The logic of "Attunement"—how perception shifts, how noise is filtered—is the spine of the future ecosystem apps. By working it out here, in text, the `qino-lens` command tests the technology's weight before it ever becomes application code.
+The logic of "Attunement"—how perception shifts, how noise is filtered—is the spine of the future ecosystem apps. By working it out here, in text, the lens library tests the technology's weight before it ever becomes application code.
 
-_(Note: I used the `qino-lens:narrator` tool that emerged from this process to refine this very section — the tool shaping the documentation that explains the tool.)_
+_(Note: I used the narrator lens that emerged from this process to refine this very section — the tool shaping the documentation that explains the tool.)_
 
 The chronicle changes depending on who watches it. These lenses accumulate — discovered through the work, not designed in advance:
 
@@ -733,7 +645,7 @@ The chronicle changes depending on who watches it. These lenses accumulate — d
 
 > _Example:_ "The corridor didn't just lead to the chamber; it constricted. The ceiling dropped low, forcing a bow, while the walls leaned in to strip away any thought of turning back. The architecture demanded submission before arrival."
 
-_([Reference](tools/qino-lens/references/narrator.md))_
+_([Reference](tools/qino-lens/references/qino-lens/narrator.md))_
 
 #### `wanderer` — Sensitivity to Friction
 
@@ -743,7 +655,7 @@ _([Reference](tools/qino-lens/references/narrator.md))_
 
 > _Example:_ "The fog pressed against the river, a heavy, wet burden. The ferry wasn't coming. The wanderer unbuckled the strap and slid the pack down the piling, guiding it until it touched the wet wood. They straightened. The sudden lightness made them sway, their shoulders rising into the damp space where the straps had been."
 
-_([Reference](tools/qino-lens/references/wanderer.md))_
+_([Reference](tools/qino-lens/references/qino-lens/wanderer.md))_
 
 #### `newcomer` — Finding What's Become Invisible
 
@@ -753,7 +665,7 @@ _([Reference](tools/qino-lens/references/wanderer.md))_
 
 > _Example:_ "The oldest woman at the table was served last. Plates circled toward younger faces. She waited, hands folded. When her plate came, she lifted her fork. Then the others began to eat."
 
-_([Reference](tools/qino-lens/references/newcomer.md))_
+_([Reference](tools/qino-lens/references/qino-lens/newcomer.md))_
 
 #### `companion` — World Through Relationship
 
@@ -763,13 +675,9 @@ _([Reference](tools/qino-lens/references/newcomer.md))_
 
 > _Example:_ "Varo stopped at a stall. Copper bowls, dented. She picked one up, ran her thumb across a dent. 'My mother had one like this.' Set it back. Moved on. The wanderer lifted the same bowl, found the dent, felt where her thumb had been."
 
-_([Reference](tools/qino-lens/references/companion.md))_
+_([Reference](tools/qino-lens/references/qino-lens/companion.md))_
 
-#### Commands
-
-Each lens is invoked as `/qino-lens:<lens-id>` — attune text to that sensitivity.
-
-_[Source](tools/qino-lens/) · [References](tools/qino-lens/references/)_
+_[Source](tools/qino-lens/)_
 
 <br>
 
@@ -781,9 +689,9 @@ From concept to working code. When exploration has found its shape, implementati
 
 _From implementation's view: [Concept](#concept) is the guiding force — what to build and why. The commits generated here become [Story](#story) material through Scribe. [Research](#research) findings sometimes inform technical decisions._
 
-### qino Dev | Building from Concepts
+### Building from Concepts
 
-Implementation companion for qino-concept.
+Implementation companion for concept work.
 
 #### What gets lost in building
 
@@ -791,7 +699,7 @@ You start with a vision. Then the practical demands come — the requirements, t
 
 This happens when concept and implementation share the same space. Without boundaries, one absorbs the other — and implementation always wins. The code is right there, immediate and demanding.
 
-qino Dev gives them separate places. Your concept stays in concepts-repo. Your implementation lives in the target project. Not to keep them apart, but so they can inform each other without merging. The concept shapes what you build. What you discover while building flows back to shape the concept. Each keeps its own form while the other grows.
+qino gives them separate places. Your concept stays in concepts-repo. Your implementation lives in the target project. Not to keep them apart, but so they can inform each other without merging. The concept shapes what you build. What you discover while building flows back to shape the concept. Each keeps its own form while the other grows.
 
 #### From concept to code
 
@@ -803,7 +711,7 @@ A fifteen-minute conversation translates conceptual understanding into technical
 
 #### Arrival
 
-The generated command — `/qino-dev:app` — follows the home pattern. Quiet arrival. Show what's here. Open to what's next.
+The generated app command follows the home pattern. Quiet arrival. Show what's here. Open to what's next.
 
 ```
 my-app
@@ -822,7 +730,7 @@ from here
   there's uncommitted work on authentication
   continue here, or commit what you have?
 
-                        just respond, or /qino-concept:explore board-games
+                        just respond, or explore board-games
 ```
 
 Not a dashboard. Not a menu. A place to arrive before you work.
@@ -835,13 +743,7 @@ AI implements to the iteration spec. User tests and reviews. Feedback flows befo
 
 The files live in `implementations/` — visible, version-controlled, yours. Not hidden in `.claude/`. Not abstracted away. You can read them, edit them, understand what's planned.
 
-```bash
-/qino-dev:setup
-/qino-dev:init path/to/concept.md
-/qino-dev:app
-```
-
-_[Source](tools/qino-dev/) · [Installation](tools/qino-dev/README.md#installation)_
+_[Source](tools/qino/)_
 
 <br>
 
@@ -872,22 +774,22 @@ Ecological tests stand at these gaps. They ask: _Does the pattern that holds thi
 
 By maintaining the distinct character of each local ecology—protecting the **Gesture** from becoming a **Command**, keeping the **World** distinct from the **Logic**—the system avoids collapsing into a generic tool. When the local characters hold their shape, the in-between spaces remain alive with relation.
 
-### qino Test | Noticing the Whole
+### Ecological Testing
 
-Using `/qino:test` to notice the system's own nature.
+Using ecology tests to notice the system's own nature.
 
 Tests are not metrics. They do not optimize or rank. They are questions posed at the gap between forms. They guard the **integrity of the relationships between** things, not the correctness of the parts.
 
-**`/qino:test` provides the friction to feel this.** It interrupts the smooth momentum of production to signal when a character is fading, forcing us to notice and restore the integrity before it is lost.
+**Testing provides the friction to feel this.** It interrupts the smooth momentum of production to signal when a character is fading, forcing us to notice and restore the integrity before it is lost.
 
 #### The Noticing Loop
 
 The test observes. It does not develop. It invites you to pause and see. You can test a specific concept, a feature, a file, or infer the scope from the current conversation context.
 
 ```
-/qino:test the card stack interaction
+(you)   test the card stack interaction
 
-(agent) This feels like user ecology, but could also be generic friction.
+(qino)  This feels like user ecology, but could also be generic friction.
         Let's try the lived experience test:
 
         "Does this make it easier for the user to notice something,
@@ -895,14 +797,14 @@ The test observes. It does not develop. It invites you to pause and see. You can
 
         Holding that question — what do you notice?
 
-(user)  It feels like obligation. The stack demands sorting. It feels heavy.
+(you)   It feels like obligation. The stack demands sorting. It feels heavy.
 
-(agent) ∴ heavy stack demands sorting
+(qino)  ∴ heavy stack demands sorting
 
         Capture this, or let it inform without persisting?
 ```
 
-When you capture, the noticing becomes a note with ecology metadata (`user: heavy stack demands sorting`). This metadata allows `/qino:home` to show you which ecologies are echoing and which have been silent.
+When you capture, the noticing becomes a note with ecology metadata (`user: heavy stack demands sorting`). This metadata allows home to show you which ecologies are echoing and which have been silent.
 
 <br>
 
@@ -912,30 +814,21 @@ Research is pre-concept work — following threads before they crystallize. The 
 
 _From research's view: What crystallizes here might become [Concept](#concept) material. Arcs feed [Story](#story) through Relay. Research methods — Compare for finding difference, Attune for refining perception — work across all domains._
 
-### qino Research | Following Threads
+### Following Threads
 
 A space for open-ended research — before ideas become concepts. Three experiential types, each with its own relationship to uncertainty:
 
 - **Inquiries** — Open-ended following of threads. A question that stays alive across sessions.
-- **Qualities** — Refining aesthetic sensibilities into speakable craft. _(See [qino Attune](#qino-attune--from-hunch-to-craft).)_
+- **Qualities** — Refining aesthetic sensibilities into speakable craft. _(See [Attune](#attune--from-hunch-to-craft).)_
 - **Arcs** — Emergence patterns. How inquiry moved through the ecosystem — what touched what, what crystallized. _(See [Arcs](#arcs--evidence-of-emergence).)_
 
 Unlike concepts (which stabilize over time), research moves fast, welcomes uncertainty, and accepts inconclusive results as valuable data.
-
-#### Commands
-
-| Command                        | Purpose                                               |
-| ------------------------------ | ----------------------------------------------------- |
-| `/qino:home`                   | See the research landscape (context-aware).           |
-| `/qino-research:setup`         | Set up research workspace (one-time).                 |
-| `/qino-research:init [topic]`| Create a new inquiry.                                 |
-| `/qino:arc [title]`            | Capture an emergence pattern — how inquiry moved.     |
 
 #### What accumulates
 
 An inquiry without conclusions is still valuable — it maps the territory. Arcs don't need maintenance — they're evidence of ecosystem participation. They accumulate as ecosystem memory.
 
-_[Source](tools/qino-research/) · [Installation](tools/qino-research/README.md#installation)_
+_[Source](tools/qino/)_
 
 <br>
 
@@ -977,41 +870,39 @@ The arc captures the ecology of emergence, not just its outputs. Ground gives it
 
 #### Conversational gathering
 
-Arcs are gathered through conversation, not forms. The command listens for elements without interrogating:
+Arcs are gathered through conversation, not forms:
 
 ```
-/qino:arc
+(qino)  what emerged?
 
-> "what emerged?"
+(you)   [describe the arc...]
 
-[describe the arc...]
+(qino)  what made this alive? what gave it charge?
 
-> "what made this alive? what gave it charge?"
+(you)   [...Ground emerges]
 
-[...Ground emerges]
+(qino)  how did you notice what you noticed?
 
-> "how did you notice what you noticed?"
+(you)   [...Instrument emerges]
 
-[...Instrument emerges]
+(qino)  what kept appearing? what pattern recurred?
 
-> "what kept appearing? what pattern recurred?"
+(you)   [...The Recurring and The Between emerge]
 
-[...The Recurring and The Between emerge]
+(qino)  so the essence is: [distillation]?
 
-> "so the essence is: [distillation]?"
+(you)   [confirm or correct]
 
-[confirm or correct]
+(qino)  what was touched? what transformed?
 
-> "what was touched? what transformed?"
-
-[...Traces, What Composted, Seeds emerge]
+(you)   [...Traces, What Composted, Seeds emerge]
 ```
 
 #### Information flow
 
 **Into arcs (capture):**
 ```
-Session work → artifacts created → arc capture (/qino:arc)
+Session work → artifacts created → arc capture
 ```
 
 **Out of arcs (query):**
@@ -1031,21 +922,17 @@ After a session where:
 
 Not every session needs an arc. But the ones that _move_ — where you end somewhere you couldn't have predicted — those deserve evidence.
 
-```bash
-/qino:arc Recognition Through Indirection
-```
-
 _([First arc](https://github.com/qinolabs/qino-research/blob/main/arcs/2025-12-29_recognition-through-indirection.md) — the session that discovered it needed arcs)_
 
 <br>
 
-### qino Compare | The Parallel Mirror
+### Compare | The Parallel Mirror
 
 You have two examples from different sources — different chronicles, different scribe versions, different approaches. Compare helps you find what makes them land differently.
 
 **1 — Surface initial impressions.** Questions like "what stays with you after reading this section?" and "At what point did your attention start to drift?" Each surfaces something. The structure disappears into conversation.
 
-**2 — Find the parallel.** You share what you liked about one example. Based on that, the system finds something in the _other_ source with the same structural shape. It presents both:
+**2 — Find the parallel.** You share what you liked about one example. Based on that, qino finds something in the _other_ source with the same structural shape. It presents both:
 
 ```
 you liked
@@ -1067,7 +954,7 @@ How do these land differently?
 
 By the end, you've discovered something you couldn't have named at the start.
 
-### qino Attune | From Hunch to Craft
+### Attune | From Hunch to Craft
 
 You start with a hunch — an aesthetic quality like "otherworldliness" or "tension" or "aliveness." You know it when you feel it, but you can't teach it. This tool came from that kind of exploration. The calibration creates conditions where implicit knowledge can surface.
 
@@ -1111,43 +998,21 @@ What you couldn't explain, you can now teach. What you could only feel, you can 
 
 _(The [qino Lens](#qino-lens--ways-of-seeing) section is a product of this process — the Wanderer's Lens emerged from an Attune calibration.)_
 
-```bash
-/qino:compare path/to/a.md path/to/b.md
-/qino:attune quality-name
-```
-
 <br>
 
-## Adapters
-
-This repository uses its own tools. The source files live in `tools/`, and adapter commands in `.claude/commands/` reference them.
-
-```
-tools/qino-universal/commands/qino/        → .claude/commands/qino/
-tools/qino-concept/commands/qino-concept/  → .claude/commands/qino-concept/
-tools/qino-scribe/commands/qino-scribe/    → .claude/commands/qino-scribe/
-tools/qino-research/commands/qino-research/→ .claude/commands/qino-research/
-```
-
-**qino-claude is both the source of tools and a user of them.**
-
-This is the "adapter" pattern described in The Ecosystem section. The self-use is the point — the tools shape the work that shapes the tools.
-
-<br>
+---
 
 ## Installation
-
-**Via Plugin Marketplace (recommended):**
 
 ```bash
 # Add the qino marketplace
 /plugin marketplace add qinolabs/qino-claude
 
-# Install plugins you want
+# Install what you need
 /plugin install qino@qinolabs/qino-claude           # Core ecology
 /plugin install qino-scribe@qinolabs/qino-claude    # Chronicles
 /plugin install qino-art@qinolabs/qino-claude       # Visuals
-/plugin install design-adventure@qinolabs/qino-claude  # Design exploration
+/plugin install design-adventure@qinolabs/qino-claude
 ```
 
 Updates happen automatically when you pull from the marketplace.
