@@ -25,7 +25,6 @@ Every concept must be stored at:
 ```
 concepts/<concept-id>/
   concept.md
-  implementation.md  # implementation-specific notes (optional)
   origins/           # copied source material (optional)
 ```
 
@@ -51,8 +50,6 @@ Concept IDs use prefixes to indicate the type of concept:
 - Systems use `sys-` prefix (foundational patterns and conventions)
 
 The `origins/` directory contains copies of external notes that were integrated into this concept. This keeps references self-contained within the repository.
-
-The `implementation.md` file holds implementation-specific details that complement what concept.md describes. See Section 8 for details.
 
 Each concept.md must follow the structure below:
 
@@ -260,8 +257,8 @@ This is the concept's **living edge** — what's unresolved, what's being wonder
 - Future possibilities held lightly
 
 **What doesn't belong:**
-- Implementation tasks (those go in iterations)
-- Technical specs (those go in implementation.md)
+- Implementation tasks (those go in project iterations)
+- Technical specs (those belong in project implementation context)
 - Things that belong elsewhere in the base structure
 
 **Temperature matters:**
@@ -373,66 +370,4 @@ Possible optional sections the agent may someday support:
 - `## Energetic Qualities`
 
 None are required or recognized today.
-
----
-
-## 8. Implementation Notes (implementation.md)
-
-The `implementation.md` file is an **optional companion** to concept.md. It holds technical conceptual work — still exploratory, still about understanding, but focused on system shape rather than user experience.
-
-### Purpose
-
-Both files are conceptual. They differ in focus:
-
-| concept.md | implementation.md |
-|------------|-------------------|
-| User experience | System shape |
-| Surfaces, voice, ecology | Data models, flows, boundaries |
-| How it feels | How it works |
-| What the user encounters | What the system holds |
-
-implementation.md is **not** detailed implementation specs. It's conceptual exploration of technical territory — the same alive-thread work, applied to system design.
-
-### When to Create
-
-Create implementation.md when:
-- Technical modeling emerges during concept exploration
-- Data structures or system boundaries need to be understood
-- The conversation moves from "what does this feel like" to "what does this hold"
-
-### Structure
-
-implementation.md has no required structure. It evolves with the concept's technical needs. Common sections include:
-
-```markdown
-# [Concept Name] — Implementation Notes
-
-## Data Model
-[Types, structures, what the system holds]
-
-## Scope Boundaries
-[What's ecosystem-level vs modality-level, what belongs where]
-
-## Key Principles
-[Technical decisions that emerged from conceptual work]
-
-## Open Questions
-[Technical uncertainties still being explored]
-```
-
-### Relationship to concept.md
-
-- Both files explore the same concept from different angles
-- concept.md grounds in user experience; implementation.md grounds in system shape
-- They inform each other — technical constraints shape experience, experience requirements shape systems
-- Cross-references are welcome when they clarify
-
-### Agent Behavior
-
-The qino Concept Agent:
-- Understands implementation.md as technical conceptual work, not detailed specs
-- MAY create or update implementation.md when exploration moves into technical territory
-- Reads both files when exploring a concept to understand the full picture
-- Routes content appropriately: user-facing → concept.md, system-facing → implementation.md
-- Applies the same alive-thread approach to technical exploration
 

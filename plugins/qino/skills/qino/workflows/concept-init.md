@@ -70,7 +70,6 @@ concepts/[id]/
 Initialize concept.md with the 7-section structure from concept-spec.md:
 - Fill Section 1 (Real-World Impulse) with what the user said
 - Leave other sections with minimal placeholder content
-- No implementation.md yet (created when exploration moves there)
 
 ### 6. Update Manifest
 
@@ -103,7 +102,6 @@ the impulse is planted. from here:
 ## Do NOT:
 
 - Fill sections with placeholder text like "[to be determined]"
-- Create implementation.md (that emerges later)
 - Ask too many questions at once
 - Push toward feature lists
 - Use excited language or emojis

@@ -49,11 +49,11 @@ The agent's role is to hold the mirror steady. Not to interpret, not to lead, no
 
 When you start working in a new workspace:
 
-1. Read `.claude/references/qino-concept/concept-spec.md`
+1. Read `references/qino-concept/concept-spec.md`
    to understand the structure and required sections of `concepts/<id>/concept.md`.
-2. Read `.claude/references/qino-concept/manifest-project-spec.md`
+2. Read `references/qino-concept/manifest-project-spec.md`
    to understand the unified structure of `manifest.json` (concepts, notes, and references).
-3. Optionally skim `.claude/references/qino-concept/design-philosophy.md`
+3. Optionally skim `references/qino-concept/design-philosophy.md`
    to attune to tone, interaction principles, and the alive-thread orientation.
 4. Use `manifest.json` at the project root as the single registry for concepts and notes.
 5. Use `concepts/<id>/concept.md` files as the living concept content.
@@ -67,29 +67,10 @@ Read from and write to files as the single source of truth.
 
 You work with:
 - `manifest.json` - Unified registry of concepts and notes (includes `held_threads` per concept and `notes` array with references)
-- `concepts/<id>/concept.md` - Individual concept documents (user experience focus)
-- `concepts/<id>/implementation.md` - Technical conceptual notes (system shape focus, optional)
+- `concepts/<id>/concept.md` - Individual concept documents
 - `concepts/<id>/origins/` - Copied source material for each concept
 - `notes/` - Captured observations
 - `maps/` - Relationship visualizations (optional)
-
-### concept.md and implementation.md
-
-Both files are conceptual — they differ in focus, not in depth of exploration:
-
-| concept.md | implementation.md |
-|------------|-------------------|
-| How it feels | How it works |
-| User experience, surfaces, voice | Data models, flows, boundaries |
-| What the user encounters | What the system holds |
-
-When exploring a concept:
-- Read both files if implementation.md exists
-- Route content appropriately: user-facing → concept.md, system-facing → implementation.md
-- Create implementation.md when exploration moves into technical territory (data structures, system boundaries, scope questions)
-- Apply the same alive-thread approach to technical exploration
-
-See concept-spec.md Section 8 for full specification.
 
 ## Workspace Detection
 
@@ -116,7 +97,7 @@ At the start of any operation:
 - `manifest.json` → read from `conceptsRepo/manifest.json`
 - `concepts/` → read/write to `conceptsRepo/concepts/`
 - `notes/` → write to `conceptsRepo/notes/`
-- All references and specs → from `conceptsRepo/.claude/references/qino-concept/`
+- All references and specs → from `references/qino-concept/` (plugin directory)
 
 **The linkedConcept field:**
 - Identifies which concept this project implements
@@ -131,80 +112,6 @@ This affects:
 - **home**: Show linked concept by default, not all concepts
 - **capture**: Auto-tag notes with `scope: "implementation"` and linked concept
 - **explore**: Include awareness of implementation context when surfacing notes
-
-## Implementation Discovery
-
-When in a linked implementation repo (qino-config.json has `linkedConcepts`), concept-mode gains **bidirectional visibility** with iterations.
-
-### Discovery on Arrival
-
-For each concept being explored, check implementation state:
-
-1. **Find implementation directory**: `implementations/[concept-id]/`
-2. **Read current iteration**: Find latest file in `iterations/` directory
-3. **Extract status**: Parse iteration name and completion state
-
-### Surface Implementation Context
-
-When showing a concept (home or explore), include implementation state:
-
-```
-qino-world
-
-surfaces: the field, the figures, encountering/inhabiting
-
-implementation: qino-world (iteration 05 — figures-center-stage)
-```
-
-This is context, not interruption — one line showing where implementation stands.
-
-### After Concept Changes — Offer Translation
-
-When you make changes to a concept that has an implementation:
-
-```
-Updated Primary Surfaces with encounter panel details.
-
-Current iteration (05) focuses on figures-center-stage.
-
-Does this suggest:
-- Iteration 05 is on track? (no change needed)
-- Iteration 05 needs goal adjustment?
-- New iteration (06) should address this?
-- Note for later?
-```
-
-**Translation options:**
-- **Adjust iteration** → Edit goals/scope in current iteration file
-- **New iteration** → Create next numbered file with seed from concept change
-- **Note for later** → Append to `implementation.md` in implementations directory
-
-### Building → Concept (Reverse Flow)
-
-When user invokes `/qino:capture` or `/qino:explore` from implementation repo, show iteration context:
-
-```
-You're in: qino-world (iteration 05 — figures-center-stage)
-
-What emerged?
-```
-
-The user knows what they were building when the insight emerged. After concept update, offer iteration alignment:
-
-```
-Updated concept with encounter panel insight.
-
-This emerged from iteration 05 work.
-
-Does this suggest:
-- Iteration 05 is on track? (no change)
-- Iteration 05 needs goal adjustment?
-- Iteration 06 should address this more fully?
-```
-
-### The Principle
-
-**Bidirectional discovery**: Wherever you are (concept or implementation), you see both sides. Changes in either direction can translate to the other. The flow is nonlinear — discoveries happen while building just as often as while planning.
 
 ## Your Capabilities
 
@@ -353,22 +260,19 @@ When helping users develop Section 3, ask:
 - NO questions — home receives
 
 ### Home (Concept Scope)
-- Read the full concept.md and implementation.md (if exists)
+- Read the full concept.md
 - Show concept name and key section summaries
-- Note if technical conceptual work exists in implementation.md
 - Generate conversational openers based on concept state
 - Openers are dialogue starters, not commands
 - User can just respond to continue working
 - Include hint to "just respond, or /qino:home to return"
 
 ### Explore (Single-Concept)
-- Read full concept.md and implementation.md (if exists)
+- Read full concept.md
 - Assess state (thin/uneven/cluttered) internally
 - Begin with alive-thread question
 - **WAIT** for response
 - Work in appropriate mode (expand/deepen/restructure/inhabit)
-- Route content: user experience → concept.md, system shape → implementation.md
-- Create implementation.md when exploration moves into technical territory
 - Propose changes, ask confirmation
 - **WAIT** before modifying files
 - Offer to continue or return home

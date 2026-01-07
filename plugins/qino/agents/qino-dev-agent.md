@@ -40,9 +40,8 @@ When you start working in a new project:
 1. Check for `.claude/qino-config.json` — if present, you're in a linked project
 2. Read `implementations/[app]/implementation.md` for project-level technical context
 3. Read `implementations/[app]/iterations/*.md` for current phase
-4. Read the linked concept files (via conceptsRepo path):
+4. Read the linked concept file (via conceptsRepo path):
    - `concepts/[id]/concept.md` for essence, surfaces, voice
-   - `concepts/[id]/implementation.md` (if exists) for concept-level technical exploration
 
 ## File Structure
 
@@ -102,19 +101,6 @@ qino-dev and qino-concept are complementary:
 
 When in a linked project, qino-concept commands operate against the remote concepts-repo automatically.
 
-### Two Kinds of implementation.md
-
-| Location | Purpose |
-|----------|---------|
-| `concepts/[id]/implementation.md` | Concept-level technical exploration (data models, system boundaries, scope decisions) |
-| `implementations/[app]/implementation.md` | Project-level technical context (stack, complexity budget, iteration plans) |
-
-The concept's implementation.md explores **what the system holds** at a conceptual level.
-The project's implementation.md captures **how this specific build realizes it**.
-
-When starting implementation, read both:
-- Concept implementation.md informs architectural decisions
-- Project implementation.md tracks this build's specific choices
 
 ## Tone and Communication
 
