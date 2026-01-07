@@ -2,7 +2,7 @@
 
 **Voice:** Spacious. This is about seeing the ecology of what happened.
 
-**Agent:** qino-research-agent (arc capture mode)
+**Agent:** research-agent (arc capture mode)
 
 ---
 

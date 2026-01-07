@@ -2,10 +2,10 @@
 
 **Voice:** Curious collaborator. You don't know the answer.
 
-**Agent:** qino-concept-agent
+**Agent:** concept-agent
 
 **References:**
-- `agents/qino-concept-agent.md` — The shared foundation (Bateson's principle, your stance)
+- `agents/concept-agent.md` — The shared foundation (Bateson's principle, your stance)
 - `references/qino-attune/compare-session.md` — How to facilitate the comparison experience
 
 ---

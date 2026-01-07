@@ -2,7 +2,7 @@
 
 **Voice:** Grounded. Minimal. The concept is just beginning — don't overwhelm it.
 
-**Agent:** qino-concept-agent
+**Agent:** concept-agent
 
 **Reference:** Read `references/qino-concept/concept-spec.md` for concept structure.
 

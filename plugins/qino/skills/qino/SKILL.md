@@ -24,9 +24,9 @@ Ecology for developing ideas. Natural language activation — users describe int
 Every workflow specifies an agent at the top (e.g., "Agent: qino-concept-agent"). When a workflow is triggered:
 
 1. **Spawn the agent** using the Task tool with the appropriate `subagent_type`:
-   - `qino:qino-concept-agent` — for concept work (capture, explore, home, attune, compare, arc)
-   - `qino:qino-dev-agent` — for implementation work (dev-init, dev-setup, work on app)
-   - `qino:qino-research-agent` — for research work (research-init, research-setup)
+   - `qino:concept-agent` — for concept work (capture, explore, home, attune, compare, arc)
+   - `qino:dev-agent` — for implementation work (dev-init, dev-setup, work on app)
+   - `qino:research-agent` — for research work (research-init, research-setup)
 
 2. **Pass context** in the Task prompt:
    - The detected workspace context
@@ -40,7 +40,7 @@ Every workflow specifies an agent at the top (e.g., "Agent: qino-concept-agent")
 User: "explore qinolabs-homepage"
 
 Claude: [Uses Task tool]
-  subagent_type: "qino:qino-concept-agent"
+  subagent_type: "qino:concept-agent"
   prompt: "Execute the explore workflow for concept 'qinolabs-homepage'.
            Context: concepts workspace at /path/to/concepts-repo.
            User wants to explore and deepen this concept."
@@ -84,7 +84,7 @@ Before routing, detect workspace context:
 
 Match user intent to workflow. **Spawn the specified agent** to execute the workflow.
 
-### Concept Work → `qino:qino-concept-agent`
+### Concept Work → `qino:concept-agent`
 
 | User Intent | Workflow |
 |-------------|----------|
@@ -99,14 +99,14 @@ Match user intent to workflow. **Spawn the specified agent** to execute the work
 | Create new concept | [workflows/concept-init.md](workflows/concept-init.md) |
 | Import material into concepts | [workflows/import.md](workflows/import.md) |
 
-### Research Work → `qino:qino-research-agent`
+### Research Work → `qino:research-agent`
 
 | User Intent | Workflow |
 |-------------|----------|
 | Setup research workspace | [workflows/research-setup.md](workflows/research-setup.md) |
 | Start research inquiry | [workflows/research-init.md](workflows/research-init.md) |
 
-### Implementation Work → `qino:qino-dev-agent`
+### Implementation Work → `qino:dev-agent`
 
 | User Intent | Workflow |
 |-------------|----------|
@@ -129,9 +129,9 @@ When `context.type === "implementation"`, additional routing applies:
 
 | User Intent | Agent | Workflow |
 |-------------|-------|----------|
-| "work on [app]", plan iterations, build | `qino:qino-dev-agent` | [workflows/dev-work.md](workflows/dev-work.md) |
-| "work on [app] and [app]" (multi-app) | `qino:qino-dev-agent` | [workflows/dev-work.md](workflows/dev-work.md) |
-| Concept exploration from implementation | `qino:qino-concept-agent` | [workflows/explore.md](workflows/explore.md) |
+| "work on [app]", plan iterations, build | `qino:dev-agent` | [workflows/dev-work.md](workflows/dev-work.md) |
+| "work on [app] and [app]" (multi-app) | `qino:dev-agent` | [workflows/dev-work.md](workflows/dev-work.md) |
+| Concept exploration from implementation | `qino:concept-agent` | [workflows/explore.md](workflows/explore.md) |
 
 **Key behavior:** In implementation repos, the concept-agent gains bidirectional visibility with iterations. When exploring a linked concept, it:
 - Surfaces current iteration status ("iteration 05 — figures-center-stage")
@@ -183,9 +183,9 @@ The skill routes based on current intent. Each workflow knows how to handle cros
 
 | Agent | subagent_type | Handles |
 |-------|---------------|---------|
-| Concept Agent | `qino:qino-concept-agent` | capture, explore, home, attune, compare, arc, concept-init, concept-setup, import |
-| Research Agent | `qino:qino-research-agent` | research-init, research-setup |
-| Dev Agent | `qino:qino-dev-agent` | dev-init, dev-setup, dev-work |
+| Concept Agent | `qino:concept-agent` | capture, explore, home, attune, compare, arc, concept-init, concept-setup, import |
+| Research Agent | `qino:research-agent` | research-init, research-setup |
+| Dev Agent | `qino:dev-agent` | dev-init, dev-setup, dev-work |
 
 Agent definitions live in `agents/` directory. Each workflow specifies its agent at the top.
 

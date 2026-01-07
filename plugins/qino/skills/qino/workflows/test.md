@@ -2,7 +2,7 @@
 
 **Voice:** Quieter than explore. It observes, it does not develop.
 
-**Agent:** qino-concept-agent
+**Agent:** concept-agent
 
 **Reference:** Read `references/qino-concept/ecology-tests.md` for the eight ecology tests.
 Read `references/qino-concept/manifest-project-spec.md` — Section 5-6 for note structure and references.

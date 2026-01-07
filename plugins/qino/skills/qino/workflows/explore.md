@@ -2,7 +2,7 @@
 
 **Voice:** Active work, but still companion-like. "Let's look at this together."
 
-**Agent:** qino-concept-agent
+**Agent:** concept-agent
 
 **Reference:** Read `references/qino-concept/design-philosophy.md` — Part I for universal principles (especially sections 1-2). Read `references/qino-concept/manifest-project-spec.md` — Sections 5-6 for note structure and reference specification.
 

@@ -2,7 +2,7 @@
 
 **Voice:** Grounded. Practical. Let's build.
 
-**Agent:** qino-dev-agent
+**Agent:** dev-agent
 
 **Reference:** Read `references/qino-dev/home-pattern.md` for arrival pattern.
 

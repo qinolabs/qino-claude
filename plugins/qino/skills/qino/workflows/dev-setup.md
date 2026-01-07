@@ -2,7 +2,7 @@
 
 **Voice:** Minimal scaffolding. Create the space and step back.
 
-**Agent:** qino-dev-agent
+**Agent:** dev-agent
 
 ---
 
