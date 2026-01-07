@@ -4,7 +4,8 @@ description: |
   Ecology for developing ideas — concepts, research, implementation.
   Captures thoughts, explores concepts, orients in workspaces.
   Use when: capturing thoughts, holding observations, exploring concepts, working with ideas,
-  arriving at workspace, orienting, starting research, beginning inquiry, beginning implementation,
+  arriving at workspace, orienting, seeing the ecology, understanding what qino offers,
+  starting research, beginning inquiry, beginning implementation,
   testing through ecology, comparing artifacts, attuning to qualities, capturing emergence arcs.
   Context-aware across concepts, research, and implementation workspaces.
   Natural language companion — describe your intent, not commands.
@@ -37,8 +38,8 @@ Before routing, detect workspace context:
    - `linkedConcepts` — map of concept IDs to paths
 
 4. **If no qino-config.json exists:**
-   - Treat as standalone concepts workspace
-   - Use current directory as root
+   - Route to orientation workflow (first-time arrival)
+   - See [workflows/orientation.md](workflows/orientation.md)
 
 ---
 
@@ -48,7 +49,9 @@ Match user intent to workflow. Read the workflow file and follow its instruction
 
 | User Intent | Workflow |
 |-------------|----------|
-| Arrive, orient, "where am I", "what's here" | [workflows/home.md](workflows/home.md) |
+| Orient, "what can qino do", "show me qino", ecology overview | [workflows/orientation.md](workflows/orientation.md) |
+| No workspace context (and no clear intent) | [workflows/orientation.md](workflows/orientation.md) |
+| Arrive, "where am I", "what's here", home | [workflows/home.md](workflows/home.md) |
 | Capture thought, "hold this", "note: ..." | [workflows/capture.md](workflows/capture.md) |
 | Explore concept(s), "work with [concept]" | [workflows/explore.md](workflows/explore.md) |
 | Test, "notice through ecology" | [workflows/test.md](workflows/test.md) |
@@ -62,6 +65,31 @@ Match user intent to workflow. Read the workflow file and follow its instruction
 | Start research inquiry | [workflows/research-init.md](workflows/research-init.md) |
 | Setup implementation workspace | [workflows/dev-setup.md](workflows/dev-setup.md) |
 | Start implementation | [workflows/dev-init.md](workflows/dev-init.md) |
+
+---
+
+## Implementation Context
+
+When `repoType` is `"implementation"`, additional routing applies:
+
+| User Intent | Route |
+|-------------|-------|
+| "work on [app]" | dev-agent with app context |
+| "work on [app] and [app]" | dev-agent with multi-app context |
+| Concept exploration | concept-agent WITH implementation discovery |
+
+**Key behavior:** In implementation repos, `concept-agent` gains bidirectional visibility with iterations. When exploring a linked concept, it:
+- Surfaces current iteration status ("iteration 05 — figures-center-stage")
+- Offers translation prompts after concept changes
+- Shows iteration context when capturing discoveries from building
+
+This enables nonlinear work — discoveries flow in both directions between concept-space and implementation-space.
+
+**Multi-app scoping:** Users can work across multiple apps conversationally:
+- "work on world and journey" → dev-agent sees both apps
+- "the encounter panel in world needs to talk to journey's substrate" → dev-agent holds both contexts
+
+No explicit commands needed. The skill routes conversationally based on intent.
 
 ---
 
@@ -107,10 +135,6 @@ Workflows may reference shared agents:
 ---
 
 ## Error States
-
-**No workspace context:**
-> "No qino workspace here."
-> To create: "setup concepts workspace", "setup research workspace", or "setup implementation workspace"
 
 **Cross-repo resolution failure:**
 > "Can't find concepts-repo at [path]."
