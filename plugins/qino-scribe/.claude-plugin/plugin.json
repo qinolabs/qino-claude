@@ -1,0 +1,6 @@
+{
+  "name": "qino-scribe",
+  "description": "Chronicle writing from git history",
+  "version": "1.0.0",
+  "author": { "name": "qinolabs" }
+}

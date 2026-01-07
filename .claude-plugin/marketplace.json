@@ -1,0 +1,34 @@
+{
+  "plugins": [
+    {
+      "name": "qino",
+      "description": "Ecology for developing ideas — concepts, research, implementation",
+      "source": { "type": "local", "path": "plugins/qino" }
+    },
+    {
+      "name": "qino-scribe",
+      "description": "Chronicle writing from git history",
+      "source": { "type": "local", "path": "plugins/qino-scribe" }
+    },
+    {
+      "name": "qino-relay",
+      "description": "Research transmissions",
+      "source": { "type": "local", "path": "plugins/qino-relay" }
+    },
+    {
+      "name": "qino-art",
+      "description": "Visual content system",
+      "source": { "type": "local", "path": "plugins/qino-art" }
+    },
+    {
+      "name": "design-adventure",
+      "description": "Seven-perspective design exploration",
+      "source": { "type": "local", "path": "plugins/design-adventure" }
+    },
+    {
+      "name": "qino-lens",
+      "description": "Qualities of Attention lens library",
+      "source": { "type": "local", "path": "plugins/qino-lens" }
+    }
+  ]
+}
