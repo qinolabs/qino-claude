@@ -4,164 +4,113 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-This repository is a **Claude Tools Hub** containing multiple independent tools for thoughtful software development:
+This repository is a **Claude Plugin Hub** containing tools for thoughtful software development, distributed through the Claude plugin marketplace.
 
-- **Dev Assistant** (`tools/dev-assistant/`) - Transform app concepts into vision-aligned development environments
-- **Design Adventure** (`tools/design-adventure/`) - Seven-perspective design exploration
-- **Design Sprint** (`tools/design-sprint/`) - Multi-perspective design exploration (deprecated)
-- **qino Concept** (`tools/qino-concept/`) - Gentle space for developing ideas
-- **Updater** (`tools/updater/`) - Keep tools updated from GitHub
+**Active Plugins** (in `plugins/`):
+- **qino** — Core ecology for developing ideas (concepts, research, implementation)
+- **qino-prose** — Chronicle writing, research transmissions, prose lenses
+- **qino-art** — Visual content system with warm abstraction aesthetic
+- **design-adventure** — Seven-perspective design exploration
 
-Each tool is self-contained with its own documentation, templates, and usage patterns.
+**Archived Tools** (in `tools/archived/`):
+- dev-assistant, design-sprint, updater, qino-util — Deprecated, kept for reference
 
 ## Repository Structure
 
 ```
 qino-claude/
+├── plugins/
+│   ├── qino/                    # Core ecology
+│   │   ├── .claude-plugin/      # Plugin metadata
+│   │   ├── agents/              # concept-agent, dev-agent, research-agent
+│   │   ├── skills/qino/         # SKILL.md + workflows/
+│   │   └── references/          # Specs for concept, dev, research, attune
+│   │
+│   ├── qino-prose/              # Story tools
+│   │   ├── agents/              # scribe-*, relay-*
+│   │   ├── skills/              # chapter, transmit, etc.
+│   │   └── references/          # qino-lens, qino-scribe, qino-relay
+│   │
+│   ├── qino-art/                # Visual content
+│   │   ├── skills/              # Workflows for different visual types
+│   │   └── references/          # Aesthetic guide
+│   │
+│   └── design-adventure/        # Design exploration
+│       ├── agents/
+│       ├── commands/
+│       └── references/
+│
 ├── tools/
-│   ├── dev-assistant/         # Vision-aligned development commands
-│   │   ├── instructions/      # Behavior guidelines
-│   │   ├── templates/         # Generation templates
-│   │   ├── examples/          # Sample outputs
-│   │   └── commands/core/     # Entry point commands
-│   │
-│   ├── design-sprint/         # Multi-persona design exploration (deprecated)
-│   │   ├── commands/
-│   │   └── agents/
-│   │
-│   ├── design-adventure/      # Seven-perspective design dialogue
-│   │   ├── commands/
-│   │   ├── agents/
-│   │   └── references/
-│   │
-│   ├── qino-concept/          # Gentle concept development
-│   │   ├── commands/qino/
-│   │   ├── agents/
-│   │   └── references/
-│   │
-│   └── updater/               # Tool update utility
-│       └── commands/
+│   └── archived/                # Deprecated tools (reference only)
 │
-├── docs/                      # Cross-tool documentation
-│   └── tools-overview.md
+├── .claude/
+│   └── commands/                # Project-level commands (release, verify, add-command)
 │
-└── saved-responses/           # Tool-specific saved examples
-    ├── dev-assistant/
-    └── design-sprint/
+├── docs/                        # Documentation images
+├── chronicle/                   # This repo's chronicle
+└── README.md                    # Main documentation
 ```
 
-## Working with Tools
+## Working with Plugins
 
-### Dev Assistant
+### qino (Core Ecology)
 
-**Location**: `tools/dev-assistant/`
+**Location**: `plugins/qino/`
 
-**Key Components**:
-1. **Init Command** (`commands/core/project-init.md`) - Creates development environments through guided exploration
-2. **Instruction System** (`instructions/`) - How Claude conducts exploration
-3. **Template System** (`templates/`) - What gets generated
-4. **Output**: 5 core commands + project guide + iteration roadmaps
+**Skill**: Routes natural language to appropriate workflow based on intent and workspace context.
 
-**Usage**:
-```bash
-/core:project-init your-concept.md
-/core:iteration-plan your-project-name
-```
+**Agents**:
+- `concept-agent` — Concept exploration, capture, home, attune, compare, arc
+- `dev-agent` — Implementation work, iterations
+- `research-agent` — Research inquiries, calibrations, experiments
 
-**Generated Structure**:
-```
-.claude/
-├── concepts/[project]-guide.md
-├── commands/[project]/          # 5 core commands
-├── iterations/[project]-iterations.md
-└── init-logs/[project]-init.md
-```
+**Key workflows**: `home`, `explore`, `capture`, `test`, `attune`, `compare`, `arc`, `dev-init`, `research-init`
 
-### Design Sprint
+### qino-prose (Story Tools)
 
-**Location**: `tools/design-sprint/`
+**Location**: `plugins/qino-prose/`
 
-**Key Components**:
-1. **Command** (`commands/design-sprint.md`) - User-facing interface
-2. **Agent** (`agents/design-sprint.md`) - Six-persona dialogue system
-3. **Output**: 7-9 files organized by emergent questions
+**Agents**:
+- `scribe-prep`, `scribe-prose`, `scribe-editorial` — Three-agent chapter writing
+- `relay-prose`, `relay-editorial` — Research transmission
 
-**Usage**:
-```bash
-/design-sprint Your design challenge here
-```
+**Key workflows**: `chapter`, `transmit`, `survey`, `rewind`
 
-**Generated Structure**:
-```
-design-sprints/YYYY-MM-DD_topic/
-├── __enter-here.md
-├── dialogue.md
-├── q-[emergent-question-1].md
-├── ...
-└── synthesis.md
-```
+### design-adventure
 
-### Updater
+**Location**: `plugins/design-adventure/`
 
-**Location**: `tools/updater/`
+Seven perspectives explore a design challenge. Questions emerge from dialogue.
 
-**Purpose**: Provides a command that target projects can copy to fetch latest tool versions from GitHub.
+## Development Commands
 
-**Key Files**:
-- `commands/update-qino-tools.md` - Command to copy into target projects
-- `README.md` - Installation and usage documentation
+Project-level commands live in `.claude/commands/`:
 
-**Usage** (in target projects):
-```bash
-/update-qino-tools
-```
+- `/release <version>` — Generate changelog, bump versions, create GitHub release
+- `/verify [plugin]` — Check plugin consistency
+- `/add-command <plugin> <name>` — Scaffold new command with optional agent
 
-**What it does**: Fetches all 28 tool files from `qinolabs/qino-claude` main branch and updates the local `.claude/` directory.
+## Adding New Plugins
 
-## File Organization
+1. Create `plugins/[plugin-name]/` directory
+2. Add `.claude-plugin/plugin.json` with metadata
+3. Add `agents/`, `skills/`, `references/` as needed
+4. Add README.md with overview
+5. Update main README.md
 
-### Saved Responses
-Saved responses are **scoped to each tool**:
+## Key Patterns
 
-```
-saved-responses/
-├── dev-assistant/             # Dev assistant examples
-│   └── exploration-examples/
-└── design-sprint/             # Design sprint examples
-    └── sprint-outputs/
-```
+### Skill → Workflow → Agent
 
-### Tool Documentation
-Each tool maintains its own:
-- README.md - Tool overview and quick start
-- Templates - Generation patterns
-- Examples - Sample outputs
+- **Skill** (SKILL.md) — Routes intent to workflow
+- **Workflow** — Step-by-step procedure with WAIT points for dialogue
+- **Agent** — Character and principles; executes workflows via Task tool
 
-## Development Philosophy
+### Plugin Structure
 
-All tools share a core belief: **we build better when we stay connected to what matters**. Whether through vision-aware commands or multi-perspective exploration, these tools help maintain that connection throughout development.
-
-## Key Concepts
-
-### Dev Assistant
-1. **Streamlined Commands**: Just 5 core commands with intelligent context awareness
-2. **Separate Planning Phase**: Iteration planning happens when ready
-3. **Progressive Disclosure**: Start simple, reveal complexity when needed
-4. **Focused Exploration**: ~15-20 minute guided session
-5. **Vision Protection**: Natural alignment through intelligent tooling
-
-### Design Sprint
-1. **Emergent Questions**: Questions emerge FROM dialogue, not imposed templates
-2. **Six Personas**: Distinct cognitive styles (Skeptic, Synthesizer, Embodied Thinker, User Advocate, Architect, Explorer)
-3. **Domain-Specific Output**: Each sprint produces unique questions tailored to the challenge
-4. **Epistemological Sequencing**: Questions ordered by how they build understanding
-
-## Adding New Tools
-
-When adding a new tool:
-1. Create `tools/[tool-name]/` directory
-2. Add README.md with overview and usage
-3. Include command/agent files as needed
-4. Update main README.md with tool card
-5. Add comparison to `docs/tools-overview.md`
-6. Create `saved-responses/[tool-name]/` if needed
+Each plugin is self-contained:
+- `.claude-plugin/plugin.json` — Metadata for marketplace
+- `agents/` — Agent definitions
+- `skills/` — Skills with workflows
+- `references/` — Specs and guides
+- `README.md` — Documentation
