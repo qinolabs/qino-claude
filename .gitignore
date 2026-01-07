@@ -22,6 +22,9 @@ node_modules/
 .claude/History/
 *.log
 
+# Archived chronicles
+chronicles-archived*/
+
 # System
 .DS_Store
 **/.DS_Store
