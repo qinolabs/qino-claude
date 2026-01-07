@@ -41,10 +41,24 @@ User: "explore qinolabs-homepage"
 
 Claude: [Uses Task tool]
   subagent_type: "qino:concept-agent"
-  prompt: "Execute the explore workflow for concept 'qinolabs-homepage'.
-           Context: concepts workspace at /path/to/concepts-repo.
-           User wants to explore and deepen this concept."
+  prompt: "Read and follow the workflow at plugins/qino/skills/qino/workflows/explore.md
+
+           Context:
+           - Workspace: concepts at /path/to/concepts-repo
+           - Concept: qinolabs-homepage
+
+           User wants to explore and deepen this concept.
+
+           IMPORTANT: Follow the workflow step by step. WAIT for user responses
+           where indicated. Do not skip dialogue phases."
 ```
+
+**Critical instruction for agents:**
+The prompt MUST tell the agent to:
+1. Read the specific workflow file
+2. Follow it step by step
+3. WAIT for user responses where the workflow indicates
+4. Not skip dialogue phases
 
 **Why this matters:**
 - Agents maintain coherent dialogue within their task
