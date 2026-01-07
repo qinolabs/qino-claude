@@ -44,9 +44,9 @@ Each lens has natural resonance with certain types of source material changes. U
 *What if this chapter is about being received?*
 
 **Foreground sensitivities:**
-- Newcomer's Eyes (`.claude/references/qino-lens/newcomer.md`) — everything noticed, nothing normalized
-- Body First (`.claude/references/qino-lens/narrator.md`) — sensation of the new environment
-- World as Participant (`.claude/references/qino-lens/narrator.md`) — the place receives, offers, withholds
+- Newcomer's Eyes (`../qino-lens/newcomer.md`) — everything noticed, nothing normalized
+- Body First (`../qino-lens/narrator.md`) — sensation of the new environment
+- World as Participant (`../qino-lens/narrator.md`) — the place receives, offers, withholds
 
 **Territories:**
 - Warmth before understanding — taken in before you're known
@@ -66,9 +66,9 @@ Each lens has natural resonance with certain types of source material changes. U
 *What if this chapter leaves known ground?*
 
 **Foreground sensitivities:**
-- Companion's Lens (`.claude/references/qino-lens/companion.md`) — world filtered through who you travel with
-- Body First (`.claude/references/qino-lens/narrator.md`) — fatigue, terrain, weather felt in the body
-- World as Participant (`.claude/references/qino-lens/narrator.md`) — the road reveals, obstructs, offers
+- Companion's Lens (`../qino-lens/companion.md`) — world filtered through who you travel with
+- Body First (`../qino-lens/narrator.md`) — fatigue, terrain, weather felt in the body
+- World as Participant (`../qino-lens/narrator.md`) — the road reveals, obstructs, offers
 
 **Territories:**
 - The call outward — something glimpsed, needed elsewhere
@@ -88,9 +88,9 @@ Each lens has natural resonance with certain types of source material changes. U
 *What if we come back to where we've been?*
 
 **Foreground sensitivities:**
-- Newcomer's Eyes inverted (`.claude/references/qino-lens/newcomer.md`) — familiar made strange
-- Embodied Presence (`.claude/references/qino-lens/wanderer.md`) — the body remembers what the mind forgot
-- World as Participant (`.claude/references/qino-lens/narrator.md`) — the place registers your change
+- Newcomer's Eyes inverted (`../qino-lens/newcomer.md`) — familiar made strange
+- Embodied Presence (`../qino-lens/wanderer.md`) — the body remembers what the mind forgot
+- World as Participant (`../qino-lens/narrator.md`) — the place registers your change
 
 **Territories:**
 - The familiar made strange — seeing what was always there
@@ -110,9 +110,9 @@ Each lens has natural resonance with certain types of source material changes. U
 *What if something hidden comes to light?*
 
 **Foreground sensitivities:**
-- World as Participant (`.claude/references/qino-lens/narrator.md`) — the place reveals what it was holding
-- Embodied Presence (`.claude/references/qino-lens/wanderer.md`) — the cost of knowing felt in the body
-- Contextual Density (`.claude/references/qino-lens/wanderer.md`) — pressure before revelation
+- World as Participant (`../qino-lens/narrator.md`) — the place reveals what it was holding
+- Embodied Presence (`../qino-lens/wanderer.md`) — the cost of knowing felt in the body
+- Contextual Density (`../qino-lens/wanderer.md`) — pressure before revelation
 
 **Territories:**
 - The place that opens — location revealing what it held
@@ -132,9 +132,9 @@ Each lens has natural resonance with certain types of source material changes. U
 *What if something must be faced?*
 
 **Foreground sensitivities:**
-- Embodied Presence (`.claude/references/qino-lens/wanderer.md`) — tension held in the body
-- World as Participant (`.claude/references/qino-lens/narrator.md`) — environment that won't yield
-- Indirect Action (`.claude/references/qino-lens/wanderer.md`) — the gap between what's meant and said
+- Embodied Presence (`../qino-lens/wanderer.md`) — tension held in the body
+- World as Participant (`../qino-lens/narrator.md`) — environment that won't yield
+- Indirect Action (`../qino-lens/wanderer.md`) — the gap between what's meant and said
 
 **Territories:**
 - The no that changes everything — refusal from someone who usually helps
@@ -154,9 +154,9 @@ Each lens has natural resonance with certain types of source material changes. U
 *What if the pressure breaks now?*
 
 **Foreground sensitivities:**
-- Body First (`.claude/references/qino-lens/narrator.md`) — action before thought
-- World as Participant (`.claude/references/qino-lens/narrator.md`) — environment in crisis, things breaking
-- Contextual Density (`.claude/references/qino-lens/wanderer.md`) — maximum sensory pressure
+- Body First (`../qino-lens/narrator.md`) — action before thought
+- World as Participant (`../qino-lens/narrator.md`) — environment in crisis, things breaking
+- Contextual Density (`../qino-lens/wanderer.md`) — maximum sensory pressure
 
 **Territories:**
 - Acting before understanding — no time to know enough
@@ -176,9 +176,9 @@ Each lens has natural resonance with certain types of source material changes. U
 *What if something or someone departs?*
 
 **Foreground sensitivities:**
-- Embodied Presence (`.claude/references/qino-lens/wanderer.md`) — grief in the body, not the mind
-- World as Participant (`.claude/references/qino-lens/narrator.md`) — the space left behind, absence as presence
-- Indirect Action (`.claude/references/qino-lens/wanderer.md`) — what's done instead of what can't be done
+- Embodied Presence (`../qino-lens/wanderer.md`) — grief in the body, not the mind
+- World as Participant (`../qino-lens/narrator.md`) — the space left behind, absence as presence
+- Indirect Action (`../qino-lens/wanderer.md`) — what's done instead of what can't be done
 
 **Territories:**
 - The leaving that had to come — departure always approaching
@@ -198,9 +198,9 @@ Each lens has natural resonance with certain types of source material changes. U
 *What if action is impossible and presence is all?*
 
 **Foreground sensitivities:**
-- Embodied Presence (`.claude/references/qino-lens/wanderer.md`) — stillness, breath, what the body notices
-- World as Participant (`.claude/references/qino-lens/narrator.md`) — what surfaces when action stops
-- Indirect Action (`.claude/references/qino-lens/wanderer.md`) — being there as the only possible doing
+- Embodied Presence (`../qino-lens/wanderer.md`) — stillness, breath, what the body notices
+- World as Participant (`../qino-lens/narrator.md`) — what surfaces when action stops
+- Indirect Action (`../qino-lens/wanderer.md`) — being there as the only possible doing
 
 **Territories:**
 - Waiting for what won't come faster — patience that can't hurry
@@ -220,9 +220,9 @@ Each lens has natural resonance with certain types of source material changes. U
 *What if a cultural form holds the chapter?*
 
 **Foreground sensitivities:**
-- Newcomer's Eyes (`.claude/references/qino-lens/newcomer.md`) — witnessing what locals take for granted
-- World as Participant (`.claude/references/qino-lens/narrator.md`) — the structure itself as actor
-- Body First (`.claude/references/qino-lens/narrator.md`) — participation, gesture, what the body is asked to do
+- Newcomer's Eyes (`../qino-lens/newcomer.md`) — witnessing what locals take for granted
+- World as Participant (`../qino-lens/narrator.md`) — the structure itself as actor
+- Body First (`../qino-lens/narrator.md`) — participation, gesture, what the body is asked to do
 
 **Territories:**
 - The ceremony that reveals — what people show in tradition
@@ -242,9 +242,9 @@ Each lens has natural resonance with certain types of source material changes. U
 *What if the change creates a problem?*
 
 **Foreground sensitivities:**
-- World as Participant (`.claude/references/qino-lens/narrator.md`) — environment that resists, goes wrong
-- Companion's Lens (`.claude/references/qino-lens/companion.md`) — how the problem affects relationships
-- Indirect Action (`.claude/references/qino-lens/wanderer.md`) — responding to consequence, not cause
+- World as Participant (`../qino-lens/narrator.md`) — environment that resists, goes wrong
+- Companion's Lens (`../qino-lens/companion.md`) — how the problem affects relationships
+- Indirect Action (`../qino-lens/wanderer.md`) — responding to consequence, not cause
 
 **Territories:**
 - Help that harms — good intentions making things worse
@@ -264,9 +264,9 @@ Each lens has natural resonance with certain types of source material changes. U
 *What if this chapter is about making together?*
 
 **Foreground sensitivities:**
-- Companion's Lens (`.claude/references/qino-lens/companion.md`) — labor shared, attention divided between task and person
-- Body First (`.claude/references/qino-lens/narrator.md`) — hands doing, fatigue accumulating
-- World as Participant (`.claude/references/qino-lens/narrator.md`) — materials that cooperate or resist
+- Companion's Lens (`../qino-lens/companion.md`) — labor shared, attention divided between task and person
+- Body First (`../qino-lens/narrator.md`) — hands doing, fatigue accumulating
+- World as Participant (`../qino-lens/narrator.md`) — materials that cooperate or resist
 
 **Territories:**
 - The task that reveals — what work shows about each person
@@ -286,9 +286,9 @@ Each lens has natural resonance with certain types of source material changes. U
 *What if multiple threads convene?*
 
 **Foreground sensitivities:**
-- Newcomer's Eyes (`.claude/references/qino-lens/newcomer.md`) — seeing familiar characters in new configuration
-- Companion's Lens (`.claude/references/qino-lens/companion.md`) — multiple relationships active simultaneously
-- World as Participant (`.claude/references/qino-lens/narrator.md`) — the space that holds the gathering
+- Newcomer's Eyes (`../qino-lens/newcomer.md`) — seeing familiar characters in new configuration
+- Companion's Lens (`../qino-lens/companion.md`) — multiple relationships active simultaneously
+- World as Participant (`../qino-lens/narrator.md`) — the space that holds the gathering
 
 **Territories:**
 - The table that seats everyone — breaking bread, shared meal

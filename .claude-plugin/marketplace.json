@@ -6,14 +6,9 @@
       "source": { "type": "local", "path": "plugins/qino" }
     },
     {
-      "name": "qino-scribe",
-      "description": "Chronicle writing from git history",
-      "source": { "type": "local", "path": "plugins/qino-scribe" }
-    },
-    {
-      "name": "qino-relay",
-      "description": "Research transmissions",
-      "source": { "type": "local", "path": "plugins/qino-relay" }
+      "name": "qino-prose",
+      "description": "Chronicle writing, research transmissions, and prose lenses",
+      "source": { "type": "local", "path": "plugins/qino-prose" }
     },
     {
       "name": "qino-art",
@@ -24,11 +19,6 @@
       "name": "design-adventure",
       "description": "Seven-perspective design exploration",
       "source": { "type": "local", "path": "plugins/design-adventure" }
-    },
-    {
-      "name": "qino-lens",
-      "description": "Qualities of Attention lens library",
-      "source": { "type": "local", "path": "plugins/qino-lens" }
     }
   ]
 }

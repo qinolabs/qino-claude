@@ -37,15 +37,16 @@ Consolidates: qino-concept, qino-dev, qino-research, qino-universal
 - **Unified routing** — single skill handles concept exploration, dev implementation, research inquiry, and universal commands (home, capture, test, attune, compare, arc)
 - **19 workflows** — arc, attune, capture, compare, concept-init, concept-setup, dev-init, dev-setup, explore, home, import, research-init, research-setup, test, and more
 
-### qino-prose (New Unified Skill)
+### qino-prose (Unified Plugin)
 
-Consolidates: qino-scribe, qino-relay, qino-lens
+Consolidates: qino-scribe, qino-relay, qino-lens into a single self-contained plugin
 
 #### Added
 
-- **Chronicle, transmission, and lens capabilities** — one skill for all prose-related work
+- **Chronicle, transmission, and lens capabilities** — one plugin for all prose-related work
 - **8 workflows** — chapter, survey, diagnose, rewind, visual-style, transmit, narrator, wanderer
-- **Shared references** — lens sensitivities (wanderer, narrator, newcomer, student, companion) available to all prose workflows
+- **Shared references** — lens sensitivities (wanderer, narrator, newcomer, student, companion) bundled within the plugin
+- **Self-contained** — all internal references use relative paths; no cross-plugin dependencies
 
 ### qino-art
 

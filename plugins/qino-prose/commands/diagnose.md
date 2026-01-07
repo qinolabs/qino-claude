@@ -50,10 +50,10 @@ Read these files to understand the current system state:
 - `references/qino-scribe/story-lenses.md` — Twelve story lenses and sensitivities
 
 ### Lens Integration
-- `.claude/references/qino-lens/narrator.md`
-- `.claude/references/qino-lens/wanderer.md`
-- `.claude/references/qino-lens/companion.md`
-- `.claude/references/qino-lens/newcomer.md`
+- `../references/qino-lens/narrator.md`
+- `../references/qino-lens/wanderer.md`
+- `../references/qino-lens/companion.md`
+- `../references/qino-lens/newcomer.md`
 
 ---
 

@@ -10,11 +10,11 @@ These principles name what makes stories feel alive. They're not procedural guid
 
 | Principle | Location | Notes |
 |-----------|----------|-------|
-| **Relationship as Lens** | `.claude/references/qino-lens/companion.md` | Core principle of companion sensitivity |
-| **Depth Through Others** | `.claude/references/qino-lens/wanderer.md` | Principle 7 |
-| **Reader as Bond** | `.claude/references/qino-lens/wanderer.md` | Principle 8 |
-| **Constraints & Secrets** | `.claude/references/qino-lens/narrator.md` | Sensitivity 4 (covers "What Remains Unspoken") |
-| **The Newcomer's Eyes** | `.claude/references/qino-lens/newcomer.md` | The entire file |
+| **Relationship as Lens** | `../qino-lens/companion.md` | Core principle of companion sensitivity |
+| **Depth Through Others** | `../qino-lens/wanderer.md` | Principle 7 |
+| **Reader as Bond** | `../qino-lens/wanderer.md` | Principle 8 |
+| **Constraints & Secrets** | `../qino-lens/narrator.md` | Sensitivity 4 (covers "What Remains Unspoken") |
+| **The Newcomer's Eyes** | `../qino-lens/newcomer.md` | The entire file |
 
 ---
 

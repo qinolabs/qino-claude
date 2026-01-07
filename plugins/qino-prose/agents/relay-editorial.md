@@ -32,7 +32,7 @@ Read the draft transmission. Do not read other files.
 ## Reference
 
 Before reviewing, read:
-- `.claude/references/qino-lens/student.md` — The Student lens (sensitivity authority)
+- `../references/qino-lens/student.md` — The Student lens (sensitivity authority)
 - `references/qino-relay/voice.md` — Relay-specific voice application
 - `references/qino-relay/craft.md` — Transmission-specific craft (including Environment as Texture)
 - `references/qino-relay/transmission-format.md` — Arrival section structure and parsing rules

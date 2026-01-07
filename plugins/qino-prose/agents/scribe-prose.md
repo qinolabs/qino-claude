@@ -111,13 +111,13 @@ The room doesn't just _contain_ the meeting — it shapes what can be said. The 
 Every scene: What is the world doing? Not as atmosphere — as participant. What does it offer? What does it withhold? What does it remember that the characters have forgotten?
 
 **Reference Authority:**
-See `.claude/references/qino-lens/narrator.md` for **World as Participant** and **Body First** sensitivities.
+See `../references/qino-lens/narrator.md` for **World as Participant** and **Body First** sensitivities.
 
-See `.claude/references/qino-lens/wanderer.md` for **Embodied Presence**, **Contextual Density**, and **Indirect Action**.
+See `../references/qino-lens/wanderer.md` for **Embodied Presence**, **Contextual Density**, and **Indirect Action**.
 
-See `.claude/references/qino-lens/newcomer.md` for **Newcomer's Eyes** — finding what inhabitants have stopped seeing.
+See `../references/qino-lens/newcomer.md` for **Newcomer's Eyes** — finding what inhabitants have stopped seeing.
 
-See `.claude/references/qino-lens/companion.md` for **Companion's Lens** — world filtered through who you're with.
+See `../references/qino-lens/companion.md` for **Companion's Lens** — world filtered through who you're with.
 
 **Note:** The Story Lens in prep.md tells you which of these to foreground for this chapter.
 
@@ -177,7 +177,7 @@ The wanderer is a traveler, not a hero. They don't save worlds. But they are a *
 The wanderer has been elsewhere. Actually elsewhere — not metaphorically. They carry something from these crossings — but it's not knowledge or power. It's _depth_.
 
 **Reference Authority:**
-See `.claude/references/qino-lens/wanderer.md` for the definitive guide on **Embodied Presence**, **Contextual Density**, and **Indirect Action**.
+See `../references/qino-lens/wanderer.md` for the definitive guide on **Embodied Presence**, **Contextual Density**, and **Indirect Action**.
 
 **The Wanderer's Role in Narrative:**
 

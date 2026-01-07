@@ -2,7 +2,7 @@
 
 This document applies the Student lens to qino-relay transmissions.
 
-**The Student lens lives in:** `.claude/references/qino-lens/student.md`
+**The Student lens lives in:** `../qino-lens/student.md`
 
 Read the lens first. This document adds relay-specific guidance.
 
@@ -18,7 +18,7 @@ The Student is a reader companion who has learned the material and walks alongsi
 - **Variety over formula** — the voice should feel alive, not templated
 - **First person, present tense** — immediate, walking alongside
 
-For the full sensitivity authority, see `.claude/references/qino-lens/student.md`.
+For the full sensitivity authority, see `../qino-lens/student.md`.
 
 ---
 
@@ -83,6 +83,6 @@ The Student carries questions forward. The reader is invited to carry them too.
 
 ## See Also
 
-- `.claude/references/qino-lens/student.md` — The Student lens (sensitivity authority)
+- `../qino-lens/student.md` — The Student lens (sensitivity authority)
 - `references/qino-relay/craft.md` — Craft devices for transmissions
 - `references/qino-relay/student-guide.md` — How the Student works across transmissions

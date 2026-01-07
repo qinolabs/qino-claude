@@ -2,7 +2,7 @@
 
 *Transmission-specific craft for the Student's voice.*
 
-**Core craft devices live in:** `.claude/references/qino-lens/student.md`
+**Core craft devices live in:** `../qino-lens/student.md`
 
 The lens defines: Questions That Don't Resolve, Trailing Off, The Gap, Restraint, Specificity as Trust. Read the lens first. This document adds transmission-specific guidance.
 
@@ -107,7 +107,7 @@ The coda is optional emphasis, not required summary. If the transmission closes 
 
 The Student inhabits a world. They're not a disembodied voice — they have a body, a location, a world that continues while they think.
 
-**Core environment principles live in:** `.claude/references/qino-lens/student.md` (sections 13-16)
+**Core environment principles live in:** `../qino-lens/student.md` (sections 13-16)
 
 This section adds transmission-specific application.
 
@@ -290,7 +290,7 @@ When prose feels mechanical, ask:
 
 ## See Also
 
-- `.claude/references/qino-lens/student.md` — Core craft devices (Questions That Don't Resolve, Trailing Off, The Gap, Restraint, Specificity)
+- `../qino-lens/student.md` — Core craft devices (Questions That Don't Resolve, Trailing Off, The Gap, Restraint, Specificity)
 - `references/qino-relay/voice.md` — Relay voice application
 - `references/qino-relay/student-guide.md` — Student's relationship to transmissions (warmth, familiarity, implicit mystery)
 - `references/qino-relay/transmission-format.md` — Interruption Frame structure and variation patterns
