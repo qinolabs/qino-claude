@@ -2,7 +2,7 @@
 name: art
 description: |
   Complete visual content system.
-  Tron-meets-Excalidraw aesthetic - dark backgrounds, neon accents, hand-drawn sketch style.
+  Warm Abstraction aesthetic - hand-drawn quality, gentle colors, space that breathes.
 
 # Skill Triggers
 triggers:
@@ -36,11 +36,11 @@ Complete visual content system using the **qino-art Visual Aesthetic**.
 
 ## Core Aesthetic
 
-**Tron-meets-Excalidraw** - Digital warmth combining:
-- Hand-drawn Excalidraw-style sketch lines (NOT clean vectors)
-- Dark slate backgrounds for modern contrast
-- Neon orange (warmth) + cyan (tech) accents
-- Subtle glows on key elements
+**Warm Abstraction** — Visual content that invites rather than declares:
+- Hand-drawn sketch lines (NOT clean vectors) — evidence of gesture
+- Warm backgrounds (cream, sage, peach) — the interface as host
+- Gentle accent colors that whisper, not shout
+- Generous negative space — the composition breathes
 
 **Full aesthetic documentation:** `.claude/references/qino-art/aesthetic.md`
 

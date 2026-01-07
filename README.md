@@ -685,7 +685,7 @@ _[Source](tools/qino-prose/)_
 
 ### qino Art | Visual Content System
 
-A complete visual content system with a distinctive aesthetic: **Tron-meets-Excalidraw** — dark slate backgrounds, neon accents (orange warmth, cyan tech), hand-drawn sketch lines, subtle glows.
+A complete visual content system with a distinctive aesthetic: **Warm Abstraction** — hand-drawn sketch lines, warm earthy backgrounds, gentle accent colors, generous negative space. Visual content that invites rather than declares.
 
 #### Workflow routing
 
