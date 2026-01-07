@@ -248,7 +248,7 @@ If generating combined image is difficult:
 
 **Option A: Generate combined (if model supports):**
 ```bash
-bun run .claude/references/qino-art/tools/generate-ulart-image.ts \
+bun run references/qino-art/tools/generate-ulart-image.ts \
   --model nano-banana-pro \
   --reference-image /path/to/screenshot.png \
   --prompt "[ANNOTATION PROMPT]" \

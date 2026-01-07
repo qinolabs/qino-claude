@@ -156,7 +156,7 @@ From Ground and The Recurring, write 2-4 paragraphs showing:
 
 Include the synthesized emergence narrative in context. The prose agent writes it as "The Arrival" section in transmission.md.
 
-See `.claude/references/qino-relay/transmission-format.md` for The Arrival section specification.
+See `references/qino-relay/transmission-format.md` for The Arrival section specification.
 
 ---
 
@@ -214,7 +214,7 @@ Movement and interaction happen WITHIN that environment during the transmission 
 
 **Potential moments**: Optional but valuable. Give the prose agent 2-4 things that *could* happen during the transmission. These are options, not requirements — the prose agent uses them when they serve the material.
 
-See `.claude/references/qino-relay/reader-journey-guide.md` for detailed guidance.
+See `references/qino-relay/reader-journey-guide.md` for detailed guidance.
 
 ---
 
@@ -413,7 +413,7 @@ cp [journal]/student.md [journal]/transmissions/NNN-slug/student.md
 
 Update `[research-workspace]/journal/manifest.json`:
 - Add new transmission to transmissions array (lean format — IDs only, no prose)
-- Include `relay_version` from `.claude/references/qino-relay/version.json`
+- Include `relay_version` from `references/qino-relay/version.json`
 - Update lastTransmission number
 
 ```json
@@ -568,10 +568,10 @@ This isn't a transformation layer. The arc content stays visible. But the Studen
 
 ## Reference Documents
 
-- `.claude/references/qino-relay/voice.md` — The Student's voice patterns
-- `.claude/references/qino-relay/student-guide.md` — How the Student works
-- `.claude/references/qino-relay/transmission-format.md` — Format specification
-- `.claude/references/qino-relay/reader-journey-guide.md` — Reader journey prep
+- `references/qino-relay/voice.md` — The Student's voice patterns
+- `references/qino-relay/student-guide.md` — How the Student works
+- `references/qino-relay/transmission-format.md` — Format specification
+- `references/qino-relay/reader-journey-guide.md` — Reader journey prep
 
 ---
 

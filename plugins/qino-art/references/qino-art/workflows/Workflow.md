@@ -113,7 +113,7 @@ The concept should be describable in ONE sentence with 2-3 PHYSICAL elements tha
 
 ### Read the Aesthetic Source
 
-**Always read:** `.claude/references/qino-art/aesthetic.md`
+**Always read:** `references/qino-art/aesthetic.md`
 
 ### Core Visual Rules
 
@@ -241,7 +241,7 @@ Before generating, verify:
 ### Default Model: nano-banana-pro
 
 ```bash
-bun run .claude/references/qino-art/tools/generate-ulart-image.ts \
+bun run references/qino-art/tools/generate-ulart-image.ts \
   --model nano-banana-pro \
   --prompt "[YOUR PROMPT]" \
   --size 2K \

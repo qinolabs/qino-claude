@@ -9,7 +9,7 @@
  * Usage:
  *   generate-ulart-image --model nano-banana-pro --prompt "..." --size 16:9 --output /tmp/image.png
  *
- * @see .claude/references/qino-art/README.md
+ * @see references/qino-art/README.md
  */
 
 import Replicate from "replicate";
@@ -203,8 +203,8 @@ ERROR CODES:
   1  General error (invalid arguments, API error, file write error)
 
 MORE INFO:
-  Documentation: .claude/references/qino-art/README.md
-  Source: .claude/references/qino-art/tools/generate-ulart-image.ts
+  Documentation: references/qino-art/README.md
+  Source: references/qino-art/tools/generate-ulart-image.ts
 `);
   process.exit(0);
 }

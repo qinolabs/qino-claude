@@ -77,7 +77,7 @@ git rev-list --max-parents=0 HEAD
 
 ## Step 3: Assess the Range
 
-Consult `.claude/references/qino-scribe/disturbance.md` § What to Filter and § Diff Size.
+Consult `references/qino-scribe/disturbance.md` § What to Filter and § Diff Size.
 
 ### 3a. Categorize Changes
 
@@ -131,7 +131,7 @@ You are not just reporting — you are deciding. The scribe knows what makes a g
 
 ### What the Scribe Knows
 
-From `.claude/references/qino-scribe/disturbance.md`:
+From `references/qino-scribe/disturbance.md`:
 
 **Healthy chapter size:**
 - One coherent movement — something that *completes*

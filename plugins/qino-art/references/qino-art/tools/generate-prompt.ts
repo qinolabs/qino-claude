@@ -69,7 +69,7 @@ interface PromptOutput {
 
 const ART_AESTHETIC_PATH = resolve(
   process.cwd(),
-  ".claude/references/qino-art/aesthetic.md"
+  "references/qino-art/aesthetic.md"
 );
 
 const COLOR_HEX_MAP: Record<TokyoNightColor, string> = {

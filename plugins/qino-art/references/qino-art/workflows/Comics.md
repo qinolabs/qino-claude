@@ -292,7 +292,7 @@ Sign "{{{assistantName}}}" small in bottom right corner of final panel in charco
 ### Step 5: Execute Generation
 
 ```bash
-bun run .claude/references/qino-art/tools/generate-ulart-image.ts \
+bun run references/qino-art/tools/generate-ulart-image.ts \
   --model nano-banana-pro \
   --prompt "[YOUR PROMPT]" \
   --size 2K \

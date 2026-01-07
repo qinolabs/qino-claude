@@ -233,10 +233,10 @@ The arc already has an essence, a path, insights. The Student *knows* this mater
 **Read these files before drafting:**
 
 1. `.claude/references/qino-lens/student.md` — The Student lens (sensitivity authority)
-2. `.claude/references/qino-relay/voice.md` — Relay-specific voice application
-3. `.claude/references/qino-relay/craft.md` — Transmission-specific craft
-4. `.claude/references/qino-relay/student-guide.md` — How the Student works
-5. `.claude/references/qino-relay/reader-journey-guide.md` — Understanding reader journey prep
+2. `references/qino-relay/voice.md` — Relay-specific voice application
+3. `references/qino-relay/craft.md` — Transmission-specific craft
+4. `references/qino-relay/student-guide.md` — How the Student works
+5. `references/qino-relay/reader-journey-guide.md` — Understanding reader journey prep
 
 The Student lens is the source of truth for who the Student is. The relay files add transmission-specific guidance.
 

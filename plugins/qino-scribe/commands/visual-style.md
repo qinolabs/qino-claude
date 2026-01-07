@@ -292,7 +292,7 @@ To update later: /qino-scribe:visual-style update
 
 ## Field Reference
 
-See `.claude/references/qino-scribe/visual-style.md` for detailed field documentation.
+See `references/qino-scribe/visual-style.md` for detailed field documentation.
 
 ---
 

@@ -84,5 +84,5 @@ The Student carries questions forward. The reader is invited to carry them too.
 ## See Also
 
 - `.claude/references/qino-lens/student.md` — The Student lens (sensitivity authority)
-- `.claude/references/qino-relay/craft.md` — Craft devices for transmissions
-- `.claude/references/qino-relay/student-guide.md` — How the Student works across transmissions
+- `references/qino-relay/craft.md` — Craft devices for transmissions
+- `references/qino-relay/student-guide.md` — How the Student works across transmissions

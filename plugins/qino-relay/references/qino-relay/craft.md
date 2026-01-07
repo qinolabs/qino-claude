@@ -291,6 +291,6 @@ When prose feels mechanical, ask:
 ## See Also
 
 - `.claude/references/qino-lens/student.md` — Core craft devices (Questions That Don't Resolve, Trailing Off, The Gap, Restraint, Specificity)
-- `.claude/references/qino-relay/voice.md` — Relay voice application
-- `.claude/references/qino-relay/student-guide.md` — Student's relationship to transmissions (warmth, familiarity, implicit mystery)
-- `.claude/references/qino-relay/transmission-format.md` — Interruption Frame structure and variation patterns
+- `references/qino-relay/voice.md` — Relay voice application
+- `references/qino-relay/student-guide.md` — Student's relationship to transmissions (warmth, familiarity, implicit mystery)
+- `references/qino-relay/transmission-format.md` — Interruption Frame structure and variation patterns

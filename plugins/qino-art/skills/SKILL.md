@@ -42,7 +42,7 @@ Complete visual content system using the **qino-art Visual Aesthetic**.
 - Neon orange (warmth) + cyan (tech) accents
 - Subtle glows on key elements
 
-**Full aesthetic documentation:** `.claude/references/qino-art/aesthetic.md`
+**Full aesthetic documentation:** `references/qino-art/aesthetic.md`
 
 **This is the SINGLE SOURCE OF TRUTH for all visual styling.**
 
@@ -74,7 +74,7 @@ Complete visual content system using the **qino-art Visual Aesthetic**.
 **Default model:** nano-banana-pro (Gemini 3 Pro)
 
 ```bash
-bun run .claude/references/qino-art/tools/generate-ulart-image.ts \
+bun run references/qino-art/tools/generate-ulart-image.ts \
   --model nano-banana-pro \
   --prompt "[PROMPT]" \
   --size 2K \
@@ -120,4 +120,4 @@ What does user need?
 
 ---
 
-**For complete visual styling rules, ALWAYS read:** `.claude/references/qino-art/aesthetic.md`
+**For complete visual styling rules, ALWAYS read:** `references/qino-art/aesthetic.md`
