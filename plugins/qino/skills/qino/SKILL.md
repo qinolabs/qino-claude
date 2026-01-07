@@ -17,6 +17,43 @@ Ecology for developing ideas. Natural language activation — users describe int
 
 ---
 
+## CRITICAL: Agent Execution Required
+
+**Workflows are NEVER executed directly in the main conversation.**
+
+Every workflow specifies an agent at the top (e.g., "Agent: qino-concept-agent"). When a workflow is triggered:
+
+1. **Spawn the agent** using the Task tool with the appropriate `subagent_type`:
+   - `qino:qino-concept-agent` — for concept work (capture, explore, home, attune, compare, arc)
+   - `qino:qino-dev-agent` — for implementation work (dev-init, dev-setup, work on app)
+   - `qino:qino-research-agent` — for research work (research-init, research-setup)
+
+2. **Pass context** in the Task prompt:
+   - The detected workspace context
+   - The user's intent/request
+   - The workflow to execute
+
+3. **Let the agent work** — the agent reads the workflow and executes it with full dialogue capability
+
+**Example activation:**
+```
+User: "explore qinolabs-homepage"
+
+Claude: [Uses Task tool]
+  subagent_type: "qino:qino-concept-agent"
+  prompt: "Execute the explore workflow for concept 'qinolabs-homepage'.
+           Context: concepts workspace at /path/to/concepts-repo.
+           User wants to explore and deepen this concept."
+```
+
+**Why this matters:**
+- Agents maintain coherent dialogue within their task
+- Workflows involve multiple turns of conversation
+- The main conversation shouldn't be cluttered with workflow execution
+- Agents can be resumed if needed
+
+---
+
 ## Context Detection (First Step)
 
 Before routing, detect workspace context:
@@ -45,15 +82,15 @@ Before routing, detect workspace context:
 
 ## Routing
 
-Match user intent to workflow. Read the workflow file and follow its instructions, passing detected context.
+Match user intent to workflow. **Spawn the specified agent** to execute the workflow.
+
+### Concept Work → `qino:qino-concept-agent`
 
 | User Intent | Workflow |
 |-------------|----------|
-| Orient, "what can qino do", "show me qino", ecology overview | [workflows/orientation.md](workflows/orientation.md) |
-| No workspace context (and no clear intent) | [workflows/orientation.md](workflows/orientation.md) |
 | Arrive, "where am I", "what's here", home | [workflows/home.md](workflows/home.md) |
 | Capture thought, "hold this", "note: ..." | [workflows/capture.md](workflows/capture.md) |
-| Explore concept(s), "work with [concept]" | [workflows/explore.md](workflows/explore.md) |
+| Explore, "go deeper", "work with [concept]", ideate, brainstorm | [workflows/explore.md](workflows/explore.md) |
 | Test, "notice through ecology" | [workflows/test.md](workflows/test.md) |
 | Attune, "calibrate [quality]" | [workflows/attune.md](workflows/attune.md) |
 | Compare artifacts | [workflows/compare.md](workflows/compare.md) |
@@ -61,35 +98,51 @@ Match user intent to workflow. Read the workflow file and follow its instruction
 | Setup concepts workspace | [workflows/concept-setup.md](workflows/concept-setup.md) |
 | Create new concept | [workflows/concept-init.md](workflows/concept-init.md) |
 | Import material into concepts | [workflows/import.md](workflows/import.md) |
+
+### Research Work → `qino:qino-research-agent`
+
+| User Intent | Workflow |
+|-------------|----------|
 | Setup research workspace | [workflows/research-setup.md](workflows/research-setup.md) |
 | Start research inquiry | [workflows/research-init.md](workflows/research-init.md) |
+
+### Implementation Work → `qino:qino-dev-agent`
+
+| User Intent | Workflow |
+|-------------|----------|
 | Setup implementation workspace | [workflows/dev-setup.md](workflows/dev-setup.md) |
-| Start implementation | [workflows/dev-init.md](workflows/dev-init.md) |
+| Start implementation, init app | [workflows/dev-init.md](workflows/dev-init.md) |
+| "work on [app]", plan iterations, build | [workflows/dev-work.md](workflows/dev-work.md) |
+
+### Orientation (no agent needed — lightweight)
+
+| User Intent | Workflow |
+|-------------|----------|
+| Orient, "what can qino do", "show me qino" | [workflows/orientation.md](workflows/orientation.md) |
+| No workspace context (and no clear intent) | [workflows/orientation.md](workflows/orientation.md) |
 
 ---
 
 ## Implementation Context
 
-When `repoType` is `"implementation"`, additional routing applies:
+When `context.type === "implementation"`, additional routing applies:
 
-| User Intent | Route |
-|-------------|-------|
-| "work on [app]" | dev-agent with app context |
-| "work on [app] and [app]" | dev-agent with multi-app context |
-| Concept exploration | concept-agent WITH implementation discovery |
+| User Intent | Agent | Workflow |
+|-------------|-------|----------|
+| "work on [app]", plan iterations, build | `qino:qino-dev-agent` | [workflows/dev-work.md](workflows/dev-work.md) |
+| "work on [app] and [app]" (multi-app) | `qino:qino-dev-agent` | [workflows/dev-work.md](workflows/dev-work.md) |
+| Concept exploration from implementation | `qino:qino-concept-agent` | [workflows/explore.md](workflows/explore.md) |
 
-**Key behavior:** In implementation repos, `concept-agent` gains bidirectional visibility with iterations. When exploring a linked concept, it:
+**Key behavior:** In implementation repos, the concept-agent gains bidirectional visibility with iterations. When exploring a linked concept, it:
 - Surfaces current iteration status ("iteration 05 — figures-center-stage")
 - Offers translation prompts after concept changes
 - Shows iteration context when capturing discoveries from building
-
-This enables nonlinear work — discoveries flow in both directions between concept-space and implementation-space.
 
 **Multi-app scoping:** Users can work across multiple apps conversationally:
 - "work on world and journey" → dev-agent sees both apps
 - "the encounter panel in world needs to talk to journey's substrate" → dev-agent holds both contexts
 
-No explicit commands needed. The skill routes conversationally based on intent.
+**Always spawn the appropriate agent.** The routing is conversational, but execution requires the Task tool.
 
 ---
 
@@ -126,11 +179,15 @@ The skill routes based on current intent. Each workflow knows how to handle cros
 
 ## Agent Reference
 
-Workflows may reference shared agents:
+**All workflows are executed by agents.** Use the Task tool with these `subagent_type` values:
 
-- `agents/qino-concept-agent.md` — Concept exploration companion
-- `agents/qino-research-agent.md` — Research facilitation
-- `agents/qino-dev-agent.md` — Implementation guidance
+| Agent | subagent_type | Handles |
+|-------|---------------|---------|
+| Concept Agent | `qino:qino-concept-agent` | capture, explore, home, attune, compare, arc, concept-init, concept-setup, import |
+| Research Agent | `qino:qino-research-agent` | research-init, research-setup |
+| Dev Agent | `qino:qino-dev-agent` | dev-init, dev-setup, dev-work |
+
+Agent definitions live in `agents/` directory. Each workflow specifies its agent at the top.
 
 ---
 
