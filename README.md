@@ -1137,11 +1137,28 @@ This is the "adapter" pattern described in The Ecosystem section. The self-use i
 
 ## Installation
 
-**Quick:** Download `all-tools.zip` from the [latest release](https://github.com/qinolabs/qino-claude/releases/latest), unzip, copy contents to `.claude/` in your project.
+**Via Plugin Marketplace (recommended):**
 
-**Individual tools:** Separate zips available if you only want one.
+```bash
+# Add the qino marketplace
+/plugin marketplace add qinolabs/qino-claude
 
-**Keeping updated:** After installation, copy [update-qino-tools.md](tools/updater/commands/update-qino-tools.md) to `.claude/commands/`, then run `/update-qino-tools` to fetch latest files from GitHub.
+# Install plugins you want
+/plugin install qino@qinolabs/qino-claude           # Core ecology
+/plugin install qino-scribe@qinolabs/qino-claude    # Chronicles
+/plugin install qino-art@qinolabs/qino-claude       # Visuals
+/plugin install design-adventure@qinolabs/qino-claude  # Design exploration
+```
+
+Updates happen automatically when you pull from the marketplace.
+
+**Available plugins:**
+- `qino` — Core ecology (concepts, research, implementation)
+- `qino-scribe` — Chronicle writing from git history
+- `qino-relay` — Research transmissions
+- `qino-art` — Visual content system
+- `design-adventure` — Seven-perspective design exploration
+- `qino-lens` — Qualities of Attention lens library
 
 ## Requirements
 

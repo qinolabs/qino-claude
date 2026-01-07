@@ -698,7 +698,8 @@
       ]
     },
     "updater": {
-      "description": "Keep tools updated from GitHub",
+      "description": "Keep tools updated from GitHub (archived - use plugin marketplace)",
+      "archived": true,
       "files": [
         {
           "src": "tools/updater/commands/update-qino-tools.md",
