@@ -6,16 +6,12 @@
       "description": "Seven-perspective design dialogue",
       "files": [
         {
-          "src": "tools/design-adventure/SKILL.md",
-          "dest": "skills/design-adventure.md"
-        },
-        {
-          "src": "tools/design-adventure/workflows/explore.md",
-          "dest": "skills/design-adventure/workflows/explore.md"
-        },
-        {
           "src": "tools/design-adventure/agents/design-adventure.md",
           "dest": "agents/design-adventure.md"
+        },
+        {
+          "src": "tools/design-adventure/commands/design-adventure.md",
+          "dest": "commands/design-adventure.md"
         },
         {
           "src": "tools/design-adventure/references/design-adventure/atmosphere-guide.md",
@@ -103,6 +99,84 @@
         }
       ]
     },
+    "qino": {
+      "description": "The qino ecology — natural language companion for developing ideas",
+      "files": [
+        {
+          "src": "tools/qino/agents/qino-concept-agent.md",
+          "dest": "agents/qino-concept-agent.md"
+        },
+        {
+          "src": "tools/qino/agents/qino-dev-agent.md",
+          "dest": "agents/qino-dev-agent.md"
+        },
+        {
+          "src": "tools/qino/agents/qino-research-agent.md",
+          "dest": "agents/qino-research-agent.md"
+        },
+        {
+          "src": "tools/qino/references/qino-attune/calibrate-process.md",
+          "dest": "references/qino-attune/calibrate-process.md"
+        },
+        {
+          "src": "tools/qino/references/qino-attune/compare-session.md",
+          "dest": "references/qino-attune/compare-session.md"
+        },
+        {
+          "src": "tools/qino/references/qino-attune/version.json",
+          "dest": "references/qino-attune/version.json"
+        },
+        {
+          "src": "tools/qino/references/qino-concept/concept-spec.md",
+          "dest": "references/qino-concept/concept-spec.md"
+        },
+        {
+          "src": "tools/qino/references/qino-concept/design-philosophy.md",
+          "dest": "references/qino-concept/design-philosophy.md"
+        },
+        {
+          "src": "tools/qino/references/qino-concept/ecology-tests.md",
+          "dest": "references/qino-concept/ecology-tests.md"
+        },
+        {
+          "src": "tools/qino/references/qino-concept/manifest-project-spec.md",
+          "dest": "references/qino-concept/manifest-project-spec.md"
+        },
+        {
+          "src": "tools/qino/references/qino-concept/version.json",
+          "dest": "references/qino-concept/version.json"
+        },
+        {
+          "src": "tools/qino/references/qino-dev/home-pattern.md",
+          "dest": "references/qino-dev/home-pattern.md"
+        },
+        {
+          "src": "tools/qino/references/qino-dev/version.json",
+          "dest": "references/qino-dev/version.json"
+        },
+        {
+          "src": "tools/qino/references/qino-research/research-spec.md",
+          "dest": "references/qino-research/research-spec.md"
+        },
+        {
+          "src": "tools/qino/references/qino-research/version.json",
+          "dest": "references/qino-research/version.json"
+        }
+      ]
+    },
+    "qino-art": {
+      "description": "Visual content system with Tron-meets-Excalidraw aesthetic",
+      "files": [
+        {
+          "src": "tools/qino-art/references/qino-art/aesthetic.md",
+          "dest": "references/qino-art/aesthetic.md"
+        },
+        {
+          "src": "tools/qino-art/references/qino-art/version.json",
+          "dest": "references/qino-art/version.json"
+        }
+      ]
+    },
     "qino-attune": {
       "description": "Training perception through difference (archived - merged into qino-universal)",
       "archived": true,
@@ -133,379 +207,48 @@
         }
       ]
     },
-    "qino-art": {
-      "description": "Visual content system with Tron-meets-Excalidraw aesthetic",
-      "files": [
-        {
-          "src": "tools/qino-art/SKILL.md",
-          "dest": "skills/qino-art.md"
-        },
-        {
-          "src": "tools/qino-art/workflows/AnnotatedScreenshots.md",
-          "dest": "references/qino-art/workflows/AnnotatedScreenshots.md"
-        },
-        {
-          "src": "tools/qino-art/workflows/Aphorisms.md",
-          "dest": "references/qino-art/workflows/Aphorisms.md"
-        },
-        {
-          "src": "tools/qino-art/workflows/Comics.md",
-          "dest": "references/qino-art/workflows/Comics.md"
-        },
-        {
-          "src": "tools/qino-art/workflows/Comparisons.md",
-          "dest": "references/qino-art/workflows/Comparisons.md"
-        },
-        {
-          "src": "tools/qino-art/workflows/Frameworks.md",
-          "dest": "references/qino-art/workflows/Frameworks.md"
-        },
-        {
-          "src": "tools/qino-art/workflows/Maps.md",
-          "dest": "references/qino-art/workflows/Maps.md"
-        },
-        {
-          "src": "tools/qino-art/workflows/Mermaid.md",
-          "dest": "references/qino-art/workflows/Mermaid.md"
-        },
-        {
-          "src": "tools/qino-art/workflows/RecipeCards.md",
-          "dest": "references/qino-art/workflows/RecipeCards.md"
-        },
-        {
-          "src": "tools/qino-art/workflows/Stats.md",
-          "dest": "references/qino-art/workflows/Stats.md"
-        },
-        {
-          "src": "tools/qino-art/workflows/Taxonomies.md",
-          "dest": "references/qino-art/workflows/Taxonomies.md"
-        },
-        {
-          "src": "tools/qino-art/workflows/TechnicalDiagrams.md",
-          "dest": "references/qino-art/workflows/TechnicalDiagrams.md"
-        },
-        {
-          "src": "tools/qino-art/workflows/Timelines.md",
-          "dest": "references/qino-art/workflows/Timelines.md"
-        },
-        {
-          "src": "tools/qino-art/workflows/Visualize.md",
-          "dest": "references/qino-art/workflows/Visualize.md"
-        },
-        {
-          "src": "tools/qino-art/workflows/Workflow.md",
-          "dest": "references/qino-art/workflows/Workflow.md"
-        },
-        {
-          "src": "tools/qino-art/tools/generate-prompt.ts",
-          "dest": "references/qino-art/tools/generate-prompt.ts"
-        },
-        {
-          "src": "tools/qino-art/tools/generate-ulart-image.ts",
-          "dest": "references/qino-art/tools/generate-ulart-image.ts"
-        },
-        {
-          "src": "tools/qino-art/references/qino-art/aesthetic.md",
-          "dest": "references/qino-art/aesthetic.md"
-        },
-        {
-          "src": "tools/qino-art/references/qino-art/version.json",
-          "dest": "references/qino-art/version.json"
-        }
-      ]
-    },
-    "qino": {
-      "description": "The qino ecology — natural language companion for developing ideas",
-      "files": [
-        {
-          "src": "tools/qino/SKILL.md",
-          "dest": "skills/qino/SKILL.md"
-        },
-        {
-          "src": "tools/qino/workflows/home.md",
-          "dest": "skills/qino/workflows/home.md"
-        },
-        {
-          "src": "tools/qino/workflows/capture.md",
-          "dest": "skills/qino/workflows/capture.md"
-        },
-        {
-          "src": "tools/qino/workflows/explore.md",
-          "dest": "skills/qino/workflows/explore.md"
-        },
-        {
-          "src": "tools/qino/workflows/test.md",
-          "dest": "skills/qino/workflows/test.md"
-        },
-        {
-          "src": "tools/qino/workflows/attune.md",
-          "dest": "skills/qino/workflows/attune.md"
-        },
-        {
-          "src": "tools/qino/workflows/compare.md",
-          "dest": "skills/qino/workflows/compare.md"
-        },
-        {
-          "src": "tools/qino/workflows/arc.md",
-          "dest": "skills/qino/workflows/arc.md"
-        },
-        {
-          "src": "tools/qino/workflows/concept-setup.md",
-          "dest": "skills/qino/workflows/concept-setup.md"
-        },
-        {
-          "src": "tools/qino/workflows/concept-init.md",
-          "dest": "skills/qino/workflows/concept-init.md"
-        },
-        {
-          "src": "tools/qino/workflows/import.md",
-          "dest": "skills/qino/workflows/import.md"
-        },
-        {
-          "src": "tools/qino/workflows/research-setup.md",
-          "dest": "skills/qino/workflows/research-setup.md"
-        },
-        {
-          "src": "tools/qino/workflows/research-init.md",
-          "dest": "skills/qino/workflows/research-init.md"
-        },
-        {
-          "src": "tools/qino/workflows/dev-setup.md",
-          "dest": "skills/qino/workflows/dev-setup.md"
-        },
-        {
-          "src": "tools/qino/workflows/dev-init.md",
-          "dest": "skills/qino/workflows/dev-init.md"
-        },
-        {
-          "src": "tools/qino/agents/qino-concept-agent.md",
-          "dest": "agents/qino-concept-agent.md"
-        },
-        {
-          "src": "tools/qino/agents/qino-research-agent.md",
-          "dest": "agents/qino-research-agent.md"
-        },
-        {
-          "src": "tools/qino/agents/qino-dev-agent.md",
-          "dest": "agents/qino-dev-agent.md"
-        },
-        {
-          "src": "tools/qino/references/qino-concept/concept-spec.md",
-          "dest": "references/qino-concept/concept-spec.md"
-        },
-        {
-          "src": "tools/qino/references/qino-concept/design-philosophy.md",
-          "dest": "references/qino-concept/design-philosophy.md"
-        },
-        {
-          "src": "tools/qino/references/qino-concept/ecology-tests.md",
-          "dest": "references/qino-concept/ecology-tests.md"
-        },
-        {
-          "src": "tools/qino/references/qino-concept/manifest-project-spec.md",
-          "dest": "references/qino-concept/manifest-project-spec.md"
-        },
-        {
-          "src": "tools/qino/references/qino-research/research-spec.md",
-          "dest": "references/qino-research/research-spec.md"
-        },
-        {
-          "src": "tools/qino/references/qino-dev/home-pattern.md",
-          "dest": "references/qino-dev/home-pattern.md"
-        },
-        {
-          "src": "tools/qino/references/qino-attune/calibrate-process.md",
-          "dest": "references/qino-attune/calibrate-process.md"
-        },
-        {
-          "src": "tools/qino/references/qino-attune/compare-session.md",
-          "dest": "references/qino-attune/compare-session.md"
-        }
-      ]
-    },
-    "qino-prose": {
-      "description": "Chronicle writing, research transmission, and prose lens application",
-      "files": [
-        {
-          "src": "tools/qino-prose/SKILL.md",
-          "dest": "skills/qino-prose.md"
-        },
-        {
-          "src": "tools/qino-prose/workflows/chapter.md",
-          "dest": "skills/qino-prose/workflows/chapter.md"
-        },
-        {
-          "src": "tools/qino-prose/workflows/survey.md",
-          "dest": "skills/qino-prose/workflows/survey.md"
-        },
-        {
-          "src": "tools/qino-prose/workflows/diagnose.md",
-          "dest": "skills/qino-prose/workflows/diagnose.md"
-        },
-        {
-          "src": "tools/qino-prose/workflows/rewind.md",
-          "dest": "skills/qino-prose/workflows/rewind.md"
-        },
-        {
-          "src": "tools/qino-prose/workflows/visual-style.md",
-          "dest": "skills/qino-prose/workflows/visual-style.md"
-        },
-        {
-          "src": "tools/qino-prose/workflows/transmit.md",
-          "dest": "skills/qino-prose/workflows/transmit.md"
-        },
-        {
-          "src": "tools/qino-prose/workflows/narrator.md",
-          "dest": "skills/qino-prose/workflows/narrator.md"
-        },
-        {
-          "src": "tools/qino-prose/workflows/wanderer.md",
-          "dest": "skills/qino-prose/workflows/wanderer.md"
-        },
-        {
-          "src": "tools/qino-prose/agents/scribe-editorial.md",
-          "dest": "agents/scribe-editorial.md"
-        },
-        {
-          "src": "tools/qino-prose/agents/scribe-prep.md",
-          "dest": "agents/scribe-prep.md"
-        },
-        {
-          "src": "tools/qino-prose/agents/scribe-prose.md",
-          "dest": "agents/scribe-prose.md"
-        },
-        {
-          "src": "tools/qino-prose/agents/relay-editorial.md",
-          "dest": "agents/relay-editorial.md"
-        },
-        {
-          "src": "tools/qino-prose/agents/relay-prose.md",
-          "dest": "agents/relay-prose.md"
-        },
-        {
-          "src": "tools/qino-prose/references/qino-scribe/calibration-notes.md",
-          "dest": "references/qino-scribe/calibration-notes.md"
-        },
-        {
-          "src": "tools/qino-prose/references/qino-scribe/craft.md",
-          "dest": "references/qino-scribe/craft.md"
-        },
-        {
-          "src": "tools/qino-prose/references/qino-scribe/disturbance.md",
-          "dest": "references/qino-scribe/disturbance.md"
-        },
-        {
-          "src": "tools/qino-prose/references/qino-scribe/foundation.md",
-          "dest": "references/qino-scribe/foundation.md"
-        },
-        {
-          "src": "tools/qino-prose/references/qino-scribe/layers.md",
-          "dest": "references/qino-scribe/layers.md"
-        },
-        {
-          "src": "tools/qino-prose/references/qino-scribe/principles.md",
-          "dest": "references/qino-scribe/principles.md"
-        },
-        {
-          "src": "tools/qino-prose/references/qino-scribe/story-lenses.md",
-          "dest": "references/qino-scribe/story-lenses.md"
-        },
-        {
-          "src": "tools/qino-prose/references/qino-scribe/visual-style.md",
-          "dest": "references/qino-scribe/visual-style.md"
-        },
-        {
-          "src": "tools/qino-prose/references/qino-scribe/voice.md",
-          "dest": "references/qino-scribe/voice.md"
-        },
-        {
-          "src": "tools/qino-prose/references/qino-relay/craft.md",
-          "dest": "references/qino-relay/craft.md"
-        },
-        {
-          "src": "tools/qino-prose/references/qino-relay/reader-journey-guide.md",
-          "dest": "references/qino-relay/reader-journey-guide.md"
-        },
-        {
-          "src": "tools/qino-prose/references/qino-relay/source-moments.md",
-          "dest": "references/qino-relay/source-moments.md"
-        },
-        {
-          "src": "tools/qino-prose/references/qino-relay/student-guide.md",
-          "dest": "references/qino-relay/student-guide.md"
-        },
-        {
-          "src": "tools/qino-prose/references/qino-relay/transmission-format.md",
-          "dest": "references/qino-relay/transmission-format.md"
-        },
-        {
-          "src": "tools/qino-prose/references/qino-relay/voice.md",
-          "dest": "references/qino-relay/voice.md"
-        },
-        {
-          "src": "tools/qino-prose/references/qino-lens/companion.md",
-          "dest": "references/qino-lens/companion.md"
-        },
-        {
-          "src": "tools/qino-prose/references/qino-lens/narrator.md",
-          "dest": "references/qino-lens/narrator.md"
-        },
-        {
-          "src": "tools/qino-prose/references/qino-lens/newcomer.md",
-          "dest": "references/qino-lens/newcomer.md"
-        },
-        {
-          "src": "tools/qino-prose/references/qino-lens/student.md",
-          "dest": "references/qino-lens/student.md"
-        },
-        {
-          "src": "tools/qino-prose/references/qino-lens/wanderer.md",
-          "dest": "references/qino-lens/wanderer.md"
-        }
-      ]
-    },
     "qino-concept": {
       "description": "Gentle space for developing ideas through conversation (archived - use qino)",
       "archived": true,
       "files": [
         {
-          "src": "tools/qino-concept/agents/qino-concept-agent.md",
+          "src": "tools/archived/qino-concept/agents/qino-concept-agent.md",
           "dest": "agents/qino-concept-agent.md"
         },
         {
-          "src": "tools/qino-concept/commands/qino-concept/explore.md",
+          "src": "tools/archived/qino-concept/commands/qino-concept/explore.md",
           "dest": "commands/qino-concept/explore.md"
         },
         {
-          "src": "tools/qino-concept/commands/qino-concept/import.md",
+          "src": "tools/archived/qino-concept/commands/qino-concept/import.md",
           "dest": "commands/qino-concept/import.md"
         },
         {
-          "src": "tools/qino-concept/commands/qino-concept/init.md",
+          "src": "tools/archived/qino-concept/commands/qino-concept/init.md",
           "dest": "commands/qino-concept/init.md"
         },
         {
-          "src": "tools/qino-concept/commands/qino-concept/setup.md",
+          "src": "tools/archived/qino-concept/commands/qino-concept/setup.md",
           "dest": "commands/qino-concept/setup.md"
         },
         {
-          "src": "tools/qino-concept/references/qino-concept/concept-spec.md",
+          "src": "tools/archived/qino-concept/references/qino-concept/concept-spec.md",
           "dest": "references/qino-concept/concept-spec.md"
         },
         {
-          "src": "tools/qino-concept/references/qino-concept/design-philosophy.md",
+          "src": "tools/archived/qino-concept/references/qino-concept/design-philosophy.md",
           "dest": "references/qino-concept/design-philosophy.md"
         },
         {
-          "src": "tools/qino-concept/references/qino-concept/ecology-tests.md",
+          "src": "tools/archived/qino-concept/references/qino-concept/ecology-tests.md",
           "dest": "references/qino-concept/ecology-tests.md"
         },
         {
-          "src": "tools/qino-concept/references/qino-concept/manifest-project-spec.md",
+          "src": "tools/archived/qino-concept/references/qino-concept/manifest-project-spec.md",
           "dest": "references/qino-concept/manifest-project-spec.md"
         },
         {
-          "src": "tools/qino-concept/references/qino-concept/version.json",
+          "src": "tools/archived/qino-concept/references/qino-concept/version.json",
           "dest": "references/qino-concept/version.json"
         }
       ]
@@ -515,35 +258,35 @@
       "archived": true,
       "files": [
         {
-          "src": "tools/qino-dev/agents/qino-dev-agent.md",
+          "src": "tools/archived/qino-dev/agents/qino-dev-agent.md",
           "dest": "agents/qino-dev-agent.md"
         },
         {
-          "src": "tools/qino-dev/commands/qino-dev/init.md",
+          "src": "tools/archived/qino-dev/commands/qino-dev/init.md",
           "dest": "commands/qino-dev/init.md"
         },
         {
-          "src": "tools/qino-dev/commands/qino-dev/setup.md",
+          "src": "tools/archived/qino-dev/commands/qino-dev/setup.md",
           "dest": "commands/qino-dev/setup.md"
         },
         {
-          "src": "tools/qino-dev/references/qino-dev/home-pattern.md",
+          "src": "tools/archived/qino-dev/references/qino-dev/home-pattern.md",
           "dest": "references/qino-dev/home-pattern.md"
         },
         {
-          "src": "tools/qino-dev/references/qino-dev/version.json",
+          "src": "tools/archived/qino-dev/references/qino-dev/version.json",
           "dest": "references/qino-dev/version.json"
         },
         {
-          "src": "tools/qino-dev/templates/app-command-template.md",
+          "src": "tools/archived/qino-dev/templates/app-command-template.md",
           "dest": "references/qino-dev/templates/app-command-template.md"
         },
         {
-          "src": "tools/qino-dev/templates/implementation-template.md",
+          "src": "tools/archived/qino-dev/templates/implementation-template.md",
           "dest": "references/qino-dev/templates/implementation-template.md"
         },
         {
-          "src": "tools/qino-dev/templates/iteration-template.md",
+          "src": "tools/archived/qino-dev/templates/iteration-template.md",
           "dest": "references/qino-dev/templates/iteration-template.md"
         }
       ]
@@ -591,36 +334,141 @@
       "archived": true,
       "files": [
         {
-          "src": "tools/qino-lens/commands/narrator.md",
+          "src": "tools/archived/qino-lens/commands/narrator.md",
           "dest": "commands/narrator.md"
         },
         {
-          "src": "tools/qino-lens/commands/wanderer.md",
+          "src": "tools/archived/qino-lens/commands/wanderer.md",
           "dest": "commands/wanderer.md"
         },
         {
-          "src": "tools/qino-lens/references/qino-lens/companion.md",
+          "src": "tools/archived/qino-lens/references/qino-lens/companion.md",
           "dest": "references/qino-lens/companion.md"
         },
         {
-          "src": "tools/qino-lens/references/qino-lens/narrator.md",
+          "src": "tools/archived/qino-lens/references/qino-lens/narrator.md",
           "dest": "references/qino-lens/narrator.md"
         },
         {
-          "src": "tools/qino-lens/references/qino-lens/newcomer.md",
+          "src": "tools/archived/qino-lens/references/qino-lens/newcomer.md",
           "dest": "references/qino-lens/newcomer.md"
         },
         {
-          "src": "tools/qino-lens/references/qino-lens/student.md",
+          "src": "tools/archived/qino-lens/references/qino-lens/student.md",
           "dest": "references/qino-lens/student.md"
         },
         {
-          "src": "tools/qino-lens/references/qino-lens/version.json",
+          "src": "tools/archived/qino-lens/references/qino-lens/version.json",
           "dest": "references/qino-lens/version.json"
         },
         {
-          "src": "tools/qino-lens/references/qino-lens/wanderer.md",
+          "src": "tools/archived/qino-lens/references/qino-lens/wanderer.md",
           "dest": "references/qino-lens/wanderer.md"
+        }
+      ]
+    },
+    "qino-prose": {
+      "description": "Chronicle writing, research transmission, and prose lens application",
+      "files": [
+        {
+          "src": "tools/qino-prose/agents/relay-editorial.md",
+          "dest": "agents/relay-editorial.md"
+        },
+        {
+          "src": "tools/qino-prose/agents/relay-prose.md",
+          "dest": "agents/relay-prose.md"
+        },
+        {
+          "src": "tools/qino-prose/agents/scribe-editorial.md",
+          "dest": "agents/scribe-editorial.md"
+        },
+        {
+          "src": "tools/qino-prose/agents/scribe-prep.md",
+          "dest": "agents/scribe-prep.md"
+        },
+        {
+          "src": "tools/qino-prose/agents/scribe-prose.md",
+          "dest": "agents/scribe-prose.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-lens/companion.md",
+          "dest": "references/qino-lens/companion.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-lens/narrator.md",
+          "dest": "references/qino-lens/narrator.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-lens/newcomer.md",
+          "dest": "references/qino-lens/newcomer.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-lens/student.md",
+          "dest": "references/qino-lens/student.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-lens/wanderer.md",
+          "dest": "references/qino-lens/wanderer.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-relay/craft.md",
+          "dest": "references/qino-relay/craft.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-relay/reader-journey-guide.md",
+          "dest": "references/qino-relay/reader-journey-guide.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-relay/source-moments.md",
+          "dest": "references/qino-relay/source-moments.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-relay/student-guide.md",
+          "dest": "references/qino-relay/student-guide.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-relay/transmission-format.md",
+          "dest": "references/qino-relay/transmission-format.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-relay/voice.md",
+          "dest": "references/qino-relay/voice.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-scribe/calibration-notes.md",
+          "dest": "references/qino-scribe/calibration-notes.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-scribe/craft.md",
+          "dest": "references/qino-scribe/craft.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-scribe/disturbance.md",
+          "dest": "references/qino-scribe/disturbance.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-scribe/foundation.md",
+          "dest": "references/qino-scribe/foundation.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-scribe/layers.md",
+          "dest": "references/qino-scribe/layers.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-scribe/principles.md",
+          "dest": "references/qino-scribe/principles.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-scribe/story-lenses.md",
+          "dest": "references/qino-scribe/story-lenses.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-scribe/visual-style.md",
+          "dest": "references/qino-scribe/visual-style.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-scribe/voice.md",
+          "dest": "references/qino-scribe/voice.md"
         }
       ]
     },
@@ -629,43 +477,43 @@
       "archived": true,
       "files": [
         {
-          "src": "tools/qino-relay/agents/relay-editorial.md",
+          "src": "tools/archived/qino-relay/agents/relay-editorial.md",
           "dest": "agents/relay-editorial.md"
         },
         {
-          "src": "tools/qino-relay/agents/relay-prose.md",
+          "src": "tools/archived/qino-relay/agents/relay-prose.md",
           "dest": "agents/relay-prose.md"
         },
         {
-          "src": "tools/qino-relay/commands/qino-relay/transmit.md",
+          "src": "tools/archived/qino-relay/commands/qino-relay/transmit.md",
           "dest": "commands/qino-relay/transmit.md"
         },
         {
-          "src": "tools/qino-relay/references/qino-relay/craft.md",
+          "src": "tools/archived/qino-relay/references/qino-relay/craft.md",
           "dest": "references/qino-relay/craft.md"
         },
         {
-          "src": "tools/qino-relay/references/qino-relay/reader-journey-guide.md",
+          "src": "tools/archived/qino-relay/references/qino-relay/reader-journey-guide.md",
           "dest": "references/qino-relay/reader-journey-guide.md"
         },
         {
-          "src": "tools/qino-relay/references/qino-relay/source-moments.md",
+          "src": "tools/archived/qino-relay/references/qino-relay/source-moments.md",
           "dest": "references/qino-relay/source-moments.md"
         },
         {
-          "src": "tools/qino-relay/references/qino-relay/student-guide.md",
+          "src": "tools/archived/qino-relay/references/qino-relay/student-guide.md",
           "dest": "references/qino-relay/student-guide.md"
         },
         {
-          "src": "tools/qino-relay/references/qino-relay/transmission-format.md",
+          "src": "tools/archived/qino-relay/references/qino-relay/transmission-format.md",
           "dest": "references/qino-relay/transmission-format.md"
         },
         {
-          "src": "tools/qino-relay/references/qino-relay/version.json",
+          "src": "tools/archived/qino-relay/references/qino-relay/version.json",
           "dest": "references/qino-relay/version.json"
         },
         {
-          "src": "tools/qino-relay/references/qino-relay/voice.md",
+          "src": "tools/archived/qino-relay/references/qino-relay/voice.md",
           "dest": "references/qino-relay/voice.md"
         }
       ]
@@ -675,23 +523,23 @@
       "archived": true,
       "files": [
         {
-          "src": "tools/qino-research/agents/qino-research-agent.md",
+          "src": "tools/archived/qino-research/agents/qino-research-agent.md",
           "dest": "agents/qino-research-agent.md"
         },
         {
-          "src": "tools/qino-research/commands/qino-research/init.md",
+          "src": "tools/archived/qino-research/commands/qino-research/init.md",
           "dest": "commands/qino-research/init.md"
         },
         {
-          "src": "tools/qino-research/commands/qino-research/setup.md",
+          "src": "tools/archived/qino-research/commands/qino-research/setup.md",
           "dest": "commands/qino-research/setup.md"
         },
         {
-          "src": "tools/qino-research/references/qino-research/research-spec.md",
+          "src": "tools/archived/qino-research/references/qino-research/research-spec.md",
           "dest": "references/qino-research/research-spec.md"
         },
         {
-          "src": "tools/qino-research/references/qino-research/version.json",
+          "src": "tools/archived/qino-research/references/qino-research/version.json",
           "dest": "references/qino-research/version.json"
         }
       ]
@@ -701,75 +549,75 @@
       "archived": true,
       "files": [
         {
-          "src": "tools/qino-scribe/agents/scribe-editorial.md",
+          "src": "tools/archived/qino-scribe/agents/scribe-editorial.md",
           "dest": "agents/scribe-editorial.md"
         },
         {
-          "src": "tools/qino-scribe/agents/scribe-prep.md",
+          "src": "tools/archived/qino-scribe/agents/scribe-prep.md",
           "dest": "agents/scribe-prep.md"
         },
         {
-          "src": "tools/qino-scribe/agents/scribe-prose.md",
+          "src": "tools/archived/qino-scribe/agents/scribe-prose.md",
           "dest": "agents/scribe-prose.md"
         },
         {
-          "src": "tools/qino-scribe/commands/qino-scribe/chapter.md",
+          "src": "tools/archived/qino-scribe/commands/qino-scribe/chapter.md",
           "dest": "commands/qino-scribe/chapter.md"
         },
         {
-          "src": "tools/qino-scribe/commands/qino-scribe/diagnose.md",
+          "src": "tools/archived/qino-scribe/commands/qino-scribe/diagnose.md",
           "dest": "commands/qino-scribe/diagnose.md"
         },
         {
-          "src": "tools/qino-scribe/commands/qino-scribe/rewind.md",
+          "src": "tools/archived/qino-scribe/commands/qino-scribe/rewind.md",
           "dest": "commands/qino-scribe/rewind.md"
         },
         {
-          "src": "tools/qino-scribe/commands/qino-scribe/survey.md",
+          "src": "tools/archived/qino-scribe/commands/qino-scribe/survey.md",
           "dest": "commands/qino-scribe/survey.md"
         },
         {
-          "src": "tools/qino-scribe/commands/qino-scribe/visual-style.md",
+          "src": "tools/archived/qino-scribe/commands/qino-scribe/visual-style.md",
           "dest": "commands/qino-scribe/visual-style.md"
         },
         {
-          "src": "tools/qino-scribe/references/qino-scribe/calibration-notes.md",
+          "src": "tools/archived/qino-scribe/references/qino-scribe/calibration-notes.md",
           "dest": "references/qino-scribe/calibration-notes.md"
         },
         {
-          "src": "tools/qino-scribe/references/qino-scribe/craft.md",
+          "src": "tools/archived/qino-scribe/references/qino-scribe/craft.md",
           "dest": "references/qino-scribe/craft.md"
         },
         {
-          "src": "tools/qino-scribe/references/qino-scribe/disturbance.md",
+          "src": "tools/archived/qino-scribe/references/qino-scribe/disturbance.md",
           "dest": "references/qino-scribe/disturbance.md"
         },
         {
-          "src": "tools/qino-scribe/references/qino-scribe/foundation.md",
+          "src": "tools/archived/qino-scribe/references/qino-scribe/foundation.md",
           "dest": "references/qino-scribe/foundation.md"
         },
         {
-          "src": "tools/qino-scribe/references/qino-scribe/layers.md",
+          "src": "tools/archived/qino-scribe/references/qino-scribe/layers.md",
           "dest": "references/qino-scribe/layers.md"
         },
         {
-          "src": "tools/qino-scribe/references/qino-scribe/principles.md",
+          "src": "tools/archived/qino-scribe/references/qino-scribe/principles.md",
           "dest": "references/qino-scribe/principles.md"
         },
         {
-          "src": "tools/qino-scribe/references/qino-scribe/story-lenses.md",
+          "src": "tools/archived/qino-scribe/references/qino-scribe/story-lenses.md",
           "dest": "references/qino-scribe/story-lenses.md"
         },
         {
-          "src": "tools/qino-scribe/references/qino-scribe/version.json",
+          "src": "tools/archived/qino-scribe/references/qino-scribe/version.json",
           "dest": "references/qino-scribe/version.json"
         },
         {
-          "src": "tools/qino-scribe/references/qino-scribe/visual-style.md",
+          "src": "tools/archived/qino-scribe/references/qino-scribe/visual-style.md",
           "dest": "references/qino-scribe/visual-style.md"
         },
         {
-          "src": "tools/qino-scribe/references/qino-scribe/voice.md",
+          "src": "tools/archived/qino-scribe/references/qino-scribe/voice.md",
           "dest": "references/qino-scribe/voice.md"
         }
       ]
@@ -779,43 +627,43 @@
       "archived": true,
       "files": [
         {
-          "src": "tools/qino-universal/commands/qino/arc.md",
+          "src": "tools/archived/qino-universal/commands/qino/arc.md",
           "dest": "commands/qino/arc.md"
         },
         {
-          "src": "tools/qino-universal/commands/qino/attune.md",
+          "src": "tools/archived/qino-universal/commands/qino/attune.md",
           "dest": "commands/qino/attune.md"
         },
         {
-          "src": "tools/qino-universal/commands/qino/capture.md",
+          "src": "tools/archived/qino-universal/commands/qino/capture.md",
           "dest": "commands/qino/capture.md"
         },
         {
-          "src": "tools/qino-universal/commands/qino/compare.md",
+          "src": "tools/archived/qino-universal/commands/qino/compare.md",
           "dest": "commands/qino/compare.md"
         },
         {
-          "src": "tools/qino-universal/commands/qino/home.md",
+          "src": "tools/archived/qino-universal/commands/qino/home.md",
           "dest": "commands/qino/home.md"
         },
         {
-          "src": "tools/qino-universal/commands/qino/test.md",
+          "src": "tools/archived/qino-universal/commands/qino/test.md",
           "dest": "commands/qino/test.md"
         },
         {
-          "src": "tools/qino-universal/references/qino-attune/calibrate-process.md",
+          "src": "tools/archived/qino-universal/references/qino-attune/calibrate-process.md",
           "dest": "references/qino-attune/calibrate-process.md"
         },
         {
-          "src": "tools/qino-universal/references/qino-attune/compare-session.md",
+          "src": "tools/archived/qino-universal/references/qino-attune/compare-session.md",
           "dest": "references/qino-attune/compare-session.md"
         },
         {
-          "src": "tools/qino-universal/references/qino-attune/version.json",
+          "src": "tools/archived/qino-universal/references/qino-attune/version.json",
           "dest": "references/qino-attune/version.json"
         },
         {
-          "src": "tools/qino-universal/references/qino-universal/version.json",
+          "src": "tools/archived/qino-universal/references/qino-universal/version.json",
           "dest": "references/qino-universal/version.json"
         }
       ]
@@ -825,23 +673,23 @@
       "archived": true,
       "files": [
         {
-          "src": "tools/qino-util/commands/qino-util/add-command.md",
+          "src": "tools/archived/qino-util/commands/qino-util/add-command.md",
           "dest": "commands/qino-util/add-command.md"
         },
         {
-          "src": "tools/qino-util/commands/qino-util/verify.md",
+          "src": "tools/archived/qino-util/commands/qino-util/verify.md",
           "dest": "commands/qino-util/verify.md"
         },
         {
-          "src": "tools/qino-util/references/qino-util/agent-template.md",
+          "src": "tools/archived/qino-util/references/qino-util/agent-template.md",
           "dest": "references/qino-util/agent-template.md"
         },
         {
-          "src": "tools/qino-util/references/qino-util/command-template.md",
+          "src": "tools/archived/qino-util/references/qino-util/command-template.md",
           "dest": "references/qino-util/command-template.md"
         },
         {
-          "src": "tools/qino-util/references/qino-util/version.json",
+          "src": "tools/archived/qino-util/references/qino-util/version.json",
           "dest": "references/qino-util/version.json"
         }
       ]
@@ -851,15 +699,15 @@
       "archived": true,
       "files": [
         {
-          "src": "tools/updater/commands/update-qino-tools.md",
+          "src": "tools/archived/updater/commands/update-qino-tools.md",
           "dest": "commands/update-qino-tools.md"
         },
         {
-          "src": "tools/updater/migrations.md",
+          "src": "tools/archived/updater/migrations.md",
           "dest": "references/updater/migrations.md"
         },
         {
-          "src": "tools/updater/references/updater/version.json",
+          "src": "tools/archived/updater/references/updater/version.json",
           "dest": "references/updater/version.json"
         }
       ]

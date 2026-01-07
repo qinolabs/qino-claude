@@ -10,6 +10,81 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [1.0.0] - 2026-01-07
+
+### Breaking Changes
+
+This is a major architecture shift from command-based to skill-based interaction.
+
+- **Skills replace commands** — tools are now described by what they do, not what you type; routing happens through natural language intent
+- **Plugin marketplace** — tools now install via marketplace; the updater and manual file copying are deprecated
+- **Consolidated tools** — many individual tools merged into unified skills (see below)
+
+### Architecture
+
+#### Added
+
+- **Natural Language Skill System** — describe what you want; SKILL.md files route intent to workflows
+- **Plugin Marketplace Infrastructure** — `plugins/` directory with standardized distribution format
+- **SKILL.md pattern** — each tool's skill file maps user intent to specialized workflows
+
+### qino (Unified Skill)
+
+Consolidates: qino-concept, qino-dev, qino-research, qino-universal
+
+#### Added
+
+- **Unified routing** — single skill handles concept exploration, dev implementation, research inquiry, and universal commands (home, capture, test, attune, compare, arc)
+- **19 workflows** — arc, attune, capture, compare, concept-init, concept-setup, dev-init, dev-setup, explore, home, import, research-init, research-setup, test, and more
+
+### qino-prose (New Unified Skill)
+
+Consolidates: qino-scribe, qino-relay, qino-lens
+
+#### Added
+
+- **Chronicle, transmission, and lens capabilities** — one skill for all prose-related work
+- **8 workflows** — chapter, survey, diagnose, rewind, visual-style, transmit, narrator, wanderer
+- **Shared references** — lens sensitivities (wanderer, narrator, newcomer, student, companion) available to all prose workflows
+
+### qino-art
+
+#### Changed
+
+- **Warm Hand-Drawn Abstraction** — aesthetic aligned with qino ecosystem philosophy
+- **Skill activation** — now activated through natural language ("create a visualization", "make a header image")
+- **14 workflows** — mermaid, technical diagrams, taxonomies, timelines, frameworks, comparisons, annotated screenshots, recipe cards, aphorisms, maps, stats, comics, and general visualization
+
+### design-adventure
+
+#### Changed
+
+- **Skill activation** — now activated through natural language ("explore this design challenge", "run a design adventure")
+
+### Archived
+
+The following tools have been archived to `tools/archived/`:
+
+- **qino-concept** — functionality now in unified `qino` skill
+- **qino-dev** — functionality now in unified `qino` skill
+- **qino-research** — functionality now in unified `qino` skill
+- **qino-universal** — functionality now in unified `qino` skill
+- **qino-scribe** — functionality now in `qino-prose` skill
+- **qino-relay** — functionality now in `qino-prose` skill
+- **qino-lens** — references now in `qino-prose` skill
+- **qino-util** — project-specific commands moved to `.claude/commands/`
+- **updater** — replaced by plugin marketplace
+
+### Migration
+
+For existing installations:
+
+1. **Remove old tools** — delete `.claude/commands/qino*/`, `.claude/agents/qino*/`, `.claude/references/qino*/`
+2. **Install plugins** — use Claude Code plugin marketplace to install qino, qino-art, qino-prose, design-adventure
+3. **Natural language** — instead of `/qino-concept:explore`, describe what you want: "let's explore this concept"
+
+---
+
 ## [0.22.4] - 2026-01-05
 
 ### qino Relay

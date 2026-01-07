@@ -31,38 +31,27 @@ This tool adds one command that runs complete design explorations.
 
 ## Installation
 
-**Quick:** Download `design-adventure.zip` from the [latest release](https://github.com/qinolabs/qino-claude/releases/latest), unzip, and copy the contents of `qino-claude/` into your project's `.claude/` directory.
+```bash
+# Add the qino marketplace
+/plugin marketplace add qinolabs/qino-claude
 
-**Manual:** Copy these into your project's `.claude/`:
-
-```
-commands/design-adventure.md     →  your-project/.claude/commands/
-agents/design-adventure.md       →  your-project/.claude/agents/
-references/design-adventure/     →  your-project/.claude/references/design-adventure/
+# Install design-adventure
+/plugin install design-adventure@qinolabs/qino-claude
 ```
 
-You should end up with:
-```
-your-project/
-  .claude/
-    commands/
-      design-adventure.md
-    agents/
-      design-adventure.md
-    references/
-      design-adventure/
-        personas-spec.md
-        output-spec.md
-        atmosphere-guide.md
-```
-
-Start Claude Code in that project folder. The `/design-adventure` command is now available.
+Start Claude Code in your project folder. Design adventures can now be launched through natural language or the `/design-adventure` command.
 
 ---
 
 ## Your first adventure
 
 Bring a design challenge — something with inherent tension, something you want to think through before building.
+
+```
+Let's explore: How do we balance real-time collaboration with focus time?
+```
+
+Or use the command directly:
 
 ```
 /design-adventure How do we balance real-time collaboration with focus time?
