@@ -10,6 +10,39 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [1.0.1] - 2026-01-07
+
+### qino
+
+#### Fixed
+
+- **Agent workflow execution** — agents now properly read and follow workflow files with dialogue phases; previously agents would skip dialogue and rush to implementation
+- **CRITICAL section in all agents** — concept-agent, dev-agent, and research-agent now have explicit instructions to read workflow files and respect WAIT points
+
+#### Added
+
+- **dev-work workflow** — new workflow for "work on [app]", plan iterations, and build intents
+
+#### Changed
+
+- **Agent naming simplified** — agent files renamed from `qino-*-agent.md` to `*-agent.md` (e.g., `concept-agent.md`); internal names and subagent_type references updated to match (e.g., `qino:dev-agent` instead of `qino:qino-dev-agent`)
+- **SKILL.md agent execution pattern** — added explicit instructions that workflows must be executed by spawning agents, not running directly in main conversation
+
+### Architecture
+
+#### Removed
+
+- **Manifest system** — `tools/manifest.json` and `scripts/sync-manifest.sh` removed; plugins are now self-contained and don't need a central registry
+- **Duplicate tools/ directories** — `tools/{qino,qino-art,qino-prose,design-adventure,fabric-reference}/` removed; `plugins/` is now the single source of truth for active tools
+- **Outdated sync commands** — removed `sync-dev-assistant.md` and `sync-design-sprint.md`
+
+#### Changed
+
+- **Release command** — updated to discover plugins from `plugins/` directory instead of manifest
+- **Add-command and Verify commands** — updated for plugins-based architecture
+
+---
+
 ## [1.0.0] - 2026-01-07
 
 ### Breaking Changes
