@@ -228,6 +228,10 @@ Each repository in the qino ecosystem tells its own story.
 
 > _Loose pages everywhere. Half-finished questions. The wanderer turned one over: the same handwriting on both sides, arguing with itself._
 
+**[qino-conversations](https://github.com/qinolabs/qino-conversations)** — epistemological signature extraction.
+
+> _Someone had been forging the wanderer's handwriting. The copies were good — the letters matched. But something was off. The wanderer studied both, trying to name what the forger had missed. The answer wasn't in the shapes. It was in the hesitations._
+
 Same scribe. Different worlds. Different atmospheric registers. Process in each informs the others — a co-evolution.
 
 > _The Keeper of Paths looked up from her maps. "Someone's been walking between the Workshop and the Warm Room. Over and over. The ground remembers."_
@@ -261,7 +265,7 @@ Same scribe. Different worlds. Different atmospheric registers. Process in each 
 
 **Implementation** — [Building from Concepts](#building-from-concepts)
 
-**Research** — [Following Threads](#following-threads) · [Arcs](#arcs--evidence-of-emergence) · [Compare](#compare--the-parallel-mirror) · [Attune](#attune--from-hunch-to-craft)
+**Research** — [Following Threads](#following-threads) · [Arcs](#arcs--evidence-of-emergence) · [Compare](#compare--the-parallel-mirror) · [Attune](#attune--from-hunch-to-craft) · [Epistemological Signature](#epistemological-signature)
 
 **Story** — [Scribe](#qino-scribe--git-becomes-story) · [Relay](#qino-relay--bridging-to-readers) · [Lens](#qino-lens--ways-of-seeing) · [Art](#qino-art--visual-content-system)
 
@@ -1029,6 +1033,27 @@ calibrations/otherworldliness/
 What you couldn't explain, you can now teach. What you could only feel, you can now protect.
 
 _(The [qino Lens](#qino-lens--ways-of-seeing) section is a product of this process — the Wanderer's Lens emerged from an Attune calibration.)_
+
+#### Epistemological Signature
+
+**[qino-conversations](https://github.com/qinolabs/qino-conversations)** — capturing cognitive style so Claude can work more autonomously while still moving the way you move.
+
+Working with Claude daily, sessions accumulate. Those conversations hold a cognitive fingerprint — not just how problems get solved, but *biases*: what connections you're drawn to, what interspaces you step into and let unfold, how you abduct toward the pattern that connects rather than proving from first principles. Your hesitations. Your gut.
+
+That's almost impossible to capture explicitly. You can't write it down. But you can *notice* it — sitting with a fragment and feeling whether it's rich, whether it's yours.
+
+This project weaves labeling into the Claude workflow itself:
+
+- A `/label` command built into the tooling
+- Opens a locally-running app in your browser
+- Shows the exact conversation you're in — label it while it's fresh
+- Keyboard-first: `j/k` to navigate, `1-5` for richness, `n` for noise, `Enter` to submit
+- Labels feed back into the dataset immediately
+- A noise filter trains on your judgments, learning what matters
+
+Even a hint of this captured could change the collaboration. Claude working more independently, but still thinking *like you*.
+
+The design of the system is itself an expression of the thing it captures — seamless, relational, preferring emergence over extraction. The way the pieces interplay reflects the cognitive style they're meant to preserve.
 
 <br>
 
