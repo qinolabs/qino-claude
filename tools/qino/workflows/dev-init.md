@@ -27,6 +27,49 @@ Stop.
 
 ---
 
+## Pre-Existing Work Detection
+
+Before creating new implementation, check for existing work:
+
+### 1. Check for Existing Implementation
+
+If `implementations/[concept-id]/` already exists:
+
+```
+Implementation already exists for [concept-name].
+
+Current state:
+- iteration 05 — figures-center-stage (in progress)
+- last updated: 2025-01-05
+
+Arriving there instead.
+```
+
+Then route to the arrival pattern (as if `/qino-dev:[app]` was invoked). Do NOT create new files.
+
+### 2. Scan for Related Implementations
+
+When bootstrapping from a concept, scan other implementations for related work:
+
+```bash
+# Check iterations/ directories for mentions of this concept
+grep -r "[concept-id]" implementations/*/iterations/*.md
+```
+
+If found, surface as context:
+
+```
+Related work found:
+- qino-journey iteration 03 touches world integration
+- qino-frame iteration 02 mentions journey connection
+
+These may inform your implementation approach.
+```
+
+This is information, not a blocker. Proceed with init if the user wants to create a new implementation.
+
+---
+
 ## Flow: From Concept
 
 When argument contains a path to a concept file:
@@ -138,18 +181,11 @@ Add concept link:
 {
   "repoType": "implementation",
   "conceptsRepo": "[absolute path to concepts-repo]",
-  "linkedConcept": "[concept-id]"
+  "linkedConcepts": ["[concept-id]"]
 }
 ```
 
-**`.claude/commands/qino-dev/[short-id].md`**
-
-Use `references/qino-dev/templates/app-command-template.md` as structure.
-
-Replace placeholders with:
-- `{{APP_NAME}}`: Full app name
-- `{{APP_ID}}`: Concept id
-- `{{SHORT_ID}}`: Short command id (e.g., "bg")
+Note: `linkedConcepts` is an array — a single implementation repo can link to multiple concepts (e.g., qino-world and qino-journey together).
 
 ### 5. Confirm
 
@@ -157,7 +193,7 @@ After generating:
 
 > "Your app is ready.
 >
-> `[short-id]` — arrive at your app
+> 'work on [app-name]' — arrive at your app
 > 'capture: [thought]' — capture insights (goes to concepts-repo)
 > 'explore [concept]' — check essence alignment
 >
@@ -186,8 +222,6 @@ Run a condensed version of the translation exploration:
 Create implementation.md and first iteration without concept link.
 
 Do NOT update qino-config.json with concept fields (no linked concept).
-
-Generate the app command.
 
 ---
 

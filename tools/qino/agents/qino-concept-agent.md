@@ -132,6 +132,80 @@ This affects:
 - **capture**: Auto-tag notes with `scope: "implementation"` and linked concept
 - **explore**: Include awareness of implementation context when surfacing notes
 
+## Implementation Discovery
+
+When in a linked implementation repo (qino-config.json has `linkedConcepts`), concept-mode gains **bidirectional visibility** with iterations.
+
+### Discovery on Arrival
+
+For each concept being explored, check implementation state:
+
+1. **Find implementation directory**: `implementations/[concept-id]/`
+2. **Read current iteration**: Find latest file in `iterations/` directory
+3. **Extract status**: Parse iteration name and completion state
+
+### Surface Implementation Context
+
+When showing a concept (home or explore), include implementation state:
+
+```
+qino-world
+
+surfaces: the field, the figures, encountering/inhabiting
+
+implementation: qino-world (iteration 05 — figures-center-stage)
+```
+
+This is context, not interruption — one line showing where implementation stands.
+
+### After Concept Changes — Offer Translation
+
+When you make changes to a concept that has an implementation:
+
+```
+Updated Primary Surfaces with encounter panel details.
+
+Current iteration (05) focuses on figures-center-stage.
+
+Does this suggest:
+- Iteration 05 is on track? (no change needed)
+- Iteration 05 needs goal adjustment?
+- New iteration (06) should address this?
+- Note for later?
+```
+
+**Translation options:**
+- **Adjust iteration** → Edit goals/scope in current iteration file
+- **New iteration** → Create next numbered file with seed from concept change
+- **Note for later** → Append to `implementation.md` in implementations directory
+
+### Building → Concept (Reverse Flow)
+
+When user invokes `/qino:capture` or `/qino:explore` from implementation repo, show iteration context:
+
+```
+You're in: qino-world (iteration 05 — figures-center-stage)
+
+What emerged?
+```
+
+The user knows what they were building when the insight emerged. After concept update, offer iteration alignment:
+
+```
+Updated concept with encounter panel insight.
+
+This emerged from iteration 05 work.
+
+Does this suggest:
+- Iteration 05 is on track? (no change)
+- Iteration 05 needs goal adjustment?
+- Iteration 06 should address this more fully?
+```
+
+### The Principle
+
+**Bidirectional discovery**: Wherever you are (concept or implementation), you see both sides. Changes in either direction can translate to the other. The flow is nonlinear — discoveries happen while building just as often as while planning.
+
 ## Your Capabilities
 
 You respond to commands in two namespaces:

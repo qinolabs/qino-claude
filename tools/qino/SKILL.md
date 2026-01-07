@@ -65,6 +65,31 @@ Match user intent to workflow. Read the workflow file and follow its instruction
 
 ---
 
+## Implementation Context
+
+When `repoType` is `"implementation"`, additional routing applies:
+
+| User Intent | Route |
+|-------------|-------|
+| "work on [app]" | dev-agent with app context |
+| "work on [app] and [app]" | dev-agent with multi-app context |
+| Concept exploration | concept-agent WITH implementation discovery |
+
+**Key behavior:** In implementation repos, `concept-agent` gains bidirectional visibility with iterations. When exploring a linked concept, it:
+- Surfaces current iteration status ("iteration 05 — figures-center-stage")
+- Offers translation prompts after concept changes
+- Shows iteration context when capturing discoveries from building
+
+This enables nonlinear work — discoveries flow in both directions between concept-space and implementation-space.
+
+**Multi-app scoping:** Users can work across multiple apps conversationally:
+- "work on world and journey" → dev-agent sees both apps
+- "the encounter panel in world needs to talk to journey's substrate" → dev-agent holds both contexts
+
+No explicit commands needed. The skill routes conversationally based on intent.
+
+---
+
 ## Context Object
 
 Pass to workflows:
