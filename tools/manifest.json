@@ -6,12 +6,16 @@
       "description": "Seven-perspective design dialogue",
       "files": [
         {
-          "src": "tools/design-adventure/agents/design-adventure.md",
-          "dest": "agents/design-adventure.md"
+          "src": "tools/design-adventure/SKILL.md",
+          "dest": "skills/design-adventure.md"
         },
         {
-          "src": "tools/design-adventure/commands/design-adventure.md",
-          "dest": "commands/design-adventure.md"
+          "src": "tools/design-adventure/workflows/explore.md",
+          "dest": "skills/design-adventure/workflows/explore.md"
+        },
+        {
+          "src": "tools/design-adventure/agents/design-adventure.md",
+          "dest": "agents/design-adventure.md"
         },
         {
           "src": "tools/design-adventure/references/design-adventure/atmosphere-guide.md",
@@ -319,6 +323,147 @@
         }
       ]
     },
+    "qino-prose": {
+      "description": "Chronicle writing, research transmission, and prose lens application",
+      "files": [
+        {
+          "src": "tools/qino-prose/SKILL.md",
+          "dest": "skills/qino-prose.md"
+        },
+        {
+          "src": "tools/qino-prose/workflows/chapter.md",
+          "dest": "skills/qino-prose/workflows/chapter.md"
+        },
+        {
+          "src": "tools/qino-prose/workflows/survey.md",
+          "dest": "skills/qino-prose/workflows/survey.md"
+        },
+        {
+          "src": "tools/qino-prose/workflows/diagnose.md",
+          "dest": "skills/qino-prose/workflows/diagnose.md"
+        },
+        {
+          "src": "tools/qino-prose/workflows/rewind.md",
+          "dest": "skills/qino-prose/workflows/rewind.md"
+        },
+        {
+          "src": "tools/qino-prose/workflows/visual-style.md",
+          "dest": "skills/qino-prose/workflows/visual-style.md"
+        },
+        {
+          "src": "tools/qino-prose/workflows/transmit.md",
+          "dest": "skills/qino-prose/workflows/transmit.md"
+        },
+        {
+          "src": "tools/qino-prose/workflows/narrator.md",
+          "dest": "skills/qino-prose/workflows/narrator.md"
+        },
+        {
+          "src": "tools/qino-prose/workflows/wanderer.md",
+          "dest": "skills/qino-prose/workflows/wanderer.md"
+        },
+        {
+          "src": "tools/qino-prose/agents/scribe-editorial.md",
+          "dest": "agents/scribe-editorial.md"
+        },
+        {
+          "src": "tools/qino-prose/agents/scribe-prep.md",
+          "dest": "agents/scribe-prep.md"
+        },
+        {
+          "src": "tools/qino-prose/agents/scribe-prose.md",
+          "dest": "agents/scribe-prose.md"
+        },
+        {
+          "src": "tools/qino-prose/agents/relay-editorial.md",
+          "dest": "agents/relay-editorial.md"
+        },
+        {
+          "src": "tools/qino-prose/agents/relay-prose.md",
+          "dest": "agents/relay-prose.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-scribe/calibration-notes.md",
+          "dest": "references/qino-scribe/calibration-notes.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-scribe/craft.md",
+          "dest": "references/qino-scribe/craft.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-scribe/disturbance.md",
+          "dest": "references/qino-scribe/disturbance.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-scribe/foundation.md",
+          "dest": "references/qino-scribe/foundation.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-scribe/layers.md",
+          "dest": "references/qino-scribe/layers.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-scribe/principles.md",
+          "dest": "references/qino-scribe/principles.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-scribe/story-lenses.md",
+          "dest": "references/qino-scribe/story-lenses.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-scribe/visual-style.md",
+          "dest": "references/qino-scribe/visual-style.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-scribe/voice.md",
+          "dest": "references/qino-scribe/voice.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-relay/craft.md",
+          "dest": "references/qino-relay/craft.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-relay/reader-journey-guide.md",
+          "dest": "references/qino-relay/reader-journey-guide.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-relay/source-moments.md",
+          "dest": "references/qino-relay/source-moments.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-relay/student-guide.md",
+          "dest": "references/qino-relay/student-guide.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-relay/transmission-format.md",
+          "dest": "references/qino-relay/transmission-format.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-relay/voice.md",
+          "dest": "references/qino-relay/voice.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-lens/companion.md",
+          "dest": "references/qino-lens/companion.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-lens/narrator.md",
+          "dest": "references/qino-lens/narrator.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-lens/newcomer.md",
+          "dest": "references/qino-lens/newcomer.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-lens/student.md",
+          "dest": "references/qino-lens/student.md"
+        },
+        {
+          "src": "tools/qino-prose/references/qino-lens/wanderer.md",
+          "dest": "references/qino-lens/wanderer.md"
+        }
+      ]
+    },
     "qino-concept": {
       "description": "Gentle space for developing ideas through conversation (archived - use qino)",
       "archived": true,
@@ -442,7 +587,8 @@
       ]
     },
     "qino-lens": {
-      "description": "Qualities of Attention lens library",
+      "description": "Qualities of Attention lens library (archived - use qino-prose)",
+      "archived": true,
       "files": [
         {
           "src": "tools/qino-lens/commands/narrator.md",
@@ -479,7 +625,8 @@
       ]
     },
     "qino-relay": {
-      "description": "Research transmissions through the Student's voice",
+      "description": "Research transmissions through the Student's voice (archived - use qino-prose)",
+      "archived": true,
       "files": [
         {
           "src": "tools/qino-relay/agents/relay-editorial.md",
@@ -550,7 +697,8 @@
       ]
     },
     "qino-scribe": {
-      "description": "Chronicle ecosystem evolution through staged two-agent narrative",
+      "description": "Chronicle ecosystem evolution through staged two-agent narrative (archived - use qino-prose)",
+      "archived": true,
       "files": [
         {
           "src": "tools/qino-scribe/agents/scribe-editorial.md",
@@ -673,7 +821,8 @@
       ]
     },
     "qino-util": {
-      "description": "Development utilities for qino tool authors",
+      "description": "Development utilities for qino tool authors (archived - project-specific commands)",
+      "archived": true,
       "files": [
         {
           "src": "tools/qino-util/commands/qino-util/add-command.md",

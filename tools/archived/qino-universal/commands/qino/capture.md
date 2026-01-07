@@ -188,7 +188,18 @@ explore one now, or let it settle?
 
 Auto-connect immediately by adding references to the note (see step 6). Don't ask "does this connect?" — the user already told you.
 
-**WAIT** for response. If user wants to explore → invoke explore. If settle → done.
+**WAIT** for response.
+
+**If user wants to explore:** Continue the exploration yourself — don't invoke a fresh explore command. The captured note IS the alive thread. Read the concept file and go directly into working with it:
+
+1. Read the concept's `concept.md` via manifest
+2. Surface relevant context: how does this note connect to what's already there?
+3. Propose a direction: "This could deepen [section]..." or "This opens a new thread about..."
+4. Continue as explore would — propose changes, wait for confirmation
+
+This keeps the flow continuous. No arrival surface needed — we already know what's alive.
+
+**If settle:** Done.
 
 **B. If no concepts were explicitly mentioned:**
 

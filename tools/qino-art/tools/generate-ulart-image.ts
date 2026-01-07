@@ -9,7 +9,7 @@
  * Usage:
  *   generate-ulart-image --model nano-banana-pro --prompt "..." --size 16:9 --output /tmp/image.png
  *
- * @see ${PAI_DIR}/skills/art/README.md
+ * @see .claude/references/qino-art/README.md
  */
 
 import Replicate from "replicate";
@@ -23,7 +23,8 @@ import { extname, resolve } from "node:path";
 // ============================================================================
 
 /**
- * Load environment variables from ${PAI_DIR}/.env
+ * Load environment variables from .env files
+ * Checks: .claude/.env, .env (project root), ~/.claude/.env
  * This ensures API keys are available regardless of how the CLI is invoked
  */
 async function loadEnv(): Promise<void> {
@@ -202,8 +203,8 @@ ERROR CODES:
   1  General error (invalid arguments, API error, file write error)
 
 MORE INFO:
-  Documentation: ${PAI_DIR}/skills/art/README.md
-  Source: ${PAI_DIR}/skills/art/tools/generate-ulart-image.ts
+  Documentation: .claude/references/qino-art/README.md
+  Source: .claude/references/qino-art/tools/generate-ulart-image.ts
 `);
   process.exit(0);
 }
@@ -553,7 +554,7 @@ async function generateWithNanoBananaPro(
 
 async function main(): Promise<void> {
   try {
-    // Load API keys from ${PAI_DIR}/.env
+    // Load API keys from .env files
     await loadEnv();
 
     const args = parseArgs(process.argv);

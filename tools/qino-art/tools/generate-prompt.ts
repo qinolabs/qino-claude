@@ -68,8 +68,8 @@ interface PromptOutput {
 // ============================================================================
 
 const ART_AESTHETIC_PATH = resolve(
-  process.env.HOME!,
-  ".claude/Skills/CORE/art-aesthetic.md"
+  process.cwd(),
+  ".claude/references/qino-art/aesthetic.md"
 );
 
 const COLOR_HEX_MAP: Record<TokyoNightColor, string> = {

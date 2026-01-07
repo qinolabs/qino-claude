@@ -255,7 +255,7 @@ Sign "{{{assistantName}}}" small in bottom right corner in charcoal (#2D2D2D).
 ### Step 5: Execute Generation
 
 ```bash
-bun run ${PAI_DIR}/Skills/art/tools/generate-ulart-image.ts \
+bun run .claude/references/qino-art/tools/generate-ulart-image.ts \
   --model nano-banana-pro \
   --prompt "[YOUR PROMPT]" \
   --size 2K \

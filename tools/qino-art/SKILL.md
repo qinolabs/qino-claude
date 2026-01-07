@@ -1,7 +1,7 @@
 ---
 name: art
 description: |
-  Complete visual content system for PAI.
+  Complete visual content system.
   Tron-meets-Excalidraw aesthetic - dark backgrounds, neon accents, hand-drawn sketch style.
 
 # Skill Triggers
@@ -30,7 +30,7 @@ workflows:
 
 # Art Skill
 
-Complete visual content system using the **PAI Visual Aesthetic**.
+Complete visual content system using the **qino-art Visual Aesthetic**.
 
 ---
 
@@ -42,7 +42,7 @@ Complete visual content system using the **PAI Visual Aesthetic**.
 - Neon orange (warmth) + cyan (tech) accents
 - Subtle glows on key elements
 
-**Full aesthetic documentation:** `${PAI_DIR}/Skills/CORE/aesthetic.md`
+**Full aesthetic documentation:** `.claude/references/qino-art/aesthetic.md`
 
 **This is the SINGLE SOURCE OF TRUTH for all visual styling.**
 
@@ -74,7 +74,7 @@ Complete visual content system using the **PAI Visual Aesthetic**.
 **Default model:** nano-banana-pro (Gemini 3 Pro)
 
 ```bash
-bun run ${PAI_DIR}/Skills/art/tools/generate-ulart-image.ts \
+bun run .claude/references/qino-art/tools/generate-ulart-image.ts \
   --model nano-banana-pro \
   --prompt "[PROMPT]" \
   --size 2K \
@@ -89,7 +89,7 @@ bun run ${PAI_DIR}/Skills/art/tools/generate-ulart-image.ts \
 | **flux** | Maximum quality |
 | **gpt-image-1** | Different interpretation |
 
-**API keys in:** `${PAI_DIR}/.env`
+**API keys in:** `.env` (project root)
 - `REPLICATE_API_TOKEN` - Flux and Nano Banana
 - `OPENAI_API_KEY` - GPT-image-1
 - `GOOGLE_API_KEY` - Nano Banana Pro
@@ -120,4 +120,4 @@ What does user need?
 
 ---
 
-**For complete visual styling rules, ALWAYS read:** `${PAI_DIR}/Skills/CORE/aesthetic.md`
+**For complete visual styling rules, ALWAYS read:** `.claude/references/qino-art/aesthetic.md`
