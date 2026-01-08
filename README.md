@@ -992,47 +992,159 @@ By the end, you've discovered something you couldn't have named at the start.
 
 ### Attune | From Hunch to Craft
 
-You start with a hunch — an aesthetic quality like "otherworldliness" or "tension" or "aliveness." You know it when you feel it, but you can't teach it. This tool came from that kind of exploration. The calibration creates conditions where implicit knowledge can surface.
+You can feel when writing has "presence" — but you can't teach it. You notice when code is "elegant" — but the distinction evaporates when you try to explain it to someone else.
 
-**1 — Find candidates.** Search your existing work for 8-15 potential examples. Cast a wide net.
+Most of what makes creative work good is tacit — pattern recognition trained by exposure but never fully articulated. Attune creates conditions where this tacit knowledge can partially surface. Not all of it. But enough to teach, enough to protect, enough to recognize when you're drifting.
 
-**2 — Calibrate through feedback.** Go through each candidate one by one. For each: you respond, the facilitator voices an interpretation, then pauses. **The interpretive loop is where calibration happens.** The facilitator's interpretation — even when wrong — creates a surface you can push against:
+The tool follows Bateson's principle: **information is a difference that makes a difference**. Comparison does the teaching. You don't understand a quality by describing it in isolation — you understand it by feeling two examples and noticing which creates the response you're after.
 
-> "This feels self-important."
->
-> *"So the quality needs to earn its weight?"*
->
-> "Not quite. The depth should come from the material itself, not from how it's presented."
+#### The interpretive loop
 
-The distinction "depth from material vs. presentation" wouldn't emerge from the initial response alone. The wrong interpretation created the condition for refinement. Distinctions accumulate:
+Most feedback tools work like extraction: present stimulus, receive response, extract pattern. Attune works like dialogue.
+
+After you respond, the facilitator voices an interpretation — then pauses. That interpretation becomes a surface you can push against. The facilitator might be wrong. That's generative:
 
 ```
-| ✓ Works                            | ✗ Doesn't work                    |
-|------------------------------------|-----------------------------------|
-| External observation, unremarked   | Character explains the phenomenon |
-| Pattern across multiple observers  | Single character's perception     |
-| Points to *elsewhere*              | Ties to local mystery             |
+(qino)  ┌─────────────────────────────────────────────────────────────┐
+        │ candidate 3                                                 │
+        │                                                             │
+        │ "The Mender looked at the wanderer's hands for a long      │
+        │  moment. Then she handed them another stack of skins."      │
+        │                                                             │
+        │ does this have the quality you're calibrating?              │
+        └─────────────────────────────────────────────────────────────┘
+
+(you)   yes — there's something in the gap. she noticed but didn't say anything.
+
+(qino)  so the quality lives in withheld response —
+        observation that doesn't convert to speech?
+
+        ·
+
+(you)   not quite. it's more... the response IS the silence.
+        handing them more work is the acknowledgment.
+
+(qino)  ∴ action as acknowledgment — response without verbalization
+
+        ┌─────────────────────────────────────────────────────────────┐
+        │ distinction emerged                                         │
+        │                                                             │
+        │ ✓ works: response through action, not speech                │
+        │ ✗ fails: observation that stays observation                 │
+        └─────────────────────────────────────────────────────────────┘
+
+        ready for the next candidate, or stay with this one?
 ```
 
-**3 — Build evaluation index.** You now know what _doesn't_ work. The failures point toward what's missing. So you search for language that might address those gaps — literary terms (numinous, sfumato, negative space), character archetypes who embody the quality (what makes Tom Bombadil work?), techniques from other domains (visual art, music, sculpture). Each source gets documented: what it is, why it's relevant, how it might guide execution. The index becomes a toolkit for transformation.
+The facilitator's interpretation was wrong — "withheld response" wasn't quite it. But that wrongness created the condition for refinement. "Response IS the silence" wouldn't have emerged from the initial reaction alone.
 
-**4 — Transform iteratively.** Take a failed example. Choose a source from the index that seems most likely to address _that specific failure_. Transform. Present for feedback.
+#### Space as architecture
 
-When a fix fails, your feedback reveals what you actually want. "Sounds like ignoring, not mystery" — that rejection teaches you something about your own aesthetic. You try a different source, now informed by what you just learned. By the time a transformation works, you understand _why_ it works — not just that it does.
+The `·` is a pause — but it's not decoration. It's load management.
 
-Some examples won't transform. That's data too. Note what makes them intractable.
+Without space, you hold three things at once: your response to the previous candidate, the facilitator's interpretation, and the new candidate demanding attention. To refine the interpretation, you'd have to reach *back* through new material. Most people don't — the cognitive cost is too high.
 
-**5 — Formulate guidance.** The output is a single document: **trace first, synthesis at end**. The trace preserves the exchanges that produced your distinctions — reasoning you can return to. The synthesis organizes for reference.
+Space is the invitation: "your turn. If there's more, say it now." If you don't push, close enough. If you do, the refinement happens in the open.
+
+#### Building distinctions
+
+As you work through candidates, patterns accumulate:
 
 ```
-calibrations/otherworldliness/
+(qino)  ┌─────────────────────────────────────────────────────────────┐
+        │ distinctions so far                                         │
+        │                                                             │
+        │ ✓ works                        ✗ doesn't work               │
+        │ ─────────────────────────────  ────────────────────────     │
+        │ response through action        observation stays internal   │
+        │ world notices without comment  character explains seeing    │
+        │ gap stays open                 gap gets filled with meaning │
+        └─────────────────────────────────────────────────────────────┘
+
+        candidate 7 of 12
+
+        ┌─────────────────────────────────────────────────────────────┐
+        │ "The ferryman counted the coins twice. He didn't say        │
+        │  anything about the third one — the one that wasn't         │
+        │  from anywhere he recognized."                              │
+        └─────────────────────────────────────────────────────────────┘
+
+        does this qualify?
+```
+
+#### Transformation phase
+
+After calibration, you know what doesn't work. Now the tool helps you fix it:
+
+```
+(qino)  ┌─────────────────────────────────────────────────────────────┐
+        │ failed candidate for transformation                         │
+        │                                                             │
+        │ original:                                                   │
+        │ "The Keeper noticed the wanderer's strange coin and         │
+        │  wondered where they had come from."                        │
+        │                                                             │
+        │ failure mode: observation stays internal                    │
+        └─────────────────────────────────────────────────────────────┘
+
+        trying source: "negative space" — what's left out carries meaning
+
+        ┌─────────────────────────────────────────────────────────────┐
+        │ transformation attempt 1                                    │
+        │                                                             │
+        │ "The Keeper held the coin up to the light. Set it down      │
+        │  on the far side of the counter, away from the others."     │
+        └─────────────────────────────────────────────────────────────┘
+
+        does this land?
+
+(you)   yes — the separation IS the response. she doesn't need to
+        say "this is strange."
+
+(qino)  ∴ transformation worked
+
+        ┌─────────────────────────────────────────────────────────────┐
+        │ technique extracted                                         │
+        │                                                             │
+        │ source: negative space                                      │
+        │ technique: spatial separation as judgment                   │
+        │ principle: let placement carry meaning that speech would    │
+        │            diminish                                         │
+        └─────────────────────────────────────────────────────────────┘
+
+        next failed candidate, or see the full technique index?
+```
+
+#### What you end with
+
+A calibration document with two parts: **trace first, synthesis at end**.
+
+Why trace first? Tables compress. They lose which example prompted which distinction, the wrong interpretations that reveal what you were *not* saying, the refinement path, the texture of response.
+
+When you revisit the calibration — to extend it, to teach someone else, to understand why a new case doesn't fit — you need the reasoning that produced those distinctions. The trace preserves reasoning-in-motion. The synthesis extracts for reference. Both are needed.
+
+**Trace** answers: "How did we learn this?"
+**Synthesis** answers: "What did we learn?"
+
+```
+calibrations/unspoken-recognition/
 ├── calibration.md      # trace + synthesis
-└── examples/           # the corpus tested against
+└── examples/           # the corpus you tested against
 ```
 
-What you couldn't explain, you can now teach. What you could only feel, you can now protect.
+#### Downstream
 
-_(The [qino Lens](#qino-lens--ways-of-seeing) section is a product of this process — the Wanderer's Lens emerged from an Attune calibration.)_
+Calibrated qualities become reference material for other tools:
+
+- **qino Scribe** — what makes otherworldliness work in chronicles
+- **qino Lens** — named sensitivities that become perceptual modes
+- **Design Adventure** — qualities the World persona embodies
+
+Attune doesn't implement the qualities. It discovers and articulates them. Other tools carry them forward.
+
+What you could only feel, you can now teach. What you couldn't explain, you can now protect.
+
+_(The [qino Lens](#qino-lens--ways-of-seeing) section is a product of this process — the Wanderer's Lens emerged from an Attune calibration on "embodied presence.")_
 
 #### Epistemological Signature
 
