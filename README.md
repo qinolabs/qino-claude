@@ -228,7 +228,7 @@ Each repository in the qino ecosystem tells its own story.
 
 > _Loose pages everywhere. Half-finished questions. The wanderer turned one over: the same handwriting on both sides, arguing with itself._
 
-**[qino-conversations](https://github.com/qinolabs/qino-conversations)** — epistemological signature extraction.
+**[qino-lingo](https://github.com/qinolabs/qino-lingo)** — epistemological signature extraction.
 
 > _Someone had been forging the wanderer's handwriting. The copies were good — the letters matched. But something was off. The wanderer studied both, trying to name what the forger had missed. The answer wasn't in the shapes. It was in the hesitations._
 
@@ -1036,7 +1036,7 @@ _(The [qino Lens](#qino-lens--ways-of-seeing) section is a product of this proce
 
 #### Epistemological Signature
 
-**[qino-conversations](https://github.com/qinolabs/qino-conversations)** — capturing cognitive style so Claude can work more autonomously while still moving the way you move.
+**[qino-lingo](https://github.com/qinolabs/qino-lingo)** — capturing cognitive style so Claude can work more autonomously while still moving the way you move.
 
 Working with Claude daily, sessions accumulate. Those conversations hold a cognitive fingerprint — not just how problems get solved, but *biases*: what connections you're drawn to, what interspaces you step into and let unfold, how you abduct toward the pattern that connects rather than proving from first principles. Your hesitations. Your gut.
 

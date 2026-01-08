@@ -2,7 +2,7 @@
 
 **Voice:** Active work, but still companion-like. "Let's look at this together."
 
-**Agent:** concept-agent
+**Agent:** concept
 
 **Reference:** Read `references/qino-concept/design-philosophy.md` — Part I for universal principles (especially sections 1-2). Read `references/qino-concept/manifest-project-spec.md` — Sections 5-6 for note structure and reference specification.
 
@@ -113,6 +113,41 @@ During any explore session, the user may signal that something reaches beyond th
 ## Single-Concept Mode
 
 **Purpose:** Work with one concept — deepen, expand, restructure, or inhabit as needed.
+
+### Momentum Check (First)
+
+Before following the standard flow, check your prompt for momentum:
+
+**If MOMENTUM block exists or prompt contains rich, specific vision:**
+
+1. Read the concept file (steps 1-2 below)
+2. **Skip the arrival surface and alive-thread question**
+3. Acknowledge briefly what the user has surfaced
+4. Go directly to proposing integration:
+   - How does their vision connect to what's already in the concept?
+   - What sections would this update or expand?
+   - Propose concrete changes
+5. **WAIT** for response, then continue with normal workflow (confirmations, edits)
+
+**Example momentum flow:**
+```
+[After reading concept.md]
+
+The terminal playground vision — this lands in several places:
+
+Primary Surfaces could grow a new entry:
+  "Interactive /tools page — terminal simulation with guided steps,
+   demonstrating the ecology in action"
+
+This also touches Glowing Connections — the idea that process
+becomes artifact, that working itself is publishable.
+
+Want me to draft these additions?
+```
+
+**If NO momentum** — follow the standard flow below.
+
+---
 
 If no concept id is provided:
 

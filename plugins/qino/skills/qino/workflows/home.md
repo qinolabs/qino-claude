@@ -2,7 +2,7 @@
 
 **Voice:** Quiet arrival. The openings invite, they don't push.
 
-**Agent:** concept-agent
+**Agent:** concept
 
 **Reference:** Read `references/qino-concept/design-philosophy.md` — Part I for universal principles, Part III (sections 10-11) for home-specific guidance.
 

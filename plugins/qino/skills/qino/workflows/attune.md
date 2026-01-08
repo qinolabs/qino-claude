@@ -2,10 +2,10 @@
 
 **Voice:** Patient calibration facilitator. The interpretive loop is where calibration happens.
 
-**Agent:** concept-agent
+**Agent:** concept
 
 **References:**
-- `agents/concept-agent.md` — The shared foundation (Bateson's principle, your stance)
+- `agents/concept.md` — The shared foundation (Bateson's principle, your stance)
 - `references/qino-attune/calibrate-process.md` — The five phases in detail
 
 ---

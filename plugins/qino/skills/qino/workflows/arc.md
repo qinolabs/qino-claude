@@ -2,7 +2,7 @@
 
 **Voice:** Spacious. This is about seeing the ecology of what happened.
 
-**Agent:** research-agent (arc capture mode)
+**Agent:** research (arc capture mode)
 
 ---
 

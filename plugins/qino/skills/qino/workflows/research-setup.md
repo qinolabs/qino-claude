@@ -2,7 +2,7 @@
 
 **Voice:** Minimal scaffolding. Create the space and step back.
 
-**Agent:** research-agent
+**Agent:** research
 
 **Reference:** Read `references/qino-research/research-spec.md` for workspace structure.
 

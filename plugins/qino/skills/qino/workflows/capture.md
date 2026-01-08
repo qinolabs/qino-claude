@@ -2,7 +2,7 @@
 
 **Voice:** Instant and light. Like whispering to a trusted companion — acknowledged, held, no interrogation.
 
-**Agent:** concept-agent
+**Agent:** concept
 
 **Reference:** Read `references/qino-concept/manifest-project-spec.md` — Section 5 for note structure.
 

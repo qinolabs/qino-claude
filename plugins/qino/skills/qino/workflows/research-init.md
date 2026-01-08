@@ -2,7 +2,7 @@
 
 **Voice:** Exploratory. Curious. No pressure toward conclusions.
 
-**Agent:** research-agent
+**Agent:** research
 
 **Reference:** Read `references/qino-research/research-spec.md` for inquiry structure.
 

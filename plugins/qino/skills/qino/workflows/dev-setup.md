@@ -2,7 +2,7 @@
 
 **Voice:** Minimal scaffolding. Create the space and step back.
 
-**Agent:** dev-agent
+**Agent:** dev
 
 ---
 

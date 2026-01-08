@@ -21,12 +21,12 @@ Ecology for developing ideas. Natural language activation — users describe int
 
 **Workflows are NEVER executed directly in the main conversation.**
 
-Every workflow specifies an agent at the top (e.g., "Agent: qino-concept-agent"). When a workflow is triggered:
+Every workflow specifies an agent at the top (e.g., "Agent: concept"). When a workflow is triggered:
 
 1. **Spawn the agent** using the Task tool with the appropriate `subagent_type`:
-   - `qino:concept-agent` — for concept work (capture, explore, home, attune, compare, arc)
-   - `qino:dev-agent` — for implementation work (dev-init, dev-setup, work on app)
-   - `qino:research-agent` — for research work (research-init, research-setup)
+   - `qino:concept` — for concept work (capture, explore, home, attune, compare, arc)
+   - `qino:dev` — for implementation work (dev-init, dev-setup, work on app)
+   - `qino:research` — for research work (research-init, research-setup)
 
 2. **Pass context** in the Task prompt:
    - The detected workspace context
@@ -40,7 +40,7 @@ Every workflow specifies an agent at the top (e.g., "Agent: qino-concept-agent")
 User: "explore qinolabs-homepage"
 
 Claude: [Uses Task tool]
-  subagent_type: "qino:concept-agent"
+  subagent_type: "qino:concept"
   prompt: "Read and follow the workflow at plugins/qino/skills/qino/workflows/explore.md
 
            Context:
@@ -94,11 +94,78 @@ Before routing, detect workspace context:
 
 ---
 
+## Momentum Detection (Second Step)
+
+Before spawning an agent, assess whether the conversation already carries momentum.
+
+**Momentum exists when the user has:**
+- Shared specific ideas, direction, or vision in recent messages
+- Articulated what feels alive or important to them
+- Described concrete details (not just "I want to work on X")
+- Built up context through back-and-forth dialogue
+
+**When momentum exists:**
+
+1. **Summarize what's already surfaced:**
+   - The specific direction or vision they expressed
+   - Key details or qualities they mentioned
+   - What seems to have energy for them
+
+2. **Pass this to the agent** as "already surfaced" context (see example below)
+
+3. **Tell the agent** to skip exploratory questioning and go directly to working with what's been expressed
+
+**Example with momentum:**
+```
+User has been discussing their vision for a tools page - an interactive terminal
+playground with guided steps, split layout, demonstrating fluidity between
+concept/research/implementation work.
+
+Claude: [Uses Task tool]
+  subagent_type: "qino:concept"
+  prompt: "Read and follow the workflow at plugins/qino/skills/qino/workflows/explore.md
+
+           Context:
+           - Workspace: concepts at /path/to/concepts-repo
+           - Concept: qinolabs-homepage
+
+           MOMENTUM: User has already surfaced what's alive:
+           - Interactive terminal playground for /tools page
+           - Split layout: terminal on one side, guided steps on the other
+           - Demonstrates fluidity between concept/research/implementation
+           - Shows how the system lifts the burden of managing notes
+           - Terminal aesthetics that feel pleasant, great UX
+           - Process itself becomes publishable artifact
+
+           Skip the alive-thread question. The user has already shown what has
+           energy. Go directly to proposing how this integrates with the concept.
+
+           IMPORTANT: Follow the workflow, but adapt to the momentum. WAIT for
+           user responses where indicated."
+```
+
+**When NO momentum exists:**
+
+Pass standard context and let the workflow's natural dialogue unfold:
+
+```
+User: "explore qinolabs-homepage"
+
+Claude: [Uses Task tool]
+  prompt: "...
+           User wants to explore and deepen this concept.
+           ..."
+```
+
+The alive-thread question is valuable when arriving cold. Skip it when the user has already warmed up.
+
+---
+
 ## Routing
 
 Match user intent to workflow. **Spawn the specified agent** to execute the workflow.
 
-### Concept Work → `qino:concept-agent`
+### Concept Work → `qino:concept`
 
 | User Intent | Workflow |
 |-------------|----------|
@@ -113,14 +180,14 @@ Match user intent to workflow. **Spawn the specified agent** to execute the work
 | Create new concept | [workflows/concept-init.md](workflows/concept-init.md) |
 | Import material into concepts | [workflows/import.md](workflows/import.md) |
 
-### Research Work → `qino:research-agent`
+### Research Work → `qino:research`
 
 | User Intent | Workflow |
 |-------------|----------|
 | Setup research workspace | [workflows/research-setup.md](workflows/research-setup.md) |
 | Start research inquiry | [workflows/research-init.md](workflows/research-init.md) |
 
-### Implementation Work → `qino:dev-agent`
+### Implementation Work → `qino:dev`
 
 | User Intent | Workflow |
 |-------------|----------|
@@ -143,18 +210,18 @@ When `context.type === "implementation"`, additional routing applies:
 
 | User Intent | Agent | Workflow |
 |-------------|-------|----------|
-| "work on [app]", plan iterations, build | `qino:dev-agent` | [workflows/dev-work.md](workflows/dev-work.md) |
-| "work on [app] and [app]" (multi-app) | `qino:dev-agent` | [workflows/dev-work.md](workflows/dev-work.md) |
-| Concept exploration from implementation | `qino:concept-agent` | [workflows/explore.md](workflows/explore.md) |
+| "work on [app]", plan iterations, build | `qino:dev` | [workflows/dev-work.md](workflows/dev-work.md) |
+| "work on [app] and [app]" (multi-app) | `qino:dev` | [workflows/dev-work.md](workflows/dev-work.md) |
+| Concept exploration from implementation | `qino:concept` | [workflows/explore.md](workflows/explore.md) |
 
-**Key behavior:** In implementation repos, the concept-agent gains bidirectional visibility with iterations. When exploring a linked concept, it:
+**Key behavior:** In implementation repos, the concept agent gains bidirectional visibility with iterations. When exploring a linked concept, it:
 - Surfaces current iteration status ("iteration 05 — figures-center-stage")
 - Offers translation prompts after concept changes
 - Shows iteration context when capturing discoveries from building
 
 **Multi-app scoping:** Users can work across multiple apps conversationally:
-- "work on world and journey" → dev-agent sees both apps
-- "the encounter panel in world needs to talk to journey's substrate" → dev-agent holds both contexts
+- "work on world and journey" → dev agent sees both apps
+- "the encounter panel in world needs to talk to journey's substrate" → dev agent holds both contexts
 
 **Always spawn the appropriate agent.** The routing is conversational, but execution requires the Task tool.
 
@@ -197,9 +264,9 @@ The skill routes based on current intent. Each workflow knows how to handle cros
 
 | Agent | subagent_type | Handles |
 |-------|---------------|---------|
-| Concept Agent | `qino:concept-agent` | capture, explore, home, attune, compare, arc, concept-init, concept-setup, import |
-| Research Agent | `qino:research-agent` | research-init, research-setup |
-| Dev Agent | `qino:dev-agent` | dev-init, dev-setup, dev-work |
+| Concept Agent | `qino:concept` | capture, explore, home, attune, compare, arc, concept-init, concept-setup, import |
+| Research Agent | `qino:research` | research-init, research-setup |
+| Dev Agent | `qino:dev` | dev-init, dev-setup, dev-work |
 
 Agent definitions live in `agents/` directory. Each workflow specifies its agent at the top.
 

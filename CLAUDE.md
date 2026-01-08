@@ -60,9 +60,9 @@ qino-claude/
 **Skill**: Routes natural language to appropriate workflow based on intent and workspace context.
 
 **Agents**:
-- `concept-agent` — Concept exploration, capture, home, attune, compare, arc
-- `dev-agent` — Implementation work, iterations
-- `research-agent` — Research inquiries, calibrations, experiments
+- `concept` — Concept exploration, capture, home, attune, compare, arc
+- `dev` — Implementation work, iterations
+- `research` — Research inquiries, calibrations, experiments
 
 **Key workflows**: `home`, `explore`, `capture`, `test`, `attune`, `compare`, `arc`, `dev-init`, `research-init`
 
