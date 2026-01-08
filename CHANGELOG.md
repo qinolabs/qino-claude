@@ -10,6 +10,28 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [1.0.2] - 2026-01-08
+
+### qino
+
+#### Added
+
+- **Momentum detection** — skill now detects when conversation already carries energy and direction; passes MOMENTUM block to agents with what user has already surfaced; agents skip alive-thread questioning when momentum exists
+- **Momentum check in explore workflow** — before standard flow, explore checks for momentum and goes directly to proposing integration when user has already shown what's alive
+
+#### Changed
+
+- **Agent naming simplified** — dropped `-agent` suffix for cleaner invocation: `qino:concept`, `qino:dev`, `qino:research` (was `qino:concept-agent`, etc.)
+- **Agent files renamed** — `concept-agent.md` → `concept.md`, `dev-agent.md` → `dev.md`, `research-agent.md` → `research.md`
+
+### Documentation
+
+#### Changed
+
+- **README and CLAUDE.md** — updated for plugins-based architecture
+
+---
+
 ## [1.0.1] - 2026-01-07
 
 ### qino
