@@ -964,31 +964,109 @@ _([First arc](https://github.com/qinolabs/qino-research/blob/main/arcs/2025-12-2
 
 ### Compare | The Parallel Mirror
 
-You have two examples from different sources — different chronicles, different scribe versions, different approaches. Compare helps you find what makes them land differently.
+You have two versions of something — chapters, outputs, designs. You know one is better, but you can't say why. Two bottlenecks stop you:
 
-**1 — Surface initial impressions.** Questions like "what stays with you after reading this section?" and "At what point did your attention start to drift?" Each surfaces something. The structure disappears into conversation.
+**Volume** — You can't hold two chapters in working memory at once. You need someone who holds the whole, navigates strategically, and presents what's worth comparing side by side.
 
-**2 — Find the parallel.** You share what you liked about one example. Based on that, qino finds something in the _other_ source with the same structural shape. It presents both:
+**Expertise** — Evaluating prose requires craft knowledge. Stakes, tension, character texture, reader entry — these are dimensions you might not think to look at. The framework lends expertise you don't have.
+
+Compare solves both. You just respond. The facilitator does the navigation. The framework does the heavy lifting. By the end, you've perceived something you couldn't have seen on your own.
+
+#### Fresh reading first
+
+Before framework, before analysis — gut response:
 
 ```
-you liked
-  "The river carried news of her before she arrived."
-  Observation without comment. World notices wanderer.
+(qino)  I've read both versions.
 
-parallel from B
-  "Seren watched from the doorway, cataloguing."
-  Same structure — external observer, no commentary.
+        Before we look at specifics — what stays with you?
+        What's your felt sense of how they differ?
 
-─────
+(you)   A feels more grounded. B has more happening but I drifted.
 
-How do these land differently?
+(qino)  ∴ A: grounded, held attention
+        ∴ B: more activity, but attention drifted
+
+        Let's find where that difference lives.
 ```
 
-**3 — Discover what the difference reveals.** The parallel _looks_ like it should work the same way — but if it doesn't, that reveals something deeper. Not just a difference between two passages, but a difference between the two sources they came from. The chronicles have different underlying logics. The parallel that "should" work but doesn't is where you discover that.
+You don't construct analysis. You respond. The framework makes that response meaningful.
 
-**4 — Sharpen language through responsive mirroring.** You say "A feels personal, B feels like adventure but no pull." The tool reflects back: "A creates _identification_. B starts as _adventure_ but the engagement doesn't convert into investment." Now you have words to build on.
+#### The parallel mirror
 
-By the end, you've discovered something you couldn't have named at the start.
+When you notice something working in one version, the facilitator finds something in the other with the same structural shape — same beat, same role, same type of element.
+
+```
+(qino)  ┌─────────────────────────────────────────────────────────────┐
+        │ you liked (from A)                                          │
+        │                                                             │
+        │ "The river carried news of her before she arrived."         │
+        │                                                             │
+        │ Observation without comment. World notices wanderer.        │
+        └─────────────────────────────────────────────────────────────┘
+
+        ┌─────────────────────────────────────────────────────────────┐
+        │ parallel from B                                             │
+        │                                                             │
+        │ "Seren watched from the doorway, cataloguing."              │
+        │                                                             │
+        │ Same structure — external observer, no commentary.          │
+        └─────────────────────────────────────────────────────────────┘
+
+        These occupy the same position. How do they land differently?
+
+(you)   The river one feels like the world has its own life.
+        Seren watching feels like... surveillance? Character-driven.
+
+(qino)  So the difference is agency — world as participant vs.
+        world as backdrop for character perception?
+
+        ·
+```
+
+The parallel *looks* like it should work the same way. When it doesn't, that reveals something deeper — not just a difference between passages, but a difference between the underlying logics of the two versions.
+
+#### Framework as scaffold
+
+You might not know to look at "reader entry" or "stakes distribution." But when the facilitator surfaces a dimension, you recognize what you're sensing:
+
+```
+(qino)  Let me try a framework lens: reader entry.
+
+        In A, the reader enters through environment — the river,
+        the news traveling. They're placed in the world first.
+
+        In B, the reader enters through Seren's perception.
+        They're placed in a character's head first.
+
+        Does that match your "grounded vs. drifting" sense?
+
+(you)   Yes — when I enter through the world, I'm there.
+        When I enter through a character watching, I'm watching
+        someone watch. One layer removed.
+```
+
+The framework lends expertise. You don't need to know craft vocabulary — you just respond, and the dimension helps you name what you felt.
+
+#### When something worth calibrating emerges
+
+A compare session may surface a quality worth developing — "something about how presence is handled" or "the difference between world-agency and character-agency."
+
+That's a handoff to [Attune](#attune--from-hunch-to-craft):
+
+```
+(qino)  We keep returning to this: world as participant vs. backdrop.
+        This might be worth calibrating — turning it into teachable craft.
+
+        I can carry what we've found into an attune session:
+        - The quality: "world agency"
+        - Contrasting passages: what we've collected
+        - Initial distinctions: world notices vs. character perceives
+
+        Want to refine this into something you can teach and protect?
+```
+
+Compare surfaces. Attune sharpens. Each stands alone, but the flow enriches both.
 
 ### Attune | From Hunch to Craft
 
