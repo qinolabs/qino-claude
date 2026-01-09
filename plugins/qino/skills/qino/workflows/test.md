@@ -20,7 +20,92 @@ The test applies to whatever the user brings:
 - An exploration-id (research context) → test that exploration
 - A file path → test that artifact
 - Context from conversation → test that idea or feature
+- Decision context → test options against the concept (see Decision Context Mode)
 - No argument → prompt for target
+
+---
+
+## Decision Context Mode
+
+**When the user arrives with a decision to make** — options to evaluate, approaches to compare, a choice that needs grounding — the test workflow adapts.
+
+**Signals:**
+- "help inform the decision"
+- "which approach..."
+- "I'm deciding between..."
+- Conversation context contains explicit options/alternatives
+- MOMENTUM block describes a decision with multiple paths
+
+**How this differs from single-concept mode:**
+
+In single-concept mode, the user notices *through* the concept. The concept is the lens.
+
+In decision context mode, the concept provides the *grounding* — the test is applied concretely to each option. The user sees how each option fares against the ecology test.
+
+**Steps for decision context:**
+
+1. Read the concept (as in single-concept mode).
+
+2. Identify the options from conversation context or MOMENTUM block.
+
+3. Discern which ecology applies (as in single-concept mode).
+
+4. **Ground the test in the concept.** Find the key insight or principle that the test will reveal:
+   > "From the concept:
+   > '[Extract the relevant principle — the sentence or framing that makes the ecology test concrete]'
+   >
+   > The [ecology] test: [test question]"
+
+5. **Apply the test to each option.** Walk through each alternative, showing what the test reveals:
+   > "[Option A]:
+   > [What the test reveals about this option — concrete, specific]
+   >
+   > [Option B]:
+   > [What the test reveals about this option — concrete, specific]
+   >
+   > [Continue for each option...]"
+
+6. **Surface the pattern:**
+   > "Holding the [ecology] test against these options:
+   >
+   > [Brief synthesis — which approaches make the [key quality] visible vs. hidden/blurred/flattened]"
+
+7. **Invite noticing:**
+   > "What do you notice?"
+
+   **WAIT** for response.
+
+8. Continue with distillation and capture as in single-concept mode (steps 8-12).
+
+**Example (figure ecology, embedding decision):**
+
+> From the concept:
+> "The figure isn't at the origin. The figure is the thread A→B→C reveals."
+>
+> The figure test: Can this figure be returned to and re-entered and still feel like "the same thing," even though it has changed?
+>
+> ---
+>
+> **Most recent embedding:**
+> You return to the figure. You meet who they are now. The thread is invisible.
+> Does it feel like the same thing? Only if you trust that "now" carries "then" implicitly.
+>
+> **Composite (averaged):**
+> You return to the figure. You meet a blur of all encounters. The thread is flattened.
+> Does it feel like the same thing? Possibly not — it's no particular moment.
+>
+> **LLM-synthesized essence:**
+> You return to the figure. You meet an interpreted figure — something like "strategic patience."
+> Does it feel like the same thing? Possibly more so — the synthesis identifies what persists.
+>
+> ---
+>
+> Holding figure ecology against these options:
+> - Most recent: hides the pattern
+> - Composite: blurs the pattern
+> - Synthesized essence: names the pattern
+>
+> What do you notice?
 
 ---
 
@@ -82,22 +167,44 @@ For `research`:
 
    **WAIT** for confirmation.
 
-6. Once ecology is confirmed, hold the test as a frame:
-   > "Holding that question — what do you notice?"
+6. **Ground the test in the concept.** Once ecology is confirmed, surface the concept content through that ecology's lens:
+
+   a. Find the key insight, principle, or framing in the concept that makes this ecology test concrete.
+
+   b. Present it alongside the test:
+   > "From the concept:
+   > '[The relevant principle or framing — 1-3 sentences that ground the test]'
+   >
+   > The test: [ecology test question]"
+
+   **Why this matters:** The user needs material to notice *from*. An abstract test question without concept content leaves nothing to engage with. The grounding makes the test workable.
+
+   **Signals to surface for each ecology:**
+   - **user** → timing, rhythm, how the concept touches daily life
+   - **gesture** → interaction patterns, movements, touch points
+   - **figure** → identity statements, what persists, boundaries
+   - **relation** → connections, tensions, flows between elements
+   - **world** → environmental constraints, coherence principles
+   - **echo** → response patterns, returns, transformations
+   - **fabric** → accumulation patterns, recurring motifs
+   - **infrastructure** → support structures, hidden dependencies
+
+7. Hold the question:
+   > "What do you notice?"
 
    **WAIT** for the user's noticing.
 
-7. When the user shares what they notice, distill to essence:
+8. When the user shares what they notice, distill to essence:
    ```
    ∴ [essence — 5-10 words capturing what was noticed]
    ```
 
-8. Offer the capture choice:
+9. Offer the capture choice:
    > "Capture this, or let it inform without persisting?"
 
    **WAIT** for response.
 
-9. **If captured:** Create a note with ecology reference.
+10. **If captured:** Create a note with ecology reference.
 
    a. Generate note id from essence (lowercase, hyphenated)
 
@@ -150,7 +257,7 @@ For `research`:
    }
    ```
 
-10. After capturing (or not), offer continuation:
+11. After capturing (or not), offer continuation:
     ```
     another ecology, or step back?
 
@@ -160,7 +267,7 @@ For `research`:
                         "attune [quality]" if a quality is emerging
     ```
 
-11. **If not captured:**
+12. **If not captured:**
     > "The noticing happened. It informed."
 
     Then offer continuation as above.
@@ -207,3 +314,5 @@ Note: Ecology test patterns across concepts are now surfaced in home (the "notic
 - Make the user justify their noticing
 - Skip the discernment step (sensing which ecology)
 - Force capture — letting it inform is equally valid
+- **Ask "what do you notice?" without first grounding in concept content** — the user needs material to notice *from*
+- **Skip decision context mode when options exist** — if the user arrives with alternatives to evaluate, apply the test concretely to each option

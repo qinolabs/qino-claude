@@ -1,14 +1,17 @@
 ---
 name: qino
 description: |
-  Ecology for developing ideas — concepts, research, implementation.
-  Captures thoughts, explores concepts, orients in workspaces.
-  Use when: capturing thoughts, holding observations, exploring concepts, working with ideas,
-  arriving at workspace, orienting, seeing the ecology, understanding what qino offers,
-  starting research, beginning inquiry, beginning implementation,
-  testing through ecology, comparing artifacts, attuning to qualities, capturing emergence arcs.
-  Context-aware across concepts, research, and implementation workspaces.
-  Natural language companion — describe your intent, not commands.
+  Develops ideas from concept to implementation. Routes to specialized agents.
+
+  Use when the user says:
+  - "what's next for [project]", "continue [app]", "work on [app]", "build [feature]",
+    "implement [feature]", "plan the iteration", "what should I build next" → dev agent
+  - "explore [concept]", "go deeper into [idea]", "capture this thought", "hold this",
+    "where am I", "what's here", "test through ecology", "compare these" → concept agent
+  - "start research on [topic]", "investigate [question]", "begin inquiry" → research agent
+
+  Also activates for: arriving at a workspace, orienting, seeing what qino offers.
+  Natural language — describe intent, not commands.
 ---
 
 # qino Skill
@@ -144,6 +147,36 @@ Claude: [Uses Task tool]
            user responses where indicated."
 ```
 
+**Example with decision context (test workflow):**
+```
+User is deciding between embedding approaches for the qino-journey concept.
+The conversation contains specific options being evaluated.
+
+Claude: [Uses Task tool]
+  subagent_type: "qino:concept"
+  prompt: "Read and follow the workflow at plugins/qino/skills/qino/workflows/test.md
+
+           Context:
+           - Workspace: concepts at /path/to/concepts-repo
+           - Concept: qino-journey
+
+           DECISION CONTEXT: User is choosing between embedding approaches:
+           - Most recent: only the latest encounter embedding
+           - Composite (averaged): mean of all encounter embeddings
+           - User-selected: explicit version selection
+           - LLM-synthesized essence: interpreted figure summary
+           - Relational embedding: the relationship, not the figure
+           - Trajectory embedding: direction of relationship
+
+           This is decision context mode. After discerning the ecology:
+           1. Ground the test in the concept (find relevant principle)
+           2. Apply the test concretely to each option
+           3. Surface what the test reveals about each approach
+
+           IMPORTANT: Follow the workflow step by step. WAIT for user responses
+           where indicated."
+```
+
 **When NO momentum exists:**
 
 Pass standard context and let the workflow's natural dialogue unfold:
@@ -165,6 +198,35 @@ The alive-thread question is valuable when arriving cold. Skip it when the user 
 
 Match user intent to workflow. **Spawn the specified agent** to execute the workflow.
 
+### Quick Route (Agent Selection)
+
+**CRITICAL:** Select agent FIRST based on user language, THEN find the workflow.
+
+| User says... | Agent |
+|--------------|-------|
+| "what's next", "continue", "work on [app]", "build", "implement", "plan iteration" | `qino:dev` |
+| "what's next for [app]", "what should I build", "next steps for [project]" | `qino:dev` |
+| "explore", "go deeper", "capture", "hold this", "where am I", "test", "compare" | `qino:concept` |
+| "research", "investigate", "inquiry", "study" | `qino:research` |
+
+**Implementation signals (→ `qino:dev`):**
+- Any app name mentioned with action intent: "qino-world", "qino-journey", "qino-frame"
+- Building/coding language: "add feature", "fix bug", "implement", "create component"
+- Progress language: "what's next", "continue", "move forward", "next iteration"
+- Planning language: "plan", "scope", "break down", "what needs to be done"
+
+**Concept signals (→ `qino:concept`):**
+- Exploration language: "explore", "deepen", "what is", "understand"
+- Arrival language: "where am I", "what's here", "show me"
+- Capture language: "hold this", "note", "capture"
+- Testing language: "test through ecology", "notice", "inform the decision"
+
+**Research signals (→ `qino:research`):**
+- Investigation language: "research", "investigate", "study", "inquiry"
+- Question framing: "how does X work", "what are the approaches to"
+
+---
+
 ### Concept Work → `qino:concept`
 
 | User Intent | Workflow |
@@ -173,6 +235,7 @@ Match user intent to workflow. **Spawn the specified agent** to execute the work
 | Capture thought, "hold this", "note: ..." | [workflows/capture.md](workflows/capture.md) |
 | Explore, "go deeper", "work with [concept]", ideate, brainstorm | [workflows/explore.md](workflows/explore.md) |
 | Test, "notice through ecology" | [workflows/test.md](workflows/test.md) |
+| Test with decision, "help inform the decision" | [workflows/test.md](workflows/test.md) (decision context mode) |
 | Attune, "calibrate [quality]" | [workflows/attune.md](workflows/attune.md) |
 | Compare artifacts | [workflows/compare.md](workflows/compare.md) |
 | Capture emergence, "what emerged" | [workflows/arc.md](workflows/arc.md) |
@@ -193,7 +256,10 @@ Match user intent to workflow. **Spawn the specified agent** to execute the work
 |-------------|----------|
 | Setup implementation workspace | [workflows/dev-setup.md](workflows/dev-setup.md) |
 | Start implementation, init app | [workflows/dev-init.md](workflows/dev-init.md) |
-| "work on [app]", plan iterations, build | [workflows/dev-work.md](workflows/dev-work.md) |
+| "what's next for [app]", "continue [app]", "work on [app]" | [workflows/dev-work.md](workflows/dev-work.md) |
+| "build [feature]", "implement [feature]", "add [component]" | [workflows/dev-work.md](workflows/dev-work.md) |
+| "plan iteration", "what should I build next", "next steps" | [workflows/dev-work.md](workflows/dev-work.md) |
+| "fix [bug]", "debug", "investigate issue in [app]" | [workflows/dev-work.md](workflows/dev-work.md) |
 
 ### Orientation (no agent needed — lightweight)
 
