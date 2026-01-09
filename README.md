@@ -168,6 +168,7 @@ RESEARCH ──arc───────▶ RESEARCH        arc captures emergenc
 CONCEPTS ──create────▶ IMPLEMENTATION  implement creates linked project from concept
 
 IMPLEMENTATION ──capture──▶ CONCEPTS   capture routes observations to conceptsRepo
+IMPLEMENTATION ◀──drift───▶ CONCEPTS   drift detection syncs both directions
 ```
 
 **Initiated flows** — you notice something and start:
@@ -263,7 +264,7 @@ Same scribe. Different worlds. Different atmospheric registers. Process in each 
 
 **Concept** — [Giving Shape](#qino--giving-shape-to-what-has-pull) · [Design Adventure](#design-adventure--the-room-after)
 
-**Implementation** — [Building from Concepts](#building-from-concepts)
+**Implementation** — [Building from Concepts](#building-from-concepts) · [Drift Detection](#drift-detection)
 
 **Research** — [Following Threads](#following-threads) · [Arcs](#arcs--evidence-of-emergence) · [Compare](#compare--the-parallel-mirror) · [Attune](#attune--from-hunch-to-craft) · [Epistemological Signature](#epistemological-signature)
 
@@ -778,6 +779,68 @@ Iterations aren't sprints. They're checkpoints for turn-taking.
 AI implements to the iteration spec. User tests and reviews. Feedback flows before the next phase begins. Each iteration has scope, goals, and test criteria — clear enough to build toward, flexible enough to learn from.
 
 The files live in `implementations/` — visible, version-controlled, yours. Not hidden in `.claude/`. Not abstracted away. You can read them, edit them, understand what's planned.
+
+#### Drift detection
+
+Building reveals truths that concept exploration couldn't predict. Sometimes the domain model doesn't fit. Sometimes features need adding or removing. Sometimes technical constraints force conceptual compromises.
+
+The dev agent notices these moments and offers to update the concept — keeping concept and implementation in sync as understanding evolves.
+
+**Two directions of drift:**
+
+| Direction | When it happens | What the dev agent does |
+|-----------|-----------------|------------------------|
+| Implementation → Concept | You discover something while building | Recognizes drift signals, offers to update concept |
+| Concept → Implementation | Concept evolves after implementation started | Shows what changed on arrival, offers to reconcile |
+
+**Drift signals during building:**
+
+When you say things like "actually let's call it X instead of Y" or "we should also add this feature" — the dev agent recognizes these as concept-level changes:
+
+```
+(you)   Actually, "Match" should be "Session" — it's not competitive.
+
+(dev)   That's a domain model shift — the concept still uses "Match."
+
+        This looks like a concept-level change.
+
+        • update concept — invoke concept agent to make the change
+        • note for later — capture as observation
+        • continue — stay in implementation
+```
+
+If you choose "update concept," the dev agent invokes the concept agent with context about what changed. The concept agent makes the edit, then control returns to dev context.
+
+**Concept changes on arrival:**
+
+When you return to an implementation after the linked concept has evolved:
+
+```
+┌─────────────────────────────────────────┐
+│ my-app                                  │
+│                                         │
+│ concept — updated since last check      │
+│ board-games                             │
+│ modified 2 days ago                     │
+│                                         │
+│ what changed                            │
+│ + Timer feature (new in scoped features)│
+│ ~ "Match" → "Session" (entity renamed)  │
+│                                         │
+│ iteration                               │
+│ 02: core-features — in progress         │
+│                                         │
+└─────────────────────────────────────────┘
+
+The linked concept evolved. Want to:
+  • review — see what changed in detail
+  • reconcile — update iteration plan if needed
+  • acknowledge — sync timestamp, continue as-is
+```
+
+**Iteration checkpoints:**
+
+At the end of each iteration, before moving to the next, the dev agent asks about concept-level learnings — a natural moment to surface what building revealed.
 
 _[Source](plugins/qino/)_
 

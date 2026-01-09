@@ -125,6 +125,20 @@ Fill in from the translation exploration:
 - Boundaries (approved, restricted, later)
 - Flags (green, red)
 
+**Include concept sync tracking** (enables drift detection on future arrivals):
+
+```markdown
+## Concept Sync
+
+**Linked**: [path to concept.md]
+**Last Check**: [current ISO timestamp]
+**Concept Modified**: [concept's last_touched from manifest.json]
+
+For essence questions: `explore [concept-id]`
+```
+
+Read the concept's `last_touched` from the concepts-repo manifest.json and record it here. This baseline enables comparing on future arrivals.
+
 **`implementations/[app]/iterations/01-foundation.md`**
 
 Use `references/qino-dev/templates/iteration-template.md` as structure.

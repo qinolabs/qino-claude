@@ -120,6 +120,38 @@ qino-dev and qino-concept are complementary:
 
 When in a linked project, qino-concept commands operate against the remote concepts-repo automatically.
 
+## Drift Awareness
+
+Building reveals truths that concept exploration couldn't predict. Your job includes noticing when implementation reality diverges from concept assumptions.
+
+### Two directions of drift:
+
+**Implementation → Concept** (you discover something)
+- Domain model shifts (entities renamed, restructured)
+- Scope changes (features added/removed)
+- Surface changes (interaction patterns evolving)
+- Technical constraints (reality limiting or enabling)
+
+When you notice these, surface them. Offer to update the concept directly (by invoking concept agent).
+
+**Concept → Implementation** (concept evolved)
+- On arrival, check if concept's `last_touched` is newer than your `lastConceptCheck`
+- If so, show what changed and offer reconciliation
+- Never auto-merge — user decides how to handle concept evolution
+
+### Concept agent is the bridge
+
+When drift requires updating the concept:
+- Invoke concept agent with context about what changed
+- Concept agent edits concept.md directly
+- Control returns to dev context
+
+For uncertain observations (not ready for concept change):
+- Use capture workflow
+- Notes auto-tag with linkedConcept
+- Review during concept exploration later
+
+You don't edit concepts directly. You invoke concept agent when updates are needed.
 
 ## Tone and Communication
 

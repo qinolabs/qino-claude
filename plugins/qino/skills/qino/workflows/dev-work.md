@@ -42,7 +42,12 @@ When user says "work on [app]" or similar:
    - What's the git state? (recent commits, uncommitted changes)
    - Any blockers noted in iteration files?
 
-3. **Output arrival surface:**
+3. **Check concept sync status:**
+   - Read linked concept's `last_touched` from concepts-repo manifest.json
+   - Compare to implementation's `lastConceptCheck` timestamp (in implementation.md)
+   - If concept is newer, flag for user attention in arrival surface
+
+4. **Output arrival surface:**
 
 ```
 ┌─────────────────────────────────────────┐
@@ -69,6 +74,36 @@ from here
                         "build [goal]" to work on current iteration
                         "explore [concept]" to check essence alignment
 ```
+
+**If concept changed since last check**, use this variant instead:
+
+```
+┌─────────────────────────────────────────┐
+│ [app-name]                              │
+│                                         │
+│ concept — updated since last check      │
+│ [concept-name]                          │
+│ modified [relative time]                │
+│                                         │
+│ what changed                            │
+│ [brief diff of key sections — compare   │
+│ current concept to what was there at    │
+│ lastConceptCheck time]                  │
+│                                         │
+│ iteration                               │
+│ [current] — [status]                    │
+│                                         │
+└─────────────────────────────────────────┘
+
+The linked concept evolved. Want to:
+  • review — see what changed in detail
+  • reconcile — update iteration plan if needed
+  • acknowledge — sync timestamp, continue as-is
+```
+
+If user chooses "reconcile", read full concept and compare to current iteration goals. Offer to adjust iteration scope/goals based on concept changes.
+
+After reconciliation or acknowledgment, update `lastConceptCheck` in implementation.md.
 
 ---
 
@@ -170,6 +205,49 @@ When user says "build [goal]" or wants to work on current iteration:
 
 ---
 
+## Drift Recognition
+
+During building, watch for signals that suggest concept-level learnings. These are moments where implementation reality diverges from concept assumptions.
+
+**Drift signals to recognize:**
+
+| Signal | Example phrases | What it suggests |
+|--------|-----------------|------------------|
+| Entity renaming | "let's call it X instead of Y" | Domain model shift |
+| New entity | "we need a new thing called..." | Scope expansion |
+| Feature addition | "we should also add..." | Scope expanding |
+| Feature removal | "this doesn't make sense anymore" | Scope narrowing |
+| Surface change | "the UI should work differently" | Interaction pattern shift |
+| Reality constraint | "we can't do X because..." | Technical constraint discovered |
+| Glow emergence | "the real delight is in..." | Core value clarifying |
+
+**When you recognize a drift signal:**
+
+> "[Brief observation of the shift — what changed and why it matters]
+>
+> This looks like a concept-level change.
+>
+> • update concept — invoke concept agent to make the change
+> • note for later — capture as observation (uncertain insights)
+> • continue — stay in implementation"
+
+**If user chooses "update concept":**
+1. Invoke concept agent via Task tool with context:
+   - What drift was detected
+   - Current implementation state
+   - Suggested change to concept
+2. Concept agent makes the edit to concept.md
+3. Control returns to dev context
+4. Update `lastConceptCheck` timestamp in implementation.md
+
+**If user chooses "note for later":**
+- Use capture workflow (for observations that aren't decisions yet)
+- These notes auto-tag with linkedConcept and can be reviewed later
+
+**Reference:** See `references/qino-dev/drift-signals.md` for detailed examples.
+
+---
+
 ## Iteration Transitions
 
 When all goals in an iteration are complete:
@@ -185,6 +263,17 @@ When all goals in an iteration are complete:
 
 3. Update iteration status to "Complete"
 4. Offer to start next iteration
+
+5. **Concept alignment check** (before starting next iteration):
+
+   > "Before moving to [next iteration]:
+   >
+   > Any concept-level learnings from this iteration?
+   > Things that should flow back to the concept?"
+
+   If user has observations, offer to update concept (invoke concept agent) or capture for later.
+
+   Update `lastConceptCheck` in implementation.md to current timestamp.
 
 ---
 
