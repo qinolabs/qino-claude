@@ -50,6 +50,20 @@ An arc has these sections. Each answers a specific question:
 **Format:** Name the pattern, then list where it appeared. Each instance shows the same pattern in different form.
 **Not:** A list of everything touched. Only what *recurred*.
 
+### The Thread
+**Answers:** How did the inquiry move? What sequence of questions led to what was discovered?
+**Format:** A chain showing each step and why it opened the next. Use `↓` or similar to show transitions. Each step names the question/discovery and the transition that led forward.
+**Purpose:** Captures the *causal chain* — the evolutionary sequence. Someone reading The Thread should understand not just what emerged, but *how* one insight opened the next.
+**Quality check:** Could you reconstruct the narrative of discovery from The Thread alone?
+**Example:**
+```
+**The identity question** — what makes Elena "Elena" across contexts?
+↓ *Identity as pattern, not origin, led to*
+**Mutual revealing** — the figure sees back, reveals something about the user
+↓ *Bidirectional gaze required context*
+**Weather** — user patterns as atmospheric context for interpretation
+```
+
 ### The Between
 **Answers:** What was the quality of connection between things? Why did X and Y feel related?
 **Format:** Prose describing relationship quality, not just that things are related.
@@ -98,8 +112,9 @@ Gather the arc conversationally, not as a checklist. Listen for these elements:
 - **Essence** — one sentence that holds the whole
 - **Instrument** — how noticing happened
 
-**Pattern (required):**
+**Movement (required):**
 - **The Recurring** — what kept appearing
+- **The Thread** — the evolutionary sequence, how one question opened the next
 - **The Between** — quality of connections
 
 **Record (required):**
@@ -127,7 +142,18 @@ Listen for Instrument.
 Then:
 > "what kept appearing? what pattern recurred?"
 
-Listen for The Recurring and The Between.
+Listen for The Recurring.
+
+Then:
+> "trace the sequence — how did one question open the next?"
+
+Listen for The Thread. This is the evolutionary chain. Prompt for specifics:
+> "and what made [X] lead to [Y]?"
+
+Then:
+> "what was the quality of connection between these?"
+
+Listen for The Between.
 
 Then confirm the essence:
 > "so the essence is: [your distillation]?"
@@ -177,6 +203,24 @@ Example: "Resonance-noticing. The felt sense of connection between X and Y becam
 - [instance 3] — [how pattern appeared here]
 
 [Brief synthesis: what made this the same pattern in different forms.]
+
+## The Thread
+
+How the inquiry moved, each question opening the next:
+
+**[Starting point]** — [what the initial question/situation was]
+
+↓ *[what made this lead to the next step]*
+
+**[Next step]** — [the question or discovery that emerged]
+
+↓ *[transition]*
+
+**[Next step]** — [continuing the chain]
+
+↓ *[transition]*
+
+**[Arrival]** — [where the thread led]
 
 ## The Between
 
@@ -248,6 +292,7 @@ captured: [essence]
 
 ground: [one phrase summary of stakes]
 instrument: [name of method]
+thread: [starting point] → ... → [arrival]
 pattern: [what recurred]
 seeds: [count] threads remain alive
 
