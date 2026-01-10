@@ -102,9 +102,13 @@ Project-level commands live in `.claude/commands/`:
 
 ### Skill → Workflow → Agent
 
-- **Skill** (SKILL.md) — Routes intent to workflow
-- **Workflow** — Step-by-step procedure with WAIT points for dialogue
-- **Agent** — Character and principles; executes workflows via Task tool
+- **Skill** (SKILL.md) — Routes intent to workflow, determines execution mode
+- **Workflow** — Step-by-step procedure; `inject` for dialogue, `spawn` for synthesis
+- **Agent** — Character and principles; persona injected or spawned based on workflow
+
+**Execution modes:**
+- **Inject** (home, explore, capture, test, attune, compare, arc, orientation) — Persona principles injected into main conversation for multi-turn dialogue
+- **Spawn** (import, dev-*, research-*, concept-*) — Agent spawned via Task tool for isolated synthesis work
 
 ### Plugin Structure
 
