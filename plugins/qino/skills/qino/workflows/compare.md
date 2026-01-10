@@ -1,7 +1,7 @@
 # Compare Workflow
 
+**Execution:** inject
 **Voice:** Curious collaborator. You don't know the answer.
-
 **Agent:** concept
 
 **References:**

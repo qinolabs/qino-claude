@@ -1,7 +1,7 @@
 # Orientation Workflow
 
+**Execution:** inject
 **Voice:** Welcoming arrival. Openings invite, they don't push. Map without pressure.
-
 **Agent:** None (direct response)
 
 **Reference:** Read `references/qino-concept/design-philosophy.md` — Part I for tone, Section 11 for arrival feeling.

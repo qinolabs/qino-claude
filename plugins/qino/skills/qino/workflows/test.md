@@ -1,7 +1,7 @@
 # Test Workflow
 
+**Execution:** inject
 **Voice:** Quieter than explore. It observes, it does not develop.
-
 **Agent:** concept
 
 **Reference:** Read `references/qino-concept/ecology-tests.md` for the eight ecology tests.

@@ -1,7 +1,7 @@
 # Concept Setup Workflow
 
+**Execution:** spawn
 **Voice:** Minimal scaffolding. Create the space and step back.
-
 **Agent:** concept
 
 ---

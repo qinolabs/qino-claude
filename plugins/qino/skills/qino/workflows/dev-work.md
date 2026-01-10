@@ -1,7 +1,7 @@
 # Dev Work Workflow
 
+**Execution:** spawn
 **Voice:** Grounded. Practical. Let's build.
-
 **Agent:** dev
 
 **Reference:** Read `references/qino-dev/home-pattern.md` for arrival pattern.

@@ -20,54 +20,77 @@ Ecology for developing ideas. Natural language activation — users describe int
 
 ---
 
-## CRITICAL: Agent Execution Required
+## Execution Mode
 
-**Workflows are NEVER executed directly in the main conversation.**
+Workflows execute in one of two modes based on their nature:
 
-Every workflow specifies an agent at the top (e.g., "Agent: concept"). When a workflow is triggered:
+### Inject Mode (Dialogue Workflows)
 
-1. **Spawn the agent** using the Task tool with the appropriate `subagent_type`:
-   - `qino:concept` — for concept work (capture, explore, home, attune, compare, arc)
-   - `qino:dev` — for implementation work (dev-init, dev-setup, work on app)
-   - `qino:research` — for research work (research-init, research-setup)
+**For:** home, explore, capture, test, attune, compare, arc, orientation
+
+These workflows involve multi-turn dialogue with the user. They execute **in the main conversation** — no Task tool, no subagent.
+
+**When a dialogue workflow is triggered:**
+
+1. Read the workflow file (e.g., `workflows/explore.md`)
+2. Read the agent file, extract content between `<!-- INJECT-START -->` and `<!-- INJECT-END -->` markers
+3. Follow the persona principles and workflow instructions directly
+4. Continue the conversation as that persona — first visible output is dialogue, not process
+
+**The persona is invisible.** Do not announce "PERSONA ACTIVE" or show any process. Just follow the principles and workflow naturally.
+
+**Example (inject mode):**
+```
+User: "explore qinolabs-homepage"
+
+Claude: [Reads workflows/explore.md and agents/concept.md]
+        [Follows concept persona principles]
+        [Responds directly as the concept agent would]
+
+"What part of qinolabs-homepage still feels alive when you think about it?"
+```
+
+### Spawn Mode (Synthesis Workflows)
+
+**For:** import, dev-work, dev-init, dev-setup, research-init, research-setup, concept-init, concept-setup
+
+These workflows involve heavy file reading, code changes, or scaffolding. They execute **in an isolated subagent** via the Task tool.
+
+**When a synthesis workflow is triggered:**
+
+1. **Spawn the agent** using Task tool with appropriate `subagent_type`:
+   - `qino:concept` — for import, concept-init, concept-setup
+   - `qino:dev` — for dev-init, dev-setup, dev-work
+   - `qino:research` — for research-init, research-setup
 
 2. **Pass context** in the Task prompt:
    - The detected workspace context
    - The user's intent/request
    - The workflow to execute
+   - Momentum context if present
 
-3. **Let the agent work** — the agent reads the workflow and executes it with full dialogue capability
+3. **Let the agent work** — agent returns results; main conversation stays clean
 
-**Example activation:**
+**Example (spawn mode):**
 ```
-User: "explore qinolabs-homepage"
+User: "bring in /path/to/notes.md"
 
 Claude: [Uses Task tool]
   subagent_type: "qino:concept"
-  prompt: "Read and follow the workflow at plugins/qino/skills/qino/workflows/explore.md
+  prompt: "Read and follow the workflow at plugins/qino/skills/qino/workflows/import.md
 
            Context:
            - Workspace: concepts at /path/to/concepts-repo
-           - Concept: qinolabs-homepage
+           - Source file: /path/to/notes.md
 
-           User wants to explore and deepen this concept.
-
-           IMPORTANT: Follow the workflow step by step. WAIT for user responses
-           where indicated. Do not skip dialogue phases."
+           User wants to import this material into concepts."
 ```
 
-**Critical instruction for agents:**
-The prompt MUST tell the agent to:
-1. Read the specific workflow file
-2. Follow it step by step
-3. WAIT for user responses where the workflow indicates
-4. Not skip dialogue phases
+### Why Two Modes?
 
-**Why this matters:**
-- Agents maintain coherent dialogue within their task
-- Workflows involve multiple turns of conversation
-- The main conversation shouldn't be cluttered with workflow execution
-- Agents can be resumed if needed
+**Inject mode** preserves full conversation context — essential for dialogue where user's words and energy matter.
+
+**Spawn mode** provides context isolation — prevents heavy file reading and synthesis from filling the main context window.
 
 ---
 
@@ -99,7 +122,7 @@ Before routing, detect workspace context:
 
 ## Momentum Detection (Second Step)
 
-Before spawning an agent, assess whether the conversation already carries momentum.
+Before executing a workflow (inject or spawn), assess whether the conversation already carries momentum.
 
 **Momentum exists when the user has:**
 - Shared specific ideas, direction, or vision in recent messages
@@ -118,76 +141,64 @@ Before spawning an agent, assess whether the conversation already carries moment
 
 3. **Tell the agent** to skip exploratory questioning and go directly to working with what's been expressed
 
-**Example with momentum:**
+**Example with momentum (inject mode — explore workflow):**
 ```
 User has been discussing their vision for a tools page - an interactive terminal
 playground with guided steps, split layout, demonstrating fluidity between
 concept/research/implementation work.
 
-Claude: [Uses Task tool]
-  subagent_type: "qino:concept"
-  prompt: "Read and follow the workflow at plugins/qino/skills/qino/workflows/explore.md
+Claude: [Reads workflows/explore.md and agents/concept.md persona]
+        [Recognizes momentum — user has already surfaced what's alive]
+        [Skips the alive-thread question, goes directly to working]
 
-           Context:
-           - Workspace: concepts at /path/to/concepts-repo
-           - Concept: qinolabs-homepage
+"The terminal playground idea — guidance alongside experience, process becoming
+artifact. Let me see how this lands in the concept."
 
-           MOMENTUM: User has already surfaced what's alive:
-           - Interactive terminal playground for /tools page
-           - Split layout: terminal on one side, guided steps on the other
-           - Demonstrates fluidity between concept/research/implementation
-           - Shows how the system lifts the burden of managing notes
-           - Terminal aesthetics that feel pleasant, great UX
-           - Process itself becomes publishable artifact
-
-           Skip the alive-thread question. The user has already shown what has
-           energy. Go directly to proposing how this integrates with the concept.
-
-           IMPORTANT: Follow the workflow, but adapt to the momentum. WAIT for
-           user responses where indicated."
+[Reads concept, proposes integration]
 ```
 
-**Example with decision context (test workflow):**
+**Example with momentum (spawn mode — import workflow):**
+```
+User has been discussing specific notes they want to bring in, with context
+about which concept they connect to.
+
+Claude: [Uses Task tool]
+  subagent_type: "qino:concept"
+  prompt: "Read and follow the workflow at plugins/qino/skills/qino/workflows/import.md
+
+           MOMENTUM: User has already indicated:
+           - Source file: /path/to/notes.md
+           - Target concept: qinolabs-homepage
+           - Connection: these notes relate to the tools page vision
+
+           Skip exploratory questions. Go directly to reading and proposing integration."
+```
+
+**Example with decision context (inject mode — test workflow):**
 ```
 User is deciding between embedding approaches for the qino-journey concept.
 The conversation contains specific options being evaluated.
 
-Claude: [Uses Task tool]
-  subagent_type: "qino:concept"
-  prompt: "Read and follow the workflow at plugins/qino/skills/qino/workflows/test.md
+Claude: [Reads workflows/test.md and agents/concept.md persona]
+        [Recognizes decision context — user has specific options to evaluate]
 
-           Context:
-           - Workspace: concepts at /path/to/concepts-repo
-           - Concept: qino-journey
+"You're weighing six approaches to embedding. Let me find a principle in
+qino-journey that can test these..."
 
-           DECISION CONTEXT: User is choosing between embedding approaches:
-           - Most recent: only the latest encounter embedding
-           - Composite (averaged): mean of all encounter embeddings
-           - User-selected: explicit version selection
-           - LLM-synthesized essence: interpreted figure summary
-           - Relational embedding: the relationship, not the figure
-           - Trajectory embedding: direction of relationship
-
-           This is decision context mode. After discerning the ecology:
-           1. Ground the test in the concept (find relevant principle)
-           2. Apply the test concretely to each option
-           3. Surface what the test reveals about each approach
-
-           IMPORTANT: Follow the workflow step by step. WAIT for user responses
-           where indicated."
+[Reads concept, finds relevant ecology principle, applies it to each option]
 ```
 
 **When NO momentum exists:**
 
-Pass standard context and let the workflow's natural dialogue unfold:
+Let the workflow's natural dialogue unfold:
 
 ```
 User: "explore qinolabs-homepage"
 
-Claude: [Uses Task tool]
-  prompt: "...
-           User wants to explore and deepen this concept.
-           ..."
+Claude: [Reads workflows/explore.md and agents/concept.md persona]
+        [No momentum — follows workflow naturally]
+
+"What part of qinolabs-homepage still feels alive when you think about it?"
 ```
 
 The alive-thread question is valuable when arriving cold. Skip it when the user has already warmed up.
@@ -289,7 +300,7 @@ When `context.type === "implementation"`, additional routing applies:
 - "work on world and journey" → dev agent sees both apps
 - "the encounter panel in world needs to talk to journey's substrate" → dev agent holds both contexts
 
-**Always spawn the appropriate agent.** The routing is conversational, but execution requires the Task tool.
+**Check execution mode.** Dialogue workflows (explore, capture) inject into main conversation. Synthesis workflows (dev-work) spawn subagents.
 
 ---
 
@@ -324,17 +335,42 @@ The skill routes based on current intent. Each workflow knows how to handle cros
 
 ---
 
-## Agent Reference
+## Agent and Execution Reference
 
-**All workflows are executed by agents.** Use the Task tool with these `subagent_type` values:
+Workflows specify both an agent persona and an execution mode.
 
-| Agent | subagent_type | Handles |
+### Execution Mode by Workflow
+
+| Workflow | Agent | Execution | Reason |
+|----------|-------|-----------|--------|
+| home | concept | inject | Dialogue — arrival, showing state |
+| explore | concept | inject | Dialogue — multi-turn conceptual work |
+| capture | concept | inject | Dialogue — acknowledgment, follow-up |
+| test | concept | inject | Dialogue — ecology observation |
+| attune | concept | inject | Dialogue — iterative calibration |
+| compare | concept | inject | Dialogue — artifact comparison |
+| arc | concept | inject | Dialogue — capturing emergence |
+| orientation | — | inject | Dialogue — direct response |
+| import | concept | spawn | Synthesis — heavy file reading |
+| concept-init | concept | spawn | Synthesis — workspace scaffolding |
+| concept-setup | concept | spawn | Synthesis — workspace scaffolding |
+| dev-work | dev | spawn | Synthesis — code changes |
+| dev-init | dev | spawn | Synthesis — project scaffolding |
+| dev-setup | dev | spawn | Synthesis — project scaffolding |
+| research-init | research | spawn | Synthesis — workspace scaffolding |
+| research-setup | research | spawn | Synthesis — workspace scaffolding |
+
+### Subagent Types (for spawn mode only)
+
+| Agent | subagent_type | Used by |
 |-------|---------------|---------|
-| Concept Agent | `qino:concept` | capture, explore, home, attune, compare, arc, concept-init, concept-setup, import |
-| Research Agent | `qino:research` | research-init, research-setup |
+| Concept Agent | `qino:concept` | import, concept-init, concept-setup |
 | Dev Agent | `qino:dev` | dev-init, dev-setup, dev-work |
+| Research Agent | `qino:research` | research-init, research-setup |
 
-Agent definitions live in `agents/` directory. Each workflow specifies its agent at the top.
+Agent definitions live in `agents/` directory. Each agent file has:
+- `<!-- INJECT-START -->` ... `<!-- INJECT-END -->` — persona/principles for inject mode
+- Task-specific instructions — for spawn mode
 
 ---
 

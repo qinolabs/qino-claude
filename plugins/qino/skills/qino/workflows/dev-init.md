@@ -1,7 +1,7 @@
 # Dev Init Workflow
 
+**Execution:** spawn
 **Voice:** Grounded. Practical. Not heavy. This is the moment before building begins.
-
 **Agent:** dev
 
 **Reference:** Read `references/qino-dev/home-pattern.md` for the arrival pattern used in generated commands.

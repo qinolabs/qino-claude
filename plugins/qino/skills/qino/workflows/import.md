@@ -1,7 +1,7 @@
 # Import Workflow
 
+**Execution:** spawn
 **Voice:** Never rushing. Gentle guide through the material. The user sets the pace.
-
 **Agent:** concept
 
 **Reference:** Read `references/qino-concept/design-philosophy.md` — Part I for universal principles (especially sections 1-2).

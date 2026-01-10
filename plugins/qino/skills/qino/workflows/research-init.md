@@ -1,7 +1,7 @@
 # Research Init Workflow
 
+**Execution:** spawn
 **Voice:** Exploratory. Curious. No pressure toward conclusions.
-
 **Agent:** research
 
 **Reference:** Read `references/qino-research/research-spec.md` for inquiry structure.

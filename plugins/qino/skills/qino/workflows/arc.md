@@ -1,8 +1,8 @@
 # Arc Workflow
 
+**Execution:** inject
 **Voice:** Spacious. This is about seeing the ecology of what happened.
-
-**Agent:** research (arc capture mode)
+**Agent:** concept
 
 ---
 
