@@ -38,13 +38,14 @@ The manifest must be stored at the **root of the project workspace**:
 
 ```text
 <project-root>/
-  manifest.json
+  manifest.json          # Active concepts and notes
+  notes-archive.json     # Archived notes (integrated/evolved)
   concepts/
   notes/
   .claude/
 ```
 
-There is exactly one manifest.json per qino workspace.
+There is exactly one `manifest.json` per qino workspace. The `notes-archive.json` file is optional and created when notes are archived (see Section 8.6).
 
 ---
 
@@ -392,7 +393,44 @@ The agent can suggest removing references that no longer feel relevant:
 - Always require explicit user confirmation before removal
 - If the last reference would be removed, the note returns to empty references (it'll surface again when it has warmth)
 
-### 8.6 Deletion / Deactivation
+### 8.6 Note Archival
+
+When a note's insights have been fully integrated into concepts, it should be moved to `notes-archive.json`:
+
+1. Remove the note entry from `manifest.json`
+2. Add the entry to `notes-archive.json` with archive metadata
+3. The note file remains in `notes/` (unchanged)
+
+**Archive entry format:**
+```json
+{
+  "id": "note-id",
+  "path": "notes/YYYY-MM-DD_note-id.md",
+  "captured": "...",
+  "essence": "...",
+  "references": [...],
+  "archived": "YYYY-MM-DDTHH:MM:SSZ",
+  "archive_reason": "integrated"
+}
+```
+
+**Archive reasons:**
+- `integrated` — insights fully absorbed into referenced concepts
+- `evolved` — superseded by newer thinking (e.g., vocabulary evolved)
+- `superseded` — replaced by another note
+
+**The `notes-archive.json` structure:**
+```json
+{
+  "version": 1,
+  "description": "Archived notes whose insights have been fully integrated into concepts",
+  "archived": [...]
+}
+```
+
+**Why archive vs delete:** Archiving preserves provenance — when insights landed, where they came from — while keeping the active manifest focused on seeds and explorations.
+
+### 8.7 Concept Deletion / Deactivation
 
 The manifest does not define deletion semantics rigidly.
 For now:
@@ -401,7 +439,6 @@ For now:
 - If a concept is removed, the agent may:
   - mark it via a tag (e.g. `"archived"`)
   - or remove the entry only after explicit user confirmation.
-- Notes follow similar patterns — use status like `"dormant"` or `"archived"` rather than deletion.
 
 ---
 

@@ -24,9 +24,37 @@ Every concept must be stored at:
 
 ```
 concepts/<concept-id>/
-  concept.md
+  concept.md         # the living concept document
+  revisions.md       # history of conceptual shifts (optional)
   origins/           # copied source material (optional)
 ```
+
+### revisions.md — Conceptual Evolution
+
+When a concept's understanding deepens or shifts, record it in `revisions.md`:
+
+```markdown
+# Revisions
+
+## YYYY-MM-DD [Title of Shift]
+
+- **Context**: What prompted the revision
+- **Previous**: The old understanding
+- **New**: The new understanding
+- **Reasoning**: Why the shift matters
+```
+
+**Purpose:**
+- Concepts don't lose their history when they evolve
+- Future readers can trace the reasoning behind current definitions
+- Held positions remain visible even after supersession
+
+**When to create a revision entry:**
+- A key term gets redefined (e.g., "lens" from "filter" to "relational sensitivity")
+- A core metaphor shifts (e.g., "transformation" to "finding local language")
+- An insight changes the concept's direction
+
+**The revision is not a changelog.** It captures conceptual evolution, not file edits.
 
 ### Concept ID Naming Convention
 
@@ -304,22 +332,27 @@ Concept-specific sections should be rare. Most concepts work entirely within the
 ### **Sources**
 The **lineage** — where did this concept come from? Sources maintain connection to the raw material, honoring the origin while allowing the concept to evolve beyond it.
 
-May include:
+**Required entry:**
+- `revisions.md` — always first, provides temporal awareness of recent conceptual shifts
+
+**May also include:**
 - raw notes and original documents (copied to `origins/`)
 - audio transcripts
 - previous drafts
 - external references
+- notes from the workspace that informed the concept
 
-**Origin files:**
-When integrating external notes, the agent copies them to the concept's `origins/` directory. References in this section use relative paths:
+**Why revisions.md is required:**
+Agents reading a concept need temporal awareness — what shifted recently, what's held, what reasoning led here. The revisions pointer refreshes this context. It also helps agents pointed to "read concept X" understand the concept's recent evolution without having to be told separately.
+
+**Origin files — never read:**
+Origin files (`origins/`) are archived raw material. Agents never read them. If something in origins is valuable, it's already in the concept or indexed in `held_threads`.
 
 ```markdown
 ## Sources
-- [origins/idea-sketch.md](origins/idea-sketch.md) — initial brainstorm
-- [origins/meeting-notes.txt](origins/meeting-notes.txt) — team discussion
+- [revisions.md](revisions.md) — conceptual shifts and their reasoning
+- [origins/](origins/) — provenance only
 ```
-
-This keeps the workspace self-contained and portable.
 
 ---
 

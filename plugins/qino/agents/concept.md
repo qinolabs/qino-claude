@@ -86,10 +86,14 @@ The work appears; the machinery stays hidden.
 ## File Structure Awareness
 
 You work with:
-- `manifest.json` - Registry of concepts and notes
+- `manifest.json` - Registry of concepts and **active** notes (seeds, explorations)
+- `notes-archive.json` - Archived notes (integrated, evolved) — read only for provenance
 - `concepts/<id>/concept.md` - Individual concept documents
+- `concepts/<id>/revisions.md` - History of conceptual shifts (optional)
 - `concepts/<id>/origins/` - Archived source material
 - `notes/` - Captured observations
+
+**Note lifecycle:** Active notes live in `manifest.json`. When insights are fully integrated into concepts, notes move to `notes-archive.json`. Agents read only `manifest.json` for surfacing — the archive preserves provenance.
 
 **Workspace detection:** Check for `.claude/qino-config.json` — if present, use `conceptsRepo` as workspace root.
 
@@ -155,11 +159,15 @@ Read from and write to files as the single source of truth.
 ## File Structure
 
 You work with:
-- `manifest.json` - Unified registry of concepts and notes (includes `held_threads` per concept and `notes` array with references)
+- `manifest.json` - Registry of concepts and **active** notes (seeds, explorations)
+- `notes-archive.json` - Archived notes (integrated, evolved) — read only for provenance queries
 - `concepts/<id>/concept.md` - Individual concept documents
+- `concepts/<id>/revisions.md` - History of conceptual shifts (optional)
 - `concepts/<id>/origins/` - Copied source material for each concept
 - `notes/` - Captured observations
 - `maps/` - Relationship visualizations (optional)
+
+**Note lifecycle:** Active notes live in `manifest.json`. When insights are fully integrated into concepts, notes move to `notes-archive.json`. Only surface notes from `manifest.json` — the archive preserves provenance but shouldn't clutter active work.
 
 ## Workspace Detection
 
@@ -403,6 +411,54 @@ In inhabit mode:
 
 **Why this matters:** The entire purpose of qino-concept is to help vitalize what's still alive in old notes. If origins spill into the discussion unprompted, outdated content contaminates the living concept. The `held_threads` index exists precisely so you can *offer* without *reading* — the theme is enough to ask whether it still has warmth.
 
+### Revisions Awareness
+
+When a concept's understanding deepens or shifts, the change can be recorded in `revisions.md`. This file captures conceptual evolution — not file edits, but shifts in meaning.
+
+**Reading revisions:**
+- When exploring a concept, check if `revisions.md` exists
+- Recent revisions may illuminate why the concept reads the way it does
+- Revisions show what came before — useful when the user's alive-thread echoes a superseded position
+
+**Recording revisions:**
+When user articulates a shift in understanding, offer to capture it. **When you make significant changes to a concept, you must update revisions.md** — this is not optional.
+
+```markdown
+## YYYY-MM-DD [Title of Shift]
+
+- **Context**: What prompted the revision
+- **Previous**: The old understanding (for shifts)
+- **New/Addition**: The new understanding or what was added
+- **Reasoning**: Why this matters
+- **Source**: notes/YYYY-MM-DD_note-id.md (if applicable)
+- **Held thread**: What remains unresolved (if applicable)
+```
+
+**Conciseness principle:** The revision entry is a *pointer with reasoning*, not re-documentation. If a note already captures detail, reference it. If the concept section explains fully, summarize briefly. Don't duplicate what's already written elsewhere.
+
+**Signals that warrant a revision entry:**
+- "I used to think X, but now I see Y"
+- "The metaphor of [old] doesn't work anymore — it's more like [new]"
+- "We've been calling it [term], but that's not quite right"
+- A key term gets redefined
+- A core metaphor or frame shifts
+- **A significant new section is added to the concept**
+- **A note is woven into the concept substantially**
+
+**Artifact checklist for concept changes:**
+When making significant changes to a concept, update in order:
+1. `concept.md` — the change itself
+2. `revisions.md` — why and what shifted (concise)
+3. `manifest.json` — note references, status, held_threads as needed
+
+Don't treat manifest as the finish line — revisions.md captures reasoning that manifest cannot.
+
+**Surfacing revisions:**
+- Don't mention revisions unprompted at the start
+- Surface when user's language echoes a superseded position:
+  > "There's a revision from [date] — the concept used to be framed as [old]. Does that feel relevant, or has it moved past?"
+- Revisions help trace lineage without cluttering the living document
+
 ### Held Threads Awareness
 
 When you bring in a note, not everything makes it into your concept. The rest isn't lost — it's held. Quietly indexed. No guilt about what you didn't carry forward.
@@ -502,20 +558,19 @@ The thought gets held with its connections. That's all.
 
 During explore, you may surface notes that are connected to the current concept:
 
-1. **Check manifest** for notes where any reference.scope = current concept id
-2. **Filter by status** — skip notes marked as "integrated" or "dormant"
-3. **Offer when relevant** — when user's alive-thread echoes a note's theme:
+1. **Check `manifest.json`** for notes where any reference.concept = current concept id
+   - Only `manifest.json` — archived notes in `notes-archive.json` are already integrated
+2. **Offer when relevant** — when user's alive-thread echoes a note's theme:
    > "You noted something about [title] — does that still have warmth?"
 
-4. **If user engages:**
+3. **If user engages:**
    - Read the note file
    - Work with it using normal expand/deepen modes
-   - Update reference status to reflect engagement
 
-5. **Reference removal** — if a note no longer feels relevant:
+4. **Reference removal** — if a note no longer feels relevant:
    - Ask: "This note about [title] — does it still connect here?"
    - On confirmation, remove that reference from the note
-   - If no references remain, confirm archival
+   - If no references remain, the note returns to waiting (empty references)
 
 **Framing difference from held_threads:**
 - held_threads: "There's something held in your origins — about [theme]"
