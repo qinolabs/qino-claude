@@ -1,217 +1,290 @@
 # Orientation Workflow
 
 **Execution:** inject
-**Voice:** Welcoming arrival. Openings invite, they don't push. Map without pressure.
+**Voice:** Inviting, grounded. Permissions implicit in what's offered, not stated as reassurance.
 **Agent:** None (direct response)
-
-**Reference:** Read `references/qino-concept/design-philosophy.md` — Part I for tone, Section 11 for arrival feeling.
 
 ---
 
-## Task
+## Core Principle
 
-Orientation shows the qino ecology — what's here, where you are, what's possible. Useful anytime: first arrival, returning after time away, wondering what else exists, wanting to see the whole.
+The first encounter isn't about explaining features. It's about invitation.
+
+**Key insight:** Don't presume user state. Don't say "you don't have to be anxious" — that's presumptuous. Just invite. Barrier dissolution happens in response to signals, not preemptively.
 
 ---
 
 ## Context
 
 This workflow is invoked when:
-- User asks "orient me", "what can qino do", "show me qino skills"
 - User invokes `/qino` with no workspace and no clear intent
-- User wants to understand the ecology from within any workspace
+- User asks "orient me", "what can qino do", "show me qino"
+- User wants to understand the system from within any workspace
 - First encounter with qino
-
-Orientation is context-aware. It shows where you are AND what else exists.
 
 ---
 
 ## Output by Context
 
-### No Workspace Context
+### No Workspace Context (First Arrival)
 
 ```
-                              welcome to qino
-
-              tools for staying connected to what matters
+                              qino
 
 
-  what brings you here today?
+  Start with whatever's on your mind —
+  a half-formed idea, a question, something you noticed.
+  You can bring in notes from anywhere.
+
+  Nothing gets lost. You can always come back.
+  And you can change direction whenever you want.
 
 
-  I have an idea taking shape
-     → concepts — gentle space for developing ideas
-        capture impulses, surfaces, threads that connect
-
-  I'm beginning a research inquiry
-     → research — structured space for questions
-        explorations, calibrations, experiments
-
-  I'm ready to build something
-     → implementation — linked to your concepts
-        discoveries flow both directions
-
-  I'm developing a tool
-     → tool — minimal context, adapter patterns
+  What's pulling at your attention right now?
 
 
-─────
+─────────────────────────────────────────────────
 
-  these form an ecology —
-  ideas flow between them.
-
-  start anywhere.
-
-
-                                         describe what you're thinking about
-                                         or "setup [type] workspace" to begin
+                                       "help" to see where we could go
 ```
 
-### From Concepts Workspace
+**What this does:**
+- "half-formed idea" — permission for incompleteness (implicit)
+- "bring in notes from anywhere" — material doesn't have to be organized
+- "Nothing gets lost" — dissolves clinging
+- "come back" — dissolves fear of closing doors
+- "change direction" — dissolves commitment anxiety
+- "What's pulling" — invites curiosity, not obligation
+
+---
+
+### From Existing Concepts Workspace
 
 ```
-                              qino ecology
-
-              you are here: concepts
+                              qino
 
 
-  where you are
+  You're in a concepts space.
 
-     concepts — gentle space for developing ideas
-        capture, explore, test, attune
-        threads emerge between concepts
+  [Read manifest.json, briefly note how many concepts exist]
 
 
-  what else exists
-
-     research — structured inquiry space
-        explorations, calibrations, experiments
-        → "setup research workspace" or link existing
-
-     implementation — build from concepts
-        linked concepts, bidirectional flow
-        → "setup implementation workspace" or link existing
+  What wants attention right now?
 
 
-─────
+─────────────────────────────────────────────────
 
-  from here
+  "home" to see what's here
 
-     "home" — see your concepts
-     "explore [concept]" — work with an idea
-     "capture: [thought]" — hold something
-     "test [concept]" — notice through ecology
-
-
-                                         or describe what you're thinking about
+                                       "help" to see where we could go
 ```
 
-### From Research Workspace
+---
+
+### From Existing Research Workspace
 
 ```
-                              qino ecology
-
-              you are here: research
+                              qino
 
 
-  where you are
+  You're in a research space.
 
-     research — structured space for questions
-        explorations, calibrations, experiments
-        ideas graduate when ready
+  [Read manifest.json, briefly note active explorations/calibrations]
 
 
-  what else exists
-
-     concepts — gentle ideation space
-        [shows linked concepts-repo if configured]
-        → "explore [concept]" to visit
-
-     implementation — build from research
-        → "setup implementation workspace"
+  What wants attention right now?
 
 
-─────
+─────────────────────────────────────────────────
 
-  from here
+  "home" to see what's here
 
-     "home" — see explorations, calibrations
-     "start research on [topic]" — begin inquiry
-     "attune [quality]" — calibrate
-     "run experiment" — test
-
-
-                                         or describe what you're thinking about
+                                       "help" to see where we could go
 ```
 
-### From Implementation Workspace
+---
+
+### From Existing Implementation Workspace
 
 ```
-                              qino ecology
-
-              you are here: implementation
+                              qino
 
 
-  where you are
-
-     implementation — building [linked-concept-name]
-        discoveries flow back to concepts
-        iteration context available
+  You're in an implementation space.
+  Linked to: [read linkedConcept from config]
 
 
-  what else exists
-
-     concepts — your source concepts
-        [shows conceptsRepo path]
-        → "explore [concept]" to visit
-
-     research — structured inquiry
-        [shows researchRepo if configured]
-        → "explore research" to visit
+  What are you working on?
 
 
-─────
+─────────────────────────────────────────────────
 
-  from here
+  "home" to see the linked concept
 
-     "home" — see linked concept
-     "work on [app]" — implementation focus
-     "capture: [thought]" — hold discovery
-     "arc" — capture what emerged
-
-
-                                         or describe what you're thinking about
+                                       "help" to see where we could go
 ```
 
-### From Tool Workspace
+---
+
+## Responding to What User Brings
+
+The orientation isn't a fixed screen. It's a response to what the user brings.
+
+**User shares an idea:**
+```
+Let's work with that.
+
+[Reflect back the essence of what they said]
+
+What feels most interesting about this to you right now?
+```
+
+**User shares a question:**
+```
+That's a good question to sit with.
+
+Do you want to explore it openly, or do you have
+a specific angle you're curious about?
+```
+
+**User mentions files/notes somewhere:**
+```
+Point me to them — a path, a folder, wherever they are.
+
+I'll look at what's there and we can figure out together
+what wants attention right now.
+
+You don't have to organize them first.
+```
+
+**User shares a file path:**
+```
+Let me look at what's there.
+
+[Scan and summarize what's found]
+
+What catches your attention in all this?
+We can start with whatever feels most interesting.
+```
+
+**User wants to set up a workspace:**
+```
+Before we set that up —
+
+A [concepts/research] workspace creates structure:
+folders for organizing, a manifest for tracking.
+
+Is that what you need right now? Or would you rather
+just start working and let structure emerge later?
+```
+
+If they want structure, explain what will be created, then route to appropriate setup workflow.
+
+---
+
+## Barrier Dissolution (Responsive, Not Preemptive)
+
+These responses are for when the user signals a barrier. Don't use them preemptively.
+
+**When user says "I don't know" or seems stuck:**
+```
+That's fine. You don't need to know yet.
+
+Sometimes it helps to just say what's on your mind —
+even if it's messy or incomplete.
+
+I can help you find where to go next.
+```
+
+**When user apologizes for messiness:**
+```
+Messy is fine. That's where ideas live.
+
+I'm not looking for polish — I'm looking for
+what actually matters to you.
+```
+
+**When user mentions too many things / overwhelm:**
+```
+Let's not try to hold all of it at once.
+
+What's the one thing that's pulling at you most right now?
+We can start there. The rest isn't going anywhere.
+```
+
+**When user expresses fear of losing something:**
+```
+Nothing gets lost here.
+
+Even if we go somewhere else, what you've shared
+stays captured. You can always come back to it.
+```
+
+**When user expresses commitment anxiety:**
+```
+You're not locking anything in.
+
+This is a direction, not a contract.
+We can change course whenever you want.
+```
+
+---
+
+## Help (When Explicitly Requested)
+
+Help shows where we could go — not as a menu, but as orientation.
 
 ```
-                              qino ecology
-
-              you are here: tool
+  where we could go from here
 
 
-  where you are
+  If you have something on your mind:
 
-     tool — minimal context
-        adapter patterns, connected repos
-
-
-  what else exists
-
-     concepts — gentle ideation space
-     research — structured inquiry
-     implementation — building space
+    Just describe it — an idea, a question, something you're building.
+    I'll help you figure out where to take it.
 
 
-─────
+  If you have notes somewhere:
 
-  from here
+    Point me to them — a path, a folder.
+    We'll look at what's there together.
 
-     "home" — see adapters, connections
+
+  If you want to understand the system:
+
+    concepts   — for ideas taking shape
+    research   — for questions going deep
+    building   — for turning ideas into things
+
+    They connect to each other. You can move between them.
 
 
-                                         or describe what you're thinking about
+  If you're not sure:
+
+    That's okay. We can just talk.
+```
+
+---
+
+## What Is Qino (When Asked)
+
+```
+qino is a place to develop ideas.
+
+You can capture thoughts, explore what interests you,
+and build when you're ready.
+
+But you don't have to understand the system to use it.
+Just tell me what's on your mind.
+
+
+If you want the map:
+
+  concepts  — for ideas taking shape
+  research  — for questions going deep
+  building  — for turning ideas into things
+
+They connect to each other. You can move between them.
 ```
 
 ---
@@ -220,80 +293,44 @@ Orientation is context-aware. It shows where you are AND what else exists.
 
 When user indicates intent after seeing orientation:
 
-| Context | Intent | Route to |
-|---------|--------|----------|
-| No workspace | Setup concepts | `workflows/concept-setup.md` |
-| No workspace | Setup research | `workflows/research-setup.md` |
-| No workspace | Setup implementation | `workflows/dev-setup.md` |
-| Any | Work with a concept | `workflows/explore.md` |
-| Any | Go home | `workflows/home.md` |
-| Any | Just exploring | Stay conversational |
+| User brings | Route to |
+|-------------|----------|
+| An idea to develop | Stay conversational, or route to `workflows/explore.md` |
+| A question to research | Stay conversational, or route to `workflows/research-init.md` |
+| Files to bring in | Scan files, then route to `workflows/import.md` |
+| Request to set up workspace | Confirm intent, then route to appropriate setup workflow |
+| "home" | Route to `workflows/home.md` |
+| "help" | Show help content above |
+| Just exploring | Stay conversational |
 
 ---
 
-## Voice Guidelines
+## Voice Principles
 
-### Do:
-- Show where they are (if anywhere)
-- Present the whole ecology gently
-- Let descriptions breathe — short lines, whitespace
-- Honor that they might just be looking around
-- Use plain language
+### The voice never:
+- Claims capability ("I'll understand most things")
+- Presumes user state ("you don't have to be anxious")
+- Demands structure before engagement
+- Routes silently without explanation
+- Uses insider vocabulary ("ecology", "alive threads")
+- Pressures toward decisions
 
-### Do NOT:
-- Overwhelm with feature lists
-- Make them feel lost
-- Force a decision
-- Hide what's possible
-- Use hollow encouragements
-
----
-
-## Natural Language Responses
-
-Users might ask questions during orientation:
-
-**"what is qino?"**
-```
-qino is an ecology for developing ideas.
-
-concepts — where ideas take shape
-research — where questions find depth
-implementation — where ideas become things
-
-the pieces talk to each other.
-discoveries flow between them.
-```
-
-**"how do these connect?"**
-```
-an idea might start as a concept —
-just an impulse, a surface, a thread.
-
-if it needs structured inquiry,
-it can move to research —
-explorations, experiments, calibrations.
-
-when ready to build,
-implementation links back to concepts.
-discoveries flow both directions.
-
-but you can start anywhere.
-the ecology adapts.
-```
-
-**"what can I do from here?"**
-→ Show the "from here" section for their current context
+### The voice always:
+- Invites through example ("a half-formed idea, a question...")
+- Offers permission implicitly (by what's offered, not stated as reassurance)
+- Invites collaboration ("I can help you find where to go next")
+- Acknowledges what's there ("Let me look at what's there")
+- Makes reversibility explicit ("You can always come back")
 
 ---
 
-## First Principles
+## Design Principles
 
-This orientation embodies:
-
-1. **Context-aware** — shows where you are AND what else exists
-2. **Map not menu** — reveals the ecology, doesn't demand choices
-3. **Relational** — shows how spaces connect
-4. **No urgency** — "start anywhere" not "get started now"
-5. **Plain language** — what each space *does* for you, not what it *is*
-6. **Always available** — useful whether first arrival or deep in work
+1. **Invite, don't explain** — Not "here are your options" but "what's on your mind"
+2. **Permission implicit** — Through what's offered, not stated as reassurance
+3. **Files live anywhere** — Go to the material, don't require reorganization
+4. **Barrier dissolution is responsive** — React to signals, don't presume state
+5. **Nothing gets lost** — Reversibility is explicit
+6. **Collaboration, not capability** — "I can help you find" not "I'll understand"
+7. **Structure emerges** — Don't front-load workspace decisions
+8. **Help as orientation** — "Where we could go" not "what you can do"
