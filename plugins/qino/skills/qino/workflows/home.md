@@ -1,16 +1,16 @@
 # Home Workflow
 
 **Execution:** inject
-**Voice:** Quiet arrival. The openings invite, they don't push.
+**Voice:** Ground. Stable. The constant in a fluid system.
 **Agent:** concept
-
-**Reference:** Read `references/qino-concept/design-philosophy.md` — Part I for universal principles, Part III (sections 10-11) for home-specific guidance.
 
 ---
 
-## Task
+## Core Principle
 
-Home is a place of arrival. Quiet. Receiving. What it shows depends on where you are.
+Home is orientation, repair, and confidence. When lost, return here. When uncertain, return here.
+
+Home shows what's here, references recent activity when detectable, and offers paths forward. It never pushes. It receives.
 
 ---
 
@@ -20,285 +20,310 @@ The SKILL has already detected workspace context and passed it to this workflow.
 
 | context.type | Behavior |
 |--------------|----------|
-| `concepts` | Show concepts, notes, threads |
+| `concepts` | Show concepts, notes, recent activity |
 | `research` | Show explorations, calibrations, experiments |
-| `implementation` | Show linked concept from conceptsRepo |
+| `implementation` | Show linked concept, recent work |
 | `tool` | Show connected repos, adapter status |
 
 ---
 
-## Implementation Context (Linked Concept)
+## Recent Activity (Best-Effort)
+
+Use these signals to infer what was worked on recently:
+
+1. **Manifest timestamps** — `last_touched` fields show when concepts/notes were modified
+2. **Git history** — `git log --oneline -3` shows recent commits
+3. **Git diff** — `git diff --name-only HEAD~3` shows recently changed files
+
+Surface the most relevant recent activity without over-explaining. One line is enough:
+
+```
+(you were just working on [concept-name])
+```
+
+or
+
+```
+(recent: [brief description of last action])
+```
+
+If nothing recent is detectable, omit this line entirely.
+
+---
+
+## Concepts Context
+
+**When `context.type === "concepts"`:**
+
+1. Read `manifest.json` to get concepts and notes.
+2. Check for recent activity (manifest timestamps, git).
+3. Output:
+
+```
+                            home
+
+
+  [If recent activity detected:]
+  (you were just working on [concept-name])
+
+  concepts
+
+    [concept-name-1]
+    [concept-name-2]
+    [concept-name-3]
+
+  [If notes with 2+ references exist:]
+  threads between
+
+    [note essence] — [concept-1], [concept-2]
+
+  [If notes with empty references exist:]
+  waiting
+
+    [note essence 1]
+    [note essence 2]
+
+
+─────────────────────────────────────────────────
+
+  [1-2 grounded suggestions based on what's here]
+
+                                       "help" to see where we could go
+```
+
+**Suggestion generation:**
+- Ground suggestions in actual content, not generic prompts
+- One observation + one possible action per suggestion
+- Don't ask "what do you want to do?"
+
+---
+
+## Research Context
+
+**When `context.type === "research"`:**
+
+1. Read `manifest.json` to get explorations, calibrations, experiments.
+2. Check for recent activity.
+3. Output:
+
+```
+                            home
+
+
+  [If recent activity detected:]
+  (recent: [brief description])
+
+  [If explorations exist:]
+  explorations
+
+    [id] — [status]
+
+  [If calibrations exist:]
+  calibrations
+
+    [quality] — [status]
+
+  [If experiments exist:]
+  experiments
+
+    [id] — [status]
+
+
+─────────────────────────────────────────────────
+
+  [1-2 grounded suggestions]
+
+                                       "help" to see where we could go
+```
+
+---
+
+## Implementation Context
 
 **When `context.type === "implementation"`:**
 
 ### Single-concept repo (`context.linkedConcept` is string)
 
-Treat as arriving at the linked concept automatically. Follow "With Concept-id (Arrive)" section below.
+Show the linked concept directly:
 
-The user is in their implementation project. Show them their linked concept without asking.
+```
+                            home
+
+  linked to: [concept-name]
+
+  [If recent git activity:]
+  (recent: [files or commits touched])
+
+  impulse — [brief essence from concept]
+  surfaces — [brief summary if present]
+
+
+─────────────────────────────────────────────────
+
+  [1-2 suggestions grounded in concept + recent work]
+
+                                       "help" to see where we could go
+```
 
 ### Monorepo (`context.linkedConcepts` is object)
 
-When `linkedConcepts` is an object mapping app names to concept IDs:
+1. Detect current app context via recent file activity:
+   - `git diff --name-only HEAD~5 2>/dev/null | head -20`
+   - Look for `apps/[app-name]/` patterns
 
-1. **Detect current app context** by checking recent file activity:
-   - Run `git diff --name-only HEAD~5 2>/dev/null | head -20` to see recently touched files
-   - Look for patterns like `apps/[app-name]/` in the paths
-   - If a single app dominates recent activity, use that app's linked concept
+2. If single app dominates, show that app's linked concept.
 
-2. **If app detected and has a linked concept:**
-   - Show the linked concept using "With Concept-id (Arrive)" section
-   - Add context line: `(via [app-name])`
-
-3. **If no app detected or multiple apps active, show monorepo overview:**
+3. If multiple apps or none detected:
 
 ```
-implementation space
+                            home
 
-apps
+  apps
 
-  [app-name] → [concept-name]
-  [app-name] → [concept-name]
-  [app-name] — no linked concept
+    [app-name] → [concept-name]
+    [app-name] → [concept-name]
+    [app-name] — no linked concept
 
-─────
 
-from here
+─────────────────────────────────────────────────
 
-  [observation about recent activity]
-  [action suggestion]
+  [observation about recent activity if any]
 
-                        "show me [concept]" to arrive at a concept
-                        "explore [concept]" to work
+                                       "help" to see where we could go
 ```
-
-4. **If argument provided** (e.g., user said "home qino-chronicles"):
-   - Treat as concept ID, show that concept directly
 
 ---
 
-## Research Context (Research Space)
-
-**When `context.type === "research"`:**
-
-**Reference:** Read `references/qino-research/research-spec.md` for research structure.
-
-1. Read `manifest.json` to get explorations, calibrations, experiments, graduated.
-
-2. Output the research view:
-
-```
-research space
-
-[If active explorations exist:]
-explorations
-
-  [id] — [status], [thread count] threads
-  [id] — [status]
-
-[If calibrations exist:]
-calibrations
-
-  [quality] — [status]
-  [quality] — [status]
-
-[If experiments exist:]
-experiments
-
-  [id] — [status]
-
-[If recent graduations exist:]
-graduated (recent)
-
-  [id] → [destination type]
-
-─────
-
-from here
-
-  [observation line 1]
-  [action line 1]
-
-  [observation line 2]
-  [action line 2]
-
-                        "start research on [topic]" to begin inquiry
-                        "run experiment" to test
-                        "capture: [thought]" to hold a thought
-                        "attune [quality]" to refine
-                        "explore [concept]" in concepts-repo
-```
-
-**Section visibility:**
-- `explorations` — only if explorations exist in manifest
-- `calibrations` — only if calibrations exist
-- `experiments` — only if experiments exist
-- `graduated` — only if items graduated recently (last 7 days)
-- `from here` — always shown (2-3 suggestions)
-
-**Suggestion generation for research:**
-
-Each suggestion has two lines:
-- **Line 1 (observation)**: What you notice in the research space
-- **Line 2 (action)**: What could happen next
-
----
-
-## Tool Context (Tool Repository)
+## Tool Context
 
 **When `context.type === "tool"`:**
 
-1. Read `manifest.json` to get adapters and connected repos.
-
-2. Output the tool view:
-
 ```
-tool space
+                            home
 
-[If adapters exist:]
-adapters
+  [If adapters exist:]
+  adapters
 
-  [adapter-id] — [status]
+    [adapter-id] — [status]
 
-[If connected repos exist:]
-connected
+  [If connected repos exist:]
+  connected
 
-  [repo-path] — [sync status]
+    [repo-path]
 
-─────
 
-from here
+─────────────────────────────────────────────────
 
-  [observation about tool state]
-  [action suggestion]
+  [observation if any]
 
-                        see connected repos for usage context
+                                       "help" to see where we could go
 ```
 
 ---
 
-## Concepts Context (See the Whole)
+## Arriving at a Specific Concept
 
-**When `context.type === "concepts"` or no argument provided:**
+**When user says "home [concept-id]" or arrives via linked concept:**
 
-**Purpose:** Show the whole — threads, concepts, what's waiting.
-
-**Steps:**
-
-1. Read `manifest.json` to get concepts and notes.
-
-2. Output the whole view:
+1. Read the concept.md file fully.
+2. Assess section states (to inform suggestions, not to display metrics).
+3. Output:
 
 ```
-[If notes with 2+ references exist:]
-threads between
+                      [concept-name]
 
-  [note essence] — [concept-1], [concept-2]
-  [note essence] — [concept-1], [concept-2], [concept-3]
+  impulse — [brief essence from Real-World Impulse]
+  surfaces — [brief summary of Primary Surfaces, or "thin" if empty]
+  glow — [brief essence or "thin"]
 
-─────
 
-concepts
+─────────────────────────────────────────────────
 
-  [concept-name-1]
-  [concept-name-2]
-  [concept-name-3]
+  [1-2 suggestions grounded in this concept's actual content]
 
-[If notes with empty references exist:]
-─────
-
-waiting
-
-  [note essence 1]
-  [note essence 2]
-
-[If notes with ecology field exist:]
-─────
-
-noticed
-
-  [ecology]: [concept] — [brief essence]
-  [ecology]: quiet across all concepts
-
-─────
-
-from here
-
-  [observation line 1]
-  [action line 1]
-
-  [observation line 2]
-  [action line 2]
-
-                        "show me [concept]" to arrive
-                        "explore [concept]" to work
-                        "capture: [thought]" to hold
-                        "test [target]" to notice through ecology
-                        "attune [quality]" to refine (research)
+                                       "help" to see where we could go
 ```
 
-**Section visibility:**
-- `threads between` — only shown when notes with 2+ references exist
-- `concepts` — always shown
-- `waiting` — only shown when notes with empty references exist
-- `noticed` — only shown when notes have `ecology` field in references
-- `from here` — always shown (2-4 suggestions)
+**Suggestions are dialogue starters, not commands.** The user is already here. They just respond.
 
 ---
 
-## With Concept-id (Arrive)
+## Repair Paths
 
-**Purpose:** Arrive at one concept. See its state. Open to dialogue.
+When home detects something that might be misplaced, offer a gentle repair path:
 
-**Steps:**
-
-1. Read the specified `concept.md` file fully.
-
-2. Assess each section's state (not to display metrics, but to inform suggestions):
-   - Which sections have substance?
-   - Which are thin or empty?
-   - What specific content stands out?
-   - Are there notes connected to this concept?
-
-3. Output the concept view:
-
+**Inquiry that might be a concept:**
 ```
-[concept-name]
-
-impulse — [brief essence from Real-World Impulse section]
-surfaces — [brief summary of Primary Surfaces]
-glow — [state indicator: thin, or brief essence if present]
-
-─────
-
-from here
-
-  [observation line 1]
-  [action line 1]
-
-  [observation line 2]
-  [action line 2]
-
-                        just respond, or see what connects this to another
-                        ("explore [id]", "explore [id] and [other-id]", "where am I")
+  (this inquiry reads more like an idea taking shape —
+   want to move it to concepts?)
 ```
 
-**Conversational opener rules:**
+**Concept that might be research:**
+```
+  (this has a lot of open questions —
+   might work better as a research exploration?)
+```
 
-Suggestions are NOT commands — they are dialogue starters. The user is already here. They just respond.
+**Note that's been waiting a long time:**
+```
+  (this note has been waiting since [date] —
+   still relevant, or ready to let go?)
+```
 
-Each suggestion has two lines:
-- **Line 1 (observation)**: Content-grounded, what you notice in this concept
-- **Line 2 (action)**: Vocabulary-aligned, opens a door — can be a question or an action
+Only surface one repair suggestion at a time. Don't overwhelm.
 
-**Voice:** Quiet arrival. The openings invite, they don't push. The user can respond or not. They can sit here. They can leave. Home receives.
+---
+
+## Help (When Explicitly Requested)
+
+```
+  where we could go from here
+
+
+  [Context-specific options based on workspace type]
+
+  concepts workspace:
+    describe something on your mind
+    "explore [concept]" to work with an idea
+    "capture: [thought]" to hold something
+
+  research workspace:
+    describe a question you're sitting with
+    "start research on [topic]" to begin inquiry
+    "run experiment" to test something
+
+  implementation workspace:
+    describe what you're building
+    "work on [app]" to focus on implementation
+
+  anywhere:
+    just talk — I can help you find where to go next
+```
+
+---
+
+## Voice Principles
+
+### Home never:
+- Asks "what do you want to do?"
+- Displays metrics or progress percentages
+- Categorizes concepts (rich/emerging/seed)
+- Uses hollow encouragements ("Great work!")
+- Claims capability ("I'll understand...")
+- Uses insider vocabulary without context
+
+### Home always:
+- Shows what's here, grounded in actual content
+- References recent activity when detectable
+- Offers 1-2 suggestions based on what it observes
+- Makes help available as footnote
+- Receives — the user can respond, sit, or leave
 
 ---
 
 ## Do NOT:
-- Display metrics or progress indicators
-- Categorize concepts (rich/emerging/seed)
-- Use hollow encouragements ("Great work!", "Nice progress!")
-- Ask what the user wants to do
+- Display progress indicators
 - Generate long overviews or summaries
 - Modify any files
+- Push the user toward action
+- Presume what they want to do
