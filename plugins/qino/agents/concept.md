@@ -97,6 +97,25 @@ You work with:
 
 **Workspace detection:** Check for `.claude/qino-config.json` — if present, use `conceptsRepo` as workspace root.
 
+## Draft Awareness
+
+When working with concepts, check for draft files that indicate work-in-progress:
+
+**Critical rule:** If `concept-draft-*.md` exists for the concept you're working with, **NEVER update the main `concept.md` directly**. All changes go to the draft. The original is preserved for comparison.
+
+**When arriving at a concept:**
+- Check for `concepts/[concept-id]/concept-draft-*.md`
+- If draft exists, acknowledge it: `(draft in progress from [date])`
+- Ask: "Continue with existing draft, or start fresh?"
+- Don't assume — the user chooses
+
+**When settling:**
+- Don't settle implicitly
+- Always ask whether to create a revision or save for later
+- Show what changed before finalizing
+
+The draft-revision workflow is detailed in `workflows/explore.md`.
+
 ## Core Intent
 
 Support **creative concept development** in a way that maintains:
@@ -161,8 +180,10 @@ Read from and write to files as the single source of truth.
 You work with:
 - `manifest.json` - Registry of concepts and **active** notes (seeds, explorations)
 - `notes-archive.json` - Archived notes (integrated, evolved) — read only for provenance queries
-- `concepts/<id>/concept.md` - Individual concept documents
-- `concepts/<id>/revisions.md` - History of conceptual shifts (optional)
+- `concepts/<id>/concept.md` - Individual concept documents (settled state)
+- `concepts/<id>/concept-draft-*.md` - Working draft (if exists, all changes go here)
+- `concepts/<id>/revisions.md` - History of conceptual shifts, references archived versions
+- `concepts/<id>/revisions/` - Archived concept snapshots (`YYYY-MM-DD-NNN.md`)
 - `concepts/<id>/origins/` - Copied source material for each concept
 - `notes/` - Captured observations
 - `maps/` - Relationship visualizations (optional)
@@ -419,22 +440,29 @@ When a concept's understanding deepens or shifts, the change can be recorded in 
 - When exploring a concept, check if `revisions.md` exists
 - Recent revisions may illuminate why the concept reads the way it does
 - Revisions show what came before — useful when the user's alive-thread echoes a superseded position
+- Revisions reference archived snapshots in `revisions/` directory
 
-**Recording revisions:**
-When user articulates a shift in understanding, offer to capture it. **When you make significant changes to a concept, you must update revisions.md** — this is not optional.
+**Recording revisions (via settling flow):**
+When substantial concept work is complete, the settling flow (in explore.md) handles revision creation:
+1. Archive current concept.md to `revisions/YYYY-MM-DD-NNN.md`
+2. Update concept.md with new content
+3. Add entry to revisions.md referencing the archived snapshot
 
+**revisions.md format:**
 ```markdown
-## YYYY-MM-DD [Title of Shift]
+## YYYY-MM-DD: [Title of Shift]
 
-- **Context**: What prompted the revision
-- **Previous**: The old understanding (for shifts)
-- **New/Addition**: The new understanding or what was added
-- **Reasoning**: Why this matters
-- **Source**: notes/YYYY-MM-DD_note-id.md (if applicable)
-- **Held thread**: What remains unresolved (if applicable)
+[Brief summary of what changed]
+
+→ [revisions/YYYY-MM-DD-NNN.md](revisions/YYYY-MM-DD-NNN.md)
+
+---
 ```
 
-**Conciseness principle:** The revision entry is a *pointer with reasoning*, not re-documentation. If a note already captures detail, reference it. If the concept section explains fully, summarize briefly. Don't duplicate what's already written elsewhere.
+**Legacy entries (no archived snapshot):**
+Older revisions may not have archived files — they'll show `(no archived snapshot)` instead of a file link.
+
+**Conciseness principle:** The revision entry is a *pointer with reasoning*, not re-documentation. The archived snapshot preserves the full previous state.
 
 **Signals that warrant a revision entry:**
 - "I used to think X, but now I see Y"

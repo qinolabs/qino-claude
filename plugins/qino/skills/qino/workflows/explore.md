@@ -40,6 +40,101 @@ Proceed normally in the current workspace.
 
 ---
 
+## Draft Detection (Before Concept Work)
+
+Before beginning any concept exploration, check for an existing draft:
+
+1. **Glob for draft file:** `concepts/[concept-id]/concept-draft-*.md`
+
+2. **If draft exists:**
+   - Note the date from the `Draft started:` field in the draft header
+   - Show: `(draft in progress from [date])`
+   - Ask: "Continue with existing draft, or start fresh?"
+   - **If continue:** Work with the draft file for all subsequent updates
+   - **If fresh:** Move old draft to `concepts/[concept-id]/drafts-archive/`, create new draft
+
+3. **If no draft exists:**
+   - Proceed normally — draft created when substantial work begins (see "Draft-Aware Updates" below)
+
+---
+
+## Draft-Aware Updates
+
+When making changes to a concept during exploration:
+
+**Create draft when:**
+- User wants to significantly revise a section
+- Multiple sections will change
+- Exploration is open-ended ("let's explore this concept")
+- User explicitly requests draft mode
+
+**Work directly when:**
+- Small, targeted edits (typo, single sentence)
+- Adding to Held Threads / Open Questions only
+- User explicitly requests direct edit
+
+**When uncertain, ask:**
+> "This looks like substantial work — want me to create a draft so we can compare with the original?"
+
+**If creating draft:**
+1. Create `concept-draft-YYYYMMDD-HHMMSS.md` as copy of current concept.md
+2. Add header:
+   ```markdown
+   # [Concept Name] — Draft
+
+   **Draft started:** YYYY-MM-DD
+   **From:** concept.md (original preserved)
+
+   ---
+   ```
+3. Inform user: `(created draft — original preserved)`
+4. All subsequent changes go to the draft
+
+**If draft already exists:**
+- All changes go to the draft file
+- Never touch the main `concept.md`
+- The original is preserved for comparison
+
+---
+
+## Settling (After Substantial Draft Work)
+
+When exploration reaches a natural pause, or user signals done:
+
+> "This draft has taken shape. What would you like to do?"
+>
+> → **Create revision** — saves current state, updates concept.md
+> → **Save for later** — keeps draft, original unchanged
+> → **Keep exploring** — continue working
+
+**If "Create revision":**
+1. Show summary of what changed (not full diff, just key changes)
+2. Ask for revision title
+3. Archive current concept.md:
+   - Create `revisions/` directory if needed
+   - Glob for `revisions/YYYY-MM-DD-*.md` to find next index
+   - Copy concept.md to `revisions/YYYY-MM-DD-NNN.md`
+4. Replace concept.md with draft content (stripping draft header and Draft Notes section)
+5. Prepend entry to revisions.md:
+   ```markdown
+   ## YYYY-MM-DD: [Revision Title]
+
+   [Brief summary of what changed]
+
+   → [revisions/YYYY-MM-DD-NNN.md](revisions/YYYY-MM-DD-NNN.md)
+
+   ---
+   ```
+6. Delete the draft file
+7. Update `last_touched` in manifest.json
+
+**If "Save for later":**
+- Keep draft file as-is
+- Original remains unchanged
+- User can return anytime — draft detection will find it
+
+---
+
 ## Cross-Concept Signals (applies to all modes)
 
 During any explore session, the user may signal that something reaches beyond the current concept(s). Recognize these signals:
@@ -478,3 +573,5 @@ If fewer than 2 concept ids provided, ask: "Which concepts would you like to exp
 - Rush through multiple changes without confirmation
 - Demand completeness or full definitions
 - **Read origin files** (`concepts/<id>/origins/`) unless user explicitly engages with a held thread offering — the index is enough to offer, and origins may be outdated
+- **Update concept.md directly when a draft exists** — all changes go to the draft file
+- **Settle implicitly** — always ask user whether to create revision or save for later
