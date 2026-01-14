@@ -10,6 +10,34 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [1.1.0] - 2026-01-14
+
+### qino
+
+#### Added
+
+- **Hybrid execution modes** — workflows now execute in one of two modes: *inject* (dialogue workflows run in main conversation with persona principles) or *spawn* (synthesis workflows run in isolated subagent). Dialogue stays natural; heavy work stays contained.
+- **Draft-revision workflow** — concept exploration now separates working state from settled state. Explore creates a draft; original concept.md is preserved. User always chooses when to settle. Revisions archive snapshots in `revisions/YYYY-MM-DD-NNN.md`.
+- **Drift signals documentation** — new reference documenting how the dev agent recognizes concept-level changes during implementation work
+
+#### Changed
+
+- **Home workflow** — now oriented around anchor principles: orientation, repair, and confidence. Best-effort recent activity via git + manifest. Never asks "what do you want to do?" — always receives.
+- **Orientation workflow** — invitation-first approach. Offers genuine engagement before jumping to task.
+- **Arc workflow** — shifts from form-filling to dialogue-based gathering. Uses internal lenses for scanning. Proposes settling point, follows resonance. Includes transcript awareness for compacted conversations.
+- **Explore workflow** — now draft-aware with settling flow. Substantial work triggers draft creation.
+- **Test workflow** — improved grounding with ecology-based testing approach
+
+### Documentation
+
+#### Changed
+
+- **README Figure section** — aligned with evolved domain language: "identity is resonance, not reference." Examples now show figures as emergent patterns, not stored forms.
+- **Ecology table** — Figure focus changed from "Shape & boundary" to "Resonance"
+- **CLAUDE.md** — updated to reflect hybrid execution architecture
+
+---
+
 ## [1.0.2] - 2026-01-08
 
 ### qino
