@@ -20,14 +20,14 @@ Match user intent to workflow. Read the workflow file and follow its instruction
 
 | User Intent | Workflow |
 |-------------|----------|
-| Write chronicle chapter, "next chapter" | [commands/chapter.md](../commands/chapter.md) |
-| Survey git history, "plan chapters" | [commands/survey.md](../commands/survey.md) |
-| Diagnose scribe system, "check scribe" | [commands/diagnose.md](../commands/diagnose.md) |
-| Rewind last chapter, "undo chapter" | [commands/rewind.md](../commands/rewind.md) |
-| Create visual style, "configure images" | [commands/visual-style.md](../commands/visual-style.md) |
-| Transmit research, "create transmission" | [commands/transmit.md](../commands/transmit.md) |
-| Apply narrator lens | [commands/narrator.md](../commands/narrator.md) |
-| Apply wanderer lens | [commands/wanderer.md](../commands/wanderer.md) |
+| Write chronicle chapter, "next chapter" | [workflows/chapter.md](../workflows/chapter.md) |
+| Survey git history, "plan chapters" | [workflows/survey.md](../workflows/survey.md) |
+| Diagnose scribe system, "check scribe" | [workflows/diagnose.md](../workflows/diagnose.md) |
+| Rewind last chapter, "undo chapter" | [workflows/rewind.md](../workflows/rewind.md) |
+| Create visual style, "configure images" | [workflows/visual-style.md](../workflows/visual-style.md) |
+| Transmit research, "create transmission" | [workflows/transmit.md](../workflows/transmit.md) |
+| Apply narrator lens | [workflows/narrator.md](../workflows/narrator.md) |
+| Apply wanderer lens | [workflows/wanderer.md](../workflows/wanderer.md) |
 
 ---
 
@@ -45,13 +45,13 @@ Transform git history into narrative. Multi-agent architecture with prep, prose,
 - `agents/scribe-editorial.md` — Voice review and revision
 
 **References:**
-- `references/qino-scribe/voice.md` — Craft devices and patterns
-- `references/qino-scribe/craft.md` — Chapter format, world structure
-- `references/qino-scribe/layers.md` — Layer architecture
-- `references/qino-scribe/story-lenses.md` — Twelve lenses
-- `references/qino-scribe/disturbance.md` — Git diff interpretation
-- `references/qino-scribe/principles.md` — Relational substrate
-- `references/qino-scribe/foundation.md` — World-seed configuration
+- `references/chronicle/voice.md` — Craft devices and patterns
+- `references/chronicle/craft.md` — Chapter format, world structure
+- `references/chronicle/layers.md` — Layer architecture
+- `references/chronicle/story-lenses.md` — Twelve lenses
+- `references/chronicle/disturbance.md` — Git diff interpretation
+- `references/chronicle/principles.md` — Relational substrate
+- `references/chronicle/foundation.md` — World-seed configuration
 
 ### Transmission (from qino-relay)
 
@@ -64,10 +64,10 @@ Voice research arcs through the Student as reader companion.
 - `agents/relay-editorial.md` — Voice integrity review
 
 **References:**
-- `references/qino-relay/voice.md` — Student voice patterns
-- `references/qino-relay/student-guide.md` — How the Student works
-- `references/qino-relay/transmission-format.md` — Format specification
-- `references/qino-relay/reader-journey-guide.md` — Reader journey prep
+- `references/transmission/voice.md` — Student voice patterns
+- `references/transmission/student-guide.md` — How the Student works
+- `references/transmission/transmission-format.md` — Format specification
+- `references/transmission/reader-journey-guide.md` — Reader journey prep
 
 ### Lenses (from qino-lens)
 
@@ -76,11 +76,11 @@ Transform prose through specific qualities of attention.
 **Workflows:** narrator, wanderer
 
 **References:**
-- `references/qino-lens/narrator.md` — World as participant, body first
-- `references/qino-lens/wanderer.md` — Embodied presence, contextual density
-- `references/qino-lens/companion.md` — Companionship lens
-- `references/qino-lens/newcomer.md` — Newcomer lens
-- `references/qino-lens/student.md` — Student lens
+- `references/lenses/narrator.md` — World as participant, body first
+- `references/lenses/wanderer.md` — Embodied presence, contextual density
+- `references/lenses/companion.md` — Companionship lens
+- `references/lenses/newcomer.md` — Newcomer lens
+- `references/lenses/student.md` — Student lens
 
 ---
 

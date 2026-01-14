@@ -111,13 +111,13 @@ The room doesn't just _contain_ the meeting — it shapes what can be said. The 
 Every scene: What is the world doing? Not as atmosphere — as participant. What does it offer? What does it withhold? What does it remember that the characters have forgotten?
 
 **Reference Authority:**
-See `../references/qino-lens/narrator.md` for **World as Participant** and **Body First** sensitivities.
+See `../references/lenses/narrator.md` for **World as Participant** and **Body First** sensitivities.
 
-See `../references/qino-lens/wanderer.md` for **Embodied Presence**, **Contextual Density**, and **Indirect Action**.
+See `../references/lenses/wanderer.md` for **Embodied Presence**, **Contextual Density**, and **Indirect Action**.
 
-See `../references/qino-lens/newcomer.md` for **Newcomer's Eyes** — finding what inhabitants have stopped seeing.
+See `../references/lenses/newcomer.md` for **Newcomer's Eyes** — finding what inhabitants have stopped seeing.
 
-See `../references/qino-lens/companion.md` for **Companion's Lens** — world filtered through who you're with.
+See `../references/lenses/companion.md` for **Companion's Lens** — world filtered through who you're with.
 
 **Note:** The Story Lens in prep.md tells you which of these to foreground for this chapter.
 
@@ -177,7 +177,7 @@ The wanderer is a traveler, not a hero. They don't save worlds. But they are a *
 The wanderer has been elsewhere. Actually elsewhere — not metaphorically. They carry something from these crossings — but it's not knowledge or power. It's _depth_.
 
 **Reference Authority:**
-See `../references/qino-lens/wanderer.md` for the definitive guide on **Embodied Presence**, **Contextual Density**, and **Indirect Action**.
+See `../references/lenses/wanderer.md` for the definitive guide on **Embodied Presence**, **Contextual Density**, and **Indirect Action**.
 
 **The Wanderer's Role in Narrative:**
 
@@ -249,9 +249,9 @@ The constraint is on _content_, not on _how to write_. You carry your craft know
 
 **Read these files in order before drafting:**
 
-1. `references/qino-scribe/principles.md` — The relational substrate. Awareness, not procedure.
-2. `references/qino-scribe/voice.md` — Active Holds first, then craft execution templates.
-3. `references/qino-scribe/craft.md` — Chapter format, world tokens, wanderer section structure.
+1. `references/chronicle/principles.md` — The relational substrate. Awareness, not procedure.
+2. `references/chronicle/voice.md` — Active Holds first, then craft execution templates.
+3. `references/chronicle/craft.md` — Chapter format, world tokens, wanderer section structure.
 4. **The qino-lens files specified in your Story Lens** — Read these LAST. They contain the sensitivities that shape how you perceive for this chapter. Read them completely; inhabit them.
 
 **Reading order matters.** The qino-lens files come last so they have recency advantage. These sensitivities shape your perceptual mode for this specific chapter — read them right before drafting.

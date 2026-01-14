@@ -6,7 +6,7 @@
 
 **References:**
 - `agents/concept.md` — The shared foundation (Bateson's principle, your stance)
-- `references/qino-attune/calibrate-process.md` — The five phases in detail
+- `references/attune/calibrate-process.md` — The five phases in detail
 
 ---
 

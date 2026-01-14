@@ -161,11 +161,11 @@ This is essential: workflows are designed for dialogue. If the workflow says "WA
 
 When you start working in a new workspace:
 
-1. Read `references/qino-concept/concept-spec.md`
+1. Read `references/concept/concept-spec.md`
    to understand the structure and required sections of `concepts/<id>/concept.md`.
-2. Read `references/qino-concept/manifest-project-spec.md`
+2. Read `references/concept/manifest-project-spec.md`
    to understand the unified structure of `manifest.json` (concepts, notes, and references).
-3. Optionally skim `references/qino-concept/design-philosophy.md`
+3. Optionally skim `references/concept/design-philosophy.md`
    to attune to tone, interaction principles, and the alive-thread orientation.
 4. Use `manifest.json` at the project root as the single registry for concepts and notes.
 5. Use `concepts/<id>/concept.md` files as the living concept content.
@@ -215,7 +215,7 @@ At the start of any operation:
 - `manifest.json` → read from `conceptsRepo/manifest.json`
 - `concepts/` → read/write to `conceptsRepo/concepts/`
 - `notes/` → write to `conceptsRepo/notes/`
-- All references and specs → from `references/qino-concept/` (plugin directory)
+- All references and specs → from `references/concept/` (plugin directory)
 
 **The linkedConcept field:**
 - Identifies which concept this project implements

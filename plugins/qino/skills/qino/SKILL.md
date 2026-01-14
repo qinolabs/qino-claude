@@ -1,17 +1,25 @@
 ---
 name: qino
 description: |
-  Develops ideas from concept to implementation. Routes to specialized agents.
+  Ecology for developing ideas through concept exploration, research, and implementation.
 
-  Use when the user says:
-  - "what's next for [project]", "continue [app]", "work on [app]", "build [feature]",
-    "implement [feature]", "plan the iteration", "what should I build next" → dev agent
-  - "explore [concept]", "go deeper into [idea]", "capture this thought", "hold this",
-    "where am I", "what's here", "test through ecology", "compare these" → concept agent
-  - "start research on [topic]", "investigate [question]", "begin inquiry" → research agent
+  ACTIVATE for dev work:
+  - "what's next for [app]", "continue [app]", "work on [app]"
+  - "build [feature]", "implement [feature]", "plan the iteration"
+  - "read the implementation notes", "what's the iteration status"
+  - "what should I build next", "next steps for [project]"
 
-  Also activates for: arriving at a workspace, orienting, seeing what qino offers.
-  Natural language — describe intent, not commands.
+  ACTIVATE for concept work:
+  - "explore [concept]", "go deeper into [idea]", "where am I", "what's here"
+  - "capture this thought", "hold this", "note this"
+  - "test through ecology", "compare these", "attune [quality]"
+
+  ACTIVATE for research:
+  - "start research on [topic]", "investigate [question]", "begin inquiry"
+
+  ACTIVATE when in qino workspace (has .claude/qino-config.json).
+
+  NOT implicit: arc capture requires explicit invocation ("/qino arc" or "capture an arc").
 ---
 
 # qino Skill

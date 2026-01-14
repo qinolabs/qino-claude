@@ -55,7 +55,7 @@ Copy the specification files from tool source:
 
 ### 5. Initialize manifest.json
 
-Follow the schema defined in `references/qino-concept/manifest-project-spec.md`:
+Follow the schema defined in `references/concept/manifest-project-spec.md`:
 ```json
 {
   "version": 2,

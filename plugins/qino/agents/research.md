@@ -66,7 +66,7 @@ This is essential: workflows are designed for dialogue. If the workflow says "WA
 
 When starting work:
 
-1. Read `references/qino-research/research-spec.md` for research structure
+1. Read `references/research/research-spec.md` for research structure
 2. Read `manifest.json` at research repo root for current explorations, calibrations, experiments
 3. Check `.claude/qino-config.json` for `conceptsRepo` path (graduation destination)
 

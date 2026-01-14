@@ -103,11 +103,11 @@ This section appears after Beat, before Pre-Flight Checklist.
 ## Reference Documents
 
 Consult during your work:
-- `references/qino-scribe/layers.md` — Layer flow, checkpoint formats, prep.md structure
-- `references/qino-scribe/story-lenses.md` — The twelve lenses and their sensitivities
-- `references/qino-scribe/disturbance.md` — How git diffs become world behavior
-- `references/qino-scribe/craft.md` — Theme, world.md structure, arc shapes
-- `references/qino-scribe/principles.md` — Relational principles
+- `references/chronicle/layers.md` — Layer flow, checkpoint formats, prep.md structure
+- `references/chronicle/story-lenses.md` — The twelve lenses and their sensitivities
+- `references/chronicle/disturbance.md` — How git diffs become world behavior
+- `references/chronicle/craft.md` — Theme, world.md structure, arc shapes
+- `references/chronicle/principles.md` — Relational principles
 
 ---
 
@@ -220,7 +220,7 @@ Copy the sensitivity descriptions from `story-lenses.md` — the prose agent nee
 - world-seed.md for project understanding
 - The qino-lens reference files for foregrounded sensitivities
 
-**Consult:** `references/qino-scribe/disturbance.md` — how git diffs become world behavior
+**Consult:** `references/chronicle/disturbance.md` — how git diffs become world behavior
 
 **Get the diff:**
 ```bash

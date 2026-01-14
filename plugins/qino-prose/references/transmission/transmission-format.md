@@ -271,7 +271,7 @@ Instead, environment creates conditions for concentration. The place the Student
 
 The Interruption Frame is grounded in deliberate Environment prep during Phase 2.5 of `/qino-relay:transmit`. The orchestrator captures place, activity, time/light, detail, and potential moments in `reader-journey.md`. The prose agent uses these notes to write the frame.
 
-See `references/qino-relay/reader-journey-guide.md` for how to prepare Environment notes.
+See `references/transmission/reader-journey-guide.md` for how to prepare Environment notes.
 
 Across transmissions, this variety builds the Student's lived-in world. By transmission 10, readers know the library's tall windows, the friend who sits down without asking, the mate that's always cooling.
 

@@ -4,7 +4,7 @@
 **Voice:** Grounded. Practical. Not heavy. This is the moment before building begins.
 **Agent:** dev
 
-**Reference:** Read `references/qino-dev/home-pattern.md` for the arrival pattern used in generated commands.
+**Reference:** Read `references/dev/home-pattern.md` for the arrival pattern used in generated commands.
 
 ---
 
@@ -117,7 +117,7 @@ Create the following files:
 
 **`implementations/[app]/implementation.md`**
 
-Use `references/qino-dev/templates/implementation-template.md` as structure.
+Use `references/dev/templates/implementation-template.md` as structure.
 
 Fill in from the translation exploration:
 - Concept source (path to linked concept)
@@ -141,7 +141,7 @@ Read the concept's `last_touched` from the concepts-repo manifest.json and recor
 
 **`implementations/[app]/iterations/01-foundation.md`**
 
-Use `references/qino-dev/templates/iteration-template.md` as structure.
+Use `references/dev/templates/iteration-template.md` as structure.
 
 Fill in from the first iteration discussion.
 
@@ -158,7 +158,7 @@ Add concept link:
 
 **`.claude/commands/qino-dev/[short-id].md`**
 
-Use `references/qino-dev/templates/app-command-template.md` as structure.
+Use `references/dev/templates/app-command-template.md` as structure.
 
 Replace placeholders with:
 - `{{APP_NAME}}`: Full app name

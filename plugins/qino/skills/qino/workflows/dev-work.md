@@ -4,7 +4,7 @@
 **Voice:** Grounded. Practical. Let's build.
 **Agent:** dev
 
-**Reference:** Read `references/qino-dev/home-pattern.md` for arrival pattern.
+**Reference:** Read `references/dev/home-pattern.md` for arrival pattern.
 
 ---
 
@@ -244,7 +244,7 @@ During building, watch for signals that suggest concept-level learnings. These a
 - Use capture workflow (for observations that aren't decisions yet)
 - These notes auto-tag with linkedConcept and can be reviewed later
 
-**Reference:** See `references/qino-dev/drift-signals.md` for detailed examples.
+**Reference:** See `references/dev/drift-signals.md` for detailed examples.
 
 ---
 

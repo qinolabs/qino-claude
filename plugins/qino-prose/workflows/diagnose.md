@@ -33,7 +33,7 @@ Arguments: `$ARGUMENTS`
 Read these files to understand the current system state:
 
 ### Commands
-- `commands/qino-scribe/chapter.md` — Main orchestration
+- `workflows/chapter.md` — Main orchestration
 
 ### Agents
 - `agents/scribe-prep.md` — World, Disturbance, Beat layers
@@ -41,19 +41,19 @@ Read these files to understand the current system state:
 - `agents/scribe-editorial.md` — Review and verification
 
 ### References
-- `references/qino-scribe/voice.md` — Craft devices, line-level and chapter-level patterns
-- `references/qino-scribe/craft.md` — Chapter format, world.md structure, arc shapes
-- `references/qino-scribe/principles.md` — Relational substrate
-- `references/qino-scribe/foundation.md` — World-seed configuration fields
-- `references/qino-scribe/layers.md` — Layer flow, checkpoint formats
-- `references/qino-scribe/disturbance.md` — Git diff interpretation
-- `references/qino-scribe/story-lenses.md` — Twelve story lenses and sensitivities
+- `references/chronicle/voice.md` — Craft devices, line-level and chapter-level patterns
+- `references/chronicle/craft.md` — Chapter format, world.md structure, arc shapes
+- `references/chronicle/principles.md` — Relational substrate
+- `references/chronicle/foundation.md` — World-seed configuration fields
+- `references/chronicle/layers.md` — Layer flow, checkpoint formats
+- `references/chronicle/disturbance.md` — Git diff interpretation
+- `references/chronicle/story-lenses.md` — Twelve story lenses and sensitivities
 
 ### Lens Integration
-- `../references/qino-lens/narrator.md`
-- `../references/qino-lens/wanderer.md`
-- `../references/qino-lens/companion.md`
-- `../references/qino-lens/newcomer.md`
+- `../references/lenses/narrator.md`
+- `../references/lenses/wanderer.md`
+- `../references/lenses/companion.md`
+- `../references/lenses/newcomer.md`
 
 ---
 

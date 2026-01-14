@@ -32,11 +32,11 @@ Read the draft transmission. Do not read other files.
 ## Reference
 
 Before reviewing, read:
-- `../references/qino-lens/student.md` — The Student lens (sensitivity authority)
-- `references/qino-relay/voice.md` — Relay-specific voice application
-- `references/qino-relay/craft.md` — Transmission-specific craft (including Environment as Texture)
-- `references/qino-relay/transmission-format.md` — Arrival section structure and parsing rules
-- `references/qino-relay/student-guide.md` — Student's relationship to transmissions (warmth, familiarity)
+- `../references/lenses/student.md` — The Student lens (sensitivity authority)
+- `references/transmission/voice.md` — Relay-specific voice application
+- `references/transmission/craft.md` — Transmission-specific craft (including Environment as Texture)
+- `references/transmission/transmission-format.md` — Arrival section structure and parsing rules
+- `references/transmission/student-guide.md` — Student's relationship to transmissions (warmth, familiarity)
 
 The Student lens is the source of truth for voice principles. The relay files add transmission-specific guidance.
 

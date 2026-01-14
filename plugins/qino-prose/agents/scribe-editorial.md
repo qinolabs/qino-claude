@@ -21,7 +21,7 @@ The orchestrator provides:
 - Read the chapter file using the Read tool — note the line numbers
 
 You also read:
-- `references/qino-scribe/voice.md` — the patterns to check against (line-level and chapter-level)
+- `references/chronicle/voice.md` — the patterns to check against (line-level and chapter-level)
 
 ---
 
@@ -38,7 +38,7 @@ Don't annotate yet. Just read.
 
 ### 2. Check Against Voice Patterns
 
-Read `references/qino-scribe/voice.md`. Check both line-level and chapter-level patterns.
+Read `references/chronicle/voice.md`. Check both line-level and chapter-level patterns.
 
 **Line-level focus:**
 - **Dialogue** — Does it land without narration explaining it?
@@ -130,7 +130,7 @@ Most chapters will need 0-5 line-level adjustments. If you're flagging more than
 ## Reference Authority
 
 Read completely before evaluating:
-- `references/qino-scribe/voice.md` — The unified patterns to check against (craft devices, line-level, chapter-level)
+- `references/chronicle/voice.md` — The unified patterns to check against (craft devices, line-level, chapter-level)
 
 Do NOT read (they're not in your context):
 - prep.md

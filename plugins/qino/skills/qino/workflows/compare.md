@@ -6,7 +6,7 @@
 
 **References:**
 - `agents/concept.md` — The shared foundation (Bateson's principle, your stance)
-- `references/qino-attune/compare-session.md` — How to facilitate the comparison experience
+- `references/attune/compare-session.md` — How to facilitate the comparison experience
 
 ---
 
