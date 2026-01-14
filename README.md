@@ -104,13 +104,13 @@ What does accumulate are learnings and notes, either woven into existing concept
 
 ### Figures: The Pattern of Return
 
-_Figure_ in qino is a metaphor — in Bateson's sense, not the literary sense. A persistent form that carries meaning through return.
+_Figure_ in qino is a metaphor — in Bateson's sense, not the literary sense. Not a stored form, but a pattern that emerges through encounters. Identity is resonance, not reference.
 
-What forms do figures take?
+What does this mean in practice?
 
-- **In the apps:** A snapshot you capture when your friend laughs in a certain way. A game design idea saved during a creative meet.
-- **In the chronicles:** Characters like Seren and Lira who perceive the wanderer.
-- **In concepts:** The recurring patterns that connect one idea to another.
+- **In the apps:** Your friend laughing in a certain way — captured many times, across contexts. No single snapshot *is* the figure; the figure is what you recognize across them.
+- **In the chronicles:** Seren, Lira, the wanderer — each a presence in that world. But the figure is larger: what persists when Seren appears in different chapters, different pressures.
+- **In concepts:** The thread you notice connecting one idea to another — not because you traced it, but because it kept appearing until you couldn't unsee it.
 
 Same pattern, completely different shape in each context. You don't deduce your way to this recognition — you're deep in the scribe, refining how Seren sees the wanderer, and suddenly you recognize something about how figures should work across the apps. The crab teaches you about the lobster. One context illuminates another through pattern, not logic.
 
@@ -864,7 +864,7 @@ Ecological tests stand at these gaps. They ask: _Does the pattern that holds thi
 | ------------------ | ---------------- | ---------------------------------------------------------------------------------- |
 | **User**           | Lived experience | Does this make it easier to notice something and respond from curiosity?           |
 | **Gesture**        | Movement & touch | Does this feel like a natural human movement, without knowing it is "input"?       |
-| **Figure**         | Shape & boundary | Can this be re-entered and still feel like "the same thing" after change?          |
+| **Figure**         | Resonance        | Can this be re-entered and still feel like "the same thing" after change?          |
 | **Relation**       | Connection       | Does this introduce a tension or ambiguity that neither side resolves alone?       |
 | **World**          | Environment      | Does the world surprise without contradicting itself?                              |
 | **Echo**           | Resonance        | Does this preserve the gesture while transforming it just enough to be noticeable? |
