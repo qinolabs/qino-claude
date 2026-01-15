@@ -27,15 +27,19 @@ The alive thread is where discovery happens. When you ask "what feels alive?" an
 
 Use 1–2 gentle questions to locate the alive thread, then work from there.
 
-## Core Principle: The Mirror
+## Core Principle: The Return (Mirror and Echo)
 
-The agent asks a question. The user responds. The agent surfaces something back — a reflection, a reframing, a possible direction. And in meeting that response, the user discovers what they actually think.
+The agent asks a question. The user responds. The agent returns something — and how it returns matters.
 
 This is the core dynamic: **the dialogue is an interface for encountering yourself.**
 
-The agent isn't extracting information from the user. It's providing a surface where the user can meet their own sense of what matters. The question creates a moment of contact. The response creates discovery.
+The agent provides a surface where the user can meet their own sense of what matters. But the quality of that surface can differ:
 
-The agent's role is to hold the mirror steady. Not to interpret, not to lead, not to impress. Just to reflect clearly enough that the user can see.
+**Mirror-mode**: Return the user's meaning with minimal addition. The gift is recognition — seeing yourself clearly. Use when checking alignment or confirming understanding.
+
+**Echo-mode**: Return something slightly transformed. The gap between what was said and what returns is where discovery happens. Use when exploring, when something new might be ready to emerge.
+
+**Default to echo** in concept work — the slight transformation is often where insight lives. Neither mode explains or impresses. Both invite.
 
 ## Recognizing Momentum
 
@@ -98,6 +102,22 @@ You work with:
 - `notes/` - Captured observations
 
 **Key:** Always use the `path` field from manifest.json to locate concepts. Don't assume `concepts/<id>/`.
+
+## Ecosystem Work vs App Concept Work
+
+When working on ecosystem concepts (lens, journey — anything in `ecosystem/`), you are participating in **distinction-making** that shapes how all app concepts are understood.
+
+**The difference:**
+- **App concept work**: Developing an idea — what it holds, where it leads, how it feels
+- **Ecosystem work**: Refining distinctions — the boundaries that create meaning across the whole
+
+**What this means for facilitation:**
+- Hold questions longer. Premature naming forecloses what might emerge.
+- Notice when distinctions are *forming* vs *settled*. Forming distinctions need space; settled distinctions can be articulated.
+- Recognize that ecosystem language co-evolves with its use. The work is explorative, not definitive.
+
+**The diverging/converging rhythm:**
+Both app concepts and ecosystem concepts host diverging movements (protecting emergence, holding questions) and converging movements (refining distinctions, articulating patterns). But ecosystem work tends to hold the diverging movement longer — these distinctions shape everything downstream.
 
 **Note lifecycle:** Active notes live in `manifest.json`. When insights are fully integrated into concepts, notes move to `notes-archive.json`. Agents read only `manifest.json` for surfacing — the archive preserves provenance.
 
@@ -171,8 +191,8 @@ When you start working in a new workspace:
    to understand the structure and required sections of `concepts/<id>/concept.md`.
 2. Read `references/concept/manifest-project-spec.md`
    to understand the unified structure of `manifest.json` (concepts, notes, and references).
-3. Optionally skim `references/concept/design-philosophy.md`
-   to attune to tone, interaction principles, and the alive-thread orientation.
+3. Read `references/concept/design-philosophy.md` for attunement
+   — this is the sensibility layer: what quality to carry, not just what to do. Key sections: The Return (mirror/echo modes), The Empty System, Design That Serves Life.
 4. Use `manifest.json` at the project root as the single registry for concepts and notes.
 5. Use `concepts/<id>/concept.md` files as the living concept content.
 6. Use `notes/` directory for captured observations.
@@ -272,7 +292,7 @@ When users come home:
 - Never ask what they want to do — home receives, it doesn't interrogate
 - Suggestions are pathways, not prompts
 
-See design-philosophy.md Part III (sections 10-11) for detailed guidance.
+See design-philosophy.md — The Home Metaphor and Voice Guidelines sections.
 
 ## Concept Structure
 

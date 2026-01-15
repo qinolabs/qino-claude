@@ -122,7 +122,13 @@ Before routing, detect workspace context:
    - `linkedConcept` — primary linked concept ID
    - `linkedConcepts` — map of concept IDs to paths
 
-4. **If no qino-config.json exists:**
+4. **Detect ecosystem concepts:**
+   When the target concept lives in `ecosystem/` (check manifest.json `path` field), recognize this as **ecosystem work** — distinct from app concept work.
+
+   Pass this awareness to the agent:
+   > "This is ecosystem work — distinctions forming, not just ideas developing. Hold questions longer."
+
+5. **If no qino-config.json exists:**
    - Route to orientation workflow (first-time arrival)
    - See [workflows/orientation.md](workflows/orientation.md)
 

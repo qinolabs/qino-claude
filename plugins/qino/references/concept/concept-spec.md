@@ -56,6 +56,8 @@ When a concept's understanding deepens or shifts, record it in `revisions.md`:
 
 **The revision is not a changelog.** It captures conceptual evolution, not file edits.
 
+**Revisions are explorative, not archival.** Writing a revision entry is itself part of understanding what shifted. The act of articulating "this used to mean X, now it means Y" reveals dimensions of the shift that weren't visible until named. The converging movement (settling what changed) and diverging movement (discovering what it means) happen together.
+
 ### Concept ID Naming Convention
 
 Concept IDs use prefixes to indicate the type of concept:
@@ -277,6 +279,8 @@ Optional for early concepts. Should stay high-level and non-binding.
 
 ### **8. Open Threads**
 This is the concept's **living edge** — what's unresolved, what's being wondered about, what invites further exploration. Open Threads keep the concept alive by holding what it doesn't yet know about itself.
+
+Open Threads embody the concept's **diverging movement** — the facet that protects space for new distinctions to emerge. The other sections tend toward convergence (articulating what's known); this section holds what's still forming. Premature closure here would foreclose what might emerge.
 
 **What belongs here:**
 - Questions that emerged during exploration
