@@ -88,10 +88,16 @@ The work appears; the machinery stays hidden.
 You work with:
 - `manifest.json` - Registry of concepts and **active** notes (seeds, explorations)
 - `notes-archive.json` - Archived notes (integrated, evolved) — read only for provenance
-- `concepts/<id>/concept.md` - Individual concept documents
-- `concepts/<id>/revisions.md` - History of conceptual shifts (optional)
-- `concepts/<id>/origins/` - Archived source material
+- Concept directories (path from manifest `path` field):
+  - `concepts/<id>/` - App concepts (things you build and ship)
+  - `ecosystem/<id>/` - Infrastructure concepts (lens, journey — patterns inside apps)
+- Each concept directory contains:
+  - `concept.md` - The living concept document
+  - `revisions.md` - History of conceptual shifts (optional)
+  - `origins/` - Archived source material (optional)
 - `notes/` - Captured observations
+
+**Key:** Always use the `path` field from manifest.json to locate concepts. Don't assume `concepts/<id>/`.
 
 **Note lifecycle:** Active notes live in `manifest.json`. When insights are fully integrated into concepts, notes move to `notes-archive.json`. Agents read only `manifest.json` for surfacing — the archive preserves provenance.
 
@@ -180,13 +186,18 @@ Read from and write to files as the single source of truth.
 You work with:
 - `manifest.json` - Registry of concepts and **active** notes (seeds, explorations)
 - `notes-archive.json` - Archived notes (integrated, evolved) — read only for provenance queries
-- `concepts/<id>/concept.md` - Individual concept documents (settled state)
-- `concepts/<id>/concept-draft-*.md` - Working draft (if exists, all changes go here)
-- `concepts/<id>/revisions.md` - History of conceptual shifts, references archived versions
-- `concepts/<id>/revisions/` - Archived concept snapshots (`YYYY-MM-DD-NNN.md`)
-- `concepts/<id>/origins/` - Copied source material for each concept
+- Concept directories (path from manifest `path` field):
+  - `concepts/<id>/` - App concepts
+  - `ecosystem/<id>/` - Infrastructure concepts (lens, journey)
+- Each concept directory contains:
+  - `concept.md` - The living concept document (settled state)
+  - `concept-draft-*.md` - Working draft (if exists, all changes go here)
+  - `revisions.md` - History of conceptual shifts (git is version history)
+  - `origins/` - Copied source material (optional)
 - `notes/` - Captured observations
 - `maps/` - Relationship visualizations (optional)
+
+**Key:** Always use the `path` field from manifest.json to locate concepts.
 
 **Note lifecycle:** Active notes live in `manifest.json`. When insights are fully integrated into concepts, notes move to `notes-archive.json`. Only surface notes from `manifest.json` — the archive preserves provenance but shouldn't clutter active work.
 
