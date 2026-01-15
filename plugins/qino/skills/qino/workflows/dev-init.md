@@ -4,7 +4,9 @@
 **Voice:** Grounded. Practical. Not heavy. This is the moment before building begins.
 **Agent:** dev
 
-**Reference:** Read `references/dev/home-pattern.md` for the arrival pattern used in generated commands.
+**References:**
+- Read `references/dev/home-pattern.md` for the arrival pattern used in generated commands.
+- When scaffolding apps from templates, read `templates/CREATING_NEW_APP.md` in the implementation repository for complete setup instructions including environment variables.
 
 ---
 
@@ -205,6 +207,80 @@ Generate the app command.
 
 ---
 
+## App Scaffolding (When Building from Templates)
+
+If the first iteration involves creating the actual app code from templates (common for new apps), follow this process after generating artifacts:
+
+### 1. Read the Template Guide
+
+Read `templates/CREATING_NEW_APP.md` in the implementation repository for complete instructions.
+
+### 2. Allocate Ports
+
+Check `docs/reference/worktree-port-configuration.md` or `docs/ports.md` for existing port allocations. Find the next available port pair:
+
+```
+Frontend: 30XX
+Backend: 40XX
+```
+
+### 3. Create Environment Files (CRITICAL)
+
+Apps will NOT work without these files. Create them immediately after copying templates:
+
+**Backend** (`apps/<app>-backend/.dev.vars`):
+```bash
+WRANGLER_DEV_PORT=<allocated-backend-port>
+CLERK_SECRET_KEY=<clerk-secret-key>
+```
+
+**Frontend** (`apps/<app>/.env.local`):
+```bash
+VITE_DEV_PORT=<allocated-frontend-port>
+VITE_BACKEND_URL=http://localhost:<allocated-backend-port>
+```
+
+**Frontend** (`apps/<app>/.dev.vars`):
+```bash
+VITE_CLERK_PUBLISHABLE_KEY=<clerk-publishable-key>
+```
+
+### 4. Clerk Keys
+
+**First, scan for existing keys** (recommended for ecosystem consistency):
+
+```bash
+grep -r "CLERK" apps/*/.dev.vars apps/*-backend/.dev.vars 2>/dev/null
+```
+
+If found, reuse the same keys.
+
+If no existing keys found, **ask the user**:
+
+> "This app uses Clerk authentication. I need your Clerk API keys:
+>
+> 1. Publishable Key (starts with `pk_test_` or `pk_live_`)
+> 2. Secret Key (starts with `sk_test_` or `sk_live_`)
+>
+> You can find these at https://dashboard.clerk.com → API Keys"
+
+**WAIT** for user to provide keys before proceeding.
+
+### 5. Verify Setup
+
+After creating environment files, verify the app starts:
+
+```bash
+pnpm -F @qinolabs/<app>-backend -F @qinolabs/<app> dev
+```
+
+Common errors if environment is missing:
+- "Missing WRANGLER_DEV_PORT" → Backend `.dev.vars` not created
+- "Failed to connect to backend" → Port mismatch in `VITE_BACKEND_URL`
+- "Clerk authentication failed" → Missing or incorrect Clerk keys
+
+---
+
 ## Do NOT:
 
 - Generate without dialogue (the exploration matters)
@@ -212,3 +288,5 @@ Generate the app command.
 - Create overly complex iteration plans
 - Fill implementation.md with placeholders — only include what was actually discussed
 - Assume technical details — ask
+- Skip environment file creation when scaffolding apps
+- Proceed without Clerk keys if the template uses Clerk auth
