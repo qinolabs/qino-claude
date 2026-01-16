@@ -263,10 +263,23 @@ Match user intent to workflow. **Spawn the specified agent** to execute the work
 | Test with decision, "help inform the decision" | [workflows/test.md](workflows/test.md) (decision context mode) |
 | Attune, "calibrate [quality]" | [workflows/attune.md](workflows/attune.md) |
 | Compare artifacts | [workflows/compare.md](workflows/compare.md) |
-| Capture emergence, "what emerged" | [workflows/arc.md](workflows/arc.md) |
 | Setup concepts workspace | [workflows/concept-setup.md](workflows/concept-setup.md) |
 | Create new concept | [workflows/concept-init.md](workflows/concept-init.md) |
 | Import material into concepts | [workflows/import.md](workflows/import.md) |
+
+### Arc Work → `qino:concept`
+
+| User Intent | Workflow |
+|-------------|----------|
+| Open/begin arc, "start tracking", "something emerging" | [workflows/arc-open.md](workflows/arc-open.md) |
+| Link to arc, "add to [arc]", "connect to [arc]" | [workflows/arc-link.md](workflows/arc-link.md) |
+| Close arc, "capture this arc", "finish [arc]" | [workflows/arc-close.md](workflows/arc-close.md) |
+| Capture emergence (retrospective), "what emerged" | [workflows/arc.md](workflows/arc.md) |
+
+**Arc behavior notes:**
+- Arc opening, linking, and closing are explicit commands
+- Arc detection on arrival is automatic but non-intrusive (see agent inject sections)
+- Retrospective capture (`arc.md`) works standalone or as the final phase of arc-close
 
 ### Research Work → `qino:research`
 
@@ -363,7 +376,10 @@ Workflows specify both an agent persona and an execution mode.
 | test | concept | inject | Dialogue — ecology observation |
 | attune | concept | inject | Dialogue — iterative calibration |
 | compare | concept | inject | Dialogue — artifact comparison |
-| arc | concept | inject | Dialogue — capturing emergence |
+| arc | concept | inject | Dialogue — retrospective capture |
+| arc-open | concept | inject | Dialogue — opening active arc |
+| arc-link | concept | inject | Dialogue — linking session to arc |
+| arc-close | concept | inject | Dialogue — closing arc, triggers capture |
 | orientation | — | inject | Dialogue — direct response |
 | import | concept | spawn | Synthesis — heavy file reading |
 | concept-init | concept | spawn | Synthesis — workspace scaffolding |

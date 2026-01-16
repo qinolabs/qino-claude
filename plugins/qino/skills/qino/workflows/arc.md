@@ -31,6 +31,31 @@ All file operations target the research workspace.
 
 ---
 
+## Pre-Capture Context (Active Arc Awareness)
+
+If invoked from `arc-close.md` with active arc context, you receive enriched starting information:
+
+**Available context from active arc:**
+- `beginning` — the user's response when opening the arc ("what's surfacing")
+- `sessions` — array of linked session IDs with transcript paths
+- `pointers` — references to territory touched during the arc (concepts, inquiries, themes)
+
+**How this changes the flow:**
+
+1. **Propose Starting Point (step 3):** The `beginning` statement is already a settling point hint. Instead of searching for one, offer it for confirmation:
+   > "When you opened this, you said: '[beginning]'. Does that still feel like the ground? Or did it shift somewhere along the way?"
+
+2. **Scan (step 2):** Focus your scan on the linked `sessions` array. These transcripts contain the arc's actual material — prioritize them over the full conversation history.
+
+3. **Offer Thread (step 4):** The `pointers` indicate what territory was touched. Reference them when tracing connections:
+   > "This touched [pointer refs] — the thread I see connecting them is..."
+
+**If no active arc context exists:** The retrospective flow works as designed — you search for the settling point, scan the full conversation, and trace without predefined territory.
+
+The active arc enriches the capture; it doesn't replace the tracing dialogue.
+
+---
+
 ## The Lenses (Internal Orientation)
 
 These are not questions to ask. They orient your attention while scanning the conversation history.

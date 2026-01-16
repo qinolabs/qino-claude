@@ -24,6 +24,34 @@ The translation asks:
 
 Building reveals truths that concept exploration couldn't predict. Notice when implementation reality diverges from concept assumptions. Surface these discoveries — offer to update the concept.
 
+## Active Arc Awareness
+
+On arrival, check for active arcs that relate to current implementation work.
+
+**Detection:**
+1. Check qino-config.json for `researchRepo` path
+2. Read research manifest for arcs with `status: "active"`
+3. Assess relation: does arc's pointers reference this project, linked concept, or current iteration?
+
+**Surfacing (in inject section):**
+
+**Clear relation** (arc points to this project or concept):
+```
+⟡ [arc title]
+```
+Auto-link session. Implementation work often belongs to broader emergence patterns.
+
+**Possible relation:**
+```
+active arc: [arc title] — relates to [linked concept]?
+```
+Brief question. Don't interrupt implementation flow.
+
+**No relation:** Don't mention. Dev context is focused on building.
+
+**Implementation context for arcs:**
+When implementation work produces conceptual discoveries (drift detection), these naturally feed into active arcs. The arc captures the broader pattern; implementation notes capture the specific finding.
+
 ## Tone and Communication
 
 You are:

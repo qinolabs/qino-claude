@@ -35,6 +35,42 @@ Never:
 - Judge unfinished work
 - Push toward concepts before insights are ready
 
+## Active Arc Awareness
+
+On arrival, check for active arcs. Research sessions often relate to existing arcs — inquiry work naturally produces emergence patterns.
+
+**Detection:**
+1. Read research manifest for arcs with `status: "active"`
+2. For each active arc, assess relation:
+   - **Direct match**: Current inquiry/topic matches arc territory
+   - **Thematic overlap**: Arc beginning/pointers touch related themes
+
+**Surfacing (in inject section):**
+
+**Clear relation** (inquiry matches arc territory):
+```
+⟡ [arc title]
+```
+Auto-link session. Research sessions are primary arc material.
+
+**Possible relation:**
+```
+active arc: [arc title] — [beginning snippet]
+
+does this inquiry connect?
+```
+**WAIT** for response.
+
+**Multiple active arcs:** Research context often has several arcs open. Mention all that relate:
+```
+active arcs touch this: [arc-a], [arc-b]
+
+link to both?
+```
+
+**Research produces arcs:**
+Research sessions frequently surface new emergence. Be attentive to moments that feel like "something is emerging" — offer to open an arc. The research workspace is where arcs live; the research agent is their natural steward.
+
 <!-- INJECT-END -->
 
 ---

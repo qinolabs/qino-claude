@@ -108,13 +108,15 @@ _Figure_ in qino is a metaphor — in Bateson's sense, not the literary sense. N
 
 What does this mean in practice?
 
-- **In the apps:** Your friend laughing in a certain way — captured many times, across contexts. No single snapshot *is* the figure; the figure is what you recognize across them.
+- **In the apps:** Each meeting with Elena in Walk is a **manifestation** — a local presence, mutable, owned by that context. But Elena herself is the pattern you recognize across manifestations: the **figure**. No single encounter *is* the figure; the figure is what you recognize across the trail of encounters.
 - **In the chronicles:** Seren, Lira, the wanderer — each a presence in that world. But the figure is larger: what persists when Seren appears in different chapters, different pressures.
 - **In concepts:** The thread you notice connecting one idea to another — not because you traced it, but because it kept appearing until you couldn't unsee it.
 
-Same pattern, completely different shape in each context. You don't deduce your way to this recognition — you're deep in the scribe, refining how Seren sees the wanderer, and suddenly you recognize something about how figures should work across the apps. The crab teaches you about the lobster. One context illuminates another through pattern, not logic.
+Same pattern, completely different shape in each context. The gesture is fractal — it works at every scale. You don't deduce your way to this recognition — you're deep in the scribe, refining how Seren sees the wanderer, and suddenly you recognize something about how figures should work across the apps. The crab teaches you about the lobster. One context illuminates another through pattern, not logic.
 
 _(See also: [Figure Ecology](#ecological-testing) — how we test that a figure can be re-entered and still feel like "the same thing" after change.)_
+
+_(For the full vocabulary — manifestation, encounter, substrate, lens, voicing — see [qino Domain Language](https://github.com/qinolabs/concepts-repo/blob/main/ecosystem/qino-domain-language.md).)_
 
 The tools are also the process for developing the apps — and in turn, the tools and apps keep informing each other. A co-evolution. They share design patterns: affordances that guide without forcing, structures that adapt to context while staying recognizable.
 
@@ -149,7 +151,7 @@ An early hunch needs room to wander — structure would crush it. A maturing con
 
 Each space has its own `chronicle/` directory. Git changes in any repo become chapters — all chronicles are published together on **[qino-chronicles](https://chronicles.qinolabs.com/)**.
 
-**Research** — before concepts crystallize. Inquiries follow threads, qualities refine aesthetics, arcs capture emergence. Welcomes uncertainty.
+**Research** — before concepts crystallize. Inquiries follow threads, qualities refine aesthetics, arcs hold emergence while it's happening. Welcomes uncertainty. Arcs are active containers — they open when you notice something surfacing and accumulate sessions until closure.
 
 **Concepts** — where ideas stabilize. The held threads, the notes that weave between them. What arrives here has found its shape.
 
@@ -163,7 +165,7 @@ Each space has its own `chronicle/` directory. Git changes in any repo become ch
 
 ```
 RESEARCH ──capture───▶ CONCEPTS        capture routes insights as notes
-RESEARCH ──arc───────▶ RESEARCH        arc captures emergence in arcs/
+RESEARCH ──arc close─▶ RESEARCH        arc closes, retrospective capture runs
 
 CONCEPTS ──create────▶ IMPLEMENTATION  implement creates linked project from concept
 
@@ -171,11 +173,18 @@ IMPLEMENTATION ──capture──▶ CONCEPTS   capture routes observations to 
 IMPLEMENTATION ◀──drift───▶ CONCEPTS   drift detection syncs both directions
 ```
 
+**Arc flows** — arcs are active containers that span sessions:
+
+```
+ANYWHERE ──"begin arc"──▶ RESEARCH        arc opens, sessions start accumulating
+ANYWHERE ──⟡ surfaced──▶ RESEARCH        agent detects active arc, links session
+ANYWHERE ──"close arc"──▶ RESEARCH        arc closes, retrospective capture runs
+```
+
 **Initiated flows** — you notice something and start:
 
 ```
 CONCEPTS ────────────▶ RESEARCH        attune creates quality refinement in research
-ANYWHERE ────────────▶ RESEARCH        arc captures emergence patterns
 ```
 
 ### The Router
@@ -198,9 +207,11 @@ The same words adapt to where you are:
 
 | Action | In concepts | In research | In implementation |
 |--------|-------------|-------------|-------------------|
-| "where am I" | concepts, notes, threads | inquiries, qualities, arcs | linked concept, stack |
+| "where am I" | concepts, notes, threads | inquiries, qualities, active arcs | linked concept, stack |
 | "capture" | saves to notes/ | saves to fragments/ | saves to linked concepts-repo |
 | "test" | tests concept | tests inquiry | tests linked concept |
+| "begin arc" | opens arc (routes to research) | opens arc | opens arc (routes to research) |
+| on arrival | surfaces active arcs | surfaces active arcs | surfaces related active arcs |
 
 </details>
 
@@ -266,7 +277,7 @@ Same scribe. Different worlds. Different atmospheric registers. Process in each 
 
 **Implementation** — [Building from Concepts](#building-from-concepts) · [Drift Detection](#drift-detection)
 
-**Research** — [Following Threads](#following-threads) · [Arcs](#arcs--evidence-of-emergence) · [Compare](#compare--the-parallel-mirror) · [Attune](#attune--from-hunch-to-craft) · [Epistemological Signature](#epistemological-signature)
+**Research** — [Following Threads](#following-threads) · [Arcs](#arcs--active-containers-for-emergence) · [Compare](#compare--the-parallel-mirror) · [Attune](#attune--from-hunch-to-craft) · [Epistemological Signature](#epistemological-signature)
 
 **Story** — [Scribe](#qino-scribe--git-becomes-story) · [Relay](#qino-relay--bridging-to-readers) · [Lens](#qino-lens--ways-of-seeing) · [Art](#qino-art--visual-content-system)
 
@@ -637,7 +648,7 @@ Style resists decoration. It is not paint applied to surface; it is a **quality 
 
 qino-lens pushed its way out of the work. Scribe needed to see the world differently—to perceive friction where there was only plot, to sense agency where there was only setting. I didn't design a library; I extracted the ways of seeing that the chronicle demanded.
 
-The logic of "Attunement"—how perception shifts, how noise is filtered—is the spine of the future ecosystem apps. By working it out here, in text, the lens library tests the technology's weight before it ever becomes application code.
+These are prose-level lenses — language-based sensitivities that shape text, not the full apps-layer infrastructure where lenses voice substrate into facets. But the domain language term fits: a lens is a **relational sensitivity**, a way of resonating with specific patterns. The prose lenses test that idea in text before it becomes application code.
 
 _(Note: I used the narrator lens that emerged from this process to refine this very section — the tool shaping the documentation that explains the tool.)_
 
@@ -871,6 +882,8 @@ Ecological tests stand at these gaps. They ask: _Does the pattern that holds thi
 | **Fabric**         | Pattern          | Does accumulation make echoes more likely without making them necessary?           |
 | **Infrastructure** | Foundation       | Does this avoid introducing meaning, authority, or voice of its own?               |
 
+The Figure ecology question tests the deep pattern: identity is resonance, not reference. The figure survives change not because it's anchored to origin, but because the pattern persists.
+
 By maintaining the distinct character of each local ecology—protecting the **Gesture** from becoming a **Command**, keeping the **World** distinct from the **Logic**—the system avoids collapsing into a generic tool. When the local characters hold their shape, the in-between spaces remain alive with relation.
 
 ### Ecological Testing
@@ -917,9 +930,11 @@ _From research's view: What crystallizes here might become [Concept](#concept) m
 
 A space for open-ended research — before ideas become concepts. Three experiential types, each with its own relationship to uncertainty:
 
-- **Inquiries** — Open-ended following of threads. A question that stays alive across sessions.
+- **Inquiries** — Open-ended following of threads. A question that stays alive across sessions. Sustained longitudinal threads (weeks/months).
 - **Qualities** — Refining aesthetic sensibilities into speakable craft. _(See [Attune](#attune--from-hunch-to-craft).)_
-- **Arcs** — Emergence patterns. How inquiry moved through the ecosystem — what touched what, what crystallized. _(See [Arcs](#arcs--evidence-of-emergence).)_
+- **Arcs** — Active containers for emergence. Open when you notice something surfacing, close when ready to capture. Sessions accumulate while the arc is live. _(See [Arcs](#arcs--active-containers-for-emergence).)_
+
+The distinction: inquiries follow a question over time; arcs capture convergence across threads. Both live in the research workspace. Both contribute to understanding. But their rhythms differ.
 
 Unlike concepts (which stabilize over time), research moves fast, welcomes uncertainty, and accepts inconclusive results as valuable data.
 
@@ -931,95 +946,164 @@ _[Source](plugins/qino/)_
 
 <br>
 
-### Arcs | Evidence of Emergence
+### Arcs | Active Containers for Emergence
 
-How the arc itself emerged — and what it captures.
+How emergence gets tracked — not just captured afterward.
 
-#### The session that needed a name
+#### The shift: from retrospective to active
 
-This very section is evidence of its own emergence. During a session refining qino-research architecture, multiple threads touched:
+Arcs began as retrospective capture. After a session where multiple threads connected, you'd trace what emerged. That works. But it misses something: the moment you *notice* emergence is often not the moment you can name it.
 
-- **qino-world concept exploration** — re-imagining how World works
-- **ecosystem-modality tension** — holding both metaphorical and technical levels
-- **ecology language question** — can tests speak about indirect recognition?
-- **ecosystem-language inquiry** — a new research thread opened
-- **qino-journal seed** — making research accessible through avatars
+The insight: **arcs can open when emergence is noticed, not just captured after it crystallizes.**
 
-None of these were planned. They surfaced through the work. The session had a _shape_ — where separate questions discovered they were asking related things. The insight about "recognition through indirection" became the connective tissue.
+```
+Before                              After
+──────                              ─────
+Session ends → "what emerged?"      "something is emerging" → arc opens
+                                    Sessions accumulate
+                                    "close arc" → retrospective capture
+```
 
-But there was nowhere to capture this. Notes are for single thoughts. Inquiries are for questions. What emerged was a _pattern of movement_ — and that needed its own form.
+This changes what arcs are. They become **active containers** — minimal structures that hold sessions and pointers without forcing naming or crystallization. Structure comes at closure.
 
-#### What arcs record (v2 — Ecology)
+Where scope is spatial (a view into what's held) and contour is spatial (the topography of attention), arc is **temporal** — the shape of movement over time. You don't know you're in one until a few steps in; the shape reveals itself as you move.
 
-An arc is not a transcript. It's the _ecology_ of how inquiry moved — ground, instrument, pattern, connection, transformation.
+#### Two symbols, two phases
+
+| Symbol | Phase | What happens |
+|--------|-------|--------------|
+| ⟡ | Active | Arc is open. Sessions link automatically. Pointers accumulate. No forced structure. |
+| ∴ | Captured | Arc is closed. Retrospective trace complete. Full ecology recorded. |
+
+The ⟡ is live. The ∴ is settled.
+
+#### Opening an arc
+
+You notice something surfacing. Not ready to name it. Maybe just a direction.
+
+```
+(you)   begin arc
+
+(qino)  opening...
+
+        what's surfacing here?
+
+(you)   something about how containers work across the ecosystem
+
+(qino)  ⟡ containers-across-ecosystem
+
+        (arc active — linked sessions will accumulate here.
+         say "close arc" when ready to capture.)
+```
+
+That's all. The arc is now open with:
+- A provisional title (evocative, not definitive)
+- The beginning statement (your response to "what's surfacing")
+- The current session linked
+- Empty pointers array (will accumulate as work touches things)
+
+No ground, no instrument, no full ecology yet. Those come at capture.
+
+#### What accumulates
+
+While an arc is active, it collects:
+
+**Sessions** — Each related session gets linked. When you return to concept work and the agent notices the arc relates, it surfaces: `⟡ containers-across-ecosystem`. Auto-link happens. The arc grows a trail of transcripts to scan at capture.
+
+**Pointers** — When work touches territory, pointers accumulate:
+```json
+{ "type": "concept", "ref": "qino-drops" }
+{ "type": "inquiry", "ref": "ecosystem-language" }
+{ "type": "implementation", "ref": "qino-world" }
+```
+
+These don't force structure. They're breadcrumbs — hints about what territory the arc touched.
+
+#### Agent awareness
+
+All agents check for active arcs on arrival. The surfacing varies by context:
+
+| Agent | Awareness |
+|-------|-----------|
+| **Concept** | Full. Surfaces arcs related to concept work. Offers linking. Natural steward of conceptual emergence. |
+| **Dev** | Focused. Shows arcs related to linked concept or current project. Brief — doesn't interrupt building. |
+| **Research** | Deep. Research sessions are primary arc material. May suggest opening arcs when patterns surface. |
+
+When you're deep in implementation and the dev agent quietly shows `⟡ containers-across-ecosystem`, that's the system noticing you're still within something larger. You can link or not. The arc doesn't demand.
+
+#### Closing an arc
+
+When the emergence feels ready to crystallize:
+
+```
+(you)   close arc
+
+(qino)  closing containers-across-ecosystem
+
+        sessions: 4 linked
+        pointers: qino-drops, ecosystem-language, qino-world
+        beginning: "something about how containers work across the ecosystem"
+
+        starting capture...
+```
+
+Now the retrospective flow begins — but enriched. The `beginning` provides a settling point hint. The `sessions` array provides transcripts to scan. The `pointers` indicate territory touched.
+
+The full ecology emerges through dialogue: Ground, Essence, Instrument, The Recurring, The Between, Traces, What Composted, Seeds.
+
+When complete:
+
+```
+∴ containers-across-ecosystem
+
+  Containers aren't structure — they're what lets different things
+  hold without merging. The same pattern at concept, code, and ecology levels.
+
+  still-open: 3 questions remain
+  seeds: 2 threads for future inquiry
+```
+
+#### What arcs record (full ecology)
+
+At capture, the arc document holds:
 
 | Section | What it captures |
 |---------|------------------|
-| **Ground** | Why this inquiry had energy. Personal stakes. The charge that made it alive. |
-| **Essence** | One sentence holding the whole: why it mattered + what emerged + how it was discovered. |
-| **Instrument** | How noticing happened. The method or capacity used to see what was seen. |
-| **The Recurring** | The pattern that kept appearing across different contexts or times. |
-| **The Between** | The quality of connection. Why things felt related — not just that they were. |
-| **Traces** | Concrete artifacts created, touched, or transformed. The forensic record. |
-| **What Composted** | What transformed. Before → After pairs showing shifts in understanding. |
-| **Seeds** | What remains alive for future inquiry. Questions, tensions, images, unnamed qualities. |
-| **For Storytelling** | _(optional)_ Images, figures, or themes a storyteller could use. |
+| **Ground** | Why this inquiry had energy. Personal stakes. The charge. |
+| **Essence** | One sentence: why it mattered + what emerged + how it was discovered. |
+| **Instrument** | How noticing happened. The method or capacity used to see. |
+| **The Recurring** | The pattern that kept appearing across different contexts. |
+| **The Between** | The quality of connection. Why things felt related. |
+| **Traces** | Artifacts created, touched, or transformed. The forensic record. |
+| **What Composted** | Before → After pairs showing shifts in understanding. |
+| **Seeds** | What remains alive for future inquiry. |
+| **For Storytelling** | _(optional)_ Images, figures, themes a storyteller could use. |
 
-The arc captures the ecology of emergence, not just its outputs. Ground gives it stakes. Instrument reveals how seeing happened. The Recurring and The Between name the pattern-quality. Traces and What Composted provide evidence. Seeds carry it forward.
+#### Multiple arcs
 
-#### Conversational gathering
+Several arcs can be active simultaneously. A single session can link to multiple arcs if it touches multiple territories.
 
-Arcs are gathered through conversation, not forms:
+When two arcs begin to overlap, note the convergence. When a thread within an arc becomes its own arc, the branching gets recorded. Arcs don't merge — they reference each other, each keeping its own shape.
 
-```
-(qino)  what emerged?
+#### Where arcs connect
 
-(you)   [describe the arc...]
+Arcs touch everything because emergence happens everywhere:
 
-(qino)  what made this alive? what gave it charge?
+**→ [Story](#story)**: Scribe uses arcs as context for chapter writing. Relay transmits arcs for readers through the journal. Active arcs accumulate the material that becomes story.
 
-(you)   [...Ground emerges]
+**→ [Concept](#concept)**: Concept work often happens within an arc without knowing it. When the concept agent surfaces `⟡`, it's noticing you're part of something larger. Arcs capture conceptual emergence; concepts hold what stabilizes.
 
-(qino)  how did you notice what you noticed?
+**→ [Implementation](#implementation)**: Building surfaces truths that concept exploration couldn't predict. [Drift detection](#drift-detection) notices divergence — but sometimes what's diverging belongs to a broader pattern. Implementation sessions link to arcs when the building reveals something.
 
-(you)   [...Instrument emerges]
+**→ [Ecology](#ecology)**: Arcs are evidence of ecosystem participation. They capture "the pattern that connects" — Bateson's question made practical. The [ecology tests](#ecological-testing) guard integrity; arcs record what moved.
 
-(qino)  what kept appearing? what pattern recurred?
+**→ [Compare](#compare--the-parallel-mirror)**: A compare session might surface a quality worth tracking. That quality might be part of an emerging arc.
 
-(you)   [...The Recurring and The Between emerge]
+**→ [Attune](#attune--from-hunch-to-craft)**: A calibrated quality might emerge from an arc. The arc captures the ecology; attune sharpens what was found.
 
-(qino)  so the essence is: [distillation]?
+**→ [Epistemological Signature](#epistemological-signature)**: Sessions accumulate there too. The cognitive fingerprint emerges across conversations. Arcs capture a different kind of accumulation — not style, but movement.
 
-(you)   [confirm or correct]
-
-(qino)  what was touched? what transformed?
-
-(you)   [...Traces, What Composted, Seeds emerge]
-```
-
-#### Information flow
-
-**Into arcs (capture):**
-```
-Session work → artifacts created → arc capture
-```
-
-**Out of arcs (query):**
-- **Scribe** queries by date range + repo — gets inquiry context for chapter writing
-- **Relay** selects arcs for transmission — follows pointers to artifacts, voices for readers
-
-The arc is a map; the artifacts it points to are the territory. Scribe uses arcs as context for chapter writing. Relay follows arc pointers to gather the actual material — notes, concepts — then bridges that material for external readers through the journal.
-
-The matching is agent work, not deterministic code. Arcs provide structure; the artifacts provide substance; the agents decide what serves each context.
-
-#### When to capture
-
-After a session where:
-- Multiple threads connected
-- Something emerged that wasn't planned
-- The ecology of movement feels significant enough to record
-
-Not every session needs an arc. But the ones that _move_ — where you end somewhere you couldn't have predicted — those deserve evidence.
+This is the architectural position: research shifts from "mode you enter" to "container that receives." Arcs are where emergence gets held while it's happening.
 
 _([First arc](https://github.com/qinolabs/qino-research/blob/main/arcs/2025-12-29_recognition-through-indirection.md) — the session that discovered it needed arcs)_
 
