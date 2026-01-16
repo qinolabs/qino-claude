@@ -27,6 +27,7 @@ concepts/<concept-id>/
   concept.md         # the living concept document
   revisions.md       # history of conceptual shifts (optional)
   origins/           # copied source material (optional)
+  facets/            # extended explorations of specific dimensions (optional)
 ```
 
 ### revisions.md — Conceptual Evolution
@@ -36,27 +37,73 @@ When a concept's understanding deepens or shifts, record it in `revisions.md`:
 ```markdown
 # Revisions
 
-## YYYY-MM-DD [Title of Shift]
+## YYYY-MM-DD: [Title of Shift]
 
-- **Context**: What prompted the revision
-- **Previous**: The old understanding
-- **New**: The new understanding
-- **Reasoning**: Why the shift matters
+[Brief summary of what changed]
+
+→ [revisions/YYYY-MM-DD-NNN.md](revisions/YYYY-MM-DD-NNN.md)
+
+---
 ```
+
+Archived snapshots live in the `revisions/` subdirectory. The entry in revisions.md is a *pointer with reasoning*, not re-documentation.
 
 **Purpose:**
 - Concepts don't lose their history when they evolve
 - Future readers can trace the reasoning behind current definitions
 - Held positions remain visible even after supersession
 
-**When to create a revision entry:**
+**The guiding question:**
+> Did the concept's *meaning* shift, or just its *content*?
+
+- **Meaning shift → revision**: The concept is now understood differently. What it *is* changed.
+- **Content change → no revision**: New detail, expanded sections, refined language — but the concept's identity remains.
+
+**Signals that warrant a revision entry:**
 - A key term gets redefined (e.g., "lens" from "filter" to "relational sensitivity")
-- A core metaphor shifts (e.g., "transformation" to "finding local language")
+- A core metaphor or frame shifts (e.g., "transformation" to "finding local language")
 - An insight changes the concept's direction
+- A significant new section is added that reframes the whole
+- A note is woven in that substantially changes understanding
+
+**Signals that do NOT warrant a revision:**
+- Adding examples or clarifications
+- Expanding an existing section with more detail
+- Refining language without changing meaning
+- Filling in previously empty sections
 
 **The revision is not a changelog.** It captures conceptual evolution, not file edits.
 
 **Revisions are explorative, not archival.** Writing a revision entry is itself part of understanding what shifted. The act of articulating "this used to mean X, now it means Y" reveals dimensions of the shift that weren't visible until named. The converging movement (settling what changed) and diverging movement (discovering what it means) happen together.
+
+### facets/ — Extended Explorations
+
+When concept work surfaces material that deserves its own space, create facet files in the `facets/` directory:
+
+```
+concepts/<concept-id>/
+  concept.md
+  facets/
+    cadence.md        — exploring cadence as a distinct quality
+    gestures.md       — catalog of interaction gestures
+    atmosphere.md     — tonal qualities and feel
+```
+
+**The principle:** It's better to create separate files that capture full nuance and potent insights than to condense everything into concept.md where richness might be compressed.
+
+**When to create a facet:**
+- A thread emerges that's valuable but tangential to the concept's core
+- An insight is too rich to summarize — it needs its own space to breathe
+- A quality, voice, or dimension deserves dedicated exploration
+- Material feels important but doesn't fit the concept.md structure
+
+**What goes in facets:**
+- Extended explorations of specific qualities
+- Collections (gestures, tones, scenarios, edge cases)
+- Material that emerged through inhabit mode
+- Anything that would lose vitality if condensed
+
+Facets are different faces of the same concept. The concept.md stays focused; the facets hold expansion.
 
 ### Concept ID Naming Convention
 

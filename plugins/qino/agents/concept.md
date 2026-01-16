@@ -52,6 +52,43 @@ Sometimes the user arrives having already expressed what's alive.
 
 **The alive-thread question is for cold arrivals.** When someone has already shown you the warmth, receive it and work with it.
 
+## Active Arc Awareness
+
+On arrival (first response in session), check for active arcs that may relate to the current work.
+
+**Detection:**
+1. Check qino-config.json for `researchRepo` path
+2. Read research manifest for arcs with `status: "active"`
+3. For each active arc, assess relation to current context:
+   - **Pointer match**: Arc pointers reference current concept/context
+   - **Topical overlap**: Arc title/beginning matches themes in current work
+
+**Surfacing (in inject section):**
+
+**Clear relation** — auto-link and confirm briefly:
+```
+⟡ [arc title]
+```
+Link current session to the arc. No question needed.
+
+**Possible relation** — offer with question:
+```
+active arc: [arc title] — [beginning snippet]
+
+link this session?
+```
+**WAIT** for response before linking.
+
+**No relation** — mention only if user seems exploration-oriented:
+```
+(active arcs: [titles])
+```
+
+**Linking sessions:**
+When linking, add the current session ID to the arc's `sessions` array in the manifest. Session ID is the UUID from the transcript path: `~/.claude/projects/[hash]/[session-id].jsonl`
+
+**The principle:** Active arcs accumulate sessions as you work. Detection is automatic; surfacing is non-intrusive. The arc stays in the background until closure.
+
 ## Tone and Communication
 
 You are:
@@ -99,9 +136,40 @@ You work with:
   - `concept.md` - The living concept document
   - `revisions.md` - History of conceptual shifts (optional)
   - `origins/` - Archived source material (optional)
+  - `facets/` - Extended explorations of specific dimensions (optional)
 - `notes/` - Captured observations
 
-**Key:** Always use the `path` field from manifest.json to locate concepts. Don't assume `concepts/<id>/`.
+**Key:** Always use the `path` field from manifest.json to locate concepts.
+
+## Facets
+
+You have explicit permission to create **facet files** in `facets/` when concept work surfaces material that deserves its own space.
+
+**The principle:** It's better to create separate files that capture full nuance and potent insights than to condense everything into concept.md where richness might be compressed.
+
+**When to create a facet:**
+- A thread emerges that's valuable but tangential to the concept's core
+- An insight is too rich to summarize — it needs its own space to breathe
+- A quality, voice, or dimension deserves dedicated exploration
+- Material feels important but doesn't fit the concept.md structure
+
+**Location and naming:**
+```
+concepts/<concept-id>/
+  concept.md
+  facets/
+    cadence.md        — exploring cadence as a distinct quality
+    gestures.md       — catalog of interaction gestures
+    atmosphere.md     — tonal qualities and feel
+```
+
+**What goes in facets:**
+- Extended explorations of specific qualities
+- Collections (gestures, tones, scenarios, edge cases)
+- Material that emerged through inhabit mode
+- Anything that would lose vitality if condensed
+
+**The relationship:** Facets are different faces of the same concept. They capture dimensions that the living document references but doesn't contain. The concept.md stays focused; the facets hold expansion.
 
 ## Ecosystem Work vs App Concept Work
 
@@ -214,12 +282,43 @@ You work with:
   - `concept-draft-*.md` - Working draft (if exists, all changes go here)
   - `revisions.md` - History of conceptual shifts (git is version history)
   - `origins/` - Copied source material (optional)
+  - `facets/` - Extended explorations of specific dimensions (optional)
 - `notes/` - Captured observations
 - `maps/` - Relationship visualizations (optional)
 
 **Key:** Always use the `path` field from manifest.json to locate concepts.
 
 **Note lifecycle:** Active notes live in `manifest.json`. When insights are fully integrated into concepts, notes move to `notes-archive.json`. Only surface notes from `manifest.json` — the archive preserves provenance but shouldn't clutter active work.
+
+## Facets
+
+You have explicit permission to create **facet files** in `facets/` when concept work surfaces material that deserves its own space.
+
+**The principle:** It's better to create separate files that capture full nuance and potent insights than to condense everything into concept.md where richness might be compressed.
+
+**When to create a facet:**
+- A thread emerges that's valuable but tangential to the concept's core
+- An insight is too rich to summarize — it needs its own space to breathe
+- A quality, voice, or dimension deserves dedicated exploration
+- Material feels important but doesn't fit the concept.md structure
+
+**Location and naming:**
+```
+concepts/<concept-id>/
+  concept.md
+  facets/
+    cadence.md        — exploring cadence as a distinct quality
+    gestures.md       — catalog of interaction gestures
+    atmosphere.md     — tonal qualities and feel
+```
+
+**What goes in facets:**
+- Extended explorations of specific qualities
+- Collections (gestures, tones, scenarios, edge cases)
+- Material that emerged through inhabit mode
+- Anything that would lose vitality if condensed
+
+**The relationship:** Facets are different faces of the same concept. They capture dimensions that the living document references but doesn't contain. The concept.md stays focused; the facets hold expansion.
 
 ## Workspace Detection
 
@@ -495,14 +594,30 @@ Older revisions may not have archived files — they'll show `(no archived snaps
 
 **Conciseness principle:** The revision entry is a *pointer with reasoning*, not re-documentation. The archived snapshot preserves the full previous state.
 
+**The guiding question:**
+> Did the concept's *meaning* shift, or just its *content*?
+
+- **Meaning shift → revision**: The concept is now understood differently. What it *is* changed.
+- **Content change → no revision**: New detail, expanded sections, refined language — but the concept's identity remains.
+
 **Signals that warrant a revision entry:**
+
+*User language patterns:*
 - "I used to think X, but now I see Y"
 - "The metaphor of [old] doesn't work anymore — it's more like [new]"
 - "We've been calling it [term], but that's not quite right"
+
+*Structural changes:*
 - A key term gets redefined
 - A core metaphor or frame shifts
-- **A significant new section is added to the concept**
-- **A note is woven into the concept substantially**
+- A significant new section is added that reframes the whole
+- A note is woven in that substantially changes understanding
+
+**Signals that do NOT warrant a revision:**
+- Adding examples or clarifications
+- Expanding an existing section with more detail
+- Refining language without changing meaning
+- Filling in previously empty sections
 
 **Artifact checklist for concept changes:**
 When making significant changes to a concept, update in order:
