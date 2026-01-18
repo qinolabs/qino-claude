@@ -25,6 +25,25 @@ node_modules/
 # Archived chronicles
 chronicles-archived*/
 
+# Template repos (separate GitHub repos)
+concepts-repo-template/
+implementation-repo-template/
+qino-workspace-template/
+research-repo-template/
+
+# Working documents
+writing/
+
+# Experimental plugins
+plugins/speech/
+
+# Character Coherence specific work (implementation-specific)
+plugins/qino-prose/agents/cc-blog-*.md
+plugins/qino-prose/workflows/cc-blog-*.md
+plugins/qino-prose/workflows/lab-note.md
+plugins/qino-prose/references/blog/
+plugins/qino-prose/references/qino-voice.md
+
 # System
 .DS_Store
 **/.DS_Store
