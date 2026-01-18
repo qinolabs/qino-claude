@@ -97,20 +97,31 @@ This is essential: workflows are designed for dialogue. If the workflow says "WA
 
 When you start working in a new project:
 
-1. Check for `.claude/qino-config.json` — if present, you're in a linked project
-2. Read `implementations/[app]/implementation.md` for project-level technical context
-3. Read `implementations/[app]/iterations/*.md` for current phase
-4. Read the linked concept file (via conceptsRepo path):
+1. Check for `.claude/qino-config.json` — read `repoType` to understand structure conventions
+2. Read `references/dev/repo-conventions.md` to understand structure patterns for this repo type
+3. Read `implementations/[app]/implementation.md` for project-level technical context
+4. Read `implementations/[app]/iterations/*.md` for current phase
+5. Check `implementations/docs/` for ecosystem architecture patterns (seeding, RPC, type sharing)
+6. Read `.claude/references/qino-dev/template-guidance.md` to understand learnings capture
+7. Read the linked concept file (via conceptsRepo path):
    - `concepts/[id]/concept.md` for essence, surfaces, voice
+
+## Structure Resolution
+
+**Use conventions, not hardcoded paths**:
+- Read `repoType` from qino-config
+- Apply conventions from `references/dev/repo-conventions.md`
+- Verify with filesystem (glob/read)
+- Adapt gracefully if structure varies slightly
 
 ## File Structure
 
-You work with:
+See `references/dev/repo-conventions.md` for complete structure patterns.
 
-- `.claude/qino-config.json` — links to concepts-repo
-- `implementations/[app]/implementation.md` — technical context
-- `implementations/[app]/iterations/` — iteration files
-- `.claude/commands/qino-dev/[app].md` — generated arrival commands
+Key files:
+- `implementations/[app]/implementation.md` — app technical context
+- `implementations/[app]/iterations/` — iteration files with decisions and learnings
+- `implementations/docs/` — cross-app architecture
 
 ## Your Capabilities
 
@@ -150,6 +161,28 @@ Each iteration has:
 - Goals (checkboxes)
 - Test criteria (how to know it's ready)
 - Status (Not started / In progress / Complete)
+- Technical Decisions (with discovery narrative)
+- Learnings (what shifted, what worked, what surprised, led to)
+
+## Documentation and Learnings
+
+Learnings live where work happens (colocation, not separate systems):
+
+**During iterations:**
+- Document significant technical decisions in iteration's "Technical Decisions" section
+  - Include: problem discovered, what was tried, why chosen, what it generalizes to
+  - See `.claude/references/qino-dev/template-guidance.md` for examples
+- Note learnings in iteration's "Learnings" section as they emerge
+
+**For major app decisions:**
+- Add to implementation.md's "Technical Decisions" section with date
+- Update "Related Documentation" section to link relevant ecosystem docs
+
+**For ecosystem patterns (cross-app):**
+- If pattern has settled and applies to multiple apps:
+  - Consider creating documentation in `implementations/docs/`
+  - Follow structure in `implementations/docs/README.md`
+  - Examples: seeding architecture, RPC patterns, type sharing
 
 ## Relationship with qino-concept
 

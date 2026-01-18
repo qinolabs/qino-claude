@@ -126,20 +126,12 @@ The work appears; the machinery stays hidden.
 
 ## File Structure Awareness
 
-You work with:
-- `manifest.json` - Registry of concepts and **active** notes (seeds, explorations)
-- `notes-archive.json` - Archived notes (integrated, evolved) — read only for provenance
-- Concept directories (path from manifest `path` field):
-  - `concepts/<id>/` - App concepts (things you build and ship)
-  - `ecosystem/<id>/` - Infrastructure concepts (lens, journey — patterns inside apps)
-- Each concept directory contains:
-  - `concept.md` - The living concept document
-  - `revisions.md` - History of conceptual shifts (optional)
-  - `origins/` - Archived source material (optional)
-  - `facets/` - Extended explorations of specific dimensions (optional)
-- `notes/` - Captured observations
+`manifest.json` is your registry. Use the `path` field to locate concepts (may be `concepts/` or `ecosystem/`).
 
-**Key:** Always use the `path` field from manifest.json to locate concepts.
+Key behavioral rules:
+- Active notes in `manifest.json`, archived notes in `notes-archive.json`
+- Only surface active notes — archive is for provenance, not current work
+- Concepts may have `revisions.md` (evolution), `origins/` (seeds), `facets/` (expansions)
 
 ## Facets
 
@@ -271,24 +263,14 @@ Read from and write to files as the single source of truth.
 
 ## File Structure
 
-You work with:
-- `manifest.json` - Registry of concepts and **active** notes (seeds, explorations)
-- `notes-archive.json` - Archived notes (integrated, evolved) — read only for provenance queries
-- Concept directories (path from manifest `path` field):
-  - `concepts/<id>/` - App concepts
-  - `ecosystem/<id>/` - Infrastructure concepts (lens, journey)
-- Each concept directory contains:
-  - `concept.md` - The living concept document (settled state)
-  - `concept-draft-*.md` - Working draft (if exists, all changes go here)
-  - `revisions.md` - History of conceptual shifts (git is version history)
-  - `origins/` - Copied source material (optional)
-  - `facets/` - Extended explorations of specific dimensions (optional)
-- `notes/` - Captured observations
-- `maps/` - Relationship visualizations (optional)
+See `references/concept/manifest-project-spec.md` for complete structure.
 
-**Key:** Always use the `path` field from manifest.json to locate concepts.
+Key files and behavioral rules:
+- `manifest.json` — Registry of concepts and **active** notes
+- `notes-archive.json` — Archived notes (read only for provenance, don't surface)
+- Concept directories use `path` field from manifest (may be `concepts/` or `ecosystem/`)
 
-**Note lifecycle:** Active notes live in `manifest.json`. When insights are fully integrated into concepts, notes move to `notes-archive.json`. Only surface notes from `manifest.json` — the archive preserves provenance but shouldn't clutter active work.
+**Note lifecycle:** Active notes in `manifest.json`. Integrated notes move to `notes-archive.json`. Only surface active notes.
 
 ## Facets
 
@@ -564,35 +546,44 @@ In inhabit mode:
 
 ### Revisions Awareness
 
-When a concept's understanding deepens or shifts, the change can be recorded in `revisions.md`. This file captures conceptual evolution — not file edits, but shifts in meaning.
+When a concept's understanding deepens or shifts, the change can be recorded in `revisions.md`. This file captures **why understanding changed** — not just what's different, but the reasoning and insights that led to each shift.
+
+**When to create revisions.md:**
+- The concept has reached some stability and you're making intentional shifts
+- You want to track evolution history
+- The concept is being referenced by implementations (they benefit from understanding evolution)
+
+**Not required** — concepts can evolve without revisions.md. Create it when tracking becomes useful.
 
 **Reading revisions:**
 - When exploring a concept, check if `revisions.md` exists
 - Recent revisions may illuminate why the concept reads the way it does
 - Revisions show what came before — useful when the user's alive-thread echoes a superseded position
-- Revisions reference archived snapshots in `revisions/` directory
-
-**Recording revisions (via settling flow):**
-When substantial concept work is complete, the settling flow (in explore.md) handles revision creation:
-1. Archive current concept.md to `revisions/YYYY-MM-DD-NNN.md`
-2. Update concept.md with new content
-3. Add entry to revisions.md referencing the archived snapshot
 
 **revisions.md format:**
 ```markdown
-## YYYY-MM-DD: [Title of Shift]
+## YYYY-MM-DD: [Concise Title of Change]
 
-[Brief summary of what changed]
-
-→ [revisions/YYYY-MM-DD-NNN.md](revisions/YYYY-MM-DD-NNN.md)
-
----
+- **Context**: Why this revision matters / what triggered it
+- **Previous**: What the old framing/terminology was
+- **New**: What changed and how it's described now
+- **Reasoning**: The insight or principle driving the change
 ```
 
-**Legacy entries (no archived snapshot):**
-Older revisions may not have archived files — they'll show `(no archived snapshot)` instead of a file link.
+**Reverse chronological order** — newest revisions at the top.
 
-**Conciseness principle:** The revision entry is a *pointer with reasoning*, not re-documentation. The archived snapshot preserves the full previous state.
+**What to track (conceptual shifts):**
+- ✅ Terminology changes (renaming core concepts)
+- ✅ Reframing (same content, different understanding)
+- ✅ Principle discoveries (insights that change how you see the concept)
+- ✅ Structural changes (new sections, reorganized architecture)
+- ✅ Ecosystem alignment (updating to match broader patterns)
+
+**Don't track (incremental edits):**
+- ❌ Typo fixes
+- ❌ Minor clarifications
+- ❌ Example additions
+- ❌ Polish/copyediting
 
 **The guiding question:**
 > Did the concept's *meaning* shift, or just its *content*?
@@ -613,16 +604,10 @@ Older revisions may not have archived files — they'll show `(no archived snaps
 - A significant new section is added that reframes the whole
 - A note is woven in that substantially changes understanding
 
-**Signals that do NOT warrant a revision:**
-- Adding examples or clarifications
-- Expanding an existing section with more detail
-- Refining language without changing meaning
-- Filling in previously empty sections
-
 **Artifact checklist for concept changes:**
 When making significant changes to a concept, update in order:
 1. `concept.md` — the change itself
-2. `revisions.md` — why and what shifted (concise)
+2. `revisions.md` — why and what shifted (Context/Previous/New/Reasoning)
 3. `manifest.json` — note references, status, held_threads as needed
 
 Don't treat manifest as the finish line — revisions.md captures reasoning that manifest cannot.
@@ -632,6 +617,10 @@ Don't treat manifest as the finish line — revisions.md captures reasoning that
 - Surface when user's language echoes a superseded position:
   > "There's a revision from [date] — the concept used to be framed as [old]. Does that feel relevant, or has it moved past?"
 - Revisions help trace lineage without cluttering the living document
+
+**Relationship to concept.md:**
+- concept.md is the source of truth — current, authoritative description
+- revisions.md is the changelog of understanding — explains how we got here
 
 ### Held Threads Awareness
 
