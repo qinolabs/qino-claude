@@ -1421,85 +1421,39 @@ Updates happen automatically when you pull from the marketplace.
 
 After installing the plugins, set up your **qino-os** (operating system for developing ideas).
 
-qino-os provides the workspace structure and patterns for concept exploration, research, and implementation to coexist and inform each other. You can start simple or go full ecosystem.
+qino-os provides workspace structure where concept exploration, research, and implementation coexist and inform each other.
 
-### Choose Your Path
-
-**Single-repo explorer?** Just add a `.claude/qino-config.json` to any existing project:
-
-```json
-{
-  "repoType": "concepts"
-}
-```
-
-Start using `/qino explore` and `/qino capture` immediately.
-
-**Building from concepts?** Create linked repos:
-
-1. **Fork these templates:**
-   - [concepts-repo-template](https://github.com/qinolabs/concepts-repo-template) — Concept exploration
-   - [implementation-repo-template](https://github.com/qinolabs/implementation-repo-template) — Building from concepts
-
-2. **Clone locally and link:**
-   ```bash
-   mkdir my-workspace
-   cd my-workspace
-   git clone <your-concepts-fork> concepts-repo
-   git clone <your-implementation-fork> implementations-repo
-   ```
-
-3. **Link them** in `implementations-repo/.claude/qino-config.json`:
-   ```json
-   {
-     "repoType": "implementation",
-     "conceptsRepo": "../concepts-repo"
-   }
-   ```
-
-**Full qino-os?** Multi-repo ecosystem with workspace coordination:
-
-1. **Fork all templates:**
-   - [qino-workspace-template](https://github.com/qinolabs/qino-workspace-template) — Workspace coordination
-   - [concepts-repo-template](https://github.com/qinolabs/concepts-repo-template) — Concepts
-   - [research-repo-template](https://github.com/qinolabs/research-repo-template) — Research
-   - [implementation-repo-template](https://github.com/qinolabs/implementation-repo-template) — Implementations
-
-2. **Set up workspace:**
-   ```bash
-   git clone <your-workspace-fork> my-qino-workspace
-   cd my-qino-workspace
-   git clone <your-concepts-fork> concepts-repo
-   git clone <your-research-fork> research-repo
-   git clone <your-implementations-fork> implementations-repo
-   ```
-
-3. **Update workspace-config.json** with relative paths (see [workspace README](https://github.com/qinolabs/qino-workspace-template) for details)
-
-### Alternative: Skill Scaffolding
-
-**Prefer programmatic setup?** The qino skill can scaffold workspace structure for you:
+### Recommended: Let the Skill Set Up Everything
 
 ```bash
-# Create a new workspace
 cd ~/projects
-/qino init workspace my-qino-workspace
-
-# Prompts for workspace type:
-# → minimal (concepts only)
-# → standard (concepts + implementations)
-# → full (concepts + research + implementations)
-# → custom (you choose components)
+/qino init workspace my-workspace
 ```
 
-The skill will:
-- Create workspace coordination layer (manifest, config)
-- Scaffold chosen repos from templates
-- Set up relative paths automatically
-- Prompt for git initialization (optional)
-- Show you next steps
+The skill prompts for workspace type (minimal → standard → full) and scaffolds everything:
+- Creates workspace coordination layer
+- Scaffolds chosen repos from templates
+- Sets up relative paths automatically
+- Prompts for git initialization
+- Shows you next steps
 
-**Progressive setup supported:** Start minimal, add repos later as needed. The skill detects existing workspace structure and offers to enhance it.
+Start minimal, add repos later as needed. The skill detects existing structure and offers to enhance it.
+
+### Alternative: Fork Templates First
+
+If you prefer to inspect structure before using it:
+
+1. **Fork templates** on GitHub:
+   - [qino-workspace-template](https://github.com/qinolabs/qino-workspace-template) — Workspace coordination
+   - [concepts-repo-template](https://github.com/qinolabs/concepts-repo-template) — Concept exploration
+   - [research-repo-template](https://github.com/qinolabs/research-repo-template) — Research workspace
+   - [implementation-repo-template](https://github.com/qinolabs/implementation-repo-template) — Implementation workspace
+
+2. **Clone and configure** (see each template's README for setup)
+
+---
+
+**Note:** qino works in any directory without setup. Just add `.claude/qino-config.json` to use qino commands in existing projects.
 
 ### What's Next?
 
