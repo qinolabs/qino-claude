@@ -1419,7 +1419,9 @@ Updates happen automatically when you pull from the marketplace.
 
 ## Getting Started
 
-After installing the plugins, create your workspace structure.
+After installing the plugins, set up your **qino-os** (operating system for developing ideas).
+
+qino-os provides the workspace structure and patterns for concept exploration, research, and implementation to coexist and inform each other. You can start simple or go full ecosystem.
 
 ### Choose Your Path
 
@@ -1476,14 +1478,28 @@ Start using `/qino explore` and `/qino capture` immediately.
 
 ### Alternative: Skill Scaffolding
 
-_(Coming in iteration 02)_ The qino skill will be able to scaffold workspace structure programmatically:
+**Prefer programmatic setup?** The qino skill can scaffold workspace structure for you:
 
 ```bash
-cd my-workspace
-/qino init workspace --type standard
+# Create a new workspace
+cd ~/projects
+/qino init workspace my-qino-workspace
+
+# Prompts for workspace type:
+# → minimal (concepts only)
+# → standard (concepts + implementations)
+# → full (concepts + research + implementations)
+# → custom (you choose components)
 ```
 
-This will create the directory structure and configurations automatically.
+The skill will:
+- Create workspace coordination layer (manifest, config)
+- Scaffold chosen repos from templates
+- Set up relative paths automatically
+- Prompt for git initialization (optional)
+- Show you next steps
+
+**Progressive setup supported:** Start minimal, add repos later as needed. The skill detects existing workspace structure and offers to enhance it.
 
 ### What's Next?
 
