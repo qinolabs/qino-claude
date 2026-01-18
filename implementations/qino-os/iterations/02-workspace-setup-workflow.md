@@ -346,12 +346,60 @@ my-ecosystem/
 
 ## Learnings
 
-(To be filled during implementation)
-
 ### What Shifted
+
+**Template consumption strategy**: Initially thought each workflow would recreate structure manually. Realized all workflows should copy from `plugins/qino/references/templates/` created in iteration 01. This eliminated code duplication and established single source of truth—same content powers both GitHub templates and skill scaffolding.
+
+**Workspace detection pattern**: Started with idea of "knowing" if user is in workspace. Shifted to "detecting" parent workspace-manifest.json and adapting behavior. Workflows don't assume context—they discover it, then adjust. This keeps them usable standalone while enabling workspace coordination.
+
+**Git initialization philosophy**: Moved from "should we always/never initialize git" to "prompt user with recommended default (Y/n)". Respects user autonomy while leaning toward best practice. Consistent across all workflows now.
+
+**Setup workflow scope**: Originally thought workspace-init would be separate from repo-specific setup workflows. Realized they form a coherent system—workspace-init creates coordination layer, individual setup workflows register themselves. Progressive setup works: start anywhere, grow as needed.
 
 ### What Worked
 
+**Dual-mode welcome messages**: Showing different messages for standalone vs workspace contexts immediately orients users to what just happened. "Your workspace is ready" vs "Workspace created and registered" — subtle but effective.
+
+**Template source references**: Every workflow documents "Template source: plugins/qino/references/templates/[type]/" making maintenance obvious. When templates change, grep for this string to find what needs updating.
+
+**Workspace registration logic**: Keeping registration separate from structure creation means workflows can fail gracefully if workspace files are malformed. Check workspace, create structure, then register—clear sequence.
+
+**SKILL.md routing tables**: Multiple tables (spawn mode list, agent assignments, intent mapping, execution mode, subagent types) provide redundancy—easy to find what routes where. Adding workspace-init required updating 5 locations, but each table serves different lookup need.
+
+**Consistent copy strategy**: All three setup workflows (dev, concept, research) plus workspace-init follow same pattern: detect context, copy from templates, prompt for git, register if workspace. Once pattern understood, implementing new workflows trivial.
+
 ### What Surprised Us
 
+**Template repositories vs skill scaffolding convergence**: Thought these would be separate distribution channels with separate content. Discovered they should share content from `plugins/qino/references/templates/`—iteration 01 created templates, iteration 02 consumes them. Two ways to instantiate, one source of truth.
+
+**Workspace awareness complexity**: Initially seemed complex to detect workspace and modify behavior. Actually quite simple—check for `../workspace-manifest.json`, read if exists, update if valid. The simplicity of the check belies the power of the pattern.
+
+**Progressive setup viability**: Uncertain if users could start with partial workspace and add repos later. Testing the detection logic revealed it works naturally—if workspace exists but missing repos, offer to add. If standalone repo exists, offer to wrap in workspace. The flexibility emerged from the architecture, wasn't explicitly designed.
+
+**Git submodule warnings during commit**: When we accidentally committed template repos into qino-claude, git warned about embedded repositories. This revealed the importance of .gitignore in workspace root—child repos must be ignored to prevent nesting. The error taught the pattern.
+
+**SKILL.md as source of truth for routing**: Realized SKILL.md documents the complete routing logic—what routes where, which agent handles it, execution mode, subagent type. It's not just documentation, it's the specification. Changes to routing start here.
+
 ### Led To
+
+**Iteration 03 scope refinement**: Seeing how workspace creation and setup workflows interact suggests validation should check:
+- Workspace coordination files are valid JSON
+- Registered repos actually exist at declared paths
+- Repo paths are relative (not absolute)
+- repoType in qino-config matches actual structure
+More complex validation (link resolution, concept-impl matching) deferred until real-world usage patterns emerge.
+
+**Missing template content discovered**: While implementing workspace-init, realized implementation template needs populated. Created TODO to finish implementation-repo-template with all reference docs from plugins/qino/references/dev/. (Completed in iteration 02 actually—repo-conventions.md, template-guidance.md, templates/ all copied.)
+
+**Progressive workspace command hint**: Users might want `/qino add [repo-type]` to add repos to existing workspace. This would be enhancement mode for workspace-init—detect workspace, prompt for missing repo types, create and register. Deferred to post-iteration 03, but pattern is clear.
+
+**Workspace validation command scope**: `/qino validate workspace` should check structure, not just files. Suggested checks:
+- All repos in manifest exist at paths
+- All repos have valid qino-config.json
+- Workspace-config repos match manifest entries
+- No absolute paths (only relative)
+Iteration 03 will determine depth.
+
+**Documentation pattern for workflows**: Adding Technical Notes section to all workflows proved valuable—template source, detection logic, reference docs, manifest structure all documented. Future workflows should follow this pattern.
+
+**Open question answered**: Q1 (git initialization) → Prompt user (Y/n). Q2 (workspace-level git) → Yes, like qino-root. Q3 (command naming) → `/qino init workspace`. Q4 (template updates) → Deferred to iteration 03 (need real-world usage first).
