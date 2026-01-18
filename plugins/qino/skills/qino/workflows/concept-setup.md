@@ -13,82 +13,176 @@ One-time workspace scaffolding for concept ecosystem.
 If workspace name is provided, create in that subdirectory.
 If not, initialize in current directory.
 
+If within a qino workspace, register this repo in workspace-manifest.
+
 ---
 
-## Steps
+## Flow
 
-### 1. Determine target directory
+### 1. Determine Target Directory
+
 - If workspace name provided: create and enter that directory
 - If not: use current directory
 
-### 2. Create structure
+### 2. Detect Workspace Context
+
+Check if we're inside a qino workspace:
+- Look for `../workspace-manifest.json` (one level up)
+- Look for `../workspace-config.json`
+
+If found: **Workspace mode** (will register after creation)
+If not: **Standalone mode** (independent concepts repo)
+
+### 3. Create Structure
+
+Copy entire template from `plugins/qino/references/templates/concepts/`:
 
 ```
-[workspace]/
-  manifest.json
-  concepts/
-  ecosystem/          # Shared domain/architecture
-  notes/
-  maps/
-  .claude/
-    qino-config.json
-    references/
-      qino-concept/
-        concept-spec.md
-        manifest-project-spec.md
-        design-philosophy.md
-        revisions-guide.md       # How to use revisions.md
+[concepts-workspace]/
+├── manifest.json
+├── notes-archive.json
+├── concepts/.gitkeep
+├── ecosystem/.gitkeep
+├── notes/.gitkeep
+├── .claude/
+│   ├── qino-config.json
+│   └── references/
+│       └── concept/
+│           ├── manifest-project-spec.md
+│           └── revisions-guide.md
+└── README.md
 ```
 
-### 3. Create qino-config.json
+**Template source:** `plugins/qino/references/templates/concepts/`
+
+**Copy strategy:**
+- Use recursive copy preserving directory structure
+- Create parent directories before copying
+- Ensure all reference docs copied correctly
+
+### 4. Initialize Git (Optional)
+
+Prompt user:
+
+```
+Initialize git repo? (recommended)
+
+[Y/n]
+```
+
+If yes: `git init && git add . && git commit -m "Initialize concepts workspace"`
+If no: Skip (user can initialize later)
+
+### 5. Register in Workspace (if in workspace mode)
+
+If workspace detected, update `../workspace-manifest.json`:
 
 ```json
 {
-  "repoType": "concepts"
+  "repos": [
+    {
+      "id": "concepts-repo",
+      "type": "concepts",
+      "path": "concepts-repo",
+      "purpose": "Concept exploration and vision",
+      "status": "active",
+      "contains": ["concepts", "ecosystem", "notes"]
+    }
+  ]
 }
 ```
 
-### 4. Create reference files
+And update `../workspace-config.json`:
 
-Copy the specification files from tool source:
-- concept-spec.md
-- manifest-project-spec.md
-- design-philosophy.md
-- revisions-guide.md (documents evolution tracking pattern)
-
-### 5. Initialize manifest.json
-
-Follow the schema defined in `references/concept/manifest-project-spec.md`:
 ```json
 {
-  "version": 2,
-  "concepts": [],
-  "notes": []
+  "repos": {
+    "concepts": "./concepts-repo"
+  }
 }
 ```
+
+Use actual directory name, not hardcoded "concepts-repo".
 
 ### 6. Welcome
 
+**If standalone:**
 ```
-Your ecosystem is ready.
+Your concepts workspace is ready.
 
-concepts/ — where ideas live
-notes/ — where observations accumulate
-manifest.json — keeps track
+concepts/ — where ideas stabilize
+ecosystem/ — cross-cutting patterns
+notes/ — captures waiting to be woven
 
 ─────
 
 from here
 
-  capture a thought, bring in material, or create a concept
+  capture a thought, create a concept, or import material
 
-                        ("capture: [thought]", "import [path]", "create concept [name]")
+    /qino capture [thought]
+    /qino create concept [name]
+    /qino import [path]
+```
+
+**If in workspace:**
+```
+Concepts workspace created and registered.
+
+workspace-manifest updated — concepts-repo added
+
+─────
+
+from here
+
+  capture a thought, create a concept, or import material
+
+    /qino capture [thought]
+    /qino create concept [name]
+    /qino import [path]
 ```
 
 ---
 
-## Do NOT:
+## Edge Cases
+
+**Directory already exists:**
+- Check if it contains qino structure (.claude/qino-config.json)
+- If yes: offer to enhance (add missing directories/files)
+- If no and contains files: warn about conflicts, ask to choose different name
+- If empty: proceed with template copy
+
+**Workspace registration:**
+- Don't modify workspace files if not in workspace context
+- If workspace-manifest.json is malformed: warn and skip registration
+- Always use relative paths from workspace root
+
+---
+
+## Do NOT
+
 - Overwrite existing files without asking
-- Create complex initial structure
-- Overwhelm with instructions
+- Initialize git without user consent
+- Modify workspace files when in standalone mode
 - Use excited language or emojis
+- Create example concepts (empty structure only)
+
+---
+
+## Technical Notes
+
+**Template source:** `plugins/qino/references/templates/concepts/`
+
+**Workspace detection:**
+- Check parent directory for workspace-manifest.json
+- Validate it's a qino workspace (has "workspaceType" field)
+- Fail gracefully if workspace files are malformed
+
+**Reference docs:**
+- manifest-project-spec.md — Complete manifest format and patterns
+- revisions-guide.md — How to capture evolution of understanding
+
+**Manifest structure:**
+- Version 2 format (updated schema)
+- Empty arrays for concepts and notes
+- Will be populated as concepts develop

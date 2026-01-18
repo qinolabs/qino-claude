@@ -13,6 +13,8 @@ One-time workspace scaffolding for implementation projects.
 If workspace name is provided, create in that subdirectory.
 If not, initialize in current directory.
 
+If within a qino workspace, register this repo in workspace-manifest.
+
 ---
 
 ## Flow
@@ -22,91 +24,108 @@ If not, initialize in current directory.
 - If workspace name provided: create and enter that directory
 - If not: use current directory
 
-### 2. Create Structure
+### 2. Detect Workspace Context
+
+Check if we're inside a qino workspace:
+- Look for `../workspace-manifest.json` (one level up)
+- Look for `../workspace-config.json`
+
+If found: **Workspace mode** (will register after creation)
+If not: **Standalone mode** (independent implementation repo)
+
+### 3. Create Structure
+
+Copy entire template from `plugins/qino/references/templates/implementation/`:
 
 ```
-[workspace]/
-  implementations/
-    docs/                  # Ecosystem architecture documentation
-    manifest.json          # Registry of apps
-  .claude/
-    qino-config.json
-    references/
-      qino-dev/
-        repo-conventions.md       # Structure conventions
-        template-guidance.md      # Learnings capture guide
-        home-pattern.md
-        templates/
-          implementation-template.md
-          iteration-template.md
-          app-command-template.md
+[implementation-workspace]/
+├── implementations/
+│   ├── docs/
+│   │   └── README.md
+│   └── manifest.json
+├── .claude/
+│   ├── qino-config.json
+│   └── references/
+│       └── dev/
+│           ├── repo-conventions.md
+│           ├── template-guidance.md
+│           ├── home-pattern.md
+│           └── templates/
+│               ├── implementation-template.md
+│               ├── iteration-template.md
+│               └── app-command-template.md
+└── README.md
 ```
 
-### 3. Create Reference Files
+**Template source:** `plugins/qino/references/templates/implementation/`
 
-Copy from tool source:
-- repo-conventions.md
-- template-guidance.md
-- home-pattern.md
-- implementation-template.md
-- iteration-template.md
-- app-command-template.md
+**Copy strategy:**
+- Use recursive copy preserving directory structure
+- Create parent directories before copying
+- Ensure all reference docs and templates copied correctly
 
-### 4. Initialize implementations/docs/
+### 4. Initialize Git (Optional)
 
-Create `implementations/docs/README.md`:
+Prompt user:
 
-```markdown
-# Technical Documentation
+```
+Initialize git repo? (recommended)
 
-This directory contains settled technical architecture and implementation patterns for the ecosystem.
-
-## Purpose
-
-**For humans:** Deep technical reference for understanding system design and architectural decisions.
-
-**For AI agents:** Starting point for technical exploration — context that enables accurate reasoning about system behavior.
-
-## What Belongs Here
-
-✅ Cross-app patterns (seeding, RPC, type sharing)
-✅ Infrastructure patterns (service bindings, migrations)
-✅ Integration contracts (how components communicate)
-✅ Settled architecture (implemented and proven designs)
-
-❌ App-specific implementation (belongs in `implementations/{app}/`)
-❌ Ephemeral notes (belongs in `docs/generated/`)
-
-## Getting Started
-
-See the implementation repo's main documentation structure for conventions and patterns.
+[Y/n]
 ```
 
-### 5. Initialize implementations/manifest.json
+If yes: `git init && git add . && git commit -m "Initialize implementation workspace"`
+If no: Skip (user can initialize later)
+
+### 5. Register in Workspace (if in workspace mode)
+
+If workspace detected, update `../workspace-manifest.json`:
 
 ```json
 {
-  "version": 1,
-  "apps": []
+  "repos": [
+    {
+      "id": "implementations-repo",
+      "type": "implementation",
+      "path": "implementations-repo",
+      "purpose": "Building from concepts",
+      "status": "active",
+      "contains": ["implementations"]
+    }
+  ]
 }
 ```
 
-### 6. Initialize qino-config.json
+And update `../workspace-config.json`:
 
 ```json
 {
-  "repoType": "implementation"
+  "repos": {
+    "implementation": "./implementations-repo"
+  }
 }
 ```
 
-Note: `conceptsRepo` and `linkedConcept` are added later by dev-init when linking to a concept.
+Use actual directory name, not hardcoded "implementations-repo".
 
-### 7. Welcome
+If concepts-repo also exists in workspace, add link hint in config:
 
+```json
+{
+  "conceptLinks": {
+    "_comment": "Link concepts to implementations here as they're created"
+  }
+}
+```
+
+### 6. Welcome
+
+**If standalone:**
 ```
 Your implementation workspace is ready.
 
 implementations/ — where apps live
+implementations/docs/ — cross-app architecture
 
 ─────
 
@@ -114,14 +133,76 @@ from here
 
   link a concept, or start building standalone
 
-                    ("implement [concept-path]" or "start building")
+    /qino implement [concept-path]
+    /qino dev init [app-name]
+```
+
+**If in workspace:**
+```
+Implementation workspace created and registered.
+
+workspace-manifest updated — implementations-repo added
+
+─────
+
+from here
+
+  implement a concept, or start building
+
+    /qino implement [concept-name]
+    /qino dev init [app-name]
 ```
 
 ---
 
-## Do NOT:
+## Edge Cases
+
+**Directory already exists:**
+- Check if it contains qino structure (.claude/qino-config.json)
+- If yes: offer to enhance (add missing directories/files)
+- If no and contains files: warn about conflicts, ask to choose different name
+- If empty: proceed with template copy
+
+**Workspace registration:**
+- Don't modify workspace files if not in workspace context
+- If workspace-manifest.json is malformed: warn and skip registration
+- Always use relative paths from workspace root
+- Detect concepts-repo and hint at linking in conceptLinks
+
+---
+
+## Do NOT
 
 - Overwrite existing files without asking
-- Create complex initial structure
-- Ask about concepts yet (that's for dev-init)
+- Initialize git without user consent
+- Modify workspace files when in standalone mode
 - Use excited language or emojis
+- Create example apps (empty structure only)
+- Ask about linking concepts yet (that's for dev-init)
+
+---
+
+## Technical Notes
+
+**Template source:** `plugins/qino/references/templates/implementation/`
+
+**Workspace detection:**
+- Check parent directory for workspace-manifest.json
+- Validate it's a qino workspace (has "workspaceType" field)
+- Fail gracefully if workspace files are malformed
+- Detect sibling concepts-repo for linking hints
+
+**Reference docs:**
+- repo-conventions.md — Implementation repo structure patterns
+- template-guidance.md — How to capture learnings through colocation
+- home-pattern.md — Arrival pattern for generated commands
+
+**Templates:**
+- implementation-template.md — App technical context template
+- iteration-template.md — Iteration planning template
+- app-command-template.md — Home command for apps
+
+**Manifest structure:**
+- Version 1 format
+- Empty apps array
+- Will be populated as apps are created with dev-init

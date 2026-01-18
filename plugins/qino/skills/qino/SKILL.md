@@ -60,7 +60,7 @@ Claude: [Reads workflows/explore.md and agents/concept.md]
 
 ### Spawn Mode (Synthesis Workflows)
 
-**For:** import, dev-work, dev-init, dev-setup, research-init, research-setup, concept-init, concept-setup
+**For:** import, dev-work, dev-init, dev-setup, workspace-init, research-init, research-setup, concept-init, concept-setup
 
 These workflows involve heavy file reading, code changes, or scaffolding. They execute **in an isolated subagent** via the Task tool.
 
@@ -68,7 +68,7 @@ These workflows involve heavy file reading, code changes, or scaffolding. They e
 
 1. **Spawn the agent** using Task tool with appropriate `subagent_type`:
    - `qino:concept` — for import, concept-init, concept-setup
-   - `qino:dev` — for dev-init, dev-setup, dev-work
+   - `qino:dev` — for dev-init, dev-setup, workspace-init, dev-work
    - `qino:research` — for research-init, research-setup
 
 2. **Pass context** in the Task prompt:
@@ -292,6 +292,7 @@ Match user intent to workflow. **Spawn the specified agent** to execute the work
 
 | User Intent | Workflow |
 |-------------|----------|
+| Initialize multi-repo workspace | [workflows/workspace-init.md](workflows/workspace-init.md) |
 | Setup implementation workspace | [workflows/dev-setup.md](workflows/dev-setup.md) |
 | Start implementation, init app | [workflows/dev-init.md](workflows/dev-init.md) |
 | "what's next for [app]", "continue [app]", "work on [app]" | [workflows/dev-work.md](workflows/dev-work.md) |
@@ -387,6 +388,7 @@ Workflows specify both an agent persona and an execution mode.
 | dev-work | dev | spawn | Synthesis — code changes |
 | dev-init | dev | spawn | Synthesis — project scaffolding |
 | dev-setup | dev | spawn | Synthesis — project scaffolding |
+| workspace-init | dev | spawn | Synthesis — multi-repo workspace scaffolding |
 | research-init | research | spawn | Synthesis — workspace scaffolding |
 | research-setup | research | spawn | Synthesis — workspace scaffolding |
 
@@ -395,7 +397,7 @@ Workflows specify both an agent persona and an execution mode.
 | Agent | subagent_type | Used by |
 |-------|---------------|---------|
 | Concept Agent | `qino:concept` | import, concept-init, concept-setup |
-| Dev Agent | `qino:dev` | dev-init, dev-setup, dev-work |
+| Dev Agent | `qino:dev` | dev-init, dev-setup, workspace-init, dev-work |
 | Research Agent | `qino:research` | research-init, research-setup |
 
 Agent definitions live in `agents/` directory. Each agent file has:
