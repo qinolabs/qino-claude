@@ -1417,6 +1417,86 @@ Updates happen automatically when you pull from the marketplace.
 - `qino-art` — Visual content system
 - `design-adventure` — Seven-perspective design exploration
 
+## Getting Started
+
+After installing the plugins, create your workspace structure.
+
+### Choose Your Path
+
+**Single-repo explorer?** Just add a `.claude/qino-config.json` to any existing project:
+
+```json
+{
+  "repoType": "concepts"
+}
+```
+
+Start using `/qino explore` and `/qino capture` immediately.
+
+**Building from concepts?** Create linked repos:
+
+1. **Fork these templates:**
+   - [concepts-repo-template](https://github.com/qinolabs/concepts-repo-template) — Concept exploration
+   - [implementation-repo-template](https://github.com/qinolabs/implementation-repo-template) — Building from concepts
+
+2. **Clone locally and link:**
+   ```bash
+   mkdir my-workspace
+   cd my-workspace
+   git clone <your-concepts-fork> concepts-repo
+   git clone <your-implementation-fork> implementations-repo
+   ```
+
+3. **Link them** in `implementations-repo/.claude/qino-config.json`:
+   ```json
+   {
+     "repoType": "implementation",
+     "conceptsRepo": "../concepts-repo"
+   }
+   ```
+
+**Full qino-os?** Multi-repo ecosystem with workspace coordination:
+
+1. **Fork all templates:**
+   - [qino-workspace-template](https://github.com/qinolabs/qino-workspace-template) — Workspace coordination
+   - [concepts-repo-template](https://github.com/qinolabs/concepts-repo-template) — Concepts
+   - [research-repo-template](https://github.com/qinolabs/research-repo-template) — Research
+   - [implementation-repo-template](https://github.com/qinolabs/implementation-repo-template) — Implementations
+
+2. **Set up workspace:**
+   ```bash
+   git clone <your-workspace-fork> my-qino-workspace
+   cd my-qino-workspace
+   git clone <your-concepts-fork> concepts-repo
+   git clone <your-research-fork> research-repo
+   git clone <your-implementations-fork> implementations-repo
+   ```
+
+3. **Update workspace-config.json** with relative paths (see [workspace README](https://github.com/qinolabs/qino-workspace-template) for details)
+
+### Alternative: Skill Scaffolding
+
+_(Coming in iteration 02)_ The qino skill will be able to scaffold workspace structure programmatically:
+
+```bash
+cd my-workspace
+/qino init workspace --type standard
+```
+
+This will create the directory structure and configurations automatically.
+
+### What's Next?
+
+Once your workspace is set up:
+
+- **Explore a concept:** `/qino explore [concept-name]`
+- **Capture a thought:** `/qino capture [your thought]`
+- **Start building:** `/qino implement [concept-path]`
+- **Begin research:** `/qino begin inquiry [question]`
+- **Open an arc:** `/qino begin arc` (when you notice emergence)
+
+See [Finding Your Way](#finding-your-way) for detailed tool documentation.
+
 ## Requirements
 
 [Claude Code](https://docs.anthropic.com/en/docs/claude-code)

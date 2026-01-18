@@ -1,0 +1,11 @@
+{
+  "repoType": "workspace",
+  "workspaceName": "my-qino-workspace",
+  "description": "Multi-repo workspace for qino ecosystem",
+
+  "repos": {
+    "implementation": "./implementations-repo",
+    "concepts": "./concepts-repo",
+    "research": "./research-repo"
+  }
+}

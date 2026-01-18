@@ -1,0 +1,34 @@
+# Child Repositories (NEVER VERSION)
+# The workspace coordinates repos, doesn't contain them
+*-repo/
+*-concepts/
+*-research/
+*-implementations/
+
+# Common child repo patterns
+qino-*/
+concepts/
+research/
+implementations/
+
+# Machine-Specific (NEVER VERSION)
+.mcp.json
+.claude/settings.local.json
+.pnpm-store/
+.DS_Store
+node_modules/
+
+# Generated Files (NEVER VERSION)
+AGENTS.md
+Claude Conversations/
+.claude/agent-sessions.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db

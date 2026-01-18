@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "apps": [
+    {
+      "id": "qino-os",
+      "name": "qino-os",
+      "path": "qino-os",
+      "description": "Distribution and setup system for qino ecosystem",
+      "status": "active"
+    }
+  ]
+}
