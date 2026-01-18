@@ -8,18 +8,62 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
-### qino
+---
 
-#### Added
+## [2.0.0] - 2026-01-18
 
+### Major: qinoOS Distribution System
+
+qino now includes a complete operating system for developing ideas — **qinoOS**. Instead of manually forking templates, one command scaffolds coordinated workspaces.
+
+#### qino
+
+##### Added
+
+- **qinoOS workspace scaffolding** — `/qino init workspace` creates coordinated multi-repo workspaces with one command
+- **workspace-init workflow** — programmatic workspace creation with type selection (minimal/standard/full), git initialization prompts, and progressive setup support
+- **Workspace awareness in all setup workflows** — concept-setup, dev-setup, and research-setup now detect parent workspace and register themselves automatically
+- **Template repository foundation** — reference templates in `references/templates/` power both GitHub template repos and skill scaffolding
+- **Active arc workflows** — arc-open, arc-link, arc-close for tracking emergence across sessions
+- **Facets directory support** — concepts can now organize explorations in `facets/` subdirectory
+- **Ecosystem directory structure** — support for cross-cutting patterns in `concepts-repo/ecosystem/`
 - **Repository conventions reference** (`references/dev/repo-conventions.md`) — documents structural patterns for implementation, concept, and research repositories; uses convention over configuration to avoid path drift
 
-#### Changed
+##### Changed
 
+- **Progressive setup model** — start minimal (concepts only), add repos later (research, implementations); skill detects existing structure and offers enhancement
+- **Dual-mode welcome messages** — workflows show different messages for standalone vs workspace-coordinated contexts
+- **Convention over configuration** — repo-conventions.md documents structural patterns; agents verify via filesystem instead of hardcoded paths
+- **Template copying pattern** — all setup workflows copy from single source (`references/templates/`) instead of recreating structure manually
+- **Git initialization philosophy** — all workflows prompt user with recommended default (Y/n) instead of forcing or skipping
+- **Reference-based architecture** — agents and workflows reference ecosystem documentation (repo-conventions.md, template-guidance.md) instead of duplicating structure knowledge
 - **Dev workflow alignment** — `dev-work.md` and `dev-init.md` workflows now reference ecosystem documentation structure (implementations/docs/), learnings capture patterns, and template guidance
 - **Dev agent documentation awareness** — `dev.md` agent now reads repo-conventions.md for structure resolution; uses conventions + filesystem verification instead of hardcoded paths
 - **Generic template paths** — workflows use `.claude/references/qino-dev/templates/` instead of machine-specific paths for portability
 - **Cross-app pattern guidance** — dev-work workflow includes guidance for when to create ecosystem documentation in implementations/docs/
+
+#### Documentation
+
+##### Changed
+
+- **README reframed with qinoOS introduction** — "Get Started" section added after philosophy (line 88); shows `/qino init workspace` command before deep ecosystem explanation
+- **Progressive disclosure** — flow is now: philosophy → quick start → ecosystem (grounded in actual directories) → tools → installation reference
+- **Directory structure shown** — concrete workspace tree displayed alongside conceptual diagrams
+- **Config files explained as auto-created** — workspace-config.json and qino-config.json described as created during setup, not manual configuration
+- **qinoOS branding** — consistent use of "qinoOS" (not "qino-os") throughout
+- **Ecosystem section renamed** — "An Ecology of Mind: The Ecosystem Map" → "qinoOS: An Ecology of Mind"
+
+### qino-prose
+
+#### Changed
+
+- **Agent documentation refinements** — scribe-prep, scribe-prose, scribe-editorial, relay-prose, relay-editorial reference improvements
+
+### qino-art
+
+#### Changed
+
+- **Workflow documentation improvements** — all visual content workflows updated for clarity
 
 ---
 
