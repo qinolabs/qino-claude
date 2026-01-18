@@ -99,9 +99,10 @@ This ecosystem is an attempt to build software that knows it is part of a larger
 **Create your workspace:**
 
 ```bash
-cd ~/projects
 /qino init workspace my-workspace
 ```
+
+This creates `./my-workspace/` in your current directory with coordinated repos inside.
 
 The skill sets up **qinoOS** — three coordinated spaces where ideas develop:
 
@@ -1498,12 +1499,11 @@ qinoOS provides workspace structure where concept exploration, research, and imp
 
 ### Recommended: Let the Skill Set Up Everything
 
-**Navigate to where you want your workspace**, then run:
-
 ```bash
-cd ~/projects                    # Navigate to your projects directory
 /qino init workspace my-workspace
 ```
+
+This creates `./my-workspace/` in your current directory with coordinated repos inside.
 
 The skill prompts for workspace type (minimal → standard → full) and scaffolds everything:
 - Creates workspace coordination layer
