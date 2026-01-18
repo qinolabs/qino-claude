@@ -8,6 +8,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### qino
+
+#### Added
+
+- **Repository conventions reference** (`references/dev/repo-conventions.md`) — documents structural patterns for implementation, concept, and research repositories; uses convention over configuration to avoid path drift
+
+#### Changed
+
+- **Dev workflow alignment** — `dev-work.md` and `dev-init.md` workflows now reference ecosystem documentation structure (implementations/docs/), learnings capture patterns, and template guidance
+- **Dev agent documentation awareness** — `dev.md` agent now reads repo-conventions.md for structure resolution; uses conventions + filesystem verification instead of hardcoded paths
+- **Generic template paths** — workflows use `.claude/references/qino-dev/templates/` instead of machine-specific paths for portability
+- **Cross-app pattern guidance** — dev-work workflow includes guidance for when to create ecosystem documentation in implementations/docs/
+
 ---
 
 ## [1.1.0] - 2026-01-14
