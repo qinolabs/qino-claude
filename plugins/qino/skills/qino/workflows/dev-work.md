@@ -4,7 +4,10 @@
 **Voice:** Grounded. Practical. Let's build.
 **Agent:** dev
 
-**Reference:** Read `references/dev/home-pattern.md` for arrival pattern.
+**References:**
+- `references/dev/repo-conventions.md` — Implementation repo structure patterns
+- `references/dev/home-pattern.md` — Arrival pattern for generated commands
+- `references/dev/template-guidance.md` — How to capture learnings through colocation
 
 ---
 
@@ -35,6 +38,7 @@ When user says "work on [app]" or similar:
 1. **Find the implementation context:**
    - Check `implementations/[app]/implementation.md` for technical context
    - Check `implementations/[app]/iterations/` for current phase
+   - Check `implementations/docs/` for ecosystem architecture patterns
    - Find the linked concept via manifest
 
 2. **Read current state:**
@@ -131,38 +135,16 @@ When user says "plan iterations" or similar:
    - Goals (as checkboxes)
    - Test Before Moving On (how to know it's ready)
 
-6. Create iteration files:
+6. Create iteration files using `.claude/references/qino-dev/templates/iteration-template.md`:
    - `iterations/01-[name].md`
    - `iterations/02-[name].md`
    - etc.
 
-7. Use the iteration template:
-
-```markdown
-# Iteration [NUMBER]: [NAME]
-
-## Scope
-
-[SCOPE_DESCRIPTION]
-
-## Goals
-
-- [ ] [GOAL_1]
-- [ ] [GOAL_2]
-- [ ] [GOAL_3]
-
-## Test Before Moving On
-
-[TEST_CRITERIA]
-
-## Status
-
-Not started
-
-## Notes
-
-*Learnings, decisions, and adjustments accumulate here during the iteration.*
-```
+   Fill in:
+   - Scope from iteration discussion
+   - Goals as checkboxes
+   - Test criteria
+   - Leave Technical Decisions and Learnings sections empty for capture during work
 
 ### If iterations already exist:
 
@@ -192,7 +174,9 @@ When user says "build [goal]" or wants to work on current iteration:
 
 5. Work on the goal, checking off when complete:
    - Make changes to app source code
-   - Update iteration notes with learnings
+   - Document significant technical decisions in iteration's "Technical Decisions" section
+     (see `references/dev/template-guidance.md` for narrative format)
+   - Note learnings in iteration's "Learnings" section as they emerge
    - Check off completed goals
 
 6. After goal completion:
@@ -248,6 +232,24 @@ During building, watch for signals that suggest concept-level learnings. These a
 
 ---
 
+## Cross-App Patterns
+
+When you discover architectural patterns that apply across multiple apps (seeding, RPC, type sharing, etc.):
+
+1. Document the decision in iteration's Technical Decisions section first
+2. If the pattern has settled and is being used by multiple apps:
+   - Consider creating documentation in `implementations/docs/`
+   - Follow the structure in `implementations/docs/README.md`
+   - Reference it from app's implementation.md "Related Documentation" section
+
+**Examples of ecosystem patterns:**
+- Seeding architecture (already documented in `implementations/docs/seeding-architecture.md`)
+- RPC service bindings
+- Type sharing patterns
+- Journey-modality integration
+
+---
+
 ## Iteration Transitions
 
 When all goals in an iteration are complete:
@@ -262,9 +264,15 @@ When all goals in an iteration are complete:
    > Or take time to review what emerged?
 
 3. Update iteration status to "Complete"
-4. Offer to start next iteration
 
-5. **Concept alignment check** (before starting next iteration):
+4. **Update manifest.json:**
+   - Set `currentIteration` to next iteration number (or mark complete if final)
+   - Update `last_touched` to current ISO date
+   - Keep `status` as "active" (or set to "complete" if no more iterations)
+
+5. Offer to start next iteration
+
+6. **Concept alignment check** (before starting next iteration):
 
    > "Before moving to [next iteration]:
    >

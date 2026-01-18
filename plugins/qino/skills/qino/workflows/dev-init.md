@@ -5,8 +5,10 @@
 **Agent:** dev
 
 **References:**
-- Read `references/dev/home-pattern.md` for the arrival pattern used in generated commands.
-- When scaffolding apps from templates, read `templates/CREATING_NEW_APP.md` in the implementation repository for complete setup instructions including environment variables.
+- `references/dev/repo-conventions.md` — Implementation repo structure patterns
+- `references/dev/home-pattern.md` — Arrival pattern for generated commands
+- `references/dev/template-guidance.md` — How to capture learnings through colocation
+- Check for `templates/CREATING_NEW_APP.md` in implementation repo (app scaffolding guide)
 
 ---
 
@@ -119,13 +121,14 @@ Create the following files:
 
 **`implementations/[app]/implementation.md`**
 
-Use `references/dev/templates/implementation-template.md` as structure.
+Use `.claude/references/qino-dev/templates/implementation-template.md` as structure.
 
 Fill in from the translation exploration:
 - Concept source (path to linked concept)
 - Technical foundation (stack, complexity, architecture)
 - Boundaries (approved, restricted, later)
 - Flags (green, red)
+- Related Documentation section (link to ecosystem docs in `implementations/docs/`)
 
 **Include concept sync tracking** (enables drift detection on future arrivals):
 
@@ -143,9 +146,9 @@ Read the concept's `last_touched` from the concepts-repo manifest.json and recor
 
 **`implementations/[app]/iterations/01-foundation.md`**
 
-Use `references/dev/templates/iteration-template.md` as structure.
+Use `.claude/references/qino-dev/templates/iteration-template.md` as structure.
 
-Fill in from the first iteration discussion.
+Fill in from the first iteration discussion. Include empty "Technical Decisions" and "Learnings" sections for capture during implementation.
 
 **Update `.claude/qino-config.json`**
 
@@ -160,12 +163,32 @@ Add concept link:
 
 **`.claude/commands/qino-dev/[short-id].md`**
 
-Use `references/dev/templates/app-command-template.md` as structure.
+Generate command file following the home pattern (see `references/dev/home-pattern.md`).
 
 Replace placeholders with:
 - `{{APP_NAME}}`: Full app name
 - `{{APP_ID}}`: Concept id
 - `{{SHORT_ID}}`: Short command id (e.g., "bg")
+
+**Update `implementations/manifest.json`**
+
+Add the new app to the registry:
+
+```json
+{
+  "version": 1,
+  "apps": [
+    {
+      "id": "[app-id]",
+      "name": "[App Name]",
+      "linkedConcept": "[concept-id]",
+      "currentIteration": "01-foundation",
+      "status": "active",
+      "last_touched": "[current ISO date]"
+    }
+  ]
+}
+```
 
 ### 5. Confirm
 
@@ -205,15 +228,36 @@ Do NOT update qino-config.json with concept fields (no linked concept).
 
 Generate the app command.
 
+**Update `implementations/manifest.json`**
+
+Add the new app to the registry (no linkedConcept field):
+
+```json
+{
+  "version": 1,
+  "apps": [
+    {
+      "id": "[app-id]",
+      "name": "[App Name]",
+      "currentIteration": "01-foundation",
+      "status": "active",
+      "last_touched": "[current ISO date]"
+    }
+  ]
+}
+```
+
 ---
 
 ## App Scaffolding (When Building from Templates)
 
 If the first iteration involves creating the actual app code from templates (common for new apps), follow this process after generating artifacts:
 
-### 1. Read the Template Guide
+### 1. Read the Template Guide (if exists)
 
-Read `templates/CREATING_NEW_APP.md` in the implementation repository for complete instructions.
+Check if `templates/CREATING_NEW_APP.md` exists in the implementation repository. If it does, read it for complete setup instructions.
+
+Otherwise, proceed with the general scaffolding pattern below.
 
 ### 2. Allocate Ports
 
