@@ -85,16 +85,39 @@ This ecosystem is an attempt to build software that knows it is part of a larger
 
 <br>
 
+## Get Started
+
+After installing the plugins ([Installation →](#installation)), create your workspace:
+
+```bash
+cd ~/projects
+/qino init workspace my-workspace
+```
+
+The skill sets up **qinoOS** — three coordinated spaces where ideas develop:
+
+- **concepts/** — where ideas stabilize
+- **research/** — before crystallization
+- **implementations/** — from concept to code
+
+Start with one space (minimal), add others as needed (standard/full). The skill detects existing structure and offers to enhance it.
+
+[See full setup options and templates →](#getting-started)
+
+<br>
+
+---
+
 ∴ _Creativity, learning and integration doesn't stop at the boundary of a single repository._
 
-These tools are part of a larger **ecosystem**—a living network of **tools, concepts, apps, research and chronicles** that evolve together. Each offers a way to learn from anything and contribute to your ecology of ideas in the moment spontaneous insight occurs.
+**qinoOS** structures this as coordinated workspaces—a living network of **concepts, research, and implementations** that evolve together. Each space offers a way to learn from anything and contribute to your ecology of ideas in the moment spontaneous insight occurs.
 
 ∴ _Return your attention to what inspires you right now. Let the system take care of the rest. Things naturally surface when they're ready._
 
 <br>
 
 <details>
-<summary><strong>An Ecology of Mind: The Ecosystem Map</strong><br>(click to expand)</summary>
+<summary><strong>qinoOS: An Ecology of Mind</strong><br>(click to expand)</summary>
 
 ![Tools, apps, community](docs/images/ecosystem-arcs.png)
 
@@ -126,6 +149,8 @@ The tools are also the process for developing the apps — and in turn, the tool
 
 An early hunch needs room to wander — structure would crush it. A maturing concept needs stability — too much flux and it never settles. An implementation needs grounding — a vision to build toward without getting lost in features.
 
+**qinoOS scaffolds these as separate repos:**
+
 ```
                         ┌─────────────────────┐
                         │     TOOL HOME       │
@@ -149,6 +174,33 @@ An early hunch needs room to wander — structure would crush it. A maturing con
 └───────────────────┘     └───────────────────┘     └───────────────────┘
 ```
 
+**What this looks like on disk** (after `/qino init workspace --type standard`):
+
+```
+my-workspace/
+├── workspace-manifest.json    # coordination
+├── workspace-config.json      # linking between repos
+├── .claude/
+│   └── qino-config.json       # workspace-level config
+├── concepts-repo/
+│   ├── manifest.json
+│   ├── concepts/              # where ideas stabilize
+│   ├── ecosystem/             # cross-cutting patterns
+│   ├── notes/                 # captures waiting to weave
+│   └── .claude/
+│       ├── qino-config.json   # repoType: "concepts"
+│       └── references/        # manifest-project-spec, revisions-guide
+└── implementations-repo/
+    ├── implementations/
+    │   ├── docs/              # cross-app architecture
+    │   └── manifest.json
+    └── .claude/
+        ├── qino-config.json   # repoType: "implementation"
+        └── references/        # templates, conventions, patterns
+```
+
+The conceptual flows (Research → Concepts → Implementation) happen across these directories. The qino skill routes commands based on which repo you're in.
+
 Each space has its own `chronicle/` directory. Git changes in any repo become chapters — all chronicles are published together on **[qino-chronicles](https://chronicles.qinolabs.com/)**.
 
 **Research** — before concepts crystallize. Inquiries follow threads, qualities refine aesthetics, arcs hold emergence while it's happening. Welcomes uncertainty. Arcs are active containers — they open when you notice something surfacing and accumulate sessions until closure.
@@ -160,6 +212,8 @@ Each space has its own `chronicle/` directory. Git changes in any repo become ch
 **qino-claude** — source of all plugins, distributed through the Claude plugin marketplace.
 
 #### Flow Between Spaces
+
+The `workspace-config.json` and `qino-config.json` files created during workspace setup enable these flows.
 
 **Routed flows** — content automatically goes to the right place based on `qino-config.json`:
 
@@ -189,7 +243,7 @@ CONCEPTS ────────────▶ RESEARCH        attune creates 
 
 ### The Router
 
-A small file called `qino-config.json` tells each tool which space it's in and where to send things:
+During workspace setup, each repo gets a `qino-config.json` that tells tools which space it's in and where to send things:
 
 ```json
 {
@@ -199,11 +253,13 @@ A small file called `qino-config.json` tells each tool which space it's in and w
 }
 ```
 
+You don't write these manually — `/qino init workspace` creates them with correct relative paths.
+
 The tools read this configuration and adjust their behavior. A capture in a research repo might become a fragment feeding an inquiry. The same action in an implementation repo sends a note to concepts. The tools stay the same; the context shapes what they do.
 
 ### Context Sensitivity
 
-The same words adapt to where you are:
+Because each repo has its own `qino-config.json`, the same words adapt to where you are:
 
 | Action | In concepts | In research | In implementation |
 |--------|-------------|-------------|-------------------|
@@ -1419,9 +1475,9 @@ Updates happen automatically when you pull from the marketplace.
 
 ## Getting Started
 
-After installing the plugins, set up your **qino-os** (operating system for developing ideas).
+After installing the plugins, set up your **qinoOS** (operating system for developing ideas).
 
-qino-os provides workspace structure where concept exploration, research, and implementation coexist and inform each other.
+qinoOS provides workspace structure where concept exploration, research, and implementation coexist and inform each other.
 
 ### Recommended: Let the Skill Set Up Everything
 
