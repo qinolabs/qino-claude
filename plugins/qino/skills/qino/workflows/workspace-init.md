@@ -210,12 +210,12 @@ from here
   create a concept, start building, or begin research
 
     /qino create concept [name]
-    /qino implement [concept-path]
+    /qino dev init [concept-path]
     /qino begin inquiry [question]
 
   see workspace status
 
-    /qino where
+    /qino
 ```
 
 Adapt message based on what was created (minimal/standard/full).

@@ -87,7 +87,16 @@ This ecosystem is an attempt to build software that knows it is part of a larger
 
 ## Get Started
 
-After installing the plugins ([Installation →](#installation)), create your workspace:
+**First:** [Install Claude Code](https://code.claude.com/docs/en/setup) (requires Claude Pro/Max, Team/Enterprise, or Console account)
+
+**Then install qino plugins** ([full instructions →](#installation)):
+
+```bash
+/plugin marketplace add qinolabs/qino-claude
+/plugin install qino@qino-claude
+```
+
+**Create your workspace:**
 
 ```bash
 cd ~/projects
@@ -1452,20 +1461,28 @@ The design of the system is itself an expression of the thing it captures — se
 
 ---
 
+## Prerequisites
+
+**Claude Code** — Required to use qino plugins. Download and install from [code.claude.com](https://code.claude.com/docs/en/setup)
+
+Requires a Claude Pro/Max, Team/Enterprise, or Console account.
+
 ## Installation
+
+**Install plugins** (can be run from any directory — plugins install globally):
 
 ```bash
 # Add the qino marketplace
 /plugin marketplace add qinolabs/qino-claude
 
 # Install what you need
-/plugin install qino@qinolabs/qino-claude           # Core ecology
-/plugin install qino-prose@qinolabs/qino-claude     # Chronicles, transmissions, lenses
-/plugin install qino-art@qinolabs/qino-claude       # Visuals
-/plugin install design-adventure@qinolabs/qino-claude
+/plugin install qino@qino-claude                    # Core ecology
+/plugin install qino-prose@qino-claude              # Chronicles, transmissions, lenses
+/plugin install qino-art@qino-claude                # Visuals
+/plugin install design-adventure@qino-claude        # Design exploration
 ```
 
-Updates happen automatically when you pull from the marketplace.
+Updates happen automatically when you run `/plugin marketplace update`.
 
 **Available plugins:**
 - `qino` — Core ecology (concepts, research, implementation)
@@ -1481,8 +1498,10 @@ qinoOS provides workspace structure where concept exploration, research, and imp
 
 ### Recommended: Let the Skill Set Up Everything
 
+**Navigate to where you want your workspace**, then run:
+
 ```bash
-cd ~/projects
+cd ~/projects                    # Navigate to your projects directory
 /qino init workspace my-workspace
 ```
 
@@ -1517,15 +1536,11 @@ Once your workspace is set up:
 
 - **Explore a concept:** `/qino explore [concept-name]`
 - **Capture a thought:** `/qino capture [your thought]`
-- **Start building:** `/qino implement [concept-path]`
+- **Create an app from concept:** `/qino dev init [concept-path]`
 - **Begin research:** `/qino begin inquiry [question]`
 - **Open an arc:** `/qino begin arc` (when you notice emergence)
 
 See [Finding Your Way](#finding-your-way) for detailed tool documentation.
-
-## Requirements
-
-[Claude Code](https://docs.anthropic.com/en/docs/claude-code)
 
 ## License
 
