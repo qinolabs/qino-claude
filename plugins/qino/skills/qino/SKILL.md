@@ -107,7 +107,7 @@ Claude: [Uses Task tool]
 Before routing, detect workspace context:
 
 1. **Check for `.claude/qino-config.json`** in current directory
-2. Read `repoType` field to determine context:
+2. **Read `repoType` field** to determine context and apply structure conventions (see `references/dev/repo-conventions.md` for patterns)
 
 | repoType | Context | Behavior |
 |----------|---------|----------|

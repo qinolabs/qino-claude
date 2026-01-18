@@ -27,6 +27,7 @@ If not, initialize in current directory.
 [workspace]/
   manifest.json
   concepts/
+  ecosystem/          # Shared domain/architecture
   notes/
   maps/
   .claude/
@@ -36,6 +37,7 @@ If not, initialize in current directory.
         concept-spec.md
         manifest-project-spec.md
         design-philosophy.md
+        revisions-guide.md       # How to use revisions.md
 ```
 
 ### 3. Create qino-config.json
@@ -52,6 +54,7 @@ Copy the specification files from tool source:
 - concept-spec.md
 - manifest-project-spec.md
 - design-philosophy.md
+- revisions-guide.md (documents evolution tracking pattern)
 
 ### 5. Initialize manifest.json
 
