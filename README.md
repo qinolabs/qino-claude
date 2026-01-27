@@ -347,7 +347,7 @@ Same scribe. Different worlds. Different atmospheric registers. Process in each 
 
 **Research** — [Following Threads](#following-threads) · [Arcs](#arcs--active-containers-for-emergence) · [Compare](#compare--the-parallel-mirror) · [Attune](#attune--from-hunch-to-craft) · [Epistemological Signature](#epistemological-signature)
 
-**Ecology** — [Language](#ecology-language) · [Test](#ecological-testing)
+**Ecology** — [The Figure Question](#the-figure-question) · [Other Ecologies](#other-ecologies-other-characters) · [Domain Language Connection](#the-connection-to-domain-language)
 
 <br>
 
@@ -873,164 +873,71 @@ _[Source](plugins/qino/)_
 
 <br>
 
-### Arcs | Active Containers for Emergence
+### Arcs | Holding What Can't Yet Be Named
 
-How emergence gets tracked — not just captured afterward.
+Something is moving through you. It shapes how you think, informs the bias of your attention, appears across contexts without being summoned. But it doesn't have a name yet. It's not ready to be categorized.
 
-#### The shift: from retrospective to active
+The danger: **naming it too early kills it**. Forcing a shape before the pattern has found its own shape stops the natural unfolding in its tracks.
 
-Arcs began as retrospective capture. After a session where multiple threads connected, you'd trace what emerged. That works. But it misses something: the moment you *notice* emergence is often not the moment you can name it.
+Arcs protect against this.
 
-The insight: **arcs can open when emergence is noticed, not just captured after it crystallizes.**
+#### The container that doesn't demand
 
-```
-Before                              After
-──────                              ─────
-Session ends → "what emerged?"      "something is emerging" → arc opens
-                                    Sessions accumulate
-                                    "close arc" → retrospective capture
-```
+Most systems ask: *What is this? What type? Where does it go?* That pressure — even gentle pressure — collapses what's forming. The ripple that was finding its own shape gets frozen into whatever category was available.
 
-This changes what arcs are. They become **active containers** — minimal structures that hold sessions and pointers without forcing naming or crystallization. Structure comes at closure.
+An arc says something different: *I notice something is moving. I won't ask what it is yet.*
 
-Where scope is spatial (a view into what's held) and contour is spatial (the topography of attention), arc is **temporal** — the shape of movement over time. You don't know you're in one until a few steps in; the shape reveals itself as you move.
+You open an arc with a provisional gesture — "something about how containers work across the ecosystem" — evocative, not definitive. The ecosystem holds space: sessions link automatically, pointers accumulate as work touches territory. No forced structure. No premature naming.
 
-#### Two symbols, two phases
+The crystallization comes at closure, or not at all. Some arcs stay open for months. Some close with useful confusion. That's not failure — that's respecting the vulnerability of emergence.
 
-| Symbol | Phase | What happens |
-|--------|-------|--------------|
-| ⟡ | Active | Arc is open. Sessions link automatically. Pointers accumulate. No forced structure. |
-| ∴ | Captured | Arc is closed. Retrospective trace complete. Full ecology recorded. |
+#### Making the unnamed speakable
 
-The ⟡ is live. The ∴ is settled.
+What arcs enable: a powerful pattern that moves through you — informing your thinking, shaping your attention — becomes **visible, speakable, intelligible**. Not because you forced it into language, but because you held space while it found its own.
 
-#### Opening an arc
+The arc format supports this:
 
-You notice something surfacing. Not ready to name it. Maybe just a direction.
+| | |
+|---|---|
+| **Ground** | Why this had energy. The charge you felt before you could explain it. |
+| **The Recurring** | The pattern that kept appearing — across concept work, implementation, research. |
+| **The Between** | The quality of connection. Why things felt related before you knew why. |
+| **What Composted** | Before → After. What shifted in understanding. |
+| **Seeds** | What remains alive — questions to carry forward. |
 
-```
-(you)   begin arc
+Not a journey from question to answer. An ecology — ground that gave it life, patterns that recurred, transformations that happened.
 
-(qino)  opening...
+#### An arc noticing itself
 
-        what's surfacing here?
+From the research archive — an arc that captured the recursive quality:
 
-(you)   something about how containers work across the ecosystem
+> *While capturing an arc about sensing, the capture itself became the subject. Dimensions were under-noticed. When asked "what did you miss?", something shifted: not just filling gaps, but seeing that the format itself was weak.*
+>
+> *The charge: a system meant to hold emergence was under-sensing emergence. The container needed to become an expression of what it holds.*
 
-(qino)  ⟡ containers-across-ecosystem
+The pattern appeared at three levels: sensing quality in content, sensing quality in format, recognizing that a system for noticing can itself under-notice. The same bootstrap problem, recursively applied.
 
-        (arc active — linked sessions will accumulate here.
-         say "close arc" when ready to capture.)
-```
+What composted:
+> Journey metaphor (items, sequence, destination) → Ecology metaphor (ground, pattern, connection, transformation)
 
-That's all. The arc is now open with:
-- A provisional title (evocative, not definitive)
-- The beginning statement (your response to "what's surfacing")
-- The current session linked
-- Empty pointers array (will accumulate as work touches things)
+What remained as seed:
+> *The question "what did you miss?" could be a reusable instrument. Not telling what's wrong — inviting noticing.*
 
-No ground, no instrument, no full ecology yet. Those come at capture.
+#### The difference that makes a difference
 
-#### What accumulates
+Arcs don't capture facts. They capture what *moved* — what changed perception. Bateson's definition of information: a difference that makes a difference.
 
-While an arc is active, it collects:
+The same insight appears while building, then while researching, then while exploring something else entirely. You didn't plan this. The pattern found you across contexts.
 
-**Sessions** — Each related session gets linked. When you return to concept work and the agent notices the arc relates, it surfaces: `⟡ containers-across-ecosystem`. Auto-link happens. The arc grows a trail of transcripts to scan at capture.
+This is transcontextuality made practical. The ripple, held while it's rippling.
 
-**Pointers** — When work touches territory, pointers accumulate:
-```json
-{ "type": "concept", "ref": "qino-drops" }
-{ "type": "inquiry", "ref": "ecosystem-language" }
-{ "type": "implementation", "ref": "qino-world" }
-```
+#### What remains is capacity
 
-These don't force structure. They're breadcrumbs — hints about what territory the arc touched.
+Each arc changes something. Not just the content discovered, but the capacity to notice. You become better at recognizing emergence while it's happening — the moment when something is moving through your attention but doesn't yet have a name.
 
-#### Agent awareness
+> *Arcs are questions you carry. The pattern of attention is the symptom; the question is the arc. Closure is conscious release — when the question has done its work, you choose to let it go. What remains is capacity, not content.*
 
-All agents check for active arcs on arrival. The surfacing varies by context:
-
-| Agent | Awareness |
-|-------|-----------|
-| **Concept** | Full. Surfaces arcs related to concept work. Offers linking. Natural steward of conceptual emergence. |
-| **Dev** | Focused. Shows arcs related to linked concept or current project. Brief — doesn't interrupt building. |
-| **Research** | Deep. Research sessions are primary arc material. May suggest opening arcs when patterns surface. |
-
-When you're deep in implementation and the dev agent quietly shows `⟡ containers-across-ecosystem`, that's the system noticing you're still within something larger. You can link or not. The arc doesn't demand.
-
-#### Closing an arc
-
-When the emergence feels ready to crystallize:
-
-```
-(you)   close arc
-
-(qino)  closing containers-across-ecosystem
-
-        sessions: 4 linked
-        pointers: qino-drops, ecosystem-language, qino-world
-        beginning: "something about how containers work across the ecosystem"
-
-        starting capture...
-```
-
-Now the retrospective flow begins — but enriched. The `beginning` provides a settling point hint. The `sessions` array provides transcripts to scan. The `pointers` indicate territory touched.
-
-The full ecology emerges through dialogue: Ground, Essence, Instrument, The Recurring, The Between, Traces, What Composted, Seeds.
-
-When complete:
-
-```
-∴ containers-across-ecosystem
-
-  Containers aren't structure — they're what lets different things
-  hold without merging. The same pattern at concept, code, and ecology levels.
-
-  still-open: 3 questions remain
-  seeds: 2 threads for future inquiry
-```
-
-#### What arcs record (full ecology)
-
-At capture, the arc document holds:
-
-| Section | What it captures |
-|---------|------------------|
-| **Ground** | Why this inquiry had energy. Personal stakes. The charge. |
-| **Essence** | One sentence: why it mattered + what emerged + how it was discovered. |
-| **Instrument** | How noticing happened. The method or capacity used to see. |
-| **The Recurring** | The pattern that kept appearing across different contexts. |
-| **The Between** | The quality of connection. Why things felt related. |
-| **Traces** | Artifacts created, touched, or transformed. The forensic record. |
-| **What Composted** | Before → After pairs showing shifts in understanding. |
-| **Seeds** | What remains alive for future inquiry. |
-| **For Storytelling** | _(optional)_ Images, figures, themes a storyteller could use. |
-
-#### Multiple arcs
-
-Several arcs can be active simultaneously. A single session can link to multiple arcs if it touches multiple territories.
-
-When two arcs begin to overlap, note the convergence. When a thread within an arc becomes its own arc, the branching gets recorded. Arcs don't merge — they reference each other, each keeping its own shape.
-
-#### Where arcs connect
-
-Arcs touch everything because emergence happens everywhere:
-
-**→ [Story](#story)**: Scribe uses arcs as context for chapter writing. Relay transmits arcs for readers through the journal. Active arcs accumulate the material that becomes story.
-
-**→ [Concept](#concept)**: Concept work often happens within an arc without knowing it. When the concept agent surfaces `⟡`, it's noticing you're part of something larger. Arcs capture conceptual emergence; concepts hold what stabilizes.
-
-**→ [Implementation](#implementation)**: Building surfaces truths that concept exploration couldn't predict. [Drift detection](#drift-detection) notices divergence — but sometimes what's diverging belongs to a broader pattern. Implementation sessions link to arcs when the building reveals something.
-
-**→ [Ecology](#ecology)**: Arcs are evidence of ecosystem participation. They capture "the pattern that connects" — Bateson's question made practical. The [ecology tests](#ecological-testing) guard integrity; arcs record what moved.
-
-**→ [Compare](#compare--the-parallel-mirror)**: A compare session might surface a quality worth tracking. That quality might be part of an emerging arc.
-
-**→ [Attune](#attune--from-hunch-to-craft)**: A calibrated quality might emerge from an arc. The arc captures the ecology; attune sharpens what was found.
-
-**→ [Epistemological Signature](#epistemological-signature)**: Sessions accumulate there too. The cognitive fingerprint emerges across conversations. Arcs capture a different kind of accumulation — not style, but movement.
-
-This is the architectural position: research shifts from "mode you enter" to "container that receives." Arcs are where emergence gets held while it's happening.
+The invitation: pay attention to your own attention. Notice what keeps appearing. Hold it without forcing. Let it teach you how to see.
 
 _([First arc](https://github.com/qinolabs/qino-research/blob/main/arcs/2025-12-29_recognition-through-indirection.md) — the session that discovered it needed arcs)_
 
@@ -1323,64 +1230,80 @@ The design of the system is itself an expression of the thing it captures — se
 
 ## Ecology
 
-The language and tests that guard systemic health — noticing the whole, not just the parts.
+Something shifts when you name too early. The pattern that was finding its own shape gets frozen into whatever category was available. The code works, but the feeling is gone.
 
-_From ecology's view: Each domain has its own integrity to guard — [Concept](#concept) vitality, [Story](#story) craft, [Implementation](#implementation) quality, [Research](#research) honesty. Ecology tests notice what crosses between them._
+Ecology tests notice this. They sense when integrity is collapsing — when a gesture becomes a command, when a figure becomes a reference, when infrastructure starts having opinions.
 
-### Ecology Language
+Each test is a question you hold. Not a category to sort things into — a way of attending that makes loss visible before it's too late.
 
-Each ecology has its own question because each guards a different kind of integrity.
+### The Figure Question
 
-When an idea moves from a **concept**, into **code**, and finally into a **user's hands**, it crosses "epistemological gaps"—places where the form changes completely. In these transitions, vitality is often lost. The code works, but the feeling is gone.
+> *Can this be re-entered and still feel like "the same thing" after change?*
 
-Ecological tests stand at these gaps. They ask: _Does the pattern that holds this together still survive in this new form?_
+You meet Elena in Walk. You bring her to World. She appears in Drops. Three manifestations, one pattern you recognize.
 
-| Ecology            | Focus            | The Question                                                                       |
-| ------------------ | ---------------- | ---------------------------------------------------------------------------------- |
-| **User**           | Lived experience | Does this make it easier to notice something and respond from curiosity?           |
-| **Gesture**        | Movement & touch | Does this feel like a natural human movement, without knowing it is "input"?       |
-| **Figure**         | Resonance        | Can this be re-entered and still feel like "the same thing" after change?          |
-| **Relation**       | Connection       | Does this introduce a tension or ambiguity that neither side resolves alone?       |
-| **World**          | Environment      | Does the world surprise without contradicting itself?                              |
-| **Echo**           | Resonance        | Does this preserve the gesture while transforming it just enough to be noticeable? |
-| **Fabric**         | Pattern          | Does accumulation make echoes more likely without making them necessary?           |
-| **Infrastructure** | Foundation       | Does this avoid introducing meaning, authority, or voice of its own?               |
+But what makes her *Elena*? Not a database ID. Not an origin you can point to. The pattern persists because it *resonates* — because something essential survives transformation.
 
-The Figure ecology question tests the deep pattern: identity is resonance, not reference. The figure survives change not because it's anchored to origin, but because the pattern persists.
+The Figure ecology tests this. When you change a figure's implementation, does it still feel like the same thing? Not "does it have the same data" — does it have the same *quality of presence*?
 
-By maintaining the distinct character of each local ecology—protecting the **Gesture** from becoming a **Command**, keeping the **World** distinct from the **Logic**—the system avoids collapsing into a generic tool. When the local characters hold their shape, the in-between spaces remain alive with relation.
+This is the [domain language's](https://qinolabs.com/language) deep insight made practical: **identity is resonance, not reference**. The Figure test guards it.
 
-### Ecological Testing
+When the test fails, you feel it. Something that used to have presence now feels like a record. Something that used to resonate now just... refers.
 
-Using ecology tests to notice the system's own nature.
+### Other Ecologies, Other Characters
 
-Tests are not metrics. They do not optimize or rank. They are questions posed at the gap between forms. They guard the **integrity of the relationships between** things, not the correctness of the parts.
+Each ecology has its own quality. The questions aren't interchangeable — each protects something different.
 
-**Testing provides the friction to feel this.** It interrupts the smooth momentum of production to signal when a character is fading, forcing us to notice and restore the integrity before it is lost.
+**User** asks about lived experience:
+> *Does this make it easier to notice something and respond from curiosity?*
 
-#### The Noticing Loop
+When user ecology fails, interaction becomes obligation. The stack demands sorting. You're performing tasks, not exploring.
 
-The test observes. It does not develop. It invites you to pause and see. You can test a specific concept, a feature, a file, or infer the scope from the current conversation context.
+**Gesture** asks about movement:
+> *Does this feel like a natural human movement, without knowing it is "input"?*
 
-```
-(you)   test the card stack interaction
+When gesture ecology fails, you're aware of the interface. Your hand becomes a cursor. The body-knowing that makes tools disappear collapses into explicit operation.
 
-(qino)  This feels like user ecology, but could also be generic friction.
-        Let's try the lived experience test:
+**Relation** asks about connection:
+> *Does this introduce a tension or ambiguity that neither side resolves alone?*
 
-        "Does this make it easier for the user to notice something,
-         feel a relation forming, and respond from curiosity rather than obligation?"
+When relation ecology fails, connection flattens to one-way. Something that was alive between two things gets absorbed into one of them.
 
-        Holding that question — what do you notice?
+**World** asks about environment:
+> *Does the world surprise without contradicting itself?*
 
-(you)   It feels like obligation. The stack demands sorting. It feels heavy.
+When world ecology fails, the environment becomes either chaotic (anything can happen) or predictable (nothing can happen). The quality of *consistent surprise* — where the world has its own logic that you discover — is lost.
 
-(qino)  ∴ heavy stack demands sorting
+**Echo** asks about transformation:
+> *Does this preserve the gesture while transforming it just enough to be noticeable?*
 
-        Capture this, or let it inform without persisting?
-```
+When echo ecology fails, either nothing changed (no echo) or too much changed (not recognizable as echo). The sweet spot where something is clearly *from* the original but clearly *different* — that's what echo protects.
 
-When you capture, the noticing becomes a note with ecology metadata (`user: heavy stack demands sorting`). This metadata allows home to show you which ecologies are echoing and which have been silent.
+**Fabric** asks about accumulation:
+> *Does accumulation make echoes more likely without making them necessary?*
+
+When fabric ecology fails, the system either can't learn (no accumulation) or becomes deterministic (accumulation forces outcomes). The quality where patterns become *more likely* but never *required* — that's what fabric guards.
+
+**Infrastructure** asks about foundation:
+> *Does this avoid introducing meaning, authority, or voice of its own?*
+
+Infrastructure's job is to hold, not to speak. When infrastructure ecology fails, the foundation has opinions. The plumbing is trying to be the water.
+
+### Why Tests, Not Metrics
+
+Tests don't optimize. They don't rank. They pose questions at the gap between forms — where an idea becomes code, where code becomes interface, where interface becomes experience.
+
+At each crossing, something can be lost. The code works, but the feeling is gone. The ecology tests notice this loss *before* it's too late. They create friction — interrupting the smooth momentum of production to ask: *does the character still hold?*
+
+### The Connection to Domain Language
+
+The [domain language](https://qinolabs.com/language) has a principle: substrate is treated as *compost*. Raw material that fertilizes new expression without imposing old context.
+
+> *"Compatible" language can be destructive if imposed directly. We treat substrate as unintelligible until it is re-voiced. This barrier protects the local ecology from being overwhelmed by foreign context.*
+
+This is exactly what ecology tests protect. They sense when substrate is being *imposed* rather than *composted*. When context is overwhelming rather than fertilizing. When the new form is being colonized by the old rather than finding its own character.
+
+The ecology tests are the domain language made operational. Each question guards something the vocabulary names. Figure ecology protects "identity is resonance." Infrastructure ecology protects "the foundation doesn't speak." The tests and the language serve the same insight.
 
 <br>
 
