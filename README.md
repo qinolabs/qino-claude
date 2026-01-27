@@ -159,125 +159,51 @@ The tools are also the process for developing the apps — and in turn, the tool
 
 An early hunch needs room to wander — structure would crush it. A maturing concept needs stability — too much flux and it never settles. An implementation needs grounding — a vision to build toward without getting lost in features.
 
-**qinoOS scaffolds these as separate repos:**
+qinoOS scaffolds these as coordinated workspaces. Each has its own quality — what it welcomes, what it protects, what it makes possible.
 
-```
-                        ┌─────────────────────┐
-                        │     TOOL HOME       │
-                        │    qino-claude      │
-                        │                     │
-                        │  plugins/           │ ◀── source of all tools
-                        │  tools/archived/    │ ◀── deprecated tools
-                        │  chronicle/         │
-                        └──────────┬──────────┘
-                                   │
-        ┌──────────────────────────┼──────────────────────────┐
-        ▼                          ▼                          ▼
-┌───────────────────┐     ┌───────────────────┐     ┌───────────────────┐
-│     RESEARCH      │     │     CONCEPTS      │     │  IMPLEMENTATION   │
-│                   │     │                   │     │                   │
-│  inquiries/       │     │  concepts/        │     │  (varies by repo) │
-│  qualities/       │     │  notes/           │     │                   │
-│  arcs/            │     │                   │     │                   │
-│  chronicle/       │     │  chronicle/       │     │  chronicle/       │
-│  qino-config.json │     │  qino-config.json │     │  qino-config.json │
-└───────────────────┘     └───────────────────┘     └───────────────────┘
-```
+---
 
-**What this looks like on disk** (after `/qino init workspace --type standard`):
+**Research** is where you don't have to know yet.
 
-```
-my-workspace/
-├── workspace-manifest.json    # coordination
-├── workspace-config.json      # linking between repos
-├── .claude/
-│   └── qino-config.json       # workspace-level config
-├── concepts-repo/
-│   ├── manifest.json
-│   ├── concepts/              # where ideas stabilize
-│   ├── ecosystem/             # cross-cutting patterns
-│   ├── notes/                 # captures waiting to weave
-│   └── .claude/
-│       ├── qino-config.json   # repoType: "concepts"
-│       └── references/        # manifest-project-spec, revisions-guide
-└── implementations-repo/
-    ├── implementations/
-    │   ├── docs/              # cross-app architecture
-    │   └── manifest.json
-    └── .claude/
-        ├── qino-config.json   # repoType: "implementation"
-        └── references/        # templates, conventions, patterns
-```
+Something is surfacing. You can feel it before you can name it. Research gives that feeling a place to accumulate without demanding clarity too soon.
 
-The conceptual flows (Research → Concepts → Implementation) happen across these directories. The qino skill routes commands based on which repo you're in.
+Here, uncertainty is welcome. An inquiry might follow three threads at once. A quality might refuse to sharpen for weeks. An arc might span a dozen sessions before revealing what it was actually about. That's not failure — that's the space working.
 
-Each space has its own `chronicle/` directory. Git changes in any repo become chapters — all chronicles are published together on **[qino-chronicles](https://chronicles.qinolabs.com/)**.
+_What it makes possible:_ Staying with emergence. Protecting what isn't ready to be named. Noticing patterns that only become visible over time.
 
-**Research** — before concepts crystallize. Inquiries follow threads, qualities refine aesthetics, arcs hold emergence while it's happening. Welcomes uncertainty. Arcs are active containers — they open when you notice something surfacing and accumulate sessions until closure.
+---
 
-**Concepts** — where ideas stabilize. The held threads, the notes that weave between them. What arrives here has found its shape.
+**Concepts** is where what was circling finds its shape.
 
-**Implementation** — where concepts meet code. Structure varies by project domain. Links back to its concept.
+An idea that kept returning across different contexts. A note that finally connects to other notes. A thread that now feels complete enough to hold.
 
-**qino-claude** — source of all plugins, distributed through the Claude plugin marketplace.
+Concepts isn't where ideas arrive fully formed — it's where they settle. What you capture from research, what surfaces during implementation, what you recognize across encounters: all of it accumulates here, weaves together, and becomes something you can return to.
 
-#### Flow Between Spaces
+_What it makes possible:_ Giving shape to what has pull. Building a body of work that grows through accretion. Making the implicit explicit — but only when it's ready.
 
-The `workspace-config.json` and `qino-config.json` files created during workspace setup enable these flows.
+---
 
-**Routed flows** — content automatically goes to the right place based on `qino-config.json`:
+**Implementation** is where ideas meet the world.
 
-```
-RESEARCH ──capture───▶ CONCEPTS        capture routes insights as notes
-RESEARCH ──arc close─▶ RESEARCH        arc closes, retrospective capture runs
+Not just code — any form of making real. The friction of materials. The feedback of use. The discoveries that only emerge when you try to build something and the world pushes back.
 
-CONCEPTS ──create────▶ IMPLEMENTATION  implement creates linked project from concept
+Implementation stays connected to its concept. Drift is expected — what you learn while building often changes what you thought you wanted to build. The tools help track this, so concept and implementation evolve together.
 
-IMPLEMENTATION ──capture──▶ CONCEPTS   capture routes observations to conceptsRepo
-IMPLEMENTATION ◀──drift───▶ CONCEPTS   drift detection syncs both directions
-```
+_What it makes possible:_ Grounding vision without losing it. Learning what a concept actually means when it has to work. Feeding real-world observations back into understanding.
 
-**Arc flows** — arcs are active containers that span sessions:
+---
 
-```
-ANYWHERE ──"begin arc"──▶ RESEARCH        arc opens, sessions start accumulating
-ANYWHERE ──⟡ surfaced──▶ RESEARCH        agent detects active arc, links session
-ANYWHERE ──"close arc"──▶ RESEARCH        arc closes, retrospective capture runs
-```
+**qino-claude** is where the tools themselves live.
 
-**Initiated flows** — you notice something and start:
+Not a workspace you work in daily — the workshop that equips all the others. Plugins, agents, the references that shape how they see. When you invoke `/qino` from any space, the intelligence comes from here.
 
-```
-CONCEPTS ────────────▶ RESEARCH        attune creates quality refinement in research
-```
+---
 
-### The Router
+Movement between spaces happens naturally. You notice something while building — capture sends it to concepts. An inquiry crystallizes — it becomes something to build. A concept needs refinement — attune opens a quality exploration in research.
 
-During workspace setup, each repo gets a `qino-config.json` that tells tools which space it's in and where to send things:
+Arcs span all of it. You can open an arc while deep in implementation, and it still accumulates in research — the pattern you're tracking doesn't care which repo you're in. The arc follows the thread, not the file structure. _(See [Arcs](#arcs--holding-what-cant-yet-be-named) for how this works.)_
 
-```json
-{
-  "repoType": "research",
-  "conceptsRepo": "../concepts-repo",
-  "description": "Research space"
-}
-```
-
-You don't write these manually — `/qino init workspace` creates them with correct relative paths.
-
-The tools read this configuration and adjust their behavior. A capture in a research repo might become a fragment feeding an inquiry. The same action in an implementation repo sends a note to concepts. The tools stay the same; the context shapes what they do.
-
-### Context Sensitivity
-
-Because each repo has its own `qino-config.json`, the same words adapt to where you are:
-
-| Action | In concepts | In research | In implementation |
-|--------|-------------|-------------|-------------------|
-| "where am I" | concepts, notes, threads | inquiries, qualities, active arcs | linked concept, stack |
-| "capture" | saves to notes/ | saves to fragments/ | saves to linked concepts-repo |
-| "test" | tests concept | tests inquiry | tests linked concept |
-| "begin arc" | opens arc (routes to research) | opens arc | opens arc (routes to research) |
-| on arrival | surfaces active arcs | surfaces active arcs | surfaces related active arcs |
+What stays constant is the gesture — capture, explore, test, attune. What changes is what that gesture *means*. The same word, shaped by where you are. Capture in research becomes a fragment feeding an inquiry. Capture in implementation sends a note back to concepts. The tools stay the same; context shapes what they do.
 
 </details>
 
@@ -345,7 +271,7 @@ Same scribe. Different worlds. Different atmospheric registers. Process in each 
 
 **Implementation** — [Building from Concepts](#building-from-concepts) · [Drift Detection](#drift-detection)
 
-**Research** — [Following Threads](#following-threads) · [Arcs](#arcs--active-containers-for-emergence) · [Compare](#compare--the-parallel-mirror) · [Attune](#attune--from-hunch-to-craft) · [Epistemological Signature](#epistemological-signature)
+**Research** — [Following Threads](#following-threads) · [Arcs](#arcs--holding-what-cant-yet-be-named) · [Compare](#compare--the-parallel-mirror) · [Attune](#attune--from-hunch-to-craft) · [Epistemological Signature](#epistemological-signature)
 
 **Ecology** — [The Figure Question](#the-figure-question) · [Other Ecologies](#other-ecologies-other-characters) · [Domain Language Connection](#the-connection-to-domain-language)
 
