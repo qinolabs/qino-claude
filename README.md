@@ -341,11 +341,11 @@ Same scribe. Different worlds. Different atmospheric registers. Process in each 
 
 **Concept** — [Giving Shape](#qino--giving-shape-to-what-has-pull) · [Design Adventure](#design-adventure--the-room-after)
 
+**Story** — [Scribe](#qino-scribe--git-becomes-story) · [Relay](#qino-relay--bridging-to-readers) · [Lens](#qino-lens--ways-of-seeing)
+
 **Implementation** — [Building from Concepts](#building-from-concepts) · [Drift Detection](#drift-detection)
 
 **Research** — [Following Threads](#following-threads) · [Arcs](#arcs--active-containers-for-emergence) · [Compare](#compare--the-parallel-mirror) · [Attune](#attune--from-hunch-to-craft) · [Epistemological Signature](#epistemological-signature)
-
-**Story** — [Scribe](#qino-scribe--git-becomes-story) · [Relay](#qino-relay--bridging-to-readers) · [Lens](#qino-lens--ways-of-seeing) · [Art](#qino-art--visual-content-system)
 
 **Ecology** — [Language](#ecology-language) · [Test](#ecological-testing)
 
@@ -464,9 +464,9 @@ _[Source](plugins/design-adventure/)_
 
 ## Story
 
-Bridges that create story out of raw material. Scribe transforms git into fantasy chronicle; Relay voices research for newcomers; Lens provides the perceptual frameworks both draw from. Art generates visual content with a unified aesthetic.
+Bridges that create story out of raw material. Scribe transforms git into fantasy chronicle; Relay voices research for newcomers; Lens provides the perceptual frameworks both draw from.
 
-_These capabilities are consolidated in the `qino-prose` plugin (Scribe, Relay, Lens) and `qino-art` plugin (visual content)._
+_These capabilities are consolidated in the `qino-prose` plugin (Scribe, Relay, Lens)._
 
 _From story's view: [Implementation](#implementation) generates the commits that Scribe transforms. [Research](#research) provides the arcs that Relay transmits. Both draw perceptual frameworks from Lens — and [Concept](#concept) work shapes the world that gives the story its ground._
 
@@ -510,17 +510,19 @@ The wanderer carries a depth no single world can hold. They are not oblivious to
 
 They are defined not by power, but by **exposure**. They can be hurt, confused, or wrong.
 
-> **The Injury** > _Performance:_ The knife slipped. The wanderer watched the blood, marveling at the vivid red of life.
-> _Presence:_ The knife slipped. The cold had stolen the feeling from their fingers, so they only felt the warmth of the blood first. It hit the snow in bright, steaming drops. The wanderer dropped the wood and pressed their palm into the drift, counting the seconds until the numbness returned.
+> **The Injury** — The knife slipped. The cold had stolen the feeling from their fingers, so they only felt the warmth of the blood first. It hit the snow in bright, steaming drops. The wanderer dropped the wood and pressed their palm into the drift, counting the seconds until the numbness returned.
 
-A higher-order presence shines through in **how** they respond to this exposure. This is not a performance of "grace" or "wisdom," but **embodied presence**. They meet friction by staying fully present with the obstacle—not retreating into memory or abstraction.
+> **The Gate** — The wind screamed through the iron. The lock was a solid lump of oxidation. The wanderer didn't rattle it. They let their hand drop, the cold lingering on their glove, and turned their back to the wind.
 
-> **The Gate** > _Performance:_ The wanderer bowed to the locked gate, honoring its resistance.
-> _Presence:_ The wind screamed through the iron. The lock was a solid lump of oxidation. The wanderer didn't rattle it. They let their hand drop, the cold lingering on their glove, and turned their back to the wind.
+> **The Map** — The wind tore the map from their hands. It was gone before they could take a step. The wanderer didn't waste heat shouting. They turned their collar up and kept walking.
 
 They do not fight the world, but they also do not detach from it. They simply inhabit the moment with full attention.
 
-> **The Map** > _Presence:_ The wind tore the map from their hands. It was gone before they could take a step. The wanderer didn't waste heat shouting. They turned their collar up and kept walking.
+**What the wanderer notices** — the weight lifting when the pack comes off, the warmth of blood before the cut registers, the cold lingering on a glove — models what the reader might notice. The wanderer's quality of attention becomes an entry point for the reader's own.
+
+**Familiar and strange.** The wanderer is always relatable — they feel cold, get tired, make mistakes. But through that familiarity, something gently shifted becomes visible. Not superhuman perception, just what unfolds when attention stays present with consequence. The reader feels what becomes available when attention doesn't rush past the moment.
+
+The invitation is implicit: _this quality of being is available to you too_.
 
 #### Mutual Revealing
 
@@ -613,86 +615,39 @@ Both draw from [qino Lens](#qino-lens--ways-of-seeing) for perceptual framing �
 
 #### The Student
 
-The transcontextual figure — as the wanderer moves through chronicles, the Student moves through research.
+The Student receives transmissions on a device. The soft chime is familiar; the routine of reading and thinking is something they enjoy.
 
-**Reader companionship.** The Student has learned this material and walks alongside readers as they encounter it. They remember what it was like not to know, and voice that remembered uncertainty for the reader.
+**What the Student notices** — a phrase that won't let go, a question that existed before they arrived, the moment something clicks — models what the reader might notice. The Student's quality of attention becomes an entry point for the reader's own.
 
-| The Wanderer | The Student |
-|---|---|
-| Knows more than they say | Remembers what it was like not to know |
-| Creates gap through silence | Creates bridge through questions |
-| Reader recognizes what's unsaid | Reader feels accompanied |
-| Larger than any single world | Smaller than any single inquiry |
-| No memory across chapters | Learns across transmissions |
+> *"Meaning-searching versus meaning-finding."*
+>
+> *I keep coming back to that phrase. There's something in the hyphen. In one case you're hunting. In the other, you're receiving.*
+>
+> *The counterintuitive part: we usually think directness is better. Want someone to understand? Point at it. Label it.*
+>
+> *But here's what happened. The first design put abstract categories on a map. You could see exactly what you were navigating. And it felt dead.*
 
-**What the Student does:**
-- Walks alongside the reader, not ahead
-- Asks the questions readers would genuinely ask
-- Makes abstract concrete without dumbing down
-- Voices difficulty, doesn't edit it out
+The Student encounters research material — stopped by a turn of phrase, surprised by a connection, sitting with what can't yet be resolved. The reader witnesses this and finds their own attention shaped by it.
 
-**What the Student is not:**
-- Not a lecturer explaining from above
-- Not a reporter summarizing findings
-- Not a discoverer pretending to find things for the first time
-- Not performing uncertainty — mirroring what readers would feel
+**The parallel.** There's a movement of metaphor between the Student's experience and the reader's reading. The Student meets emergence on their device; the reader meets the transmission on theirs. What the Student does with the material — how they hold difficulty, where they let questions stay open — shows the reader how they might hold it too.
 
-#### The Student's Memory
+**Familiar and strange.** The Student is always relatable — they get stuck, they're uncertain, they don't have all the answers. But through that familiarity, something gently shifted becomes visible. Not a lecture about attention, just a figure who *is* attending: staying with a phrase, letting a question breathe, noticing when something lands. The reader feels what becomes available when attention doesn't rush past difficulty.
 
-Unlike the wanderer (eternal, outside time), the Student **learns** across transmissions. Their memory lives in `journal/student.md`:
+The invitation is implicit: *this quality of being is available to you too*.
 
-- **Reflections** — what the Student notices about their own learning
-- **What Has Been Transmitted** — vocabulary readers now share
-- **Connections Noticed** — cross-transmission insights
-- **Questions Held** — uncertainties carried forward
+**The Student's world.** The library with its quiet, the café with afternoon noise, the balcony at dusk — these aren't backdrop. They're where quality of attention becomes visible. A grounded, warm place that holds thinking. The reader feels: *this is how demanding material can be approached*.
 
-Each transmission ends with a light coda — "Where I Am Now" — showing questions still held, connections starting to form, what the Student is noticing about the process itself.
+#### Two figures, two qualities
 
-#### Reader Journey Notes
+The wanderer notices the weight lift from their shoulders when they set down the pack. They notice warmth before they feel the cut. Not superhuman — just what unfolds when attention stays present with consequence. The reader, witnessing this, learns a quality of attention for story: *meet what comes*.
 
-Before transmitting, consider what a reader approaching this material would experience. These notes help the prose agent voice the reader's journey authentically:
+The Student notices what stops them, what arrives from outside. They voice difficulty rather than resolving it. Not expertise — just what unfolds when attention stays with the demanding. The reader, witnessing this, learns a quality of attention for research: *stay curious with what's hard*.
 
-- **What readers won't already know** — ecosystem specifics, prior arcs, why patterns matter
-- **What they might struggle with** — abstractions needing examples, non-obvious connections
-- **Questions they would ask** — "How does X actually work?" "What does this look like in practice?"
-- **Where concreteness is needed** — abstract patterns, philosophical claims needing illustration
+Both balance familiar and strange. Both create entry points — invitations into a quality of being that the reader recognizes as possible for themselves.
 
-The goal: readers feel accompanied, not lectured. Someone is at their side.
+**Implicit mystery.** The Student treats their device as ordinary. They don't question where transmissions come from. This ease creates wonder — but the Student doesn't carry that question. The reader does.
 
-#### The Student's Environment
-
-The transmission opens with the Student somewhere — and moments weave through as they think.
-
-**Interruption Frame** — The opening: place, activity, device announcing. Not generic "café" but specific places with atmosphere:
-
-> _The library was quiet. Morning light through tall windows, mate cooling on the table. Halfway through transcribing yesterday's field notes when—_
-
-**Environmental Texture** — Moments in the body: standing up, walking to window, Elena appearing, rain starting. The prose agent chooses which serve the material.
-
-Places accumulate across transmissions. By transmission 10, readers know this world — the usual corner by the tall windows, the third-floor café with the cracked tile floor, the rooftop where afternoon sun gets too hot.
-
-#### Source Moments
-
-Specific passages from arc material that have their own voice. Not summaries — fragments the Student can encounter directly:
-
-- **Original phrasing** — turns of words from the arc that have weight
-- **Questions the arc poses** — implicit questions the Student can voice
-- **Concrete moments** — specific examples embedded in the research
-
-The Student encounters these: "'Meaning-*searching* versus meaning-*finding*.' There's something in that hyphen..."
-
-#### Architecture
-
-```
-1. Arc selection — which arc(s) to transmit
-2. Gather context — arc files + student.md + recent transmissions
-3. Reader journey prep — what readers won't know, will struggle with, would ask
-4. Prose agent — writes in Student's voice (sees everything + reader journey notes)
-5. Editorial agent — reviews voice integrity and reader-companionship
-6. Post-prose — update student.md, concepts.md, manifest
-```
-
-No prep layer in the Scribe sense. The arc IS the content — it just needs to be voiced *for the reader*.
+The Student is not described, not named. The gap lets readers step into their body.
 
 _[Source](plugins/qino-prose/)_
 
@@ -761,37 +716,6 @@ _([Reference](plugins/qino-prose/references/qino-lens/newcomer.md))_
 _([Reference](plugins/qino-prose/references/qino-lens/companion.md))_
 
 _[Source](plugins/qino-prose/)_
-
-<br>
-
-### qino Art | Visual Content System
-
-A complete visual content system with a distinctive aesthetic: **Warm Abstraction** — hand-drawn sketch lines, warm earthy backgrounds, gentle accent colors, generous negative space. Visual content that invites rather than declares.
-
-#### Workflow routing
-
-The art skill routes to specialized workflows based on what you need:
-
-| Need | Workflow |
-|------|----------|
-| Unsure which approach | Visualize (analyzes & orchestrates) |
-| Flowcharts, sequences | Mermaid |
-| Abstract metaphor | Editorial illustration |
-| System architecture | Technical diagram |
-| Categories in grid | Taxonomy |
-| Change over time | Timeline |
-| 2x2 matrix | Framework |
-| Side-by-side contrast | Comparison |
-| Screenshot markup | Annotated screenshot |
-| Step-by-step process | Recipe card |
-| Quote as visual | Aphorism |
-| Idea territories | Conceptual map |
-| Single striking number | Stat card |
-| Multi-panel story | Comic |
-
-Just describe what you want to visualize. The skill determines the appropriate workflow and generates images using the unified aesthetic.
-
-_[Source](plugins/qino-art/)_
 
 <br>
 
@@ -920,69 +844,6 @@ The linked concept evolved. Want to:
 At the end of each iteration, before moving to the next, the dev agent asks about concept-level learnings — a natural moment to surface what building revealed.
 
 _[Source](plugins/qino/)_
-
-<br>
-
-## Ecology
-
-The language and tests that guard systemic health — noticing the whole, not just the parts.
-
-_From ecology's view: Each domain has its own integrity to guard — [Concept](#concept) vitality, [Story](#story) craft, [Implementation](#implementation) quality, [Research](#research) honesty. Ecology tests notice what crosses between them._
-
-### Ecology Language
-
-Each ecology has its own question because each guards a different kind of integrity.
-
-When an idea moves from a **concept**, into **code**, and finally into a **user's hands**, it crosses "epistemological gaps"—places where the form changes completely. In these transitions, vitality is often lost. The code works, but the feeling is gone.
-
-Ecological tests stand at these gaps. They ask: _Does the pattern that holds this together still survive in this new form?_
-
-| Ecology            | Focus            | The Question                                                                       |
-| ------------------ | ---------------- | ---------------------------------------------------------------------------------- |
-| **User**           | Lived experience | Does this make it easier to notice something and respond from curiosity?           |
-| **Gesture**        | Movement & touch | Does this feel like a natural human movement, without knowing it is "input"?       |
-| **Figure**         | Resonance        | Can this be re-entered and still feel like "the same thing" after change?          |
-| **Relation**       | Connection       | Does this introduce a tension or ambiguity that neither side resolves alone?       |
-| **World**          | Environment      | Does the world surprise without contradicting itself?                              |
-| **Echo**           | Resonance        | Does this preserve the gesture while transforming it just enough to be noticeable? |
-| **Fabric**         | Pattern          | Does accumulation make echoes more likely without making them necessary?           |
-| **Infrastructure** | Foundation       | Does this avoid introducing meaning, authority, or voice of its own?               |
-
-The Figure ecology question tests the deep pattern: identity is resonance, not reference. The figure survives change not because it's anchored to origin, but because the pattern persists.
-
-By maintaining the distinct character of each local ecology—protecting the **Gesture** from becoming a **Command**, keeping the **World** distinct from the **Logic**—the system avoids collapsing into a generic tool. When the local characters hold their shape, the in-between spaces remain alive with relation.
-
-### Ecological Testing
-
-Using ecology tests to notice the system's own nature.
-
-Tests are not metrics. They do not optimize or rank. They are questions posed at the gap between forms. They guard the **integrity of the relationships between** things, not the correctness of the parts.
-
-**Testing provides the friction to feel this.** It interrupts the smooth momentum of production to signal when a character is fading, forcing us to notice and restore the integrity before it is lost.
-
-#### The Noticing Loop
-
-The test observes. It does not develop. It invites you to pause and see. You can test a specific concept, a feature, a file, or infer the scope from the current conversation context.
-
-```
-(you)   test the card stack interaction
-
-(qino)  This feels like user ecology, but could also be generic friction.
-        Let's try the lived experience test:
-
-        "Does this make it easier for the user to notice something,
-         feel a relation forming, and respond from curiosity rather than obligation?"
-
-        Holding that question — what do you notice?
-
-(you)   It feels like obligation. The stack demands sorting. It feels heavy.
-
-(qino)  ∴ heavy stack demands sorting
-
-        Capture this, or let it inform without persisting?
-```
-
-When you capture, the noticing becomes a note with ecology metadata (`user: heavy stack demands sorting`). This metadata allows home to show you which ecologies are echoing and which have been silent.
 
 <br>
 
@@ -1460,6 +1321,69 @@ The design of the system is itself an expression of the thing it captures — se
 
 <br>
 
+## Ecology
+
+The language and tests that guard systemic health — noticing the whole, not just the parts.
+
+_From ecology's view: Each domain has its own integrity to guard — [Concept](#concept) vitality, [Story](#story) craft, [Implementation](#implementation) quality, [Research](#research) honesty. Ecology tests notice what crosses between them._
+
+### Ecology Language
+
+Each ecology has its own question because each guards a different kind of integrity.
+
+When an idea moves from a **concept**, into **code**, and finally into a **user's hands**, it crosses "epistemological gaps"—places where the form changes completely. In these transitions, vitality is often lost. The code works, but the feeling is gone.
+
+Ecological tests stand at these gaps. They ask: _Does the pattern that holds this together still survive in this new form?_
+
+| Ecology            | Focus            | The Question                                                                       |
+| ------------------ | ---------------- | ---------------------------------------------------------------------------------- |
+| **User**           | Lived experience | Does this make it easier to notice something and respond from curiosity?           |
+| **Gesture**        | Movement & touch | Does this feel like a natural human movement, without knowing it is "input"?       |
+| **Figure**         | Resonance        | Can this be re-entered and still feel like "the same thing" after change?          |
+| **Relation**       | Connection       | Does this introduce a tension or ambiguity that neither side resolves alone?       |
+| **World**          | Environment      | Does the world surprise without contradicting itself?                              |
+| **Echo**           | Resonance        | Does this preserve the gesture while transforming it just enough to be noticeable? |
+| **Fabric**         | Pattern          | Does accumulation make echoes more likely without making them necessary?           |
+| **Infrastructure** | Foundation       | Does this avoid introducing meaning, authority, or voice of its own?               |
+
+The Figure ecology question tests the deep pattern: identity is resonance, not reference. The figure survives change not because it's anchored to origin, but because the pattern persists.
+
+By maintaining the distinct character of each local ecology—protecting the **Gesture** from becoming a **Command**, keeping the **World** distinct from the **Logic**—the system avoids collapsing into a generic tool. When the local characters hold their shape, the in-between spaces remain alive with relation.
+
+### Ecological Testing
+
+Using ecology tests to notice the system's own nature.
+
+Tests are not metrics. They do not optimize or rank. They are questions posed at the gap between forms. They guard the **integrity of the relationships between** things, not the correctness of the parts.
+
+**Testing provides the friction to feel this.** It interrupts the smooth momentum of production to signal when a character is fading, forcing us to notice and restore the integrity before it is lost.
+
+#### The Noticing Loop
+
+The test observes. It does not develop. It invites you to pause and see. You can test a specific concept, a feature, a file, or infer the scope from the current conversation context.
+
+```
+(you)   test the card stack interaction
+
+(qino)  This feels like user ecology, but could also be generic friction.
+        Let's try the lived experience test:
+
+        "Does this make it easier for the user to notice something,
+         feel a relation forming, and respond from curiosity rather than obligation?"
+
+        Holding that question — what do you notice?
+
+(you)   It feels like obligation. The stack demands sorting. It feels heavy.
+
+(qino)  ∴ heavy stack demands sorting
+
+        Capture this, or let it inform without persisting?
+```
+
+When you capture, the noticing becomes a note with ecology metadata (`user: heavy stack demands sorting`). This metadata allows home to show you which ecologies are echoing and which have been silent.
+
+<br>
+
 ---
 
 ## Prerequisites
@@ -1479,7 +1403,6 @@ Requires a Claude Pro/Max, Team/Enterprise, or Console account.
 # Install what you need
 /plugin install qino@qino-claude                    # Core ecology
 /plugin install qino-prose@qino-claude              # Chronicles, transmissions, lenses
-/plugin install qino-art@qino-claude                # Visuals
 /plugin install design-adventure@qino-claude        # Design exploration
 ```
 
@@ -1488,7 +1411,6 @@ Updates happen automatically when you run `/plugin marketplace update`.
 **Available plugins:**
 - `qino` — Core ecology (concepts, research, implementation)
 - `qino-prose` — Chronicle writing, research transmissions, prose lenses
-- `qino-art` — Visual content system
 - `design-adventure` — Seven-perspective design exploration
 
 ## Getting Started
