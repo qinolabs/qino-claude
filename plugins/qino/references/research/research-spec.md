@@ -406,7 +406,7 @@ Arcs don't need maintenance — they're evidence of ecosystem participation. The
 
 ### Fast Iteration
 
-Research moves faster than concept development. Inquiries can evolve rapidly; arcs capture the shape of movement.
+Research moves faster than concept development. Inquiries can evolve rapidly; arcs hold the shape of movement while it's happening.
 
 ### Accept Inconclusive Results
 

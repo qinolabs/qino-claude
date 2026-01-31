@@ -40,6 +40,7 @@ When user says "work on [app]" or similar:
    - Check `implementations/[app]/iterations/` for current phase
    - Check `implementations/docs/` for ecosystem architecture patterns
    - Find the linked concept via manifest
+   - Check `navigators/` for active navigators relevant to this app
 
 2. **Read current state:**
    - What iteration are we on? (look for "In progress" status)
@@ -51,7 +52,12 @@ When user says "work on [app]" or similar:
    - Compare to implementation's `lastConceptCheck` timestamp (in implementation.md)
    - If concept is newer, flag for user attention in arrival surface
 
-4. **Output arrival surface:**
+4. **Check for active navigators:**
+   - Glob `navigators/*.md` in the implementation repo
+   - If any navigator's territory references this app, note it
+   - If a navigator is active, its open questions and terrain inform "what's next" suggestions
+
+5. **Output arrival surface:**
 
 ```
 ┌─────────────────────────────────────────┐
@@ -63,6 +69,9 @@ When user says "work on [app]" or similar:
 │ iteration                               │
 │ [current iteration name] — [status]     │
 │ [brief scope description]               │
+│                                         │
+│ navigator (if active)                   │
+│ [navigator name] — [open question count]│
 │                                         │
 │ git                                     │
 │ [recent activity summary]               │
@@ -77,6 +86,7 @@ from here
                         "plan iterations" to define the roadmap
                         "build [goal]" to work on current iteration
                         "explore [concept]" to check essence alignment
+                        "activate navigator" to load terrain context
 ```
 
 **If concept changed since last check**, use this variant instead:

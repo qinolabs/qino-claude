@@ -198,7 +198,7 @@ When the prose agent has reader journey notes:
 
 ## They Won't Already Know
 - The qino ecosystem's philosophy of "staying close to source"
-- What arcs are and how they capture research movement
+- What arcs are and how they trace inquiry as it moves
 - Why metaphorical distance might preserve rather than obscure
 - What "ecology tests" are
 

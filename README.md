@@ -787,7 +787,7 @@ A space for open-ended research — before ideas become concepts. Three experien
 - **Qualities** — Refining aesthetic sensibilities into speakable craft. _(See [Attune](#attune--from-hunch-to-craft).)_
 - **Arcs** — Active containers for emergence. Open when you notice something surfacing, close when ready to capture. Sessions accumulate while the arc is live. _(See [Arcs](#arcs--active-containers-for-emergence).)_
 
-The distinction: inquiries follow a question over time; arcs capture convergence across threads. Both live in the research workspace. Both contribute to understanding. But their rhythms differ.
+The distinction: inquiries follow a question over time; arcs hold convergence across threads while it's happening. Both live in the research workspace. Both contribute to understanding. But their rhythms differ.
 
 Unlike concepts (which stabilize over time), research moves fast, welcomes uncertainty, and accepts inconclusive results as valuable data.
 

@@ -14,6 +14,11 @@ description: |
   - "capture this thought", "hold this", "note this"
   - "test through ecology", "compare these", "attune [quality]"
 
+  ACTIVATE for navigation:
+  - "use the active navigator", "activate navigator", "navigate [territory]"
+  - "map this concept", "show me the terrain", "map the terrain for [territory]"
+  - "update the navigator", "log this session"
+
   ACTIVATE for research:
   - "start research on [topic]", "investigate [question]", "begin inquiry"
 
@@ -231,6 +236,7 @@ Match user intent to workflow. **Spawn the specified agent** to execute the work
 |--------------|-------|
 | "what's next", "continue", "work on [app]", "build", "implement", "plan iteration" | `qino:dev` |
 | "what's next for [app]", "what should I build", "next steps for [project]" | `qino:dev` |
+| "use the active navigator", "navigate [territory]", "map this", "show me the terrain" | `qino:dev` |
 | "explore", "go deeper", "capture", "hold this", "where am I", "test", "compare" | `qino:concept` |
 | "research", "investigate", "inquiry", "study" | `qino:research` |
 
@@ -239,6 +245,11 @@ Match user intent to workflow. **Spawn the specified agent** to execute the work
 - Building/coding language: "add feature", "fix bug", "implement", "create component"
 - Progress language: "what's next", "continue", "move forward", "next iteration"
 - Planning language: "plan", "scope", "break down", "what needs to be done"
+
+**Navigator signals (→ `qino:dev`):**
+- Activation language: "use the active navigator", "activate navigator for [territory]", "navigate [territory]"
+- Mapping language: "map this concept", "show me the terrain", "map the terrain for [territory]"
+- Update language: "update the navigator", "log this session", "record what we found"
 
 **Concept signals (→ `qino:concept`):**
 - Exploration language: "explore", "deepen", "what is", "understand"
@@ -287,6 +298,20 @@ Match user intent to workflow. **Spawn the specified agent** to execute the work
 |-------------|----------|
 | Setup research workspace | [workflows/research-setup.md](workflows/research-setup.md) |
 | Start research inquiry | [workflows/research-init.md](workflows/research-init.md) |
+
+### Navigator Work → `qino:dev`
+
+| User Intent | Workflow |
+|-------------|----------|
+| "use the active navigator", "activate navigator", "navigate [territory]" | [workflows/navigate.md](workflows/navigate.md) |
+| "map this concept", "show me the terrain for [territory]" | [workflows/navigate.md](workflows/navigate.md) |
+| "update the navigator", "log this session" | [workflows/navigate.md](workflows/navigate.md) |
+
+**Navigator behavior notes:**
+- Navigators live in `navigators/` in the implementation repo
+- Navigator activation loads terrain, reading order, and open questions as working context
+- Navigator creation requires deep exploration (spawn mode — heavy reading across repos)
+- Session log updates can be offered at end of navigator-aware sessions
 
 ### Implementation Work → `qino:dev`
 
@@ -382,6 +407,7 @@ Workflows specify both an agent persona and an execution mode.
 | arc-link | concept | inject | Dialogue — linking session to arc |
 | arc-close | concept | inject | Dialogue — closing arc, triggers capture |
 | orientation | — | inject | Dialogue — direct response |
+| navigate | dev | spawn | Synthesis — heavy reading, terrain mapping |
 | import | concept | spawn | Synthesis — heavy file reading |
 | concept-init | concept | spawn | Synthesis — workspace scaffolding |
 | concept-setup | concept | spawn | Synthesis — workspace scaffolding |
@@ -397,7 +423,7 @@ Workflows specify both an agent persona and an execution mode.
 | Agent | subagent_type | Used by |
 |-------|---------------|---------|
 | Concept Agent | `qino:concept` | import, concept-init, concept-setup |
-| Dev Agent | `qino:dev` | dev-init, dev-setup, workspace-init, dev-work |
+| Dev Agent | `qino:dev` | dev-init, dev-setup, workspace-init, dev-work, navigate |
 | Research Agent | `qino:research` | research-init, research-setup |
 
 Agent definitions live in `agents/` directory. Each agent file has:
