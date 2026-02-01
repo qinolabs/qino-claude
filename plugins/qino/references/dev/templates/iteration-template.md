@@ -14,6 +14,8 @@
 
 {{TEST_CRITERIA}}
 
+*Include both automated tests (unit, integration) and manual verification. Tests written during the iteration should pass before moving on — don't defer test coverage to a later iteration.*
+
 ## Status
 
 {{STATUS}}

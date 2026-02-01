@@ -184,6 +184,7 @@ When user says "build [goal]" or wants to work on current iteration:
 
 5. Work on the goal, checking off when complete:
    - Make changes to app source code
+   - **Write tests for new behavior** — especially for AI generation (integration tests with `@qinolabs/testing-workers`), orchestration logic, and service methods. Tests catch silent failures that manual testing misses. Don't defer testing to a separate iteration.
    - Document significant technical decisions in iteration's "Technical Decisions" section
      (see `references/dev/template-guidance.md` for narrative format)
    - Note learnings in iteration's "Learnings" section as they emerge
@@ -264,7 +265,7 @@ When you discover architectural patterns that apply across multiple apps (seedin
 
 When all goals in an iteration are complete:
 
-1. Run "Test Before Moving On" checks
+1. Run "Test Before Moving On" checks — this means both automated tests (`pnpm test`) and any manual verification steps defined in the iteration
 2. If passing:
 
    > "Iteration [name] complete."
