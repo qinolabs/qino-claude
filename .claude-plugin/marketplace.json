@@ -4,7 +4,7 @@
     "name": "Philip Hradecsni"
   },
   "metadata": {
-    "version": "2.0.0",
+    "version": "2.1.0",
     "description": "Operating system for developing ideas — concepts, research, and implementation",
     "homepage": "https://github.com/qinolabs/qino-claude",
     "repository": "https://github.com/qinolabs/qino-claude"
@@ -12,13 +12,13 @@
   "plugins": [
     {
       "name": "qino",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "description": "Ecology for developing ideas — concepts, research, implementation",
       "source": { "type": "local", "path": "plugins/qino" }
     },
     {
       "name": "qino-prose",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "description": "Chronicle writing, research transmissions, and prose lenses",
       "source": { "type": "local", "path": "plugins/qino-prose" }
     },

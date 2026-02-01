@@ -10,6 +10,37 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [2.1.0] - 2026-02-01
+
+### qino
+
+#### Added
+
+- **Navigator workflow** — living orientation documents for cross-cutting possibility spaces; activate with "use the active navigator", "navigate [territory]", or "map this concept"; navigators map terrain with meaning, carry reading order, track open questions, and accumulate session logs
+- **Navigator routing in SKILL.md** — navigation signals now route to `qino:dev` agent with spawn mode for heavy reading and terrain mapping
+
+#### Changed
+
+- **Testing guidance strengthened** — dev workflow now explicitly requires writing tests for new behavior (especially AI generation, orchestration logic, service methods); "Test Before Moving On" clarified to mean both `pnpm test` and manual verification
+- **Iteration template** — added note that tests written during an iteration should pass before moving on
+- **Stale arc vocabulary fixed** — corrected outdated terminology in arc-related workflows
+- **Workspace init simplified** — streamlined Getting Started guidance and fixed command issues
+
+### qino-prose
+
+#### Fixed
+
+- **Reader journey guide** — minor correction in transmission reference
+
+### Documentation
+
+#### Changed
+
+- **README rewritten** — major overhaul focusing on territory over mechanics; qinoOS section rewritten to show what each space feels like; consolidated story sections; enhanced ecological testing descriptions
+- **Marketplace metadata** — added `marketplace.json` with owner and version tracking
+
+---
+
 ## [2.0.0] - 2026-01-18
 
 ### Major: qinoOS Distribution System
