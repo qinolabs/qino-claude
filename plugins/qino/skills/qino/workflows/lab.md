@@ -20,7 +20,11 @@ This is collaborative building through a shared visual artifact — the graph of
 
 **Without lab mode:** Agent works autonomously, explains in prose, shows results.
 
-**With lab mode:** Agent annotates *as it discovers*, user watches findings appear in real-time, graph becomes the shared thinking space.
+**With lab mode (default):** Agent annotates *as it discovers*, user watches findings appear in real-time, graph becomes the shared thinking space.
+
+**With lab mode + autonomous grant:** User says "go ahead and research this autonomously" — agent works independently but still surfaces findings through the lab when done.
+
+### Default Lab Behavior
 
 The agent does NOT:
 - Work autonomously for a while, then summarize in annotations
@@ -32,6 +36,20 @@ The agent DOES:
 - Write a `reading` annotation when interpreting what code reveals
 - Write a `proposal` annotation before running an experiment, not after
 - Pause and check in with the user when direction is unclear
+
+### Autonomous Grant
+
+When user explicitly grants autonomous work:
+- "research this autonomously and report back"
+- "go explore, I'll check the lab later"
+- "run all the experiments, surface what you find"
+
+The agent CAN work independently, but still uses the lab to surface findings — annotations become the report, not prose summaries. Write:
+- `reading` annotations for key interpretations
+- `tension` annotations for unexpected findings
+- `proposal` annotations for recommended next steps
+
+The difference: annotations are written at natural breakpoints (after a round of experiments, when a direction becomes clear) rather than in real-time as each thing happens.
 
 ---
 
@@ -202,9 +220,10 @@ This changes the communication pattern:
 - "tension: the hypothesis was wrong — see annotation 003"
 - "created new node for this finding"
 
-**Check in before major moves:**
+**Check in before major moves (unless autonomous grant):**
 - "I see two directions from here — want me to write proposals for both so you can choose?"
 - "About to run 4 experiments — should I annotate each, or just the surprising ones?"
+- "This might take a while — want me to go autonomous and surface findings when done?"
 
 ---
 
@@ -274,7 +293,7 @@ When ending:
 
 ## Anti-Pattern: The Documentation Trap
 
-This is what NOT to do:
+This is what NOT to do **without an autonomous grant**:
 
 ```
 Agent: [works for 10 minutes autonomously]
@@ -284,4 +303,6 @@ Agent: [writes annotation summarizing everything]
 User: "I have no idea what just happened"
 ```
 
-The lab is not for capturing completed work. It's where the work happens visibly.
+**With autonomous grant, this pattern is fine** — user explicitly asked for independent work.
+
+**Without autonomous grant**, the lab is where work happens visibly, not where it gets documented after.
