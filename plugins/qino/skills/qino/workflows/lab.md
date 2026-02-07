@@ -270,15 +270,91 @@ This changes the communication pattern:
 
 | Old pattern | Lab pattern |
 |-------------|-------------|
-| "I ran the test and found X, Y, Z..." | Write annotation → "see the tension in [node]" |
+| "I ran the test and found X, Y, Z..." | Write annotation → link to node |
 | Long prose explanation | Graph shows it visually |
 | User reads your summary | User watches findings appear |
 | Agent reports to user | Agent thinks alongside user |
 
-**Brief text is sufficient:**
-- "proposal added to emergent-path — take a look before I run it"
-- "tension: the hypothesis was wrong — see annotation 003"
-- "created new node for this finding"
+**Brief text with navigable links:**
+- "proposal added — [see emergent-path](http://localhost:4020/qinolabs-repo/node/emergent-path?at=implementations/sound-lab/explorations)"
+- "tension: the hypothesis was wrong — [view finding](http://localhost:4020/...)"
+- "created new node for this finding — [check it out](http://localhost:4020/...)"
+
+---
+
+## Deeplinks — Making References Navigable
+
+MCP tool responses include `_links` for building navigable references:
+
+### read_graph Response
+
+```json
+{
+  "nodes": [...],
+  "_links": {
+    "self": "http://localhost:4020/qinolabs-repo/graph?at=implementations/sound-lab/explorations",
+    "nodes": {
+      "emergent-path": "http://localhost:4020/qinolabs-repo/node/emergent-path?at=implementations/sound-lab/explorations",
+      "path-b": "http://localhost:4020/qinolabs-repo/node/path-b?at=implementations/sound-lab/explorations"
+    }
+  }
+}
+```
+
+### read_node Response
+
+```json
+{
+  "id": "emergent-path",
+  "_links": {
+    "self": "http://localhost:4020/qinolabs-repo/node/emergent-path?at=implementations/sound-lab/explorations",
+    "graph": "http://localhost:4020/qinolabs-repo/graph?at=implementations/sound-lab/explorations"
+  }
+}
+```
+
+### Using Deeplinks in Messages
+
+**After reading a graph, reference nodes with links:**
+
+```markdown
+I noticed a tension between [emergent-path](${_links.nodes["emergent-path"]})
+and [path-b](${_links.nodes["path-b"]}) — click to see each node.
+```
+
+**After writing an annotation, link to the node:**
+
+```markdown
+Added a tension annotation. [See it in emergent-path](${_links.self})
+```
+
+**Link back to the graph view:**
+
+```markdown
+Done exploring this node. [Back to graph](${_links.graph})
+```
+
+### Deeplink Patterns
+
+| Action | Pattern |
+|--------|---------|
+| Reference a node | `[node-title](_links.nodes["node-id"])` |
+| Link to current node | `[see details](_links.self)` |
+| Link to parent graph | `[back to graph](_links.graph)` |
+| After writing annotation | `[view in node-name](_links.self)` |
+| After creating node | Read the new node, then `[see node-name](_links.self)` |
+
+### Why This Matters
+
+Links let the user click directly to what you're describing. Instead of:
+
+> "I found a tension in the emergent-path node"
+
+Write:
+
+> "Found a tension — [see emergent-path](http://localhost:4020/qinolabs-repo/node/emergent-path?at=implementations/sound-lab/explorations)"
+
+The link saves the user from navigating manually and shows exactly where to look
 
 **Check in before major moves (unless autonomous grant):**
 - "I see two directions from here — want me to write proposals for both so you can choose?"
