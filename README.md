@@ -293,6 +293,12 @@ qino-lab is a shared visual surface — a graph of nodes rendered in the browser
 
 This isn't a dashboard or documentation system. It's the **medium of dialogue** — where thinking happens visibly, not where it gets summarized afterward.
 
+![qino-lab root view — workspaces, sessions, and signals needing attention](docs/images/lab/qino-lab-root.png)
+
+![Graph view — nodes connected by edges, with session detail](docs/images/lab/qino-lab-graph.png)
+
+![Rich node detail — story content, agent signals, and journal](docs/images/lab/qino-lab-rich-node-detail.png)
+
 ### The qino-protocol
 
 The protocol defines a universal structure for human-AI workspaces:
