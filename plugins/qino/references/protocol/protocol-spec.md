@@ -1,8 +1,10 @@
 # Qino Protocol — Structure Reference
 
-The qino protocol organizes concept spaces as directed graphs of typed nodes. Each node is a directory with metadata, impulse, and content. Relationships between nodes are typed edges with context.
+The qino protocol organizes workspaces as directed graphs of typed nodes. Each node is a directory with metadata, impulse, and content. Relationships between nodes are typed edges with context.
 
 This reference documents the data model for protocol-aware workflows.
+
+**See also:** [Information Model](./information-model.md) for the conceptual foundation — structure vs trail, the session/finding vocabulary, and journal scopes.
 
 ---
 

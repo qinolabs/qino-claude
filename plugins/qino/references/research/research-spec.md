@@ -415,3 +415,43 @@ An inquiry without clear conclusions is still valuable. It means we learned some
 ### Threads are Lightweight
 
 Unlike concepts' 7-section structure, inquiries have whatever sections emerge. Threads are just open questions, not requirements.
+
+---
+
+## 12. Protocol Migration Path
+
+This specification describes the **manifest-based** research model. The **qino-protocol** offers a unified approach that subsumes research, concept, and implementation workspaces.
+
+### What Changes
+
+| Manifest-based | Protocol-based |
+|----------------|----------------|
+| Three directories (inquiries/, qualities/, arcs/) | Single nodes/ with typed entries |
+| manifest.json registry | graph.json with typed nodes + edges |
+| Separate formats (thread.md, research.md, arc.md) | Unified story.md + content/ |
+| No relationships between types | Edges connect everything |
+
+### How Types Map
+
+| Legacy Type | Protocol Vocabulary |
+|-------------|---------------------|
+| Inquiry | `finding` node (the question) + `session` nodes (work pursuing it) |
+| Quality | `finding` node (crystallized sensibility) + `session` nodes (calibration work) |
+| Arc | `session` node with rich edges showing provenance |
+
+### Why Migrate
+
+- **Navigable relationships**: Edges make "what touched what" explorable
+- **Unified tooling**: qino-lab-mcp reads protocol workspaces natively
+- **Cross-context work**: Sessions and findings work identically across research, concepts, and implementations
+- **UI integration**: Graph visualization, deeplinks, attention signals
+
+### Migration Process
+
+1. Create `graph.json` at workspace root
+2. For each inquiry/quality/arc, create a node with appropriate type
+3. Convert thread.md/research.md → story.md + content/
+4. Add edges based on existing references
+5. Journal captures temporal context that was implicit
+
+**See:** [Information Model](../protocol/information-model.md) for the conceptual foundation.
