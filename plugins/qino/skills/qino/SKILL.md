@@ -22,6 +22,9 @@ description: |
   ACTIVATE for research:
   - "start research on [topic]", "investigate [question]", "begin inquiry"
 
+  ACTIVATE for lab mode (UI-mediated communication):
+  - "use the lab", "lab mode", "work through qino-lab"
+
   ACTIVATE when in qino workspace (has .claude/qino-config.json).
 
   NOT implicit: arc capture requires explicit invocation ("/qino arc" or "capture an arc").
@@ -39,7 +42,7 @@ Workflows execute in one of two modes based on their nature:
 
 ### Inject Mode (Dialogue Workflows)
 
-**For:** home, explore, capture, test, attune, compare, arc, orientation
+**For:** home, explore, capture, test, attune, compare, arc, orientation, lab
 
 These workflows involve multi-turn dialogue with the user. They execute **in the main conversation** — no Task tool, no subagent.
 
@@ -127,13 +130,21 @@ Before routing, detect workspace context:
    - `linkedConcept` — primary linked concept ID
    - `linkedConcepts` — map of concept IDs to paths
 
-4. **Detect ecosystem concepts:**
-   When the target concept lives in `ecosystem/` (check manifest.json `path` field), recognize this as **ecosystem work** — distinct from app concept work.
+4. **Detect protocol:**
+   Check for `protocol` field in qino-config.json. When `protocol: "qino"` is present, set `context.protocol = "qino"`. This activates protocol-aware workflow routing — graph-based structure instead of manifest-based.
+
+   When protocol is detected:
+   - Read `agents/protocol-structure.md` alongside `agents/concept.md` for inject workflows
+   - Route concept work (home, capture, explore) to `workflows/protocol/` versions
+   - Reference `references/protocol/protocol-spec.md` for data model details
+
+5. **Detect ecosystem concepts:**
+   When the target concept lives in `ecosystem/` (check manifest.json `path` field) or has type `"ecosystem"` in graph.json, recognize this as **ecosystem work** — distinct from app concept work.
 
    Pass this awareness to the agent:
    > "This is ecosystem work — distinctions forming, not just ideas developing. Hold questions longer."
 
-5. **If no qino-config.json exists:**
+6. **If no qino-config.json exists:**
    - Route to orientation workflow (first-time arrival)
    - See [workflows/orientation.md](workflows/orientation.md)
 
@@ -239,6 +250,7 @@ Match user intent to workflow. **Spawn the specified agent** to execute the work
 | "use the active navigator", "navigate [territory]", "map this", "show me the terrain" | `qino:dev` |
 | "explore", "go deeper", "capture", "hold this", "where am I", "test", "compare" | `qino:concept` |
 | "research", "investigate", "inquiry", "study" | `qino:research` |
+| "use the lab", "lab mode", "work through qino-lab" | direct (no agent) |
 
 **Implementation signals (→ `qino:dev`):**
 - Any app name mentioned with action intent: "qino-world", "qino-journey", "qino-frame"
@@ -261,15 +273,22 @@ Match user intent to workflow. **Spawn the specified agent** to execute the work
 - Investigation language: "research", "investigate", "study", "inquiry"
 - Question framing: "how does X work", "what are the approaches to"
 
+**Lab mode signals (→ direct, no agent):**
+- Activation language: "use the lab", "lab mode", "work through the lab"
+- Protocol context: "work through qino-lab", "use qino-lab for this"
+- Requires: protocol workspace with qino-lab-mcp available
+
 ---
 
 ### Concept Work → `qino:concept`
 
-| User Intent | Workflow |
-|-------------|----------|
-| Arrive, "where am I", "what's here", home | [workflows/home.md](workflows/home.md) |
-| Capture thought, "hold this", "note: ..." | [workflows/capture.md](workflows/capture.md) |
-| Explore, "go deeper", "work with [concept]", ideate, brainstorm | [workflows/explore.md](workflows/explore.md) |
+**Protocol routing:** When `context.protocol === "qino"`, home/capture/explore route to protocol versions. The agent reads `agents/protocol-structure.md` alongside `agents/concept.md`.
+
+| User Intent | Workflow | Protocol Workflow |
+|-------------|----------|-------------------|
+| Arrive, "where am I", "what's here", home | [workflows/home.md](workflows/home.md) | [workflows/protocol/home.md](workflows/protocol/home.md) |
+| Capture thought, "hold this", "note: ..." | [workflows/capture.md](workflows/capture.md) | [workflows/protocol/capture.md](workflows/protocol/capture.md) |
+| Explore, "go deeper", "work with [concept]", ideate, brainstorm | [workflows/explore.md](workflows/explore.md) | [workflows/protocol/explore.md](workflows/protocol/explore.md) |
 | Test, "notice through ecology" | [workflows/test.md](workflows/test.md) |
 | Test with decision, "help inform the decision" | [workflows/test.md](workflows/test.md) (decision context mode) |
 | Attune, "calibrate [quality]" | [workflows/attune.md](workflows/attune.md) |
@@ -332,6 +351,19 @@ Match user intent to workflow. **Spawn the specified agent** to execute the work
 | Orient, "what can qino do", "show me qino" | [workflows/orientation.md](workflows/orientation.md) |
 | No workspace context (and no clear intent) | [workflows/orientation.md](workflows/orientation.md) |
 
+### Lab Mode (no agent needed — direct mode)
+
+| User Intent | Workflow |
+|-------------|----------|
+| "use the lab", "lab mode", "work through qino-lab" | [workflows/lab.md](workflows/lab.md) |
+| "work through the lab", "use qino-lab for this" | [workflows/lab.md](workflows/lab.md) |
+
+**Lab mode behavior notes:**
+- Requires protocol-compliant workspace (`protocol: "qino"` in qino-config.json)
+- Uses qino-lab-mcp tools for real-time UI communication
+- Signal types: reading, connection, tension, proposal
+- The graph becomes the medium of dialogue — annotations surface in the UI
+
 ---
 
 ## Implementation Context
@@ -365,6 +397,7 @@ Pass to workflows:
 interface Context {
   type: "concepts" | "research" | "implementation" | "tool";
   root: string;                              // Workspace root path
+  protocol?: "qino";                         // Protocol mode — graph-based structure
   conceptsRepo?: string;                     // Path to concepts repo
   researchRepo?: string;                     // Path to research repo
   linkedConcept?: string;                    // Primary linked concept ID
@@ -407,6 +440,7 @@ Workflows specify both an agent persona and an execution mode.
 | arc-link | concept | inject | Dialogue — linking session to arc |
 | arc-close | concept | inject | Dialogue — closing arc, triggers capture |
 | orientation | — | inject | Dialogue — direct response |
+| lab | — | inject | Dialogue — UI-mediated communication via MCP |
 | navigate | dev | spawn | Synthesis — heavy reading, terrain mapping |
 | import | concept | spawn | Synthesis — heavy file reading |
 | concept-init | concept | spawn | Synthesis — workspace scaffolding |
