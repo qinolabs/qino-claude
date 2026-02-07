@@ -135,6 +135,10 @@ Ecological design patterns are alive at every level — in each concept, in each
 
 What does accumulate are learnings and notes, either woven into existing concepts, or safely kept, ready to reveal itself fully through the next idea that connects. The best ideas can come from anywhere — not centralized — and often while deeply immersed in a different context.
 
+**The qino-protocol** makes this coordination possible. Concepts, research, and implementations share a common structure: graphs of nodes, each with identity and story, connected by edges that carry context. The same protocol reader works across all three spaces. The same gestures — capture, explore, annotate — mean the same thing everywhere. What differs is vocabulary, not shape.
+
+**qino-lab** is the collaboration surface where human and AI think together through this structure. The terminal and the browser become equal surfaces: what the agent annotates appears in the graph; what you edit in files appears to the agent. _(See [Lab](#lab--the-collaboration-surface) for how this works.)_
+
 ### Figures: The Pattern of Return
 
 _Figure_ in qino is a metaphor — in Bateson's sense, not the literary sense. Not a stored form, but a pattern that emerges through encounters. Identity is resonance, not reference.
@@ -265,6 +269,8 @@ Same scribe. Different worlds. Different atmospheric registers. Process in each 
 
 ## Finding Your Way
 
+**Lab** — [The Collaboration Surface](#lab--the-collaboration-surface) · [The Protocol](#the-qino-protocol) · [Navigators](#navigators--cross-context-orientation) · [Views](#views--composed-attention)
+
 **Concept** — [Giving Shape](#qino--giving-shape-to-what-has-pull) · [Design Adventure](#design-adventure--the-room-after)
 
 **Story** — [Scribe](#qino-scribe--git-becomes-story) · [Relay](#qino-relay--bridging-to-readers) · [Lens](#qino-lens--ways-of-seeing)
@@ -274,6 +280,125 @@ Same scribe. Different worlds. Different atmospheric registers. Process in each 
 **Research** — [Following Threads](#following-threads) · [Arcs](#arcs--holding-what-cant-yet-be-named) · [Compare](#compare--the-parallel-mirror) · [Attune](#attune--from-hunch-to-craft) · [Epistemological Signature](#epistemological-signature)
 
 **Ecology** — [The Figure Question](#the-figure-question) · [Other Ecologies](#other-ecologies-other-characters) · [Domain Language Connection](#the-connection-to-domain-language)
+
+<br>
+
+---
+
+## Lab | The Collaboration Surface
+
+The chat window is where you converse. The lab is where you think together.
+
+qino-lab is a shared visual surface — a graph of nodes rendered in the browser while you work in the terminal. Both human and AI read and write the same files. Annotations appear in real-time. Git tracks everything. What one surface writes, both surfaces see.
+
+This isn't a dashboard or documentation system. It's the **medium of dialogue** — where thinking happens visibly, not where it gets summarized afterward.
+
+### The qino-protocol
+
+The protocol defines a universal structure for human-AI workspaces:
+
+```
+workspace/
+  .claude/qino-config.json     # Workspace identity and vocabulary
+  graph.json                   # Nodes and edges — the visible structure
+  journal.md                   # Running trail — both surfaces write here
+  nodes/
+    {node-name}/
+      node.json                # Identity (title, type, status)
+      story.md                 # Why this exists — the impulse
+      content/                 # What this node holds
+      annotations/             # Agent signals attached here
+```
+
+**Why a protocol matters:** Concepts, research, and implementation share the same structural language. A concept node looks like a research node looks like an implementation node. The vocabulary differs — a concept has "glowing connections," an implementation has "iterations" — but the shape is the same. This enables tools that work across all three spaces.
+
+**Affordances at every level:**
+- **File level** — Human edits `story.md` directly; agent uses `write_annotation` tool. Same files, different entry points.
+- **UI level** — Human navigates the graph visually; agent embeds deeplinks in chat. Same destination, different paths.
+- **Protocol level** — Structure scales organically. Add a node, the graph grows. Nest a graph inside a node, sub-structure emerges. No migrations, no schema changes.
+
+### Signals — How the Agent Speaks Through the Graph
+
+When the agent works, it writes annotations with signal types:
+
+| Signal | When | What it means |
+|--------|------|---------------|
+| `proposal` | Before acting | "I'm about to try this — redirect me if needed" |
+| `tension` | When something surprises | "This doesn't fit what we expected" |
+| `reading` | After interpreting | "Here's what I see in this material" |
+| `connection` | When nodes relate | "This echoes what's over there" |
+
+The UI renders these with visual weight that matches their urgency. Tensions surface prominently. Readings collapse by default. Proposals appear as cards awaiting response.
+
+The agent's thinking becomes visible *as it happens*. You watch the graph — not to review documentation, but to participate in the thinking.
+
+### Navigators | Cross-Context Orientation
+
+Some work spans multiple contexts — an implementation that touches three apps, a concept that bridges research and building, an inquiry that keeps surfacing while you code.
+
+Navigators are living orientation documents for this kind of trans-contextual work:
+
+```
+navigators/
+  emergence-lab.md    # Terrain map, reading order, open questions, session log
+```
+
+A navigator holds:
+- **Terrain** — What's here, what connects, what to read first
+- **Open questions** — What remains unresolved
+- **Session log** — Accumulated observations across sessions
+
+Unlike arcs (which follow emergence as it unfolds), navigators **map terrain for building**. They orient construction across contexts without prescribing tasks.
+
+Activate with: "use the active navigator", "navigate [territory]", "map this concept"
+
+### Views | Composed Attention
+
+Sometimes the full graph is too broad. Sometimes a single node loses relational context. Views are curated subsets — "think about these things together."
+
+```json
+{
+  "id": "the-naming-tension",
+  "type": "view",
+  "view": {
+    "focal": "crossing-threshold",
+    "includes": ["domain-language", "qino-world"]
+  }
+}
+```
+
+A view has a **focal node** (the primary subject) and **included nodes** (what to attend to alongside). The UI renders just this subset. The graph stays navigable but attention stays composed.
+
+Views are ephemeral. When an inquiry resolves, the view can be composted — it served its purpose. What remains is the understanding, not the frame.
+
+### Lab Mode in Practice
+
+```
+(you)   use the lab
+
+(qino)                  lab mode active
+
+        UI: http://localhost:4020
+
+        workspace: sound-lab
+        nodes: 12 nodes, 8 edges
+
+        ─────────────────────────────────────────
+
+        annotations will appear in real-time as I work
+
+        you watch the graph — I'll surface:
+          tension     when something doesn't fit
+          reading     when I interpret what I see
+          proposal    before I try something new
+          connection  when nodes relate
+```
+
+The conversation continues in chat. But findings, proposals, and tensions appear in the graph. When the agent says "see the tension in emergent-path," it's a clickable link — navigation from chat to graph is seamless.
+
+**The shift:** The agent doesn't explain what you can see. The graph shows it. Chat provides context and decisions. The visual artifact carries the thinking.
+
+_[Lab workflow](plugins/qino/skills/qino/workflows/lab.md)_
 
 <br>
 
