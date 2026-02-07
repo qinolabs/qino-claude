@@ -1,5 +1,7 @@
 # Information Model — Structure vs Trail
 
+> **For agents:** Start with [protocol.md](./protocol.md) — the unified agent reference, ordered for consumption (operations first, then structure, then concepts). This document provides deeper conceptual grounding.
+
 The qino protocol distributes information across two complementary forms: **structure** (nodes and edges) and **trail** (journal entries). Understanding when each is appropriate is fundamental to working with protocol workspaces.
 
 ---

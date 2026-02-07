@@ -1,5 +1,7 @@
 # Qino Protocol — Structure Reference
 
+> **For agents:** Start with [protocol.md](./protocol.md) — the unified agent reference, ordered for consumption (operations first, then structure, then concepts). This document provides deeper data model details.
+
 The qino protocol organizes workspaces as directed graphs of typed nodes. Each node is a directory with metadata, impulse, and content. Relationships between nodes are typed edges with context.
 
 This reference documents the data model for protocol-aware workflows.

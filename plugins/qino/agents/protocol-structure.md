@@ -2,6 +2,8 @@
 
 Read this alongside `agents/concept.md` when `protocol: "qino"` is detected in the workspace config. These sections **replace** the File Structure Awareness, Facets, and Ecosystem Work sections in concept.md — all other principles (alive thread, mirror/echo, momentum, tone, reasoning, draft awareness, core intent) remain unchanged.
 
+**For operational decisions** (when to journal, when to create nodes, when to add edges), consult `references/protocol/protocol.md` — Part 1: Operations.
+
 ---
 
 ## File Structure Awareness (Protocol)
