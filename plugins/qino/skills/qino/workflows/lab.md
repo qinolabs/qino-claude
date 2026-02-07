@@ -81,7 +81,8 @@ User says:
    - `read_node` — Read full node detail (identity, story, content, annotations)
    - `read_config` — Read workspace configuration
    - `write_annotation` — Write an annotation to a node
-   - `create_node` — Create a node, update graph, echo in journal
+   - `create_node` — Create a node (or view), update graph, echo in journal
+   - `update_view` — Change a view's focal or included nodes
    - `write_journal_entry` — Append entry with context marker
 
 4. **Output confirmation:**
@@ -178,6 +179,65 @@ Use `write_journal_entry` to mark session context:
   "context": "session/2025-02-07 or node/node-id or view/view-id"
 }
 ```
+
+---
+
+## Views — Shared Attention
+
+Views are curated subsets of the graph — "think about these things together."
+
+**When to create a view:**
+- Multiple nodes need to be attended to together
+- A tension or connection spans several nodes
+- You want to frame a question that involves 2-4 nodes
+- Full graph is too broad, single node loses relational context
+
+**Creating a view:**
+
+```json
+{
+  "id": "the-naming-tension",
+  "title": "The Naming Tension",
+  "type": "view",
+  "story": "Crossing as functional act vs. ceremony — the name hides the experiential quality",
+  "view": {
+    "focal": "crossing-threshold",
+    "includes": ["domain-language", "qino-world"]
+  }
+}
+```
+
+The `focal` node is the entry point — what the view is primarily about. `includes` are the other nodes to attend to together.
+
+**Using views:**
+- Annotations on the view node apply to the framing, not individual nodes
+- Journal entries with `context: view/the-naming-tension` track thinking within that frame
+- Views can be composted when inquiry resolves — they're not permanent
+
+**View lifecycle:**
+```
+active    → working with this framing
+composted → inquiry resolved, view recedes from graph
+```
+
+**MCP tools:**
+- `create_node` with `view` field → creates a view node
+- `update_view` → changes focal or included nodes as inquiry evolves
+
+---
+
+## Navigators — Cross-Session Orientation
+
+Navigators are separate from lab mode. They're living orientation documents for territories being actively built, stored in `navigators/` in the implementation repo.
+
+**Use navigators when:**
+- Work spans multiple sessions and you need persistent context
+- Territory crosses multiple apps, concepts, or systems
+- You want a reading order and open questions that persist
+
+**Activate via:** "use the active navigator", "navigate [territory]"
+
+See `workflows/navigate.md` for full navigator workflow.
 
 ---
 
