@@ -10,7 +10,28 @@
 
 Lab mode activates UI-mediated communication. The agent becomes a thinking partner whose observations, connections, tensions, and proposals appear in real-time through qino-lab.
 
+**The UI is the conversation.** Not a place to document what happened — the place where thinking happens together.
+
 This is collaborative building through a shared visual artifact — the graph of nodes IS the artifact of shared thinking.
+
+---
+
+## The Fundamental Shift
+
+**Without lab mode:** Agent works autonomously, explains in prose, shows results.
+
+**With lab mode:** Agent annotates *as it discovers*, user watches findings appear in real-time, graph becomes the shared thinking space.
+
+The agent does NOT:
+- Work autonomously for a while, then summarize in annotations
+- Explain findings in prose that duplicate what annotations show
+- Treat the lab as documentation of completed work
+
+The agent DOES:
+- Write a `tension` annotation the moment a test fails unexpectedly
+- Write a `reading` annotation when interpreting what code reveals
+- Write a `proposal` annotation before running an experiment, not after
+- Pause and check in with the user when direction is unclear
 
 ---
 
@@ -27,14 +48,15 @@ User says:
 
 ## Setup (On Activation)
 
-1. **Detect protocol workspace:**
+1. **Confirm the UI is running:**
+   - The dev server runs at `http://localhost:4020`
+   - If user doesn't have it open, tell them: "Open http://localhost:4020 — that's where you'll see annotations appear"
+   - If the server isn't running: `cd qinolabs-repo/mcp/qino-lab-mcp && pnpm dev`
+
+2. **Detect protocol workspace:**
    - Read `.claude/qino-config.json` — must have `protocol: "qino"`
    - Read `graph.json` — the workspace's node graph
    - If not protocol-compliant, explain what's needed
-
-2. **Read protocol spec:**
-   - `mcp/qino-lab-mcp/PROTOCOL.md` contains the structural contract
-   - Key sections: File Schemas, Three Surfaces, Annotation Protocol
 
 3. **Confirm MCP tools available:**
    - `read_graph` — Read root or sub-graph with node summaries
@@ -50,21 +72,21 @@ User says:
                         lab mode active
 
 
+  UI: http://localhost:4020
+
   workspace: [workspace name from graph.json]
   nodes: [count] nodes, [count] edges
-
-  surface: qino-lab-mcp → qino-lab UI
 
 
 ─────────────────────────────────────────────────
 
-  observations will appear in real-time
+  annotations will appear in real-time as I work
 
-  signal types:
-    reading     — "I've been here"
-    connection  — "this relates to..."
-    tension     — "something doesn't fit"
-    proposal    — "here's what to try"
+  you watch the graph — I'll surface:
+    tension     when something doesn't fit
+    reading     when I interpret what I see
+    proposal    before I try something new
+    connection  when nodes relate
 
 ```
 
@@ -72,9 +94,29 @@ User says:
 
 ## Working in Lab Mode
 
+### Annotate In-Flight, Not After
+
+The lab is not a documentation system. It's the conversation medium.
+
+**Wrong pattern:**
+```
+1. Run tests autonomously
+2. Analyze results
+3. Write annotation summarizing what happened
+4. Tell user what you found
+```
+
+**Right pattern:**
+```
+1. Write proposal annotation: "Testing linear falloff hypothesis"
+2. Run test
+3. Write tension annotation immediately if something unexpected: "Linear falloff increased stuckness — hypothesis wrong"
+4. Brief text to user: "See the tension in emergent-path — not what we expected"
+```
+
 ### Reading First
 
-Before annotating or creating nodes, read the relevant content:
+Before annotating, read the relevant content:
 
 ```
 1. read_graph → understand workspace structure
@@ -86,12 +128,14 @@ Before annotating or creating nodes, read the relevant content:
 
 Choose the appropriate signal type based on what you're communicating:
 
-| Signal | Use when | Example |
-|--------|----------|---------|
-| `reading` | You've processed content and have an interpretation | "Single-modality substrate explains thin output" |
-| `connection` | You notice a link between nodes | "This echoes what crossing-threshold describes as ceremony" |
-| `tension` | Something unexpected or in productive conflict | "The functional name hides the experiential quality" |
-| `proposal` | You have a concrete next step to suggest | "Try cross-modal substrate diversity" |
+| Signal | When to write it | Example |
+|--------|------------------|---------|
+| `proposal` | BEFORE trying something — share the plan | "Testing: does linear falloff reduce stuckness?" |
+| `tension` | IMMEDIATELY when something unexpected happens | "Linear falloff made stuckness worse, not better" |
+| `reading` | When you've processed content and have an interpretation | "Single-modality substrate explains thin output" |
+| `connection` | When you notice a link between nodes | "This echoes what crossing-threshold describes as ceremony" |
+
+**Proposals come first.** Before running an experiment, write what you're about to try. The user sees your intent, can redirect if needed, and watches the result unfold.
 
 ### Annotation Format
 
@@ -142,12 +186,25 @@ The tool will:
 
 ## Real-Time Communication
 
-**Key insight:** The user has qino-lab open in their browser. When you write an annotation or create a node, it appears immediately in the UI.
+**Key insight:** The user is watching `http://localhost:4020`. When you write an annotation, it appears immediately. The user sees your thinking unfold.
 
-This means:
-- You don't need to explain what you did in text — the artifact shows it
-- Brief confirmation is sufficient ("annotation added to [node]")
-- The graph becomes the medium of dialogue
+This changes the communication pattern:
+
+| Old pattern | Lab pattern |
+|-------------|-------------|
+| "I ran the test and found X, Y, Z..." | Write annotation → "see the tension in [node]" |
+| Long prose explanation | Graph shows it visually |
+| User reads your summary | User watches findings appear |
+| Agent reports to user | Agent thinks alongside user |
+
+**Brief text is sufficient:**
+- "proposal added to emergent-path — take a look before I run it"
+- "tension: the hypothesis was wrong — see annotation 003"
+- "created new node for this finding"
+
+**Check in before major moves:**
+- "I see two directions from here — want me to write proposals for both so you can choose?"
+- "About to run 4 experiments — should I annotate each, or just the surprising ones?"
 
 ---
 
@@ -207,8 +264,24 @@ When ending:
 
 ## Do NOT:
 
-- Write long prose when annotations surface the insight
+- **Work autonomously then summarize** — annotate as you discover, not after
+- **Write long prose** when annotations surface the insight
+- **Forget the UI URL** — always share `http://localhost:4020` if user seems lost
+- **Use `reading` for proposals** — proposals come BEFORE the work, readings come AFTER
 - Create nodes without reading context first
-- Use `reading` signal for proposals (use `proposal`)
 - Modify files directly — use the MCP tools
 - Announce "I'm going to create an annotation..." — just do it
+
+## Anti-Pattern: The Documentation Trap
+
+This is what NOT to do:
+
+```
+Agent: [works for 10 minutes autonomously]
+Agent: [runs tests, analyzes results, fixes code]
+Agent: "Now let me capture this in the lab..."
+Agent: [writes annotation summarizing everything]
+User: "I have no idea what just happened"
+```
+
+The lab is not for capturing completed work. It's where the work happens visibly.
