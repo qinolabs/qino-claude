@@ -40,7 +40,7 @@ When user says "work on [app]" or similar:
    - Check `implementations/[app]/iterations/` for current phase
    - Check `implementations/docs/` for ecosystem architecture patterns
    - Find the linked concept via manifest
-   - Check `navigators/` for active navigators relevant to this app
+   - Check root graph for active navigator nodes relevant to this app (via `read_graph`, filter `type: "navigator"`)
 
 2. **Read current state:**
    - What iteration are we on? (look for "In progress" status)
@@ -53,9 +53,9 @@ When user says "work on [app]" or similar:
    - If concept is newer, flag for user attention in arrival surface
 
 4. **Check for active navigators:**
-   - Glob `navigators/*.md` in the implementation repo
+   - From the `read_graph` result, filter nodes with `type: "navigator"` and `status: "active"`
    - If any navigator's territory references this app, note it
-   - If a navigator is active, its open questions and terrain inform "what's next" suggestions
+   - If a navigator is active, `read_node` to load its terrain — open questions inform "what's next" suggestions
 
 5. **Output arrival surface:**
 

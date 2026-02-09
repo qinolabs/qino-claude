@@ -158,13 +158,15 @@ Use `write_journal_entry` to mark session context:
 
 ## Navigators
 
-Navigators are separate from lab mode. They're living orientation documents stored in `navigators/` in the implementation repo.
+Navigators are graph nodes (`type: "navigator"`) in the root graph. They appear in qino-lab alongside other nodes.
 
 **Use navigators when:**
 - Work spans multiple sessions and you need persistent context
 - Territory crosses multiple apps, concepts, or systems
 
 **Activate via:** "use the active navigator", "navigate [territory]"
+
+**Within lab mode:** Navigator operations work naturally — lab mode already has the graph tools. See `workflows/lab.md` Navigator Awareness section.
 
 See `workflows/navigate.md` for full navigator workflow.
 

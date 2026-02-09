@@ -1,8 +1,8 @@
 # Navigate Workflow
 
-**Execution:** spawn
+**Execution:** inject (optional spawn for research during creation)
 **Voice:** Grounded. Cartographic. Holding the whole territory so you can move through it.
-**Agent:** dev
+**Agent:** none (direct mode — uses qino-lab MCP tools)
 
 ---
 
@@ -10,7 +10,7 @@
 
 A navigator is a **living orientation document** for a territory being actively explored or built. It maps what exists, carries meaning about why each piece matters, and records how understanding evolves across sessions.
 
-Navigators live at `navigators/` in the implementation repo (typically `qinolabs-repo/navigators/`).
+Navigators are **graph nodes** with `type: "navigator"` in the workspace root graph. They appear in qino-lab at `http://localhost:4020`.
 
 **Navigators are not:**
 - Plans (they don't prescribe tasks or timelines)
@@ -23,6 +23,19 @@ Navigators live at `navigators/` in the implementation repo (typically `qinolabs
 - Documentation as a byproduct — session logs naturally record how understanding evolved
 - Temporary — they exist while the possibility space is active. When work completes, they become archival documentation.
 
+### Navigator Structure
+
+```
+nodes/[navigator-id]/
+  node.json          # type: "navigator", status: "active"
+  story.md           # Territory essence, what sparked it, open frontier
+  content/
+    terrain.md       # Full terrain: sections, reading order, open questions, session log
+  nodes/             # Sub-graph for session nodes (optional, for heavy navigators)
+    session-001/
+    session-002/
+```
+
 ---
 
 ## Task
@@ -33,23 +46,25 @@ Three modes based on user intent:
 
 **Triggers:** "use the active navigator", "activate navigator for [territory]", "navigate [territory]", "orient me on [territory]"
 
-1. **List available navigators:**
-   - Glob `navigators/*.md` in the implementation repo
-   - Read the header of each (first ~15 lines: title, territory, status, direction)
+1. **Find navigator nodes:**
+   - `read_graph` on the root graph
+   - Filter nodes by `type: "navigator"` and `status: "active"`
 
-2. **If user specified a territory**, match by filename or territory field.
+2. **If user specified a territory**, match by node ID or title.
 
 3. **If multiple active navigators**, show them:
    ```
    active navigators
 
-     emergence-lab — emergence mechanics, readiness lenses, world simulation
-     [other] — [brief from direction field]
+     emergence-experiments — emergence mechanics, readiness lenses, world simulation
+     lens-ecosystem — lens architecture, crossing constraints, ecosystem design
 
    Which territory?
    ```
 
-4. **Read the matched navigator fully.**
+4. **Load the matched navigator:**
+   - `read_node` to get story + content files
+   - Read `content/terrain.md` for full terrain map
 
 5. **Output activation surface:**
    ```
@@ -57,7 +72,7 @@ Three modes based on user intent:
    │ [navigator name]                        │
    │                                         │
    │ direction                               │
-   │ [direction field content]               │
+   │ [direction from story.md]               │
    │                                         │
    │ terrain                                 │
    │ [count] sections mapped                 │
@@ -88,38 +103,38 @@ Three modes based on user intent:
 
 Creating a navigator requires deep exploration — reading across repos, understanding connections, synthesizing into an annotated map. This is substantial work.
 
-1. **Identify the territory:**
-   - What concept, app, or cross-cutting concern is being mapped?
-   - What repos and directories are relevant?
+#### Phase 1 — Research (spawn, optional)
 
-2. **Read broadly.** For a typical territory, check:
-   ```
-   concepts-repo/
-     concepts/[related]/concept.md
-     concepts/[related]/facets/
-     ecosystem/ (domain language, design principles, lens docs)
-     notes/ (related notes)
+When the territory requires deep cross-repo reading, spawn an Explore agent to read broadly and return a synthesis. Skip if the conversation already carries sufficient momentum/context.
 
-   qinolabs-repo/
-     implementations/[related]/ (implementation.md, iterations/)
-     implementations/docs/ (cross-app architecture)
-     apps/[related]/ (actual codebase — schema, services, routes)
+```
+Task tool with subagent_type: "Explore"
+prompt: "Read broadly across [repos/directories] to map the terrain for [territory].
+         Return: key files with significance, connections between them,
+         open questions, and a suggested reading order."
+```
 
-   qino-research/
-     explorations/ (related research)
-     arcs/ (related arcs)
-   ```
+#### Phase 2 — Graph Creation (inject)
 
-3. **Synthesize into navigator structure:**
+Using research output or conversation momentum:
+
+1. **Create the navigator node:**
+   - `create_node` with:
+     - `type: "navigator"`
+     - `status: "active"`
+     - `dir`: descriptive directory name (e.g., `lens-ecosystem`)
+     - `title`: territory name
+     - `story`: territory essence — what sparked it, what the open frontier looks like, sibling navigators
+     - `edges`: connections to related concept nodes in the graph
+
+2. **Write terrain content:**
+   - Write `content/terrain.md` via the Write tool to the node's content directory
+   - Structure:
 
    ```markdown
-   # [Territory Name]
+   # [Territory Name] — Terrain
 
    > [One-line essence of what this territory is about]
-
-   **Territory**: [what this navigator covers — apps, concepts, systems]
-   **Status**: Active
-   **Since**: [date]
 
    ## Direction
 
@@ -167,7 +182,7 @@ Creating a navigator requires deep exploration — reading across repos, underst
 
    ## Session Log
 
-   ### [Date] — Session [N]: [Brief Title]
+   ### [Date] — Session 1: [Brief Title]
 
    **What happened**: [2-3 sentences]
 
@@ -180,17 +195,12 @@ Creating a navigator requires deep exploration — reading across repos, underst
    **What remains alive**: [seeds for next session]
    ```
 
-4. **Key quality requirements:**
-   - Every terrain entry has a "Why It Matters Here" column — meaning, not just location
-   - Reading order is pedagogical — sequenced for understanding, not alphabetical
-   - Open questions are genuine unknowns, grouped by sub-territory
-   - Session log captures the first session (the creation session itself)
+3. **Record in journal:**
+   - `write_journal_entry` capturing the creation
 
-5. **Save** to `navigators/[territory-name].md`
-
-6. **Output confirmation:**
+4. **Output confirmation:**
    ```
-   Navigator created: navigators/[name].md
+   Navigator created: [navigator-id]
 
    [terrain section count] terrain sections
    [question count] open questions
@@ -199,13 +209,23 @@ Creating a navigator requires deep exploration — reading across repos, underst
    Navigator is now active for this session.
    ```
 
+#### Quality Requirements
+
+- Every terrain entry has a "Why It Matters Here" column — meaning, not just location
+- Reading order is pedagogical — sequenced for understanding, not alphabetical
+- Open questions are genuine unknowns, grouped by sub-territory
+- Session log captures the first session (the creation session itself)
+- No shallow navigators — deep reading required for creation (a shallow navigator is worse than none)
+
 ### Mode 3: Update Session Log
 
 **Triggers:** "update the navigator", "log this session", "record what we found"
 
-This can also happen **implicitly** when a navigator-aware session ends — the dev agent should offer to update the session log.
+This can also happen **implicitly** when a navigator-aware session ends — offer to update the session log.
 
-1. **Read the active navigator's session log** to understand previous entries.
+1. **Load the active navigator:**
+   - `read_node` to get current state
+   - Read `content/terrain.md` for current terrain
 
 2. **Assess what happened this session:**
    - What was the user working on?
@@ -214,31 +234,17 @@ This can also happen **implicitly** when a navigator-aware session ends — the 
    - What questions were resolved? What new questions surfaced?
    - What remains alive for next time?
 
-3. **Draft a session log entry:**
-   ```markdown
-   ### [Date] — Session [N]: [Brief Title]
+3. **Draft updates to `content/terrain.md`:**
+   - **Session log**: append a new entry
+   - **Terrain sections**: add new discoveries if relevant
+   - **Open questions**: remove resolved, add new
+   - **Direction**: update if shifted
 
-   **What happened**: [2-3 sentences]
+4. **Show proposed changes** and wait for confirmation.
 
-   **Key moves**: [bullet points]
-
-   **What was produced**: [list artifacts]
-
-   **What shifted**: [what understanding changed]
-
-   **What remains alive**: [seeds]
-   ```
-
-4. **Also update other navigator sections if relevant:**
-   - New terrain discovered → add to terrain map
-   - Questions resolved → remove or annotate in open questions
-   - New questions surfaced → add to open questions
-   - Direction shifted → update direction section
-   - Reading order changed → update reading order
-
-5. **Show proposed changes** and wait for confirmation.
-
-6. **Apply** to navigator file.
+5. **Apply changes:**
+   - Edit `content/terrain.md` via the Edit tool (filesystem)
+   - `write_journal_entry` capturing the session
 
 ---
 
@@ -252,6 +258,8 @@ When a navigator is active (read at session start), its terrain and open questio
 
 **In home:** Active navigators appear in the arrival surface.
 
+**In lab mode:** If a navigator is active while in lab mode, the terrain carries into graph-mediated work. See `workflows/lab.md` for navigator awareness within lab mode.
+
 ---
 
 ## Lifecycle
@@ -260,9 +268,7 @@ When a navigator is active (read at session start), its terrain and open questio
 |-------|-------------|
 | **Created** | Deep exploration produces initial navigator with terrain, reading order, open questions, first session log entry |
 | **Active** | Updated across sessions. Terrain grows. Questions resolve and new ones surface. Session log accumulates. |
-| **Completed** | Work resolves. Navigator becomes archival documentation of how a territory was explored and built. Status field changes to "Completed" with completion date. |
-
-Completed navigators stay in `navigators/` — they're valuable as documentation.
+| **Completed** | Work resolves. Navigator status changes to "completed". The node remains in the graph as archival documentation of how a territory was explored and built. |
 
 ---
 

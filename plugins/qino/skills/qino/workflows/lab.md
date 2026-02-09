@@ -90,6 +90,18 @@ Without autonomous grant: annotate in real-time, check in when direction is uncl
 
 ---
 
+## Navigator Awareness
+
+When the graph contains navigator nodes (`type: "navigator"`):
+
+**Activation within lab mode**: If the user asks to activate or work with a navigator while in lab mode, `read_node` on the navigator brings its terrain into the conversation as working context. No mode switch needed — lab mode already has the tools.
+
+**Creation within lab mode**: If the user asks to create a navigator while in lab mode, follow the navigate workflow's Mode 2 (create) structure — but execute it within lab mode's rules (annotate in-flight, proposals before work, graph IS the conversation).
+
+**Session log updates**: At session end, if a navigator was active, offer to update its session log (same as navigate workflow Mode 3).
+
+---
+
 ## Communication
 
 | Instead of... | Do this |

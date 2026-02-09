@@ -42,7 +42,7 @@ Workflows execute in one of two modes based on their nature:
 
 ### Inject Mode (Dialogue Workflows)
 
-**For:** home, explore, capture, test, attune, compare, arc, orientation, lab
+**For:** home, explore, capture, test, attune, compare, arc, orientation, lab, navigate
 
 These workflows involve multi-turn dialogue with the user. They execute **in the main conversation** — no Task tool, no subagent.
 
@@ -247,7 +247,7 @@ Match user intent to workflow. **Spawn the specified agent** to execute the work
 |--------------|-------|
 | "what's next", "continue", "work on [app]", "build", "implement", "plan iteration" | `qino:dev` |
 | "what's next for [app]", "what should I build", "next steps for [project]" | `qino:dev` |
-| "use the active navigator", "navigate [territory]", "map this", "show me the terrain" | `qino:dev` |
+| "use the active navigator", "navigate [territory]", "map this", "show me the terrain" | direct (graph tools) |
 | "explore", "go deeper", "capture", "hold this", "where am I", "test", "compare" | `qino:concept` |
 | "research", "investigate", "inquiry", "study" | `qino:research` |
 | "use the lab", "lab mode", "work through qino-lab" | direct (no agent) |
@@ -258,10 +258,11 @@ Match user intent to workflow. **Spawn the specified agent** to execute the work
 - Progress language: "what's next", "continue", "move forward", "next iteration"
 - Planning language: "plan", "scope", "break down", "what needs to be done"
 
-**Navigator signals (→ `qino:dev`):**
+**Navigator signals (→ direct, graph tools):**
 - Activation language: "use the active navigator", "activate navigator for [territory]", "navigate [territory]"
-- Mapping language: "map this concept", "show me the terrain", "map the terrain for [territory]"
+- Mapping language: "map this concept", "create a navigator for [territory]", "show me the terrain"
 - Update language: "update the navigator", "log this session", "record what we found"
+- All navigator operations use qino-lab MCP tools — navigators are graph nodes
 
 **Concept signals (→ `qino:concept`):**
 - Exploration language: "explore", "deepen", "what is", "understand"
@@ -277,6 +278,7 @@ Match user intent to workflow. **Spawn the specified agent** to execute the work
 - Activation language: "use the lab", "lab mode", "work through the lab"
 - Protocol context: "work through qino-lab", "use qino-lab for this"
 - Requires: protocol workspace with qino-lab-mcp available
+- **Priority rule**: "lab" as prefix takes priority over other routing. "lab create X" = lab mode, then action.
 
 ---
 
@@ -318,19 +320,20 @@ Match user intent to workflow. **Spawn the specified agent** to execute the work
 | Setup research workspace | [workflows/research-setup.md](workflows/research-setup.md) |
 | Start research inquiry | [workflows/research-init.md](workflows/research-init.md) |
 
-### Navigator Work → `qino:dev`
+### Navigator Work → direct (graph tools)
 
 | User Intent | Workflow |
 |-------------|----------|
 | "use the active navigator", "activate navigator", "navigate [territory]" | [workflows/navigate.md](workflows/navigate.md) |
-| "map this concept", "show me the terrain for [territory]" | [workflows/navigate.md](workflows/navigate.md) |
+| "create a navigator", "map this concept", "show me the terrain for [territory]" | [workflows/navigate.md](workflows/navigate.md) |
 | "update the navigator", "log this session" | [workflows/navigate.md](workflows/navigate.md) |
 
 **Navigator behavior notes:**
-- Navigators live in `navigators/` in the implementation repo
-- Navigator activation loads terrain, reading order, and open questions as working context
-- Navigator creation requires deep exploration (spawn mode — heavy reading across repos)
-- Session log updates can be offered at end of navigator-aware sessions
+- Navigators are graph nodes with `type: "navigator"` in the root graph — they appear in qino-lab
+- Activation loads terrain, reading order, and open questions via `read_node`
+- Creation uses `create_node` + content files; deep reading can be delegated to an Explore agent
+- Session log updates edit `content/terrain.md` and write journal entries
+- Navigator operations implicitly use graph tools (qino-lab MCP) — no need to say "lab" first
 
 ### Implementation Work → `qino:dev`
 
@@ -448,7 +451,7 @@ Workflows specify both an agent persona and an execution mode.
 | arc-close | concept | inject | Dialogue — closing arc, triggers capture |
 | orientation | — | inject | Dialogue — direct response |
 | lab | — | inject | Dialogue — UI-mediated communication via MCP |
-| navigate | dev | spawn | Synthesis — heavy reading, terrain mapping |
+| navigate | — | inject | Graph-native — uses qino-lab MCP tools, optional spawn for research |
 | import | concept | spawn | Synthesis — heavy file reading |
 | concept-init | concept | spawn | Synthesis — workspace scaffolding |
 | concept-setup | concept | spawn | Synthesis — workspace scaffolding |
@@ -464,7 +467,7 @@ Workflows specify both an agent persona and an execution mode.
 | Agent | subagent_type | Used by |
 |-------|---------------|---------|
 | Concept Agent | `qino:concept` | import, concept-init, concept-setup |
-| Dev Agent | `qino:dev` | dev-init, dev-setup, workspace-init, dev-work, navigate |
+| Dev Agent | `qino:dev` | dev-init, dev-setup, workspace-init, dev-work |
 | Research Agent | `qino:research` | research-init, research-setup |
 
 Agent definitions live in `agents/` directory. Each agent file has:
