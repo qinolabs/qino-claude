@@ -1,0 +1,38 @@
+{
+  "name": "qino-plugins",
+  "owner": {
+    "name": "qinolabs"
+  },
+  "plugins": [
+    {
+      "name": "qino",
+      "source": "./qino",
+      "description": "Ecology for developing ideas — concepts, research, implementation",
+      "version": "1.0.0"
+    },
+    {
+      "name": "qino-prose",
+      "source": "./qino-prose",
+      "description": "Chronicle writing, research transmissions, and prose lenses",
+      "version": "1.0.0"
+    },
+    {
+      "name": "qino-art",
+      "source": "./qino-art",
+      "description": "Visual content system with Tron-meets-Excalidraw aesthetic",
+      "version": "1.0.0"
+    },
+    {
+      "name": "speech",
+      "source": "./speech",
+      "description": "Text-to-speech utility for reading Claude responses aloud",
+      "version": "1.0.0"
+    },
+    {
+      "name": "design-adventure",
+      "source": "./design-adventure",
+      "description": "Seven-perspective design exploration",
+      "version": "1.0.0"
+    }
+  ]
+}

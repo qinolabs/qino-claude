@@ -1,91 +1,53 @@
 # Lab Workflow
 
 **Execution:** inject
-**Voice:** Thinking partner. Observations surface through the shared canvas.
 **Agent:** none (direct mode)
 
 ---
 
-## Core Principle
+## Rules
 
-Lab mode activates UI-mediated communication. The agent becomes a thinking partner whose observations, connections, tensions, and proposals appear in real-time through qino-lab.
+These define lab mode. Follow them precisely.
 
-**The UI is the conversation.** Not a place to document what happened — the place where thinking happens together.
-
-This is collaborative building through a shared visual artifact — the graph of nodes IS the artifact of shared thinking.
+1. **The graph IS the conversation.** Annotate through MCP tools. Don't explain in prose what the UI shows.
+2. **Annotate in-flight, not after.** Write annotations AS you discover. Never work autonomously then summarize.
+3. **Proposals BEFORE work.** Write `proposal` before trying something. User sees intent, can redirect.
+4. **Tensions IMMEDIATELY.** Write `tension` the moment something unexpected happens.
+5. **Read before writing.** Always `read_node` before annotating. Always `read_graph` before creating nodes.
+6. **Brief text with links.** After annotating, short message with a deeplink — not a prose explanation.
+7. **Journal notes are nudges.** When `read_node` or `read_graph` returns journal sections with user-authored notes, recognize them. Respond with a journal entry (same scope) that acknowledges the thought and points to what it opens — a new node, a parallel connection, or the next piece of work. The journal is bidirectional.
 
 ---
 
-## The Fundamental Shift
+## Signal Types
 
-**Without lab mode:** Agent works autonomously, explains in prose, shows results.
+| Signal | When | Example |
+|--------|------|---------|
+| `proposal` | BEFORE trying something | "Testing: does linear falloff reduce stuckness?" |
+| `tension` | IMMEDIATELY when unexpected | "Linear falloff made stuckness worse" |
+| `reading` | After interpreting content | "Single-modality substrate explains thin output" |
+| `connection` | When nodes relate | "Echoes what crossing-threshold describes" |
 
-**With lab mode (default):** Agent annotates *as it discovers*, user watches findings appear in real-time, graph becomes the shared thinking space.
-
-**With lab mode + autonomous grant:** User says "go ahead and research this autonomously" — agent works independently but still surfaces findings through the lab when done.
-
-### Default Lab Behavior
-
-The agent does NOT:
-- Work autonomously for a while, then summarize in annotations
-- Explain findings in prose that duplicate what annotations show
-- Treat the lab as documentation of completed work
-
-The agent DOES:
-- Write a `tension` annotation the moment a test fails unexpectedly
-- Write a `reading` annotation when interpreting what code reveals
-- Write a `proposal` annotation before running an experiment, not after
-- Pause and check in with the user when direction is unclear
-
-### Autonomous Grant
-
-When user explicitly grants autonomous work:
-- "research this autonomously and report back"
-- "go explore, I'll check the lab later"
-- "run all the experiments, surface what you find"
-
-The agent CAN work independently, but still uses the lab to surface findings — annotations become the report, not prose summaries. Write:
-- `reading` annotations for key interpretations
-- `tension` annotations for unexpected findings
-- `proposal` annotations for recommended next steps
-
-The difference: annotations are written at natural breakpoints (after a round of experiments, when a direction becomes clear) rather than in real-time as each thing happens.
+Proposals come first. Readings come after. Never use `reading` for proposals.
 
 ---
 
 ## Activation
 
-User says:
-- "use the lab"
-- "lab mode"
-- "work through the lab"
-- "work through qino-lab"
-- "use qino-lab for this"
+User says: "use the lab", "lab mode", "work through the lab", "work through qino-lab", "use qino-lab for this"
+
+**Re-injection (after compaction):** If lab mode was previously active in this session, re-read this file and `read_graph` to pick up current state. The graph carries continuity — annotations, nodes, and journal entries persist across compaction.
 
 ---
 
-## Setup (On Activation)
+## Setup
 
-1. **Confirm the UI is running:**
-   - The dev server runs at `http://localhost:4020`
-   - If user doesn't have it open, tell them: "Open http://localhost:4020 — that's where you'll see annotations appear"
-   - If the server isn't running: `cd qinolabs-repo/mcp/qino-lab-mcp && pnpm dev`
+1. Confirm UI at `http://localhost:4020`
+2. Read `.claude/qino-config.json` — must have `protocol: "qino"`
+3. Read `graph.json` — workspace structure
+4. Confirm MCP tools: `read_graph`, `read_node`, `read_config`, `write_annotation`, `create_node`, `update_view`, `write_journal_entry`
 
-2. **Detect protocol workspace:**
-   - Read `.claude/qino-config.json` — must have `protocol: "qino"`
-   - Read `graph.json` — the workspace's node graph
-   - If not protocol-compliant, explain what's needed
-
-3. **Confirm MCP tools available:**
-   - `read_graph` — Read root or sub-graph with node summaries
-   - `read_node` — Read full node detail (identity, story, content, annotations)
-   - `read_config` — Read workspace configuration
-   - `write_annotation` — Write an annotation to a node
-   - `create_node` — Create a node (or view), update graph, echo in journal
-   - `update_view` — Change a view's focal or included nodes
-   - `write_journal_entry` — Append entry with context marker
-
-4. **Output confirmation:**
+Output:
 
 ```
                         lab mode active
@@ -93,7 +55,7 @@ User says:
 
   UI: http://localhost:4020
 
-  workspace: [workspace name from graph.json]
+  workspace: [name from graph.json]
   nodes: [count] nodes, [count] edges
 
 
@@ -111,266 +73,37 @@ User says:
 
 ---
 
-## Working in Lab Mode
+## Autonomous Grant
 
-### Annotate In-Flight, Not After
+When user explicitly grants autonomous work ("research this autonomously", "go explore, I'll check later"):
 
-The lab is not a documentation system. It's the conversation medium.
+- Work independently but STILL surface findings through annotations
+- Write at natural breakpoints, not in real-time
+- Annotations become the report — not prose summaries
 
-**Wrong pattern:**
-```
-1. Run tests autonomously
-2. Analyze results
-3. Write annotation summarizing what happened
-4. Tell user what you found
-```
+Without autonomous grant: annotate in real-time, check in when direction is unclear.
 
-**Right pattern:**
-```
-1. Write proposal annotation: "Testing linear falloff hypothesis"
-2. Run test
-3. Write tension annotation immediately if something unexpected: "Linear falloff increased stuckness — hypothesis wrong"
-4. Brief text to user: "See the tension in emergent-path — not what we expected"
-```
-
-### Reading First
-
-Before annotating, read the relevant content:
-
-```
-1. read_graph → understand workspace structure
-2. read_node(id) → read nodes you'll work with
-3. Then write_annotation or create_node
-```
-
-### Signal Types
-
-Choose the appropriate signal type based on what you're communicating:
-
-| Signal | When to write it | Example |
-|--------|------------------|---------|
-| `proposal` | BEFORE trying something — share the plan | "Testing: does linear falloff reduce stuckness?" |
-| `tension` | IMMEDIATELY when something unexpected happens | "Linear falloff made stuckness worse, not better" |
-| `reading` | When you've processed content and have an interpretation | "Single-modality substrate explains thin output" |
-| `connection` | When you notice a link between nodes | "This echoes what crossing-threshold describes as ceremony" |
-
-**Proposals come first.** Before running an experiment, write what you're about to try. The user sees your intent, can redirect if needed, and watches the result unfold.
-
-### Annotation Format
-
-When calling `write_annotation`:
-
-```json
-{
-  "nodeId": "the-node-id",
-  "signal": "reading|connection|tension|proposal",
-  "content": "The observation or insight",
-  "target": "optional: specific content element this references"
-}
-```
-
-### Journal Entries
-
-Use `write_journal_entry` to mark session context:
-
-```json
-{
-  "content": "Entry text",
-  "context": "session/2025-02-07 or node/node-id or view/view-id"
-}
-```
+**Check in before major moves:**
+- "Two directions — want proposals for both?"
+- "About to run 4 experiments — annotate each, or just surprising ones?"
+- "This might take a while — want me to go autonomous?"
 
 ---
 
-## Views — Shared Attention
+## Communication
 
-Views are curated subsets of the graph — "think about these things together."
-
-**When to create a view:**
-- Multiple nodes need to be attended to together
-- A tension or connection spans several nodes
-- You want to frame a question that involves 2-4 nodes
-- Full graph is too broad, single node loses relational context
-
-**Creating a view:**
-
-```json
-{
-  "id": "the-naming-tension",
-  "title": "The Naming Tension",
-  "type": "view",
-  "story": "Crossing as functional act vs. ceremony — the name hides the experiential quality",
-  "view": {
-    "focal": "crossing-threshold",
-    "includes": ["domain-language", "qino-world"]
-  }
-}
-```
-
-The `focal` node is the entry point — what the view is primarily about. `includes` are the other nodes to attend to together.
-
-**Using views:**
-- Annotations on the view node apply to the framing, not individual nodes
-- Journal entries with `context: view/the-naming-tension` track thinking within that frame
-- Views can be composted when inquiry resolves — they're not permanent
-
-**View lifecycle:**
-```
-active    → working with this framing
-composted → inquiry resolved, view recedes from graph
-```
-
-**MCP tools:**
-- `create_node` with `view` field → creates a view node
-- `update_view` → changes focal or included nodes as inquiry evolves
+| Instead of... | Do this |
+|---------------|---------|
+| Long prose explaining findings | Annotation → brief text with link |
+| "I ran the test and found X, Y, Z" | Annotation in UI → "see the tension in [node]" |
+| Announcing "I'm going to create..." | Just do it |
+| Reporting to user | Thinking alongside user |
 
 ---
 
-## Navigators — Cross-Session Orientation
+## Ending
 
-Navigators are separate from lab mode. They're living orientation documents for territories being actively built, stored in `navigators/` in the implementation repo.
-
-**Use navigators when:**
-- Work spans multiple sessions and you need persistent context
-- Territory crosses multiple apps, concepts, or systems
-- You want a reading order and open questions that persist
-
-**Activate via:** "use the active navigator", "navigate [territory]"
-
-See `workflows/navigate.md` for full navigator workflow.
-
----
-
-## Node Creation
-
-When creating nodes, provide:
-
-```json
-{
-  "id": "kebab-case-id",
-  "title": "Human-Readable Title",
-  "type": "capture|concept|facet|etc",
-  "story": "Why this node exists — the impulse"
-}
-```
-
-The tool will:
-1. Create `nodes/{id}/node.json` with identity
-2. Create `nodes/{id}/story.md` with impulse
-3. Add node entry to `graph.json`
-4. Echo creation to `journal.md`
-
----
-
-## Real-Time Communication
-
-**Key insight:** The user is watching `http://localhost:4020`. When you write an annotation, it appears immediately. The user sees your thinking unfold.
-
-This changes the communication pattern:
-
-| Old pattern | Lab pattern |
-|-------------|-------------|
-| "I ran the test and found X, Y, Z..." | Write annotation → link to node |
-| Long prose explanation | Graph shows it visually |
-| User reads your summary | User watches findings appear |
-| Agent reports to user | Agent thinks alongside user |
-
-**Brief text with navigable links:**
-- "proposal added — [see emergent-path](http://localhost:4020/qinolabs-repo/node/emergent-path?at=implementations/sound-lab/explorations)"
-- "tension: the hypothesis was wrong — [view finding](http://localhost:4020/...)"
-- "created new node for this finding — [check it out](http://localhost:4020/...)"
-
----
-
-## Deeplinks — Making References Navigable
-
-MCP tool responses include `_links` for building navigable references:
-
-### read_graph Response
-
-```json
-{
-  "nodes": [...],
-  "_links": {
-    "self": "http://localhost:4020/qinolabs-repo/graph?at=implementations/sound-lab/explorations",
-    "nodes": {
-      "emergent-path": "http://localhost:4020/qinolabs-repo/node/emergent-path?at=implementations/sound-lab/explorations",
-      "path-b": "http://localhost:4020/qinolabs-repo/node/path-b?at=implementations/sound-lab/explorations"
-    }
-  }
-}
-```
-
-### read_node Response
-
-```json
-{
-  "id": "emergent-path",
-  "_links": {
-    "self": "http://localhost:4020/qinolabs-repo/node/emergent-path?at=implementations/sound-lab/explorations",
-    "graph": "http://localhost:4020/qinolabs-repo/graph?at=implementations/sound-lab/explorations"
-  }
-}
-```
-
-### Using Deeplinks in Messages
-
-**After reading a graph, reference nodes with links:**
-
-```markdown
-I noticed a tension between [emergent-path](${_links.nodes["emergent-path"]})
-and [path-b](${_links.nodes["path-b"]}) — click to see each node.
-```
-
-**After writing an annotation, link to the node:**
-
-```markdown
-Added a tension annotation. [See it in emergent-path](${_links.self})
-```
-
-**Link back to the graph view:**
-
-```markdown
-Done exploring this node. [Back to graph](${_links.graph})
-```
-
-### Deeplink Patterns
-
-| Action | Pattern |
-|--------|---------|
-| Reference a node | `[node-title](_links.nodes["node-id"])` |
-| Link to current node | `[see details](_links.self)` |
-| Link to parent graph | `[back to graph](_links.graph)` |
-| After writing annotation | `[view in node-name](_links.self)` |
-| After creating node | Read the new node, then `[see node-name](_links.self)` |
-
-### Why This Matters
-
-Links let the user click directly to what you're describing. Instead of:
-
-> "I found a tension in the emergent-path node"
-
-Write:
-
-> "Found a tension — [see emergent-path](http://localhost:4020/qinolabs-repo/node/emergent-path?at=implementations/sound-lab/explorations)"
-
-The link saves the user from navigating manually and shows exactly where to look
-
-**Check in before major moves (unless autonomous grant):**
-- "I see two directions from here — want me to write proposals for both so you can choose?"
-- "About to run 4 experiments — should I annotate each, or just the surprising ones?"
-- "This might take a while — want me to go autonomous and surface findings when done?"
-
----
-
-## Ending Lab Mode
-
-Lab mode persists until:
-- User explicitly leaves ("exit lab mode", "done with lab")
-- Session naturally concludes
-- User switches to a different workflow
-
-When ending:
+Lab mode persists until: user says "exit lab mode" / "done with lab", session concludes, or user switches workflow.
 
 ```
                         lab session complete
@@ -382,63 +115,8 @@ When ending:
 
 ---
 
-## Voice Principles
+## Reference
 
-### Lab mode voice:
-- Observational — surface what you notice
-- Economical — the artifact carries meaning, not prose
-- Precise — signal types matter, choose them thoughtfully
-- Present — you're working alongside the user, not reporting to them
+For operational details (deeplinks, views, node creation, journal entries, annotation format, error states):
 
-### Lab mode never:
-- Explains what the user already sees in the UI
-- Overwrites journal entries (append only)
-- Creates annotations without reading the node first
-- Uses proposal signals casually — they're actionable
-
----
-
-## Error States
-
-**No protocol workspace:**
-> "This workspace isn't protocol-compliant. Lab mode requires:
-> - `.claude/qino-config.json` with `protocol: "qino"`
-> - `graph.json` at workspace root
->
-> Would you like to set this up?"
-
-**MCP tools not available:**
-> "Can't connect to qino-lab-mcp. Check that:
-> - The MCP server is running
-> - It's configured in Claude settings"
-
-**Node not found:**
-> "Node `[id]` not found in the graph. Available nodes: [list top 5]"
-
----
-
-## Do NOT:
-
-- **Work autonomously then summarize** — annotate as you discover, not after
-- **Write long prose** when annotations surface the insight
-- **Forget the UI URL** — always share `http://localhost:4020` if user seems lost
-- **Use `reading` for proposals** — proposals come BEFORE the work, readings come AFTER
-- Create nodes without reading context first
-- Modify files directly — use the MCP tools
-- Announce "I'm going to create an annotation..." — just do it
-
-## Anti-Pattern: The Documentation Trap
-
-This is what NOT to do **without an autonomous grant**:
-
-```
-Agent: [works for 10 minutes autonomously]
-Agent: [runs tests, analyzes results, fixes code]
-Agent: "Now let me capture this in the lab..."
-Agent: [writes annotation summarizing everything]
-User: "I have no idea what just happened"
-```
-
-**With autonomous grant, this pattern is fine** — user explicitly asked for independent work.
-
-**Without autonomous grant**, the lab is where work happens visibly, not where it gets documented after.
+Read `references/lab/lab-operations.md` when you need them — not at activation.

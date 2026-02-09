@@ -364,6 +364,13 @@ Match user intent to workflow. **Spawn the specified agent** to execute the work
 - Signal types: reading, connection, tension, proposal
 - The graph becomes the medium of dialogue — annotations surface in the UI
 
+**Lab mode persistence (compaction resilience):**
+- Lab mode is a long-running behavioral overlay that persists across the session
+- If the conversation has been compacted and lab mode was previously active, re-read `workflows/lab.md` to restore full behavioral instructions
+- The graph carries continuity — annotations, nodes, and journal entries persist across compaction boundaries
+- Detection: if the conversation summary mentions "lab mode active" or recent MCP tool calls include qino-lab tools (`write_annotation`, `read_graph`, etc.), treat "use the lab" as a re-injection refresh
+- Operational details (deeplinks, views, node creation) live in `references/lab/lab-operations.md` — read on demand, not at activation
+
 ---
 
 ## Implementation Context

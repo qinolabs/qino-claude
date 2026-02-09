@@ -20,14 +20,14 @@ Match user intent to workflow. Read the workflow file and follow its instruction
 
 | User Intent | Workflow |
 |-------------|----------|
-| Write chronicle chapter, "next chapter" | [workflows/chapter.md](../workflows/chapter.md) |
-| Survey git history, "plan chapters" | [workflows/survey.md](../workflows/survey.md) |
-| Diagnose scribe system, "check scribe" | [workflows/diagnose.md](../workflows/diagnose.md) |
-| Rewind last chapter, "undo chapter" | [workflows/rewind.md](../workflows/rewind.md) |
-| Create visual style, "configure images" | [workflows/visual-style.md](../workflows/visual-style.md) |
-| Transmit research, "create transmission" | [workflows/transmit.md](../workflows/transmit.md) |
-| Apply narrator lens | [workflows/narrator.md](../workflows/narrator.md) |
-| Apply wanderer lens | [workflows/wanderer.md](../workflows/wanderer.md) |
+| Write chronicle chapter, "next chapter" | [workflows/chapter.md](workflows/chapter.md) |
+| Survey git history, "plan chapters" | [workflows/survey.md](workflows/survey.md) |
+| Diagnose scribe system, "check scribe" | [workflows/diagnose.md](workflows/diagnose.md) |
+| Rewind last chapter, "undo chapter" | [workflows/rewind.md](workflows/rewind.md) |
+| Create visual style, "configure images" | [workflows/visual-style.md](workflows/visual-style.md) |
+| Transmit research, "create transmission" | [workflows/transmit.md](workflows/transmit.md) |
+| Apply narrator lens | [workflows/narrator.md](workflows/narrator.md) |
+| Apply wanderer lens | [workflows/wanderer.md](workflows/wanderer.md) |
 
 ---
 
