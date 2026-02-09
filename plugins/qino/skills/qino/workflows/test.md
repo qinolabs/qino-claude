@@ -113,16 +113,10 @@ In decision context mode, the concept provides the *grounding* — the test is a
 
 The SKILL has already detected workspace context. Use it to determine capture destination:
 
-| context.type | Capture destination |
-|--------------|---------------------|
-| `concepts` | notes/ |
-| `research` | notes/ or fragments/ (path-based) |
-| `implementation` | notes/ in conceptsRepo (tagged) |
+All captures go to `{workspace root}/.qino/captures/` regardless of context type. Resolve captures path using the same logic as the capture workflow.
 
 For `implementation`:
-- Use `context.conceptsRepo` as workspace root for note creation
 - Use `context.linkedConcept` as default test target if no argument
-- Get repository name from current directory (for `source` field)
 
 For `research`:
 - If inside `explorations/[id]/` → capture to `explorations/[id]/fragments/`
@@ -204,13 +198,11 @@ For `research`:
 
    **WAIT** for response.
 
-10. **If captured:** Create a note with ecology reference.
+10. **If captured:** Create a flat capture file at `{workspace root}/.qino/captures/`.
 
-   a. Generate note id from essence (lowercase, hyphenated)
+   a. Generate file name: `YYYY-MM-DD_essence-as-kebab-case.md`
 
-   b. Create `notes/` directory if it doesn't exist
-
-   c. Create note file at `notes/YYYY-MM-DD_note-id.md`:
+   b. Create file at `{captures_path}/YYYY-MM-DD_essence.md`:
    ```markdown
    # [Essence as title]
 
@@ -218,43 +210,6 @@ For `research`:
    **Ecology:** [ecology name]
 
    [What the user noticed, in their words]
-   ```
-
-   d. Add entry to `manifest.json` notes array:
-
-   **From concepts repo:**
-   ```json
-   {
-     "id": "note-id",
-     "path": "notes/YYYY-MM-DD_note-id.md",
-     "captured": "YYYY-MM-DDTHH:MM:SSZ",
-     "essence": "[distilled essence]",
-     "references": [
-       {
-         "scope": "[concept-id]",
-         "ecology": "[ecology name]",
-         "context": "[what was noticed, brief]"
-       }
-     ]
-   }
-   ```
-
-   **From implementation context:**
-   ```json
-   {
-     "id": "note-id",
-     "path": "notes/YYYY-MM-DD_note-id.md",
-     "captured": "YYYY-MM-DDTHH:MM:SSZ",
-     "essence": "[distilled essence]",
-     "references": [
-       {
-         "scope": "[linkedConcept from context]",
-         "ecology": "[ecology name]",
-         "context": "[what was noticed, brief]",
-         "source": "[repository name]"
-       }
-     ]
-   }
    ```
 
 11. After capturing (or not), offer continuation:

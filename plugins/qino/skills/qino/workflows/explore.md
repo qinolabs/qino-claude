@@ -160,40 +160,18 @@ During any explore session, the user may signal that something reaches beyond th
 
 3. **WAIT** for confirmation/addition.
 
-4. **Create notes directory** if it doesn't exist.
-
-5. **Create note file** at `notes/YYYY-MM-DD_note-id.md`:
+4. **Create capture file** at `{workspace root}/.qino/captures/YYYY-MM-DD_essence.md`:
    ```markdown
    # [Theme — in user's words]
 
    **Captured:** YYYY-MM-DDTHH:MM:SSZ
 
    [User's observation, exactly as they said it]
+
+   Touches: [concept-1], [concept-2]
    ```
 
-6. **Add note entry** to `manifest.json` notes array with multi-concept references:
-   ```json
-   {
-     "id": "note-id",
-     "path": "notes/YYYY-MM-DD_note-id.md",
-     "captured": "YYYY-MM-DDTHH:MM:SSZ",
-     "essence": "[distilled essence]",
-     "references": [
-       {
-         "concept": "[current-concept-id]",
-         "woven": "YYYY-MM-DDTHH:MM:SSZ",
-         "context": "emerged during exploration"
-       },
-       {
-         "concept": "[other-concept-id]",
-         "woven": "YYYY-MM-DDTHH:MM:SSZ",
-         "context": "connection recognized"
-       }
-     ]
-   }
-   ```
-
-7. **Confirm:** `connected across [concept-1] and [concept-2]`
+5. **Confirm:** `captured across [concept-1] and [concept-2]`
 
 8. **Continue naturally** with explore work — the capture is seamless.
 
@@ -244,20 +222,7 @@ Want me to draft these additions?
 
 ---
 
-If no concept id is provided:
-
-1. Check `manifest.json` for notes with empty `references` array
-2. If such notes exist, offer them as entry points:
-
-   > "There are thoughts waiting to find their place:"
-   >
-   > - [essence 1]
-   > - [essence 2]
-   >
-   > "Any of these feel alive? Or which concept would you like to explore?"
-
-3. If user picks a note, ask which concept it might touch, then continue with that concept (the note becomes the starting alive thread)
-4. If no such notes, simply ask: "Which concept would you like to explore?"
+If no concept id is provided, ask: "Which concept would you like to explore?"
 
 **Steps:**
 
@@ -270,7 +235,6 @@ If no concept id is provided:
    - **Uneven**: Some sections rich, others empty → likely needs deepening
    - **Cluttered**: All sections have content but feel disorganized → likely needs restructuring
    - **Has held threads**: Check manifest for `held_threads` array — material from origins that wasn't carried forward
-   - **Has notes**: Check manifest `notes` array for entries where any `reference.scope` = this concept id and status suggests active (not "integrated", not "dormant")
 
 4. Output an arrival surface — this is **visible output** showing where we're starting:
 
@@ -288,9 +252,6 @@ If no concept id is provided:
 │ held threads (if any)                   │
 │ · [thread 1 theme]                      │
 │ · [thread 2 theme]                      │
-│                                         │
-│ connected notes (if any)                │
-│ · [note essence]                        │
 │                                         │
 └─────────────────────────────────────────┘
 
@@ -330,48 +291,6 @@ Use the theme from `held_threads` directly — do NOT read the origin file yet.
 - Acknowledge lightly: "Makes sense — things shift."
 - Continue with normal explore flow
 - Thread remains held — it may have other dimensions that become alive later
-
-### If notes might help
-
-Check `manifest.json` for notes that might connect:
-- Notes with empty `references` — thoughts waiting to find their place
-- Notes already connected to this concept — may have more to give
-
-**Trigger conditions (any of):**
-- User's alive thread echoes a note's essence (language, theme, or direction)
-- User expresses uncertainty and relevant notes exist
-- User's response points toward something a captured note touches
-
-**If triggered, offer specifically:**
-
-For notes with empty references:
-> "You captured something about [essence] — does that connect here?"
-
-For notes already connected:
-> "There's a note here about [essence] — does it still have warmth?"
-
-**If user engages:**
-- Read the note file via its path
-- Surface the content
-- Work with it using normal expand/deepen modes
-- **For notes with empty references:** Add a reference when connected
-- **For connected notes:** Update status to reflect engagement
-
-**If user declines:**
-- Acknowledge lightly
-- Continue with normal explore flow
-- Leave notes without references as they are — they'll surface again when they have warmth
-
-### Reference removal
-
-During exploration, if a note no longer feels relevant to this concept:
-
-> "This note about [title] — does it still connect here, or has the concept moved past it?"
-
-**If user confirms removal:**
-- Remove that reference from the note's references array
-- If no references remain, ask: "This was the last anchor — archive the note, or keep it for now?"
-- Confirm before any changes
 
 7. Based on their response, work in the appropriate mode:
 

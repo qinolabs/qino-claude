@@ -55,7 +55,7 @@ If nothing recent is detectable, omit this line entirely.
 
 **When `context.type === "concepts"`:**
 
-1. Read `manifest.json` to get concepts and notes.
+1. Read `manifest.json` to get concepts.
 2. Check for recent activity (manifest timestamps, git).
 3. Output:
 
@@ -71,17 +71,6 @@ If nothing recent is detectable, omit this line entirely.
     [concept-name-1]
     [concept-name-2]
     [concept-name-3]
-
-  [If notes with 2+ references exist:]
-  threads between
-
-    [note essence] — [concept-1], [concept-2]
-
-  [If notes with empty references exist:]
-  waiting
-
-    [note essence 1]
-    [note essence 2]
 
 
 ─────────────────────────────────────────────────
@@ -262,12 +251,6 @@ When home detects something that might be misplaced, offer a gentle repair path:
 ```
   (this has a lot of open questions —
    might work better as a research exploration?)
-```
-
-**Note that's been waiting a long time:**
-```
-  (this note has been waiting since [date] —
-   still relevant, or ready to let go?)
 ```
 
 Only surface one repair suggestion at a time. Don't overwhelm.

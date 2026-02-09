@@ -55,7 +55,6 @@ Read the node's full structure:
 | **Uneven** | Content files vary — some developed, some sparse |
 | **Rich** | Developed content + annotations |
 | **Has sub-graph** | graph.json exists in node directory — facets are navigable |
-| **Has connected captures** | Edges from capture-type nodes point here |
 
 ### 3. Arrival Surface
 
@@ -73,10 +72,6 @@ Show what's here without over-explaining:
 threads held here
   [thread-1]
   [thread-2]
-
-[If connected captures exist:]
-captures touching this
-  [capture-title] — [edge-context]
 
 [If sub-graph exists:]
 facets
@@ -109,21 +104,7 @@ If user declines: `makes sense — things shift.` Continue naturally.
 
 **CRITICAL:** Held threads are in `node.json`. They are visible by design (unlike origins in legacy model). But still — offer gently, accept decline immediately.
 
-### 5. Capture Offering
-
-**When to offer** (during dialogue):
-- User's alive-thread echoes a capture's essence (check capture nodes connected via edges)
-- User is uncertain, and a relevant capture exists
-
-**How to offer:**
-```
-you captured something about [essence] — does it connect here?
-```
-
-If engages: read the capture's story.md, surface it, work with it.
-If declines: acknowledge, continue.
-
-### 6. Working Modes
+### 5. Working Modes
 
 Based on the user's alive-thread response, work in one of these modes:
 
@@ -166,10 +147,9 @@ When thought reaches beyond the current node during exploration:
 
 1. Acknowledge: `∴ [essence]`
 2. Ask which nodes it touches (or propose if obvious from graph edges)
-3. Create a **capture node** via the capture flow:
-   - `nodes/<id>/node.json`, `story.md`
-   - Add to `graph.json` with edges to source and target nodes
-   - Append echo to `journal.md`
+3. Create a **flat capture file** at `{workspace root}/.qino/captures/`:
+   - File: `YYYY-MM-DD_essence.md`
+   - Format: title, timestamp, observation (noting which nodes it touches)
 4. Continue exploring the current node naturally
 
 ### 9. Sub-Graph Navigation

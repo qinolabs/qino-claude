@@ -52,6 +52,8 @@ Check if directory already has qino structure:
 ├── .gitignore                 # Ignores all child repos + machine-specific
 ├── workspace-manifest.json    # Empty registry
 ├── workspace-config.json      # Minimal config with relative path placeholders
+├── .qino/
+│   └── captures/              # Flat capture files — independent records
 ├── .claude/
 │   └── qino-config.json      # repoType: "workspace"
 └── README.md                  # Workspace coordination guide
@@ -73,7 +75,6 @@ concepts-repo/
 ├── notes-archive.json
 ├── concepts/.gitkeep
 ├── ecosystem/.gitkeep
-├── notes/.gitkeep
 ├── .claude/
 │   ├── qino-config.json
 │   └── references/

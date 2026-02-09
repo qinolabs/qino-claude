@@ -40,11 +40,6 @@ Home shows what's here, references recent activity when detectable, and offers p
   ecosystem
     [title-1]
 
-  [If capture nodes exist:]
-  captures
-    [essence-from-story.md] → [connected node via edge, if any]
-    [essence-from-story.md]
-
   [If any concept has sub-graph:]
   facets within
     [concept-title] has [N] facets
@@ -69,19 +64,17 @@ Home shows what's here, references recent activity when detectable, and offers p
 
 **Concepts**: List by title from graph.json. Read `story.md` only if you need material for suggestions — don't read every node on arrival.
 
-**Captures**: Show the capture's essence (first sentence of `story.md` or title if story is unavailable). If the capture has edges, show the connection: `[essence] → [connected-node-title]`. If multiple edges, pick the most relevant one.
-
 **Facets within**: Scan concept nodes for sub-graphs. If a concept directory contains `graph.json`, count its nodes. Only mention concepts that have facets — don't list those without.
 
 **Ecosystem**: Same listing as concepts, separate section. These are cross-cutting — distinction-making nodes.
 
 **Suggestion generation:**
-- Ground suggestions in actual content from graph.json — node titles, edge contexts, recent captures
+- Ground suggestions in actual content from graph.json — node titles, edge contexts, recent activity
 - One observation + one possible action per suggestion
 - Examples:
-  - `three captures around arcs — they might be forming something. explore one?`
   - `qino-world has 4 facets developing. the crossing threshold feels active.`
   - `domain language connects to everything. a good place to deepen.`
+  - `arc-projections references five other nodes — a lot of connections forming.`
 
 ---
 

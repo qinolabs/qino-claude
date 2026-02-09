@@ -43,7 +43,6 @@ Copy entire template from `plugins/qino/references/templates/concepts/`:
 ├── notes-archive.json
 ├── concepts/.gitkeep
 ├── ecosystem/.gitkeep
-├── notes/.gitkeep
 ├── .claude/
 │   ├── qino-config.json
 │   └── references/
@@ -112,7 +111,6 @@ Your concepts workspace is ready.
 
 concepts/ — where ideas stabilize
 ecosystem/ — cross-cutting patterns
-notes/ — captures waiting to be woven
 
 ─────
 

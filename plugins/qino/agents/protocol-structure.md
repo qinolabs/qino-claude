@@ -26,7 +26,6 @@ Nodes have types that shape how you engage:
 |------|-----------|---------------|
 | `concept` | A developed idea with impulse, content, possibly facets | Full exploration: alive thread, work modes, sub-graph |
 | `ecosystem` | Cross-cutting system-level work | Hold questions longer — distinction-making, not just development |
-| `capture` | A thought, observation, discovery — first-class | Light touch — it exists as a node; it has edges to what sparked it |
 | `facet` | A navigable aspect of a parent concept | Same depth as concept, but awareness of parent context |
 | `arc` | A temporal container tracking emergence | Read for context; arcs accumulate naturally |
 | `navigator` | An orientation document for building | Reference for terrain; not actively explored like concepts |
@@ -39,12 +38,10 @@ Edges in `graph.json` carry typed relationships with context sentences. They are
 
 **Read edges to understand:**
 - What a concept references (vocabulary, principles)
-- What a capture was sparked by
 - What extends what (continuity chains)
 - How facets relate to each other
 
 **Create edges when:**
-- A new capture connects to existing nodes (always include context)
 - Exploration reveals a relationship not yet captured
 - Cross-concept signals surface during work
 
@@ -89,30 +86,20 @@ Content.
 **Read journal** for temporal awareness — what happened recently, what context markers exist.
 
 **Append to journal** when:
-- A capture is created (echo with `<!-- context: capture -->`)
 - A significant shift happens during exploration
 - The user explicitly asks to note something in the journal
 
 **Never overwrite** existing journal content. Append only, at the bottom.
 
-## Capture-as-Node Convention
+## Captures
 
-In the protocol, captures are **not** files in a `notes/` directory. They are first-class nodes in the graph:
+Captures are **not** graph nodes. They are independent flat files under the workspace root (`{workspace root}/.qino/captures/`), outside any graph.
 
-- Type: `"capture"`
-- Directory: `nodes/<capture-id>/`
-- Contains: `node.json`, `story.md`, optionally `content/capture.md`
-- Connected: via edges in `graph.json` to related nodes
+- Format: `YYYY-MM-DD_essence.md` — title, timestamp, content
+- No node.json, no graph.json entries, no edges
+- Pull-based composting: user explicitly points to a capture when they want to absorb it into a concept
 
-**When creating a capture:**
-1. Generate an id from the essence (kebab-case, descriptive)
-2. Create `nodes/<id>/node.json` (type: "capture")
-3. Create `nodes/<id>/story.md` (the captured thought)
-4. Add node entry to root `graph.json`
-5. Add edges to connected nodes (if connections detected)
-6. Append echo to `journal.md`
-
-**Cross-concept signals** during exploration also create capture nodes (not notes files).
+**Cross-concept signals** during exploration also create flat capture files (not graph nodes).
 
 ## Held Threads (Protocol)
 
