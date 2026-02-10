@@ -1389,9 +1389,13 @@ Requires a Claude Pro/Max, Team/Enterprise, or Console account.
 Updates happen automatically when you run `/plugin marketplace update`.
 
 **Available plugins:**
-- `qino` — Core ecology (concepts, research, implementation)
-- `qino-prose` — Chronicle writing, research transmissions, prose lenses
-- `design-adventure` — Seven-perspective design exploration
+
+| Plugin | Description |
+|--------|-------------|
+| `qino` | Core ecology (concepts, research, implementation) |
+| `qino-prose` | Chronicle writing, research transmissions, prose lenses |
+| `qino-art` | Visual content system |
+| `design-adventure` | Seven-perspective design exploration |
 
 ## Getting Started
 

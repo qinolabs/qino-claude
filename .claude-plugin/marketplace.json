@@ -14,25 +14,25 @@
       "name": "qino",
       "version": "2.1.0",
       "description": "Ecology for developing ideas — concepts, research, implementation",
-      "source": { "type": "local", "path": "plugins/qino" }
+      "source": "./plugins/qino"
     },
     {
       "name": "qino-prose",
       "version": "2.1.0",
       "description": "Chronicle writing, research transmissions, and prose lenses",
-      "source": { "type": "local", "path": "plugins/qino-prose" }
+      "source": "./plugins/qino-prose"
     },
     {
       "name": "qino-art",
       "version": "2.0.0",
       "description": "Visual content system",
-      "source": { "type": "local", "path": "plugins/qino-art" }
+      "source": "./plugins/qino-art"
     },
     {
       "name": "design-adventure",
       "version": "2.0.0",
       "description": "Seven-perspective design exploration",
-      "source": { "type": "local", "path": "plugins/design-adventure" }
+      "source": "./plugins/design-adventure"
     }
   ]
 }
