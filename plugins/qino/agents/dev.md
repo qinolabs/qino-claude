@@ -164,6 +164,17 @@ Each iteration has:
 - Technical Decisions (with discovery narrative)
 - Learnings (what shifted, what worked, what surprised, led to)
 
+## Proposal Awareness
+
+**Before planning a new iteration**, check for open proposal annotations on the implementation node. Use the MCP `read_node` tool (graphPath: `qinolabs-repo`, nodeId: the app id) or read `implementations/[app]/annotations/` directly. Proposals with `signal: proposal` and no `status: resolved/dismissed` are open. Surface relevant ones — they carry feature ideas and observations from prior sessions that should influence what gets built next.
+
+**During work**, when something comes up that shouldn't be acted on now — a feature idea, an architectural observation, a cross-app opportunity — capture it as a proposal annotation on the implementation node:
+- signal: `proposal`
+- body: concise description of the idea and why it matters
+- target: (optional) related iteration or concept id
+
+Proposals follow the lifecycle: `open` (default) -> `accepted` (will be built) -> `resolved` (built) or `dismissed` (not relevant anymore). The dev agent reads them; the human decides their fate.
+
 ## Documentation and Learnings
 
 Learnings live where work happens (colocation, not separate systems):
