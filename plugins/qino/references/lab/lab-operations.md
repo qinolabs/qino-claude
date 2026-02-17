@@ -90,9 +90,12 @@ The `focal` node is the entry point. `includes` are the other nodes to attend to
 **Using views:**
 - Annotations on the view node apply to the framing, not individual nodes
 - Journal entries with `context: view/the-naming-tension` track thinking within that frame
-- Views can be composted when inquiry resolves
 
 **Lifecycle:** `active` → `composted`
+
+Views are temporary attention frames. When the question a view was created to hold has been resolved — the tension settled, the connection understood, the decision made — compost it immediately by setting `status: "composted"`. Composted views are hidden from the landing page.
+
+**Cleanup prompt:** At session end, if views were created or used during the session, check whether their framing question has resolved. Offer to compost any that have served their purpose. Don't let views accumulate — a stale view is noise on the landing page.
 
 **MCP tools:**
 - `create_node` with `view` field → creates a view node

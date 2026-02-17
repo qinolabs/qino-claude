@@ -49,7 +49,12 @@ Before beginning any concept exploration, check for an existing draft:
 2. **If draft exists:**
    - Note the date from the `Draft started:` field in the draft header
    - Show: `(draft in progress from [date])`
-   - Ask: "Continue with existing draft, or start fresh?"
+   - Use `AskUserQuestion`:
+
+     | Header | Question | Options |
+     |--------|----------|---------|
+     | "Draft" | "Found a draft from [date]. What do you want to do?" | Continue ("Pick up where you left off"), Start fresh ("Archive old draft, begin new one") |
+
    - **If continue:** Work with the draft file for all subsequent updates
    - **If fresh:** Move old draft to `concepts/[concept-id]/drafts-archive/`, create new draft
 
@@ -99,13 +104,11 @@ When making changes to a concept during exploration:
 
 ## Settling (After Substantial Draft Work)
 
-When exploration reaches a natural pause, or user signals done:
+When exploration reaches a natural pause, or user signals done, use `AskUserQuestion`:
 
-> "This draft has taken shape. What would you like to do?"
->
-> → **Create revision** — saves current state, updates concept.md
-> → **Save for later** — keeps draft, original unchanged
-> → **Keep exploring** — continue working
+| Header | Question | Options |
+|--------|----------|---------|
+| "Draft" | "This draft has taken shape. What would you like to do?" | Create revision ("Save current state, update concept.md"), Save for later ("Keep draft, original unchanged"), Keep exploring ("Continue working") |
 
 **If "Create revision":**
 1. Show summary of what changed (not full diff, just key changes)

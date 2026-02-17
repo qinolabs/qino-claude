@@ -52,15 +52,11 @@ Three modes based on user intent:
 
 2. **If user specified a territory**, match by node ID or title.
 
-3. **If multiple active navigators**, show them:
-   ```
-   active navigators
+3. **If multiple active navigators**, use `AskUserQuestion` to select:
 
-     emergence-experiments — emergence mechanics, readiness lenses, world simulation
-     lens-ecosystem — lens architecture, crossing constraints, ecosystem design
-
-   Which territory?
-   ```
+   | Header | Question | Options |
+   |--------|----------|---------|
+   | "Navigator" | "Which territory?" | One option per active navigator: label = navigator title, description = first line of story or territory summary |
 
 4. **Load the matched navigator:**
    - `read_node` to get story + content files
@@ -264,11 +260,13 @@ When a navigator is active (read at session start), its terrain and open questio
 
 ## Lifecycle
 
-| Phase | What Happens |
-|-------|-------------|
-| **Created** | Deep exploration produces initial navigator with terrain, reading order, open questions, first session log entry |
-| **Active** | Updated across sessions. Terrain grows. Questions resolve and new ones surface. Session log accumulates. |
-| **Completed** | Work resolves. Navigator status changes to "completed". The node remains in the graph as archival documentation of how a territory was explored and built. |
+| Phase | Status | What Happens |
+|-------|--------|-------------|
+| **Created** | `active` | Deep exploration produces initial navigator with terrain, reading order, open questions, first session log entry |
+| **Active** | `active` | Updated across sessions. Terrain grows. Questions resolve and new ones surface. Session log accumulates. |
+| **Composted** | `composted` | Work resolves. Navigator status changes to `composted`. The node remains in the graph as archival documentation but is **hidden from the landing page**. Its insights have been absorbed. |
+
+When a navigator's territory is fully explored or the work it oriented is complete, set its status to `composted`. This removes it from the landing page and active navigator lists while preserving it in the graph for reference. If the user says a navigator is "done" or "complete", compost it.
 
 ---
 

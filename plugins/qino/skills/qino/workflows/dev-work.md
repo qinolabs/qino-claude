@@ -109,13 +109,13 @@ from here
 │                                         │
 └─────────────────────────────────────────┘
 
-The linked concept evolved. Want to:
-  • review — see what changed in detail
-  • reconcile — update iteration plan if needed
-  • acknowledge — sync timestamp, continue as-is
-```
+Use `AskUserQuestion` to let the user decide:
 
-If user chooses "reconcile", read full concept and compare to current iteration goals. Offer to adjust iteration scope/goals based on concept changes.
+| Header | Question | Options |
+|--------|----------|---------|
+| "Concept sync" | "The linked concept evolved. How do you want to handle it?" | Review ("See what changed in detail"), Reconcile ("Update iteration plan if needed"), Acknowledge ("Sync timestamp, continue as-is") |
+
+If "Reconcile", read full concept and compare to current iteration goals. Offer to adjust iteration scope/goals based on concept changes.
 
 After reconciliation or acknowledgment, update `lastConceptCheck` in implementation.md.
 
@@ -159,10 +159,11 @@ When user says "plan iterations" or similar:
 ### If iterations already exist:
 
 1. Show current iteration state
-2. Offer to:
-   - Review and adjust current iteration
-   - Plan next iteration
-   - Reorder iterations
+2. Use `AskUserQuestion` to determine direction:
+
+   | Header | Question | Options |
+   |--------|----------|---------|
+   | "Iterations" | "What do you want to do with iterations?" | Review current ("Review and adjust the current iteration"), Plan next ("Define the next iteration"), Reorder ("Reorder iteration sequence") |
 
 ---
 
@@ -218,13 +219,13 @@ During building, watch for signals that suggest concept-level learnings. These a
 
 **When you recognize a drift signal:**
 
-> "[Brief observation of the shift — what changed and why it matters]
->
-> This looks like a concept-level change.
->
-> • update concept — invoke concept agent to make the change
-> • note for later — capture as observation (uncertain insights)
-> • continue — stay in implementation"
+Surface the observation in prose, then use `AskUserQuestion`:
+
+> "[Brief observation of the shift — what changed and why it matters]"
+
+| Header | Question | Options |
+|--------|----------|---------|
+| "Drift" | "This looks like a concept-level change." | Update concept ("Invoke concept agent to make the change"), Note for later ("Capture as observation — uncertain insights"), Continue ("Stay in implementation") |
 
 **If user chooses "update concept":**
 1. Invoke concept agent via Task tool with context:

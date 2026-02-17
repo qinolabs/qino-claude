@@ -117,6 +117,14 @@ When the graph contains navigator nodes (`type: "navigator"`):
 
 Lab mode persists until: user says "exit lab mode" / "done with lab", session concludes, or user switches workflow.
 
+**Before closing:** Check for stale views and navigators. If any views or navigators were used this session and their framing question has resolved, use `AskUserQuestion` (multiSelect: true) to let the user choose which to compost:
+
+| Header | Question | Options |
+|--------|----------|---------|
+| "Compost" | "These may have served their purpose — compost any?" | One option per candidate: label = node title, description = brief reason it seems resolved |
+
+Compost the selected items. Then output:
+
 ```
                         lab session complete
 

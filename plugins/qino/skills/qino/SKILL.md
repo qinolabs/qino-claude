@@ -482,5 +482,15 @@ Agent definitions live in `agents/` directory. Each agent file has:
 > "Can't find concepts-repo at [path]."
 > Check your .claude/qino-config.json
 
-**Unknown intent:**
+**Ambiguous intent (could be concept, dev, or research):**
+
+Use `AskUserQuestion` to disambiguate:
+
+| Header | Question | Options |
+|--------|----------|---------|
+| "Direction" | "Which direction fits what you're thinking?" | Concept work ("Explore or develop an idea"), Dev work ("Build or implement something"), Research ("Investigate a question in depth") |
+
+Route based on selection.
+
+**Unknown intent (no signal at all):**
 > Route to `workflows/home.md` — arrival handles orientation naturally.

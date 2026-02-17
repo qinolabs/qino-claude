@@ -82,28 +82,11 @@ Read the research manifest and find recent arcs:
 cat [research-workspace]/manifest.json
 ```
 
-Present recent arcs:
+Present recent arcs using `AskUserQuestion` (multiSelect: true):
 
-```
-─────────────────────────────────────────────────────────────────
-recent arcs
-
-  1 → [Arc Title]
-      essence: [one sentence]
-      span: [date range]
-
-  2 → [Arc Title]
-      essence: [one sentence]
-      span: [date range]
-
-  3 → [Arc Title]
-      essence: [one sentence]
-      span: [date range]
-
-─────────────────────────────────────────────────────────────────
-which arc(s)? (comma-separated, e.g., "1" or "1,2")
-─────────────────────────────────────────────────────────────────
-```
+| Header | Question | Options |
+|--------|----------|---------|
+| "Arcs" | "Which arc(s) to transmit?" | One option per recent arc: label = arc title, description = essence + date range |
 
 Wait for user selection.
 

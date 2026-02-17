@@ -239,7 +239,8 @@ If editorial flags 10+ issues on first pass, or >5 issues on second pass:
    mv chronicle/chapters/NNN-wip/chapter.md chronicle/chapters/NNN-wip/draft-failed.md
    ```
 
-2. **Present user with options:**
+2. **Present user with options** using `AskUserQuestion`:
+
    ```
    ─────────────────────────────────────────────────────────────────
    draft failed editorial review
@@ -248,15 +249,11 @@ If editorial flags 10+ issues on first pass, or >5 issues on second pass:
      saved:  chronicle/chapters/NNN-wip/draft-failed.md
 
    ─────────────────────────────────────────────────────────────────
-   options
-
-     1 → restart from Beat Layer (same grounding, new direction)
-     2 → restart from World Layer (new scene seeds)
-     3 → manually edit draft-failed.md and continue
-     4 → proceed anyway (override editorial)
-
-   ─────────────────────────────────────────────────────────────────
    ```
+
+   | Header | Question | Options |
+   |--------|----------|---------|
+   | "Recovery" | "How do you want to recover?" | Restart from Beat ("Same grounding, new direction"), Restart from World ("New scene seeds"), Manual edit ("Edit draft-failed.md yourself and continue"), Override ("Proceed anyway, skip editorial") |
 
 3. **If restart chosen:**
    - Option 1: Return to Phase 1, Beat Layer checkpoint

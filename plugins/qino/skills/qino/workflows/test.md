@@ -156,8 +156,11 @@ For `research`:
    >
    > "Does this test resonate, or is there another ecology?"
 
-   If uncertain between two:
-   > "This feels like **user** ecology, but could also be **gesture** — which resonates?"
+   If uncertain between two, use `AskUserQuestion`:
+
+   | Header | Question | Options |
+   |--------|----------|---------|
+   | "Ecology" | "I'm sensing two possible ecologies here. Which resonates?" | [ecology A] ("[test question for A]"), [ecology B] ("[test question for B]") |
 
    **WAIT** for confirmation.
 
