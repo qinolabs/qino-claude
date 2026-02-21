@@ -9,6 +9,10 @@ description: |
   - "read the implementation notes", "what's the iteration status"
   - "what should I build next", "next steps for [project]"
 
+  ACTIVATE for bug tracking:
+  - "file a bug", "log this bug", "create a bug ticket", "bug in [app]"
+  - "/qino bug"
+
   ACTIVATE for concept work:
   - "explore [concept]", "go deeper into [idea]", "where am I", "what's here"
   - "capture this thought", "hold this", "note this"
@@ -42,7 +46,7 @@ Workflows execute in one of two modes based on their nature:
 
 ### Inject Mode (Dialogue Workflows)
 
-**For:** home, explore, capture, test, attune, compare, arc, orientation, lab, navigate
+**For:** home, explore, capture, test, attune, compare, arc, orientation, lab, navigate, bug
 
 These workflows involve multi-turn dialogue with the user. They execute **in the main conversation** — no Task tool, no subagent.
 
@@ -251,6 +255,7 @@ Match user intent to workflow. **Spawn the specified agent** to execute the work
 | "explore", "go deeper", "capture", "hold this", "where am I", "test", "compare" | `qino:concept` |
 | "research", "investigate", "inquiry", "study" | `qino:research` |
 | "use the lab", "lab mode", "work through qino-lab" | direct (no agent) |
+| "file a bug", "log this bug", "bug ticket", "bug in [app]", "/qino bug" | direct (graph tools) |
 
 **Implementation signals (→ `qino:dev`):**
 - Any app name mentioned with action intent: "qino-world", "qino-journey", "qino-frame"
@@ -279,6 +284,13 @@ Match user intent to workflow. **Spawn the specified agent** to execute the work
 - Protocol context: "work through qino-lab", "use qino-lab for this"
 - Requires: protocol workspace with qino-lab-mcp available
 - **Priority rule**: "lab" as prefix takes priority over other routing. "lab create X" = lab mode, then action.
+
+**Bug signals (→ direct, graph tools):**
+- Filing language: "file a bug", "log this bug", "create a bug ticket", "bug ticket for [app]"
+- Explicit command: "/qino bug"
+- Discovery language: "this is a bug", "bug in [app]", "found a bug"
+- Requires: implementation workspace with `graph.json`
+- Bug operations use qino-lab MCP tools — bugs are finding nodes in the implementation graph
 
 ---
 
@@ -335,6 +347,21 @@ Match user intent to workflow. **Spawn the specified agent** to execute the work
 - Session log updates edit `content/terrain.md` and write journal entries
 - Navigator operations implicitly use graph tools (qino-lab MCP) — no need to say "lab" first
 
+### Bug Work → direct (graph tools)
+
+| User Intent | Workflow |
+|-------------|----------|
+| "file a bug", "log this bug", "create a bug ticket" | [workflows/bug.md](workflows/bug.md) |
+| "/qino bug", "bug in [app]", "found a bug" | [workflows/bug.md](workflows/bug.md) |
+| "this is a bug", "bug ticket for [app]" | [workflows/bug.md](workflows/bug.md) |
+
+**Bug behavior notes:**
+- Bugs are `finding` type nodes in the implementation graph with `sparked-by` edges to the affected app
+- The workflow gathers context from the conversation (if debugging was happening) and fills gaps through dialogue
+- Resolution updates the node status to `composted` and captures root cause + fix + generalizable pattern
+- Bug nodes are visible in qino-lab and connected to their app's implementation node
+- Works from any workspace that can resolve the implementation graph path
+
 ### Implementation Work → `qino:dev`
 
 | User Intent | Workflow |
@@ -384,6 +411,7 @@ When `context.type === "implementation"`, additional routing applies:
 |-------------|-------|----------|
 | "work on [app]", plan iterations, build | `qino:dev` | [workflows/dev-work.md](workflows/dev-work.md) |
 | "work on [app] and [app]" (multi-app) | `qino:dev` | [workflows/dev-work.md](workflows/dev-work.md) |
+| "file a bug", "log this bug", "/qino bug" | direct | [workflows/bug.md](workflows/bug.md) |
 | Concept exploration from implementation | `qino:concept` | [workflows/explore.md](workflows/explore.md) |
 
 **Key behavior:** In implementation repos, the concept agent gains bidirectional visibility with iterations. When exploring a linked concept, it:
@@ -452,6 +480,7 @@ Workflows specify both an agent persona and an execution mode.
 | orientation | — | inject | Dialogue — direct response |
 | lab | — | inject | Dialogue — UI-mediated communication via MCP |
 | navigate | — | inject | Graph-native — uses qino-lab MCP tools, optional spawn for research |
+| bug | — | inject | Graph-native — dialogue to capture context, then MCP tools to create finding node |
 | import | concept | spawn | Synthesis — heavy file reading |
 | concept-init | concept | spawn | Synthesis — workspace scaffolding |
 | concept-setup | concept | spawn | Synthesis — workspace scaffolding |
