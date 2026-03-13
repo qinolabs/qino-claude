@@ -39,11 +39,11 @@ When user says "work on [app]" or similar:
    - Check `implementations/[app]/implementation.md` for technical context
    - Check `implementations/[app]/iterations/` for current phase
    - Check `implementations/docs/` for ecosystem architecture patterns
-   - Find the linked concept via manifest
+   - Find the linked concept via graph.json (`linkedConcept` field on the app node)
    - Check root graph for active navigator nodes relevant to this app (via `read_graph`, filter `type: "navigator"`)
 
 2. **Read current state:**
-   - What iteration are we on? (look for "In progress" status)
+   - What iteration are we on? (read graph.json — find first non-complete iteration)
    - What's the git state? (recent commits, uncommitted changes)
    - Any blockers noted in iteration files?
 
@@ -275,12 +275,11 @@ When all goals in an iteration are complete:
    >
    > Or take time to review what emerged?
 
-3. Update iteration status to "Complete"
+3. Update iteration status to "Complete" in both the iteration file and graph.json
 
-4. **Update manifest.json:**
-   - Set `currentIteration` to next iteration number (or mark complete if final)
-   - Update `last_touched` to current ISO date
-   - Keep `status` as "active" (or set to "complete" if no more iterations)
+4. **Update graph.json:**
+   - Set this iteration's `status` to `"complete"`
+   - If a next iteration exists, its status should already be `"planning"` or `"in-progress"`
 
 5. Offer to start next iteration
 

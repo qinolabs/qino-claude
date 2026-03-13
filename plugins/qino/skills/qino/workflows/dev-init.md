@@ -170,22 +170,19 @@ Replace placeholders with:
 - `{{APP_ID}}`: Concept id
 - `{{SHORT_ID}}`: Short command id (e.g., "bg")
 
-**Update `implementations/manifest.json`**
+**Update `implementations/graph.json`**
 
-Add the new app to the registry:
+Add the new app node with its first iteration:
 
 ```json
 {
-  "version": 1,
-  "apps": [
-    {
-      "id": "[app-id]",
-      "name": "[App Name]",
-      "linkedConcept": "[concept-id]",
-      "currentIteration": "01-foundation",
-      "status": "active",
-      "last_touched": "[current ISO date]"
-    }
+  "id": "[app-id]",
+  "title": "[App Name]",
+  "type": "app",
+  "linkedConcept": "[concept-id]",
+  "dir": "[app-id]",
+  "iterations": [
+    { "file": "01-foundation.md", "title": "Foundation", "status": "planning" }
   ]
 }
 ```
@@ -228,21 +225,18 @@ Do NOT update qino-config.json with concept fields (no linked concept).
 
 Generate the app command.
 
-**Update `implementations/manifest.json`**
+**Update `implementations/graph.json`**
 
-Add the new app to the registry (no linkedConcept field):
+Add the new app node with its first iteration (no `linkedConcept` field):
 
 ```json
 {
-  "version": 1,
-  "apps": [
-    {
-      "id": "[app-id]",
-      "name": "[App Name]",
-      "currentIteration": "01-foundation",
-      "status": "active",
-      "last_touched": "[current ISO date]"
-    }
+  "id": "[app-id]",
+  "title": "[App Name]",
+  "type": "app",
+  "dir": "[app-id]",
+  "iterations": [
+    { "file": "01-foundation.md", "title": "Foundation", "status": "planning" }
   ]
 }
 ```
