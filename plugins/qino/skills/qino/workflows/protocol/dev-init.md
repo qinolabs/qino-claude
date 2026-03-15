@@ -1,8 +1,8 @@
-# Dev Init Workflow
+# Dev Init Workflow (Protocol)
 
 **Execution:** spawn
 **Voice:** Grounded. Practical. Not heavy. This is the moment before building begins.
-**Agent:** dev
+**Agent:** dev + protocol-structure
 
 **References:**
 - `references/dev/repo-conventions.md` — Implementation repo structure patterns
@@ -19,13 +19,17 @@ Create a new app in the implementation workspace. Two modes:
 1. **From concept** (argument provided): Link to concepts-repo, run translation exploration
 2. **Standalone** (no argument): Create app without concept link
 
+Protocol version: generates node.json, story.md, content/ instead of legacy implementation.md, iterations/, manifest.json.
+
 ---
 
 ## Prerequisite Check
 
-Verify `implementations/` directory exists. If not:
+Verify `graph.json` exists at workspace root and has a `nodesDir` field. Read the nodesDir to know where implementation nodes live (typically `"implementations"`).
 
-> "No implementation workspace found. Run 'setup implementation workspace' first."
+If no graph.json or nodesDir:
+
+> "No protocol-compliant workspace found. Run 'setup implementation workspace' first."
 
 Stop.
 
@@ -33,24 +37,24 @@ Stop.
 
 ## Flow: From Concept
 
-When argument contains a path to a concept file:
+When argument contains a concept reference:
 
-### 1. Detect Concept Format
+### 1. Resolve the Concept
 
-Read the file. Check for qino-concept markers:
-- "## 1. Real-World Impulse"
-- "## 2. Glowing Connections"
-- "## 3. Primary Surfaces"
+Find the concept in the concepts repo:
+- Resolve concept path from `context.linkedConcepts` map or `context.conceptsRepo`
+- Read `{conceptsRepo}/nodes/{concept-id}/node.json` for metadata
+- Read `{conceptsRepo}/nodes/{concept-id}/story.md` for the impulse
 
-If markers found → proceed with linked creation.
-If not found → treat as a general input file, extract what you can.
+If markers found (story.md exists with content) → proceed with linked creation.
+If not found → treat as a general input, extract what you can.
 
 ### 2. Extract Concept Metadata
 
-From the file path, determine:
-- `conceptsRepo`: Parent directory of `concepts/[id]/concept.md`
-- `linkedConcept`: The concept id (directory name)
-- `conceptName`: From the `# [Name]` header in the file
+From the resolution:
+- `conceptsRepo`: Path to concepts repository
+- `linkedConcept`: The concept id (directory name under nodes/)
+- `conceptName`: From `node.json` title or story.md header
 
 Generate a short app id (2-3 letters) from the concept name for the command.
 Example: "board-games" → "bg"
@@ -61,22 +65,22 @@ The concept holds essence. Your job is to translate to technical reality.
 
 **Phase 1: Read & Ground (2-3 min)**
 
-Read the full concept.md. Output a grounding summary — this is the arrival surface:
+Read the concept's story.md and scan content/ files. Output a grounding summary — this is the arrival surface:
 
 ```
 ┌─────────────────────────────────────────┐
 │ [concept-name]                          │
 │                                         │
 │ essence                                 │
-│ [1-2 sentences from Real-World Impulse  │
+│ [1-2 sentences from story.md            │
 │ — the why, what it's responding to]     │
 │                                         │
-│ surfaces                                 │
-│ [Primary Surfaces — where it lives,     │
+│ surfaces                                │
+│ [Key surfaces — where it lives,         │
 │ how you interact with it]               │
 │                                         │
 │ smallest version                        │
-│ [Scoped Features — what the first       │
+│ [Scoped features — what the first       │
 │ living version includes]                │
 │                                         │
 └─────────────────────────────────────────┘
@@ -119,47 +123,72 @@ Define the first iteration:
 
 Create the following files:
 
-**`implementations/[app]/implementation.md`**
+**`{nodesDir}/{app}/node.json`**
 
-Use `.claude/references/qino-dev/templates/implementation-template.md` as structure.
+```json
+{
+  "title": "[App Name]",
+  "type": "app",
+  "status": "active",
+  "created": "[ISO timestamp]"
+}
+```
+
+**`{nodesDir}/{app}/story.md`**
 
 Fill in from the translation exploration:
-- Concept source (path to linked concept)
+- Concept link (relative path to concept in concepts repo)
 - Technical foundation (stack, complexity, architecture)
 - Boundaries (approved, restricted, later)
 - Flags (green, red)
-- Related Documentation section (link to ecosystem docs in `implementations/docs/`)
-
-**Include concept sync tracking** (enables drift detection on future arrivals):
+- Related documentation links
 
 ```markdown
-## Concept Sync
+# [App Name]
 
-**Linked**: [path to concept.md]
-**Last Check**: [current ISO timestamp]
-**Concept Modified**: [concept's last_touched from manifest.json]
+## Concept
+
+**Linked**: `{relative path to concept story.md}`
+**Concept ID**: [concept-id]
 
 For essence questions: `explore [concept-id]`
+
+## Technical Foundation
+
+[Stack, complexity budget, architecture patterns from translation exploration]
+
+## Boundaries
+
+**Approved**: [what's in scope]
+**Restricted**: [what's explicitly out]
+**Later**: [what to consider in future iterations]
+
+## Flags
+
+**Green**: [signals we're on track]
+**Red**: [warning signs]
 ```
 
-Read the concept's `last_touched` from the concepts-repo manifest.json and record it here. This baseline enables comparing on future arrivals.
+**`{nodesDir}/{app}/content/01-foundation.md`**
 
-**`implementations/[app]/iterations/01-foundation.md`**
+Fill in from the first iteration discussion:
+- Scope
+- Goals as checkboxes
+- Test criteria
+- Empty "Technical Decisions" and "Learnings" sections for capture during work
 
-Use `.claude/references/qino-dev/templates/iteration-template.md` as structure.
-
-Fill in from the first iteration discussion. Include empty "Technical Decisions" and "Learnings" sections for capture during implementation.
-
-**Update `.claude/qino-config.json`**
+**Update `{nodesDir}/{app}/` in qino-config.json linkedConcepts map:**
 
 Add concept link:
 ```json
 {
-  "repoType": "implementation",
-  "conceptsRepo": "[absolute path to concepts-repo]",
-  "linkedConcept": "[concept-id]"
+  "linkedConcepts": {
+    "[app-id]": "[concept-id]"
+  }
 }
 ```
+
+No graph.json update needed — the nodesDir auto-discovery in graph.json picks up new node directories automatically.
 
 **`.claude/commands/qino-dev/[short-id].md`**
 
@@ -167,25 +196,8 @@ Generate command file following the home pattern (see `references/dev/home-patte
 
 Replace placeholders with:
 - `{{APP_NAME}}`: Full app name
-- `{{APP_ID}}`: Concept id
+- `{{APP_ID}}`: App directory name
 - `{{SHORT_ID}}`: Short command id (e.g., "bg")
-
-**Update `implementations/graph.json`**
-
-Add the new app node with its first iteration:
-
-```json
-{
-  "id": "[app-id]",
-  "title": "[App Name]",
-  "type": "app",
-  "linkedConcept": "[concept-id]",
-  "dir": "[app-id]",
-  "iterations": [
-    { "file": "01-foundation.md", "title": "Foundation", "status": "planning" }
-  ]
-}
-```
 
 ### 5. Confirm
 
@@ -219,27 +231,22 @@ Run a condensed version of the translation exploration:
 
 ### 3. Generate Artifacts
 
-Create implementation.md and first iteration without concept link.
+Create node.json, story.md, and first iteration in content/ — without concept link.
+
+```json
+{
+  "title": "[App Name]",
+  "type": "app",
+  "status": "active",
+  "created": "[ISO timestamp]"
+}
+```
 
 Do NOT update qino-config.json with concept fields (no linked concept).
 
 Generate the app command.
 
-**Update `implementations/graph.json`**
-
-Add the new app node with its first iteration (no `linkedConcept` field):
-
-```json
-{
-  "id": "[app-id]",
-  "title": "[App Name]",
-  "type": "app",
-  "dir": "[app-id]",
-  "iterations": [
-    { "file": "01-foundation.md", "title": "Foundation", "status": "planning" }
-  ]
-}
-```
+No graph.json update needed — auto-discovery handles it.
 
 ---
 
@@ -309,7 +316,7 @@ If no existing keys found, **ask the user**:
 After creating environment files, verify the app starts:
 
 ```bash
-pnpm -F @qinolabs/<app>-backend -F @qinolabs/<app> dev
+pnpm -F @malao/<app>-backend -F @malao/<app> dev
 ```
 
 Common errors if environment is missing:
@@ -324,7 +331,9 @@ Common errors if environment is missing:
 - Generate without dialogue (the exploration matters)
 - Skip the translation exploration
 - Create overly complex iteration plans
-- Fill implementation.md with placeholders — only include what was actually discussed
+- Fill story.md with placeholders — only include what was actually discussed
 - Assume technical details — ask
 - Skip environment file creation when scaffolding apps
 - Proceed without Clerk keys if the template uses Clerk auth
+- Look for `implementation.md`, `iterations/`, or `manifest.json` — use protocol paths
+- Update graph.json with the new node — nodesDir auto-discovery handles it

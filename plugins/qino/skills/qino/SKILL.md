@@ -140,6 +140,8 @@ Before routing, detect workspace context:
    When protocol is detected:
    - Read `agents/protocol-structure.md` alongside `agents/concept.md` for inject workflows
    - Route concept work (home, capture, explore) to `workflows/protocol/` versions
+   - Route dev work (dev-work, dev-init) to `workflows/protocol/` versions
+   - Read `agents/protocol-structure.md` alongside `agents/dev.md` for spawn workflows
    - Reference `references/protocol/protocol-spec.md` for data model details
 
 5. **Detect ecosystem concepts:**
@@ -364,15 +366,17 @@ Match user intent to workflow. **Spawn the specified agent** to execute the work
 
 ### Implementation Work → `qino:dev`
 
+The agent reads `agents/protocol-structure.md` alongside `agents/dev.md`.
+
 | User Intent | Workflow |
 |-------------|----------|
 | Initialize multi-repo workspace | [workflows/workspace-init.md](workflows/workspace-init.md) |
 | Setup implementation workspace | [workflows/dev-setup.md](workflows/dev-setup.md) |
-| Start implementation, init app | [workflows/dev-init.md](workflows/dev-init.md) |
-| "what's next for [app]", "continue [app]", "work on [app]" | [workflows/dev-work.md](workflows/dev-work.md) |
-| "build [feature]", "implement [feature]", "add [component]" | [workflows/dev-work.md](workflows/dev-work.md) |
-| "plan iteration", "what should I build next", "next steps" | [workflows/dev-work.md](workflows/dev-work.md) |
-| "fix [bug]", "debug", "investigate issue in [app]" | [workflows/dev-work.md](workflows/dev-work.md) |
+| Start implementation, init app | [workflows/protocol/dev-init.md](workflows/protocol/dev-init.md) |
+| "what's next for [app]", "continue [app]", "work on [app]" | [workflows/protocol/dev-work.md](workflows/protocol/dev-work.md) |
+| "build [feature]", "implement [feature]", "add [component]" | [workflows/protocol/dev-work.md](workflows/protocol/dev-work.md) |
+| "plan iteration", "what should I build next", "next steps" | [workflows/protocol/dev-work.md](workflows/protocol/dev-work.md) |
+| "fix [bug]", "debug", "investigate issue in [app]" | [workflows/protocol/dev-work.md](workflows/protocol/dev-work.md) |
 
 ### Orientation (no agent needed — lightweight)
 
@@ -409,8 +413,8 @@ When `context.type === "implementation"`, additional routing applies:
 
 | User Intent | Agent | Workflow |
 |-------------|-------|----------|
-| "work on [app]", plan iterations, build | `qino:dev` | [workflows/dev-work.md](workflows/dev-work.md) |
-| "work on [app] and [app]" (multi-app) | `qino:dev` | [workflows/dev-work.md](workflows/dev-work.md) |
+| "work on [app]", plan iterations, build | `qino:dev` | [workflows/protocol/dev-work.md](workflows/protocol/dev-work.md) |
+| "work on [app] and [app]" (multi-app) | `qino:dev` | [workflows/protocol/dev-work.md](workflows/protocol/dev-work.md) |
 | "file a bug", "log this bug", "/qino bug" | direct | [workflows/bug.md](workflows/bug.md) |
 | Concept exploration from implementation | `qino:concept` | [workflows/explore.md](workflows/explore.md) |
 

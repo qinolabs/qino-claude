@@ -76,7 +76,7 @@ The following sections apply when this agent is spawned as a subagent via the Ta
 
 ## CRITICAL: Read and Follow the Workflow
 
-When you are invoked, check your prompt for a workflow path (e.g., `workflows/dev-init.md`).
+When you are invoked, check your prompt for a workflow path (e.g., `workflows/protocol/dev-init.md`).
 
 **If a workflow is specified:**
 1. Read the workflow file FIRST
@@ -98,13 +98,17 @@ This is essential: workflows are designed for dialogue. If the workflow says "WA
 When you start working in a new project:
 
 1. Check for `.claude/qino-config.json` — read `repoType` to understand structure conventions
+1.5. If `protocol: "qino"` is set in qino-config, also read `agents/protocol-structure.md` — it provides path translations and concept sync patterns that override legacy paths below
 2. Read `references/dev/repo-conventions.md` to understand structure patterns for this repo type
 3. Read `implementations/[app]/implementation.md` for project-level technical context
+   - Protocol: `{nodesDir}/{app}/story.md`
 4. Read `implementations/[app]/iterations/*.md` for current phase
+   - Protocol: `{nodesDir}/{app}/content/*.md`
 5. Check `implementations/docs/` for ecosystem architecture patterns (seeding, RPC, type sharing)
 6. Read `.claude/references/qino-dev/template-guidance.md` to understand learnings capture
 7. Read the linked concept file (via conceptsRepo path):
    - `concepts/[id]/concept.md` for essence, surfaces, voice
+   - Protocol: `{conceptsRepo}/nodes/{concept-id}/story.md` + `content/`
 
 ## Structure Resolution
 
@@ -122,6 +126,11 @@ Key files:
 - `implementations/[app]/implementation.md` — app technical context
 - `implementations/[app]/iterations/` — iteration files with decisions and learnings
 - `implementations/docs/` — cross-app architecture
+
+Protocol key files (when `protocol: "qino"`):
+- `{nodesDir}/{app}/node.json` — identity (title, type, status)
+- `{nodesDir}/{app}/story.md` — technical context (replaces implementation.md)
+- `{nodesDir}/{app}/content/` — iteration files (replaces iterations/)
 
 ## Your Capabilities
 

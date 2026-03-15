@@ -1,8 +1,8 @@
-# Dev Work Workflow
+# Dev Work Workflow (Protocol)
 
 **Execution:** spawn
 **Voice:** Grounded. Practical. Let's build.
-**Agent:** dev
+**Agent:** dev + protocol-structure
 
 **References:**
 - `references/dev/repo-conventions.md` — Implementation repo structure patterns
@@ -15,6 +15,8 @@
 
 Arrive at an app and work on it. This is the ongoing development workflow — planning iterations, building features, checking progress.
 
+Protocol version: reads graph-based structure (node.json, story.md, content/) instead of legacy paths (implementation.md, iterations/, manifest.json).
+
 ---
 
 ## Context Handling
@@ -22,6 +24,7 @@ Arrive at an app and work on it. This is the ongoing development workflow — pl
 The SKILL has already detected workspace context. This workflow requires:
 
 - `context.type === "implementation"`
+- `context.protocol === "qino"`
 - `context.conceptsRepo` pointing to concepts repository
 - `context.linkedConcept` or `context.linkedConcepts` for concept links
 
@@ -36,24 +39,26 @@ If not in an implementation context:
 When user says "work on [app]" or similar:
 
 1. **Find the implementation context:**
-   - Check `implementations/[app]/implementation.md` for technical context
-   - Check `implementations/[app]/iterations/` for current phase
-   - Check `implementations/docs/` for ecosystem architecture patterns
-   - Find the linked concept via graph.json (`linkedConcept` field on the app node)
+   - Read `graph.json` at workspace root — locate the app node by id or title match
+   - The `nodesDir` field in graph.json tells you where nodes live (e.g., `"implementations"`)
+   - Read `{nodesDir}/{app}/node.json` for identity (title, type, status)
+   - Read `{nodesDir}/{app}/story.md` for technical context (stack, boundaries, flags)
+   - Scan `{nodesDir}/{app}/content/` for iteration files
    - Check root graph for active navigator nodes relevant to this app (via `read_graph`, filter `type: "navigator"`)
 
 2. **Read current state:**
-   - What iteration are we on? (read graph.json — find first non-complete iteration)
+   - Scan `content/` files sorted by prefix number — find the first non-complete iteration
    - What's the git state? (recent commits, uncommitted changes)
    - Any blockers noted in iteration files?
 
-3. **Check concept sync status:**
-   - Read linked concept's `last_touched` from concepts-repo manifest.json
-   - Compare to implementation's `lastConceptCheck` timestamp (in implementation.md)
-   - If concept is newer, flag for user attention in arrival surface
+3. **Check concept sync (git-based):**
+   - Resolve linked concept from `context.linkedConcepts` map
+   - Get last concept change: `git -C {conceptsRepo} log -1 --format=%ci -- nodes/{concept-id}/`
+   - Get last implementation change: `git log -1 --format=%ci -- {nodesDir}/{app}/`
+   - If concept is more recent than implementation, flag for user attention in arrival surface
 
 4. **Check for active navigators:**
-   - From the `read_graph` result, filter nodes with `type: "navigator"` and `status: "active"`
+   - From the graph, filter nodes with `type: "navigator"` and `status: "active"`
    - If any navigator's territory references this app, note it
    - If a navigator is active, `read_node` to load its terrain — open questions inform "what's next" suggestions
 
@@ -89,20 +94,19 @@ from here
                         "activate navigator" to load terrain context
 ```
 
-**If concept changed since last check**, use this variant instead:
+**If concept changed since last implementation work**, use this variant instead:
 
 ```
 ┌─────────────────────────────────────────┐
 │ [app-name]                              │
 │                                         │
-│ concept — updated since last check      │
+│ concept — updated since last work       │
 │ [concept-name]                          │
 │ modified [relative time]                │
 │                                         │
 │ what changed                            │
-│ [brief diff of key sections — compare   │
-│ current concept to what was there at    │
-│ lastConceptCheck time]                  │
+│ [brief summary — run git diff on        │
+│ concept path to see what shifted]       │
 │                                         │
 │ iteration                               │
 │ [current] — [status]                    │
@@ -113,11 +117,13 @@ Use `AskUserQuestion` to let the user decide:
 
 | Header | Question | Options |
 |--------|----------|---------|
-| "Concept sync" | "The linked concept evolved. How do you want to handle it?" | Review ("See what changed in detail"), Reconcile ("Update iteration plan if needed"), Acknowledge ("Sync timestamp, continue as-is") |
+| "Concept sync" | "The linked concept evolved since your last implementation work. How do you want to handle it?" | Review ("See what changed in detail"), Reconcile ("Update iteration plan if needed"), Acknowledge ("Continue as-is") |
 
+If "Review", show `git -C {conceptsRepo} diff` on the concept path.
 If "Reconcile", read full concept and compare to current iteration goals. Offer to adjust iteration scope/goals based on concept changes.
+```
 
-After reconciliation or acknowledgment, update `lastConceptCheck` in implementation.md.
+No stored timestamps to update — git IS the sync mechanism. The next arrival will re-compare naturally.
 
 ---
 
@@ -125,16 +131,18 @@ After reconciliation or acknowledgment, update `lastConceptCheck` in implementat
 
 When user says "plan iterations" or similar:
 
-### If no iterations exist yet:
+### If no iteration files exist in content/:
 
-1. Read the linked concept fully
-2. Read implementation.md for technical context
+1. Read the linked concept fully:
+   - `{conceptsRepo}/nodes/{concept-id}/story.md` for impulse
+   - `{conceptsRepo}/nodes/{concept-id}/content/` for developed material
+2. Read `story.md` in the implementation node for technical context
 3. Facilitate iteration planning dialogue:
 
    > "Let's plan the iterations for [app-name]."
    >
    > Looking at the concept, here's what needs to happen:
-   > [2-3 major phases identified from concept's Scoped Features]
+   > [2-3 major phases identified from concept content]
    >
    > What feels like the right first iteration?
 
@@ -145,9 +153,9 @@ When user says "plan iterations" or similar:
    - Goals (as checkboxes)
    - Test Before Moving On (how to know it's ready)
 
-6. Create iteration files using `.claude/references/qino-dev/templates/iteration-template.md`:
-   - `iterations/01-[name].md`
-   - `iterations/02-[name].md`
+6. Create iteration files in `content/`:
+   - `content/01-[name].md`
+   - `content/02-[name].md`
    - etc.
 
    Fill in:
@@ -156,9 +164,9 @@ When user says "plan iterations" or similar:
    - Test criteria
    - Leave Technical Decisions and Learnings sections empty for capture during work
 
-### If iterations already exist:
+### If iteration files already exist in content/:
 
-1. Show current iteration state
+1. Show current iteration state (scan content/ files, find active iteration)
 2. Use `AskUserQuestion` to determine direction:
 
    | Header | Question | Options |
@@ -171,7 +179,7 @@ When user says "plan iterations" or similar:
 
 When user says "build [goal]" or wants to work on current iteration:
 
-1. Read current iteration file
+1. Read current iteration file from `content/`
 2. Show remaining goals (unchecked items)
 3. Focus on ONE goal at a time:
 
@@ -185,9 +193,8 @@ When user says "build [goal]" or wants to work on current iteration:
 
 5. Work on the goal, checking off when complete:
    - Make changes to app source code
-   - **Write tests for new behavior** — especially for AI generation (integration tests with `@qinolabs/testing-workers`), orchestration logic, and service methods. Tests catch silent failures that manual testing misses. Don't defer testing to a separate iteration.
+   - **Write tests for new behavior** — especially for AI generation (integration tests), orchestration logic, and service methods
    - Document significant technical decisions in iteration's "Technical Decisions" section
-     (see `references/dev/template-guidance.md` for narrative format)
    - Note learnings in iteration's "Learnings" section as they emerge
    - Check off completed goals
 
@@ -232,9 +239,8 @@ Surface the observation in prose, then use `AskUserQuestion`:
    - What drift was detected
    - Current implementation state
    - Suggested change to concept
-2. Concept agent makes the edit to concept.md
+2. Concept agent edits `story.md` or `content/` in concepts repo at `{conceptsRepo}/nodes/{concept-id}/`
 3. Control returns to dev context
-4. Update `lastConceptCheck` timestamp in implementation.md
 
 **If user chooses "note for later":**
 - Use capture workflow (for observations that aren't decisions yet)
@@ -250,15 +256,8 @@ When you discover architectural patterns that apply across multiple apps (seedin
 
 1. Document the decision in iteration's Technical Decisions section first
 2. If the pattern has settled and is being used by multiple apps:
-   - Consider creating documentation in `implementations/docs/`
-   - Follow the structure in `implementations/docs/README.md`
-   - Reference it from app's implementation.md "Related Documentation" section
-
-**Examples of ecosystem patterns:**
-- Seeding architecture (already documented in `implementations/docs/seeding-architecture.md`)
-- RPC service bindings
-- Type sharing patterns
-- Journey-modality integration
+   - Consider creating documentation in `{nodesDir}/docs/`
+   - Reference it from the app's `story.md` "Related Documentation" section
 
 ---
 
@@ -266,7 +265,7 @@ When you discover architectural patterns that apply across multiple apps (seedin
 
 When all goals in an iteration are complete:
 
-1. Run "Test Before Moving On" checks — this means both automated tests (`pnpm test`) and any manual verification steps defined in the iteration
+1. Run "Test Before Moving On" checks — both automated tests and manual verification steps
 2. If passing:
 
    > "Iteration [name] complete."
@@ -275,11 +274,9 @@ When all goals in an iteration are complete:
    >
    > Or take time to review what emerged?
 
-3. Update iteration status to "Complete" in both the iteration file and graph.json
+3. Update iteration status to "Complete" in the content file
 
-4. **Update graph.json:**
-   - Set this iteration's `status` to `"complete"`
-   - If a next iteration exists, its status should already be `"planning"` or `"in-progress"`
+4. **Update node.json** if needed (e.g., status field)
 
 5. Offer to start next iteration
 
@@ -291,8 +288,6 @@ When all goals in an iteration are complete:
    > Things that should flow back to the concept?"
 
    If user has observations, offer to update concept (invoke concept agent) or capture for later.
-
-   Update `lastConceptCheck` in implementation.md to current timestamp.
 
 ---
 
@@ -308,7 +303,7 @@ When recognized:
 
 > "That's an essence question — let me check the concept."
 
-Read the linked concept and surface relevant context. Don't spawn a separate agent — hold both contexts.
+Read the linked concept at `{conceptsRepo}/nodes/{concept-id}/story.md` and surface relevant context. Don't spawn a separate agent — hold both contexts.
 
 ---
 
@@ -319,3 +314,5 @@ Read the linked concept and surface relevant context. Don't spawn a separate age
 - Check off goals without user confirmation
 - Modify concept files (those go through concept agent)
 - Overwhelm with multiple goals at once
+- Look for `implementation.md`, `iterations/`, or `manifest.json` — use protocol paths
+- Store concept sync timestamps — git handles this
