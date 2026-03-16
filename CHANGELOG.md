@@ -27,7 +27,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - **Graph-native navigators** — navigators are now graph nodes (type: `navigator`) managed through MCP tools (`read_node`, `create_node`) instead of standalone markdown files; routing, creation, and session logging all work through the graph
 - **Captures as independent records** — captures are now flat files at `{workspace}/.qino/captures/` instead of graph nodes; lighter weight for raw thinking, pull-based composting into the graph when ready
-- **Protocol-aware skill routing** — workspaces with `protocol: "qino"` in `.claude/qino-config.json` automatically route home, capture, and explore to graph-native workflows
+- **Protocol-aware skill routing** — workspaces with `protocol: "qino"` in `.claude/qino-config.json` automatically route home, capture, explore, and dev workflows to graph-native versions; dev-init and dev-work now have protocol-specific workflows with legacy versions removed
 - **Dev workflows use graph.json** — iteration tracking and app registration now read/write `graph.json` instead of legacy `manifest.json`
 - **Plugin structure aligned to Claude Code skill discovery** — SKILL.md files moved into `skills/{name}/SKILL.md` with colocated workflows
 
