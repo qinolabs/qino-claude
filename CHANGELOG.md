@@ -10,6 +10,60 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [3.0.0] - 2026-03-16
+
+### qino
+
+#### Added
+
+- **Lab workflow** — UI-mediated development through qino-lab; activate with "use the lab" or "lab mode" to annotate the graph in real-time as work happens; findings, proposals, and tensions appear in the browser at `localhost:4020` while conversation continues in chat
+- **Autonomous grant mode** — "research this autonomously" lets the agent work at natural breakpoints while surfacing findings via graph annotations
+- **Bug filing workflow** — "file a bug" or `/qino bug` creates `finding` type nodes in the implementation graph with observed/expected behavior, key discriminator, investigation notes, and handover context for future sessions
+- **Protocol references** — unified `protocol.md` for agent consumption (operations-first ordering), `information-model.md` distinguishing structure vs trail, and expanded `protocol-spec.md` with full data model
+- **Proposal awareness in dev agent** — before planning iterations, dev agent checks for open proposal annotations accumulated from prior sessions
+- **Structured decision UI** — 11 decision points across workflows (routing disambiguation, navigator selection, composting triage, concept sync, drift recognition, iteration planning) now use AskUserQuestion for clearer branching; conversational workflows (orientation, arc, capture, compare) intentionally unchanged
+
+#### Changed
+
+- **Graph-native navigators** — navigators are now graph nodes (type: `navigator`) managed through MCP tools (`read_node`, `create_node`) instead of standalone markdown files; routing, creation, and session logging all work through the graph
+- **Captures as independent records** — captures are now flat files at `{workspace}/.qino/captures/` instead of graph nodes; lighter weight for raw thinking, pull-based composting into the graph when ready
+- **Protocol-aware skill routing** — workspaces with `protocol: "qino"` in `.claude/qino-config.json` automatically route home, capture, and explore to graph-native workflows
+- **Dev workflows use graph.json** — iteration tracking and app registration now read/write `graph.json` instead of legacy `manifest.json`
+- **Plugin structure aligned to Claude Code skill discovery** — SKILL.md files moved into `skills/{name}/SKILL.md` with colocated workflows
+
+### qino-prose
+
+#### Changed
+
+- **Structured decision UI** — key workflow decision points now use AskUserQuestion
+- **Plugin structure aligned to Claude Code skill discovery**
+
+### qino-art
+
+#### Changed
+
+- **Plugin structure aligned to Claude Code skill discovery**
+
+### design-adventure
+
+#### Changed
+
+- **Plugin structure aligned to Claude Code skill discovery**
+
+### Documentation
+
+#### Added
+
+- **Lab section in README** — collaboration surface documentation with screenshots showing graph view, node detail, and root workspace; explains protocol structure, signal types, navigators, and views
+- **qino-lab screenshots** — root view, graph view, and rich node detail images
+
+#### Changed
+
+- **Marketplace metadata** — source format updated to match official plugin schema
+- **Installation section** — plugin listing now uses table format
+
+---
+
 ## [2.1.0] - 2026-02-01
 
 ### qino
