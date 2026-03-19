@@ -123,7 +123,7 @@ Research repos are identified by `repoType: "research"` in `.claude/qino-config.
 When operating from a research repo:
 - Use local `manifest.json` for research tracking
 - Use `conceptsRepo` path for graduation destinations
-- `linkedConcepts` array identifies related concepts
+- Related concepts are discovered via `"concept grounds"` edges in the graph (`graph.json`), not from a config field
 
 ## Commands
 
@@ -260,7 +260,7 @@ Always ask: "note or concept seed?"
 When running in research context:
 - Outputs route to `calibrations/[quality]/`
 - Manifest updates automatically
-- Links to linkedConcepts
+- Links to related concepts (discovered via graph edges)
 
 ### /qino:compare
 When in experiment context:

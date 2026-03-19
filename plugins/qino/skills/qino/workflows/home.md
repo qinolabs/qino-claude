@@ -131,9 +131,9 @@ If nothing recent is detectable, omit this line entirely.
 
 **When `context.type === "implementation"`:**
 
-### Single-concept repo (`context.linkedConcept` is string)
+### Single-concept repo (one `"concept grounds"` edge in graph)
 
-Show the linked concept directly:
+Show the grounding concept directly:
 
 ```
                             home
@@ -154,7 +154,7 @@ Show the linked concept directly:
                                        "help" to see where we could go
 ```
 
-### Monorepo (`context.linkedConcepts` is object)
+### Monorepo (multiple `"concept grounds"` edges in graph)
 
 1. Detect current app context via recent file activity:
    - `git diff --name-only HEAD~5 2>/dev/null | head -20`

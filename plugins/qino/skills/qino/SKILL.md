@@ -125,14 +125,13 @@ Before routing, detect workspace context:
 |----------|---------|----------|
 | `"concepts"` or absent | Concepts workspace | Full concept exploration |
 | `"research"` | Research workspace | Research-oriented routing |
-| `"implementation"` | Implementation project | Dev context, linked concepts |
+| `"implementation"` | Implementation project | Dev context, edge-based concept discovery |
 | `"tool"` | Tool development | Minimal context |
 
 3. **Extract relevant paths:**
    - `conceptsRepo` — path to concepts repository (for implementation projects)
    - `researchRepo` — path to research repository
-   - `linkedConcept` — primary linked concept ID
-   - `linkedConcepts` — map of concept IDs to paths
+   - Concept links are discovered via `"concept grounds"` edges in the implementation graph (not stored in config)
 
 4. **Detect protocol:**
    Check for `protocol` field in qino-config.json. When `protocol: "qino"` is present, set `context.protocol = "qino"`. This activates protocol-aware workflow routing — graph-based structure instead of manifest-based.
@@ -442,8 +441,6 @@ interface Context {
   protocol?: "qino";                         // Protocol mode — graph-based structure
   conceptsRepo?: string;                     // Path to concepts repo
   researchRepo?: string;                     // Path to research repo
-  linkedConcept?: string;                    // Primary linked concept ID
-  linkedConcepts?: Record<string, string>;   // Map of concept IDs to paths
 }
 ```
 

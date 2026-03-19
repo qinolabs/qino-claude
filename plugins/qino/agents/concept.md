@@ -314,12 +314,12 @@ At the start of any operation:
 2. If present, read its contents:
    ```json
    {
-     "conceptsRepo": "/absolute/path/to/concepts-repo",
-     "linkedConcept": "concept-id"
+     "conceptsRepo": "/absolute/path/to/concepts-repo"
    }
    ```
 3. **Use `conceptsRepo` as workspace root** for all file operations
-4. If absent, use current directory as workspace (existing behavior)
+4. **Discover linked concepts** via `"concept grounds"` edges in the implementation graph (`graph.json`), not from config fields
+5. If absent, use current directory as workspace (existing behavior)
 
 ### What This Means
 
@@ -329,18 +329,20 @@ At the start of any operation:
 - `notes/` → write to `conceptsRepo/notes/`
 - All references and specs → from `references/concept/` (plugin directory)
 
-**The linkedConcept field:**
-- Identifies which concept this project implements
-- Used by /qino:home to show that concept by default
+**Linked concepts (via graph edges):**
+- Discovered via `"concept grounds"` edges in the implementation graph (`graph.json`)
+- Used by /qino:home to show the grounding concept by default
 - Used by /qino:capture to auto-tag notes with implementation context
 
 ### Implementation Context Detection
 
 When workspace detection finds a qino-config.json, the agent is operating in an **implementation context** (from a project implementing a concept, not from concepts-repo directly).
 
+Discover the grounding concept by reading `"concept grounds"` edges from the implementation graph (`graph.json`), where the edge source is the implementation node and the target is the concept node.
+
 This affects:
-- **home**: Show linked concept by default, not all concepts
-- **capture**: Auto-tag notes with `scope: "implementation"` and linked concept
+- **home**: Show grounding concept by default, not all concepts
+- **capture**: Auto-tag notes with `scope: "implementation"` and grounding concept
 - **explore**: Include awareness of implementation context when surfacing notes
 
 ## Your Capabilities

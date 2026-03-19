@@ -111,7 +111,7 @@ This workflow is invoked when:
 
 
   You're in an implementation space.
-  Linked to: [read linkedConcept from config]
+  Linked to: [read grounding concept via "concept grounds" edges in graph.json]
 
 
   What are you working on?

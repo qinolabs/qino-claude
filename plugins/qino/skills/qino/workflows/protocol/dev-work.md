@@ -26,7 +26,7 @@ The SKILL has already detected workspace context. This workflow requires:
 - `context.type === "implementation"`
 - `context.protocol === "qino"`
 - `context.conceptsRepo` pointing to concepts repository
-- `context.linkedConcept` or `context.linkedConcepts` for concept links
+- `"concept grounds"` edges in the implementation graph for concept links
 
 If not in an implementation context:
 
@@ -52,8 +52,8 @@ When user says "work on [app]" or similar:
    - Any blockers noted in iteration files?
 
 3. **Check concept sync (git-based):**
-   - Resolve linked concept from `context.linkedConcepts` map
-   - Get last concept change: `git -C {conceptsRepo} log -1 --format=%ci -- nodes/{concept-id}/`
+   - Find the concept via `"concept grounds"` edges in the implementation graph (target uses cross-graph format `"workspace:concept-id"`)
+   - Get last concept change: `git -C {conceptsPath} log -1 --format=%ci -- {nodesDir}/{concept-id}/`
    - Get last implementation change: `git log -1 --format=%ci -- {nodesDir}/{app}/`
    - If concept is more recent than implementation, flag for user attention in arrival surface
 
@@ -244,7 +244,7 @@ Surface the observation in prose, then use `AskUserQuestion`:
 
 **If user chooses "note for later":**
 - Use capture workflow (for observations that aren't decisions yet)
-- These notes auto-tag with linkedConcept and can be reviewed later
+- These notes can be reviewed later via the concept's `"concept grounds"` edge
 
 **Reference:** See `references/dev/drift-signals.md` for detailed examples.
 

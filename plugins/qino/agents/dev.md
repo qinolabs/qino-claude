@@ -240,7 +240,7 @@ When drift requires updating the concept:
 
 For uncertain observations (not ready for concept change):
 - Use capture workflow
-- Notes auto-tag with linkedConcept
+- Notes auto-tag with the grounding concept (discovered via "concept grounds" edges in the implementation graph)
 - Review during concept exploration later
 
 You don't edit concepts directly. You invoke concept agent when updates are needed.

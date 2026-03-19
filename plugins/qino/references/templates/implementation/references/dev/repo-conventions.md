@@ -166,7 +166,8 @@ For essence questions: `explore {id}`
 - `conceptsRepo` - path to concepts repository
 - `implementationRepo` - path to implementation repository
 - `researchRepo` - path to research repository
-- `linkedConcepts` - maps package names to concept IDs
+
+**Concept linkage** is discovered via `"concept grounds"` edges in the implementation graph (`graph.json`), not from config fields.
 
 **Qino-config does NOT provide**:
 - Directory structure maps (use conventions above)

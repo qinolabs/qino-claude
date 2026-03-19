@@ -351,7 +351,6 @@ See `qino-relay` for implementation.
 {
   "repoType": "research",
   "conceptsRepo": "../concepts-repo",
-  "linkedConcepts": ["concept-1", "concept-2"],
   "description": "Research space description"
 }
 ```
@@ -359,8 +358,9 @@ See `qino-relay` for implementation.
 **Fields:**
 - `repoType` — Must be "research"
 - `conceptsRepo` — Path to concepts destination
-- `linkedConcepts` — Array of related concept IDs
 - `description` — Human-readable purpose
+
+**Concept linkage** is discovered via `"concept grounds"` edges in the graph (`graph.json`), not from config fields.
 
 ---
 

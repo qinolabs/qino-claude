@@ -42,7 +42,7 @@ When argument contains a concept reference:
 ### 1. Resolve the Concept
 
 Find the concept in the concepts repo:
-- Resolve concept path from `context.linkedConcepts` map or `context.conceptsRepo`
+- Resolve concept path from `context.conceptsRepo` or existing `"concept grounds"` edges
 - Read `{conceptsRepo}/nodes/{concept-id}/node.json` for metadata
 - Read `{conceptsRepo}/nodes/{concept-id}/story.md` for the impulse
 
@@ -53,7 +53,7 @@ If not found → treat as a general input, extract what you can.
 
 From the resolution:
 - `conceptsRepo`: Path to concepts repository
-- `linkedConcept`: The concept id (directory name under nodes/)
+- `conceptId`: The concept id (directory name under nodes/)
 - `conceptName`: From `node.json` title or story.md header
 
 Generate a short app id (2-3 letters) from the concept name for the command.
@@ -177,18 +177,18 @@ Fill in from the first iteration discussion:
 - Test criteria
 - Empty "Technical Decisions" and "Learnings" sections for capture during work
 
-**Update `{nodesDir}/{app}/` in qino-config.json linkedConcepts map:**
+**Add `"concept grounds"` edge in graph.json:**
 
-Add concept link:
+Add an edge linking the app node to its concept via cross-graph reference:
 ```json
 {
-  "linkedConcepts": {
-    "[app-id]": "[concept-id]"
-  }
+  "source": "[app-id]",
+  "target": "qino-concepts:[concept-id]",
+  "label": "concept grounds"
 }
 ```
 
-No graph.json update needed — the nodesDir auto-discovery in graph.json picks up new node directories automatically.
+No other graph.json update needed — the nodesDir auto-discovery picks up new node directories automatically.
 
 **`.claude/commands/qino-dev/[short-id].md`**
 

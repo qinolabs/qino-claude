@@ -116,7 +116,7 @@ The SKILL has already detected workspace context. Use it to determine capture de
 All captures go to `{workspace root}/.qino/captures/` regardless of context type. Resolve captures path using the same logic as the capture workflow.
 
 For `implementation`:
-- Use `context.linkedConcept` as default test target if no argument
+- Use the grounding concept (discovered via `"concept grounds"` edges in the implementation graph) as default test target if no argument
 
 For `research`:
 - If inside `explorations/[id]/` → capture to `explorations/[id]/fragments/`

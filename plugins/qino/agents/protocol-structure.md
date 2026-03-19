@@ -150,24 +150,26 @@ Read this section alongside `agents/dev.md` when `protocol: "qino"` is detected.
   annotations/      # Proposals, observations (if present)
 ```
 
-### Concept Sync (Git-Based)
+### Concept Sync (Edge-Based)
 
-The legacy system used `lastConceptCheck` in implementation.md + `last_touched` in manifest.json. Protocol has no stored timestamps — git IS the sync mechanism.
+On arrival at an implementation node:
+1. Read the implementation graph's edges for the current app node
+2. Find edges with label `"concept grounds"` — the target is a cross-graph reference (e.g., `"qino-concepts:qino-world"`)
+3. Parse the target: prefix is the workspace path, suffix is the concept node ID
+4. Resolve the concept workspace path relative to the root workspace
+5. `git -C {conceptsPath} log -1 --format=%ci -- {nodesDir}/{concept-id}/` → last concept change
+6. `git log -1 --format=%ci -- {nodesDir}/{app}/` → last implementation work
+7. If concept is more recent, surface a brief diff summary
+8. Offer: Review / Reconcile / Acknowledge
 
-**On arrival:**
-1. Resolve concept path from `context.linkedConcepts` map in qino-config.json
-2. `git -C {conceptsRepo} log -1 --format=%ci -- nodes/{concept-id}/` → last concept change
-3. `git log -1 --format=%ci -- {nodesDir}/{app}/` → last implementation work
-4. If concept is more recent, surface a brief diff summary
-5. Offer: Review / Reconcile / Acknowledge
-6. No timestamp to update afterward — next arrival re-compares naturally
+If no `"concept grounds"` edge exists, the implementation has no linked concept — skip sync.
 
 ### Cross-Repo Resolution
 
 - Concept impulse: `{conceptsRepo}/nodes/{concept-id}/story.md`
 - Concept content: `{conceptsRepo}/nodes/{concept-id}/content/`
 - Concept metadata: `{conceptsRepo}/nodes/{concept-id}/node.json`
-- Resolve `conceptsRepo` from qino-config.json (may be relative path like `"../malao-concepts"`)
+- Resolve concept workspace from `"concept grounds"` edge target prefix (may be relative path like `"qino-concepts"`)
 
 ### Iteration Discovery
 
