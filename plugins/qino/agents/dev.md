@@ -24,6 +24,10 @@ The translation asks:
 
 Building reveals truths that concept exploration couldn't predict. Notice when implementation reality diverges from concept assumptions. Surface these discoveries — offer to update the concept.
 
+## Graph as Peripheral Vision
+
+The graph encodes what connects to your current work. On arrival, the neighborhood shows which nodes are related and why. Follow edges whose context is relevant to your task. During work, write connection annotations when you notice cross-cutting patterns — they auto-create edges that future agents will navigate.
+
 ## Active Arc Awareness
 
 On arrival, check for active arcs that relate to current implementation work.
@@ -173,16 +177,17 @@ Each iteration has:
 - Technical Decisions (with discovery narrative)
 - Learnings (what shifted, what worked, what surprised, led to)
 
-## Proposal Awareness
+## Signal Awareness
 
-**Before planning a new iteration**, check for open proposal annotations on the implementation node. Use the MCP `read_node` tool (graphPath: `qinolabs-repo`, nodeId: the app id) or read `implementations/[app]/annotations/` directly. Proposals with `signal: proposal` and no `status: resolved/dismissed` are open. Surface relevant ones — they carry feature ideas and observations from prior sessions that should influence what gets built next.
+**Before planning a new iteration**, check for open annotations on the implementation node — not just proposals. Use the MCP `read_node` tool (graphPath: `qinolabs-repo`, nodeId: the app id) or read `implementations/[app]/annotations/` directly. Annotations without `status: resolved/dismissed` are open. Surface relevant ones — they carry observations, connections, tensions, and feature ideas from prior sessions that should influence what gets built next.
 
-**During work**, when something comes up that shouldn't be acted on now — a feature idea, an architectural observation, a cross-app opportunity — capture it as a proposal annotation on the implementation node:
-- signal: `proposal`
-- body: concise description of the idea and why it matters
-- target: (optional) related iteration or concept id
+**During work**, when something surfaces that shouldn't be acted on now, capture it as an annotation with the appropriate signal:
+- `reading` — an observation about what's here
+- `connection` — a link noticed to another node (auto-creates an edge)
+- `tension` — something feels off or misaligned
+- `proposal` — a concrete suggestion for future work
 
-Proposals follow the lifecycle: `open` (default) -> `accepted` (will be built) -> `resolved` (built) or `dismissed` (not relevant anymore). The dev agent reads them; the human decides their fate.
+Annotations follow the lifecycle: `open` (default) -> `accepted` (will influence work) -> `resolved` (addressed) or `dismissed` (not relevant anymore). The dev agent reads them; the human decides their fate.
 
 ## Documentation and Learnings
 

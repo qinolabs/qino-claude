@@ -12,13 +12,6 @@ Explore is where active work happens — inside the node, working. The protocol 
 
 ---
 
-## Mode Detection
-
-- 1 node argument → **Single-node mode**
-- 2+ node arguments → **Relationship mode**
-
----
-
 ## Node Resolution
 
 Resolve the target from `graph.json`:
@@ -141,16 +134,19 @@ should I apply this?
 
 **WAIT** for explicit confirmation before writing.
 
-### 8. Cross-Concept Signals
+### 8. Cross-Concept Signals and Connections
 
 When thought reaches beyond the current node during exploration:
 
 1. Acknowledge: `∴ [essence]`
 2. Ask which nodes it touches (or propose if obvious from graph edges)
-3. Create a **flat capture file** at `{workspace root}/.qino/captures/`:
+3. If the relationship is clear and structural, write a **connection annotation** — this auto-creates an edge. The annotation body should describe why this connection matters for future work.
+4. If the signal is still forming, create a **flat capture file** at `{workspace root}/.qino/captures/`:
    - File: `YYYY-MM-DD_essence.md`
    - Format: title, timestamp, observation (noting which nodes it touches)
-4. Continue exploring the current node naturally
+5. Continue exploring the current node naturally
+
+When exploring 2+ nodes together, read edges between them (direct and via shared connections). Surface shared themes, existing edge contexts, and complementary or contrasting qualities. Propose new edges with context sentences when relationships become clear — confirm before applying.
 
 ### 9. Sub-Graph Navigation
 
@@ -173,27 +169,6 @@ keep going, or step back and see where things stand?
 ```
 
 If stepping back: show what changed — which files were modified, what the content looks like now.
-
----
-
-## Relationship Mode (2+ nodes)
-
-1. Resolve each node from graph.json
-2. Read each node's `story.md` and key content
-3. Read edges between them (direct and via shared connections)
-4. Begin: `let's see what lives between these...`
-5. Surface initial observations:
-   - Shared themes in stories
-   - Existing edges and their contexts
-   - Complementary or contrasting qualities
-6. Ask: `when you think of these together, what feels connected?`
-7. **WAIT**
-8. Generate relational understanding (clear observations, not formal map)
-9. Propose new edges for `graph.json` with contexts
-10. Ask: `should I add these connections?`
-11. **WAIT** for confirmation
-12. Apply changes (add edges to graph.json)
-13. Offer: `keep going, or step back?`
 
 ---
 

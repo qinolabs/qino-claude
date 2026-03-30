@@ -38,18 +38,15 @@ Nodes have types that shape how you engage:
 
 ## Edge Awareness
 
-Edges in `graph.json` carry typed relationships with context sentences. They are structural — not just tags.
+Edges in `graph.json` connect nodes with a context sentence that explains why the connection matters.
 
-**Read edges to understand:**
-- What a concept references (vocabulary, principles)
-- What extends what (continuity chains)
-- How facets relate to each other
+**Read edges to understand neighborhood:** Which nodes are nearby? What does the context sentence tell you about how they relate to your current work? Follow edges whose context is relevant.
 
 **Create edges when:**
 - Exploration reveals a relationship not yet captured
 - Cross-concept signals surface during work
 
-**Edge context** is a short sentence — why this relationship exists. Not a label; a breath of meaning.
+**Edge context** is a short sentence — why this relationship exists, and how future agents should understand it. Write a context sentence that helps future agents understand why this connection matters for their work. Don't classify — describe. A good context sentence reads like a note left for someone who will arrive here later: "this node's emergence patterns informed the cycle design here" or "tension between these two approaches shaped the architecture."
 
 ## Sub-Graph Navigation
 

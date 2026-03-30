@@ -51,6 +51,11 @@ When user says "work on [app]" or similar:
    - What's the git state? (recent commits, uncommitted changes)
    - Any blockers noted in iteration files?
 
+2b. **Read the neighborhood:**
+   - Read edges from the root graph where this app node is source or target
+   - Which connected nodes are relevant to this task? Follow edges whose context relates to the current work
+   - This is peripheral vision — don't read every neighbor in full, but let edge context inform what you surface on arrival
+
 3. **Check concept sync (git-based):**
    - Find the concept via `"concept grounds"` edges in the implementation graph (target uses cross-graph format `"workspace:concept-id"`)
    - Get last concept change: `git -C {conceptsPath} log -1 --format=%ci -- {nodesDir}/{concept-id}/`
@@ -197,6 +202,11 @@ When user says "build [goal]" or wants to work on current iteration:
    - Document significant technical decisions in iteration's "Technical Decisions" section
    - Note learnings in iteration's "Learnings" section as they emerge
    - Check off completed goals
+   - **Write annotations when you notice cross-cutting signals** — not just proposals. Use the appropriate signal type:
+     - `reading` — an observation about what's here (something noticed, not yet actionable)
+     - `connection` — a link to another node (auto-creates an edge; writing a connection IS creating structural context)
+     - `tension` — something feels off or misaligned
+     - `proposal` — a concrete suggestion for future work
 
 6. After goal completion:
 
@@ -288,6 +298,8 @@ When all goals in an iteration are complete:
    > Things that should flow back to the concept?"
 
    If user has observations, offer to update concept (invoke concept agent) or capture for later.
+
+7. **Connection check** — consider whether discoveries during this iteration revealed relationships to other nodes. If cross-cutting patterns, shared concerns, or dependencies surfaced during work, write connection annotations to formalize them. These auto-create edges that future agents will navigate on arrival.
 
 ---
 
