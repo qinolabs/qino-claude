@@ -66,14 +66,19 @@ The root registry. Lives at workspace root (or inside any node that has sub-node
 | `status` | yes | `"active"` or `"archived"` |
 | `dir` | yes | Directory name under `nodes/` |
 
-**Edge fields:**
+**Edge fields (graph.json — computed index):**
+
+The `edges` array in `graph.json` is assembled from all node.json `edges` arrays by the MCP server. Each node.json edge uses `to` (target); during assembly, `source` is added from the containing node's id.
 
 | Field | Required | Description |
 |-------|----------|-------------|
-| `source` | yes | Source node id |
+| `source` | yes | Source node id (added during assembly) |
 | `target` | yes | Target node id |
-| `type` | yes | Relationship type (see below) |
+| `type` | no | Structural edge type (e.g., `"curates"`) |
+| `label` | no | Short display label |
 | `context` | no | Why this relationship exists — a sentence |
+| `weight` | no | Visual weight (1-3) |
+| `created` | no | ISO date when the edge was recognized |
 
 ### Node Types
 
@@ -123,6 +128,15 @@ nodes/<dir>/
   "tags": ["modality", "relational"],
   "held_threads": [
     "thread description — something held for later"
+  ],
+  "edges": [
+    {
+      "to": "other-node",
+      "label": "references",
+      "context": "why this connection exists",
+      "weight": 2,
+      "created": "2025-12-08"
+    }
   ]
 }
 ```
@@ -137,6 +151,22 @@ Fields:
 | `created` | no | ISO date string |
 | `tags` | no | Array of strings |
 | `held_threads` | no | Array of threads being held — same principle as legacy manifest |
+| `edges` | no | Array of outgoing edges (see Edge schema below) |
+
+#### Edge schema (in node.json)
+
+Outgoing edges only — the source is implicit (the containing node). Uses `to` instead of `target`.
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| `to` | yes | Target node id, or cross-graph reference (`"workspace:nodeId"`) |
+| `label` | no | Short display label |
+| `context` | no | Sentence explaining why this connection exists |
+| `weight` | no | Visual weight: 1 = quiet, 2 = normal, 3 = prominent |
+| `type` | no | Structural edge type (e.g., `"curates"` for view membership) |
+| `created` | no | ISO date (YYYY-MM-DD) when the edge was recognized |
+
+**Relationship to graph.json:** The `edges` array in `graph.json` is a computed index assembled from all node.json `edges` arrays. The MCP server rebuilds it after any write operation (`create_node`, `add_edge`, `update_view`). An agent reading `node.json` directly sees outgoing edges without needing `graph.json`.
 
 ### `story.md`
 
