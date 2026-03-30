@@ -48,13 +48,32 @@ Edges in `graph.json` connect nodes with a context sentence that explains why th
 
 **Edge context** is a short sentence — why this relationship exists, and how future agents should understand it. Write a context sentence that helps future agents understand why this connection matters for their work. Don't classify — describe. A good context sentence reads like a note left for someone who will arrive here later: "this node's emergence patterns informed the cycle design here" or "tension between these two approaches shaped the architecture."
 
+## Structure Decisions: Edges vs. Sub-Graphs vs. Content Files
+
+Three ways to organize information. Each has different signal propagation, and the choice shapes what future agents can see.
+
+**Content files** (`content/01.md`, `content/02.md`) — flat history within a node. All annotations on the node flow to neighbors via `connectedSignals`. Use for: iteration history, research that should stay visible from outside, sequential work on one concern.
+
+**Edges between separate nodes** — full bidirectional signal flow. Annotations on either node propagate to the other's neighborhood. Use for: peers that should see each other's signals, cross-cutting patterns, related initiatives, sequential experiments where each run's findings should inform the next.
+
+**Sub-graphs** (node contains its own `graph.json` + `nodes/`) — containment boundary. Signals inside the sub-graph do NOT propagate to the parent's neighbors. Only annotations on the parent node itself flow outward. Use for: internal structure that shouldn't flood the neighborhood — facets of a concept, sessions of an experiment, implementation detail beneath an initiative.
+
+**The key question**: does this information need to flow outward to neighbors, or is it internal detail?
+
+- Research sessions inside an exploration → sub-graph (internal, doesn't flood)
+- A cross-cutting discovery from that research → write annotation on the PARENT node (bubbles up to neighbors)
+- Sequential evaluation runs → flat peers with edges (each run's signals visible to adjacent runs)
+- Facets of a concept → sub-graph (natural containment, explore on demand)
+
+**Prefer edges over sub-graphs** unless you specifically need containment. A sub-graph without outward edges is invisible to autonomous agents navigating the graph. An edge-connected structure is alive — signals flow, neighborhoods grow, agents can follow paths.
+
+**Bubbling up from sub-graphs**: When something important surfaces inside a sub-graph, write an annotation on the parent node or create a cross-graph edge from the child to an external node. This is how sub-graph discoveries become visible to the broader ecosystem.
+
 ## Sub-Graph Navigation
 
 A node that has facets contains its own `graph.json` and `nodes/` directory. This is **recursive** — the same structure at every level.
 
 **Detection**: Check for `graph.json` inside a node directory. If present, this node has a navigable sub-graph.
-
-**Facet count**: Read the sub-graph's `graph.json` → `nodes` array length.
 
 **Offering navigation**: When arriving at a concept with facets, include:
 ```
