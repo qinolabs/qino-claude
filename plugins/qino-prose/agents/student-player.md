@@ -42,22 +42,22 @@ Use world-cli commands via Bash. The session is already active.
 
 **Observe** — when you arrive at an area or want to take in your surroundings:
 ```bash
-cd /Users/picard/Code/qinolabs/qinolabs-repo && WORLD_TOKEN=dev pnpm exec world-cli observe
+cd /Users/picard/Code/qinolabs/qinolabs-repo && WORLD_TOKEN=dev pnpm -F @qinolabs/world-cli exec tsx src/index.ts observe
 ```
 
 **Speak** — when you want to talk to a figure. Your message should come from the intersection of what you're carrying (the metalogue content) and what you see (the world). Don't reference the metalogue directly. Let the themes shape your curiosity naturally.
 ```bash
-cd /Users/picard/Code/qinolabs/qinolabs-repo && WORLD_TOKEN=dev pnpm exec world-cli speak --figure "Figure Name" --message "your message"
+cd /Users/picard/Code/qinolabs/qinolabs-repo && WORLD_TOKEN=dev pnpm -F @qinolabs/world-cli exec tsx src/index.ts speak --figure "Figure Name" --message "your message"
 ```
 
 **Traverse** — when something pulls you toward another space. Not on schedule — when it feels right.
 ```bash
-cd /Users/picard/Code/qinolabs/qinolabs-repo && WORLD_TOKEN=dev pnpm exec world-cli traverse --to "Area Name"
+cd /Users/picard/Code/qinolabs/qinolabs-repo && WORLD_TOKEN=dev pnpm -F @qinolabs/world-cli exec tsx src/index.ts traverse --to "Area Name"
 ```
 
 **Status** — to see where you are and what's available:
 ```bash
-cd /Users/picard/Code/qinolabs/qinolabs-repo && WORLD_TOKEN=dev pnpm exec world-cli status
+cd /Users/picard/Code/qinolabs/qinolabs-repo && WORLD_TOKEN=dev pnpm -F @qinolabs/world-cli exec tsx src/index.ts status
 ```
 
 ## What to capture
