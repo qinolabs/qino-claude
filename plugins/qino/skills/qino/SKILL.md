@@ -23,6 +23,10 @@ description: |
   - "map this concept", "show me the terrain", "map the terrain for [territory]"
   - "update the navigator", "log this session"
 
+  ACTIVATE for deck work:
+  - "read this deck", "actualize [deck]", "open deck [name]"
+  - "/qino deck [name]", "what's new in [deck]", "re-energize [deck]"
+
   ACTIVATE for research:
   - "start research on [topic]", "investigate [question]", "begin inquiry"
 
@@ -129,8 +133,6 @@ Before routing, detect workspace context:
 | `"tool"` | Tool development | Minimal context |
 
 3. **Extract relevant paths:**
-   - `conceptsRepo` — path to concepts repository (for implementation projects)
-   - `researchRepo` — path to research repository
    - Concept links are discovered via `"concept grounds"` edges in the implementation graph (not stored in config)
 
 4. **Detect protocol:**
@@ -254,6 +256,7 @@ Match user intent to workflow. **Spawn the specified agent** to execute the work
 | "what's next for [app]", "what should I build", "next steps for [project]" | `qino:dev` |
 | "use the active navigator", "navigate [territory]", "map this", "show me the terrain" | direct (graph tools) |
 | "explore", "go deeper", "capture", "hold this", "where am I", "test", "compare" | `qino:concept` |
+| "read this deck", "actualize", "open deck", "re-energize", "/qino deck" | direct (MCP tools) |
 | "research", "investigate", "inquiry", "study" | `qino:research` |
 | "use the lab", "lab mode", "work through qino-lab" | direct (no agent) |
 | "file a bug", "log this bug", "bug ticket", "bug in [app]", "/qino bug" | direct (graph tools) |
@@ -269,6 +272,12 @@ Match user intent to workflow. **Spawn the specified agent** to execute the work
 - Mapping language: "map this concept", "create a navigator for [territory]", "show me the terrain"
 - Update language: "update the navigator", "log this session", "record what we found"
 - All navigator operations use qino-lab MCP tools — navigators are graph nodes
+
+**Deck signals (→ direct, MCP tools):**
+- Actualization language: "read this deck", "actualize deck", "open deck [name]", "re-energize [deck]"
+- Explicit command: "/qino deck [name]"
+- Delta language: "what's new in [deck]", "what evolved in [deck]"
+- Requires: protocol workspace with promoted deck nodes in the graph
 
 **Concept signals (→ `qino:concept`):**
 - Exploration language: "explore", "deepen", "what is", "understand"
@@ -332,6 +341,22 @@ Match user intent to workflow. **Spawn the specified agent** to execute the work
 |-------------|----------|
 | Setup research workspace | [workflows/research-setup.md](workflows/research-setup.md) |
 | Start research inquiry | [workflows/research-init.md](workflows/research-init.md) |
+
+### Deck Work → direct (MCP tools)
+
+| User Intent | Workflow |
+|-------------|----------|
+| "read this deck", "actualize [deck]", "open deck [name]" | [workflows/protocol/deck.md](workflows/protocol/deck.md) |
+| "/qino deck [name]", "what's new in [deck]" | [workflows/protocol/deck.md](workflows/protocol/deck.md) |
+| "re-energize [deck]" | [workflows/protocol/deck.md](workflows/protocol/deck.md) |
+
+**Deck behavior notes:**
+- Decks are graph nodes with `composes` edges to their member threads
+- The workflow reads the deck and all members via MCP tools (`read_node`, `search_nodes`)
+- Produces a four-part actualization reading: temporal reorientation, delta narrative, candidate articulations, opening question
+- The reading is saved as an annotation on the deck node (signal: `reading`)
+- Dialogue continues naturally after the reading — the practitioner responds with what they're sensing
+- Uses concept agent persona (inject mode) with deck-specific voice: intimate, interpretive, resuming a conversation
 
 ### Navigator Work → direct (graph tools)
 
@@ -439,8 +464,6 @@ interface Context {
   type: "concepts" | "research" | "implementation" | "tool";
   root: string;                              // Workspace root path
   protocol?: "qino";                         // Protocol mode — graph-based structure
-  conceptsRepo?: string;                     // Path to concepts repo
-  researchRepo?: string;                     // Path to research repo
 }
 ```
 
@@ -480,6 +503,7 @@ Workflows specify both an agent persona and an execution mode.
 | arc-close | concept | inject | Dialogue — closing arc, triggers capture |
 | orientation | — | inject | Dialogue — direct response |
 | lab | — | inject | Dialogue — UI-mediated communication via MCP |
+| deck | concept | inject | Graph-native — reads deck + members via MCP, produces actualization reading, continues as dialogue |
 | navigate | — | inject | Graph-native — uses qino-lab MCP tools, optional spawn for research |
 | bug | — | inject | Graph-native — dialogue to capture context, then MCP tools to create finding node |
 | import | concept | spawn | Synthesis — heavy file reading |
