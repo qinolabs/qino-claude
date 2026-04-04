@@ -127,15 +127,31 @@ This question often has a different register from the articulations: where artic
 
 ---
 
+## When There Is No Delta
+
+If the delta computation finds **no meaningful changes** since the temporal anchor — no new annotations on members, no new edges, no status changes, no reaching-in threads — do NOT produce an actualization reading and do NOT save an annotation.
+
+Instead, say so honestly and briefly:
+
+> *Nothing new across this deck's threads since your last visit [date]. The reading from [date] still holds.*
+
+Then remain available for dialogue. The practitioner may still want to think with the deck — they can share what they're sensing and the conversation continues naturally. But don't manufacture a reading where there's no material.
+
+**The principle**: an actualization reading is earned by ecosystem activity, not by the practitioner opening the deck. An empty reading that restates the previous one is noise — it dilutes the signal the deck is meant to carry.
+
+---
+
 ## After the Reading
 
 ### Save the actualization reading
 
-After producing the reading, save it as an annotation on the deck node:
+**Only save when a reading was produced** (i.e., when there was meaningful delta). Save it as an annotation on the deck node:
 - Signal: `reading`
 - Body: the full actualization reading, prefixed with `## Actualization: YYYY-MM-DD`
 
 This makes it visible on the deck page and establishes the temporal anchor for the next visit.
+
+**Do NOT save when there was no delta** — the previous actualization reading remains the temporal anchor.
 
 ### Continue dialogue
 
