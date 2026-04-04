@@ -22,7 +22,11 @@ qino-claude/
 ├── plugins/
 │   ├── qino/                    # Core ecology
 │   │   ├── .claude-plugin/      # Plugin metadata
+│   │   ├── .mcp.json            # Bundled MCP server config
 │   │   ├── agents/              # concept-agent, dev-agent, research-agent
+│   │   ├── servers/dist/        # Bundled qino-os (MCP server + viewer)
+│   │   │   ├── server/index.js  # Self-contained server (~1.5 MB, all deps inlined)
+│   │   │   └── ui/              # Built SPA viewer (~2.4 MB)
 │   │   ├── skills/qino/         # SKILL.md + workflows/
 │   │   └── references/          # Specs for concept, dev, research, attune
 │   │
@@ -114,7 +118,31 @@ Project-level commands live in `.claude/commands/`:
 
 Each plugin is self-contained:
 - `.claude-plugin/plugin.json` — Metadata for marketplace
+- `.mcp.json` — MCP server definitions (optional, auto-started when plugin is active)
 - `agents/` — Agent definitions
 - `skills/` — Skills with workflows
 - `references/` — Specs and guides
 - `README.md` — Documentation
+
+### Bundled MCP Server (qino-os)
+
+The qino plugin ships a self-contained MCP server + browser viewer built from `qinolabs-repo/packages/qino-os/`.
+
+**What it provides**: 20 graph tools (read/write nodes, annotations, edges, search) + a browser UI at `localhost:4020` for visual graph exploration.
+
+**How it works**: The server is built with tsup (`noExternal: [/.*/]`) to inline all npm dependencies into a single JS file. The SPA is built with Vite. Both are committed to `plugins/qino/servers/dist/`. The plugin's `.mcp.json` starts the server via `node ${CLAUDE_PLUGIN_ROOT}/servers/dist/server/index.js`. Workspace discovery uses `process.cwd()` (the project directory).
+
+**To rebuild** (after changes to qino-os source):
+
+```bash
+# 1. Build in qinolabs-repo
+cd ../qinolabs-repo && pnpm -F @qinolabs/qino-os build:plugin
+
+# 2. Sync to plugin
+rm -rf plugins/qino/servers/dist/
+mkdir -p plugins/qino/servers/dist/server
+cp ../qinolabs-repo/packages/qino-os/dist/plugin/server/index.js plugins/qino/servers/dist/server/
+cp -r ../qinolabs-repo/packages/qino-os/dist/ui plugins/qino/servers/dist/
+```
+
+The `/release` command includes this as step 1b.
