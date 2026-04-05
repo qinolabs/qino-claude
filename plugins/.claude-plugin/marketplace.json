@@ -8,13 +8,13 @@
       "name": "qino",
       "source": "./qino",
       "description": "Ecology for developing ideas — concepts, research, implementation",
-      "version": "3.0.0"
+      "version": "3.1.0"
     },
     {
       "name": "qino-prose",
       "source": "./qino-prose",
       "description": "Chronicle writing, research transmissions, and prose lenses",
-      "version": "3.0.0"
+      "version": "3.1.0"
     },
     {
       "name": "qino-art",

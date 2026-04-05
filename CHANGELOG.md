@@ -10,6 +10,38 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [3.1.0] - 2026-04-05
+
+### qino
+
+#### Added
+
+- **Bundled qino-os MCP server + viewer** — the qino plugin now ships a self-contained graph server and browser UI at `localhost:4020`; no separate installation needed — it starts automatically when the plugin is active
+- **Deck actualization workflow** — "read this deck", "actualize [deck]", or `/qino deck [name]` reads a session deck and actualizes its threads against current graph state; skips actualization when no delta exists
+- **Graph-aware agents** — agents now read the node neighborhood on arrival: signal awareness (open annotations on current node), edge context, and no-relationship mode when a node has no connections yet
+- **Protocol spec: edges in node.json** — edges can now be declared directly in `node.json` alongside identity; `graph.json` edges become a computed index assembled from all node-level edge arrays; adds `label`, `weight`, and `created` fields
+- **Structure decision guide** — new reference helping agents choose between edges, sub-graphs, and content files for structuring material
+
+#### Changed
+
+- **Graph edge discovery replaces config paths** — workspace resolution now uses `"concept grounds"` edges in `graph.json` instead of `conceptsRepo`/`researchRepo`/`implementationRepo` fields in `qino-config.json`; research workspace discovery falls back to common sibling locations (`../qino-research`)
+- **qino-os viewer** — signal panel with recency grouping, collapsed agent notes with dialog detail, NavIslands workspace navigation, landing page layout fixes
+
+### qino-prose
+
+#### Changed
+
+- **Research workspace discovery** — scribe-prep and transmit workflows now discover research workspaces via sibling directory convention instead of `researchRepo` config field
+
+### Documentation
+
+#### Added
+
+- **qino-os installation section in README** — documents the bundled MCP server and graph viewer that ships with the qino plugin
+- **Figure/figure thread terminology** — README updated to use current domain language (figure as local presence, figure thread as cross-context identity pattern)
+
+---
+
 ## [3.0.0] - 2026-03-16
 
 ### qino
