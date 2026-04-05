@@ -20,10 +20,10 @@ Create a new research inquiry.
 
 Use context from SKILL:
 - If `context.type === "research"` → use current directory
-- If `context.researchRepo` exists → use that path as research workspace
-- If neither → error:
+- Check common locations (`../qino-research`, `../../qino-research`)
+- If not found → error:
 
-> "No research workspace configured. Run 'setup research workspace' or add researchRepo to qino-config.json."
+> "No research workspace found. Run 'setup research workspace' first."
 
 Stop.
 

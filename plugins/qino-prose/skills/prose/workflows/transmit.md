@@ -44,7 +44,7 @@ cat .claude/qino-config.json
 
 The research workspace is either:
 - Current directory if `repoType: "research"`
-- Path specified in `researchRepo` field
+- Discovered at common locations (`../qino-research`, `../../qino-research`)
 
 ### Locate or Initialize Journal
 
@@ -101,7 +101,7 @@ Read and hold:
 3. **Recent transmissions:** Last 1-2 transmissions for threading context
 4. **Journal manifest:** To get next transmission number
 5. **Concepts registry:** Read `[research-workspace]/journal/concepts.md` for already-referenced concepts
-6. **Concepts manifest:** Read `[concepts-repo]/manifest.json` for available concept shapes (via `conceptsRepo` in qino-config.json)
+6. **Concepts manifest:** Read `[concepts-repo]/manifest.json` for available concept shapes (resolve concepts workspace via `"concept grounds"` edges in graph.json)
 
 ---
 

@@ -145,7 +145,7 @@ _Figure_ in qino is a metaphor — in Bateson's sense, not the literary sense. N
 
 What does this mean in practice?
 
-- **In the apps:** Each meeting with Elena in Walk is a **manifestation** — a local presence, mutable, owned by that context. But Elena herself is the pattern you recognize across manifestations: the **figure**. No single encounter *is* the figure; the figure is what you recognize across the trail of encounters.
+- **In the apps:** Each meeting with Elena in Walk is a **figure** — a living presence, mutable, owned by that context. But Elena herself is the pattern you recognize across figures: the **figure thread**. No single encounter *is* the figure thread; the figure thread is what you recognize across the trail of encounters.
 - **In the chronicles:** Seren, Lira, the wanderer — each a presence in that world. But the figure is larger: what persists when Seren appears in different chapters, different pressures.
 - **In concepts:** The thread you notice connecting one idea to another — not because you traced it, but because it kept appearing until you couldn't unsee it.
 
@@ -153,7 +153,7 @@ Same pattern, completely different shape in each context. The gesture is fractal
 
 _(See also: [Figure Ecology](#ecological-testing) — how we test that a figure can be re-entered and still feel like "the same thing" after change.)_
 
-_(For the full vocabulary — manifestation, encounter, substrate, lens, voicing — see [qino Domain Language](https://github.com/qinolabs/concepts-repo/blob/main/ecosystem/qino-domain-language.md).)_
+_(For the full vocabulary — figure, encounter, substrate, lens, voicing — see [qino Domain Language](https://github.com/qinolabs/concepts-repo/blob/main/ecosystem/qino-domain-language.md).)_
 
 The tools are also the process for developing the apps — and in turn, the tools and apps keep informing each other. A co-evolution. They share design patterns: affordances that guide without forcing, structures that adapt to context while staying recognizable.
 
@@ -1297,7 +1297,7 @@ Each test is a question you hold. Not a category to sort things into — a way o
 
 > *Can this be re-entered and still feel like "the same thing" after change?*
 
-You meet Elena in Walk. You bring her to World. She appears in Drops. Three manifestations, one pattern you recognize.
+You meet Elena in Walk. You bring her to World. She appears in Drops. Three figures, one pattern you recognize.
 
 But what makes her *Elena*? Not a database ID. Not an origin you can point to. The pattern persists because it *resonates* — because something essential survives transformation.
 
@@ -1392,10 +1392,22 @@ Updates happen automatically when you run `/plugin marketplace update`.
 
 | Plugin | Description |
 |--------|-------------|
-| `qino` | Core ecology (concepts, research, implementation) |
+| `qino` | Core ecology (concepts, research, implementation) — includes qino-os |
 | `qino-prose` | Chronicle writing, research transmissions, prose lenses |
 | `qino-art` | Visual content system |
 | `design-adventure` | Seven-perspective design exploration |
+
+### qino-os — Graph Viewer & MCP Server
+
+The **qino** plugin ships with **qino-os** — a bundled MCP server and browser-based graph viewer that starts automatically when the plugin is active.
+
+**What you get:**
+- **20 graph tools** — read/write nodes, annotations, edges, search across workspaces
+- **Browser viewer** at `http://localhost:4020` — visual graph exploration, node detail, session tracking
+
+**No separate installation needed.** When Claude Code loads the qino plugin, it starts the qino-os MCP server in the background. The viewer launches at `localhost:4020` and is available for the duration of your session.
+
+Open the viewer to see your workspaces, navigate nodes, and watch annotations appear in real-time as you work with the agent in the terminal.
 
 ## Getting Started
 

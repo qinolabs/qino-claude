@@ -57,9 +57,8 @@ Sometimes the user arrives having already expressed what's alive.
 On arrival (first response in session), check for active arcs that may relate to the current work.
 
 **Detection:**
-1. Check qino-config.json for `researchRepo` path
-2. Read research manifest for arcs with `status: "active"`
-3. For each active arc, assess relation to current context:
+1. Read research manifest for arcs with `status: "active"`
+2. For each active arc, assess relation to current context:
    - **Pointer match**: Arc pointers reference current concept/context
    - **Topical overlap**: Arc title/beginning matches themes in current work
 
@@ -181,7 +180,7 @@ Both app concepts and ecosystem concepts host diverging movements (protecting em
 
 **Note lifecycle:** Active notes live in `manifest.json`. When insights are fully integrated into concepts, notes move to `notes-archive.json`. Agents read only `manifest.json` for surfacing — the archive preserves provenance.
 
-**Workspace detection:** Check for `.claude/qino-config.json` — if present, use `conceptsRepo` as workspace root.
+**Workspace detection:** Check for `.claude/qino-config.json` — if present, discover workspace paths via `"concept grounds"` edges in the graph.
 
 ## Draft Awareness
 
@@ -311,22 +310,17 @@ qino-concept can operate against a **remote workspace** when linked via configur
 At the start of any operation:
 
 1. **Check for `.claude/qino-config.json`** in the current directory
-2. If present, read its contents:
-   ```json
-   {
-     "conceptsRepo": "/absolute/path/to/concepts-repo"
-   }
-   ```
-3. **Use `conceptsRepo` as workspace root** for all file operations
-4. **Discover linked concepts** via `"concept grounds"` edges in the implementation graph (`graph.json`), not from config fields
-5. If absent, use current directory as workspace (existing behavior)
+2. If present, read its `repoType` to understand context
+3. **Discover linked concepts** via `"concept grounds"` edges in the implementation graph (`graph.json`) — resolve concept workspace from edge target prefix
+4. If absent, use current directory as workspace (existing behavior)
 
 ### What This Means
 
 **When qino-config.json exists:**
-- `manifest.json` → read from `conceptsRepo/manifest.json`
-- `concepts/` → read/write to `conceptsRepo/concepts/`
-- `notes/` → write to `conceptsRepo/notes/`
+- Resolve concept workspace from `"concept grounds"` edge target prefix in graph.json
+- `manifest.json` → read from resolved concepts workspace
+- `concepts/` → read/write to resolved concepts workspace
+- `notes/` → write to resolved concepts workspace
 - All references and specs → from `references/concept/` (plugin directory)
 
 **Linked concepts (via graph edges):**

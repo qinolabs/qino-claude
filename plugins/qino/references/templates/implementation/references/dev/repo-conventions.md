@@ -163,9 +163,6 @@ For essence questions: `explore {id}`
 
 **Qino-config provides**:
 - `repoType` - determines convention set
-- `conceptsRepo` - path to concepts repository
-- `implementationRepo` - path to implementation repository
-- `researchRepo` - path to research repository
 
 **Concept linkage** is discovered via `"concept grounds"` edges in the implementation graph (`graph.json`), not from config fields.
 
@@ -183,7 +180,7 @@ When user refers to ambiguous locations, use repoType + conventions:
 |-----------|---------------------|---------------|---------------|---------|
 | "notes" | `implementations/{app}/iterations/` | `notes/` | `inquiries/{id}/fragments/` | Context-dependent |
 | "ecosystem docs" | `implementations/docs/` | `ecosystem/` | N/A | Top-level shared |
-| "implementation" | `implementations/{app}/` | `{conceptsRepo}/implementations/{app}/` | N/A | Scoped context |
+| "implementation" | `implementations/{app}/` | Resolve via graph edges | N/A | Scoped context |
 | "the code" | `apps/{app}/` | N/A | N/A | Actual artifact |
 | "iterations" | `implementations/{app}/iterations/` | N/A | N/A | Staged work (implementation only) |
 | "origins" / "seeds" | N/A | `concepts/{id}/origins/` | N/A | Historical archive (concepts only) |

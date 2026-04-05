@@ -125,7 +125,7 @@ git log --oneline [last_ref]..HEAD | wc -l  # number of commits
 git diff [last_ref]..HEAD --stat -- . ':!*chronicle*' | tail -1  # summary line
 ```
 
-**Query research arcs:** If `.claude/qino-config.json` has a `researchRepo` field:
+**Query research arcs:** If a research workspace exists at common locations (`../qino-research`, `../../qino-research`):
 1. Get the date range from the git range
 2. Read research repo's `manifest.json`
 3. Find arcs overlapping this period

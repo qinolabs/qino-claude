@@ -35,9 +35,8 @@ The session becomes part of the arc's accumulation — its transcript will be av
 Find the research workspace:
 
 1. If `context.type === "research"` → use current directory
-2. If `context.researchRepo` exists → use that path
-3. If neither → check common locations
-4. If still not found → error: "no research workspace found"
+2. Check common locations (`../qino-research`, `../../qino-research`)
+3. If still not found → error: "no research workspace found"
 
 ---
 

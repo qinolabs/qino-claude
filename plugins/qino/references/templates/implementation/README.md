@@ -121,12 +121,11 @@ In `.claude/qino-config.json`:
 
 ```json
 {
-  "repoType": "implementation",
-  "conceptsRepo": "../concepts-repo"
+  "repoType": "implementation"
 }
 ```
 
-Concept linkage is established via `"concept grounds"` edges in the implementation graph (`graph.json`), where the edge source is the implementation node and the target is the concept node in the concepts repo.
+Concept linkage is established via `"concept grounds"` edges in the implementation graph (`graph.json`), where the edge source is the implementation node and the target is the concept node in the concepts workspace.
 
 **Benefits of linking:**
 - Dev agent reads concept for context

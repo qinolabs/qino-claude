@@ -321,8 +321,8 @@ When scribe-prep agent prepares a chapter:
 
 1. Get git range from manifest (`last_ref..HEAD`)
 2. Extract date range from commits (earliest to latest commit dates)
-3. Check if current repo has `researchRepo` configured in `.claude/qino-config.json`
-4. If yes, query research manifest for arcs where:
+3. Check if a research workspace exists at common locations (`../qino-research`, `../../qino-research`)
+4. If found, query research manifest for arcs where:
    - `span.start` ≤ latest commit date AND `span.end` ≥ earliest commit date
    - `repos` array contains current repo name (or is empty)
 5. Read matching arc files
@@ -350,14 +350,12 @@ See `qino-relay` for implementation.
 ```json
 {
   "repoType": "research",
-  "conceptsRepo": "../concepts-repo",
   "description": "Research space description"
 }
 ```
 
 **Fields:**
 - `repoType` — Must be "research"
-- `conceptsRepo` — Path to concepts destination
 - `description` — Human-readable purpose
 
 **Concept linkage** is discovered via `"concept grounds"` edges in the graph (`graph.json`), not from config fields.
@@ -366,7 +364,7 @@ See `qino-relay` for implementation.
 
 ## 10. Cross-Repo Research
 
-Research commands can be invoked from non-research repos that have a `researchRepo` configured.
+Research commands can be invoked from non-research repos by discovering the research workspace at common locations.
 
 ### How It Works
 
@@ -374,22 +372,15 @@ When `/qino-research:init` (or other research commands) runs:
 
 1. Check current repo's `.claude/qino-config.json`
 2. If `repoType: "research"` → use current directory as workspace
-3. If `researchRepo` field exists → use that path as research workspace
-4. If neither → error: "no research workspace configured"
+3. Check common locations (`../qino-research`, `../../qino-research`)
+4. If not found → error: "no research workspace found"
 
-### Example: Tool Repo Config
+### Example: Cross-Repo Research
 
-```json
-{
-  "repoType": "tool",
-  "researchRepo": "../qino-research",
-  "conceptsRepo": "../concepts-repo"
-}
-```
-
-Running `/qino-research:init` from this repo will:
-- Create inquiries in `../qino-research/inquiries/`
-- Update manifest at `../qino-research/manifest.json`
+Running `/qino-research:init` from a tool or implementation repo will:
+- Discover the research workspace at a common location
+- Create inquiries in `{research-workspace}/inquiries/`
+- Update manifest at `{research-workspace}/manifest.json`
 - Record `sourceRepo` in the inquiry entry for context
 
 ---

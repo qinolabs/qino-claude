@@ -23,9 +23,8 @@ An arc is an emergence pattern — how inquiry moved through the ecosystem. Unli
 Find the research workspace:
 
 1. If `context.type === "research"` → use current directory
-2. If `context.researchRepo` exists → use that path
-3. If neither → check common locations (`../qino-research`, `../../qino-research`)
-4. If still not found → error: "no research workspace found. create one or configure researchRepo in qino-config.json"
+2. Check common locations (`../qino-research`, `../../qino-research`)
+3. If still not found → error: "no research workspace found"
 
 All file operations target the research workspace.
 

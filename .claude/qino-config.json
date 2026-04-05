@@ -1,7 +1,5 @@
 {
   "repoType": "tool",
   "adapter": true,
-  "conceptsRepo": "../concepts-repo",
-  "researchRepo": "../qino-research",
   "description": "Tool home — source of all tools, also uses tools via adapters"
 }

@@ -104,7 +104,7 @@ When starting work:
 
 1. Read `references/research/research-spec.md` for research structure
 2. Read `manifest.json` at research repo root for current explorations, calibrations, experiments
-3. Check `.claude/qino-config.json` for `conceptsRepo` path (graduation destination)
+3. Check graph.json for `"concept grounds"` edges to discover graduation destinations
 
 ## File Structure
 
@@ -122,7 +122,7 @@ Research repos are identified by `repoType: "research"` in `.claude/qino-config.
 
 When operating from a research repo:
 - Use local `manifest.json` for research tracking
-- Use `conceptsRepo` path for graduation destinations
+- Discover graduation destinations via `"concept grounds"` edges in the graph
 - Related concepts are discovered via `"concept grounds"` edges in the graph (`graph.json`), not from a config field
 
 ## Commands
@@ -192,7 +192,7 @@ Two paths:
 
 **To note:**
 1. Distill exploration/calibration to essence
-2. Create note in `conceptsRepo/notes/`
+2. Create note in the concepts workspace `notes/`
 3. Add references to linked concepts
 4. Record graduation in manifest
 5. Archive source in `graduated/`

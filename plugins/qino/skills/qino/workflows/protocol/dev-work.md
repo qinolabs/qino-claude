@@ -25,7 +25,6 @@ The SKILL has already detected workspace context. This workflow requires:
 
 - `context.type === "implementation"`
 - `context.protocol === "qino"`
-- `context.conceptsRepo` pointing to concepts repository
 - `"concept grounds"` edges in the implementation graph for concept links
 
 If not in an implementation context:
@@ -124,7 +123,7 @@ Use `AskUserQuestion` to let the user decide:
 |--------|----------|---------|
 | "Concept sync" | "The linked concept evolved since your last implementation work. How do you want to handle it?" | Review ("See what changed in detail"), Reconcile ("Update iteration plan if needed"), Acknowledge ("Continue as-is") |
 
-If "Review", show `git -C {conceptsRepo} diff` on the concept path.
+If "Review", show `git -C {conceptsWorkspace} diff` on the concept path.
 If "Reconcile", read full concept and compare to current iteration goals. Offer to adjust iteration scope/goals based on concept changes.
 ```
 
@@ -139,8 +138,8 @@ When user says "plan iterations" or similar:
 ### If no iteration files exist in content/:
 
 1. Read the linked concept fully:
-   - `{conceptsRepo}/nodes/{concept-id}/story.md` for impulse
-   - `{conceptsRepo}/nodes/{concept-id}/content/` for developed material
+   - `{conceptsWorkspace}/nodes/{concept-id}/story.md` for impulse
+   - `{conceptsWorkspace}/nodes/{concept-id}/content/` for developed material
 2. Read `story.md` in the implementation node for technical context
 3. Facilitate iteration planning dialogue:
 
@@ -249,7 +248,7 @@ Surface the observation in prose, then use `AskUserQuestion`:
    - What drift was detected
    - Current implementation state
    - Suggested change to concept
-2. Concept agent edits `story.md` or `content/` in concepts repo at `{conceptsRepo}/nodes/{concept-id}/`
+2. Concept agent edits `story.md` or `content/` in concepts repo at `{conceptsWorkspace}/nodes/{concept-id}/`
 3. Control returns to dev context
 
 **If user chooses "note for later":**
@@ -315,7 +314,7 @@ When recognized:
 
 > "That's an essence question — let me check the concept."
 
-Read the linked concept at `{conceptsRepo}/nodes/{concept-id}/story.md` and surface relevant context. Don't spawn a separate agent — hold both contexts.
+Read the linked concept at `{conceptsWorkspace}/nodes/{concept-id}/story.md` and surface relevant context. Don't spawn a separate agent — hold both contexts.
 
 ---
 

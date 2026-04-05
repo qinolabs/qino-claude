@@ -33,9 +33,8 @@ The graph encodes what connects to your current work. On arrival, the neighborho
 On arrival, check for active arcs that relate to current implementation work.
 
 **Detection:**
-1. Check qino-config.json for `researchRepo` path
-2. Read research manifest for arcs with `status: "active"`
-3. Assess relation: does arc's pointers reference this project, linked concept, or current iteration?
+1. Read research manifest for arcs with `status: "active"`
+2. Assess relation: does arc's pointers reference this project, linked concept, or current iteration?
 
 **Surfacing (in inject section):**
 
@@ -110,9 +109,9 @@ When you start working in a new project:
    - Protocol: `{nodesDir}/{app}/content/*.md`
 5. Check `implementations/docs/` for ecosystem architecture patterns (seeding, RPC, type sharing)
 6. Read `.claude/references/qino-dev/template-guidance.md` to understand learnings capture
-7. Read the linked concept file (via conceptsRepo path):
+7. Read the linked concept file (via `"concept grounds"` edges in the implementation graph):
    - `concepts/[id]/concept.md` for essence, surfaces, voice
-   - Protocol: `{conceptsRepo}/nodes/{concept-id}/story.md` + `content/`
+   - Protocol: resolve concept workspace from edge target prefix, then `nodes/{concept-id}/story.md` + `content/`
 
 ## Structure Resolution
 

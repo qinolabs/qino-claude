@@ -152,7 +152,7 @@ Read this section alongside `agents/dev.md` when `protocol: "qino"` is detected.
 | `implementations/[app]/iterations/01-foundation.md` | `{nodesDir}/{app}/content/01-foundation.md` | Same naming convention, different parent |
 | `implementations/graph.json` (manual entries) | `graph.json` with `nodesDir` (auto-discovery) | No manual node registration needed |
 | `manifest.json` (concept `last_touched`) | Git log on concept path | No stored timestamps |
-| `concepts/[id]/concept.md` | `{conceptsRepo}/nodes/{concept-id}/story.md` | Concept impulse + content/ for developed material |
+| `concepts/[id]/concept.md` | `{conceptsWorkspace}/nodes/{concept-id}/story.md` | Concept impulse + content/ for developed material |
 
 ### Key Protocol Files per App
 
@@ -182,9 +182,9 @@ If no `"concept grounds"` edge exists, the implementation has no linked concept 
 
 ### Cross-Repo Resolution
 
-- Concept impulse: `{conceptsRepo}/nodes/{concept-id}/story.md`
-- Concept content: `{conceptsRepo}/nodes/{concept-id}/content/`
-- Concept metadata: `{conceptsRepo}/nodes/{concept-id}/node.json`
+- Concept impulse: `{conceptsWorkspace}/nodes/{concept-id}/story.md`
+- Concept content: `{conceptsWorkspace}/nodes/{concept-id}/content/`
+- Concept metadata: `{conceptsWorkspace}/nodes/{concept-id}/node.json`
 - Resolve concept workspace from `"concept grounds"` edge target prefix (may be relative path like `"qino-concepts"`)
 
 ### Iteration Discovery
@@ -199,6 +199,6 @@ If no `"concept grounds"` edge exists, the implementation has no linked concept 
 
 When drift is detected and user chooses to update the concept:
 - Invoke concept agent with context about the drift
-- Concept agent edits `story.md` or files in `content/` at `{conceptsRepo}/nodes/{concept-id}/`
+- Concept agent edits `story.md` or files in `content/` at `{conceptsWorkspace}/nodes/{concept-id}/`
 - Control returns to dev context
 - No stored timestamp to update — git tracks the change automatically

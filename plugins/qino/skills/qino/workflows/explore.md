@@ -32,7 +32,7 @@ Do not proceed with explore.
 
 **If `context.type === "implementation"`:**
 
-Use `context.conceptsRepo` path and work with concepts there.
+Resolve concept workspace from `"concept grounds"` edges in graph.json and work with concepts there.
 
 **Otherwise:**
 

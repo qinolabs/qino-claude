@@ -38,7 +38,7 @@ Create `concepts/{id}/revisions.md` when:
 ## 2026-01-12: Substrate as Compost
 
 - **Context**: Early iterations treated substrate as static context, but implementation work revealed it's generative
-- **Previous**: "Substrate provides context and constraints for manifestation"
+- **Previous**: "Substrate provides context and constraints for figures"
 - **New**: "Substrate is compost — history that fuels emergence rather than constrains it"
 - **Reasoning**: The metaphor shift captures that substrate accumulates and transforms, becoming fuel for new growth. Implementation showed that past interactions don't limit; they enrich.
 ```

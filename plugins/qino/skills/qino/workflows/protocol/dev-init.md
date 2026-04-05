@@ -42,9 +42,9 @@ When argument contains a concept reference:
 ### 1. Resolve the Concept
 
 Find the concept in the concepts repo:
-- Resolve concept path from `context.conceptsRepo` or existing `"concept grounds"` edges
-- Read `{conceptsRepo}/nodes/{concept-id}/node.json` for metadata
-- Read `{conceptsRepo}/nodes/{concept-id}/story.md` for the impulse
+- Resolve concept path from existing `"concept grounds"` edges in graph.json
+- Read `{conceptsWorkspace}/nodes/{concept-id}/node.json` for metadata
+- Read `{conceptsWorkspace}/nodes/{concept-id}/story.md` for the impulse
 
 If markers found (story.md exists with content) → proceed with linked creation.
 If not found → treat as a general input, extract what you can.
@@ -52,7 +52,6 @@ If not found → treat as a general input, extract what you can.
 ### 2. Extract Concept Metadata
 
 From the resolution:
-- `conceptsRepo`: Path to concepts repository
 - `conceptId`: The concept id (directory name under nodes/)
 - `conceptName`: From `node.json` title or story.md header
 
