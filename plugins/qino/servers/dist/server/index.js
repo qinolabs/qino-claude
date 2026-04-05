@@ -31394,6 +31394,8 @@ async function readLandingData(workspaceDir2, opts = {}) {
         const sgNodes = await discoverNodes(sgDir, sgNodesDir);
         for (const node2 of sgNodes) {
           if (node2.type === "arc" || node2.type === "navigator" || node2.type === "deck") continue;
+          const relNodePath = path.relative(workspaceDir2, path.join(sgDir, sgNodesDir, node2.dir));
+          if (knownNodePaths.has(relNodePath)) continue;
           const nodeDir = path.join(sgDir, sgNodesDir, node2.dir);
           const modified = await getNodeMtime(nodeDir);
           recentNodes.push({
@@ -31577,7 +31579,7 @@ async function writeAnnotation(graphDir, nodeId, signal, body, target) {
   const nodesDir = resolveNodesDir(graphData);
   const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
   if (!nodeDir) {
-    throw new Error(`Node not found: ${nodeId}`);
+    throw new Error(`Node not found: ${nodeId} (searched ${path.join(graphDir, nodesDir, nodeId)})`);
   }
   const annotationsDir = path.join(nodeDir, "annotations");
   await fs.mkdir(annotationsDir, { recursive: true });
@@ -31616,7 +31618,7 @@ async function resolveAnnotation(graphDir, nodeId, filename, status) {
   const nodesDir = resolveNodesDir(graphData);
   const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
   if (!nodeDir) {
-    throw new Error(`Node not found: ${nodeId}`);
+    throw new Error(`Node not found: ${nodeId} (searched ${path.join(graphDir, nodesDir, nodeId)})`);
   }
   const annotationPath = path.join(nodeDir, "annotations", filename);
   const raw2 = await readTextFile(annotationPath);
@@ -31731,7 +31733,7 @@ async function updateView(graphDir, nodeId, opts) {
   const nodesDir = resolveNodesDir(graphData);
   const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
   if (!nodeDir) {
-    throw new Error(`Node not found: ${nodeId}`);
+    throw new Error(`Node not found: ${nodeId} (searched ${path.join(graphDir, nodesDir, nodeId)})`);
   }
   const viewPath = path.join(nodeDir, "view.json");
   const existingView = await readJsonFile(viewPath);
@@ -31775,7 +31777,7 @@ async function readData(graphDir, nodeId, filename) {
   const nodesDir = resolveNodesDir(graphData);
   const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
   if (!nodeDir) {
-    throw new Error(`Node not found: ${nodeId}`);
+    throw new Error(`Node not found: ${nodeId} (searched ${path.join(graphDir, nodesDir, nodeId)})`);
   }
   const dataDir = path.join(nodeDir, "data");
   const schemaContent = await readTextFile(path.join(dataDir, "schema.json"));
@@ -31814,7 +31816,7 @@ async function readContent(graphDir, nodeId, filename) {
   const nodesDir = resolveNodesDir(graphData);
   const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
   if (!nodeDir) {
-    throw new Error(`Node not found: ${nodeId}`);
+    throw new Error(`Node not found: ${nodeId} (searched ${path.join(graphDir, nodesDir, nodeId)})`);
   }
   const contentDir = path.join(nodeDir, "content");
   if (filename) {
@@ -31844,7 +31846,7 @@ async function writeData(graphDir, nodeId, filename, data) {
   const nodesDir = resolveNodesDir(graphData);
   const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
   if (!nodeDir) {
-    throw new Error(`Node not found: ${nodeId}`);
+    throw new Error(`Node not found: ${nodeId} (searched ${path.join(graphDir, nodesDir, nodeId)})`);
   }
   try {
     JSON.parse(data);
