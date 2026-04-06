@@ -1,0 +1,6 @@
+{
+  "name": "speech",
+  "description": "Text-to-speech utility for reading Claude responses aloud",
+  "version": "1.0.0",
+  "author": { "name": "qinolabs" }
+}

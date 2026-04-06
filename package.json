@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "sync-manifest": "./scripts/sync-manifest.sh"
+    "sync-manifest": "./scripts/sync-manifest.sh",
+    "rebuild:qino-os": "./scripts/rebuild-qino-os.sh"
   },
   "dependencies": {
     "@google/genai": "^1.34.0",

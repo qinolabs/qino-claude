@@ -1,6 +1,16 @@
 {
-  "repoType": "tool",
+  "name": "qino-claude",
+  "repoType": "implementation",
+  "protocol": "qino",
   "color": "violet",
-  "adapter": true,
-  "description": "Tool home — source of all tools, also uses tools via adapters"
+  "types": {
+    "plugin": { "color": "violet", "hint": "Active plugin package shipped through the marketplace" },
+    "tool": { "color": "cyan", "hint": "Development tool or utility within the ecosystem" },
+    "reference": { "color": "zinc", "hint": "Specs, guides, design documents" },
+    "capture": { "color": "rose", "hint": "In-the-moment thought or observation worth preserving" }
+  },
+  "statuses": {
+    "composted": { "treatment": "faded" },
+    "dormant": { "treatment": "faded" }
+  }
 }

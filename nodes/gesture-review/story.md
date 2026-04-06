@@ -1,0 +1,1 @@
+Tensions and opportunities discovered while auditing the 27 gesture workflows against actual practice. The practitioner never invokes gestures by name — the skill routes invisibly. Attune and compare have untapped potential but need graph integration. The gesture abstraction itself may be unnecessary as user-facing vocabulary.

@@ -2,11 +2,10 @@
 .DS_Store
 **/.DS_Store
 
-# Qino tools (managed by /update-qino-tools)
-.claude/agents/
-.claude/commands/
-.claude/references/
+# Claude Code local state
 .claude/settings.local.json
+.claude/History/
+.claude/agent-sessions.json
 
 # Dependencies
 node_modules/
@@ -18,24 +17,8 @@ node_modules/
 .env.*.local
 *.env
 
-# History (Engine Logs)
-.claude/History/
+# Logs
 *.log
-
-# Archived chronicles
-chronicles-archived*/
-
-# Template repos (separate GitHub repos)
-concepts-repo-template/
-implementation-repo-template/
-qino-workspace-template/
-research-repo-template/
-
-# Working documents
-writing/
-
-# Experimental plugins
-plugins/speech/
 
 # Character Coherence specific work (implementation-specific)
 plugins/qino-prose/agents/cc-blog-*.md
@@ -43,7 +26,3 @@ plugins/qino-prose/workflows/cc-blog-*.md
 plugins/qino-prose/workflows/lab-note.md
 plugins/qino-prose/references/blog/
 plugins/qino-prose/references/qino-voice.md
-
-# System
-.DS_Store
-**/.DS_Store

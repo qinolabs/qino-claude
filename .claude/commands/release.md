@@ -54,6 +54,20 @@ Verify the bundle is fresh:
 - `ls -lh plugins/qino/servers/dist/server/index.js` — should be ~1.5 MB, recent timestamp
 - `ls plugins/qino/servers/dist/ui/index.html` — should exist
 
+Also update the local plugin cache so the current session picks up the new build:
+```bash
+pnpm rebuild:qino-os
+```
+
+Or if already built, just sync the cache:
+```bash
+for dir in ~/.claude/plugins/cache/qino-plugins/qino/*/; do
+  cp plugins/qino/servers/dist/server/index.js "${dir}servers/dist/server/"
+  rm -rf "${dir}servers/dist/ui"
+  cp -r plugins/qino/servers/dist/ui "${dir}servers/dist/"
+done
+```
+
 Show the diff summary and **WAIT** for confirmation before proceeding.
 
 ### 2. Detect Changed Plugins

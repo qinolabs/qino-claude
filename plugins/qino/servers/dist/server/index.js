@@ -30604,6 +30604,7 @@ async function readDataFileIndex(dataDir) {
 }
 var DEFAULT_RECENCY_DAYS = 7;
 var DEFAULT_MAX_HOPS = 20;
+var MAX_SIGNAL_DOTS = 8;
 var DEFAULT_SIGNAL_TYPES = /* @__PURE__ */ new Set(["reading", "connection", "tension", "proposal"]);
 var MAX_BODY_LENGTH = 500;
 var MAX_RECENT_SIGNALS = 50;
@@ -30640,6 +30641,7 @@ async function collectConnectedSignals(graphDir, graphData, nodeId, workspaceDir
   }
   const signals = [];
   const seenAnnotations = /* @__PURE__ */ new Set();
+  const titlesByRef = /* @__PURE__ */ new Map();
   for (const { ref, raw: raw2 } of uniqueRefs) {
     const parsed = parseEdgeTarget(ref);
     let targetGraphDir;
@@ -30652,6 +30654,10 @@ async function collectConnectedSignals(graphDir, graphData, nodeId, workspaceDir
       path.join(targetGraphDir, "graph.json")
     );
     if (!targetGraph) continue;
+    const targetNode = (targetGraph.nodes ?? []).find((n) => n.id === parsed.nodeId);
+    if (targetNode) {
+      titlesByRef.set(raw2, parsed.graphPath ? `${targetNode.title} (${targetGraph.title})` : targetNode.title);
+    }
     const targetNodesDir = resolveNodesDir(targetGraph);
     const targetNodeDir = await resolveNodeDir(
       targetGraphDir,
@@ -30672,6 +30678,7 @@ async function collectConnectedSignals(graphDir, graphData, nodeId, workspaceDir
       seenAnnotations.add(dedupeKey);
       signals.push({
         source: raw2,
+        sourceTitle: titlesByRef.get(raw2),
         signal: ann.meta.signal,
         body: ann.content.length > MAX_BODY_LENGTH ? ann.content.slice(0, MAX_BODY_LENGTH) + "\u2026" : ann.content,
         created: ann.meta.created,
@@ -30691,9 +30698,10 @@ async function collectConnectedSignals(graphDir, graphData, nodeId, workspaceDir
     if (!connectedRef) continue;
     edgeSignals.push({
       source: connectedRef,
+      sourceTitle: titlesByRef.get(connectedRef),
       signal: "connection",
       body: edge.context.length > MAX_BODY_LENGTH ? edge.context.slice(0, MAX_BODY_LENGTH) + "\u2026" : edge.context,
-      created: "",
+      created: edge.created ?? "",
       filename: "",
       kind: "edge",
       label: edge.label,
@@ -30720,6 +30728,7 @@ async function collectRecentSignals(graphDir, nodesDir, discoveredNodes, config2
       if (created < cutoffIso) continue;
       signals.push({
         source: node2.id,
+        sourceTitle: node2.title !== node2.id ? node2.title : void 0,
         signal: ann.meta.signal,
         body: ann.content.length > MAX_BODY_LENGTH ? ann.content.slice(0, MAX_BODY_LENGTH) + "\u2026" : ann.content,
         created: ann.meta.created,
@@ -30729,6 +30738,23 @@ async function collectRecentSignals(graphDir, nodesDir, discoveredNodes, config2
   }
   signals.sort((a, b) => b.created.localeCompare(a.created));
   return signals.slice(0, MAX_RECENT_SIGNALS);
+}
+async function collectSignalDots(nodeDir, recencyDays = DEFAULT_RECENCY_DAYS) {
+  const cutoff = /* @__PURE__ */ new Date();
+  cutoff.setDate(cutoff.getDate() - recencyDays);
+  const cutoffIso = cutoff.toISOString().slice(0, 10);
+  const annotations = await readAnnotationsFromDir(
+    path.join(nodeDir, "annotations")
+  );
+  const dots = [];
+  for (const ann of annotations) {
+    if (ann.meta.status === "resolved" || ann.meta.status === "dismissed") continue;
+    const created = ann.meta.created.slice(0, 10);
+    if (created < cutoffIso) continue;
+    dots.push(ann.meta.signal);
+    if (dots.length >= MAX_SIGNAL_DOTS) break;
+  }
+  return dots;
 }
 function resolveWorkspaceRelativePath(graphDir, workspaceDir2, graphPath) {
   return path.join(workspaceDir2, graphPath);
@@ -30787,6 +30813,31 @@ async function readConfig(workspaceDir2) {
     path.join(workspaceDir2, ".claude", "qino-config.json")
   );
   return config2 ?? {};
+}
+async function updateConfig(workspaceDir2, updates) {
+  const configPath = path.join(workspaceDir2, ".claude", "qino-config.json");
+  const existing = await readJsonFile(configPath) ?? {};
+  const merged = { ...existing };
+  for (const key of ["name", "color", "repoType", "landingTitle", "editor"]) {
+    if (key in updates) {
+      const value = updates[key];
+      if (value === null || value === void 0) {
+        delete merged[key];
+      } else {
+        merged[key] = value;
+      }
+    }
+  }
+  if (updates.types) {
+    const existingTypes = existing.types ?? {};
+    merged.types = { ...existingTypes, ...updates.types };
+  }
+  if (updates.statuses) {
+    const existingStatuses = existing.statuses ?? {};
+    merged.statuses = { ...existingStatuses, ...updates.statuses };
+  }
+  await fs.writeFile(configPath, JSON.stringify(merged, null, 2) + "\n", "utf-8");
+  return { success: true, config: merged };
 }
 async function readGraph(graphDir, workspaceDir2) {
   const graphData = await readJsonFile(
@@ -31028,10 +31079,11 @@ async function getNodeMtime(nodeDir) {
   const nodeJsonPath = path.join(nodeDir, "node.json");
   const nodeData = await readJsonFile(nodeJsonPath);
   const updatedMs = nodeData?.updated && typeof nodeData.updated === "string" ? Date.parse(nodeData.updated) : NaN;
-  const hasUpdated = !Number.isNaN(updatedMs);
+  if (!Number.isNaN(updatedMs)) {
+    return updatedMs;
+  }
   let latest = 0;
-  const rootFiles = hasUpdated ? ["story.md"] : ["story.md", "node.json", "graph.json"];
-  for (const filename of rootFiles) {
+  for (const filename of ["story.md", "node.json", "graph.json"]) {
     try {
       const stat = await fs.stat(path.join(nodeDir, filename));
       if (stat.mtimeMs > latest) latest = stat.mtimeMs;
@@ -31053,9 +31105,6 @@ async function getNodeMtime(nodeDir) {
       } catch {
       }
     }
-  }
-  if (hasUpdated) {
-    return Math.max(updatedMs, latest);
   }
   return latest;
 }
@@ -31138,6 +31187,7 @@ async function readWorkspaces(workspaceDir2) {
     entries.push({
       name: childConfig.name ?? name,
       path: ws.path,
+      color: childConfig.color,
       repoType: childConfig.repoType,
       nodeCount
     });
@@ -31146,6 +31196,7 @@ async function readWorkspaces(workspaceDir2) {
     entries.unshift({
       name: config2.name,
       path: "",
+      color: config2.color,
       repoType: config2.repoType,
       nodeCount: totalNodeCount
     });
@@ -31260,9 +31311,7 @@ async function readLandingData(workspaceDir2, opts = {}) {
   const rootNodesDir = rootGraph?.nodesDir ?? "nodes";
   const rootNodes = rootGraph ? await discoverNodes(workspaceDir2, rootNodesDir) : [];
   const arcs = rootNodes.filter((n) => n.type === "arc");
-  const navigators = rootNodes.filter((n) => n.type === "navigator" && n.status !== "composted" && n.status !== "completed").map((n) => ({ ...n, graphPath: "_root" }));
   const deckNodes = rootNodes.filter((n) => n.type === "deck" && n.status !== "composted" && n.status !== "completed").map((n) => ({ ...n, graphPath: "_root" }));
-  const views = [];
   const recentNodes = [];
   const rootEdgeCounts = /* @__PURE__ */ new Map();
   if (rootGraph) {
@@ -31303,11 +31352,6 @@ async function readLandingData(workspaceDir2, opts = {}) {
     for (const node2 of wsNodes) {
       const wsNodeDir = path.join(wsDir, wsNodesDir, node2.dir);
       try {
-        await fs.access(path.join(wsNodeDir, "view.json"));
-        node2.hasView = true;
-      } catch {
-      }
-      try {
         await fs.access(path.join(wsNodeDir, "graph.json"));
         node2.hasSubGraph = true;
       } catch {
@@ -31320,22 +31364,7 @@ async function readLandingData(workspaceDir2, opts = {}) {
     }
     for (const node2 of wsNodes) {
       knownNodePaths.add(path.join(ws.path, wsNodesDir, node2.dir));
-      if (node2.hasView || node2.type === "view") {
-        if (node2.status !== "composted" && node2.status !== "completed") {
-          views.push({
-            ...node2,
-            graphPath: ws.path,
-            workspaceName: ws.name
-          });
-        }
-        continue;
-      }
-      if (node2.type === "navigator") {
-        if (node2.status !== "composted" && node2.status !== "completed") {
-          navigators.push({ ...node2, graphPath: ws.path });
-        }
-        continue;
-      }
+      if (node2.type === "view" || node2.type === "navigator") continue;
       if (node2.type === "deck") {
         if (node2.status !== "composted" && node2.status !== "completed") {
           deckNodes.push({ ...node2, graphPath: ws.path });
@@ -31477,12 +31506,20 @@ async function readLandingData(workspaceDir2, opts = {}) {
     const wsHealth = await detectGraphHealth(wsDir, ws.name, ws.path, workspaceDir2);
     if (wsHealth) health.push(wsHealth);
   }
+  const pinnedNodes = [...deckNodes];
+  await Promise.all(
+    pinnedNodes.map(async (node2) => {
+      const graphPath = node2.graphPath === "_root" ? "" : node2.graphPath ?? "";
+      const graphDir = graphPath ? path.join(workspaceDir2, graphPath) : workspaceDir2;
+      const nodesDir = "nodes";
+      const nodeDir = path.join(graphDir, nodesDir, node2.dir);
+      node2.recentSignalDots = await collectSignalDots(nodeDir);
+    })
+  );
   return {
     workspaces,
     arcs,
-    navigators,
     deckNodes,
-    views,
     recentNodes,
     subGraphs: [],
     // Keep for API compatibility, but empty
@@ -32025,7 +32062,79 @@ async function addEdge(graphDir, opts, workspaceDir2) {
   await rebuildGraphIndex(graphDir);
   return { success: true };
 }
+async function touchNode(graphDir, nodeId, date3) {
+  const graphPath = path.join(graphDir, "graph.json");
+  const graphData = await readJsonFile(graphPath);
+  if (!graphData) {
+    throwNoGraphError(graphDir);
+  }
+  const nodesDir = resolveNodesDir(graphData);
+  const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
+  if (!nodeDir) {
+    throw new Error(`Node not found: ${nodeId}`);
+  }
+  const nodeJsonPath = path.join(nodeDir, "node.json");
+  const nodeData = await readJsonFile(nodeJsonPath);
+  if (!nodeData) {
+    throw new Error(`Cannot read node.json for: ${nodeId}`);
+  }
+  const updated = date3 ?? (/* @__PURE__ */ new Date()).toISOString().slice(0, 10);
+  nodeData.updated = updated;
+  await fs.writeFile(nodeJsonPath, JSON.stringify(nodeData, null, 2) + "\n", "utf-8");
+  return { success: true, updated };
+}
 var VALID_NAME_RE = /^[a-z0-9][a-z0-9_-]*$/;
+var workspaceTemplates = {
+  research: {
+    description: "Open-ended inquiry \u2014 ask questions, run sessions, capture findings",
+    color: "cyan",
+    types: {
+      inquiry: { color: "violet", hint: "Open question or investigation thread" },
+      finding: { color: "teal", hint: "Settled insight from research \u2014 something we now know" },
+      session: { color: "amber", hint: "Time-bounded research session with specific focus" },
+      reference: { color: "cyan", hint: "External source or settled knowledge" }
+    }
+  },
+  concepts: {
+    description: "Concept exploration \u2014 vision, design, and architecture for products and ideas",
+    color: "emerald",
+    types: {
+      app: { color: "indigo", hint: "App concept \u2014 vision and design for a product" },
+      tool: { color: "amber", hint: "Tool or utility concept" },
+      ecosystem: { color: "blue", hint: "Cross-cutting ecosystem pattern or principle" },
+      capture: { color: "rose", hint: "In-the-moment thought or observation worth preserving" }
+    }
+  },
+  implementation: {
+    description: "Building software \u2014 apps, packages, tools, and infrastructure",
+    color: "indigo",
+    types: {
+      app: { color: "indigo", hint: "A product with its own identity" },
+      package: { color: "violet", hint: "Shared library consumed by apps" },
+      tool: { color: "amber", hint: "Developer tooling or CLI utility" },
+      infra: { color: "orange", hint: "Infrastructure service or deployment config" },
+      reference: { color: "cyan", hint: "Documentation or settled architectural pattern" }
+    }
+  },
+  evaluation: {
+    description: "Quality assessment \u2014 evaluations, comparisons, simulations, and snapshots",
+    color: "pink",
+    types: {
+      evaluation: { color: "pink", hint: "Quality assessment of a specific artifact or experience" },
+      comparison: { color: "violet", hint: "Side-by-side analysis across models, versions, or approaches" },
+      simulation: { color: "cyan", hint: "Automated run with structured output for scoring" },
+      snapshot: { color: "teal", hint: "Point-in-time capture of system state for later reference" }
+    }
+  },
+  general: {
+    description: "Flexible workspace \u2014 start here when the shape isn't clear yet",
+    color: "teal",
+    types: {
+      reference: { color: "cyan", hint: "External source or settled knowledge" },
+      exploration: { color: "teal", hint: "Open-ended exploration of a topic" }
+    }
+  }
+};
 async function initWorkspace(workspaceDir2, opts) {
   if (!VALID_NAME_RE.test(opts.name)) {
     throw new Error(
@@ -32058,13 +32167,21 @@ async function initWorkspace(workspaceDir2, opts) {
   const claudeDir = path.join(workspaceDir2, ".claude");
   await fs.mkdir(claudeDir, { recursive: true });
   const configPath = path.join(claudeDir, "qino-config.json");
+  const template = opts.template ? workspaceTemplates[opts.template] : void 0;
   const configData = { name: opts.name };
+  if (template) {
+    configData.color = template.color;
+    configData.types = template.types;
+  }
   await fs.writeFile(configPath, JSON.stringify(configData, null, 2) + "\n", "utf-8");
   created.push(".claude/qino-config.json");
   const nodesDirPath = path.join(workspaceDir2, effectiveNodesDir);
   await fs.mkdir(nodesDirPath, { recursive: true });
   created.push(effectiveNodesDir + "/");
-  return { created };
+  return {
+    created,
+    next_steps: template ? `Workspace initialized with '${opts.template}' template (${template.description}). ${Object.keys(template.types).length} node types seeded: ${Object.keys(template.types).map((t) => `${t} \u2014 ${template.types[t].hint}`).join("; ")}. Use update_config to add more types or adjust colors.` : "Workspace initialized. Use update_config to set type colors, workspace color, and status treatments. Pass a 'template' to init_workspace next time for sensible defaults. See read_protocol('setup') for configurable fields."
+  };
 }
 function labelToNodeId(label) {
   if (!label || !label.trim()) return `deck-${Date.now()}`;
@@ -44733,6 +44850,11 @@ function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces,
     const config2 = await readConfig(configDir);
     return c.json(config2);
   });
+  app.patch("/api/config", async (c) => {
+    const body = await c.req.json();
+    const result = await updateConfig(workspaceDir2, body);
+    return c.json(result);
+  });
   app.get("/api/landing", async (c) => {
     const notes = c.req.query("notes");
     const workspace = c.req.query("workspace");
@@ -44890,6 +45012,23 @@ function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces,
       }
       if (message.includes("already exists")) {
         return c.json({ error: message }, 409);
+      }
+      throw err;
+    }
+  });
+  app.patch("/api/nodes/:nodeId/touch", async (c) => {
+    const nodeId = c.req.param("nodeId");
+    const graphPath = resolveApiPath(c.req.query("path"));
+    const graphDir = graphPath ? nodePath.join(workspaceDir2, graphPath) : workspaceDir2;
+    const body = await c.req.json();
+    try {
+      const result = await touchNode(graphDir, nodeId, body.date);
+      watcher?.push({ type: "node", nodeId, graphPath: graphPath ?? void 0 });
+      return c.json(result);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Unknown error";
+      if (message.includes("not found")) {
+        return c.json({ error: message }, 404);
       }
       throw err;
     }
@@ -45523,20 +45662,70 @@ nodes/                        # Node directories (or custom nodesDir)
 | annotations/ | Marginal signals from agents. Numbered markdown files with YAML frontmatter. | Optional |
 | data/ | Structured JSON data. Evaluation results, scores, schema definitions. | Optional |
 
+## Workspace Archetypes
+
+Different projects call for different structures. Templates seed the right node types, colors, and usage hints:
+
+| Template | Purpose | Node types |
+|----------|---------|------------|
+| **research** | Open-ended inquiry | inquiry, finding, session, reference |
+| **concepts** | Vision and design for products and ideas | app, tool, ecosystem, capture |
+| **implementation** | Building software | app, package, tool, infra, reference |
+| **evaluation** | Quality assessment | evaluation, comparison, simulation, snapshot |
+| **general** | Flexible starting point | reference, exploration |
+
+**Present these options to the user** when initializing a workspace. The template choice shapes the type vocabulary \u2014 what kinds of nodes the workspace expects.
+
 ## Initialization
 
 Use \`init_workspace\` to create a new workspace. It creates exactly three things:
 1. \`graph.json\` \u2014 empty graph ready for nodes
-2. \`.claude/qino-config.json\` \u2014 workspace identity
+2. \`.claude/qino-config.json\` \u2014 workspace identity with types, colors, and hints
 3. The nodes directory (default: \`nodes/\`)
 
-**Before calling init_workspace**: Ask the user two questions:
+**Before calling init_workspace**: Ask the user:
 - What should the workspace be called? (becomes the graph ID \u2014 lowercase, hyphens, underscores)
+- Which template fits? (describe the archetypes above)
 - Where should nodes live? (default: \`nodes/\` \u2014 most workspaces use this)
 
 ## After Initialization
 
-Once the workspace exists, use \`create_node\` to structure content into the graph.
+Once the workspace exists, refine its config and start creating nodes.
+
+### Configure the Workspace
+
+Use \`update_config\` to adjust workspace identity and conventions:
+
+\`\`\`json
+{
+  "name": "My Research",
+  "color": "cyan",
+  "types": {
+    "inquiry": { "color": "violet", "hint": "Open question or investigation thread" },
+    "finding": { "color": "teal", "hint": "Settled insight \u2014 something we now know" },
+    "session": { "color": "amber", "hint": "Time-bounded session with specific focus" }
+  },
+  "statuses": {
+    "composted": { "treatment": "faded" }
+  }
+}
+\`\`\`
+
+**Configurable fields:**
+| Field | Effect |
+|-------|--------|
+| \`name\` | Display name for the workspace |
+| \`landingTitle\` | Title shown on the landing page (falls back to name) |
+| \`color\` | Workspace identity color from the palette: blue, orange, emerald, red, violet, pink, cyan, amber, rose, teal, indigo, zinc. Controls page tint. |
+| \`editor\` | Preferred editor \u2014 "cursor", "zed", or default "code" (VS Code) |
+| \`types\` | Map of node type \u2192 { color, hint }. Each type has a color from the palette and a hint describing when to use it. Controls graph labels, minimap dots, and type badges. Types not in config render in neutral gray. |
+| \`statuses\` | Map of status \u2192 { treatment }. \`treatment: "faded"\` reduces node opacity for composted/dormant nodes. |
+
+**Types are the workspace vocabulary.** Each type's hint tells agents when to use it. Always call \`read_config\` before creating nodes to see declared types. When introducing a genuinely new type, add it via \`update_config\` first \u2014 include a hint so future agents know when to use it.
+
+### Create Nodes
+
+Use \`create_node\` to structure content into the graph. Use types from \`read_config\` for visual consistency.
 
 Tips for restructuring existing content:
 - Each distinct concept, project, or topic becomes a node
@@ -45601,7 +45790,17 @@ The workspace defines its own type vocabulary. There is no fixed set of types \u
 - Implementation workspaces: "app", "tool", "ecosystem", "infrastructure"
 - Mixed workspaces: whatever emerges from the content
 
-Check \`read_config\` for the workspace's declared types and statuses.
+Check \`read_config\` for the workspace's declared types and statuses. Use \`update_config\` to add new types with colors when introducing a new type to the workspace.
+
+## Visual Configuration
+
+Type and status styling flows from the workspace config (\`.claude/qino-config.json\`):
+
+- **Workspace color**: Top-level \`color\` field sets the page tint for workspace identity.
+- **Type \u2192 color**: Each type has a named color from the 12-color palette (blue, orange, emerald, red, violet, pink, cyan, amber, rose, teal, indigo, zinc). Controls type labels, graph minimap dots, and badges.
+- **Status \u2192 treatment**: Statuses can have a \`treatment\` value. Currently supported: \`"faded"\` (reduces node opacity for composted or dormant nodes).
+
+Types without a declared color render in neutral gray. When creating nodes with a type not in config, the tool will suggest adding it via \`update_config\`.
 
 ## Node Placement
 
@@ -45725,11 +45924,19 @@ function registerTools(server, ops, options) {
     `Read the workspace configuration from .claude/qino-config.json.
 
 WHEN TO USE:
-- On arrival \u2014 understand workspace conventions
-- Before creating nodes \u2014 know valid types and statuses
-- Checking visual conventions \u2014 type colors, status treatments
+- On arrival \u2014 understand workspace conventions before creating nodes
+- Before creating nodes \u2014 know valid types, their colors, and status treatments
+- Checking workspace identity \u2014 name, repoType, editor preference
 
-RETURNS: types (valid node types with colors), statuses (with visual treatments), name, protocol`,
+RETURNS:
+- name: workspace display name
+- repoType: workspace category (concepts, implementation, research, evaluation, tool)
+- landingTitle: title shown on the landing page
+- editor: preferred editor (cursor, zed, code)
+- types: map of node type \u2192 { color, hint } \u2014 hint describes when to use the type. Valid colors: blue, orange, emerald, red, violet, pink, cyan, amber, rose, teal, indigo, zinc
+- statuses: map of status \u2192 { treatment } \u2014 e.g. "faded" for composted nodes
+
+Use update_config to modify these settings. Types without a declared color render as neutral gray on the graph minimap.`,
     {},
     async () => {
       const config2 = await ops.readConfig();
@@ -45750,7 +45957,7 @@ RETURNS: types (valid node types with colors), statuses (with visual treatments)
 WHEN TO USE:
 - On arrival \u2014 understand the full ecosystem before drilling into specific work
 - Session check-in \u2014 what changed recently, what needs attention
-- Finding where to start \u2014 active navigators point to ongoing lines of work
+- Finding where to start \u2014 deck nodes and arcs point to active lines of work
 - Discovering workspaces \u2014 what paths exist for read_graph calls
 
 WHEN NOT TO USE:
@@ -45760,8 +45967,6 @@ WHEN NOT TO USE:
 
 SECTIONS:
 - workspaces: child workspaces with node counts \u2014 the ecosystem map
-- navigators: active territory maps \u2014 named entry points for lines of work that may span multiple nodes
-- views: curated attention subsets across workspaces
 - arcs: root-level inquiry arcs
 - recentNodes: recently modified nodes across all workspaces (capped by limit, sorted most-recent-first)
 - actionItems: open proposals + tensions needing human attention
@@ -45770,13 +45975,11 @@ SECTIONS:
 
 RETURNS: Each section includes graphPath for navigation \u2014 pass it to read_graph or read_node to drill deeper.
 
-ARRIVAL PATTERN: Call read_activity first. Active navigators are entry points into lines of work \u2014 read_node on a navigator to enter its territory. Action items are attention signals \u2014 read_node on the parent to understand context.`,
+ARRIVAL PATTERN: Call read_activity first. Deck nodes are composed thread ensembles \u2014 read_node on a deck to enter its territory. Action items are attention signals \u2014 read_node on the parent to understand context.`,
     {
       sections: external_exports.array(
         external_exports.enum([
           "workspaces",
-          "navigators",
-          "views",
           "arcs",
           "recentNodes",
           "actionItems",
@@ -45802,23 +46005,6 @@ ARRIVAL PATTERN: Call read_activity first. Active navigators are entry points in
           path: ws.path,
           repoType: ws.repoType,
           nodeCount: ws.nodeCount
-        }));
-      }
-      if (!include || include.has("navigators")) {
-        result.navigators = landing.navigators.map((n) => ({
-          id: n.id,
-          title: n.title,
-          type: n.type,
-          status: n.status,
-          graphPath: n.graphPath
-        }));
-      }
-      if (!include || include.has("views")) {
-        result.views = landing.views.map((v) => ({
-          id: v.id,
-          title: v.title,
-          graphPath: v.graphPath,
-          workspaceName: v.workspaceName
         }));
       }
       if (!include || include.has("arcs")) {
@@ -46177,11 +46363,21 @@ SECTIONS:
 
 CREATES:
 - graph.json \u2014 workspace graph index (empty, ready for create_node)
-- .claude/qino-config.json \u2014 workspace identity
+- .claude/qino-config.json \u2014 workspace identity (name only \u2014 customize with update_config)
 - nodes/ directory (or custom nodesDir) \u2014 where node directories will live
 
 IMPORTANT: Discuss the workspace name and node directory with the user before calling.
 These names shape how the workspace is organized. Does NOT modify existing files.
+
+TEMPLATES: Each template seeds a workspace archetype with node types, colors, and usage hints:
+- "research" \u2192 open-ended inquiry (inquiry, finding, session, reference)
+- "concepts" \u2192 concept exploration (app, tool, ecosystem, capture)
+- "implementation" \u2192 building software (app, package, tool, infra, reference)
+- "evaluation" \u2192 quality assessment (evaluation, comparison, simulation, snapshot)
+- "general" \u2192 flexible starting point (reference, exploration)
+
+Without a template, config starts empty \u2014 use update_config to add types manually.
+Describe the templates to the user so they can choose the right fit.
 
 WHEN TO USE:
 - Setting up a new workspace from an existing directory of files
@@ -46190,11 +46386,60 @@ WHEN TO USE:
       {
         name: external_exports.string().describe("Workspace name (lowercase, hyphens, underscores). Becomes the graph ID."),
         title: external_exports.string().optional().describe("Display title. Defaults to name."),
-        nodesDir: external_exports.string().optional().describe("Directory name for nodes. Defaults to 'nodes'.")
+        nodesDir: external_exports.string().optional().describe("Directory name for nodes. Defaults to 'nodes'."),
+        template: external_exports.enum(["research", "concepts", "implementation", "evaluation", "general"]).optional().describe("Workspace template \u2014 seeds node types with colors and usage hints. Describe the options to the user before choosing. Recommend 'general' when unsure.")
       },
-      async ({ name, title, nodesDir }) => {
+      async ({ name, title, nodesDir, template }) => {
         try {
-          const result = await ops.initWorkspace({ name, title, nodesDir });
+          const result = await ops.initWorkspace({ name, title, nodesDir, template });
+          return {
+            content: [{ type: "text", text: JSON.stringify(result, null, 2) }]
+          };
+        } catch (err) {
+          const message = err instanceof Error ? err.message : "Unknown error";
+          return {
+            content: [{ type: "text", text: message }],
+            isError: true
+          };
+        }
+      }
+    );
+    server.tool(
+      "update_config",
+      `Update workspace configuration in .claude/qino-config.json. Merges updates into the existing config.
+
+WHEN TO USE:
+- After init_workspace \u2014 set workspace color, type colors, status treatments
+- Adding a new node type \u2014 declare its color and hint so agents know when to use it
+- Changing workspace identity \u2014 color, name, landingTitle, editor preference
+
+MERGE BEHAVIOR:
+- Scalar fields (name, repoType, etc.): replaced entirely
+- types/statuses: entries are added or updated \u2014 existing entries not in the update are preserved
+- To see current config before updating: call read_config
+
+VALID COLORS for types: blue, orange, emerald, red, violet, pink, cyan, amber, rose, teal, indigo, zinc
+VALID TREATMENTS for statuses: "faded" (reduces node opacity)
+VALID REPO TYPES: concepts, implementation, research, evaluation, tool`,
+      {
+        name: external_exports.string().optional().describe("Workspace display name"),
+        color: external_exports.string().optional().describe("Workspace identity color: blue, orange, emerald, red, violet, pink, cyan, amber, rose, teal, indigo, zinc"),
+        repoType: external_exports.string().optional().describe("Workspace category: concepts, implementation, research, evaluation, tool"),
+        landingTitle: external_exports.string().optional().describe("Title shown on the landing page"),
+        editor: external_exports.string().optional().describe("Preferred editor: cursor, zed, or code (default)"),
+        types: external_exports.record(
+          external_exports.object({
+            color: external_exports.string().optional().describe("Named color: blue, orange, emerald, red, violet, pink, cyan, amber, rose, teal, indigo, zinc"),
+            hint: external_exports.string().optional().describe("Short description of when to use this type \u2014 surfaced to agents via read_config")
+          })
+        ).optional().describe("Node type \u2192 visual config + usage hint. Each entry maps a type name to its display color and an optional hint describing when to use it."),
+        statuses: external_exports.record(
+          external_exports.object({ treatment: external_exports.string().optional().describe("Visual treatment: 'faded' reduces node opacity") })
+        ).optional().describe("Status \u2192 visual config. Each entry maps a status to its display treatment.")
+      },
+      async (args) => {
+        try {
+          const result = await ops.updateConfig(args);
           return {
             content: [{ type: "text", text: JSON.stringify(result, null, 2) }]
           };
@@ -46281,9 +46526,9 @@ Example: [{ "target": "some-node", "label": "coherence frontier", "context": "Ca
         ),
         title: external_exports.string().describe("Human-readable title"),
         type: external_exports.string().optional().describe(
-          "Node type from workspace vocabulary (e.g. 'app', 'ecosystem', 'tool')"
+          "Node type from workspace vocabulary \u2014 call read_config to see declared types with colors and hints (e.g. 'concept', 'app', 'tool'). Types not in config render without color on the graph."
         ),
-        status: external_exports.string().optional().describe("Initial status. Defaults to 'active' if not provided."),
+        status: external_exports.string().optional().describe("Lifecycle status. Defaults to 'active'. Common values: 'active', 'composted', 'proposed', 'dormant'."),
         story: external_exports.string().describe(
           "The impulse \u2014 why this node exists. Markdown formatted. Brief nodes can be 1-3 sentences; longer research or implementation nodes should use headers, lists, and emphasis for structure."
         ),
@@ -46303,7 +46548,7 @@ Example: [{ "target": "some-node", "label": "coherence frontier", "context": "Ca
             "All node IDs included in this view (including the focal)"
           )
         }).optional().describe(
-          "Object with focal (node ID) and includes (array of node IDs). Creates a curated view subset."
+          "[Dormant] Object with focal (node ID) and includes (array of node IDs). Creates a curated view subset. Views are preserved for future agent integration but not currently wired into the UI."
         ),
         graphPath: external_exports.string().optional().describe(GRAPH_PATH_NODE)
       },
@@ -46365,6 +46610,48 @@ EDGE FIELDS:
             weight,
             graphPath
           });
+          return {
+            content: [
+              {
+                type: "text",
+                text: JSON.stringify(result, null, 2)
+              }
+            ]
+          };
+        } catch (err) {
+          const message = err instanceof Error ? err.message : "Unknown error";
+          return {
+            content: [{ type: "text", text: message }],
+            isError: true
+          };
+        }
+      }
+    );
+    server.tool(
+      "touch_node",
+      `Bump a node's updated date to record that its content changed.
+
+WHEN TO USE:
+- After writing or editing content files (story.md, content/*.md) via Write/Edit tools
+- After batch-writing multiple files in a node \u2014 call once at the end, not per file
+- To backfill stale dates on nodes whose content was updated outside protocol tooling
+
+WHEN NOT TO USE:
+- After create_node or add_edge \u2014 these already set updated automatically
+- After write_annotation \u2014 annotations don't affect node recency
+
+WHY THIS EXISTS:
+Content writes happen through filesystem tools (Write, Edit), not protocol tools.
+The protocol tracks recency via the updated field in node.json. Without touch_node,
+a node's recency reflects its birth or last edge addition, not its last content edit.`,
+      {
+        nodeId: external_exports.string().describe("The node to touch \u2014 its updated date will be set"),
+        graphPath: external_exports.string().optional().describe(GRAPH_PATH_NODE),
+        date: external_exports.string().optional().describe("ISO date override (YYYY-MM-DD). Defaults to today. Useful for backfill scripts.")
+      },
+      async ({ nodeId, graphPath, date: date3 }) => {
+        try {
+          const result = await ops.touchNode({ nodeId, graphPath, date: date3 });
           return {
             content: [
               {
@@ -46492,18 +46779,15 @@ RETURNS: { success: true, filename }`,
     );
     server.tool(
       "update_view",
-      `Update a curated view's focal node and included nodes. Syncs view.json and curates edges in graph.json.
+      `[Dormant] Update a curated view's focal node and included nodes. Syncs view.json and curates edges in graph.json.
 
-WHEN TO USE:
-- View's composition needs to change as inquiry evolves
-- Focal node shifts (different primary subject)
-- Nodes added or removed from the curated subset
+This tool is preserved for future agent-prepared views but is not currently
+wired into the UI. Views may be revived as agent-composed graph subsets that
+users can save or discard.
 
 WHAT IT DOES:
 1. Updates view.json with new focal and includes
-2. Syncs 'curates' edges in graph.json (adds missing, removes stale)
-
-Views are curated attention subsets \u2014 focus on part of a graph without losing the whole.`,
+2. Syncs 'curates' edges in graph.json (adds missing, removes stale)`,
       {
         nodeId: external_exports.string().describe("The view node identifier from graph.json"),
         focal: external_exports.string().describe("The focal node ID \u2014 the primary subject of this view"),
@@ -46648,6 +46932,9 @@ function createDirectOps(workspaceDir2, _repoRoot, baseUrl, knownWorkspaces, wat
     initWorkspace: async (args) => {
       return initWorkspace(workspaceDir2, args);
     },
+    updateConfig: async (args) => {
+      return updateConfig(workspaceDir2, args);
+    },
     readGraph: async (graphPath) => {
       const graph = await readGraph(resolveGraphDir(graphPath), workspaceDir2);
       if (!graph) return null;
@@ -46687,7 +46974,21 @@ function createDirectOps(workspaceDir2, _repoRoot, baseUrl, knownWorkspaces, wat
         view: args.view
       });
       watcher?.push({ type: "graph", graphPath: args.graphPath });
-      return result;
+      const hints = [];
+      if (args.type) {
+        const config2 = await readConfig(workspaceDir2);
+        const knownTypes = config2.types ? Object.keys(config2.types) : [];
+        if (knownTypes.length > 0 && !config2.types?.[args.type]) {
+          const typeList = knownTypes.map((t) => {
+            const hint = config2.types?.[t]?.hint;
+            return hint ? `${t} (${hint})` : t;
+          }).join(", ");
+          hints.push(
+            `Type "${args.type}" is not in workspace config \u2014 it will render without color. Known types: ${typeList}. Use update_config to add it.`
+          );
+        }
+      }
+      return hints.length > 0 ? { ...result, hints } : result;
     },
     addEdge: async (args) => {
       const graphDir = resolveGraphDir(args.graphPath);
@@ -46699,6 +47000,12 @@ function createDirectOps(workspaceDir2, _repoRoot, baseUrl, knownWorkspaces, wat
         weight: args.weight
       }, workspaceDir2);
       watcher?.push({ type: "graph", graphPath: args.graphPath });
+      return result;
+    },
+    touchNode: async (args) => {
+      const graphDir = resolveGraphDir(args.graphPath);
+      const result = await touchNode(graphDir, args.nodeId, args.date);
+      watcher?.push({ type: "node", nodeId: args.nodeId, graphPath: args.graphPath });
       return result;
     },
     updateView: async (args) => {
@@ -46808,9 +47115,9 @@ function createDirectOps(workspaceDir2, _repoRoot, baseUrl, knownWorkspaces, wat
     }
   };
 }
-function createHttpOps(apiUrl2) {
+function createHttpOps(apiUrl) {
   const buildUrl = (path5, params) => {
-    const url = new URL(path5, apiUrl2);
+    const url = new URL(path5, apiUrl);
     if (params) {
       for (const [key, value] of Object.entries(params)) {
         if (value !== void 0) {
@@ -46839,6 +47146,14 @@ function createHttpOps(apiUrl2) {
     initWorkspace: async (args) => {
       const res = await fetch(buildUrl("/api/init"), {
         method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(args)
+      });
+      return handleResponse(res);
+    },
+    updateConfig: async (args) => {
+      const res = await fetch(buildUrl("/api/config"), {
+        method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(args)
       });
@@ -46925,6 +47240,20 @@ function createHttpOps(apiUrl2) {
             context: args.context,
             weight: args.weight
           })
+        }
+      );
+      return handleResponse(res);
+    },
+    touchNode: async (args) => {
+      const res = await fetch(
+        buildUrl(
+          `/api/nodes/${encodeURIComponent(args.nodeId)}/touch`,
+          args.graphPath ? { path: args.graphPath } : void 0
+        ),
+        {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ date: args.date })
         }
       );
       return handleResponse(res);
@@ -47159,12 +47488,11 @@ var __dirname = path4.dirname(fileURLToPath2(import.meta.url));
 var workspaceDir = process.env.WORKSPACE_DIR ?? getCliArg("--workspace-dir") ?? process.cwd();
 var port = Number(process.env.PORT ?? getCliArg("--port") ?? "4020");
 var repoRootOverride = process.env.REPO_ROOT ?? getCliArg("--repo-root");
-var apiUrl = process.env.API_URL ?? getCliArg("--api-url");
+var explicitApiUrl = process.env.API_URL ?? getCliArg("--api-url");
 var noBrowser = process.argv.includes("--no-browser");
 var modeArg = process.env.QINO_MODE ?? getCliArg("--mode") ?? "full";
 var mode = modeArg === "reader" ? "reader" : "full";
 var viewerUrl = process.env.QINO_VIEWER_URL ?? getCliArg("--viewer-url");
-var isClientMode = !!apiUrl;
 var packageRoot = path4.resolve(__dirname, "../..");
 var distUiDir = path4.resolve(packageRoot, "dist/ui");
 async function hasBuiltSpa() {
@@ -47187,9 +47515,27 @@ function getCliArg(flag) {
   return void 0;
 }
 var isStdio = !process.stdin.isTTY;
+async function probeExistingServer(targetPort) {
+  try {
+    const url = `http://localhost:${targetPort}/api/config`;
+    const res = await fetch(url, { signal: AbortSignal.timeout(1e3) });
+    if (res.ok) return `http://localhost:${targetPort}`;
+  } catch {
+  }
+  return void 0;
+}
 async function main() {
   const repoRoot = repoRootOverride ?? await resolveGitRoot(workspaceDir);
   const log = isStdio ? console.error : console.log;
+  let apiUrl = explicitApiUrl;
+  if (!apiUrl && isStdio) {
+    const existing = await probeExistingServer(port);
+    if (existing) {
+      apiUrl = existing;
+      log(`[qino-os] Detected running qino-os on :${port} \u2014 delegating to dev server`);
+    }
+  }
+  const isClientMode = !!apiUrl;
   const knownWorkspaces = /* @__PURE__ */ new Set();
   const config2 = await readConfig(workspaceDir);
   if (config2.workspaces) {
@@ -47258,7 +47604,7 @@ async function main() {
       { instructions }
     );
     const opsBaseUrl = apiUrl ?? baseUrl;
-    const ops = isClientMode ? createHttpOps(apiUrl) : createDirectOps(workspaceDir, repoRoot, opsBaseUrl, knownWorkspaces, watcher, viewerUrl, messageStore, deckStore);
+    const ops = isClientMode && apiUrl ? createHttpOps(apiUrl) : createDirectOps(workspaceDir, repoRoot, opsBaseUrl, knownWorkspaces, watcher, viewerUrl, messageStore, deckStore);
     registerTools(mcpServer, ops, { mode, workspaceDir });
     const transport = new StdioServerTransport();
     await mcpServer.connect(transport);
