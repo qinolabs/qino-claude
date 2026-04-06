@@ -110,7 +110,7 @@ Updates happen automatically when you run `/plugin marketplace update`.
 /qino init workspace my-workspace
 ```
 
-This creates `./my-workspace/` in your current directory with coordinated repos inside — concepts, research, and implementations that evolve together. Start minimal, add spaces later. The skill detects existing structure and offers to enhance it.
+The setup guides you through workspace type (minimal → standard → full → custom) and scaffolds from default templates — coordinated repos for concepts, research, and implementations that evolve together. Templates are customizable: each workspace can define its own node types, vocabulary, and structure. Start minimal, add spaces later. The skill detects existing structure and offers to enhance it.
 
 **qino-os** starts automatically when the plugin loads — a bundled MCP server with 20 graph tools and a browser viewer at `http://localhost:4020` for visual graph exploration.
 
@@ -202,11 +202,7 @@ The protocol distributes information across two complementary forms:
 
 Two scopes: the **root journal** (`journal.md`) for cross-node context, and **node journals** (`nodes/{node}/journal.md`) for local development trails.
 
-### Views and Navigators
-
-**Views** are curated attention subsets — "think about these things together." A view has a focal node and included nodes. The UI renders just this subset. Views are ephemeral — when an inquiry resolves, the view can be composted. What remains is understanding, not the frame.
-
-**Navigators** are living orientation documents for trans-contextual work — an implementation touching three apps, a concept bridging research and building. A navigator holds terrain (what's here, what connects), open questions, and a session log. Unlike arcs (which follow emergence), navigators map terrain for building.
+Workspaces can also define **custom node types** — extending the default vocabulary with types meaningful to your domain. The workspace config declares what types are available and how they behave in the graph.
 
 ![qino-lab root view — workspaces, sessions, and signals](docs/images/lab/qino-lab-root.png)
 
@@ -235,7 +231,6 @@ Features are gestures within the protocol — ways of moving through the medium.
 | **deck** | Read ecosystem from composed vantage | Multi-node actualization reading |
 | **bug** | Persist a discovery | Create finding node + sparked-by edge |
 | **lab** | Work alongside the UI | Real-time annotations, graph IS conversation |
-| **navigate** | Orient across contexts | Navigator nodes, session logging |
 
 <br>
 
@@ -539,10 +534,6 @@ The lab is where you think together. A shared visual surface — the graph rende
 ```
 
 The conversation continues in chat. Findings, proposals, and tensions appear in the graph. The agent's thinking becomes visible _as it happens_.
-
-### navigate
-
-Activates a navigator for trans-contextual work. "Use the active navigator", "navigate [territory]", "map this concept"
 
 _[Source](plugins/qino/)_
 
