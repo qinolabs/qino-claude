@@ -612,8 +612,7 @@ What stays constant is the gesture — capture, explore, test, attune. What chan
 
 The `qino-prose` plugin is where the ecosystem's writing practice developed. Scribe (git → chronicle), Relay (research → transmission), and Lens (qualities of attention) explored how protocol content becomes story.
 
-These tools are evolving into **metalogue** — a more comprehensive writing pipeline where chapters choose from available writing devices. The wanderer and Student, born as fixed roles in Scribe and Relay, become devices a metalogue chapter can select based on what the material demands. _(Metalogue is not currently open source.)_
-
+These tools are evolving into **metalogue** — a more comprehensive writing pipeline where chapters choose from available writing devices. The wanderer and Student, born as fixed roles in Scribe and Relay, become devices a metalogue chapter can select based on what the material demands.
 What persists from qino-prose — and carries directly into metalogue — are the **writing devices** and the **qualities of attention** they embody.
 
 ### Writing Devices
@@ -687,7 +686,7 @@ Each repository in the qino ecosystem tells its own story.
 
 > _Loose pages everywhere. Half-finished questions. The wanderer turned one over: the same handwriting on both sides, arguing with itself._
 
-**[qino-lingo](https://github.com/qinolabs/qino-lingo)** — epistemological signature extraction.
+**qino-lingo** — epistemological signature extraction.
 
 > _Someone had been forging the wanderer's handwriting. The copies were good — the letters matched. But something was off. The wanderer studied both, trying to name what the forger had missed. The answer wasn't in the shapes. It was in the hesitations._
 
@@ -818,8 +817,6 @@ Research tools, conversation analysis, and cognitive style capture for Claude.
 qino-lingo gives the agent access to full conversation data and research tools for working with it. The toolkit identifies metalogue-quality conversations — sessions where something genuinely shifted — and builds training data for model fine-tuning that preserves your cognitive style: what connections you're drawn to, how you abduct toward the pattern that connects, your hesitations, your gut.
 
 This absorbs what arcs were designed to do (tracking emergence across sessions) with direct access to the raw material instead of manual capture. The agent can now notice patterns across your conversation history — the same capability arcs aimed for, grounded in actual data.
-
-_qino-lingo is not currently open source._
 
 <br>
 
