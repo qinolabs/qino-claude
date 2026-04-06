@@ -142,7 +142,7 @@ Start with an archetype, then grow. Workspaces evolve their own vocabulary over 
 
 The qino-protocol is what you work _in_, not what you _use_. It defines a universal file-based structure for human-AI workspaces — a medium where nodes, edges, annotations, and signals carry the thinking.
 
-**qino-os** cultivates this medium. It provides MCP tools that let agents create nodes, write annotations, and trace edges — and a browser viewer where humans see the same graph. But its deeper role is environmental: type hints teach agents what kinds of nodes belong in each workspace. Soft warnings guide without blocking. Workspace config becomes shared vocabulary between human and agent. The filesystem doesn't just store a knowledge graph — it becomes a self-regulating ecosystem where structure emerges from use.
+**qino-os** cultivates this medium. It provides MCP tools that let agents create nodes, write annotations, and trace edges — and a browser viewer where humans see the same graph. But its deeper role is environmental: type hints teach agents what kinds of nodes belong in each workspace. Soft warnings guide without blocking. Workspace config becomes shared vocabulary between human and agent. The filesystem doesn't just store a knowledge graph — it becomes a self-regulating ecosystem where structure emerges from use and coherence increases through practice.
 
 Concepts, research, and implementations share this structure. A concept node looks like a research node looks like an implementation node. The vocabulary differs — a concept has "glowing connections," an implementation has "iterations" — but the shape is the same. This enables gestures that work identically across all three spaces.
 
@@ -226,7 +226,7 @@ The workspace config (`.claude/qino-config.json`) is more than settings — it's
 
 When an agent creates a node with an unrecognized type, qino-os doesn't block it — it returns a hint suggesting the type be added to config. Guidance, not enforcement. Over time, the workspace accumulates a vocabulary that reflects how it's actually used. New agents arriving in fresh sessions read this config and immediately understand what belongs here.
 
-This is the pattern: structure that enables growth without prescribing it. The workspace becomes an environment that shapes agent behavior through affordances rather than instructions.
+This is the pattern: structure that enables growth without prescribing it. You don't manage the system — you participate in it. Nodes compost naturally when their energy fades. Types evolve as work reveals what's needed. Annotations age into the graph's memory. The ecological design absorbs complexity rather than asking you to organize it.
 
 ![qino-lab root view — workspaces, sessions, and signals](docs/images/lab/qino-lab-root.png)
 
@@ -522,9 +522,9 @@ Implementation companion for concept work. When you initialize from a concept, t
 
 ### deck
 
-You notice three threads keep appearing together — a concept from research, an implementation pattern, a half-formed question. You compose them into a deck. Not because they share a category, but because something resonates across them.
+You notice three threads keep appearing together — a concept from research, an implementation pattern, a half-formed question. You don't need to resolve why they belong together. You compose them into a deck — the unresolved connection is the starting point, not a problem to solve.
 
-A deck is a **composed attention space**. The composition intent — _why these threads together?_ — is the seed. Decks are protocol nodes with `composes` edges to their members, each edge carrying a context sentence that preserves the felt connection.
+A deck is a **composed attention space**. The composition intent — _why these threads together?_ — is the seed. It might be a hunch. It might be wrong. The deck holds that uncertainty and turns it into possibility. Decks are protocol nodes with `composes` edges to their members, each edge carrying a context sentence that preserves the felt connection.
 
 **Actualization** is what happens when you return. The agent reads the territory and surfaces what evolved:
 
@@ -580,59 +580,33 @@ _[Source](plugins/qino/)_
 
 ---
 
-## The Three Spaces
+## The Ecosystem
 
-![Tools, apps, community](docs/images/ecosystem-arcs.png)
+qino-claude is the tooling layer of a larger ecosystem. The protocol and plugins live here. But the work they carry extends into apps, writing, and a domain language that has its own depth.
 
-### Figures: The Pattern of Return
+### Co-evolving Contexts
 
-_Figure_ in qino is a metaphor — in Bateson's sense, not the literary sense. Not a stored form, but a pattern that emerges through encounters. Identity is resonance, not reference.
+The qino-protocol is a permaculture practice — designed for thinking that lives across contexts. Research, concepts, implementation, evaluation — these aren't stages in a pipeline. Each space creates the conditions for the others to evolve. The protocol makes this mutual evolution concrete through cross-workspace edges. An idea doesn't belong to one space; it moves, and each crossing changes it.
 
-What does this mean in practice?
+Building an app reveals a concept-level truth — an edge connects the insight back to the concept it came from. Research holds uncertainty long enough for a pattern to emerge — and that pattern seeds what gets built. Evaluation observes the ecosystem's output — and its findings reshape how research asks questions. Implementation grounds vision in friction — and that friction teaches concepts what they didn't know about themselves.
 
-- **In the apps:** Each meeting with Elena in Walk is a **figure** — a living presence, mutable, owned by that context. But Elena herself is the pattern you recognize across figures: the **figure thread**. No single encounter *is* the figure thread; the figure thread is what you recognize across the trail of encounters.
-- **In the chronicles:** Seren, Lira, the wanderer — each a presence in that world. But the figure is larger: what persists when Seren appears in different chapters, different pressures.
-- **In concepts:** The thread you notice connecting one idea to another — not because you traced it, but because it kept appearing until you couldn't unsee it.
+The workspace archetypes seed different relationships to this uncertainty:
 
-Same pattern, completely different shape in each context. The gesture is fractal — it works at every scale.
+**Research** is where you don't have to know yet. An inquiry might follow three threads at once. Vocabulary: `inquiry`, `finding`, `session` — built for accumulation without premature clarity.
 
-_(See also: [Figure Ecology](#the-figure-question) — how we test that a figure can be re-entered and still feel like "the same thing" after change.)_
+**Concepts** is where what was circling finds its shape. Vocabulary: `app`, `tool`, `ecosystem` — for things that have enough gravity to hold.
 
-_(For the full vocabulary — figure, encounter, substrate, lens, voicing — see [qino Domain Language](https://github.com/qinolabs/concepts-repo/blob/main/ecosystem/qino-domain-language.md).)_
+**Implementation** is where ideas meet the world. Drift is expected. Vocabulary: `app`, `package`, `infra` — for things being made real.
 
-### The Spaces
+**Evaluation** is where the ecosystem observes itself. Vocabulary: `evaluation`, `comparison`, `simulation` — for assessing quality and tracking what works.
 
-An early hunch needs room to wander — structure would crush it. A maturing concept needs stability — too much flux and it never settles. An implementation needs grounding — a vision to build toward without getting lost in features.
+The gestures (capture, explore, attune, compare) work identically across all spaces. What changes is what they *mean* in each context.
 
----
+### The Broader Ecosystem
 
-**Research** is where you don't have to know yet.
+The apps — World, Walk, Drops, Chronicles — are where the protocol's ideas become lived experience. Figures emerge as living presences in those modalities. A [domain language](https://qinolabs.com/language) names what happens there: encounter, substrate, lens, voicing, crossing, awakening.
 
-Something is surfacing. You can feel it before you can name it. Research gives that feeling a place to accumulate without demanding clarity too soon. Uncertainty is welcome. An inquiry might follow three threads at once. An arc might span a dozen sessions before revealing what it was actually about.
-
-_What it makes possible:_ Staying with emergence. Protecting what isn't ready to be named.
-
----
-
-**Concepts** is where what was circling finds its shape.
-
-An idea that kept returning across different contexts. A note that finally connects to other notes. A thread that now feels complete enough to hold. Concepts isn't where ideas arrive fully formed — it's where they settle.
-
-_What it makes possible:_ Giving shape to what has pull. Building a body of work that grows through accretion.
-
----
-
-**Implementation** is where ideas meet the world.
-
-Not just code — any form of making real. The friction of materials. The feedback of use. Implementation stays connected to its concept. Drift is expected — what you learn while building often changes what you thought you wanted to build.
-
-_What it makes possible:_ Grounding vision without losing it. Feeding real-world observations back into understanding.
-
----
-
-Movement between spaces happens naturally. You notice something while building — capture sends it to concepts. An inquiry crystallizes — it becomes something to build. A concept needs refinement — attune opens a quality exploration in research.
-
-What stays constant is the gesture — capture, explore, test, attune. What changes is what that gesture *means*. The same word, shaped by where you are.
+The tooling layer and the app layer are integrated. Concepts developed in a workspace can seed a world. Insights from play feed back into research. Decks can bridge from composed attention to lived encounter. The protocol is the connective tissue — not just carrying information between contexts, but enabling them to teach each other.
 
 <br>
 
@@ -642,44 +616,11 @@ What stays constant is the gesture — capture, explore, test, attune. What chan
 
 The `qino-prose` plugin is where the ecosystem's writing practice developed. Scribe (git → chronicle), Relay (research → transmission), and Lens (qualities of attention) explored how protocol content becomes story.
 
-These tools are evolving into **metalogue** — a more comprehensive writing pipeline where chapters choose from available writing devices. The wanderer and Student, born as fixed roles in Scribe and Relay, become devices a metalogue chapter can select based on what the material demands.
-What persists from qino-prose — and carries directly into metalogue — are the **writing devices** and the **qualities of attention** they embody.
+These tools are evolving into **metalogue** — a writing pipeline where chapters choose from available devices based on what the material demands. Two writing devices carry the practice:
 
-### Writing Devices
+**The wanderer** notices what unfolds when attention stays present with consequence — the weight lifting when the pack comes off, the cold lingering on a glove. **The Student** voices difficulty rather than resolving it — stopped by a turn of phrase, sitting with what can't yet be resolved. Both create entry points: invitations into a quality of being the reader recognizes as possible for themselves.
 
-**The wanderer** notices the weight lifting when the pack comes off, the warmth of blood before the cut registers, the cold lingering on a glove. Not superhuman perception — just what unfolds when attention stays present with consequence. The wanderer's quality of attention becomes an entry point for the reader's own.
-
-**The Student** receives transmissions on a device. They voice difficulty rather than resolving it — stopped by a turn of phrase, surprised by a connection, sitting with what can't yet be resolved. Not expertise — just what unfolds when attention stays with the demanding.
-
-Both balance familiar and strange. Both create entry points — invitations into a quality of being that the reader recognizes as possible for themselves. The invitation is implicit: _this quality of being is available to you too_.
-
-### qino Lens — Ways of Seeing
-
-Prose-level lenses — language-based sensitivities that shape what writing notices. Discovered through the work, not designed in advance. These carry directly into metalogue as perceptual modes available to any writing device:
-
-#### `narrator` — World as Participant
-
-World acts. The fog doesn't just hang; it _withholds_. The room doesn't just contain; it _shapes_.
-
-> _"The corridor didn't just lead to the chamber; it constricted. The ceiling dropped low, forcing a bow, while the walls leaned in to strip away any thought of turning back."_
-
-#### `wanderer` — Sensitivity to Friction
-
-The body knows. It notices not the beauty of the ice, but the _numbness_ in the fingers. Not the meaning of silence, but its _weight_.
-
-> _"The fog pressed against the river, a heavy, wet burden. The ferry wasn't coming. The wanderer unbuckled the strap and slid the pack down the piling."_
-
-#### `newcomer` — Finding What's Become Invisible
-
-What would someone notice on their first day here that locals walk past without a glance?
-
-> _"The oldest woman at the table was served last. Plates circled toward younger faces. She waited, hands folded. When her plate came, she lifted her fork. Then the others began to eat."_
-
-#### `companion` — World Through Relationship
-
-How companionship shapes perception. Attention splits between world and person. Silence gains texture. Pace synchronizes — or doesn't.
-
-> _"Varo stopped at a stall. Copper bowls, dented. She picked one up, ran her thumb across a dent. 'My mother had one like this.' Set it back. Moved on. The wanderer lifted the same bowl, found the dent, felt where her thumb had been."_
+**Lenses** are language-based sensitivities that shape what writing notices — `narrator` (world as participant), `wanderer` (sensitivity to friction), `newcomer` (finding what's become invisible), `companion` (world through relationship). Discovered through the work, not designed in advance.
 
 _[Source](plugins/qino-prose/)_
 
@@ -747,78 +688,15 @@ Same scribe. Different worlds. Different atmospheric registers. Process in each 
 
 Something shifts when you name too early. The pattern that was finding its own shape gets frozen into whatever category was available. The code works, but the feeling is gone.
 
-Ecology tests notice this. They sense when integrity is collapsing — when a gesture becomes a command, when a figure becomes a reference, when infrastructure starts having opinions.
+The ecosystem guards against this through **ecology tests** — questions you hold while building. Not metrics. Not categories. Ways of attending that make loss visible before it's too late.
 
-Each test is a question you hold. Not a category to sort things into — a way of attending that makes loss visible before it's too late.
+> **Figure:** *Can this be re-entered and still feel like "the same thing" after change?*
+> **Gesture:** *Does this feel like a natural movement, without knowing it is "input"?*
+> **Infrastructure:** *Does this avoid introducing meaning, authority, or voice of its own?*
 
-### The Figure Question
+That last question — infrastructure — is what qino-os practices. Type hints guide without enforcing. Soft warnings don't block. Config is vocabulary, not prescription. The foundation holds without speaking.
 
-> *Can this be re-entered and still feel like "the same thing" after change?*
-
-You meet Elena in Walk. You bring her to World. She appears in Drops. Three figures, one pattern you recognize.
-
-But what makes her *Elena*? Not a database ID. Not an origin you can point to. The pattern persists because it *resonates* — because something essential survives transformation.
-
-The Figure ecology tests this. When you change a figure's implementation, does it still feel like the same thing? Not "does it have the same data" — does it have the same *quality of presence*?
-
-This is the [domain language's](https://qinolabs.com/language) deep insight made practical: **identity is resonance, not reference**. The Figure test guards it.
-
-When the test fails, you feel it. Something that used to have presence now feels like a record. Something that used to resonate now just... refers.
-
-### Other Ecologies, Other Characters
-
-Each ecology has its own quality. The questions aren't interchangeable — each protects something different.
-
-**User** asks about lived experience:
-> *Does this make it easier to notice something and respond from curiosity?*
-
-When user ecology fails, interaction becomes obligation. The stack demands sorting. You're performing tasks, not exploring.
-
-**Gesture** asks about movement:
-> *Does this feel like a natural human movement, without knowing it is "input"?*
-
-When gesture ecology fails, you're aware of the interface. Your hand becomes a cursor. The body-knowing that makes tools disappear collapses into explicit operation.
-
-**Relation** asks about connection:
-> *Does this introduce a tension or ambiguity that neither side resolves alone?*
-
-When relation ecology fails, connection flattens to one-way. Something that was alive between two things gets absorbed into one of them.
-
-**World** asks about environment:
-> *Does the world surprise without contradicting itself?*
-
-When world ecology fails, the environment becomes either chaotic (anything can happen) or predictable (nothing can happen). The quality of *consistent surprise* — where the world has its own logic that you discover — is lost.
-
-**Echo** asks about transformation:
-> *Does this preserve the gesture while transforming it just enough to be noticeable?*
-
-When echo ecology fails, either nothing changed (no echo) or too much changed (not recognizable as echo). The sweet spot where something is clearly *from* the original but clearly *different* — that's what echo protects.
-
-**Fabric** asks about accumulation:
-> *Does accumulation make echoes more likely without making them necessary?*
-
-When fabric ecology fails, the system either can't learn (no accumulation) or becomes deterministic (accumulation forces outcomes). The quality where patterns become *more likely* but never *required* — that's what fabric guards.
-
-**Infrastructure** asks about foundation:
-> *Does this avoid introducing meaning, authority, or voice of its own?*
-
-Infrastructure's job is to hold, not to speak. When infrastructure ecology fails, the foundation has opinions. The plumbing is trying to be the water.
-
-### Why Tests, Not Metrics
-
-Tests don't optimize. They don't rank. They pose questions at the gap between forms — where an idea becomes code, where code becomes interface, where interface becomes experience.
-
-At each crossing, something can be lost. The code works, but the feeling is gone. The ecology tests notice this loss *before* it's too late. They create friction — interrupting the smooth momentum of production to ask: *does the character still hold?*
-
-### The Connection to Domain Language
-
-The [domain language](https://qinolabs.com/language) has a principle: substrate is treated as *compost*. Raw material that fertilizes new expression without imposing old context.
-
-> *"Compatible" language can be destructive if imposed directly. We treat substrate as unintelligible until it is re-voiced. This barrier protects the local ecology from being overwhelmed by foreign context.*
-
-This is exactly what ecology tests protect. They sense when substrate is being *imposed* rather than *composted*. When context is overwhelming rather than fertilizing. When the new form is being colonized by the old rather than finding its own character.
-
-The ecology tests are the domain language made operational. Each question guards something the vocabulary names. Figure ecology protects "identity is resonance." Infrastructure ecology protects "the foundation doesn't speak." The tests and the language serve the same insight.
+The full ecology (Figure, User, Gesture, Relation, World, Echo, Fabric, Infrastructure) is described in the [domain language](https://qinolabs.com/language). Each question protects something different. Together they create friction — interrupting the momentum of production to ask: *does the character still hold?*
 
 <br>
 
