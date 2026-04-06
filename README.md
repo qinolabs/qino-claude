@@ -230,7 +230,7 @@ Features are gestures within the protocol — ways of moving through the medium.
 | **compare** | Perceive through contrast | Read multiple nodes, surface structural parallels |
 | **attune** | Calibrate a quality | Iterative candidates, build distinctions |
 | **research** | Follow threads | Work in research workspace, accumulate sessions |
-| **arc** | Track emergence | Open temporal container, sessions accumulate |
+| **arc** | Track emergence | Open temporal container, sessions accumulate _(evolving into [qino-lingo](#qino-lingo))_ |
 | **dev-work** | Bridge concept and code | Read concept via edges, write iterations, detect drift |
 | **deck** | Read ecosystem from composed vantage | Multi-node actualization reading |
 | **bug** | Persist a discovery | Create finding node + sparked-by edge |
@@ -469,25 +469,22 @@ After calibration, you know what doesn't work. Now the tool helps you fix it —
 
 A calibration document with two parts: **trace first, synthesis at end**. The trace preserves reasoning-in-motion. The synthesis extracts for reference. Both are needed.
 
-Calibrated qualities become reference material for other tools — Scribe, Lens, Design Adventure. Attune discovers and articulates; other tools carry forward.
+Calibrated qualities become reference material for other tools — Lens, Design Adventure, metalogue writing devices. Attune discovers and articulates; other tools carry forward.
 
 What you could only feel, you can now teach. What you couldn't explain, you can now protect.
 
 </details>
 
-### research and arcs
+### research
 
-Research is pre-concept work — following threads before they crystallize. The research workspace holds inquiries, qualities, and arcs. Three experiential types, each with its own relationship to uncertainty:
+Research is pre-concept work — following threads before they crystallize. The research workspace holds inquiries and qualities. Two experiential types, each with its own relationship to uncertainty:
 
 - **Inquiries** — Open-ended threads. A question that stays alive across sessions. Sustained longitudinal work.
 - **Qualities** — Refining aesthetic sensibilities into speakable craft. _(See Attune above.)_
-- **Arcs** — Active containers for emergence. Open when you notice something surfacing, close when ready to capture.
 
 Unlike concepts (which stabilize over time), research moves fast, welcomes uncertainty, and accepts inconclusive results as valuable data.
 
-**Arcs** protect against premature naming. You open an arc with a provisional gesture — "something about how containers work across the ecosystem" — and the ecosystem holds space. Sessions link automatically, pointers accumulate. No forced structure. The crystallization comes at closure, or not at all. Some arcs stay open for months.
-
-Arcs require explicit invocation: `/qino arc` or "capture an arc."
+**Arcs** were designed as temporal containers for tracking emergence — holding what's moving through your attention before it has a name. In practice, this capability is evolving into [qino-lingo](#qino-lingo), which gives the agent research tools and access to full conversation data. The arc concept (noticing patterns across sessions, making the unnamed speakable) lives on through qino-lingo's ability to identify metalogue-quality conversations and build training data from them.
 
 _([First arc](https://github.com/qinolabs/qino-research/blob/main/arcs/2025-12-29_recognition-through-indirection.md) — the session that discovered it needed arcs)_
 
@@ -611,79 +608,25 @@ What stays constant is the gesture — capture, explore, test, attune. What chan
 
 ---
 
-## Story — Git Becomes World
+## Story — Writing Devices and Qualities of Attention
 
-Protocol content transforms into story. The `qino-prose` plugin bridges internal work to readers who weren't there.
+The `qino-prose` plugin is where the ecosystem's writing practice developed. Scribe (git → chronicle), Relay (research → transmission), and Lens (qualities of attention) explored how protocol content becomes story.
 
-### qino Scribe
+These tools are evolving into **metalogue** — a more comprehensive writing pipeline where chapters choose from available writing devices. The wanderer and Student, born as fixed roles in Scribe and Relay, become devices a metalogue chapter can select based on what the material demands. _(Metalogue is not currently open source.)_
 
-qino Scribe reads the git range, grounds in `world.md`, then writes a chapter where the wanderer acts and the world pushes back. The chronicle only moves when the wanderer does — and when the world answers.
+What persists from qino-prose — and carries directly into metalogue — are the **writing devices** and the **qualities of attention** they embody.
 
-#### Three-Agent Architecture
+### Writing Devices
 
-Chapters emerge through staged handoffs:
+**The wanderer** notices the weight lifting when the pack comes off, the warmth of blood before the cut registers, the cold lingering on a glove. Not superhuman perception — just what unfolds when attention stays present with consequence. The wanderer's quality of attention becomes an entry point for the reader's own.
 
-**Prep Agent** — Reads world state, git changes, and recent chapters. Through three interactive checkpoints (scene seeds → world behavior → story lens), it builds `prep.md`: a constraint document that captures what to write and how to perceive, without carrying full context forward.
+**The Student** receives transmissions on a device. They voice difficulty rather than resolving it — stopped by a turn of phrase, surprised by a connection, sitting with what can't yet be resolved. Not expertise — just what unfolds when attention stays with the demanding.
 
-**Prose Agent** — Receives *only* `prep.md` and `world-seed.md`. This hard cut forces fresh invention — no recycled descriptions, no context to lean on. The constraint breeds originality.
-
-**Editorial Agent** — Sees *only* the draft chapter, not the prep that shaped it. Evaluates execution against craft patterns. Returns specific line-level feedback or approval.
-
-The architecture protects what matters: prep shapes without dictating, prose invents within constraints, editorial evaluates blind to intention.
-
-#### Story Lenses
-
-Each chapter is written through a perceptual mode that shapes what the prose agent notices:
-
-| Lens | The Question |
-|------|--------------|
-| **Arrival** | What if this chapter is about being received? |
-| **Journey** | What if this chapter leaves known ground? |
-| **Return** | What if we come back to where we've been? |
-| **Discovery** | What if something hidden comes to light? |
-| **Confrontation** | What if something must be faced? |
-| **Crisis** | What if the pressure breaks now? |
-| **Loss** | What if something or someone departs? |
-| **Vigil** | What if action is impossible and presence is all? |
-| **Work** | What if this chapter is about making together? |
-| **Gathering** | What if multiple threads convene? |
-
-#### Complete Transformation
-
-The chronicle must work for a reader who has never heard of the source material. Technical names never leak. `AuthService` becomes "the gatekeeper's ledger." A database migration becomes "preservation efforts in the archives." The story guards its own reality.
-
-```
-─────────────────────────────────────────────────────────────────
-scene seeds
-
-  1 → Deren notices the wanderer's raw hands — fifteen years of
-      calluses meeting someone who rows like they're outrunning something
-
-  2 → Lira appears at the platform edge — she knew the pouch before,
-      years ago, going the other way
-
-  3 → A child watches from the rope bridge — the same stillness as
-      Seren, that quality of recording without approaching
-
-─────────────────────────────────────────────────────────────────
-[ 1-3 ] or adjust    [ > ] auto-pick    [ >> ] start writing
-```
-
-### qino Relay
-
-Sharing research with readers who weren't there. Relay preserves arc structure — dates, connections, what emerged — but the Student walks alongside a reader encountering it, asking their questions, making abstract concrete.
-
-The Student receives transmissions on a device. They voice difficulty rather than resolving it. Not expertise — just what unfolds when attention stays with the demanding.
-
-> *"Meaning-searching versus meaning-finding."*
->
-> *I keep coming back to that phrase. There's something in the hyphen. In one case you're hunting. In the other, you're receiving.*
-
-The Student is not described, not named. The gap lets readers step into their body.
+Both balance familiar and strange. Both create entry points — invitations into a quality of being that the reader recognizes as possible for themselves. The invitation is implicit: _this quality of being is available to you too_.
 
 ### qino Lens — Ways of Seeing
 
-Prose-level lenses — language-based sensitivities that shape text. Discovered through the work, not designed in advance:
+Prose-level lenses — language-based sensitivities that shape what writing notices. Discovered through the work, not designed in advance. These carry directly into metalogue as perceptual modes available to any writing device:
 
 #### `narrator` — World as Participant
 
@@ -868,11 +811,15 @@ Visual content system with a warm abstraction aesthetic. Workflows for different
 
 _[Source](plugins/qino-art/)_
 
-### Epistemological Signature
+### qino-lingo
 
-**[qino-lingo](https://github.com/qinolabs/qino-lingo)** — capturing cognitive style so Claude can work more autonomously while still moving the way you move.
+Research tools, conversation analysis, and cognitive style capture for Claude.
 
-Sessions accumulate a cognitive fingerprint — not just how problems get solved, but *biases*: what connections you're drawn to, how you abduct toward the pattern that connects. Your hesitations. Your gut. The project weaves labeling into the Claude workflow, building a dataset of what matters and what's noise.
+qino-lingo gives the agent access to full conversation data and research tools for working with it. The toolkit identifies metalogue-quality conversations — sessions where something genuinely shifted — and builds training data for model fine-tuning that preserves your cognitive style: what connections you're drawn to, how you abduct toward the pattern that connects, your hesitations, your gut.
+
+This absorbs what arcs were designed to do (tracking emergence across sessions) with direct access to the raw material instead of manual capture. The agent can now notice patterns across your conversation history — the same capability arcs aimed for, grounded in actual data.
+
+_qino-lingo is not currently open source._
 
 <br>
 
