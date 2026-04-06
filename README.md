@@ -100,6 +100,7 @@ This ecosystem is an attempt to build software that knows it is part of a larger
 /plugin install qino@qino-claude                    # Core ecology — includes qino-os
 /plugin install qino-prose@qino-claude              # Chronicles, transmissions, lenses
 /plugin install design-adventure@qino-claude        # Design exploration
+/plugin install speech@qino-claude                  # Read responses aloud (macOS)
 ```
 
 Updates happen automatically when you run `/plugin marketplace update`.
@@ -110,9 +111,19 @@ Updates happen automatically when you run `/plugin marketplace update`.
 /qino init workspace my-workspace
 ```
 
-The setup guides you through workspace type (minimal → standard → full → custom) and scaffolds from default templates — coordinated repos for concepts, research, and implementations that evolve together. Templates are customizable: each workspace can define its own node types, vocabulary, and structure. Start minimal, add spaces later. The skill detects existing structure and offers to enhance it.
+The setup asks what kind of workspace you're building and seeds it from an **archetype** — a template that provides the right node types, colors, and usage hints for your domain:
 
-**qino-os** starts automatically when the plugin loads — a bundled MCP server with 20 graph tools and a browser viewer at `http://localhost:4020` for visual graph exploration.
+| Archetype | Purpose | Node types |
+|-----------|---------|------------|
+| **research** | Open-ended inquiry | inquiry, finding, session, reference |
+| **concepts** | Vision and design | app, tool, ecosystem, capture |
+| **implementation** | Building software | app, package, tool, infra, reference |
+| **evaluation** | Quality assessment | evaluation, comparison, simulation, snapshot |
+| **general** | Flexible starting point | reference, exploration |
+
+Start with an archetype, then grow. Workspaces evolve their own vocabulary over time — add types, adjust colors, refine hints. The config teaches future agents what belongs here.
+
+**qino-os** starts automatically when the plugin loads. It's the active environment that makes the protocol alive — providing agents with graph tools to read and write nodes, edges, and annotations, while giving humans a visual surface at `http://localhost:4020` to see the same graph the agent sees. The filesystem becomes a shared medium.
 
 **What's next:**
 
@@ -121,7 +132,7 @@ The setup guides you through workspace type (minimal → standard → full → c
 - **Capture a thought:** `/qino capture [your thought]`
 - **Create an app from concept:** `/qino dev init [concept-path]`
 - **Begin research:** `/qino research [question]`
-- **Open an arc:** `/qino arc` (when you notice emergence)
+- **Return to a deck:** `/qino deck [name]` (see what evolved)
 
 <br>
 
@@ -130,6 +141,8 @@ The setup guides you through workspace type (minimal → standard → full → c
 ## The Protocol
 
 The qino-protocol is what you work _in_, not what you _use_. It defines a universal file-based structure for human-AI workspaces — a medium where nodes, edges, annotations, and signals carry the thinking.
+
+**qino-os** cultivates this medium. It provides MCP tools that let agents create nodes, write annotations, and trace edges — and a browser viewer where humans see the same graph. But its deeper role is environmental: type hints teach agents what kinds of nodes belong in each workspace. Soft warnings guide without blocking. Workspace config becomes shared vocabulary between human and agent. The filesystem doesn't just store a knowledge graph — it becomes a self-regulating ecosystem where structure emerges from use.
 
 Concepts, research, and implementations share this structure. A concept node looks like a research node looks like an implementation node. The vocabulary differs — a concept has "glowing connections," an implementation has "iterations" — but the shape is the same. This enables gestures that work identically across all three spaces.
 
@@ -151,7 +164,7 @@ workspace/
 
 **Nodes** are addressable, connectable, and persistent. Each carries identity (who it is), impulse (why it exists), content (what it holds), and annotations (what's been observed about it). Nodes participate in relationships through edges.
 
-**Node types** shape what a node holds:
+**Node types** shape what a node holds. Each workspace defines its own type vocabulary — these are common across the ecosystem:
 
 | Type | What it holds |
 |------|---------------|
@@ -160,9 +173,10 @@ workspace/
 | `finding` | What persisted beyond the session that produced it |
 | `session` | Bounded work — what was tried, observed, decided |
 | `arc` | A temporal container tracking emergence |
-| `navigator` | An orientation document for a building territory |
-| `view` | A curated attention subset |
+| `deck` | A composed attention space — threads brought together by felt resonance |
 | `facet` | A navigable aspect of a parent concept |
+
+Types are not fixed — workspaces grow their own. An evaluation workspace might have `simulation` and `snapshot`. A research workspace might have `inquiry` and `quality`. The workspace config declares what types are available, with hints that teach agents when to use each one.
 
 **Edges** are meaning carriers, not just links. Each edge has a type and a context sentence explaining _why_ the relationship exists:
 
@@ -172,7 +186,7 @@ workspace/
 | `sparked-by` | Originated from encounter with target |
 | `extends` | Builds on or continues target |
 | `informs` | Provides input without being part of it |
-| `composes` | Curates target as member (views, decks) |
+| `composes` | Curates target as member of a deck |
 
 **Affordances at every level:**
 - **File level** — Human edits `story.md` directly; agent uses MCP tools. Same files, different entry points.
@@ -202,7 +216,17 @@ The protocol distributes information across two complementary forms:
 
 Two scopes: the **root journal** (`journal.md`) for cross-node context, and **node journals** (`nodes/{node}/journal.md`) for local development trails.
 
-Workspaces can also define **custom node types** — extending the default vocabulary with types meaningful to your domain. The workspace config declares what types are available and how they behave in the graph.
+### Workspace as Environment
+
+The workspace config (`.claude/qino-config.json`) is more than settings — it's how the workspace teaches its visitors. Each workspace declares:
+
+- **Types** with colors and hints — "use `inquiry` for open questions, `finding` for settled insights"
+- **A workspace color** that tints the UI — visual identity at a glance
+- **Status treatments** — composted nodes fade; active nodes stay prominent
+
+When an agent creates a node with an unrecognized type, qino-os doesn't block it — it returns a hint suggesting the type be added to config. Guidance, not enforcement. Over time, the workspace accumulates a vocabulary that reflects how it's actually used. New agents arriving in fresh sessions read this config and immediately understand what belongs here.
+
+This is the pattern: structure that enables growth without prescribing it. The workspace becomes an environment that shapes agent behavior through affordances rather than instructions.
 
 ![qino-lab root view — workspaces, sessions, and signals](docs/images/lab/qino-lab-root.png)
 
@@ -498,7 +522,22 @@ Implementation companion for concept work. When you initialize from a concept, t
 
 ### deck
 
-A deck is a composed attention space — threads brought together by felt resonance. When you return to a deck, the agent reads the territory: what evolved since last visit, new edges between members, threads reaching in from outside, quiet members. The actualization reading surfaces what changed and offers interpretive seeds for thinking together.
+You notice three threads keep appearing together — a concept from research, an implementation pattern, a half-formed question. You compose them into a deck. Not because they share a category, but because something resonates across them.
+
+A deck is a **composed attention space**. The composition intent — _why these threads together?_ — is the seed. Decks are protocol nodes with `composes` edges to their members, each edge carrying a context sentence that preserves the felt connection.
+
+**Actualization** is what happens when you return. The agent reads the territory and surfaces what evolved:
+
+- New annotations on members — someone (human or agent) noticed something
+- New edges *between* members — the graph confirming your intuition that these threads belonged together
+- "Reaching-in" threads — nodes from outside that grew connections into your deck's territory
+- Quiet members — threads that haven't moved, which is itself information
+
+The actualization reading offers temporal reorientation ("three weeks since your last visit, here's what happened"), a delta narrative, and interpretive seeds framed as questions — not conclusions. Each reading becomes an annotation on the deck, so the next return has a temporal anchor.
+
+Decks supersede two earlier concepts: **navigators** (retired — top-down orientation documents) and **views** (dormant — agent-curated graph subsets). Where those imposed structure from above, decks grow from the practitioner's felt sense upward.
+
+_This is experimental and evolving. Draft mechanics, promotion to graph nodes, and actualization readings work. The frontier: seeding qino-world experiences from deck compositions — a bridge from composed attention to lived encounter._
 
 Activate with: `/qino deck [name]`, "read this deck", "actualize [deck]"
 
@@ -800,6 +839,14 @@ _[Source](plugins/design-adventure/)_
 Visual content system with a warm abstraction aesthetic. Workflows for different visual types.
 
 _[Source](plugins/qino-art/)_
+
+### Speech — Listen to Your Ecosystem
+
+`/speech` reads Claude's last response aloud using macOS native text-to-speech. It strips markdown, summarizes code blocks, and speaks the result through your system voice.
+
+A small thing that changes the rhythm of work. You run a research session, ask for a deck actualization, or read a node's neighborhood — then `/speech` and go make breakfast. The ecosystem's findings arrive while your hands are elsewhere. Uses the `say` command built into every Mac — no API keys, no network calls, no setup.
+
+_[Source](plugins/speech/)_
 
 ### qino-lingo
 
