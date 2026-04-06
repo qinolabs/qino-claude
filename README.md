@@ -105,13 +105,18 @@ This ecosystem is an attempt to build software that knows it is part of a larger
 
 Updates happen automatically when you run `/plugin marketplace update`.
 
-**Create your workspace:**
+**Set up your workspaces:**
 
-```bash
-/qino init workspace my-workspace
-```
+Most projects need more than one workspace from the start. The skill guides you through setup, offering project shapes that create the right constellation:
 
-The setup asks what kind of workspace you're building and seeds it from an **archetype** — a template that provides the right node types, colors, and usage hints for your domain:
+| Shape | Workspaces created |
+|-------|--------------------|
+| **minimal** | Concepts only |
+| **standard** | Concepts + implementations |
+| **full** | Concepts + research + implementations |
+| **custom** | You choose |
+
+Each workspace is seeded from an **archetype** that provides the right node types, colors, and usage hints for its role:
 
 | Archetype | Purpose | Node types |
 |-----------|---------|------------|
@@ -121,18 +126,23 @@ The setup asks what kind of workspace you're building and seeds it from an **arc
 | **evaluation** | Quality assessment | evaluation, comparison, simulation, snapshot |
 | **general** | Flexible starting point | reference, exploration |
 
-Start with an archetype, then grow. Workspaces evolve their own vocabulary over time — add types, adjust colors, refine hints. The config teaches future agents what belongs here.
+The skill detects existing structure and offers to enhance it. Workspaces evolve their own vocabulary over time — add types, adjust colors, refine hints. The config teaches future agents what belongs here.
 
 **qino-os** starts automatically when the plugin loads. It's the active environment that makes the protocol alive — providing agents with graph tools to read and write nodes, edges, and annotations, while giving humans a visual surface at `http://localhost:4020` to see the same graph the agent sees. The filesystem becomes a shared medium.
 
-**What's next:**
+**Just talk to it.** The qino skill routes from natural language — you don't need to remember commands:
 
-- **Orient:** `/qino home` — see what's here, what's recent, what has pull
-- **Explore a concept:** `/qino explore [concept-name]`
-- **Capture a thought:** `/qino capture [your thought]`
-- **Create an app from concept:** `/qino dev init [concept-path]`
-- **Begin research:** `/qino research [question]`
-- **Return to a deck:** `/qino deck [name]` (see what evolved)
+```
+"what's here?"                          → orientation (home)
+"capture this thought"                  → capture workflow
+"explore [concept-name]"                → explore a node's neighborhood
+"what's next for [app]"                 → dev workflow
+"what evolved in my deck?"              → actualization reading
+"start research on [topic]"             → research workspace
+"use the lab"                           → lab mode (graph + terminal)
+```
+
+Slash commands (`/qino home`, `/qino deck [name]`, `/qino bug`) exist as shortcuts, but natural conversation is the primary interface. The skill reads your intent and context.
 
 <br>
 
@@ -144,77 +154,70 @@ The qino-protocol is what you work _in_, not what you _use_. It defines a univer
 
 **qino-os** cultivates this medium. It provides MCP tools that let agents create nodes, write annotations, and trace edges — and a browser viewer where humans see the same graph. But its deeper role is environmental: type hints teach agents what kinds of nodes belong in each workspace. Soft warnings guide without blocking. Workspace config becomes shared vocabulary between human and agent. The filesystem doesn't just store a knowledge graph — it becomes a self-regulating ecosystem where structure emerges from use and coherence increases through practice.
 
-Concepts, research, and implementations share this structure. A concept node looks like a research node looks like an implementation node. The vocabulary differs — a concept has "glowing connections," an implementation has "iterations" — but the shape is the same. This enables gestures that work identically across all three spaces.
+You don't need to think about this structure. What you interact with is the thinking, not the files. You say "I've been thinking about X" and the agent finds the node, reads its neighborhood, surfaces what's changed. You explore a concept and the agent notices a tension with something in a neighboring workspace — it writes that as an annotation. You're working on an implementation and a connection to a research finding surfaces without you asking.
+
+This happens because the system gives the agent peripheral vision at every step. The graph, the config, the annotations — they're all visible to the agent, all the time. Proposals, tensions, and connections surface naturally through this awareness. The practice feels less like managing a knowledge base and more like thinking alongside someone who remembers everything and notices what you missed.
 
 ### The Medium
+
+Every workspace shares the same shape:
 
 ```
 workspace/
   .claude/qino-config.json     # Workspace identity and vocabulary
   graph.json                   # Nodes and edges — the visible structure
-  journal.md                   # Running trail — both surfaces write here
   nodes/
     {node-name}/
       node.json                # Identity (title, type, status, edges)
       story.md                 # The impulse — what this node IS, in a breath
       content/                 # Developed material
       annotations/             # Agent signals attached here
-      journal.md               # Node-local development trail (optional)
 ```
 
-**Nodes** are addressable, connectable, and persistent. Each carries identity (who it is), impulse (why it exists), content (what it holds), and annotations (what's been observed about it). Nodes participate in relationships through edges.
+A concept workspace and an implementation workspace look the same structurally — nodes, edges, annotations. What differs is the **vocabulary**: each workspace defines its own grammar of types, and that grammar shapes what the space holds.
 
-**Node types** shape what a node holds. Each workspace defines its own type vocabulary — these are common across the ecosystem:
+```
+# A concepts workspace might declare:
+types: concept, capture, ecosystem, facet
 
-| Type | What it holds |
-|------|---------------|
-| `concept` | A developed idea with impulse, content, possibly facets |
-| `capture` | A thought, observation, or discovery — first-class |
-| `finding` | What persisted beyond the session that produced it |
-| `session` | Bounded work — what was tried, observed, decided |
-| `arc` | A temporal container tracking emergence |
-| `deck` | A composed attention space — threads brought together by felt resonance |
-| `facet` | A navigable aspect of a parent concept |
+# A research workspace might declare:
+types: inquiry, finding, session, quality
 
-Types are not fixed — workspaces grow their own. An evaluation workspace might have `simulation` and `snapshot`. A research workspace might have `inquiry` and `quality`. The workspace config declares what types are available, with hints that teach agents when to use each one.
+# An implementation workspace might declare:
+types: app, package, infra, tool
+```
 
-**Edges** are meaning carriers, not just links. Each edge has a type and a context sentence explaining _why_ the relationship exists:
+Types are not fixed. Workspaces grow their own as work reveals what's needed. The workspace config declares what types are available, with hints that teach agents when to use each one — `"use inquiry for open questions"`, `"use finding for settled insights"`.
 
-| Edge type | Meaning |
-|-----------|---------|
-| `references` | Uses vocabulary or ideas from target |
-| `sparked-by` | Originated from encounter with target |
-| `extends` | Builds on or continues target |
-| `informs` | Provides input without being part of it |
-| `composes` | Curates target as member of a deck |
+**Nodes** carry identity (who it is), impulse (why it exists), content (what it holds), and annotations (what's been observed about it). A `deck` composes threads by felt resonance. A `capture` holds a thought before it's ready for structure. A `session` records bounded work. The type gives the node its role; the workspace gives the type its meaning.
+
+**Edges** are meaning carriers, not just links. Each edge has a label and a context sentence — the label is a short phrase, the context explains _why_ the relationship exists. Both are free-form:
+
+```json
+{
+  "to": "ecosystem-design",
+  "label": "coherence frontier",
+  "context": "Calibration revealed coherence as the next architectural frontier"
+}
+```
+
+There are no enforced edge types. The meaning lives in how you name the relationship: "coherence frontier", "mesh participant via CLI", "data model shapes props." The label captures the insight; the context preserves the reasoning.
 
 **Affordances at every level:**
-- **File level** — Human edits `story.md` directly; agent uses MCP tools. Same files, different entry points.
+- **File level** — Human and agent both read and write the same files. `story.md` is editable by hand; the agent creates and reads it through MCP tools. Same files, different entry points.
 - **UI level** — Human navigates the graph visually at `localhost:4020`; agent embeds deeplinks in chat. Same destination, different paths.
 - **Protocol level** — Structure scales organically. Add a node, the graph grows. Nest a graph inside a node, sub-structure emerges. No migrations, no schema changes.
 
-### Signals and Annotations
+### Signals
 
-When the agent works, it writes annotations with signal types:
+As the agent works, it leaves signals on nodes — observations that accumulate in the graph's margins:
 
-| Signal | When | What it means |
-|--------|------|---------------|
-| `proposal` | Before acting | "I'm about to try this — redirect me if needed" |
-| `tension` | When something surprises | "This doesn't fit what we expected" |
-| `reading` | After interpreting | "Here's what I see in this material" |
-| `connection` | When nodes relate | "This echoes what's over there" |
+- **tension** — something doesn't sit right. Surfaces prominently in the UI.
+- **proposal** — a concrete suggestion, awaiting your response.
+- **connection** — a noticed link to another node or concept.
+- **reading** — an interpretation. Collapses by default; there when you want it.
 
-The UI renders these with visual weight matching their urgency. Tensions surface prominently. Readings collapse by default. Proposals appear as cards awaiting response. The agent's thinking becomes visible _as it happens_ — you watch the graph to participate in the thinking, not to review documentation.
-
-### Structure vs Trail
-
-The protocol distributes information across two complementary forms:
-
-**Structure (nodes)** — addressable, connectable, persistent. Create a node when content can be referenced by other nodes, when edges would be meaningful, when material may be revisited or composed with other material. The test: _would this benefit from edges pointing to or from it?_
-
-**Trail (journal)** — temporal, atmospheric, flow-oriented. Use journal entries for arrival context, session framing, working notes, observations complete in themselves. The journal is the workspace's temporal record — a bidirectional channel between human and AI.
-
-Two scopes: the **root journal** (`journal.md`) for cross-node context, and **node journals** (`nodes/{node}/journal.md`) for local development trails.
+These aren't reports you asked for. They're what the agent notices while doing other work — the peripheral vision made visible. Open the graph viewer and the agent's thinking is there, attached to the nodes it touched.
 
 ### Workspace as Environment
 
@@ -238,341 +241,54 @@ This is the pattern: structure that enables growth without prescribing it. You d
 
 ---
 
-## Gestures — Working in the Protocol
+## Working in the Practice
 
-Features are gestures within the protocol — ways of moving through the medium. Each gesture reads and writes the same structure; what differs is intent.
+You don't invoke gestures by name. You talk — "what's next for qino-world," "I've been thinking about this pattern," "what evolved in my deck?" — and the skill reads your intent, finds the right workspace context, and shapes its response accordingly.
 
-| Gesture | What | Protocol operation |
-|---------|------|--------------------|
-| **home** | Where am I? | Read graph + journal + git activity |
-| **capture** | Hold this thought | Write capture node or flat note |
-| **explore** | Work inside a node | Read neighborhood, edit content, write annotations |
-| **compare** | Perceive through contrast | Read multiple nodes, surface structural parallels |
-| **attune** | Calibrate a quality | Iterative candidates, build distinctions |
-| **research** | Follow threads | Work in research workspace, accumulate sessions |
-| **arc** | Track emergence | Open temporal container, sessions accumulate _(evolving into [qino-lingo](#qino-lingo))_ |
-| **dev-work** | Bridge concept and code | Read concept via edges, write iterations, detect drift |
-| **deck** | Read ecosystem from composed vantage | Multi-node actualization reading |
-| **bug** | Persist a discovery | Create finding node + sparked-by edge |
-| **lab** | Work alongside the UI | Real-time annotations, graph IS conversation |
+Behind this, a small set of underlying patterns do the work:
 
-<br>
+**Orientation** — When you arrive, the system reads recent activity, open annotations, and workspace state. It shows what's here without pushing. You don't ask for a dashboard; you just start talking and the context is already there.
 
-### home
+**Exploration** — When you turn toward a node, the agent reads its neighborhood: story, content, edges, annotations. It follows what carries energy. Tensions from prior sessions surface. Connections to other workspaces appear. The conversation develops the node.
 
-Orientation, repair, and confidence. Home shows what's here, references recent activity, and offers paths forward. It never pushes — it receives.
+**Capture** — When a thought needs holding, the system creates a lightweight node — just identity and a story. No edges, no content directory. The thought is in the graph, addressable, but free of premature structure.
 
-```
-my-workspace / concepts
+**Development** — When you're building, the dev agent reads the implementation graph, checks concept edges for drift, and works in iterations. If building reveals something concept-level, it offers to update the concept. If the concept evolved since you last built, it shows what changed.
 
-  3 active concepts, 2 notes held
-  last touch: qino-scribe (2 days ago)
+**Actualization** — When you return to a deck, the agent reads the territory and surfaces what evolved: new annotations, new edges between members, threads reaching in from outside. The reading is temporal ("three weeks since your last visit"), interpretive (framed as questions), and grounded in specific changes.
 
-  from here
-    there's a held note from research — "git-weather-pattern"
-    qino-world has a new edge from yesterday
+These patterns compose naturally. You're exploring a concept and a development question surfaces — the agent shifts. You're building and a research connection appears — it writes an annotation. You don't switch modes; the system follows where the work goes.
 
-                          just respond, or explore something
-```
-
-Not a dashboard. A place to arrive before you work.
-
-### capture
-
-Saves a thought immediately. Captures are flat files — notes written to the active context without requiring graph structure. They preserve the moment without demanding categorization.
-
-When a capture has enough gravity to participate in relationships, it can be promoted to a node. Until then, it stays light. No premature structure.
-
-### explore
-
-Turns toward a node to develop it. The agent reads the node's neighborhood — its story, content, edges, annotations — and follows what carries energy.
-
-```
-(you)   explore qino-scribe
-
-(qino)  qino-scribe
-        grounding in story, writing tools, git-as-chronicle
-
-        edges: references domain-language, sparked-by chronicle-discovery
-        annotations: 1 tension (unresolved), 2 readings
-
-        There's a tension from last session — the prep agent
-        is carrying too much context. And a held note arrived
-        from research: "git-weather-pattern"
-
-        What part of this has pull right now?
-
-(you)   the weather pattern. code churn as atmospheric disturbance.
-
-(qino)  That connects to the narrator lens — world as participant.
-
-        This could be a new edge: qino-scribe → narrator lens,
-        context: "code churn translates into weather systems"
-
-        Add the edge? Or explore the connection first?
-```
-
-### compare and attune
-
-Two methods for perceiving difference. Compare places two versions side by side — the facilitator navigates, the framework lends expertise, you just respond. Attune refines a tacit quality into teachable craft through iterative calibration against candidates.
-
-Both follow Bateson's principle: _information is a difference that makes a difference_. Comparison does the teaching.
-
-<details>
-<summary><strong>Compare — The Parallel Mirror</strong> (full description)</summary>
-
-You have two versions of something — chapters, outputs, designs. You know one is better, but you can't say why. Two bottlenecks stop you:
-
-**Volume** — You can't hold two chapters in working memory at once. You need someone who holds the whole, navigates strategically, and presents what's worth comparing side by side.
-
-**Expertise** — Evaluating prose requires craft knowledge. Stakes, tension, character texture, reader entry — these are dimensions you might not think to look at. The framework lends expertise you don't have.
-
-Compare solves both. You just respond. The facilitator does the navigation. The framework does the heavy lifting. By the end, you've perceived something you couldn't have seen on your own.
-
-#### Fresh reading first
-
-Before framework, before analysis — gut response:
-
-```
-(qino)  I've read both versions.
-
-        Before we look at specifics — what stays with you?
-        What's your felt sense of how they differ?
-
-(you)   A feels more grounded. B has more happening but I drifted.
-
-(qino)  ∴ A: grounded, held attention
-        ∴ B: more activity, but attention drifted
-
-        Let's find where that difference lives.
-```
-
-You don't construct analysis. You respond. The framework makes that response meaningful.
-
-#### The parallel mirror
-
-When you notice something working in one version, the facilitator finds something in the other with the same structural shape — same beat, same role, same type of element.
-
-```
-(qino)  ┌─────────────────────────────────────────────────────────────┐
-        │ you liked (from A)                                          │
-        │                                                             │
-        │ "The river carried news of her before she arrived."         │
-        │                                                             │
-        │ Observation without comment. World notices wanderer.        │
-        └─────────────────────────────────────────────────────────────┘
-
-        ┌─────────────────────────────────────────────────────────────┐
-        │ parallel from B                                             │
-        │                                                             │
-        │ "Seren watched from the doorway, cataloguing."              │
-        │                                                             │
-        │ Same structure — external observer, no commentary.          │
-        └─────────────────────────────────────────────────────────────┘
-
-        These occupy the same position. How do they land differently?
-
-(you)   The river one feels like the world has its own life.
-        Seren watching feels like... surveillance? Character-driven.
-
-(qino)  So the difference is agency — world as participant vs.
-        world as backdrop for character perception?
-
-        ·
-```
-
-The parallel *looks* like it should work the same way. When it doesn't, that reveals something deeper — not just a difference between passages, but a difference between the underlying logics of the two versions.
-
-#### Framework as scaffold
-
-You might not know to look at "reader entry" or "stakes distribution." But when the facilitator surfaces a dimension, you recognize what you're sensing:
-
-```
-(qino)  Let me try a framework lens: reader entry.
-
-        In A, the reader enters through environment — the river,
-        the news traveling. They're placed in the world first.
-
-        In B, the reader enters through Seren's perception.
-        They're placed in a character's head first.
-
-        Does that match your "grounded vs. drifting" sense?
-
-(you)   Yes — when I enter through the world, I'm there.
-        When I enter through a character watching, I'm watching
-        someone watch. One layer removed.
-```
-
-The framework lends expertise. You don't need to know craft vocabulary — you just respond, and the dimension helps you name what you felt.
-
-#### When something worth calibrating emerges
-
-A compare session may surface a quality worth developing — "something about how presence is handled" or "the difference between world-agency and character-agency."
-
-That's a handoff to Attune — Compare surfaces, Attune sharpens. Each stands alone, but the flow enriches both.
-
-</details>
-
-<details>
-<summary><strong>Attune — From Hunch to Craft</strong> (full description)</summary>
-
-You can feel when writing has "presence" — but you can't teach it. You notice when code is "elegant" — but the distinction evaporates when you try to explain it to someone else.
-
-Most of what makes creative work good is tacit — pattern recognition trained by exposure but never fully articulated. Attune creates conditions where this tacit knowledge can partially surface. Not all of it. But enough to teach, enough to protect, enough to recognize when you're drifting.
-
-#### The interpretive loop
-
-Most feedback tools work like extraction: present stimulus, receive response, extract pattern. Attune works like dialogue.
-
-After you respond, the facilitator voices an interpretation — then pauses. That interpretation becomes a surface you can push against. The facilitator might be wrong. That's generative:
-
-```
-(qino)  ┌─────────────────────────────────────────────────────────────┐
-        │ candidate 3                                                 │
-        │                                                             │
-        │ "The Mender looked at the wanderer's hands for a long      │
-        │  moment. Then she handed them another stack of skins."      │
-        │                                                             │
-        │ does this have the quality you're calibrating?              │
-        └─────────────────────────────────────────────────────────────┘
-
-(you)   yes — there's something in the gap. she noticed but didn't say anything.
-
-(qino)  so the quality lives in withheld response —
-        observation that doesn't convert to speech?
-
-        ·
-
-(you)   not quite. it's more... the response IS the silence.
-        handing them more work is the acknowledgment.
-
-(qino)  ∴ action as acknowledgment — response without verbalization
-
-        ┌─────────────────────────────────────────────────────────────┐
-        │ distinction emerged                                         │
-        │                                                             │
-        │ ✓ works: response through action, not speech                │
-        │ ✗ fails: observation that stays observation                 │
-        └─────────────────────────────────────────────────────────────┘
-
-        ready for the next candidate, or stay with this one?
-```
-
-The facilitator's interpretation was wrong — "withheld response" wasn't quite it. But that wrongness created the condition for refinement. "Response IS the silence" wouldn't have emerged from the initial reaction alone.
-
-#### Space as architecture
-
-The `·` is a pause — but it's not decoration. It's load management. Without space, you hold three things at once: your response, the interpretation, and the new candidate. Space is the invitation: "your turn. If there's more, say it now."
-
-#### Building distinctions
-
-As you work through candidates, patterns accumulate:
-
-```
-(qino)  ┌─────────────────────────────────────────────────────────────┐
-        │ distinctions so far                                         │
-        │                                                             │
-        │ ✓ works                        ✗ doesn't work               │
-        │ ─────────────────────────────  ────────────────────────     │
-        │ response through action        observation stays internal   │
-        │ world notices without comment  character explains seeing    │
-        │ gap stays open                 gap gets filled with meaning │
-        └─────────────────────────────────────────────────────────────┘
-```
-
-#### Transformation phase
-
-After calibration, you know what doesn't work. Now the tool helps you fix it — taking failed candidates and transforming them using the techniques your distinctions revealed.
-
-#### What you end with
-
-A calibration document with two parts: **trace first, synthesis at end**. The trace preserves reasoning-in-motion. The synthesis extracts for reference. Both are needed.
-
-Calibrated qualities become reference material for other tools — Lens, Design Adventure, metalogue writing devices. Attune discovers and articulates; other tools carry forward.
-
-What you could only feel, you can now teach. What you couldn't explain, you can now protect.
-
-</details>
-
-### research
-
-Research is pre-concept work — following threads before they crystallize. The research workspace holds inquiries and qualities. Two experiential types, each with its own relationship to uncertainty:
-
-- **Inquiries** — Open-ended threads. A question that stays alive across sessions. Sustained longitudinal work.
-- **Qualities** — Refining aesthetic sensibilities into speakable craft. _(See Attune above.)_
-
-Unlike concepts (which stabilize over time), research moves fast, welcomes uncertainty, and accepts inconclusive results as valuable data.
-
-**Arcs** were designed as temporal containers for tracking emergence — holding what's moving through your attention before it has a name. In practice, this capability is evolving into [qino-lingo](#qino-lingo), which gives the agent research tools and access to full conversation data. The arc concept (noticing patterns across sessions, making the unnamed speakable) lives on through qino-lingo's ability to identify metalogue-quality conversations and build training data from them.
-
-_([First arc](https://github.com/qinolabs/qino-research/blob/main/arcs/2025-12-29_recognition-through-indirection.md) — the session that discovered it needed arcs)_
-
-### dev-work
-
-Implementation companion for concept work. When you initialize from a concept, the work is translation — given this essence, what technologies serve it? What architecture patterns? What signals drift?
-
-**Iterations** aren't sprints. They're checkpoints for turn-taking. AI implements to spec, user tests and reviews, feedback flows before the next phase. Files live in `implementations/` — visible, version-controlled, yours.
-
-**Drift detection** — Building reveals truths that concept exploration couldn't predict. The dev agent notices when implementation discoveries are concept-level changes and offers to update the concept:
-
-| Direction | What happens |
-|-----------|--------------|
-| Implementation → Concept | You discover something while building; agent offers to update concept |
-| Concept → Implementation | Concept evolved after implementation started; agent shows what changed on arrival |
-
-### deck
+### Deck — Composed Attention
 
 You notice three threads keep appearing together — a concept from research, an implementation pattern, a half-formed question. You don't need to resolve why they belong together. You compose them into a deck — the unresolved connection is the starting point, not a problem to solve.
 
-A deck is a **composed attention space**. The composition intent — _why these threads together?_ — is the seed. It might be a hunch. It might be wrong. The deck holds that uncertainty and turns it into possibility. Decks are protocol nodes with `composes` edges to their members, each edge carrying a context sentence that preserves the felt connection.
+A deck is a **composed attention space**. The composition intent — _why these threads together?_ — is the seed. It might be a hunch. It might be wrong. The deck holds that uncertainty and turns it into possibility.
 
-**Actualization** is what happens when you return. The agent reads the territory and surfaces what evolved:
+When you return, the agent reads the territory and surfaces what evolved:
 
 - New annotations on members — someone (human or agent) noticed something
-- New edges *between* members — the graph confirming your intuition that these threads belonged together
-- "Reaching-in" threads — nodes from outside that grew connections into your deck's territory
+- New edges *between* members — the graph confirming your intuition
+- "Reaching-in" threads — nodes from outside that grew connections into your territory
 - Quiet members — threads that haven't moved, which is itself information
-
-The actualization reading offers temporal reorientation ("three weeks since your last visit, here's what happened"), a delta narrative, and interpretive seeds framed as questions — not conclusions. Each reading becomes an annotation on the deck, so the next return has a temporal anchor.
 
 Decks supersede two earlier concepts: **navigators** (retired — top-down orientation documents) and **views** (dormant — agent-curated graph subsets). Where those imposed structure from above, decks grow from the practitioner's felt sense upward.
 
 _This is experimental and evolving. Draft mechanics, promotion to graph nodes, and actualization readings work. The frontier: seeding qino-world experiences from deck compositions — a bridge from composed attention to lived encounter._
 
-Activate with: `/qino deck [name]`, "read this deck", "actualize [deck]"
+### Deep Work — Compare and Attune
 
-### bug
+Two capabilities for perceiving difference. Both follow Bateson's principle: _information is a difference that makes a difference_.
 
-A structured bug ticket as a protocol node. Bugs are `finding` nodes in the implementation graph — a discovery that persists until resolved. The workflow captures reproduction context, investigation state, and hypotheses so a future debugging session can start immediately. Resolved bugs with root cause become searchable patterns.
+**Compare** places two versions side by side — the facilitator navigates, the framework lends expertise, you just respond. The parallel mirror pattern finds structural equivalents across versions and asks why they land differently. You don't need craft vocabulary; the framework supplies the dimensions, you supply the perception.
 
-Activate with: `/qino bug`, "file a bug", "log this bug"
+**Attune** refines a tacit quality into teachable craft. You can feel when writing has "presence" but can't explain it. Through iterative calibration against candidates, the facilitator interprets, you push back, and distinctions emerge from the productive wrongness of the interpretations. What you end with: a calibration document where what you could only feel, you can now teach.
 
-### lab
+_Both are being revisited for deeper integration with the graph — imagine attune pulling candidates from across the workspace, or compare placing two nodes' neighborhoods side by side._
 
-The lab is where you think together. A shared visual surface — the graph rendered in the browser while you work in the terminal. Both human and AI read and write the same files. Annotations appear in real-time. What one surface writes, both surfaces see.
+### Also Available
 
-```
-(you)   use the lab
-
-(qino)                  lab mode active
-
-        UI: http://localhost:4020
-
-        workspace: sound-lab
-        nodes: 12 nodes, 8 edges
-
-        ─────────────────────────────────────────
-
-        annotations will appear in real-time as I work
-
-        you watch the graph — I'll surface:
-          tension     when something doesn't fit
-          reading     when I interpret what I see
-          proposal    before I try something new
-          connection  when nodes relate
-```
-
-The conversation continues in chat. Findings, proposals, and tensions appear in the graph. The agent's thinking becomes visible _as it happens_.
+**Research** — Creates inquiries in the research workspace. **Arcs** track emergence across sessions. **Bug** creates finding nodes with reproduction context. **Lab** activates graph-mediated work — annotations appear in the viewer as the agent works.
 
 _[Source](plugins/qino/)_
 
@@ -600,7 +316,7 @@ The workspace archetypes seed different relationships to this uncertainty:
 
 **Evaluation** is where the ecosystem observes itself. Vocabulary: `evaluation`, `comparison`, `simulation` — for assessing quality and tracking what works.
 
-The gestures (capture, explore, attune, compare) work identically across all spaces. What changes is what they *mean* in each context.
+The same patterns (capture, explore, develop, attune) work across all spaces. What changes is what they *mean* in each context.
 
 ### The Broader Ecosystem
 
@@ -728,11 +444,11 @@ _[Source](plugins/speech/)_
 
 ### qino-lingo
 
-Research tools, conversation analysis, and cognitive style capture for Claude.
+Conversation corpus explorer — search, analyze, and discover material from conversation archives.
 
-qino-lingo gives the agent access to full conversation data and research tools for working with it. The toolkit identifies metalogue-quality conversations — sessions where something genuinely shifted — and builds training data for model fine-tuning that preserves your cognitive style: what connections you're drawn to, how you abduct toward the pattern that connects, your hesitations, your gut.
+qino-lingo gives the agent access to full conversation data: searching across sessions, reading cleaned exchanges, extracting thinking patterns, annotating findings. It identifies metalogue-quality conversations — sessions where something genuinely shifted — and can build training data that preserves cognitive style.
 
-This absorbs what arcs were designed to do (tracking emergence across sessions) with direct access to the raw material instead of manual capture. The agent can now notice patterns across your conversation history — the same capability arcs aimed for, grounded in actual data.
+The agent can notice patterns across your conversation history, surface connections you didn't see, and ground research in actual data rather than manual capture.
 
 <br>
 

@@ -1,5 +1,6 @@
 {
   "repoType": "tool",
+  "color": "violet",
   "adapter": true,
   "description": "Tool home — source of all tools, also uses tools via adapters"
 }

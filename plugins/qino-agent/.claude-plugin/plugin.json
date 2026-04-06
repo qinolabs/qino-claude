@@ -1,0 +1,6 @@
+{
+  "name": "qino-agent",
+  "description": "SDK-delegated ecosystem awareness — compositional reading, session decks, and narrative work through a custom Anthropic Agent SDK agent",
+  "version": "0.1.0",
+  "author": { "name": "qinolabs" }
+}
