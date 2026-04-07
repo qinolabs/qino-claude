@@ -1,10 +1,12 @@
 {
-  "id": "qino-claude",
-  "title": "qino-claude",
+  "title": "qino-os MCP Frictions",
+  "type": "reference",
+  "status": "active",
+  "created": "2026-04-06",
+  "updated": "2026-04-06",
   "edges": [
     {
-      "source": "qino-os-mcp-frictions",
-      "target": "gesture-review",
+      "to": "gesture-review",
       "label": "surfaced during",
       "context": "These frictions were discovered while testing workspace setup during the gesture review session",
       "created": "2026-04-06"

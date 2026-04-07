@@ -1,0 +1,1 @@
+MCP tool gaps discovered while initializing qino-claude as a protocol workspace. Child workspace operations (init, config, touch) fail or lack graphPath support. Plugin cache staleness causes silent server crashes. These need fixing in qinolabs-repo/packages/qino-os.
