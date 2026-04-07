@@ -4,7 +4,7 @@
     "name": "Philip Hradecsni"
   },
   "metadata": {
-    "version": "3.1.0",
+    "version": "3.2.0",
     "description": "Operating system for developing ideas — concepts, research, and implementation",
     "homepage": "https://github.com/qinolabs/qino-claude",
     "repository": "https://github.com/qinolabs/qino-claude"
@@ -12,7 +12,7 @@
   "plugins": [
     {
       "name": "qino",
-      "version": "3.1.0",
+      "version": "3.2.0",
       "description": "Ecology for developing ideas — concepts, research, implementation",
       "source": "./plugins/qino"
     },
@@ -23,15 +23,9 @@
       "source": "./plugins/qino-prose"
     },
     {
-      "name": "qino-art",
-      "version": "3.0.0",
-      "description": "Visual content system",
-      "source": "./plugins/qino-art"
-    },
-    {
       "name": "design-adventure",
       "version": "3.0.0",
-      "description": "Seven-perspective design exploration",
+      "description": "Seven-perspective design exploration (paused, pending graph-native redesign)",
       "source": "./plugins/design-adventure"
     }
   ]

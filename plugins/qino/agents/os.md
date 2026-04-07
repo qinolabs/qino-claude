@@ -74,6 +74,18 @@ If the user mentions a specific node the thought connects to, add a `sparked-by`
 
 The capture is a node. It's discoverable via `search_nodes`, surfaces in `read_activity`. No flat file fallback; the graph holds it.
 
+### On read-aloud requests
+
+When the user asks to have content read aloud — "read this to me", "read this aloud", "narrate this" — present the viewer deeplink for the node holding the content. The viewer has TTS built in: every content file and annotation shows a "Read aloud" + "Audio summary" menu, and the navbar `SpeechIndicator` carries pause/resume/stop controls.
+
+If a specific node is already in context (from a recent `read_node`, a search hit, or a user mention), use its `_links.nodes[id]` URL directly:
+
+> The story is here — [title](_links.nodes["id"]). The Read aloud button sits next to the story.md content file in the node view.
+
+If the reference is ambiguous ("read *this* to me" with no clear antecedent), ask what "this" refers to. Don't guess.
+
+For very short text you've quoted verbatim in the conversation (a single sentence, a title, a captured thought), calling `speak_text` directly is also fine — it's faster for micro-content because the user doesn't have to switch surfaces. Use the viewer for anything longer than a few sentences, anything with internal structure, or anything the user may want to pause/restart.
+
 ### On deck actualization
 
 Deck work is the ecosystem-awareness pattern at deck scale. When the user invokes a deck by name or ID:

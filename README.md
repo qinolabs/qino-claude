@@ -99,8 +99,6 @@ This ecosystem is an attempt to build software that knows it is part of a larger
 # Install what you need
 /plugin install qino@qino-claude                    # Core ecology — includes qino-os
 /plugin install qino-prose@qino-claude              # Chronicles, transmissions, lenses
-/plugin install design-adventure@qino-claude        # Design exploration
-/plugin install speech@qino-claude                  # Read responses aloud (macOS)
 ```
 
 Updates happen automatically when you run `/plugin marketplace update`.
@@ -397,27 +395,21 @@ The full ecology (Figure, User, Gesture, Relation, World, Echo, Fabric, Infrastr
 
 ## Other Plugins
 
-### Design Adventure — The Room After
+### Design Adventure — The Room After *(paused, pending graph-native redesign)*
 
-A design conversation that already happened. You arrive afterward. Chairs still warm. Ideas still in the air. You discover what emerged — the questions they kept circling back to, what they couldn't resolve.
+A design conversation that already happened — **currently paused while it's redesigned to integrate with the graph rather than standing alongside it.** The current version still installs from the marketplace and runs, but the next iteration will ground the conversation in actual nodes, annotations, and cross-workspace connections instead of treating the design problem as standalone text. What follows describes the intent.
+
+You arrive afterward. Chairs still warm. Ideas still in the air. You discover what emerged — the questions they kept circling back to, what they couldn't resolve.
 
 Six perspectives think through words. The seventh (World) thinks through environment — a draft scatters someone's diagrams; they gather them differently and that's when the insight arrives. Different runs surface different questions. The questions themselves teach you how to think about the problem.
 
 _[Source](plugins/design-adventure/)_
 
-### qino-art
+### qino-art *(not in marketplace)*
 
-Visual content system with a warm abstraction aesthetic. Workflows for different visual types.
+Visual content system with a warm abstraction aesthetic. Workflows for different visual types. **Kept in-tree but not currently published to the marketplace** — documentation and cleanup are pending before it's officially supported.
 
 _[Source](plugins/qino-art/)_
-
-### Speech — Listen to Your Ecosystem
-
-`/speech` reads Claude's last response aloud using macOS native text-to-speech. It strips markdown, summarizes code blocks, and speaks the result through your system voice.
-
-A small thing that changes the rhythm of work. You run a research session, ask for a deck actualization, or read a node's neighborhood — then `/speech` and go make breakfast. The ecosystem's findings arrive while your hands are elsewhere. Uses the `say` command built into every Mac — no API keys, no network calls, no setup.
-
-_[Source](plugins/speech/)_
 
 <br>
 

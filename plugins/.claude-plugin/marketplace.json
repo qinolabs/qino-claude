@@ -8,7 +8,7 @@
       "name": "qino",
       "source": "./qino",
       "description": "Ecology for developing ideas — concepts, research, implementation",
-      "version": "3.1.0"
+      "version": "3.2.0"
     },
     {
       "name": "qino-prose",
@@ -17,21 +17,9 @@
       "version": "3.1.0"
     },
     {
-      "name": "qino-art",
-      "source": "./qino-art",
-      "description": "Visual content system with Tron-meets-Excalidraw aesthetic",
-      "version": "3.0.0"
-    },
-    {
-      "name": "speech",
-      "source": "./speech",
-      "description": "Text-to-speech utility for reading Claude responses aloud",
-      "version": "1.0.0"
-    },
-    {
       "name": "design-adventure",
       "source": "./design-adventure",
-      "description": "Seven-perspective design exploration",
+      "description": "Seven-perspective design exploration (paused, pending graph-native redesign)",
       "version": "3.0.0"
     }
   ]

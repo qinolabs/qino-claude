@@ -89,6 +89,7 @@ The os agent handles all graph work through MCP tools and persona principles:
 - **Research inquiry**: brief dialogue to surface question → `create_node(type: "inquiry")`
 - **Ecology lens application**: consult `references/ecology-lenses.md`
 - **Annotation**: `write_annotation` — always available, not a mode
+- **Read-aloud requests**: "read this to me", "read this aloud", "narrate this" → present the viewer deeplink for the node holding the content; the viewer has built-in TTS ("Read aloud" + "Audio summary") on every content file and annotation, with pause/resume in the navbar
 
 No workflow file needed. The agent reads the graph and responds. Dialogue happens in the main conversation (inject mode).
 

@@ -10,6 +10,56 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [3.2.0] - 2026-04-07
+
+### qino
+
+#### Added
+
+- **Workspace setup workflow** — "set up a workspace" or `/qino setup` walks the user through workspace creation as a real conversation; detects code-vs-ideas orientation, surfaces the together-or-separate decision for software projects with honest tradeoffs, and calls `init_workspace` with the right `repoType` and optional `nodesDir` (critical for implementation workspaces that live inside existing codebases with conventional directories like `implementations/`)
+- **`nodesDir` in graph.json** — workspaces can now configure where node directories live; defaults to `nodes/`, but implementation workspaces inside existing codebases can use e.g. `implementations/` without silent "graph looks empty" failures
+- **Plugin-level reference documents** — `references/deck-actualization.md`, `references/ecology-lenses.md`, and `references/experiment-methodology.md` extract specialized knowledge the os agent consults on demand instead of carrying it all in persona
+- **Protocol workspace at repo root** — qino-claude now tracks its own work as a qino-protocol graph; the gesture-review node records the architectural cleanup that became this release, and the qino-os-mcp-frictions node captures MCP graphPath/cache/README inaccuracies worth resolving in future qino-os iterations
+- **Read-aloud routing** — "read this to me", "read this aloud", or "narrate this" routes through the os agent, which presents the viewer deeplink for the node holding the content; the viewer's built-in TTS handles playback with "Read aloud" + "Audio summary" options and pause/resume controls in the navbar. Replaces the dedicated speech plugin
+
+#### Changed
+
+- **Two agents, not three** — `concept` → `os` (the qino-os MCP interface, primary conversational surface) and `dev` → `build` (implementation work); `research` retired and absorbed into the os agent persona plus the experiment-methodology reference. Agent names now reflect what they actually do, not historical workspace types
+- **os agent persona rewritten** — full rewrite (774 → 252 lines) centered on MCP tool fluency; behavioral principles for arrival, exploration, capture, deck actualization, concept creation, inquiry, ecology lenses, annotation, and bug filing are absorbed directly into the persona instead of scattered across workflow files
+- **Skill routing simplified** — `SKILL.md` reduced from 10 routing tables to 3 paths: build intent spawns the build agent, setup intent runs the setup workflow through the os agent, everything else is os agent inject mode
+- **Captures are now nodes** — captures are created via `create_node` with type `capture`; the flat-file `.qino/captures/` convention is gone. Status `composted` replaces the old `notes-archive.json` pattern
+- **Ecology tests → ecology lenses** — renamed for consistency with voice lenses and the broader ecosystem vocabulary; lens framing better fits how the test workflow is actually used (a way of seeing, not a pass/fail check)
+
+#### Removed
+
+- **17 workflow files** — `home`, `explore`, `capture`, `orientation`, `lab`, `bug`, `test`, `concept-init`, `research-init`, `concept-setup`, `dev-setup`, `research-setup`, `workspace-init`, `navigate`, and the `protocol/` duplicates all dissolved into os agent persona + MCP tool calls. These workflows procedurally reimplemented what qino-os MCP provides as structural features (`read_activity`, `read_node`, `create_node`, `write_annotation`); keeping them as files just added drift risk
+- **Arc workflows** — `arc`, `arc-open`, `arc-link`, `arc-close` retired; arc work moved to qino-lingo tooling
+- **Attune / compare / import workflows** — stale or redundant; the Compare/Attune capabilities are paused pending a graph-native redesign
+- **Legacy concept/research references** — `concept-spec.md`, `design-philosophy.md`, `manifest-project-spec.md`, `revisions-guide.md`, `arc-spec.md`, `research-spec.md` removed; the manifest-era knowledge they encoded either lives in the os agent persona now or has been retired along with the manifest format
+- **`references/templates/` scaffolding** — 33 files of pre-protocol workspace skeletons (concepts, research, implementation, workspace templates); workspace setup goes through `init_workspace` now, not file copying. The templates had also silently drifted from their canonical source files — exactly the duplication hazard the cleanup was meant to address
+- **`plugins/speech/`** — superseded by qino-os's built-in `speak_text` MCP tool and the viewer's TTS controls; now that read-aloud routes through the os agent to the viewer, the dedicated plugin was redundant
+- **17 archived tools** (`tools/archived/`) — dev-assistant, design-sprint, qino-attune, qino-concept, qino-dev, qino-eval, qino-lens, qino-relay, qino-research, qino-scribe (three versions), qino-universal, qino-util, qino-world, updater — pre-plugin-architecture code kept for reference too long
+
+### design-adventure
+
+#### Changed
+
+- **Marked paused, pending graph-native redesign** — seven-perspective design exploration is kept in the marketplace as a reminder, but the current implementation predates the graph-native protocol and needs to be rethought to work with the graph instead of alongside it
+
+### Documentation
+
+#### Changed
+
+- **README rewrite (protocol-as-center framing)** — qino-os now presented as the active environment, not just an installation step: type hints, config-as-vocabulary, ecological design, workspace archetypes, deck concept, natural language interaction. Gestures reframed as invisible patterns the os agent recognizes rather than named commands. Claims verified against implementation via sub-agents
+- **Companion Repos section** — qino-lingo and related research/evaluation repositories separated from core plugin documentation so they don't confuse installation
+- **Deep Work section hedged** — Compare and Attune explicitly marked `(paused, pending graph-native redesign)`
+
+#### Removed
+
+- **Speech section** — redundant with qino-os's built-in TTS; install block no longer references the speech plugin
+
+---
+
 ## [3.1.0] - 2026-04-05
 
 ### qino
