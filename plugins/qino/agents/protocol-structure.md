@@ -1,10 +1,10 @@
 # Protocol Structure Supplement
 
-Read this alongside `agents/concept.md` or `agents/dev.md` when `protocol: "qino"` is detected in the workspace config.
+Read this alongside `agents/os.md` or `agents/build.md` when `protocol: "qino"` is detected in the workspace config.
 
-**For concept workflows:** These sections **replace** the File Structure Awareness, Facets, and Ecosystem Work sections in concept.md — all other principles (alive thread, mirror/echo, momentum, tone, reasoning, draft awareness, core intent) remain unchanged.
+**For os agent workflows:** These sections **replace** the File Structure Awareness, Facets, and Ecosystem Work sections in os.md — all other principles (alive thread, mirror/echo, momentum, tone, reasoning, draft awareness, core intent) remain unchanged.
 
-**For dev workflows:** The "Dev Structure (Protocol)" section below supplements `agents/dev.md` — replacing legacy path references with protocol equivalents.
+**For build agent workflows:** The "Dev Structure (Protocol)" section below supplements `agents/build.md` — replacing legacy path references with protocol equivalents.
 
 **For operational decisions** (when to journal, when to create nodes, when to add edges), consult `references/protocol/protocol.md` — Part 1: Operations.
 
@@ -113,13 +113,14 @@ Content.
 
 ## Captures
 
-Captures are **not** graph nodes. They are independent flat files under the workspace root (`{workspace root}/.qino/captures/`), outside any graph.
+Captures are graph nodes with `type: "capture"`. Created via `create_node` in the current workspace's graph.
 
-- Format: `YYYY-MM-DD_essence.md` — title, timestamp, content
-- No node.json, no graph.json entries, no edges
-- Pull-based composting: user explicitly points to a capture when they want to absorb it into a concept
+- `create_node(type: "capture", title: "essence", story: "the thought")`
+- Discoverable via `search_nodes`, surface in `read_activity`
+- Edges can be added at creation (e.g., `sparked-by` if the user mentions a specific node) or later
+- No special path resolution — captures live in whatever graph the agent is working in
 
-**Cross-concept signals** during exploration also create flat capture files (not graph nodes).
+**Cross-concept signals** during exploration also become capture nodes (with edges to the nodes they touch).
 
 ## Held Threads (Protocol)
 
@@ -141,7 +142,7 @@ Same principle as legacy — offer without reading, hold without pushing. But he
 
 ## Dev Structure (Protocol)
 
-Read this section alongside `agents/dev.md` when `protocol: "qino"` is detected. These translations replace legacy paths throughout the dev agent's workflows.
+Read this section alongside `agents/build.md` when `protocol: "qino"` is detected. These translations replace legacy paths throughout the build agent's workflows.
 
 ### Path Translations
 
@@ -198,7 +199,7 @@ If no `"concept grounds"` edge exists, the implementation has no linked concept 
 ### Drift → Concept Update
 
 When drift is detected and user chooses to update the concept:
-- Invoke concept agent with context about the drift
-- Concept agent edits `story.md` or files in `content/` at `{conceptsWorkspace}/nodes/{concept-id}/`
+- Invoke os agent with context about the drift
+- Os agent edits `story.md` or files in `content/` at `{conceptsWorkspace}/nodes/{concept-id}/`
 - Control returns to dev context
 - No stored timestamp to update — git tracks the change automatically

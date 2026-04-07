@@ -258,5 +258,4 @@ Context markers are metadata for machine parsing. The journal is append-oriented
 | `held_threads` in manifest | `held_threads` in `node.json` | Same field, per-node instead of global |
 | `revisions.md` | `journal.md` context markers + git | Journal IS the revision trail |
 | Note references (multi-concept) | Graph edges (typed, with context) | Relationships are structural |
-| `concepts/<id>/origins/` | No direct equivalent | Origins not yet part of protocol |
-| `notes-archive.json` | No direct equivalent | Archival via node status field |
+| `notes-archive.json` | Node status `"composted"` | Archival via node status field |
