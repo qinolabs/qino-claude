@@ -32,7 +32,7 @@ Read in this order — all reading happens silently, no process output.
 
 ### 2. Identify the temporal anchor
 
-Find the most recent actualization reading among the deck's annotations — look for agent-authored annotations with signal `reading` whose title starts with "Actualization:".
+Find the most recent actualization reading among the deck's annotations — look for agent-authored annotations with `kind: actualization` in their frontmatter. (The body still starts with `## Actualization: YYYY-MM-DD` as the visible header on the deck detail page, but the *machine* discriminator is the frontmatter `kind` field — that's what qino-os reads to compute the deck delta indicator on the landing page.)
 
 - If found: its `created` timestamp is the temporal anchor (last visit).
 - If not found: use the deck node's `created` date (first visit).
@@ -139,11 +139,12 @@ Then remain available for dialogue. The practitioner may still want to think wit
 
 ### Save the actualization reading
 
-**Only save when a reading was produced** (i.e., when there was meaningful delta). Save it as an annotation on the deck node:
+**Only save when a reading was produced** (i.e., when there was meaningful delta). Save it as an annotation on the deck node via the `write_annotation` MCP tool:
 - Signal: `reading`
-- Body: the full actualization reading, prefixed with `## Actualization: YYYY-MM-DD`
+- **`kind: "actualization"`** — pass this as the `kind` parameter to `write_annotation`. This is the discriminator qino-os uses to recognize the annotation as the deck's temporal anchor for the landing-page delta indicator. Without this field, the annotation is just a reading and the deck stays "never actualized" forever.
+- Body: the full actualization reading, prefixed with `## Actualization: YYYY-MM-DD` (still the human-readable header on the deck detail page — the body prefix and the frontmatter `kind` field are independent; you need both)
 
-This makes it visible on the deck page and establishes the temporal anchor for the next visit.
+This makes it visible on the deck page and establishes the temporal anchor for the next visit. After saving, the deck tile dots on the landing page will clear (or shrink to just the post-actualization signals if the conversation produced new annotations).
 
 **Do NOT save when there was no delta** — the previous actualization reading remains the temporal anchor.
 
