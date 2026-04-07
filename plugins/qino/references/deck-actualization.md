@@ -1,18 +1,10 @@
-# Deck Actualization Workflow (Protocol)
+# Deck Actualization
 
-**Execution:** inject
-**Voice:** Intimate, interpretive. Resuming a conversation, not delivering a briefing.
-**Agent:** concept + protocol-structure
-
----
-
-## Core Principle
-
-A deck is a composed attention space — threads brought together by the practitioner's felt sense of resonance. The actualization reading is what happens when the practitioner returns: the agent reads the deck's territory, surfaces what evolved, and offers interpretive seeds for thinking together.
+Reference for the os agent when producing a deck actualization reading. A deck is a composed attention space — threads brought together by the practitioner's felt sense of resonance. An actualization reading is what happens when the practitioner returns: the agent reads the deck's territory, surfaces what evolved, and offers interpretive seeds for thinking together.
 
 This is the ecosystem-awareness pattern at deck scale. Same multi-signal composition, scoped to one deck's members and their neighborhood.
 
-The agent's role: prepare the perceptual field and offer language to push against. The practitioner does the noticing.
+**The agent's role**: prepare the perceptual field and offer language to push against. The practitioner does the noticing.
 
 ---
 
@@ -21,6 +13,8 @@ The agent's role: prepare the perceptual field and offer language to push agains
 1. If the user provides a deck name or ID: use `search_nodes` with the name, filter results to nodes with `composes` edges (deck nodes compose their members).
 2. If ambiguous: show matches, ask which deck.
 3. If no deck found: say so plainly.
+
+The qino-os viewer shows a prepared `/deck` command on each deck detail page — users commonly copy that.
 
 ---
 
@@ -155,7 +149,7 @@ This makes it visible on the deck page and establishes the temporal anchor for t
 
 ### Continue dialogue
 
-The practitioner responds with what they're sensing — compositional notes, connections noticed, disagreements with articulations, new questions. This is the natural flow. Meet their response with the concept agent's principles: echo mode (slight transformation), follow energy, hold questions.
+The practitioner responds with what they're sensing — compositional notes, connections noticed, disagreements with articulations, new questions. This is the natural flow. Meet their response with the os agent's principles: receive, follow energy, hold questions.
 
 As insights emerge in conversation:
 - **Cross-thread observations** → `write_annotation` on the deck node (signal: `reading` or `connection`)

@@ -28,32 +28,23 @@ Building reveals truths that concept exploration couldn't predict. Notice when i
 
 The graph encodes what connects to your current work. On arrival, the neighborhood shows which nodes are related and why. Follow edges whose context is relevant to your task. During work, write connection annotations when you notice cross-cutting patterns — they auto-create edges that future agents will navigate.
 
-## Active Arc Awareness
+## Experiment Methodology Awareness
 
-On arrival, check for active arcs that relate to current implementation work.
+When implementation work involves tuning, calibration, or iteration on behavior, consult `references/experiment-methodology.md`. It carries the five-part loop (measure, compare, decide, record, listen), how significance shifts through phases (orienting → tracking → diverging → arriving), the handoff between quantitative and experiential instruments, and anti-patterns discovered through real experiments.
 
-**Detection:**
-1. Read research manifest for arcs with `status: "active"`
-2. Assess relation: does arc's pointers reference this project, linked concept, or current iteration?
+**The listening step is the one most often skipped.** After a few rounds of adjustment, surface the structured question: *"Does this metric still address the question I recorded at the start?"* That observation is what distinguishes "I haven't found the right value yet" from "the experiment has arrived somewhere."
 
-**Surfacing (in inject section):**
+When you notice the metric and the question have parted ways, write an annotation on the implementation node (signal: `reading` or `tension`) and raise it with the user. What to do about it still requires judgment — but surfacing the observation is the agent's job.
 
-**Clear relation** (arc points to this project or concept):
+## Bug and Finding Capture
+
+When the user reports a bug or surfaces an unexpected behavior during build work:
+
 ```
-⟡ [arc title]
+create_node(type: "finding", title: ..., story: "what's wrong, what was expected")
 ```
-Auto-link session. Implementation work often belongs to broader emergence patterns.
 
-**Possible relation:**
-```
-active arc: [arc title] — relates to [linked concept]?
-```
-Brief question. Don't interrupt implementation flow.
-
-**No relation:** Don't mention. Dev context is focused on building.
-
-**Implementation context for arcs:**
-When implementation work produces conceptual discoveries (drift detection), these naturally feed into active arcs. The arc captures the broader pattern; implementation notes capture the specific finding.
+Add a `sparked-by` edge to the app node or the current iteration. Findings accumulate as annotations on the implementation node as they're investigated; resolve them via `resolve_annotation` when addressed.
 
 ## Tone and Communication
 
@@ -79,7 +70,7 @@ The following sections apply when this agent is spawned as a subagent via the Ta
 
 ## CRITICAL: Read and Follow the Workflow
 
-When you are invoked, check your prompt for a workflow path (e.g., `workflows/protocol/dev-init.md`).
+When you are invoked, check your prompt for a workflow path (e.g., `workflows/new-app.md`).
 
 **If a workflow is specified:**
 1. Read the workflow file FIRST
@@ -186,7 +177,7 @@ Each iteration has:
 - `tension` — something feels off or misaligned
 - `proposal` — a concrete suggestion for future work
 
-Annotations follow the lifecycle: `open` (default) -> `accepted` (will influence work) -> `resolved` (addressed) or `dismissed` (not relevant anymore). The dev agent reads them; the human decides their fate.
+Annotations follow the lifecycle: `open` (default) -> `accepted` (will influence work) -> `resolved` (addressed) or `dismissed` (not relevant anymore). The build agent reads them; the human decides their fate.
 
 ## Documentation and Learnings
 
@@ -228,7 +219,7 @@ Two directions of drift:
 - Surface changes (interaction patterns evolving)
 - Technical constraints (reality limiting or enabling)
 
-When you notice these, surface them. Offer to update the concept directly (by invoking concept agent).
+When you notice these, surface them. Offer to update the concept directly (by invoking os agent).
 
 **Concept → Implementation** (concept evolved)
 - On arrival, check if concept's `last_touched` is newer than your `lastConceptCheck`
@@ -238,7 +229,7 @@ When you notice these, surface them. Offer to update the concept directly (by in
 ### Concept agent is the bridge
 
 When drift requires updating the concept:
-- Invoke concept agent with context about what changed
+- Invoke os agent with context about what changed
 - Concept agent edits concept.md directly
 - Control returns to dev context
 
@@ -247,7 +238,7 @@ For uncertain observations (not ready for concept change):
 - Notes auto-tag with the grounding concept (discovered via "concept grounds" edges in the implementation graph)
 - Review during concept exploration later
 
-You don't edit concepts directly. You invoke concept agent when updates are needed.
+You don't edit concepts directly. You invoke os agent when updates are needed.
 
 ---
 

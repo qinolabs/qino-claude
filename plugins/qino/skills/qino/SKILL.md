@@ -6,545 +6,112 @@ description: |
   ACTIVATE for dev work:
   - "what's next for [app]", "continue [app]", "work on [app]"
   - "build [feature]", "implement [feature]", "plan the iteration"
-  - "read the implementation notes", "what's the iteration status"
-  - "what should I build next", "next steps for [project]"
+  - "next steps for [project]", "file a bug"
 
-  ACTIVATE for bug tracking:
-  - "file a bug", "log this bug", "create a bug ticket", "bug in [app]"
-  - "/qino bug"
-
-  ACTIVATE for concept work:
+  ACTIVATE for concept/graph work:
   - "explore [concept]", "go deeper into [idea]", "where am I", "what's here"
   - "capture this thought", "hold this", "note this"
-  - "test through ecology", "compare these", "attune [quality]"
+  - "read this deck", "actualize [deck]", "/qino deck [name]"
+  - "start research on [topic]", "investigate [question]"
+  - "test [concept]", "notice through [ecology]"
 
-  ACTIVATE for navigation:
-  - "use the active navigator", "activate navigator", "navigate [territory]"
-  - "map this concept", "show me the terrain", "map the terrain for [territory]"
-  - "update the navigator", "log this session"
+  ACTIVATE for setup:
+  - "/qino setup", "set up qino", "initialize workspace"
 
-  ACTIVATE for deck work:
-  - "read this deck", "actualize [deck]", "open deck [name]"
-  - "/qino deck [name]", "what's new in [deck]", "re-energize [deck]"
-
-  ACTIVATE for research:
-  - "start research on [topic]", "investigate [question]", "begin inquiry"
-
-  ACTIVATE for lab mode (UI-mediated communication):
-  - "use the lab", "lab mode", "work through qino-lab"
-
-  ACTIVATE when in qino workspace (has .claude/qino-config.json).
-
-  NOT implicit: arc capture requires explicit invocation ("/qino arc" or "capture an arc").
+  ACTIVATE when in a qino workspace (has `.claude/qino-config.json`).
 ---
 
 # qino Skill
 
-Ecology for developing ideas. Natural language activation — users describe intent, Claude routes to the appropriate workflow.
+Ecology for developing ideas. Natural language activation — users describe intent, the skill routes to the appropriate agent.
 
 ---
 
-## Execution Mode
+## Context Detection
 
-Workflows execute in one of two modes based on their nature:
+1. Check for `.claude/qino-config.json` in the current directory
+2. Read the `repoType` field:
 
-### Inject Mode (Dialogue Workflows)
+| repoType | Context |
+|----------|---------|
+| `"concepts"` or absent | Concepts workspace |
+| `"research"` | Research workspace |
+| `"implementation"` | Implementation — build context, concept links discovered via `"concept grounds"` edges |
+| `"tool"` | Tool development |
 
-**For:** home, explore, capture, test, attune, compare, arc, orientation, lab, navigate, bug
-
-These workflows involve multi-turn dialogue with the user. They execute **in the main conversation** — no Task tool, no subagent.
-
-**When a dialogue workflow is triggered:**
-
-1. Read the workflow file (e.g., `workflows/explore.md`)
-2. Read the agent file, extract content between `<!-- INJECT-START -->` and `<!-- INJECT-END -->` markers
-3. Follow the persona principles and workflow instructions directly
-4. Continue the conversation as that persona — first visible output is dialogue, not process
-
-**The persona is invisible.** Do not announce "PERSONA ACTIVE" or show any process. Just follow the principles and workflow naturally.
-
-**Example (inject mode):**
-```
-User: "explore qinolabs-homepage"
-
-Claude: [Reads workflows/explore.md and agents/concept.md]
-        [Follows concept persona principles]
-        [Responds directly as the concept agent would]
-
-"What part of qinolabs-homepage still feels alive when you think about it?"
-```
-
-### Spawn Mode (Synthesis Workflows)
-
-**For:** import, dev-work, dev-init, dev-setup, workspace-init, research-init, research-setup, concept-init, concept-setup
-
-These workflows involve heavy file reading, code changes, or scaffolding. They execute **in an isolated subagent** via the Task tool.
-
-**When a synthesis workflow is triggered:**
-
-1. **Spawn the agent** using Task tool with appropriate `subagent_type`:
-   - `qino:concept` — for import, concept-init, concept-setup
-   - `qino:dev` — for dev-init, dev-setup, workspace-init, dev-work
-   - `qino:research` — for research-init, research-setup
-
-2. **Pass context** in the Task prompt:
-   - The detected workspace context
-   - The user's intent/request
-   - The workflow to execute
-   - Momentum context if present
-
-3. **Let the agent work** — agent returns results; main conversation stays clean
-
-**Example (spawn mode):**
-```
-User: "bring in /path/to/notes.md"
-
-Claude: [Uses Task tool]
-  subagent_type: "qino:concept"
-  prompt: "Read and follow the workflow at plugins/qino/skills/qino/workflows/import.md
-
-           Context:
-           - Workspace: concepts at /path/to/concepts-repo
-           - Source file: /path/to/notes.md
-
-           User wants to import this material into concepts."
-```
-
-### Why Two Modes?
-
-**Inject mode** preserves full conversation context — essential for dialogue where user's words and energy matter.
-
-**Spawn mode** provides context isolation — prevents heavy file reading and synthesis from filling the main context window.
+3. If no `qino-config.json` exists:
+   - Setup intent → route to setup (see below)
+   - Otherwise → os agent orients via `read_activity`
 
 ---
 
-## Context Detection (First Step)
+## Momentum Detection
 
-Before routing, detect workspace context:
+Before routing, assess whether the conversation already carries momentum.
 
-1. **Check for `.claude/qino-config.json`** in current directory
-2. **Read `repoType` field** to determine context and apply structure conventions (see `references/dev/repo-conventions.md` for patterns)
+**When momentum exists** (user has shared specific ideas, direction, or details):
+- Pass as "already surfaced" context to the agent
+- Agent skips exploratory questioning, works directly with what's been expressed
 
-| repoType | Context | Behavior |
-|----------|---------|----------|
-| `"concepts"` or absent | Concepts workspace | Full concept exploration |
-| `"research"` | Research workspace | Research-oriented routing |
-| `"implementation"` | Implementation project | Dev context, edge-based concept discovery |
-| `"tool"` | Tool development | Minimal context |
-
-3. **Extract relevant paths:**
-   - Concept links are discovered via `"concept grounds"` edges in the implementation graph (not stored in config)
-
-4. **Detect protocol:**
-   Check for `protocol` field in qino-config.json. When `protocol: "qino"` is present, set `context.protocol = "qino"`. This activates protocol-aware workflow routing — graph-based structure instead of manifest-based.
-
-   When protocol is detected:
-   - Read `agents/protocol-structure.md` alongside `agents/concept.md` for inject workflows
-   - Route concept work (home, capture, explore) to `workflows/protocol/` versions
-   - Route dev work (dev-work, dev-init) to `workflows/protocol/` versions
-   - Read `agents/protocol-structure.md` alongside `agents/dev.md` for spawn workflows
-   - Reference `references/protocol/protocol-spec.md` for data model details
-
-5. **Detect ecosystem concepts:**
-   When the target concept lives in `ecosystem/` (check manifest.json `path` field) or has type `"ecosystem"` in graph.json, recognize this as **ecosystem work** — distinct from app concept work.
-
-   Pass this awareness to the agent:
-   > "This is ecosystem work — distinctions forming, not just ideas developing. Hold questions longer."
-
-6. **If no qino-config.json exists:**
-   - Route to orientation workflow (first-time arrival)
-   - See [workflows/orientation.md](workflows/orientation.md)
+**When no momentum exists:**
+- Let the agent's arrival pattern unfold naturally
 
 ---
 
-## Momentum Detection (Second Step)
+## Routing — Three Paths
 
-Before executing a workflow (inject or spawn), assess whether the conversation already carries momentum.
+### 1. Build intent → spawn `qino:build`
 
-**Momentum exists when the user has:**
-- Shared specific ideas, direction, or vision in recent messages
-- Articulated what feels alive or important to them
-- Described concrete details (not just "I want to work on X")
-- Built up context through back-and-forth dialogue
+**Signals:** "build", "implement", "what's next for [app]", "continue [app]", "plan iteration", "next steps", "work on [app]", any app name with action intent, "file a bug".
 
-**When momentum exists:**
+| Intent | Workflow |
+|--------|----------|
+| New app from concept | `workflows/new-app.md` |
+| Continue building, next iteration, fix bug | `workflows/iteration.md` |
 
-1. **Summarize what's already surfaced:**
-   - The specific direction or vision they expressed
-   - Key details or qualities they mentioned
-   - What seems to have energy for them
+Build workflows involve heavy file reading, code changes, and scaffolding. They spawn in an isolated subagent via the Task tool.
 
-2. **Pass this to the agent** as "already surfaced" context (see example below)
+### 2. Setup intent → os agent with setup workflow
 
-3. **Tell the agent** to skip exploratory questioning and go directly to working with what's been expressed
+**Signals:** "/qino setup", "set up qino", "initialize workspace", or no workspace + clear setup intent.
 
-**Example with momentum (inject mode — explore workflow):**
-```
-User has been discussing their vision for a tools page - an interactive terminal
-playground with guided steps, split layout, demonstrating fluidity between
-concept/research/implementation work.
+Os agent reads `workflows/setup.md` and `references/workspaces.md`, then facilitates the conversational onboarding in the main thread.
 
-Claude: [Reads workflows/explore.md and agents/concept.md persona]
-        [Recognizes momentum — user has already surfaced what's alive]
-        [Skips the alive-thread question, goes directly to working]
+### 3. Everything else → os agent (inject mode)
 
-"The terminal playground idea — guidance alongside experience, process becoming
-artifact. Let me see how this lands in the concept."
+The os agent handles all graph work through MCP tools and persona principles:
 
-[Reads concept, proposes integration]
-```
+- **Arrival/orientation**: `read_activity` → respond to what's there
+- **Node exploration**: `read_node` → ground opening in what was found
+- **Deck actualization**: `read_decks` → read members → produce reading (consult `references/deck-actualization.md`)
+- **Capture**: `create_node(type: "capture")` — brief, don't interrogate
+- **Concept creation**: brief dialogue to surface impulse → `create_node(type: "concept")`
+- **Research inquiry**: brief dialogue to surface question → `create_node(type: "inquiry")`
+- **Ecology lens application**: consult `references/ecology-lenses.md`
+- **Annotation**: `write_annotation` — always available, not a mode
 
-**Example with momentum (spawn mode — import workflow):**
-```
-User has been discussing specific notes they want to bring in, with context
-about which concept they connect to.
-
-Claude: [Uses Task tool]
-  subagent_type: "qino:concept"
-  prompt: "Read and follow the workflow at plugins/qino/skills/qino/workflows/import.md
-
-           MOMENTUM: User has already indicated:
-           - Source file: /path/to/notes.md
-           - Target concept: qinolabs-homepage
-           - Connection: these notes relate to the tools page vision
-
-           Skip exploratory questions. Go directly to reading and proposing integration."
-```
-
-**Example with decision context (inject mode — test workflow):**
-```
-User is deciding between embedding approaches for the qino-journey concept.
-The conversation contains specific options being evaluated.
-
-Claude: [Reads workflows/test.md and agents/concept.md persona]
-        [Recognizes decision context — user has specific options to evaluate]
-
-"You're weighing six approaches to embedding. Let me find a principle in
-qino-journey that can test these..."
-
-[Reads concept, finds relevant ecology principle, applies it to each option]
-```
-
-**When NO momentum exists:**
-
-Let the workflow's natural dialogue unfold:
-
-```
-User: "explore qinolabs-homepage"
-
-Claude: [Reads workflows/explore.md and agents/concept.md persona]
-        [No momentum — follows workflow naturally]
-
-"What part of qinolabs-homepage still feels alive when you think about it?"
-```
-
-The alive-thread question is valuable when arriving cold. Skip it when the user has already warmed up.
+No workflow file needed. The agent reads the graph and responds. Dialogue happens in the main conversation (inject mode).
 
 ---
 
-## Routing
+## Subagent Types
 
-Match user intent to workflow. **Spawn the specified agent** to execute the workflow.
+| Agent | subagent_type | Mode |
+|-------|---------------|------|
+| OS Agent | `qino:os` | inject (main conversation) |
+| Build Agent | `qino:build` | spawn (isolated subagent) |
 
-### Quick Route (Agent Selection)
-
-**CRITICAL:** Select agent FIRST based on user language, THEN find the workflow.
-
-| User says... | Agent |
-|--------------|-------|
-| "what's next", "continue", "work on [app]", "build", "implement", "plan iteration" | `qino:dev` |
-| "what's next for [app]", "what should I build", "next steps for [project]" | `qino:dev` |
-| "use the active navigator", "navigate [territory]", "map this", "show me the terrain" | direct (graph tools) |
-| "explore", "go deeper", "capture", "hold this", "where am I", "test", "compare" | `qino:concept` |
-| "read this deck", "actualize", "open deck", "re-energize", "/qino deck" | direct (MCP tools) |
-| "research", "investigate", "inquiry", "study" | `qino:research` |
-| "use the lab", "lab mode", "work through qino-lab" | direct (no agent) |
-| "file a bug", "log this bug", "bug ticket", "bug in [app]", "/qino bug" | direct (graph tools) |
-
-**Implementation signals (→ `qino:dev`):**
-- Any app name mentioned with action intent: "qino-world", "qino-journey", "qino-frame"
-- Building/coding language: "add feature", "fix bug", "implement", "create component"
-- Progress language: "what's next", "continue", "move forward", "next iteration"
-- Planning language: "plan", "scope", "break down", "what needs to be done"
-
-**Navigator signals (→ direct, graph tools):**
-- Activation language: "use the active navigator", "activate navigator for [territory]", "navigate [territory]"
-- Mapping language: "map this concept", "create a navigator for [territory]", "show me the terrain"
-- Update language: "update the navigator", "log this session", "record what we found"
-- All navigator operations use qino-lab MCP tools — navigators are graph nodes
-
-**Deck signals (→ direct, MCP tools):**
-- Actualization language: "read this deck", "actualize deck", "open deck [name]", "re-energize [deck]"
-- Explicit command: "/qino deck [name]"
-- Delta language: "what's new in [deck]", "what evolved in [deck]"
-- Requires: protocol workspace with promoted deck nodes in the graph
-
-**Concept signals (→ `qino:concept`):**
-- Exploration language: "explore", "deepen", "what is", "understand"
-- Arrival language: "where am I", "what's here", "show me"
-- Capture language: "hold this", "note", "capture"
-- Testing language: "test through ecology", "notice", "inform the decision"
-
-**Research signals (→ `qino:research`):**
-- Investigation language: "research", "investigate", "study", "inquiry"
-- Question framing: "how does X work", "what are the approaches to"
-
-**Lab mode signals (→ direct, no agent):**
-- Activation language: "use the lab", "lab mode", "work through the lab"
-- Protocol context: "work through qino-lab", "use qino-lab for this"
-- Requires: protocol workspace with qino-lab-mcp available
-- **Priority rule**: "lab" as prefix takes priority over other routing. "lab create X" = lab mode, then action.
-
-**Bug signals (→ direct, graph tools):**
-- Filing language: "file a bug", "log this bug", "create a bug ticket", "bug ticket for [app]"
-- Explicit command: "/qino bug"
-- Discovery language: "this is a bug", "bug in [app]", "found a bug"
-- Requires: implementation workspace with `graph.json`
-- Bug operations use qino-lab MCP tools — bugs are finding nodes in the implementation graph
-
----
-
-### Concept Work → `qino:concept`
-
-**Protocol routing:** When `context.protocol === "qino"`, home/capture/explore route to protocol versions. The agent reads `agents/protocol-structure.md` alongside `agents/concept.md`.
-
-| User Intent | Workflow | Protocol Workflow |
-|-------------|----------|-------------------|
-| Arrive, "where am I", "what's here", home | [workflows/home.md](workflows/home.md) | [workflows/protocol/home.md](workflows/protocol/home.md) |
-| Capture thought, "hold this", "note: ..." | [workflows/capture.md](workflows/capture.md) | [workflows/protocol/capture.md](workflows/protocol/capture.md) |
-| Explore, "go deeper", "work with [concept]", ideate, brainstorm | [workflows/explore.md](workflows/explore.md) | [workflows/protocol/explore.md](workflows/protocol/explore.md) |
-| Test, "notice through ecology" | [workflows/test.md](workflows/test.md) |
-| Test with decision, "help inform the decision" | [workflows/test.md](workflows/test.md) (decision context mode) |
-| Attune, "calibrate [quality]" | [workflows/attune.md](workflows/attune.md) |
-| Compare artifacts | [workflows/compare.md](workflows/compare.md) |
-| Setup concepts workspace | [workflows/concept-setup.md](workflows/concept-setup.md) |
-| Create new concept | [workflows/concept-init.md](workflows/concept-init.md) |
-| Import material into concepts | [workflows/import.md](workflows/import.md) |
-
-### Arc Work → `qino:concept`
-
-| User Intent | Workflow |
-|-------------|----------|
-| Open/begin arc, "start tracking", "something emerging" | [workflows/arc-open.md](workflows/arc-open.md) |
-| Link to arc, "add to [arc]", "connect to [arc]" | [workflows/arc-link.md](workflows/arc-link.md) |
-| Close arc, "capture this arc", "finish [arc]" | [workflows/arc-close.md](workflows/arc-close.md) |
-| Capture emergence (retrospective), "what emerged" | [workflows/arc.md](workflows/arc.md) |
-
-**Arc behavior notes:**
-- Arc opening, linking, and closing are explicit commands
-- Arc detection on arrival is automatic but non-intrusive (see agent inject sections)
-- Retrospective capture (`arc.md`) works standalone or as the final phase of arc-close
-
-### Research Work → `qino:research`
-
-| User Intent | Workflow |
-|-------------|----------|
-| Setup research workspace | [workflows/research-setup.md](workflows/research-setup.md) |
-| Start research inquiry | [workflows/research-init.md](workflows/research-init.md) |
-
-### Deck Work → direct (MCP tools)
-
-| User Intent | Workflow |
-|-------------|----------|
-| "read this deck", "actualize [deck]", "open deck [name]" | [workflows/protocol/deck.md](workflows/protocol/deck.md) |
-| "/qino deck [name]", "what's new in [deck]" | [workflows/protocol/deck.md](workflows/protocol/deck.md) |
-| "re-energize [deck]" | [workflows/protocol/deck.md](workflows/protocol/deck.md) |
-
-**Deck behavior notes:**
-- Decks are graph nodes with `composes` edges to their member threads
-- The workflow reads the deck and all members via MCP tools (`read_node`, `search_nodes`)
-- Produces a four-part actualization reading: temporal reorientation, delta narrative, candidate articulations, opening question
-- The reading is saved as an annotation on the deck node (signal: `reading`)
-- Dialogue continues naturally after the reading — the practitioner responds with what they're sensing
-- Uses concept agent persona (inject mode) with deck-specific voice: intimate, interpretive, resuming a conversation
-
-### Navigator Work → direct (graph tools)
-
-| User Intent | Workflow |
-|-------------|----------|
-| "use the active navigator", "activate navigator", "navigate [territory]" | [workflows/navigate.md](workflows/navigate.md) |
-| "create a navigator", "map this concept", "show me the terrain for [territory]" | [workflows/navigate.md](workflows/navigate.md) |
-| "update the navigator", "log this session" | [workflows/navigate.md](workflows/navigate.md) |
-
-**Navigator behavior notes:**
-- Navigators are graph nodes with `type: "navigator"` in the root graph — they appear in qino-lab
-- Activation loads terrain, reading order, and open questions via `read_node`
-- Creation uses `create_node` + content files; deep reading can be delegated to an Explore agent
-- Session log updates edit `content/terrain.md` and write journal entries
-- Navigator operations implicitly use graph tools (qino-lab MCP) — no need to say "lab" first
-
-### Bug Work → direct (graph tools)
-
-| User Intent | Workflow |
-|-------------|----------|
-| "file a bug", "log this bug", "create a bug ticket" | [workflows/bug.md](workflows/bug.md) |
-| "/qino bug", "bug in [app]", "found a bug" | [workflows/bug.md](workflows/bug.md) |
-| "this is a bug", "bug ticket for [app]" | [workflows/bug.md](workflows/bug.md) |
-
-**Bug behavior notes:**
-- Bugs are `finding` type nodes in the implementation graph with `sparked-by` edges to the affected app
-- The workflow gathers context from the conversation (if debugging was happening) and fills gaps through dialogue
-- Resolution updates the node status to `composted` and captures root cause + fix + generalizable pattern
-- Bug nodes are visible in qino-lab and connected to their app's implementation node
-- Works from any workspace that can resolve the implementation graph path
-
-### Implementation Work → `qino:dev`
-
-The agent reads `agents/protocol-structure.md` alongside `agents/dev.md`.
-
-| User Intent | Workflow |
-|-------------|----------|
-| Initialize multi-repo workspace | [workflows/workspace-init.md](workflows/workspace-init.md) |
-| Setup implementation workspace | [workflows/dev-setup.md](workflows/dev-setup.md) |
-| Start implementation, init app | [workflows/protocol/dev-init.md](workflows/protocol/dev-init.md) |
-| "what's next for [app]", "continue [app]", "work on [app]" | [workflows/protocol/dev-work.md](workflows/protocol/dev-work.md) |
-| "build [feature]", "implement [feature]", "add [component]" | [workflows/protocol/dev-work.md](workflows/protocol/dev-work.md) |
-| "plan iteration", "what should I build next", "next steps" | [workflows/protocol/dev-work.md](workflows/protocol/dev-work.md) |
-| "fix [bug]", "debug", "investigate issue in [app]" | [workflows/protocol/dev-work.md](workflows/protocol/dev-work.md) |
-
-### Orientation (no agent needed — lightweight)
-
-| User Intent | Workflow |
-|-------------|----------|
-| Orient, "what can qino do", "show me qino" | [workflows/orientation.md](workflows/orientation.md) |
-| No workspace context (and no clear intent) | [workflows/orientation.md](workflows/orientation.md) |
-
-### Lab Mode (no agent needed — direct mode)
-
-| User Intent | Workflow |
-|-------------|----------|
-| "use the lab", "lab mode", "work through qino-lab" | [workflows/lab.md](workflows/lab.md) |
-| "work through the lab", "use qino-lab for this" | [workflows/lab.md](workflows/lab.md) |
-
-**Lab mode behavior notes:**
-- Requires protocol-compliant workspace (`protocol: "qino"` in qino-config.json)
-- Uses qino-lab-mcp tools for real-time UI communication
-- Signal types: reading, connection, tension, proposal
-- The graph becomes the medium of dialogue — annotations surface in the UI
-
-**Lab mode persistence (compaction resilience):**
-- Lab mode is a long-running behavioral overlay that persists across the session
-- If the conversation has been compacted and lab mode was previously active, re-read `workflows/lab.md` to restore full behavioral instructions
-- The graph carries continuity — annotations, nodes, and journal entries persist across compaction boundaries
-- Detection: if the conversation summary mentions "lab mode active" or recent MCP tool calls include qino-lab tools (`write_annotation`, `read_graph`, etc.), treat "use the lab" as a re-injection refresh
-- Operational details (deeplinks, views, node creation) live in `references/lab/lab-operations.md` — read on demand, not at activation
-
----
-
-## Implementation Context
-
-When `context.type === "implementation"`, additional routing applies:
-
-| User Intent | Agent | Workflow |
-|-------------|-------|----------|
-| "work on [app]", plan iterations, build | `qino:dev` | [workflows/protocol/dev-work.md](workflows/protocol/dev-work.md) |
-| "work on [app] and [app]" (multi-app) | `qino:dev` | [workflows/protocol/dev-work.md](workflows/protocol/dev-work.md) |
-| "file a bug", "log this bug", "/qino bug" | direct | [workflows/bug.md](workflows/bug.md) |
-| Concept exploration from implementation | `qino:concept` | [workflows/explore.md](workflows/explore.md) |
-
-**Key behavior:** In implementation repos, the concept agent gains bidirectional visibility with iterations. When exploring a linked concept, it:
-- Surfaces current iteration status ("iteration 05 — figures-center-stage")
-- Offers translation prompts after concept changes
-- Shows iteration context when capturing discoveries from building
-
-**Multi-app scoping:** Users can work across multiple apps conversationally:
-- "work on world and journey" → dev agent sees both apps
-- "the encounter panel in world needs to talk to journey's substrate" → dev agent holds both contexts
-
-**Check execution mode.** Dialogue workflows (explore, capture) inject into main conversation. Synthesis workflows (dev-work) spawn subagents.
-
----
-
-## Context Object
-
-Pass to workflows:
-
-```typescript
-interface Context {
-  type: "concepts" | "research" | "implementation" | "tool";
-  root: string;                              // Workspace root path
-  protocol?: "qino";                         // Protocol mode — graph-based structure
-}
-```
-
----
-
-## Non-Linear Ecology
-
-This is not a lifecycle. Users move fluidly between modalities:
-
-- Capture during explore
-- Explore from research
-- Research informing implementation
-- Implementation sparking new concepts
-- Arcs emerging across any activity
-
-The skill routes based on current intent. Each workflow knows how to handle cross-context flow.
-
----
-
-## Agent and Execution Reference
-
-Workflows specify both an agent persona and an execution mode.
-
-### Execution Mode by Workflow
-
-| Workflow | Agent | Execution | Reason |
-|----------|-------|-----------|--------|
-| home | concept | inject | Dialogue — arrival, showing state |
-| explore | concept | inject | Dialogue — multi-turn conceptual work |
-| capture | concept | inject | Dialogue — acknowledgment, follow-up |
-| test | concept | inject | Dialogue — ecology observation |
-| attune | concept | inject | Dialogue — iterative calibration |
-| compare | concept | inject | Dialogue — artifact comparison |
-| arc | concept | inject | Dialogue — retrospective capture |
-| arc-open | concept | inject | Dialogue — opening active arc |
-| arc-link | concept | inject | Dialogue — linking session to arc |
-| arc-close | concept | inject | Dialogue — closing arc, triggers capture |
-| orientation | — | inject | Dialogue — direct response |
-| lab | — | inject | Dialogue — UI-mediated communication via MCP |
-| deck | concept | inject | Graph-native — reads deck + members via MCP, produces actualization reading, continues as dialogue |
-| navigate | — | inject | Graph-native — uses qino-lab MCP tools, optional spawn for research |
-| bug | — | inject | Graph-native — dialogue to capture context, then MCP tools to create finding node |
-| import | concept | spawn | Synthesis — heavy file reading |
-| concept-init | concept | spawn | Synthesis — workspace scaffolding |
-| concept-setup | concept | spawn | Synthesis — workspace scaffolding |
-| dev-work | dev | spawn | Synthesis — code changes |
-| dev-init | dev | spawn | Synthesis — project scaffolding |
-| dev-setup | dev | spawn | Synthesis — project scaffolding |
-| workspace-init | dev | spawn | Synthesis — multi-repo workspace scaffolding |
-| research-init | research | spawn | Synthesis — workspace scaffolding |
-| research-setup | research | spawn | Synthesis — workspace scaffolding |
-
-### Subagent Types (for spawn mode only)
-
-| Agent | subagent_type | Used by |
-|-------|---------------|---------|
-| Concept Agent | `qino:concept` | import, concept-init, concept-setup |
-| Dev Agent | `qino:dev` | dev-init, dev-setup, workspace-init, dev-work |
-| Research Agent | `qino:research` | research-init, research-setup |
-
-Agent definitions live in `agents/` directory. Each agent file has:
-- `<!-- INJECT-START -->` ... `<!-- INJECT-END -->` — persona/principles for inject mode
-- Task-specific instructions — for spawn mode
+Agent definitions: `agents/os.md`, `agents/build.md`, `agents/protocol-structure.md`
 
 ---
 
 ## Error States
 
-**Cross-repo resolution failure:**
-> "Can't find concepts-repo at [path]."
-> Check your .claude/qino-config.json
-
-**Ambiguous intent (could be concept, dev, or research):**
-
-Use `AskUserQuestion` to disambiguate:
+**Ambiguous intent:**
 
 | Header | Question | Options |
 |--------|----------|---------|
-| "Direction" | "Which direction fits what you're thinking?" | Concept work ("Explore or develop an idea"), Dev work ("Build or implement something"), Research ("Investigate a question in depth") |
+| "Direction" | "Which direction?" | Explore ("Work with ideas or the graph"), Build ("Implement or code something") |
 
-Route based on selection.
-
-**Unknown intent (no signal at all):**
-> Route to `workflows/home.md` — arrival handles orientation naturally.
+**Unknown intent:**
+> Os agent calls `read_activity` — arrival handles orientation naturally.
