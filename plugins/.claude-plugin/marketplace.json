@@ -7,20 +7,17 @@
     {
       "name": "qino",
       "source": "./qino",
-      "description": "Ecology for developing ideas — concepts, research, implementation",
-      "version": "3.2.0"
+      "description": "Ecology for developing ideas — concepts, research, implementation"
     },
     {
       "name": "qino-prose",
       "source": "./qino-prose",
-      "description": "Chronicle writing, research transmissions, and prose lenses",
-      "version": "3.1.0"
+      "description": "Chronicle writing, research transmissions, and prose lenses"
     },
     {
       "name": "design-adventure",
       "source": "./design-adventure",
-      "description": "Seven-perspective design exploration (paused, pending graph-native redesign)",
-      "version": "3.0.0"
+      "description": "Seven-perspective design exploration (paused, pending graph-native redesign)"
     }
   ]
 }

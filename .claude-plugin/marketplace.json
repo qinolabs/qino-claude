@@ -12,19 +12,16 @@
   "plugins": [
     {
       "name": "qino",
-      "version": "3.2.0",
       "description": "Ecology for developing ideas — concepts, research, implementation",
       "source": "./plugins/qino"
     },
     {
       "name": "qino-prose",
-      "version": "3.1.0",
       "description": "Chronicle writing, research transmissions, and prose lenses",
       "source": "./plugins/qino-prose"
     },
     {
       "name": "design-adventure",
-      "version": "3.0.0",
       "description": "Seven-perspective design exploration (paused, pending graph-native redesign)",
       "source": "./plugins/design-adventure"
     }

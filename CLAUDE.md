@@ -102,6 +102,18 @@ Project-level commands live in `.claude/commands/`:
 4. Add README.md with overview
 5. Update main README.md
 
+## Plugin Versioning
+
+**Single source of truth**: per-plugin versions live exclusively in `plugins/<plugin>/.claude-plugin/plugin.json`. Marketplace catalog files (`.claude-plugin/marketplace.json` and `plugins/.claude-plugin/marketplace.json`) describe *which plugins exist*, but do NOT list per-plugin versions.
+
+**Why**: the Claude Code docs warn that *"the plugin manifest always wins silently, which can cause the marketplace version to be ignored"* ([plugins-reference#version-management](https://code.claude.com/docs/en/plugins-reference.md#version-management)). Setting versions in both places risks silent drift where the marketplace.json value is overridden by plugin.json without warning. Keeping a single source of truth eliminates the trap.
+
+The top-level `metadata.version` in `.claude-plugin/marketplace.json` describes the marketplace catalog itself (not any individual plugin) and stays.
+
+**When to bump**: any push to master that changes a plugin's contents — including the bundled qino-os server in `plugins/qino/servers/dist/` — should bump `plugins/<plugin>/.claude-plugin/plugin.json` `version` if any consumer has installed the plugin. Reason: Claude Code's plugin cache is keyed by version directory (`~/.claude/plugins/cache/qino-plugins/<plugin>/<version>/`). Without a bump, a fix can't reach an existing install — and worse, two consumers nominally on the same version can hold *different* bundles depending on when they installed (their local cache only refreshes when the version field changes).
+
+**Pre-launch exception**: while there are no consumers yet, you can push without bumping versions for iteration speed. The discipline kicks in the moment the first real consumer installs.
+
 ## Key Patterns
 
 ### Skill → Workflow → Agent

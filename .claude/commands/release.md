@@ -128,9 +128,9 @@ Add new empty `## [Unreleased]` at top.
 
 ### 7. Bump Plugin Versions
 
-Update **all** version locations for changed plugins:
+Update version locations for changed plugins:
 
-1. **Plugin identity** (what Claude Code reads for `/plugin`):
+1. **Plugin identity — single source of truth** (what Claude Code reads for `/plugin`):
    ```
    plugins/<plugin>/.claude-plugin/plugin.json  → "version" field
    ```
@@ -140,11 +140,17 @@ Update **all** version locations for changed plugins:
    plugins/<plugin>/references/*/version.json   → "version" field
    ```
 
-3. **Marketplace catalogs** (directory listings):
+3. **Marketplace metadata** (catalog version, not per-plugin):
    ```
-   .claude-plugin/marketplace.json              → per-plugin "version" + metadata "version"
-   plugins/.claude-plugin/marketplace.json      → per-plugin "version"
+   .claude-plugin/marketplace.json              → metadata.version only
    ```
+
+⚠️ **Do NOT add per-plugin `version` fields to either marketplace.json file.** The Claude Code docs warn:
+
+> *"When possible, avoid setting the version in both places. The plugin manifest always wins silently, which can cause the marketplace version to be ignored."*
+> — `code.claude.com/docs/en/plugins-reference.md#version-management`
+
+Per-plugin versions live exclusively in `plugins/<plugin>/.claude-plugin/plugin.json`. The marketplace files only describe *which plugins exist* and where their sources live; the version of each plugin is read from its own `plugin.json` at install time.
 
 Use bundle-aligned versioning — plugin version matches the release version where it last changed.
 
@@ -160,8 +166,7 @@ Files to commit:
   - CHANGELOG.md
   - plugins/*/.claude-plugin/plugin.json (changed plugins)
   - plugins/*/references/*/version.json (changed plugins)
-  - .claude-plugin/marketplace.json
-  - plugins/.claude-plugin/marketplace.json
+  - .claude-plugin/marketplace.json (only if metadata.version changed)
 
 Commands:
   git add <files>
