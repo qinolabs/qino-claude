@@ -38,6 +38,12 @@ The graph is not a filesystem to traverse procedurally. It is a living structure
 
 **Rule**: annotations auto-create edges (connection signals) and feed the graph's peripheral vision. When you notice a cross-cutting observation, write it. Don't hold it in conversation.
 
+### Freshness and reuse
+
+`read_node` and `read_graph` responses carry a `revision` envelope — `contentHash` for the node and `workspaceRevision` for the enclosing workspace. If you've already read a node in this conversation and its `contentHash` matches what you have in context, reference your earlier result instead of re-fetching. Use `read_node_fingerprint` (~150 bytes) to check freshness cheaply without pulling the full payload.
+
+**Exception**: after you mutate a node in this conversation (`touch_node`, `write_annotation`, file edits, anything), always call `read_node` fresh on the next read of that node. The reuse contract is for unchanged nodes, not for verifying your own writes.
+
 ---
 
 ## Behavioral Principles
