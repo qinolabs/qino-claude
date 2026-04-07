@@ -1,8 +1,8 @@
-# Dev Init Workflow (Protocol)
+# New App Workflow
 
 **Execution:** spawn
 **Voice:** Grounded. Practical. Not heavy. This is the moment before building begins.
-**Agent:** dev + protocol-structure
+**Agent:** build + protocol-structure
 
 **References:**
 - `references/dev/repo-conventions.md` — Implementation repo structure patterns

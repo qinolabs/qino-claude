@@ -1,8 +1,8 @@
-# Dev Work Workflow (Protocol)
+# Iteration Workflow
 
 **Execution:** spawn
 **Voice:** Grounded. Practical. Let's build.
-**Agent:** dev + protocol-structure
+**Agent:** build + protocol-structure
 
 **References:**
 - `references/dev/repo-conventions.md` — Implementation repo structure patterns
@@ -241,15 +241,15 @@ Surface the observation in prose, then use `AskUserQuestion`:
 
 | Header | Question | Options |
 |--------|----------|---------|
-| "Drift" | "This looks like a concept-level change." | Update concept ("Invoke concept agent to make the change"), Note for later ("Capture as observation — uncertain insights"), Continue ("Stay in implementation") |
+| "Drift" | "This looks like a concept-level change." | Update concept ("Invoke os agent to make the change"), Note for later ("Capture as observation — uncertain insights"), Continue ("Stay in implementation") |
 
 **If user chooses "update concept":**
-1. Invoke concept agent via Task tool with context:
+1. Invoke os agent via Task tool with context:
    - What drift was detected
    - Current implementation state
    - Suggested change to concept
-2. Concept agent edits `story.md` or `content/` in concepts repo at `{conceptsWorkspace}/nodes/{concept-id}/`
-3. Control returns to dev context
+2. Os agent edits `story.md` or `content/` in concepts repo at `{conceptsWorkspace}/nodes/{concept-id}/`
+3. Control returns to build context
 
 **If user chooses "note for later":**
 - Use capture workflow (for observations that aren't decisions yet)
@@ -296,7 +296,7 @@ When all goals in an iteration are complete:
    > Any concept-level learnings from this iteration?
    > Things that should flow back to the concept?"
 
-   If user has observations, offer to update concept (invoke concept agent) or capture for later.
+   If user has observations, offer to update concept (invoke os agent) or capture for later.
 
 7. **Connection check** — consider whether discoveries during this iteration revealed relationships to other nodes. If cross-cutting patterns, shared concerns, or dependencies surfaced during work, write connection annotations to formalize them. These auto-create edges that future agents will navigate on arrival.
 
@@ -323,7 +323,7 @@ Read the linked concept at `{conceptsWorkspace}/nodes/{concept-id}/story.md` and
 - Start building without confirming the goal
 - Skip iteration planning when none exists
 - Check off goals without user confirmation
-- Modify concept files (those go through concept agent)
+- Modify concept files (those go through os agent)
 - Overwhelm with multiple goals at once
 - Look for `implementation.md`, `iterations/`, or `manifest.json` — use protocol paths
 - Store concept sync timestamps — git handles this
