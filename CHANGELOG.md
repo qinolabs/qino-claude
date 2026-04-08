@@ -10,6 +10,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [3.3.1] - 2026-04-08
+
+### qino
+
+A small bundled-server-only release that closes the discoverability gap on qino-os: agents loading the plugin now get explicit guidance on when to reach for the graph tools ambiently — not just when the qino skill activates. Plus two stale references in the MCP instructions get refreshed.
+
+#### Changed
+
+- **MCP instructions: ambient-use guidance** — the qino-os MCP server's `initialize` instructions now include a "When to reach for qino-os" section establishing the tools as ambient (available in every session that loads the plugin, not just qino-skill-routed conversations) and naming the three behaviors worth nudging: `search_nodes` before filesystem grep when given a node by name, `read_node` for a specific node's full context (story + content + neighborhood + signals in one call), and `write_annotation` for observations worth keeping (a tension, a connection, a proposal for the next iteration). Includes the temporal asymmetry framing: *the conversation is ephemeral, the graph is durable*. Section is gated on `mode === "full"` so read-only consumers don't see write-tool guidance for tools they don't have. Adds ~140 tokens to the per-session initialize cost.
+- **Stale MCP instruction references refreshed** — the Orientation section no longer mentions "active navigators" (retired at v3.2.0); replaced with the actual `read_activity` section list (workspaces, recent changes, action items, arcs) and `read_node on a deck node` as the entry-point pattern. The Protocol section's edge-type example moves from `'curates' for view membership` (views unwired at v3.2.0) to `'composes' for deck membership` (`composes` is the current system-reserved edge type backing deck member references). The trailing `"Views are curated attention subsets of a graph"` sentence is dropped.
+
+### Documentation
+
+#### Changed
+
+- **Two follow-up commits from the v3.3.0 evening session ride along** — `d9bb7d0` (the proposal annotation on `gesture-review` capturing two debts: modernize attune/compare agents, rename `references/dev/`) and `7aa541a` (executes Debt A: rename `references/dev/` → `references/build/` to match the v3.2.0 agent rename, with 11 callsite updates across `build.md`, `iteration.md`, and `new-app.md`). Both are mechanical or organizational; no plugin behavior changes from them.
+
+---
+
 ## [3.3.0] - 2026-04-08
 
 ### qino
