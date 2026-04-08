@@ -3222,8 +3222,8 @@ var require_utils = __commonJS({
       }
       return ind;
     }
-    function removeDotSegments(path5) {
-      let input = path5;
+    function removeDotSegments(path6) {
+      let input = path6;
       const output = [];
       let nextSlash = -1;
       let len = 0;
@@ -3422,8 +3422,8 @@ var require_schemes = __commonJS({
         wsComponent.secure = void 0;
       }
       if (wsComponent.resourceName) {
-        const [path5, query] = wsComponent.resourceName.split("?");
-        wsComponent.path = path5 && path5 !== "/" ? path5 : void 0;
+        const [path6, query] = wsComponent.resourceName.split("?");
+        wsComponent.path = path6 && path6 !== "/" ? path6 : void 0;
         wsComponent.query = query;
         wsComponent.resourceName = void 0;
       }
@@ -12585,7 +12585,7 @@ var require_extend = __commonJS({
 });
 
 // src/server/index.ts
-import path4 from "path";
+import path5 from "path";
 import { fileURLToPath as fileURLToPath2 } from "url";
 
 // ../../node_modules/zod/v3/external.js
@@ -13066,8 +13066,8 @@ function getErrorMap() {
 
 // ../../node_modules/zod/v3/helpers/parseUtil.js
 var makeIssue = (params) => {
-  const { data, path: path5, errorMaps, issueData } = params;
-  const fullPath = [...path5, ...issueData.path || []];
+  const { data, path: path6, errorMaps, issueData } = params;
+  const fullPath = [...path6, ...issueData.path || []];
   const fullIssue = {
     ...issueData,
     path: fullPath
@@ -13183,11 +13183,11 @@ var errorUtil;
 
 // ../../node_modules/zod/v3/types.js
 var ParseInputLazyPath = class {
-  constructor(parent, value, path5, key) {
+  constructor(parent, value, path6, key) {
     this._cachedPath = [];
     this.parent = parent;
     this.data = value;
-    this._path = path5;
+    this._path = path6;
     this._key = key;
   }
   get path() {
@@ -16824,10 +16824,10 @@ function assignProp(target, prop, value) {
     configurable: true
   });
 }
-function getElementAtPath(obj, path5) {
-  if (!path5)
+function getElementAtPath(obj, path6) {
+  if (!path6)
     return obj;
-  return path5.reduce((acc, key) => acc?.[key], obj);
+  return path6.reduce((acc, key) => acc?.[key], obj);
 }
 function promiseAllObject(promisesObj) {
   const keys = Object.keys(promisesObj);
@@ -17147,11 +17147,11 @@ function aborted(x, startIndex = 0) {
   }
   return false;
 }
-function prefixIssues(path5, issues) {
+function prefixIssues(path6, issues) {
   return issues.map((iss) => {
     var _a;
     (_a = iss).path ?? (_a.path = []);
-    iss.path.unshift(path5);
+    iss.path.unshift(path6);
     return iss;
   });
 }
@@ -28147,26 +28147,26 @@ var handleParsingNestedValues = (form, key, value) => {
 };
 
 // ../../node_modules/hono/dist/utils/url.js
-var splitPath = (path5) => {
-  const paths = path5.split("/");
+var splitPath = (path6) => {
+  const paths = path6.split("/");
   if (paths[0] === "") {
     paths.shift();
   }
   return paths;
 };
 var splitRoutingPath = (routePath) => {
-  const { groups, path: path5 } = extractGroupsFromPath(routePath);
-  const paths = splitPath(path5);
+  const { groups, path: path6 } = extractGroupsFromPath(routePath);
+  const paths = splitPath(path6);
   return replaceGroupMarks(paths, groups);
 };
-var extractGroupsFromPath = (path5) => {
+var extractGroupsFromPath = (path6) => {
   const groups = [];
-  path5 = path5.replace(/\{[^}]+\}/g, (match2, index2) => {
+  path6 = path6.replace(/\{[^}]+\}/g, (match2, index2) => {
     const mark = `@${index2}`;
     groups.push([mark, match2]);
     return mark;
   });
-  return { groups, path: path5 };
+  return { groups, path: path6 };
 };
 var replaceGroupMarks = (paths, groups) => {
   for (let i = groups.length - 1; i >= 0; i--) {
@@ -28223,8 +28223,8 @@ var getPath = (request) => {
       const queryIndex = url.indexOf("?", i);
       const hashIndex = url.indexOf("#", i);
       const end = queryIndex === -1 ? hashIndex === -1 ? void 0 : hashIndex : hashIndex === -1 ? queryIndex : Math.min(queryIndex, hashIndex);
-      const path5 = url.slice(start, end);
-      return tryDecodeURI(path5.includes("%25") ? path5.replace(/%25/g, "%2525") : path5);
+      const path6 = url.slice(start, end);
+      return tryDecodeURI(path6.includes("%25") ? path6.replace(/%25/g, "%2525") : path6);
     } else if (charCode === 63 || charCode === 35) {
       break;
     }
@@ -28241,11 +28241,11 @@ var mergePath = (base, sub, ...rest) => {
   }
   return `${base?.[0] === "/" ? "" : "/"}${base}${sub === "/" ? "" : `${base?.at(-1) === "/" ? "" : "/"}${sub?.[0] === "/" ? sub.slice(1) : sub}`}`;
 };
-var checkOptionalParameter = (path5) => {
-  if (path5.charCodeAt(path5.length - 1) !== 63 || !path5.includes(":")) {
+var checkOptionalParameter = (path6) => {
+  if (path6.charCodeAt(path6.length - 1) !== 63 || !path6.includes(":")) {
     return null;
   }
-  const segments = path5.split("/");
+  const segments = path6.split("/");
   const results = [];
   let basePath = "";
   segments.forEach((segment) => {
@@ -28386,9 +28386,9 @@ var HonoRequest = class {
    */
   path;
   bodyCache = {};
-  constructor(request, path5 = "/", matchResult = [[]]) {
+  constructor(request, path6 = "/", matchResult = [[]]) {
     this.raw = request;
-    this.path = path5;
+    this.path = path6;
     this.#matchResult = matchResult;
     this.#validatedData = {};
   }
@@ -29125,8 +29125,8 @@ var Hono = class _Hono {
         return this;
       };
     });
-    this.on = (method, path5, ...handlers) => {
-      for (const p of [path5].flat()) {
+    this.on = (method, path6, ...handlers) => {
+      for (const p of [path6].flat()) {
         this.#path = p;
         for (const m of [method].flat()) {
           handlers.map((handler) => {
@@ -29183,8 +29183,8 @@ var Hono = class _Hono {
    * app.route("/api", app2) // GET /api/user
    * ```
    */
-  route(path5, app) {
-    const subApp = this.basePath(path5);
+  route(path6, app) {
+    const subApp = this.basePath(path6);
     app.routes.map((r) => {
       let handler;
       if (app.errorHandler === errorHandler) {
@@ -29210,9 +29210,9 @@ var Hono = class _Hono {
    * const api = new Hono().basePath('/api')
    * ```
    */
-  basePath(path5) {
+  basePath(path6) {
     const subApp = this.#clone();
-    subApp._basePath = mergePath(this._basePath, path5);
+    subApp._basePath = mergePath(this._basePath, path6);
     return subApp;
   }
   /**
@@ -29286,7 +29286,7 @@ var Hono = class _Hono {
    * })
    * ```
    */
-  mount(path5, applicationHandler, options) {
+  mount(path6, applicationHandler, options) {
     let replaceRequest;
     let optionHandler;
     if (options) {
@@ -29313,7 +29313,7 @@ var Hono = class _Hono {
       return [c.env, executionContext];
     };
     replaceRequest ||= (() => {
-      const mergedPath = mergePath(this._basePath, path5);
+      const mergedPath = mergePath(this._basePath, path6);
       const pathPrefixLength = mergedPath === "/" ? 0 : mergedPath.length;
       return (request) => {
         const url = new URL(request.url);
@@ -29328,14 +29328,14 @@ var Hono = class _Hono {
       }
       await next();
     };
-    this.#addRoute(METHOD_NAME_ALL, mergePath(path5, "*"), handler);
+    this.#addRoute(METHOD_NAME_ALL, mergePath(path6, "*"), handler);
     return this;
   }
-  #addRoute(method, path5, handler) {
+  #addRoute(method, path6, handler) {
     method = method.toUpperCase();
-    path5 = mergePath(this._basePath, path5);
-    const r = { basePath: this._basePath, path: path5, method, handler };
-    this.router.add(method, path5, [handler, r]);
+    path6 = mergePath(this._basePath, path6);
+    const r = { basePath: this._basePath, path: path6, method, handler };
+    this.router.add(method, path6, [handler, r]);
     this.routes.push(r);
   }
   #handleError(err, c) {
@@ -29348,10 +29348,10 @@ var Hono = class _Hono {
     if (method === "HEAD") {
       return (async () => new Response(null, await this.#dispatch(request, executionCtx, env, "GET")))();
     }
-    const path5 = this.getPath(request, { env });
-    const matchResult = this.router.match(method, path5);
+    const path6 = this.getPath(request, { env });
+    const matchResult = this.router.match(method, path6);
     const c = new Context(request, {
-      path: path5,
+      path: path6,
       matchResult,
       env,
       executionCtx,
@@ -29451,7 +29451,7 @@ var Hono = class _Hono {
 
 // ../../node_modules/hono/dist/router/reg-exp-router/matcher.js
 var emptyParam = [];
-function match(method, path5) {
+function match(method, path6) {
   const matchers = this.buildAllMatchers();
   const match2 = ((method2, path22) => {
     const matcher = matchers[method2] || matchers[METHOD_NAME_ALL];
@@ -29467,7 +29467,7 @@ function match(method, path5) {
     return [matcher[1][index2], match3];
   });
   this.match = match2;
-  return match2(method, path5);
+  return match2(method, path6);
 }
 
 // ../../node_modules/hono/dist/router/reg-exp-router/node.js
@@ -29582,12 +29582,12 @@ var Node = class _Node {
 var Trie = class {
   #context = { varIndex: 0 };
   #root = new Node();
-  insert(path5, index2, pathErrorCheckOnly) {
+  insert(path6, index2, pathErrorCheckOnly) {
     const paramAssoc = [];
     const groups = [];
     for (let i = 0; ; ) {
       let replaced = false;
-      path5 = path5.replace(/\{[^}]+\}/g, (m) => {
+      path6 = path6.replace(/\{[^}]+\}/g, (m) => {
         const mark = `@\\${i}`;
         groups[i] = [mark, m];
         i++;
@@ -29598,7 +29598,7 @@ var Trie = class {
         break;
       }
     }
-    const tokens = path5.match(/(?::[^\/]+)|(?:\/\*$)|./g) || [];
+    const tokens = path6.match(/(?::[^\/]+)|(?:\/\*$)|./g) || [];
     for (let i = groups.length - 1; i >= 0; i--) {
       const [mark] = groups[i];
       for (let j = tokens.length - 1; j >= 0; j--) {
@@ -29637,9 +29637,9 @@ var Trie = class {
 // ../../node_modules/hono/dist/router/reg-exp-router/router.js
 var nullMatcher = [/^$/, [], /* @__PURE__ */ Object.create(null)];
 var wildcardRegExpCache = /* @__PURE__ */ Object.create(null);
-function buildWildcardRegExp(path5) {
-  return wildcardRegExpCache[path5] ??= new RegExp(
-    path5 === "*" ? "" : `^${path5.replace(
+function buildWildcardRegExp(path6) {
+  return wildcardRegExpCache[path6] ??= new RegExp(
+    path6 === "*" ? "" : `^${path6.replace(
       /\/\*$|([.\\+*[^\]$()])/g,
       (_, metaChar) => metaChar ? `\\${metaChar}` : "(?:|/.*)"
     )}$`
@@ -29661,17 +29661,17 @@ function buildMatcherFromPreprocessedRoutes(routes) {
   );
   const staticMap = /* @__PURE__ */ Object.create(null);
   for (let i = 0, j = -1, len = routesWithStaticPathFlag.length; i < len; i++) {
-    const [pathErrorCheckOnly, path5, handlers] = routesWithStaticPathFlag[i];
+    const [pathErrorCheckOnly, path6, handlers] = routesWithStaticPathFlag[i];
     if (pathErrorCheckOnly) {
-      staticMap[path5] = [handlers.map(([h]) => [h, /* @__PURE__ */ Object.create(null)]), emptyParam];
+      staticMap[path6] = [handlers.map(([h]) => [h, /* @__PURE__ */ Object.create(null)]), emptyParam];
     } else {
       j++;
     }
     let paramAssoc;
     try {
-      paramAssoc = trie.insert(path5, j, pathErrorCheckOnly);
+      paramAssoc = trie.insert(path6, j, pathErrorCheckOnly);
     } catch (e) {
-      throw e === PATH_ERROR ? new UnsupportedPathError(path5) : e;
+      throw e === PATH_ERROR ? new UnsupportedPathError(path6) : e;
     }
     if (pathErrorCheckOnly) {
       continue;
@@ -29705,12 +29705,12 @@ function buildMatcherFromPreprocessedRoutes(routes) {
   }
   return [regexp, handlerMap, staticMap];
 }
-function findMiddleware(middleware, path5) {
+function findMiddleware(middleware, path6) {
   if (!middleware) {
     return void 0;
   }
   for (const k of Object.keys(middleware).sort((a, b) => b.length - a.length)) {
-    if (buildWildcardRegExp(k).test(path5)) {
+    if (buildWildcardRegExp(k).test(path6)) {
       return [...middleware[k]];
     }
   }
@@ -29724,7 +29724,7 @@ var RegExpRouter = class {
     this.#middleware = { [METHOD_NAME_ALL]: /* @__PURE__ */ Object.create(null) };
     this.#routes = { [METHOD_NAME_ALL]: /* @__PURE__ */ Object.create(null) };
   }
-  add(method, path5, handler) {
+  add(method, path6, handler) {
     const middleware = this.#middleware;
     const routes = this.#routes;
     if (!middleware || !routes) {
@@ -29739,18 +29739,18 @@ var RegExpRouter = class {
         });
       });
     }
-    if (path5 === "/*") {
-      path5 = "*";
+    if (path6 === "/*") {
+      path6 = "*";
     }
-    const paramCount = (path5.match(/\/:/g) || []).length;
-    if (/\*$/.test(path5)) {
-      const re = buildWildcardRegExp(path5);
+    const paramCount = (path6.match(/\/:/g) || []).length;
+    if (/\*$/.test(path6)) {
+      const re = buildWildcardRegExp(path6);
       if (method === METHOD_NAME_ALL) {
         Object.keys(middleware).forEach((m) => {
-          middleware[m][path5] ||= findMiddleware(middleware[m], path5) || findMiddleware(middleware[METHOD_NAME_ALL], path5) || [];
+          middleware[m][path6] ||= findMiddleware(middleware[m], path6) || findMiddleware(middleware[METHOD_NAME_ALL], path6) || [];
         });
       } else {
-        middleware[method][path5] ||= findMiddleware(middleware[method], path5) || findMiddleware(middleware[METHOD_NAME_ALL], path5) || [];
+        middleware[method][path6] ||= findMiddleware(middleware[method], path6) || findMiddleware(middleware[METHOD_NAME_ALL], path6) || [];
       }
       Object.keys(middleware).forEach((m) => {
         if (method === METHOD_NAME_ALL || method === m) {
@@ -29768,7 +29768,7 @@ var RegExpRouter = class {
       });
       return;
     }
-    const paths = checkOptionalParameter(path5) || [path5];
+    const paths = checkOptionalParameter(path6) || [path6];
     for (let i = 0, len = paths.length; i < len; i++) {
       const path22 = paths[i];
       Object.keys(routes).forEach((m) => {
@@ -29795,13 +29795,13 @@ var RegExpRouter = class {
     const routes = [];
     let hasOwnRoute = method === METHOD_NAME_ALL;
     [this.#middleware, this.#routes].forEach((r) => {
-      const ownRoute = r[method] ? Object.keys(r[method]).map((path5) => [path5, r[method][path5]]) : [];
+      const ownRoute = r[method] ? Object.keys(r[method]).map((path6) => [path6, r[method][path6]]) : [];
       if (ownRoute.length !== 0) {
         hasOwnRoute ||= true;
         routes.push(...ownRoute);
       } else if (method !== METHOD_NAME_ALL) {
         routes.push(
-          ...Object.keys(r[METHOD_NAME_ALL]).map((path5) => [path5, r[METHOD_NAME_ALL][path5]])
+          ...Object.keys(r[METHOD_NAME_ALL]).map((path6) => [path6, r[METHOD_NAME_ALL][path6]])
         );
       }
     });
@@ -29821,13 +29821,13 @@ var SmartRouter = class {
   constructor(init) {
     this.#routers = init.routers;
   }
-  add(method, path5, handler) {
+  add(method, path6, handler) {
     if (!this.#routes) {
       throw new Error(MESSAGE_MATCHER_IS_ALREADY_BUILT);
     }
-    this.#routes.push([method, path5, handler]);
+    this.#routes.push([method, path6, handler]);
   }
-  match(method, path5) {
+  match(method, path6) {
     if (!this.#routes) {
       throw new Error("Fatal error");
     }
@@ -29842,7 +29842,7 @@ var SmartRouter = class {
         for (let i2 = 0, len2 = routes.length; i2 < len2; i2++) {
           router.add(...routes[i2]);
         }
-        res = router.match(method, path5);
+        res = router.match(method, path6);
       } catch (e) {
         if (e instanceof UnsupportedPathError) {
           continue;
@@ -29892,10 +29892,10 @@ var Node2 = class _Node2 {
     }
     this.#patterns = [];
   }
-  insert(method, path5, handler) {
+  insert(method, path6, handler) {
     this.#order = ++this.#order;
     let curNode = this;
-    const parts = splitRoutingPath(path5);
+    const parts = splitRoutingPath(path6);
     const possibleKeys = [];
     for (let i = 0, len = parts.length; i < len; i++) {
       const p = parts[i];
@@ -29944,12 +29944,12 @@ var Node2 = class _Node2 {
       }
     }
   }
-  search(method, path5) {
+  search(method, path6) {
     const handlerSets = [];
     this.#params = emptyParams;
     const curNode = this;
     let curNodes = [curNode];
-    const parts = splitPath(path5);
+    const parts = splitPath(path6);
     const curNodesQueue = [];
     const len = parts.length;
     let partOffsets = null;
@@ -29991,13 +29991,13 @@ var Node2 = class _Node2 {
           if (matcher instanceof RegExp) {
             if (partOffsets === null) {
               partOffsets = new Array(len);
-              let offset = path5[0] === "/" ? 1 : 0;
+              let offset = path6[0] === "/" ? 1 : 0;
               for (let p = 0; p < len; p++) {
                 partOffsets[p] = offset;
                 offset += parts[p].length + 1;
               }
             }
-            const restPathString = path5.substring(partOffsets[i]);
+            const restPathString = path6.substring(partOffsets[i]);
             const m = matcher.exec(restPathString);
             if (m) {
               params[name] = m[0];
@@ -30050,18 +30050,18 @@ var TrieRouter = class {
   constructor() {
     this.#node = new Node2();
   }
-  add(method, path5, handler) {
-    const results = checkOptionalParameter(path5);
+  add(method, path6, handler) {
+    const results = checkOptionalParameter(path6);
     if (results) {
       for (let i = 0, len = results.length; i < len; i++) {
         this.#node.insert(method, results[i], handler);
       }
       return;
     }
-    this.#node.insert(method, path5, handler);
+    this.#node.insert(method, path6, handler);
   }
-  match(method, path5) {
-    return this.#node.search(method, path5);
+  match(method, path6) {
+    return this.#node.search(method, path6);
   }
 };
 
@@ -30322,6 +30322,61 @@ import { execFile } from "child_process";
 import fs from "fs/promises";
 import path from "path";
 import { promisify } from "util";
+
+// src/server/revision.ts
+import { createHash } from "crypto";
+function canonicalStringify(value) {
+  if (value === null || typeof value !== "object") {
+    return JSON.stringify(value);
+  }
+  if (Array.isArray(value)) {
+    return "[" + value.map(canonicalStringify).join(",") + "]";
+  }
+  const obj = value;
+  const keys = Object.keys(obj).sort();
+  const parts = keys.map((k) => JSON.stringify(k) + ":" + canonicalStringify(obj[k]));
+  return "{" + parts.join(",") + "}";
+}
+function sha256Hex(text6) {
+  return createHash("sha256").update(text6, "utf-8").digest("hex");
+}
+
+// src/shared/protocol-time.ts
+function isoLocalNow() {
+  return formatIsoLocal(/* @__PURE__ */ new Date());
+}
+function formatIsoLocal(d) {
+  const pad2 = (n) => String(n).padStart(2, "0");
+  const year = d.getFullYear();
+  const month = pad2(d.getMonth() + 1);
+  const day = pad2(d.getDate());
+  const hour = pad2(d.getHours());
+  const minute = pad2(d.getMinutes());
+  const second = pad2(d.getSeconds());
+  const tzMin = -d.getTimezoneOffset();
+  const tzSign = tzMin >= 0 ? "+" : "-";
+  const tzHour = pad2(Math.floor(Math.abs(tzMin) / 60));
+  const tzMinute = pad2(Math.abs(tzMin) % 60);
+  return `${year}-${month}-${day}T${hour}:${minute}:${second}${tzSign}${tzHour}:${tzMinute}`;
+}
+function parseProtocolDate(s) {
+  if (s === void 0 || s === null || s === "") return null;
+  const bareDatePattern = /^\d{4}-\d{2}-\d{2}$/;
+  if (bareDatePattern.test(s)) {
+    const y = Number(s.slice(0, 4));
+    const mo = Number(s.slice(5, 7));
+    const d = Number(s.slice(8, 10));
+    return new Date(y, mo - 1, d);
+  }
+  const parsed = new Date(s);
+  return Number.isNaN(parsed.getTime()) ? null : parsed;
+}
+function localDateString(d) {
+  const pad2 = (n) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`;
+}
+
+// src/server/protocol-reader.ts
 var VALID_SIGNALS = /* @__PURE__ */ new Set([
   "reading",
   "connection",
@@ -30398,7 +30453,8 @@ function parseAnnotation(raw2) {
       target: meta["target"],
       created: meta["created"] ?? "",
       ...status ? { status } : {},
-      ...meta["resolvedAt"] ? { resolvedAt: meta["resolvedAt"] } : {}
+      ...meta["resolvedAt"] ? { resolvedAt: meta["resolvedAt"] } : {},
+      ...meta["kind"] ? { kind: meta["kind"] } : {}
     },
     content: content3
   };
@@ -30622,7 +30678,7 @@ async function collectConnectedSignals(graphDir, graphData, nodeId, workspaceDir
   const signalTypes = config2?.signalTypes ? new Set(config2.signalTypes) : DEFAULT_SIGNAL_TYPES;
   const cutoff = /* @__PURE__ */ new Date();
   cutoff.setDate(cutoff.getDate() - recencyDays);
-  const cutoffIso = cutoff.toISOString().slice(0, 10);
+  const cutoffIso = localDateString(cutoff);
   const connectedRefs = [];
   for (const edge of graphData.edges) {
     if (edge.source === nodeId) {
@@ -30716,7 +30772,7 @@ async function collectRecentSignals(graphDir, nodesDir, discoveredNodes, config2
   const signalTypes = config2?.signalTypes ? new Set(config2.signalTypes) : DEFAULT_SIGNAL_TYPES;
   const cutoff = /* @__PURE__ */ new Date();
   cutoff.setDate(cutoff.getDate() - recencyDays);
-  const cutoffIso = cutoff.toISOString().slice(0, 10);
+  const cutoffIso = localDateString(cutoff);
   const signals = [];
   for (const node2 of discoveredNodes) {
     const annotationsDir = path.join(graphDir, nodesDir, node2.dir, "annotations");
@@ -30739,22 +30795,33 @@ async function collectRecentSignals(graphDir, nodesDir, discoveredNodes, config2
   signals.sort((a, b) => b.created.localeCompare(a.created));
   return signals.slice(0, MAX_RECENT_SIGNALS);
 }
-async function collectSignalDots(nodeDir, recencyDays = DEFAULT_RECENCY_DAYS) {
-  const cutoff = /* @__PURE__ */ new Date();
-  cutoff.setDate(cutoff.getDate() - recencyDays);
-  const cutoffIso = cutoff.toISOString().slice(0, 10);
+var ACTUALIZATION_KIND = "actualization";
+function findLastActualizationAnchor(annotations) {
+  let latest = null;
+  for (const ann of annotations) {
+    if (ann.meta.kind !== ACTUALIZATION_KIND) continue;
+    if (latest === null || ann.meta.created > latest.meta.created) {
+      latest = ann;
+    }
+  }
+  return latest;
+}
+async function collectSignalDots(nodeDir) {
   const annotations = await readAnnotationsFromDir(
     path.join(nodeDir, "annotations")
   );
-  const dots = [];
+  const anchor = findLastActualizationAnchor(annotations);
+  const anchorCreated = anchor?.meta.created ?? null;
+  const deltaSignals = [];
   for (const ann of annotations) {
     if (ann.meta.status === "resolved" || ann.meta.status === "dismissed") continue;
-    const created = ann.meta.created.slice(0, 10);
-    if (created < cutoffIso) continue;
-    dots.push(ann.meta.signal);
-    if (dots.length >= MAX_SIGNAL_DOTS) break;
+    if (ann.meta.kind === ACTUALIZATION_KIND) continue;
+    if (anchorCreated !== null && ann.meta.created <= anchorCreated) continue;
+    deltaSignals.push(ann.meta.signal);
   }
-  return dots;
+  const dots = deltaSignals.slice(0, MAX_SIGNAL_DOTS);
+  const overflow = Math.max(0, deltaSignals.length - MAX_SIGNAL_DOTS);
+  return { dots, overflow, lastActualizedAt: anchorCreated };
 }
 function resolveWorkspaceRelativePath(graphDir, workspaceDir2, graphPath) {
   return path.join(workspaceDir2, graphPath);
@@ -30894,12 +30961,18 @@ async function readGraph(graphDir, workspaceDir2) {
       wsConfig.signals
     );
   }
+  const workspaceRevision = await hashGraphJson(graphDir);
+  const revision = {
+    contentHash: null,
+    ...workspaceRevision !== null ? { workspaceRevision } : {}
+  };
   return {
     ...graphData,
     nodes: discoveredNodes,
     agentSignals,
     actionItems,
-    recentSignals
+    recentSignals,
+    revision
   };
 }
 async function readNodeFromSubGraphs(graphDir, nodesDir, nodeId, subPath, workspaceDir2, maxDepth = 3) {
@@ -31054,6 +31127,13 @@ async function readNode(graphDir, nodeId, subPath, workspaceDir2) {
       context: edge.context
     });
   }
+  const storedHash = typeof identity?.contentHash === "string" && identity.contentHash.length > 0 ? identity.contentHash : null;
+  const workspaceRevision = await hashGraphJson(graphDir);
+  const revision = {
+    contentHash: storedHash,
+    ...typeof identity?.updated === "string" ? { updated: identity.updated } : {},
+    ...workspaceRevision !== null ? { workspaceRevision } : {}
+  };
   return {
     id: nodeId,
     identity,
@@ -31072,15 +31152,42 @@ async function readNode(graphDir, nodeId, subPath, workspaceDir2) {
     parentNodeTitle,
     parentAt,
     view,
-    modified: modified || void 0
+    modified: modified || void 0,
+    revision
+  };
+}
+async function readNodeFingerprint(graphDir, nodeId, graphPath) {
+  const graphData = await readJsonFile(
+    path.join(graphDir, "graph.json")
+  );
+  if (!graphData) return null;
+  const nodesDir = resolveNodesDir(graphData);
+  const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
+  if (!nodeDir) return null;
+  const nodeData = await readJsonFile(
+    path.join(nodeDir, "node.json")
+  );
+  if (!nodeData) return null;
+  const storedHash = typeof nodeData.contentHash === "string" && nodeData.contentHash.length > 0 ? nodeData.contentHash : null;
+  const updated = typeof nodeData.updated === "string" ? nodeData.updated : void 0;
+  const workspaceRevision = await hashGraphJson(graphDir);
+  const revision = {
+    contentHash: storedHash,
+    ...updated !== void 0 ? { updated } : {},
+    ...workspaceRevision !== null ? { workspaceRevision } : {}
+  };
+  return {
+    nodeId,
+    ...graphPath !== void 0 ? { graphPath } : {},
+    revision
   };
 }
 async function getNodeMtime(nodeDir) {
   const nodeJsonPath = path.join(nodeDir, "node.json");
   const nodeData = await readJsonFile(nodeJsonPath);
-  const updatedMs = nodeData?.updated && typeof nodeData.updated === "string" ? Date.parse(nodeData.updated) : NaN;
-  if (!Number.isNaN(updatedMs)) {
-    return updatedMs;
+  const parsedUpdated = nodeData?.updated && typeof nodeData.updated === "string" ? parseProtocolDate(nodeData.updated) : null;
+  if (parsedUpdated !== null) {
+    return parsedUpdated.getTime();
   }
   let latest = 0;
   for (const filename of ["story.md", "node.json", "graph.json"]) {
@@ -31297,9 +31404,9 @@ function computeSinceDate(timeframe) {
   if (timeframe === "week") {
     const weekAgo = new Date(now);
     weekAgo.setDate(weekAgo.getDate() - 7);
-    return weekAgo.toISOString().slice(0, 10);
+    return localDateString(weekAgo);
   }
-  return now.toISOString().slice(0, 10);
+  return localDateString(now);
 }
 async function readLandingData(workspaceDir2, opts = {}) {
   const notesTimeframe = opts.notesTimeframe ?? "today";
@@ -31516,7 +31623,10 @@ async function readLandingData(workspaceDir2, opts = {}) {
       );
       const nodesDir = wsGraphData?.nodesDir ?? "nodes";
       const nodeDir = path.join(graphDir, nodesDir, node2.dir);
-      node2.recentSignalDots = await collectSignalDots(nodeDir);
+      const deltaSignals = await collectSignalDots(nodeDir);
+      node2.deltaSignalDots = deltaSignals.dots;
+      node2.deltaSignalOverflow = deltaSignals.overflow;
+      node2.lastActualizedAt = deltaSignals.lastActualizedAt ?? void 0;
       const identity = await readJsonFile(
         path.join(nodeDir, "node.json")
       );
@@ -31585,7 +31695,7 @@ async function autoCreateEdgeFromConnection(graphDir, graphData, nodeId, body) {
     nodeData = await readJsonFile(nodeJsonPath);
   }
   const existingNodeEdges = nodeData?.edges ?? [];
-  const created = (/* @__PURE__ */ new Date()).toISOString().split("T")[0];
+  const created = isoLocalNow();
   let addedAny = false;
   for (const targetId of referencedNodeIds) {
     const existsInNode = existingNodeEdges.some(
@@ -31614,7 +31724,7 @@ async function autoCreateEdgeFromConnection(graphDir, graphData, nodeId, body) {
   }
   await rebuildGraphIndex(graphDir);
 }
-async function writeAnnotation(graphDir, nodeId, signal, body, target) {
+async function writeAnnotation(graphDir, nodeId, signal, body, target, kind) {
   const graphData = await readJsonFile(
     path.join(graphDir, "graph.json")
   );
@@ -31631,16 +31741,18 @@ async function writeAnnotation(graphDir, nodeId, signal, body, target) {
   const existingFiles = await listDir(annotationsDir);
   const mdFiles = existingFiles.filter((f) => f.endsWith(".md")).sort();
   const nextNum = String(mdFiles.length + 1).padStart(3, "0");
-  const now = (/* @__PURE__ */ new Date()).toISOString();
+  const now = isoLocalNow();
   const slug = body.slice(0, 40).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
   const filename = `${nextNum}-${slug}.md`;
   const targetLine = target ? `target: ${target}
+` : "";
+  const kindLine = kind ? `kind: ${kind}
 ` : "";
   const normalizedBody = normalizeLlmEscapes(body);
   const content3 = `---
 author: agent
 signal: ${signal}
-${targetLine}created: ${now}
+${targetLine}${kindLine}created: ${now}
 ---
 ${normalizedBody}
 `;
@@ -31674,7 +31786,7 @@ async function resolveAnnotation(graphDir, nodeId, filename, status) {
   if (!parsed) {
     throw new Error(`Failed to parse annotation: ${filename}`);
   }
-  const resolvedAt = (/* @__PURE__ */ new Date()).toISOString().slice(0, 10);
+  const resolvedAt = isoLocalNow();
   const updatedMeta = {
     ...parsed.meta,
     status,
@@ -31685,6 +31797,7 @@ async function resolveAnnotation(graphDir, nodeId, filename, status) {
     `signal: ${updatedMeta.signal}`
   ];
   if (updatedMeta.target) fmLines.push(`target: ${updatedMeta.target}`);
+  if (updatedMeta.kind) fmLines.push(`kind: ${updatedMeta.kind}`);
   fmLines.push(`created: ${updatedMeta.created}`);
   fmLines.push(`status: ${updatedMeta.status}`);
   fmLines.push(`resolvedAt: ${updatedMeta.resolvedAt}`);
@@ -31716,7 +31829,7 @@ async function createNode(graphDir, opts) {
   const nodeDir = path.join(graphDir, nodesDir, effectiveDir);
   await fs.mkdir(nodeDir, { recursive: true });
   const resolvedStatus = opts.status ?? "active";
-  const created = (/* @__PURE__ */ new Date()).toISOString().slice(0, 10);
+  const created = isoLocalNow();
   const nodeJsonEdges = [];
   if (opts.edges) {
     for (const edge of opts.edges) {
@@ -31795,7 +31908,7 @@ async function updateView(graphDir, nodeId, opts) {
   if (nodeData) {
     const existingEdges = nodeData.edges ?? [];
     const nonCuratesEdges = existingEdges.filter((e) => e.type !== "curates");
-    const created = (/* @__PURE__ */ new Date()).toISOString().split("T")[0];
+    const created = isoLocalNow();
     const curatesEdges = opts.includes.map((includeId) => ({
       to: includeId,
       type: "curates",
@@ -32056,7 +32169,7 @@ async function addEdge(graphDir, opts, workspaceDir2) {
   if (isDuplicate) {
     throw new Error(`Edge already exists: ${opts.source} -> ${opts.target}`);
   }
-  const created = (/* @__PURE__ */ new Date()).toISOString().split("T")[0];
+  const created = isoLocalNow();
   const nodeJsonEdge = {
     to: opts.target,
     ...opts.label ? { label: opts.label } : {},
@@ -32070,7 +32183,7 @@ async function addEdge(graphDir, opts, workspaceDir2) {
   await rebuildGraphIndex(graphDir);
   return { success: true };
 }
-async function touchNode(graphDir, nodeId, date3) {
+async function touchNode(graphDir, nodeId, date3, at) {
   const graphPath = path.join(graphDir, "graph.json");
   const graphData = await readJsonFile(graphPath);
   if (!graphData) {
@@ -32086,10 +32199,198 @@ async function touchNode(graphDir, nodeId, date3) {
   if (!nodeData) {
     throw new Error(`Cannot read node.json for: ${nodeId}`);
   }
-  const updated = date3 ?? (/* @__PURE__ */ new Date()).toISOString().slice(0, 10);
+  const updated = at ?? date3 ?? isoLocalNow();
   nodeData.updated = updated;
   await fs.writeFile(nodeJsonPath, JSON.stringify(nodeData, null, 2) + "\n", "utf-8");
   return { success: true, updated };
+}
+async function hashGraphJson(graphDir) {
+  const raw2 = await readTextFile(path.join(graphDir, "graph.json"));
+  if (raw2 === null) return null;
+  return sha256Hex(raw2);
+}
+async function computeContentHash(graphDir, nodeId) {
+  const graphData = await readJsonFile(path.join(graphDir, "graph.json"));
+  if (!graphData) {
+    throwNoGraphError(graphDir);
+  }
+  const nodesDir = resolveNodesDir(graphData);
+  const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
+  if (!nodeDir) {
+    throw new Error(`Node not found: ${nodeId}`);
+  }
+  const story = await readTextFile(path.join(nodeDir, "story.md")) ?? "";
+  const contentDir = path.join(nodeDir, "content");
+  const contentNames = (await listDir(contentDir)).filter((f) => f.endsWith(".md")).sort();
+  const content3 = [];
+  for (const filename of contentNames) {
+    const text6 = await readTextFile(path.join(contentDir, filename)) ?? "";
+    content3.push({ filename, text: text6 });
+  }
+  const annotationsDir = path.join(nodeDir, "annotations");
+  const annotationNames = (await listDir(annotationsDir)).filter((f) => f.endsWith(".md")).sort();
+  const annotations = [];
+  for (const filename of annotationNames) {
+    const text6 = await readTextFile(path.join(annotationsDir, filename)) ?? "";
+    annotations.push({ filename, text: text6 });
+  }
+  const nodeData = await readJsonFile(
+    path.join(nodeDir, "node.json")
+  );
+  const edges = nodeData?.edges ?? [];
+  const input = canonicalStringify({ story, content: content3, annotations, edges });
+  return sha256Hex(input);
+}
+async function bumpNodeUpdated(graphDir, nodeId, newHash) {
+  const graphData = await readJsonFile(path.join(graphDir, "graph.json"));
+  if (!graphData) return;
+  const nodesDir = resolveNodesDir(graphData);
+  const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
+  if (!nodeDir) return;
+  const nodeJsonPath = path.join(nodeDir, "node.json");
+  const nodeData = await readJsonFile(nodeJsonPath);
+  if (!nodeData) return;
+  nodeData.updated = isoLocalNow();
+  nodeData.contentHash = newHash;
+  await fs.writeFile(
+    nodeJsonPath,
+    JSON.stringify(nodeData, null, 2) + "\n",
+    "utf-8"
+  );
+}
+async function seedContentHash(graphDir, nodeId, hash) {
+  const graphData = await readJsonFile(path.join(graphDir, "graph.json"));
+  if (!graphData) return;
+  const nodesDir = resolveNodesDir(graphData);
+  const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
+  if (!nodeDir) return;
+  const nodeJsonPath = path.join(nodeDir, "node.json");
+  const nodeData = await readJsonFile(nodeJsonPath);
+  if (!nodeData) return;
+  nodeData.contentHash = hash;
+  await fs.writeFile(
+    nodeJsonPath,
+    JSON.stringify(nodeData, null, 2) + "\n",
+    "utf-8"
+  );
+}
+async function findEnclosingGraphDir(nodeDir) {
+  let candidate = path.dirname(path.dirname(nodeDir));
+  const root2 = path.parse(candidate).root;
+  while (true) {
+    if (await fileExists(path.join(candidate, "graph.json"))) {
+      return candidate;
+    }
+    if (candidate === root2) return null;
+    const parent = path.dirname(candidate);
+    if (parent === candidate) return null;
+    candidate = parent;
+  }
+}
+async function handleAutoBumpEvent(opts) {
+  try {
+    const graphDir = await findEnclosingGraphDir(opts.nodeDir);
+    if (!graphDir) return;
+    const nodeJsonPath = path.join(opts.nodeDir, "node.json");
+    const nodeData = await readJsonFile(nodeJsonPath);
+    if (!nodeData) return;
+    const stored = typeof nodeData.contentHash === "string" && nodeData.contentHash.length > 0 ? nodeData.contentHash : void 0;
+    const current = await computeContentHash(graphDir, opts.nodeId);
+    if (stored === void 0) {
+      await seedContentHash(graphDir, opts.nodeId, current);
+      return;
+    }
+    if (stored === current) {
+      return;
+    }
+    await bumpNodeUpdated(graphDir, opts.nodeId, current);
+  } catch (err) {
+    console.error(
+      `[auto-bump] ${opts.nodeId}: ${err instanceof Error ? err.message : String(err)}`
+    );
+  }
+}
+async function scanAndSeedHashes(workspaceDir2) {
+  const result = {
+    scanned: 0,
+    seeded: 0,
+    skipped: 0,
+    errors: 0
+  };
+  const seenNodePaths = /* @__PURE__ */ new Set();
+  async function scanGraphDir(graphDir) {
+    const graphData = await readJsonFile(path.join(graphDir, "graph.json"));
+    if (!graphData) return;
+    const nodesDir = resolveNodesDir(graphData);
+    const discovered = await discoverNodes(graphDir, nodesDir);
+    for (const node2 of discovered) {
+      const nodeDir = path.join(graphDir, nodesDir, node2.dir);
+      const physicalKey = path.resolve(nodeDir);
+      if (seenNodePaths.has(physicalKey)) continue;
+      seenNodePaths.add(physicalKey);
+      result.scanned += 1;
+      try {
+        const nodeJsonPath = path.join(nodeDir, "node.json");
+        const nodeData = await readJsonFile(nodeJsonPath);
+        if (!nodeData) {
+          result.errors += 1;
+          continue;
+        }
+        if (typeof nodeData.contentHash === "string" && nodeData.contentHash.length > 0) {
+          result.skipped += 1;
+        } else {
+          const hash = await computeContentHash(graphDir, node2.id);
+          await seedContentHash(graphDir, node2.id, hash);
+          result.seeded += 1;
+        }
+      } catch (err) {
+        result.errors += 1;
+        console.error(
+          `[scan] error on node ${node2.id} in ${graphDir}: ${err.message}`
+        );
+      }
+      try {
+        const subGraphPath = path.join(nodeDir, "graph.json");
+        await fs.access(subGraphPath);
+        await scanGraphDir(nodeDir);
+      } catch {
+      }
+    }
+  }
+  await scanGraphDir(workspaceDir2);
+  try {
+    const wsSubGraphs = await discoverSubGraphs(workspaceDir2, workspaceDir2);
+    for (const sg of wsSubGraphs) {
+      const sgDir = path.join(workspaceDir2, sg.path);
+      await scanGraphDir(sgDir);
+    }
+  } catch (err) {
+    console.error(`[scan] sub-graph discovery failed in ${workspaceDir2}: ${err.message}`);
+  }
+  try {
+    const wsConfig = await readConfig(workspaceDir2);
+    if (wsConfig.workspaces) {
+      for (const ws of Object.values(wsConfig.workspaces)) {
+        if (!ws.path) continue;
+        const childDir = path.join(workspaceDir2, ws.path);
+        await scanGraphDir(childDir);
+        try {
+          const childSubGraphs = await discoverSubGraphs(childDir, workspaceDir2);
+          for (const sg of childSubGraphs) {
+            const sgDir = path.join(workspaceDir2, sg.path);
+            await scanGraphDir(sgDir);
+          }
+        } catch (err) {
+          console.error(
+            `[scan] child sub-graph discovery failed in ${childDir}: ${err.message}`
+          );
+        }
+      }
+    }
+  } catch (err) {
+    console.error(`[scan] workspace config read failed: ${err.message}`);
+  }
+  return result;
 }
 var VALID_NAME_RE = /^[a-z0-9][a-z0-9_-]*$/;
 var workspaceTemplates = {
@@ -41291,13 +41592,13 @@ var VFile = class {
    * @returns {undefined}
    *   Nothing.
    */
-  set path(path5) {
-    if (isUrl(path5)) {
-      path5 = fileURLToPath(path5);
+  set path(path6) {
+    if (isUrl(path6)) {
+      path6 = fileURLToPath(path6);
     }
-    assertNonEmpty(path5, "path");
-    if (this.path !== path5) {
-      this.history.push(path5);
+    assertNonEmpty(path6, "path");
+    if (this.path !== path6) {
+      this.history.push(path6);
     }
   }
   /**
@@ -41564,8 +41865,8 @@ function assertNonEmpty(part, name) {
     throw new Error("`" + name + "` cannot be empty");
   }
 }
-function assertPath(path5, name) {
-  if (!path5) {
+function assertPath(path6, name) {
+  if (!path6) {
     throw new Error("Setting `" + name + "` requires `path` to be set too");
   }
 }
@@ -42449,7 +42750,7 @@ function transformGfmAutolinkLiterals(tree) {
     { ignore: ["link", "linkReference"] }
   );
 }
-function findUrl(_, protocol, domain2, path5, match2) {
+function findUrl(_, protocol, domain2, path6, match2) {
   let prefix = "";
   if (!previous2(match2)) {
     return false;
@@ -42462,7 +42763,7 @@ function findUrl(_, protocol, domain2, path5, match2) {
   if (!isCorrectDomain(domain2)) {
     return false;
   }
-  const parts = splitUrl(domain2 + path5);
+  const parts = splitUrl(domain2 + path6);
   if (!parts[0]) return false;
   const result = {
     type: "link",
@@ -44916,6 +45217,16 @@ function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces,
     const _links = buildNodeLinks(deeplinkConfig, graphPath, nodeId, knownWorkspaces);
     return c.json({ ...node2, _links });
   });
+  app.get("/api/nodes/:nodeId/fingerprint", async (c) => {
+    const nodeId = c.req.param("nodeId");
+    const graphPath = resolveApiPath(c.req.query("path"));
+    const graphDir = graphPath ? nodePath.join(workspaceDir2, graphPath) : workspaceDir2;
+    const fingerprint = await readNodeFingerprint(graphDir, nodeId, graphPath);
+    if (!fingerprint) {
+      return c.json({ error: "Node not found" }, 404);
+    }
+    return c.json(fingerprint);
+  });
   app.get("/api/search", async (c) => {
     const query = c.req.query("q");
     if (!query) {
@@ -44962,7 +45273,8 @@ function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces,
       nodeId,
       body.signal,
       body.body,
-      body.target
+      body.target,
+      body.kind
     );
     return c.json(result);
   });
@@ -45056,7 +45368,7 @@ function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces,
     const graphDir = graphPath ? nodePath.join(workspaceDir2, graphPath) : workspaceDir2;
     const body = await c.req.json();
     try {
-      const result = await touchNode(graphDir, nodeId, body.date);
+      const result = await touchNode(graphDir, nodeId, body.date, body.at);
       watcher?.push({ type: "node", nodeId, graphPath: graphPath ?? void 0 });
       return c.json(result);
     } catch (err) {
@@ -45436,32 +45748,51 @@ var MessageStore = class {
 
 // src/server/file-watcher.ts
 import fs4 from "fs";
-function categorize(relativePath) {
+import path4 from "path";
+function categorizeWithDir(relativePath) {
   if (/(?:^|\/)(?:\.git|node_modules)\//.test(relativePath)) return null;
   const parts = relativePath.split("/");
   const file = parts.at(-1);
-  if (relativePath === ".claude/qino-config.json") return { type: "config" };
+  if (relativePath === ".claude/qino-config.json") {
+    return { event: { type: "config" } };
+  }
   if (file === "graph.json") {
     const graphPath = parts.length > 1 ? parts.slice(0, -1).join("/") : void 0;
-    return { type: "graph", graphPath };
+    return { event: { type: "graph", graphPath } };
   }
   const annIdx = parts.lastIndexOf("annotations");
   if (annIdx >= 1 && file.endsWith(".md")) {
     const nodeId = parts[annIdx - 1];
-    return { type: "annotation", nodeId };
+    const relativeNodeDir = parts.slice(0, annIdx).join("/");
+    return {
+      event: { type: "annotation", nodeId },
+      relativeNodeDir
+    };
   }
   const contentIdx = parts.lastIndexOf("content");
   if (contentIdx >= 1 && file.endsWith(".md")) {
     const nodeId = parts[contentIdx - 1];
-    return { type: "node", nodeId };
+    const relativeNodeDir = parts.slice(0, contentIdx).join("/");
+    return {
+      event: { type: "node", nodeId },
+      relativeNodeDir
+    };
   }
   if ((file === "node.json" || file === "view.json") && parts.length >= 2) {
     const nodeId = parts.at(-2);
-    return { type: "node", nodeId };
+    const relativeNodeDir = parts.slice(0, -1).join("/");
+    return {
+      event: { type: "node", nodeId },
+      relativeNodeDir
+    };
   }
   if (file === "story.md" && parts.length >= 3) {
     const nodeId = parts.at(-2);
-    return { type: "node", nodeId };
+    const relativeNodeDir = parts.slice(0, -1).join("/");
+    return {
+      event: { type: "node", nodeId },
+      relativeNodeDir
+    };
   }
   return null;
 }
@@ -45491,8 +45822,9 @@ function createFileWatcher(workspaceDir2) {
   function handleFsChange(_eventType, filename) {
     if (!filename) return;
     const relativePath = filename.replace(/\\/g, "/");
-    const event = categorize(relativePath);
-    if (!event) return;
+    const result = categorizeWithDir(relativePath);
+    if (!result) return;
+    const event = result.relativeNodeDir ? { ...result.event, nodeDir: path4.join(workspaceDir2, result.relativeNodeDir) } : result.event;
     const key = debounceKey(event);
     const existing = timers.get(key);
     if (existing) clearTimeout(existing);
@@ -46080,7 +46412,9 @@ GRAPHPATH: Omit for root graph. Provide path for sub-graph (e.g., 'nodes/parent-
 
 RETURNS: nodes[], edges[], agentSignals{}, actionItems[] (open + accepted only \u2014 resolved/dismissed are filtered out), recentSignals[] (recent connection/tension annotations across all nodes in this graph), _links.nodes{} for deeplinks.
 
-Use _links when referencing nodes: [node-name](_links.nodes["node-name"])`,
+Use _links when referencing nodes: [node-name](_links.nodes["node-name"])
+
+Response includes \`revision.workspaceRevision\` (sha256 of graph.json). **If you have a prior \`read_graph\` result with the same \`workspaceRevision\`, no structural changes have occurred \u2014 reuse the earlier result.**`,
     {
       graphPath: external_exports.string().optional().describe(GRAPH_PATH_GRAPH)
     },
@@ -46121,7 +46455,11 @@ RETURNS: identity (title, type, status, tags, held_threads), story (the impulse)
 
 NOTE: contentFiles returns metadata only (filename + size in bytes), not file content. Use read_content(nodeId, filename) to fetch specific content files. This keeps read_node lightweight for nodes with many content files.
 
-Use _links for navigation: [see details](_links.self) or [back to graph](_links.graph)`,
+Use _links for navigation: [see details](_links.self) or [back to graph](_links.graph)
+
+Each response includes a \`revision.contentHash\`. **If you have a prior \`read_node\` result in this conversation for the same node, and its \`contentHash\` matches the current one, the node content has not changed \u2014 reference your earlier result instead of calling this tool again.** Use \`read_node_fingerprint\` to check freshness cheaply (~150 bytes) without re-fetching the full payload.
+
+**Important exception:** if you have written to or modified this node in this conversation since your last read (via \`touch_node\`, \`write_annotation\`, direct file edits, or any other mutation), do NOT use the reuse contract. Always call \`read_node\` fresh after a mutation, regardless of \`contentHash\`. The hash check is for unchanged nodes, not for verifying your own writes.`,
     {
       nodeId: external_exports.string().describe("The node identifier from graph.json"),
       graphPath: external_exports.string().optional().describe(GRAPH_PATH_NODE)
@@ -46151,6 +46489,40 @@ Use _links for navigation: [see details](_links.self) or [back to graph](_links.
           {
             type: "text",
             text: JSON.stringify(lightNode, null, 2)
+          }
+        ]
+      };
+    }
+  );
+  server.tool(
+    "read_node_fingerprint",
+    `Returns only the \`revision\` envelope for a node \u2014 \`contentHash\` and \`updated\`. Use this to check whether a node has changed since you last read it in full. **If the returned \`contentHash\` matches a \`contentHash\` from a prior \`read_node\` call in this conversation, the underlying data is unchanged and you should reuse your earlier result.** If different, call \`read_node\` for fresh content.
+
+Payload is ~150 bytes \u2014 much cheaper than \`read_node\`, so prefer this for freshness checks across long conversations.
+
+Same exception as \`read_node\`: do NOT use this contract after you have mutated the node in this conversation. Always call \`read_node\` fresh after a mutation.`,
+    {
+      nodeId: external_exports.string().describe("The node identifier from graph.json"),
+      graphPath: external_exports.string().optional().describe(GRAPH_PATH_NODE)
+    },
+    async ({ nodeId, graphPath }) => {
+      const fingerprint = await ops.readNodeFingerprint(nodeId, graphPath);
+      if (!fingerprint) {
+        return {
+          content: [
+            {
+              type: "text",
+              text: `Node not found: ${nodeId}`
+            }
+          ],
+          isError: true
+        };
+      }
+      return {
+        content: [
+          {
+            type: "text",
+            text: JSON.stringify(fingerprint, null, 2)
           }
         ]
       };
@@ -46468,14 +46840,16 @@ LIFECYCLE: After acting on an accepted proposal or addressing a tension, use res
         signal: external_exports.enum(["reading", "connection", "tension", "proposal"]).describe("The signal type for this annotation"),
         body: external_exports.string().describe("The annotation content"),
         target: external_exports.string().optional().describe("Optional target reference (e.g., 'story.md:3' or 'content/arc.md#essence')"),
+        kind: external_exports.string().optional().describe('Optional structural discriminator. Use `kind: "actualization"` when writing a deck actualization reading \u2014 this lets qino-os recognize the annotation as the deck\'s temporal anchor for the delta indicator.'),
         graphPath: external_exports.string().optional().describe(GRAPH_PATH_NODE)
       },
-      async ({ nodeId, signal, body, target, graphPath }) => {
+      async ({ nodeId, signal, body, target, kind, graphPath }) => {
         const result = await ops.writeAnnotation({
           nodeId,
           signal,
           body,
           target,
+          kind,
           graphPath
         });
         return {
@@ -46619,12 +46993,12 @@ EDGE FIELDS:
     );
     server.tool(
       "touch_node",
-      `Bump a node's updated date to record that its content changed.
+      `Bump a node's updated timestamp to record that its content changed.
 
 WHEN TO USE:
 - After writing or editing content files (story.md, content/*.md) via Write/Edit tools
 - After batch-writing multiple files in a node \u2014 call once at the end, not per file
-- To backfill stale dates on nodes whose content was updated outside protocol tooling
+- To backfill stale timestamps on nodes whose content was updated outside protocol tooling
 
 WHEN NOT TO USE:
 - After create_node or add_edge \u2014 these already set updated automatically
@@ -46633,15 +47007,25 @@ WHEN NOT TO USE:
 WHY THIS EXISTS:
 Content writes happen through filesystem tools (Write, Edit), not protocol tools.
 The protocol tracks recency via the updated field in node.json. Without touch_node,
-a node's recency reflects its birth or last edge addition, not its last content edit.`,
+a node's recency reflects its birth or last edge addition, not its last content edit.
+
+TIMESTAMP FORMAT:
+As of iteration 35, \`updated\` is stored as full ISO 8601 with the host's local
+offset (e.g. "2026-04-08T00:29:37+02:00"). Legacy bare YYYY-MM-DD values are still
+parsed correctly when read, but new writes use the full form.`,
       {
-        nodeId: external_exports.string().describe("The node to touch \u2014 its updated date will be set"),
+        nodeId: external_exports.string().describe("The node to touch \u2014 its updated timestamp will be set"),
         graphPath: external_exports.string().optional().describe(GRAPH_PATH_NODE),
-        date: external_exports.string().optional().describe("ISO date override (YYYY-MM-DD). Defaults to today. Useful for backfill scripts.")
+        at: external_exports.string().optional().describe(
+          'Full ISO 8601 datetime override (e.g. "2026-04-08T00:29:37+02:00"). Takes precedence over `date`. Use for precise backfill.'
+        ),
+        date: external_exports.string().optional().describe(
+          "Legacy bare YYYY-MM-DD override. Kept for backfill scripts that reference historical days. Prefer `at` for new code."
+        )
       },
-      async ({ nodeId, graphPath, date: date3 }) => {
+      async ({ nodeId, graphPath, at, date: date3 }) => {
         try {
-          const result = await ops.touchNode({ nodeId, graphPath, date: date3 });
+          const result = await ops.touchNode({ nodeId, graphPath, at, date: date3 });
           return {
             content: [
               {
@@ -46938,6 +47322,9 @@ function createDirectOps(workspaceDir2, _repoRoot, baseUrl, knownWorkspaces, wat
       const _links = buildNodeLinks(deeplinkConfig, graphPath, nodeId, knownWorkspaces);
       return { ...node2, _links };
     },
+    readNodeFingerprint: async (nodeId, graphPath) => {
+      return readNodeFingerprint(resolveGraphDir(graphPath), nodeId, graphPath);
+    },
     searchNodes: (args) => searchNodes(workspaceDir2, args),
     writeAnnotation: async (args) => {
       const graphDir = resolveGraphDir(args.graphPath);
@@ -46946,7 +47333,8 @@ function createDirectOps(workspaceDir2, _repoRoot, baseUrl, knownWorkspaces, wat
         args.nodeId,
         args.signal,
         args.body,
-        args.target
+        args.target,
+        args.kind
       );
       watcher?.push({ type: "annotation", nodeId: args.nodeId, graphPath: args.graphPath });
       return result;
@@ -47000,7 +47388,7 @@ function createDirectOps(workspaceDir2, _repoRoot, baseUrl, knownWorkspaces, wat
     },
     touchNode: async (args) => {
       const graphDir = resolveGraphDir(args.graphPath);
-      const result = await touchNode(graphDir, args.nodeId, args.date);
+      const result = await touchNode(graphDir, args.nodeId, args.date, args.at);
       watcher?.push({ type: "node", nodeId: args.nodeId, graphPath: args.graphPath });
       return result;
     },
@@ -47116,8 +47504,8 @@ function createDirectOps(workspaceDir2, _repoRoot, baseUrl, knownWorkspaces, wat
   };
 }
 function createHttpOps(apiUrl) {
-  const buildUrl = (path5, params) => {
-    const url = new URL(path5, apiUrl);
+  const buildUrl = (path6, params) => {
+    const url = new URL(path6, apiUrl);
     if (params) {
       for (const [key, value] of Object.entries(params)) {
         if (value !== void 0) {
@@ -47176,6 +47564,16 @@ function createHttpOps(apiUrl) {
       if (res.status === 404) return null;
       return handleResponse(res);
     },
+    readNodeFingerprint: async (nodeId, graphPath) => {
+      const res = await fetch(
+        buildUrl(
+          `/api/nodes/${encodeURIComponent(nodeId)}/fingerprint`,
+          graphPath ? { path: graphPath } : void 0
+        )
+      );
+      if (res.status === 404) return null;
+      return handleResponse(res);
+    },
     searchNodes: async (args) => {
       const params = { q: args.query };
       if (args.type) params["type"] = args.type;
@@ -47195,7 +47593,8 @@ function createHttpOps(apiUrl) {
           body: JSON.stringify({
             signal: args.signal,
             body: args.body,
-            target: args.target
+            target: args.target,
+            kind: args.kind
           })
         }
       );
@@ -47263,7 +47662,7 @@ function createHttpOps(apiUrl) {
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ date: args.date })
+          body: JSON.stringify({ date: args.date, at: args.at })
         }
       );
       return handleResponse(res);
@@ -47433,7 +47832,7 @@ function openBrowser(url) {
 }
 
 // src/server/index.ts
-var __dirname = path4.dirname(fileURLToPath2(import.meta.url));
+var __dirname = path5.dirname(fileURLToPath2(import.meta.url));
 var workspaceDir = process.env.WORKSPACE_DIR ?? getCliArg("--workspace-dir") ?? process.cwd();
 var port = Number(process.env.PORT ?? getCliArg("--port") ?? "4020");
 var repoRootOverride = process.env.REPO_ROOT ?? getCliArg("--repo-root");
@@ -47442,13 +47841,13 @@ var noBrowser = process.argv.includes("--no-browser");
 var modeArg = process.env.QINO_MODE ?? getCliArg("--mode") ?? "full";
 var mode = modeArg === "reader" ? "reader" : "full";
 var viewerUrl = process.env.QINO_VIEWER_URL ?? getCliArg("--viewer-url");
-var packageRoot = path4.resolve(__dirname, "../..");
-var distUiDir = path4.resolve(packageRoot, "dist/ui");
+var packageRoot = path5.resolve(__dirname, "../..");
+var distUiDir = path5.resolve(packageRoot, "dist/ui");
 async function hasBuiltSpa() {
   try {
     const fs5 = await import("fs/promises");
     const html2 = await fs5.readFile(
-      path4.join(distUiDir, "index.html"),
+      path5.join(distUiDir, "index.html"),
       "utf-8"
     );
     return html2.includes("/assets/");
@@ -47503,6 +47902,18 @@ async function main() {
     watcher = createFileWatcher(workspaceDir);
     messageStore = new MessageStore(workspaceDir);
     await messageStore.loadSaved();
+    watcher.subscribe((event) => {
+      if (event.type !== "node" && event.type !== "annotation") return;
+      if (!event.nodeId || !event.nodeDir) return;
+      void handleAutoBumpEvent({ nodeId: event.nodeId, nodeDir: event.nodeDir });
+    });
+    void scanAndSeedHashes(workspaceDir).then((result) => {
+      log(
+        `[scan] workspace=${workspaceDir} scanned=${result.scanned} seeded=${result.seeded} skipped=${result.skipped} errors=${result.errors}`
+      );
+    }).catch((err) => {
+      log(`[scan] failed: ${err.message}`);
+    });
     const serveSpa = await hasBuiltSpa();
     const staticDir = serveSpa ? distUiDir : void 0;
     const api = createApi(workspaceDir, repoRoot, staticDir, baseUrl, knownWorkspaces, watcher, viewerUrl, messageStore);
