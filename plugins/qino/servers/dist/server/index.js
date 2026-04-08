@@ -45904,8 +45904,22 @@ function buildServerInstructions(options) {
     "",
     "## Orientation",
     "",
-    "Start with read_activity \u2014 it shows workspaces, active navigators, recent changes, and action items. Navigators are entry points into lines of work. Use read_node on a navigator to enter its territory. Use read_graph to see all nodes and edges in a workspace. Use read_node for deep dives into any specific node."
+    "Start with read_activity \u2014 it shows workspaces, recent changes, action items, and arcs. Decks are composed thread ensembles \u2014 use read_node on a deck node to enter its territory. Use read_graph to see all nodes and edges in a workspace. Use read_node for deep dives into any specific node."
   );
+  if (mode2 === "full") {
+    lines.push(
+      "",
+      "## When to reach for qino-os",
+      "",
+      "These tools are ambient \u2014 available in every session that loads the qino plugin, not just in conversations explicitly about ideas. Reach for them whenever your work touches:",
+      "",
+      "- A node by name \u2192 search_nodes before filesystem grep",
+      "- A specific node's content, edges, or annotations \u2192 read_node (returns story, content, neighborhood, and signals in one call)",
+      "- An observation worth keeping (a tension, a connection, a proposal for the next iteration) \u2192 write_annotation on the node it belongs to",
+      "",
+      "The conversation is ephemeral; the graph is durable. Observations held in conversation evaporate when the session ends; observations written as annotations accumulate as peripheral vision for future sessions."
+    );
+  }
   lines.push(
     "",
     "## Workspace Paths",
@@ -45918,7 +45932,7 @@ function buildServerInstructions(options) {
     "",
     "## Protocol",
     "",
-    "Nodes have identity (title, type, status), story (the impulse \u2014 why it exists), and optional content, annotations, and data. Edges connect nodes with a label (short phrase) and context sentence explaining why. Edge types are reserved for system use (e.g., 'curates' for view membership). Annotations are marginal signals: reading (observation), connection (link noticed), tension (something off), proposal (suggestion for change). Views are curated attention subsets of a graph."
+    "Nodes have identity (title, type, status), story (the impulse \u2014 why it exists), and optional content, annotations, and data. Edges connect nodes with a label (short phrase) and context sentence explaining why. Edge types are reserved for system use (e.g., 'composes' for deck membership). Annotations are marginal signals: reading (observation), connection (link noticed), tension (something off), proposal (suggestion for change)."
   );
   lines.push(
     "",
