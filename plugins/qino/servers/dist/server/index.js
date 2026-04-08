@@ -45887,7 +45887,7 @@ function buildServerInstructions(options) {
       "## Viewer",
       "",
       `The workspace UI is at: ${viewerUrl2}`,
-      "Direct users here to explore visually. Deeplinks in _links fields point to this viewer."
+      "Direct users here to explore visually. When referencing specific graphs or nodes in responses, always use the `_links` URLs returned by read_graph / read_node / search_nodes \u2014 never construct URLs by concatenating the base with a workspace or node ID. Hand-crafted URLs miss the query parameters (`?at`, `?highlight`, `?section`) that scope the view, and a bare workspace root like `/qinolabs-repo/graph` renders every node on disk rather than a curated slice."
     );
   }
   lines.push("", "## Mode", "");
@@ -45938,7 +45938,7 @@ function buildServerInstructions(options) {
     "",
     "## Links",
     "",
-    'Read operations return _links for viewer navigation. Use them in responses: [title](_links.nodes["id"]).'
+    'Read operations return _links for viewer navigation. Use them in responses: [title](_links.nodes["id"]). Do not fabricate graph viewer URLs \u2014 the _links form carries the scoping query parameters (`?at`, `?highlight`, `?section`) that make the rendered view useful.'
   );
   lines.push(
     "",

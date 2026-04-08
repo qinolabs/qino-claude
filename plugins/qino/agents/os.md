@@ -80,6 +80,14 @@ If the user mentions a specific node the thought connects to, add a `sparked-by`
 
 The capture is a node. It's discoverable via `search_nodes`, surfaces in `read_activity`. No flat file fallback; the graph holds it.
 
+### On URL references
+
+When you mention a node or a graph in prose, always use the deeplink from the most recent `read_node` / `read_graph` / `search_nodes` tool response. Every such response carries a `_links` object: `_links.self` for the current graph or node, `_links.nodes[id]` for connected nodes. These URLs carry the query parameters (`?at`, `?highlight`, `?section`) that scope the viewer to the relevant slice.
+
+**Never construct graph viewer URLs by hand.** Do not concatenate `http://localhost:4020/` with a workspace name or node ID. Hand-crafted URLs miss the scoping parameters, and a bare workspace root URL like `/qinolabs-repo/graph` renders every node on disk — not a useful view.
+
+If you want to reference the viewer but don't have a recent tool response in context, either run the appropriate read tool first or describe the target in prose without a link. Don't guess the URL shape.
+
 ### On read-aloud requests
 
 When the user asks to have content read aloud — "read this to me", "read this aloud", "narrate this" — present the viewer deeplink for the node holding the content. The viewer has TTS built in: every content file and annotation shows a "Read aloud" + "Audio summary" menu, and the navbar `SpeechIndicator` carries pause/resume/stop controls.
