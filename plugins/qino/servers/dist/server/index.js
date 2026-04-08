@@ -12480,12 +12480,12 @@ var require_dist = __commonJS({
         throw new Error(`Unknown format "${name}"`);
       return f;
     };
-    function addFormats(ajv, list4, fs6, exportName) {
+    function addFormats(ajv, list4, fs5, exportName) {
       var _a;
       var _b;
       (_a = (_b = ajv.opts.code).formats) !== null && _a !== void 0 ? _a : _b.formats = (0, codegen_1._)`require("ajv-formats/dist/formats").${exportName}`;
       for (const f of list4)
-        ajv.addFormat(f, fs6[f]);
+        ajv.addFormat(f, fs5[f]);
     }
     module.exports = exports = formatsPlugin;
     Object.defineProperty(exports, "__esModule", { value: true });
@@ -31511,9 +31511,17 @@ async function readLandingData(workspaceDir2, opts = {}) {
     pinnedNodes.map(async (node2) => {
       const graphPath = node2.graphPath === "_root" ? "" : node2.graphPath ?? "";
       const graphDir = graphPath ? path.join(workspaceDir2, graphPath) : workspaceDir2;
-      const nodesDir = "nodes";
+      const wsGraphData = await readJsonFile(
+        path.join(graphDir, "graph.json")
+      );
+      const nodesDir = wsGraphData?.nodesDir ?? "nodes";
       const nodeDir = path.join(graphDir, nodesDir, node2.dir);
       node2.recentSignalDots = await collectSignalDots(nodeDir);
+      const identity = await readJsonFile(
+        path.join(nodeDir, "node.json")
+      );
+      const edges = identity?.edges ?? [];
+      node2.memberCount = edges.filter((e) => e.label === "composes").length;
     })
   );
   return {
@@ -32183,27 +32191,37 @@ async function initWorkspace(workspaceDir2, opts) {
     next_steps: template ? `Workspace initialized with '${opts.template}' template (${template.description}). ${Object.keys(template.types).length} node types seeded: ${Object.keys(template.types).map((t) => `${t} \u2014 ${template.types[t].hint}`).join("; ")}. Use update_config to add more types or adjust colors.` : "Workspace initialized. Use update_config to set type colors, workspace color, and status treatments. Pass a 'template' to init_workspace next time for sensible defaults. See read_protocol('setup') for configurable fields."
   };
 }
-function labelToNodeId(label) {
-  if (!label || !label.trim()) return `deck-${Date.now()}`;
-  return label.toLowerCase().trim().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "").replace(/-+/g, "-").replace(/^-|-$/g, "");
-}
-async function promoteDeck(workspaceDir2, deck, edgeContexts) {
-  const nodeId = labelToNodeId(deck.label);
-  const title = deck.label || "Untitled deck";
-  const story = deck.description || deck.label || "";
-  const edges = deck.nodeRefs.map((ref) => ({
-    target: ref,
-    label: "composes",
-    context: edgeContexts?.[ref] || `Member of deck "${title}"`
-  }));
-  await createNode(workspaceDir2, {
-    id: nodeId,
-    title,
-    type: "deck",
-    story,
-    edges
-  });
-  return { nodeId };
+async function deleteNode(graphDir, nodeId) {
+  const graphPath = path.join(graphDir, "graph.json");
+  const graphData = await readJsonFile(graphPath);
+  if (!graphData) {
+    throwNoGraphError(graphDir);
+  }
+  const nodesDir = resolveNodesDir(graphData);
+  const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
+  if (!nodeDir) {
+    throw new Error(`Node not found: ${nodeId}`);
+  }
+  await fs.rm(nodeDir, { recursive: true, force: true });
+  const siblingNodes = await discoverNodes(graphDir, nodesDir);
+  for (const sibling of siblingNodes) {
+    if (sibling.id === nodeId) continue;
+    const siblingNodeJsonPath = path.join(graphDir, nodesDir, sibling.dir, "node.json");
+    const siblingData = await readJsonFile(siblingNodeJsonPath);
+    if (!siblingData) continue;
+    const edges = siblingData.edges ?? [];
+    const filtered = edges.filter((e) => e.to !== nodeId);
+    if (filtered.length !== edges.length) {
+      siblingData.edges = filtered;
+      await fs.writeFile(
+        siblingNodeJsonPath,
+        JSON.stringify(siblingData, null, 2) + "\n",
+        "utf-8"
+      );
+    }
+  }
+  await rebuildGraphIndex(graphDir);
+  return { success: true, nodeId };
 }
 
 // src/server/shell-actions.ts
@@ -44815,7 +44833,7 @@ var MIME_TYPES = {
   ".svg": "image/svg+xml",
   ".ico": "image/x-icon"
 };
-function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces, watcher, viewerBaseUrl, messageStore, deckStore) {
+function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces, watcher, viewerBaseUrl, messageStore) {
   const app = new Hono2();
   const getDeeplinkConfig = (requestUrl) => {
     if (baseUrl) return { baseUrl, viewerBaseUrl };
@@ -44991,6 +45009,22 @@ function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces,
       const message = err instanceof Error ? err.message : "Unknown error";
       if (message.includes("already exists")) {
         return c.json({ error: message }, 409);
+      }
+      throw err;
+    }
+  });
+  app.delete("/api/nodes/:nodeId", async (c) => {
+    const nodeId = c.req.param("nodeId");
+    const graphPath = resolveApiPath(c.req.query("path"));
+    const graphDir = graphPath ? nodePath.join(workspaceDir2, graphPath) : workspaceDir2;
+    try {
+      const result = await deleteNode(graphDir, nodeId);
+      watcher?.push({ type: "graph", graphPath: graphPath ?? void 0 });
+      return c.json(result);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Unknown error";
+      if (message.includes("not found")) {
+        return c.json({ error: message }, 404);
       }
       throw err;
     }
@@ -45245,75 +45279,27 @@ function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces,
     return c.json({ count: messageStore.count() });
   });
   app.get("/api/decks", async (c) => {
-    const drafts = deckStore ? await deckStore.list() : [];
     const landing = await readLandingData(workspaceDir2);
-    const promotedDecks = landing.deckNodes.map((node2) => ({
-      id: node2.id,
-      label: node2.title,
-      nodeRefs: [],
-      // Edges are on the graph node, not reconstructed here
-      createdAt: node2.created ?? "",
-      promoted: true
-    }));
-    return c.json([...drafts.map((d) => ({ ...d, promoted: false })), ...promotedDecks]);
-  });
-  app.post("/api/decks", async (c) => {
-    if (!deckStore) {
-      return c.json({ error: "Deck store not available" }, 500);
-    }
-    const body = await c.req.json();
-    if (!Array.isArray(body.nodeRefs) || body.nodeRefs.length < 2) {
-      return c.json({ error: "nodeRefs must contain at least 2 entries" }, 400);
-    }
-    const deck = await deckStore.create(body);
-    return c.json(deck, 201);
-  });
-  app.patch("/api/decks/:id", async (c) => {
-    if (!deckStore) {
-      return c.json({ error: "Deck store not available" }, 500);
-    }
-    const id = c.req.param("id");
-    const body = await c.req.json();
-    const deck = await deckStore.update(id, body);
-    if (!deck) {
-      return c.json({ error: "Deck not found" }, 404);
-    }
-    return c.json(deck);
-  });
-  app.delete("/api/decks/:id", async (c) => {
-    if (!deckStore) {
-      return c.json({ error: "Deck store not available" }, 500);
-    }
-    const id = c.req.param("id");
-    const deleted = await deckStore.remove(id);
-    if (!deleted) {
-      return c.json({ error: "Deck not found" }, 404);
-    }
-    return c.json({ success: true });
-  });
-  app.post("/api/decks/:id/promote", async (c) => {
-    if (!deckStore) {
-      return c.json({ error: "Deck store not available" }, 500);
-    }
-    const id = c.req.param("id");
-    const decks = await deckStore.list();
-    const deck = decks.find((d) => d.id === id);
-    if (!deck) {
-      return c.json({ error: "Deck not found" }, 404);
-    }
-    const body = await c.req.json().catch(() => ({ edgeContexts: void 0 }));
-    try {
-      const result = await promoteDeck(workspaceDir2, deck, body.edgeContexts);
-      await deckStore.remove(id);
-      watcher?.push({ type: "graph" });
-      return c.json(result, 201);
-    } catch (err) {
-      const message = err instanceof Error ? err.message : "Unknown error";
-      if (message.includes("already exists")) {
-        return c.json({ error: message }, 409);
-      }
-      throw err;
-    }
+    const summaries = await Promise.all(
+      landing.deckNodes.map(async (node2) => {
+        const graphPath = node2.graphPath === "_root" ? void 0 : node2.graphPath;
+        const graphDir = graphPath ? nodePath.join(workspaceDir2, graphPath) : workspaceDir2;
+        const detail = await readNode(graphDir, node2.id, graphPath, workspaceDir2);
+        const story = detail?.story ? detail.story.slice(0, 500) : void 0;
+        const memberRefs = detail ? detail.neighborhood.filter((n) => n.direction === "outgoing" && n.label === "composes").map((n) => n.nodeId) : [];
+        return {
+          id: node2.id,
+          title: node2.title,
+          ...story ? { story } : {},
+          memberRefs,
+          ...graphPath ? { graphPath } : {},
+          ...node2.status ? { status: node2.status } : {},
+          ...node2.created ? { createdAt: node2.created } : {},
+          ...node2.modified != null ? { modified: node2.modified } : {}
+        };
+      })
+    );
+    return c.json(summaries);
   });
   if (staticDir) {
     app.get("*", async (c) => {
@@ -46310,17 +46296,21 @@ RETURNS: { dataFiles: [{ filename, content }], schema?: string }`,
   );
   server.tool(
     "read_decks",
-    `Read all practitioner-drafted decks \u2014 composed thread ensembles from the landing page.
+    `Read all session decks \u2014 first-class graph nodes (type: "deck") that compose member threads.
 
 WHEN TO USE:
 - Understanding what the practitioner is attending to
 - Reading composed thread groupings as attention signal
 - Informing session proposals or ecosystem reading with practitioner intent
+- Picking a deck to actualize via read_node + composes-edge traversal
 
-RETURNS: Array of decks, each with id, optional label, optional description,
-nodeRefs (node identifiers), timestamps, and promoted flag.
-Lightweight drafts have promoted: false; promoted deck nodes have promoted: true.
-An empty array means no decks have been drafted yet.`,
+RETURNS: Array of DeckSummary entries:
+  - id, title, status \u2014 node identity
+  - story \u2014 first ~500 chars of story.md (the felt sense, when present)
+  - memberRefs \u2014 resolved targets of "composes" edges (graphPath:nodeId for cross-graph)
+  - graphPath \u2014 workspace path (omitted for root)
+  - createdAt, modified \u2014 timestamps
+An empty array means no active deck nodes exist in the workspace.`,
     {},
     async () => {
       const decks = await ops.readDecks();
@@ -46923,7 +46913,7 @@ SECURITY: Only paths within the workspace root are allowed.`,
 }
 
 // src/server/ops.ts
-function createDirectOps(workspaceDir2, _repoRoot, baseUrl, knownWorkspaces, watcher, viewerBaseUrl, messageStore, deckStore) {
+function createDirectOps(workspaceDir2, _repoRoot, baseUrl, knownWorkspaces, watcher, viewerBaseUrl, messageStore) {
   const resolveGraphDir = (graphPath) => graphPath ? `${workspaceDir2}/${graphPath}` : workspaceDir2;
   const deeplinkConfig = { baseUrl, viewerBaseUrl };
   return {
@@ -46989,6 +46979,12 @@ function createDirectOps(workspaceDir2, _repoRoot, baseUrl, knownWorkspaces, wat
         }
       }
       return hints.length > 0 ? { ...result, hints } : result;
+    },
+    deleteNode: async (args) => {
+      const graphDir = resolveGraphDir(args.graphPath);
+      const result = await deleteNode(graphDir, args.nodeId);
+      watcher?.push({ type: "graph", graphPath: args.graphPath });
+      return result;
     },
     addEdge: async (args) => {
       const graphDir = resolveGraphDir(args.graphPath);
@@ -47091,27 +47087,31 @@ function createDirectOps(workspaceDir2, _repoRoot, baseUrl, knownWorkspaces, wat
       return { count: messageStore.count() };
     },
     readDecks: async () => {
-      const drafts = deckStore ? await deckStore.list() : [];
       const landing = await readLandingData(workspaceDir2);
-      const promotedDecks = landing.deckNodes.map((node2) => ({
-        id: node2.id,
-        label: node2.title,
-        nodeRefs: [],
-        // Edges are on the graph node, not reconstructed here
-        createdAt: node2.created ?? "",
-        promoted: true
-      }));
-      return [...drafts.map((d) => ({ ...d, promoted: false })), ...promotedDecks];
-    },
-    promoteDeck: async (id, edgeContexts) => {
-      if (!deckStore) throw new Error("Deck store not available");
-      const decks = await deckStore.list();
-      const deck = decks.find((d) => d.id === id);
-      if (!deck) throw new Error(`Deck not found: ${id}`);
-      const result = await promoteDeck(workspaceDir2, deck, edgeContexts);
-      await deckStore.remove(id);
-      watcher?.push({ type: "graph" });
-      return result;
+      const summaries = await Promise.all(
+        landing.deckNodes.map(async (node2) => {
+          const graphPath = node2.graphPath === "_root" ? void 0 : node2.graphPath;
+          const detail = await readNode(
+            graphPath ? `${workspaceDir2}/${graphPath}` : workspaceDir2,
+            node2.id,
+            graphPath,
+            workspaceDir2
+          );
+          const story = detail?.story ? detail.story.slice(0, 500) : void 0;
+          const memberRefs = detail ? detail.neighborhood.filter((n) => n.direction === "outgoing" && n.label === "composes").map((n) => n.nodeId) : [];
+          return {
+            id: node2.id,
+            title: node2.title,
+            ...story ? { story } : {},
+            memberRefs,
+            ...graphPath ? { graphPath } : {},
+            ...node2.status ? { status: node2.status } : {},
+            ...node2.created ? { createdAt: node2.created } : {},
+            ...node2.modified != null ? { modified: node2.modified } : {}
+          };
+        })
+      );
+      return summaries;
     }
   };
 }
@@ -47221,6 +47221,16 @@ function createHttpOps(apiUrl) {
             view: args.view
           })
         }
+      );
+      return handleResponse(res);
+    },
+    deleteNode: async (args) => {
+      const res = await fetch(
+        buildUrl(
+          `/api/nodes/${encodeURIComponent(args.nodeId)}`,
+          args.graphPath ? { path: args.graphPath } : void 0
+        ),
+        { method: "DELETE" }
       );
       return handleResponse(res);
     },
@@ -47406,14 +47416,6 @@ function createHttpOps(apiUrl) {
     readDecks: async () => {
       const res = await fetch(buildUrl("/api/decks"));
       return handleResponse(res);
-    },
-    promoteDeck: async (id, edgeContexts) => {
-      const res = await fetch(buildUrl(`/api/decks/${encodeURIComponent(id)}/promote`), {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ edgeContexts })
-      });
-      return handleResponse(res);
     }
   };
 }
@@ -47430,59 +47432,6 @@ function openBrowser(url) {
   });
 }
 
-// src/server/deck-store.ts
-import fs5 from "fs/promises";
-import nodePath3 from "path";
-function createDeckStore(workspaceDir2) {
-  const filePath = nodePath3.join(workspaceDir2, ".qino", "decks.json");
-  async function readFile() {
-    try {
-      const raw2 = await fs5.readFile(filePath, "utf-8");
-      return JSON.parse(raw2);
-    } catch {
-      return [];
-    }
-  }
-  async function writeFile(decks) {
-    await fs5.mkdir(nodePath3.dirname(filePath), { recursive: true });
-    await fs5.writeFile(filePath, JSON.stringify(decks, null, 2) + "\n", "utf-8");
-  }
-  return {
-    list: () => readFile(),
-    async create({ nodeRefs, label, description }) {
-      const decks = await readFile();
-      const deck = {
-        id: crypto.randomUUID(),
-        label,
-        ...description ? { description } : {},
-        nodeRefs,
-        createdAt: (/* @__PURE__ */ new Date()).toISOString()
-      };
-      decks.push(deck);
-      await writeFile(decks);
-      return deck;
-    },
-    async update(id, { label, description }) {
-      const decks = await readFile();
-      const deck = decks.find((d) => d.id === id);
-      if (!deck) return null;
-      if (label !== void 0) deck.label = label || void 0;
-      if (description !== void 0) deck.description = description || void 0;
-      deck.updatedAt = (/* @__PURE__ */ new Date()).toISOString();
-      await writeFile(decks);
-      return deck;
-    },
-    async remove(id) {
-      const decks = await readFile();
-      const idx = decks.findIndex((d) => d.id === id);
-      if (idx === -1) return false;
-      decks.splice(idx, 1);
-      await writeFile(decks);
-      return true;
-    }
-  };
-}
-
 // src/server/index.ts
 var __dirname = path4.dirname(fileURLToPath2(import.meta.url));
 var workspaceDir = process.env.WORKSPACE_DIR ?? getCliArg("--workspace-dir") ?? process.cwd();
@@ -47497,8 +47446,8 @@ var packageRoot = path4.resolve(__dirname, "../..");
 var distUiDir = path4.resolve(packageRoot, "dist/ui");
 async function hasBuiltSpa() {
   try {
-    const fs6 = await import("fs/promises");
-    const html2 = await fs6.readFile(
+    const fs5 = await import("fs/promises");
+    const html2 = await fs5.readFile(
       path4.join(distUiDir, "index.html"),
       "utf-8"
     );
@@ -47550,16 +47499,14 @@ async function main() {
   });
   let watcher;
   let messageStore;
-  let deckStore;
   if (!isClientMode) {
     watcher = createFileWatcher(workspaceDir);
     messageStore = new MessageStore(workspaceDir);
     await messageStore.loadSaved();
-    deckStore = createDeckStore(workspaceDir);
     const serveSpa = await hasBuiltSpa();
     const staticDir = serveSpa ? distUiDir : void 0;
-    const api = createApi(workspaceDir, repoRoot, staticDir, baseUrl, knownWorkspaces, watcher, viewerUrl, messageStore, deckStore);
-    const httpOps = createDirectOps(workspaceDir, repoRoot, baseUrl, knownWorkspaces, watcher, viewerUrl, messageStore, deckStore);
+    const api = createApi(workspaceDir, repoRoot, staticDir, baseUrl, knownWorkspaces, watcher, viewerUrl, messageStore);
+    const httpOps = createDirectOps(workspaceDir, repoRoot, baseUrl, knownWorkspaces, watcher, viewerUrl, messageStore);
     api.all("/mcp", async (c) => {
       const transport = new WebStandardStreamableHTTPServerTransport({
         sessionIdGenerator: void 0
@@ -47604,7 +47551,7 @@ async function main() {
       { instructions }
     );
     const opsBaseUrl = apiUrl ?? baseUrl;
-    const ops = isClientMode && apiUrl ? createHttpOps(apiUrl) : createDirectOps(workspaceDir, repoRoot, opsBaseUrl, knownWorkspaces, watcher, viewerUrl, messageStore, deckStore);
+    const ops = isClientMode && apiUrl ? createHttpOps(apiUrl) : createDirectOps(workspaceDir, repoRoot, opsBaseUrl, knownWorkspaces, watcher, viewerUrl, messageStore);
     registerTools(mcpServer, ops, { mode, workspaceDir });
     const transport = new StdioServerTransport();
     await mcpServer.connect(transport);
