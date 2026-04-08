@@ -10,6 +10,47 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [3.3.0] - 2026-04-08
+
+### qino
+
+The bundled qino-os server and viewer absorb five iterations (31–35) of upstream work between v3.2.0 and now. What this means for a practitioner: decks stopped being a parallel draft layer and became first-class graph nodes, deck signal dots switched from a calendar-based metric to a living delta tied to actualization, the graph started bumping node timestamps only when content actually changes, timestamps became precise enough to not stamp yesterday at 1am, and agents got a cheap way to tell whether a cached node read is still fresh.
+
+#### Added
+
+- **Deck deletion** — hover-revealed delete affordance on pinned deck tiles, with confirmation dialog. Decks are first-class graph nodes from the moment they're created, so deletion uses the regular `deleteNode` path instead of a special draft layer (iter 31).
+- **`delete_node` MCP tool + DELETE `/api/nodes/:nodeId`** — node deletion exposed as a first-class operation via MCP and HTTP (iter 31).
+- **Content recency auto-bump** — the file watcher now bumps `node.json`'s `updated` field automatically when content bytes actually change, using a content hash to distinguish real edits from git-checkout mtime churn. Startup scan seeds missing `contentHash` fields across every node without false bumps. This is the principled revisit of iter 29's rejected file-watcher option — the content hash was the missing primitive (iter 32).
+- **`scan-stale-nodes` audit script** — read-only script that reports nodes whose content files are newer than `node.json`'s `updated`. Supports `--with-git` to use commit dates instead of filesystem mtimes, filtering git-operation noise (validated on qinolabs-repo: 62 mtime candidates collapsed to 1 real drift). Complementary to iter 32's preventive approach.
+- **`read_node_fingerprint` MCP tool + `revision` envelope** — a ~150-byte freshness check plus `contentHash` (per-node) and `workspaceRevision` (per-workspace) on every `read_node` / `read_graph` response. Agents can reuse earlier reads when content hasn't changed. The os agent persona absorbs the reuse-and-freshness contract with an explicit post-mutation exception: always re-read after `write_annotation`, `touch_node`, or file edits (iter 33).
+- **`kind: actualization` frontmatter discriminator** — `write_annotation` now accepts (and deck actualization requires) `kind: "actualization"` as a frontmatter field on annotations that serve as deck temporal anchors. Moves the machine discriminator from body prefix (`## Actualization:`) to structured frontmatter, letting the viewer keep the human-readable header while the parser uses the reliable field. Without `kind`, the deck stays "never actualized" forever — the os agent reference flags this as an explicit footgun (iter 34 A).
+- **Deck dots as actualization delta** — deck tile signal dots now count *open annotations since the deck's latest actualization marker* instead of a 7-day rolling window. Dots become a "may be worth revisiting" indicator that clears when actualization runs or the underlying annotations resolve, not when time passes. Never-actualized decks surface all open annotations as a "first reading needed" signal (iter 34 B).
+- **Deck tile overflow indicator, tooltip, and deck-detail anchor** — tiles render `+N` after the dots when the delta exceeds the visible cap (eight-px tertiary weight so it qualifies without competing). Hovering a tile shows `"last actualized 14d ago"` or `"never actualized"`. The deck detail page displays the same anchor right-aligned next to the Doorway header, priming the practitioner at the moment they're about to run actualization (iter 34 C).
+- **`migrate-actualization-markers` one-shot script** — idempotent migration that finds legacy body-prefix markers missing the `kind` field and adds it. Dry run across every real workspace found 0 candidates; kept as a safety net for markers from older qino-claude versions (iter 34 D).
+- **ISO 8601 timestamps with local offset** — `updated`, `created`, and `resolvedAt` now write as full ISO 8601 with the host's local offset (e.g. `2026-04-08T00:29:37+02:00`) instead of UTC-sliced bare `YYYY-MM-DD`. The old pattern stamped yesterday for early-morning writes in any positive-offset timezone; with Asia travel ahead, the affected window expanded from ~2h in CEST to ~9h in JST. Parser still accepts legacy bare dates as local midnight — reads are backward compatible. New `src/shared/protocol-time.ts` module holds pure functions importable by server and UI. `touch_node` gains an `at` parameter for full-ISO override (iter 35).
+
+#### Changed
+
+- **Decks are first-class graph nodes from creation** — the draft-then-promote two-layer pattern is gone. `.qino/decks.json` deleted; `deck-store.ts` removed; `promoteDeck` retired. `read_decks` synthesizes `DeckSummary[]` directly from `landing.deckNodes` enriched with story previews and resolved `composes`-edge member refs. `useDeckDrafting` → `useDeckCreation` with a smaller surface (`landing-route` loses ~80 lines). `read_decks` MCP tool description rewritten for the new shape (iter 31).
+- **Deck tile cosmetics** — uniform sizes across all pinned decks, "threads" wording dropped, cross-workspace `memberCount` flowing through the landing route, dismissable delete dialog, improved error display. Signal dots now center below the title with `mt-2.5` separation instead of left-hugged `items-start` crowding (iter 31 followups + fbe403fc).
+- **`NavigatorEntry` → `DeckNodeEntry`** — type rename to reflect that decks superseded navigators at v3.2.0 (iter 31).
+- **Deck actualization anchor discovery** — the os agent's `deck-actualization.md` reference now looks for `kind: actualization` in annotation frontmatter instead of `## Actualization:` in the body title. The body still carries the human-readable header; the frontmatter carries the machine discriminator (iter 34 A).
+- **Node detail inline index** — now sources from numbered content files first, falling back to unnumbered files only when no numbered files exist. Previously the 6-item slice buried recent iteration files (e.g. `80-`, `81-`, `82-.md`) behind unnumbered grouped content (fbe403fc).
+
+#### Removed
+
+- **`.qino/decks.json`** — the draft-layer storage is gone; decks live in the graph as nodes from creation (iter 31).
+- **`deck-store.ts` and `promoteDeck`** — the promotion pipeline is gone along with the draft layer (iter 31).
+
+### Documentation
+
+#### Changed
+
+- **Single-source plugin versioning** — per-plugin `version` fields removed from both `marketplace.json` files. Plugin versions live exclusively in `plugins/<plugin>/.claude-plugin/plugin.json`. Prevents the silent-override trap the Claude Code docs warn about (*"the plugin manifest always wins silently, which can cause the marketplace version to be ignored"*). The top-level `metadata.version` in `.claude-plugin/marketplace.json` (catalog version) stays. `release.md` and `CLAUDE.md` updated to document the convention and the version-keyed cache behavior that makes post-launch version bumps load-bearing.
+- **CLAUDE.md slimmed to non-derivable facts** — dropped from 161 to 40 lines by removing stale catalogs (plugin list, repository tree, per-plugin agent/workflow enumerations that had already drifted at v3.2.0 by still referencing the retired `concept`/`dev`/`research` agents and 17 deleted workflows). What survives: the Plugin Versioning section and the qino-os bundle rebuild procedure — both carry institutional knowledge not discoverable from the filesystem. The opening framing sets the rule for future edits: README is the front door for humans (philosophy, install, feel); CLAUDE.md is its complement, carrying operational facts an agent cannot derive by reading the filesystem.
+
+---
+
 ## [3.2.0] - 2026-04-07
 
 ### qino
