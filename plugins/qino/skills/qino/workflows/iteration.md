@@ -5,9 +5,9 @@
 **Agent:** build + protocol-structure
 
 **References:**
-- `references/dev/repo-conventions.md` — Implementation repo structure patterns
-- `references/dev/home-pattern.md` — Arrival pattern for generated commands
-- `references/dev/template-guidance.md` — How to capture learnings through colocation
+- `references/build/repo-conventions.md` — Implementation repo structure patterns
+- `references/build/home-pattern.md` — Arrival pattern for generated commands
+- `references/build/template-guidance.md` — How to capture learnings through colocation
 
 ---
 
@@ -255,7 +255,7 @@ Surface the observation in prose, then use `AskUserQuestion`:
 - Use capture workflow (for observations that aren't decisions yet)
 - These notes can be reviewed later via the concept's `"concept grounds"` edge
 
-**Reference:** See `references/dev/drift-signals.md` for detailed examples.
+**Reference:** See `references/build/drift-signals.md` for detailed examples.
 
 ---
 

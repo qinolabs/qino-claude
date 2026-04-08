@@ -93,7 +93,7 @@ When you start working in a new project:
 
 1. Check for `.claude/qino-config.json` — read `repoType` to understand structure conventions
 1.5. If `protocol: "qino"` is set in qino-config, also read `agents/protocol-structure.md` — it provides path translations and concept sync patterns that override legacy paths below
-2. Read `references/dev/repo-conventions.md` to understand structure patterns for this repo type
+2. Read `references/build/repo-conventions.md` to understand structure patterns for this repo type
 3. Read `implementations/[app]/implementation.md` for project-level technical context
    - Protocol: `{nodesDir}/{app}/story.md`
 4. Read `implementations/[app]/iterations/*.md` for current phase
@@ -108,13 +108,13 @@ When you start working in a new project:
 
 **Use conventions, not hardcoded paths**:
 - Read `repoType` from qino-config
-- Apply conventions from `references/dev/repo-conventions.md`
+- Apply conventions from `references/build/repo-conventions.md`
 - Verify with filesystem (glob/read)
 - Adapt gracefully if structure varies slightly
 
 ## File Structure
 
-See `references/dev/repo-conventions.md` for complete structure patterns.
+See `references/build/repo-conventions.md` for complete structure patterns.
 
 Key files:
 - `implementations/[app]/implementation.md` — app technical context

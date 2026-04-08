@@ -5,9 +5,9 @@
 **Agent:** build + protocol-structure
 
 **References:**
-- `references/dev/repo-conventions.md` — Implementation repo structure patterns
-- `references/dev/home-pattern.md` — Arrival pattern for generated commands
-- `references/dev/template-guidance.md` — How to capture learnings through colocation
+- `references/build/repo-conventions.md` — Implementation repo structure patterns
+- `references/build/home-pattern.md` — Arrival pattern for generated commands
+- `references/build/template-guidance.md` — How to capture learnings through colocation
 - Check for `templates/CREATING_NEW_APP.md` in implementation repo (app scaffolding guide)
 
 ---
@@ -191,7 +191,7 @@ No other graph.json update needed — the nodesDir auto-discovery picks up new n
 
 **`.claude/commands/qino-dev/[short-id].md`**
 
-Generate command file following the home pattern (see `references/dev/home-pattern.md`).
+Generate command file following the home pattern (see `references/build/home-pattern.md`).
 
 Replace placeholders with:
 - `{{APP_NAME}}`: Full app name
