@@ -21,6 +21,11 @@
       "source": "./plugins/qino-prose"
     },
     {
+      "name": "cf-monorepo-base",
+      "description": "Tooling for Cloudflare Workers pnpm monorepos: dependency stewardship, catalog hygiene, template sync",
+      "source": "./plugins/cf-monorepo-base"
+    },
+    {
       "name": "design-adventure",
       "description": "Seven-perspective design exploration (paused, pending graph-native redesign)",
       "source": "./plugins/design-adventure"

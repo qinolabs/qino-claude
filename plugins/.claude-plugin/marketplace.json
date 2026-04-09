@@ -15,6 +15,11 @@
       "description": "Chronicle writing, research transmissions, and prose lenses"
     },
     {
+      "name": "cf-monorepo-base",
+      "source": "./cf-monorepo-base",
+      "description": "Tooling for Cloudflare Workers pnpm monorepos: dependency stewardship, catalog hygiene, template sync"
+    },
+    {
       "name": "design-adventure",
       "source": "./design-adventure",
       "description": "Seven-perspective design exploration (paused, pending graph-native redesign)"
