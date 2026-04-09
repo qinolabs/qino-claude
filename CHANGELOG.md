@@ -10,6 +10,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [3.3.2] - 2026-04-09
+
+### qino
+
+A bundled-server + agent-prompt release fixing a drift in how agents refer to the qino-os viewer. The qino skill and other agents loading the plugin were fabricating bare workspace-root graph URLs like `http://localhost:4020/qinolabs-repo/graph` from scratch instead of using the scoped `_links` URLs returned by `read_graph` / `read_node` / `search_nodes`. Fabricated URLs drop the query parameters (`?at`, `?highlight`, `?section`) that narrow the view, so they rendered every node on disk under the graph's `nodesDir` as a flat catalog — unusable as an orientation surface. The fix lands in both the agent prompt and the MCP server instructions so it reaches all agents that touch qino-os, not just the qino skill.
+
+#### Fixed
+
+- **Agents no longer fabricate graph viewer URLs** — the qino-os agent prompt (`plugins/qino/agents/os.md`) gains an explicit "On URL references" section placed before "On read-aloud requests" that mandates the use of `_links.self` / `_links.nodes[id]` from the most recent `read_graph` / `read_node` / `search_nodes` tool response and forbids URL construction by concatenating the base with a workspace or node ID. If no tool response is in context, the agent is instructed to run the appropriate read tool first or describe the target in prose without a link — no guessing.
+- **MCP initialize instructions reinforce the same rule** — the Viewer and Links sections in `mcp-instructions.ts` (bundled server) now explicitly name the failure mode: a bare workspace root like `/qinolabs-repo/graph` renders every node on disk rather than a curated slice, because `readGraph()` walks the filesystem under `nodesDir` instead of honoring the `graph.json` `nodes` registry. Both sections point agents at the `_links` URLs with their scoping query parameters (`?at`, `?highlight`, `?section`) as the correct pattern. This reaches every agent connecting to the MCP server, not just the qino skill's os agent.
+- **Context** — fix originated in `qinolabs-repo` iteration 36 phase 1 (`b2a5e9d5`), which also deferred a larger structural gardening pass after discovering that moving node directories between graphs cascades into ~18 edge-target rewrites across three git repositories. See `implementations/qino-os/content/36-orientation-layer-gardening.md` and proposal annotation 004 (`implementations/qino-os/annotations/004-node-move-cascades-edge-rewrites.md`) for the architectural finding about `readGraph()` filesystem discovery and the next gardening pass's prerequisites.
+
+---
+
 ## [3.3.1] - 2026-04-08
 
 ### qino
