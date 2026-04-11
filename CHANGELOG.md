@@ -10,6 +10,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [3.4.0] - 2026-04-09
+
+### cf-monorepo-base
+
+A new plugin for Cloudflare Workers pnpm monorepos that follow the `cf-monorepo-base` template pattern — TanStack Start frontend + Hono/tRPC backend + D1 + Drizzle + Vitest workers pool, with shared dependencies in `pnpm-workspace.yaml` `catalog:`. The plugin exists because maintaining a shared template across downstream repos over time is a different kind of work from writing app code — version drift accumulates silently across dozens of packages, breaking changes in `@cloudflare/*` packages need careful reading before bumping, and `^0.x.y` caret ranges turn passive `pnpm update` into a trap (a caret on a 0.x version only spans the patch segment, so `^0.8.71` never matches `0.9.0`, which means six minor versions' worth of breaking changes can accumulate unnoticed). That work wants a consultative, methodical companion, not a "run `pnpm update` and pray" script.
+
+#### Added
+
+- **dependency-steward agent** — interactive, consultative steward for the pnpm catalog. Surveys drift across every catalog entry, groups packages by ecosystem (namespace scope + shared `repository.url` from npm metadata — no hardcoded ecosystem lists, so the grouping stays accurate as ecosystems evolve), fetches CHANGELOGs per package, categorizes entries as breaking / bug fix / new feature / opportunity / skip against the consuming repo's stack patterns (discovered from `CLAUDE.md` and `.claude/rules/*.md` at startup), consults the user per bump, edits the catalog, runs `pnpm install` and `pnpm typecheck`, commits only with explicit approval. Writes new `DEBT-NNN` entries in `.claude/tech-debt.md` for deferred cross-major or breaking-minor upgrades. **One group per session** to keep commits bounded and the audit trail clean — if you want to work through multiple ecosystems, start a new session for each.
+- **Safety invariants hard-coded in the agent prompt** — never `pnpm update` / `upgrade` / `add` (all updates happen via catalog edits); never bump `^0.x.y` across a minor boundary without showing the user the full CHANGELOG diff; never bump across a major boundary in-session (always propose as a DEBT entry); never commit without explicit user approval; never `git add -A` / `.` (stage by explicit path); never `--no-verify`. The agent refuses to violate these regardless of prompt contents.
+- **README with planned additions** — the plugin is a home for future cf-monorepo-base template maintenance tooling: `template-sync-steward` (consultative template sync into downstream repos), `test-triage-assistant` (loader → mock → assertion dependency-order triage when a sync exposes pre-existing failures), reference docs for the catalog hygiene rule and `^0.x.y` semver gotcha that consuming repos can inline into their own `.claude/rules/`. None shipped in 3.4.0 — file an annotation on the `cf-monorepo-base` node in a consuming repo if you want one prioritized.
+
+---
+
 ## [3.3.2] - 2026-04-09
 
 ### qino
