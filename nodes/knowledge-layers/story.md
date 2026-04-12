@@ -1,0 +1,5 @@
+Persistence layers in this workspace — Claude Code auto-memory, CLAUDE.md files, `.claude/rules/`, the qino-protocol graph (concepts + implementations + research), and `snippets/` — and the practices that keep each layer doing its job.
+
+Memory quietly accumulates content that belongs elsewhere. Iterations crystallize principles that never get promoted to the durable layer. Without an explicit layer model, content ends up in whichever layer the writer happens to be using — not the layer where future readers will look. This node names the layers, the failure modes that push content into the wrong one, and the audit practices that close the gap.
+
+Surfaced during the 2026-04-08 memory audit, which found that five principles crystallized in late March had been caught by Claude Code auto-memory rather than absorbed into the durable layer where they could be found. The audit promoted six principle files into implementation and concept nodes; this reference is the meta-work that came out of doing that cleanup.

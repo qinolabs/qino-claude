@@ -1,55 +1,46 @@
 {
-  "id": "qino-claude",
-  "title": "qino-claude",
+  "title": "Knowledge Layers — Memory, Concepts, Rules, and Durable Knowledge",
+  "type": "reference",
+  "status": "active",
+  "created": "2026-04-08T16:09:14+02:00",
+  "updated": "2026-04-08T16:16:01+02:00",
+  "contentHash": "fc3f303e85c8249ced6364e5d60eba386fa7d78425757b311a21aa39123c9677",
   "edges": [
     {
-      "source": "knowledge-layers",
-      "target": "qinolabs-repo:dialogue-quality",
+      "to": "qinolabs-repo:dialogue-quality",
       "label": "principle promoted here",
       "context": "The perception-not-vocabulary principle was promoted from auto-memory into this implementation node's content/ directory during the 2026-04-08 audit. Shape what figures perceive; don't prescribe how they express it.",
       "created": "2026-04-08T16:14:14+02:00"
     },
     {
-      "source": "knowledge-layers",
-      "target": "qinolabs-repo:agentic-substrate-inquiry",
+      "to": "qinolabs-repo:agentic-substrate-inquiry",
       "label": "principle promoted here",
       "context": "The figure-sensitivity-mutual-learning principle (context sensitivity evolves through play, figures attune to cross-figure substrate) was promoted from auto-memory into this node's content/ directory during the 2026-04-08 audit.",
       "created": "2026-04-08T16:14:18+02:00"
     },
     {
-      "source": "knowledge-layers",
-      "target": "qinolabs-repo:docs",
+      "to": "qinolabs-repo:docs",
       "label": "principle promoted here",
       "context": "The ecological-state-interfaces principle was promoted from auto-memory into the cross-app docs node during the 2026-04-08 audit — durable state that belongs across apps lives here rather than in any single app's implementation notes.",
       "created": "2026-04-08T16:14:19+02:00"
     },
     {
-      "source": "knowledge-layers",
-      "target": "qinolabs-repo:evaluation-loop",
+      "to": "qinolabs-repo:evaluation-loop",
       "label": "principle promoted here",
       "context": "The harness-layering framework (CLI → protocol → SDK, built in that order) was extracted from iteration 06 into a standalone content file during the 2026-04-08 audit so it is discoverable without having to read the iteration artifact.",
       "created": "2026-04-08T16:14:22+02:00"
     },
     {
-      "source": "knowledge-layers",
-      "target": "qinolabs-repo:metalogue-writing-pipeline",
+      "to": "qinolabs-repo:metalogue-writing-pipeline",
       "label": "principles promoted here",
       "context": "Two principle files were extracted into this pipeline's content/ during the 2026-04-08 audit: pipeline-design-learnings.md (four meta-principles from iteration 17) and prose-craft-dimensions.md (four craft dimensions the pipeline is aimed at). Both replace scattered memory entries.",
       "created": "2026-04-08T16:14:25+02:00"
     },
     {
-      "source": "knowledge-layers",
-      "target": "qino-concepts:ecosystem-design-principles",
+      "to": "qino-concepts:ecosystem-design-principles",
       "label": "principle promoted here",
       "context": "The cross-modality-insight-flow principle (slower modalities surface structural gaps in faster ones) was promoted from auto-memory into the concepts layer during the 2026-04-08 audit — a meta-principle about ecosystem design belonged here.",
       "created": "2026-04-08T16:14:27+02:00"
-    },
-    {
-      "source": "qino-os-mcp-frictions",
-      "target": "gesture-review",
-      "label": "surfaced during",
-      "context": "These frictions were discovered while testing workspace setup during the gesture review session",
-      "created": "2026-04-06"
     }
   ]
 }
