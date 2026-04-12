@@ -45227,6 +45227,18 @@ function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces,
     }
     return c.json(fingerprint);
   });
+  app.get("/api/viewer-link", (c) => {
+    const graphPath = resolveApiPath(c.req.query("path"));
+    const nodeId = c.req.query("nodeId") ?? void 0;
+    const section = c.req.query("section") ?? void 0;
+    const deeplinkConfig = getDeeplinkConfig(c.req.url);
+    const { workspace, at } = parseGraphPath(graphPath, knownWorkspaces);
+    if (!workspace) {
+      return c.json({ error: "Cannot resolve workspace from path" }, 400);
+    }
+    const url = nodeId ? buildNodeDeeplink(deeplinkConfig, { workspace, nodeId, at, section }) : buildGraphDeeplink(deeplinkConfig, { workspace, at });
+    return c.json({ url });
+  });
   app.get("/api/search", async (c) => {
     const query = c.req.query("q");
     if (!query) {
@@ -45887,7 +45899,9 @@ function buildServerInstructions(options) {
       "## Viewer",
       "",
       `The workspace UI is at: ${viewerUrl2}`,
-      "Direct users here to explore visually. When referencing specific graphs or nodes in responses, always use the `_links` URLs returned by read_graph / read_node / search_nodes \u2014 never construct URLs by concatenating the base with a workspace or node ID. Hand-crafted URLs miss the query parameters (`?at`, `?highlight`, `?section`) that scope the view, and a bare workspace root like `/qinolabs-repo/graph` renders every node on disk rather than a curated slice."
+      'Direct users here to explore visually. When referencing specific graphs or nodes in responses, always use the `_links` URLs returned by read_graph / read_node \u2014 never construct URLs by concatenating the base with a workspace or node ID. Hand-crafted URLs miss the query parameters (`?at`, `?highlight`, `?section`) that scope the view, and a bare workspace root like `/qinolabs-repo/graph` renders every node on disk rather than a curated slice. Use `_links` in markdown: [title](_links.nodes["id"]).',
+      "",
+      'For "show me the link" requests \u2014 or any time you need a viewer URL without the node\'s content \u2014 use `get_viewer_link` instead of `read_node`. It builds the same scoped deeplink at near-zero cost (no filesystem reads). Only reach for `read_node` when you actually need the story, content, or neighborhood.'
     );
   }
   lines.push("", "## Mode", "");
@@ -45906,20 +45920,24 @@ function buildServerInstructions(options) {
     "",
     "Start with read_activity \u2014 it shows workspaces, recent changes, action items, and arcs. Decks are composed thread ensembles \u2014 use read_node on a deck node to enter its territory. Use read_graph to see all nodes and edges in a workspace. Use read_node for deep dives into any specific node."
   );
+  lines.push(
+    "",
+    "## When to reach for qino-os",
+    "",
+    "These tools are ambient \u2014 available in every session that loads the qino plugin, not just in conversations explicitly about ideas. Reach for them whenever your work touches:",
+    "",
+    "- A node by name \u2192 search_nodes before filesystem grep",
+    "- A specific node's content, edges, or annotations \u2192 read_node (returns story, content, neighborhood, and signals in one call)"
+  );
   if (mode2 === "full") {
     lines.push(
-      "",
-      "## When to reach for qino-os",
-      "",
-      "These tools are ambient \u2014 available in every session that loads the qino plugin, not just in conversations explicitly about ideas. Reach for them whenever your work touches:",
-      "",
-      "- A node by name \u2192 search_nodes before filesystem grep",
-      "- A specific node's content, edges, or annotations \u2192 read_node (returns story, content, neighborhood, and signals in one call)",
-      "- An observation worth keeping (a tension, a connection, a proposal for the next iteration) \u2192 write_annotation on the node it belongs to",
-      "",
-      "The conversation is ephemeral; the graph is durable. Observations held in conversation evaporate when the session ends; observations written as annotations accumulate as peripheral vision for future sessions."
+      "- An observation worth keeping (a tension, a connection, a proposal for the next iteration) \u2192 write_annotation on the node it belongs to"
     );
   }
+  lines.push(
+    "",
+    "The conversation is ephemeral; the graph is durable. Observations held in conversation evaporate when the session ends; observations written as annotations accumulate as peripheral vision for future sessions."
+  );
   lines.push(
     "",
     "## Workspace Paths",
@@ -45936,25 +45954,19 @@ function buildServerInstructions(options) {
   );
   lines.push(
     "",
-    "## Links",
-    "",
-    'Read operations return _links for viewer navigation. Use them in responses: [title](_links.nodes["id"]). Do not fabricate graph viewer URLs \u2014 the _links form carries the scoping query parameters (`?at`, `?highlight`, `?section`) that make the rendered view useful.'
-  );
-  lines.push(
-    "",
     "## New Workspaces",
     "",
     'If read_activity shows status "uninitialized", the workspace has no graph yet. Call read_protocol() for setup guidance. Discuss the workspace name and structure with the user, then use init_workspace. After initialization, create_node structures content into the graph.'
   );
   lines.push("", "## Tools", "");
   lines.push(
-    "Discovery: read_config, read_activity, read_graph, read_node, read_data, read_messages, read_protocol"
+    "Discovery: read_config, read_activity, read_graph, read_node, read_node_fingerprint, read_content, read_data, read_decks, read_messages, read_protocol, search_nodes, get_viewer_link"
   );
   if (mode2 === "full") {
     lines.push("Initialization: init_workspace");
-    lines.push("Creation: create_node");
+    lines.push("Creation: create_node, add_edge");
     lines.push("Signals: write_annotation, resolve_annotation");
-    lines.push("Curation: update_view, write_data");
+    lines.push("Curation: update_view, write_data, touch_node");
     lines.push("Shell: reveal_in_explorer, open_in_editor, speak_text");
   }
   return lines.join("\n");
@@ -46303,6 +46315,7 @@ SECTIONS:
 - recentNodes: recently modified nodes across all workspaces (capped by limit, sorted most-recent-first)
 - actionItems: open proposals + tensions needing human attention
 - annotations: agent signals within the requested timeframe (today by default)
+- messages: pending messages from the browser UI (submitted via Cmd+click on nodes)
 - health: graph coherence anomalies \u2014 orphaned node directories, dangling edges (only shown when issues exist)
 
 RETURNS: Each section includes graphPath for navigation \u2014 pass it to read_graph or read_node to drill deeper.
@@ -46556,7 +46569,7 @@ RETURNS: Array of matches, each with id, title, type, status, graphPath, and edg
 Filters: optional type and status filters narrow results.`,
     {
       query: external_exports.string().describe("Search term \u2014 matched against node ID and title (case-insensitive substring)"),
-      type: external_exports.string().optional().describe("Filter by node type (e.g., 'concept', 'navigator')"),
+      type: external_exports.string().optional().describe("Filter by node type (e.g., 'concept', 'deck', 'reference')"),
       status: external_exports.string().optional().describe("Filter by node status (e.g., 'active', 'composted')")
     },
     async ({ query, type, status }) => {
@@ -46569,6 +46582,50 @@ Filters: optional type and status filters narrow results.`,
           }
         ]
       };
+    }
+  );
+  server.tool(
+    "get_viewer_link",
+    `Return a scoped viewer URL for a workspace or node \u2014 without loading node contents.
+
+WHEN TO USE:
+- User asks "show me the link" or "open this in the viewer"
+- You need a URL to reference in a response
+- Any time you want a viewer link but don't need the node's story, content, or neighborhood
+
+WHY THIS EXISTS:
+read_node returns _links alongside full node content. When you only need the URL, that's wasted work \u2014 story, content files, annotations, and neighborhood are loaded and discarded. This tool builds the same scoped URL (with ?at, ?highlight, ?section query params) at near-zero cost.
+
+RETURNS: { url: string } \u2014 the canonical viewer deeplink. Use it directly in responses: [title](url)
+
+EXAMPLES:
+- get_viewer_link() \u2192 root workspace graph view
+- get_viewer_link({ graphPath: "qinolabs-repo" }) \u2192 workspace graph view
+- get_viewer_link({ graphPath: "qinolabs-repo", nodeId: "my-node" }) \u2192 node deeplink
+- get_viewer_link({ graphPath: "qinolabs-repo", nodeId: "my-node", section: "annotations" }) \u2192 node with section anchor`,
+    {
+      graphPath: external_exports.string().optional().describe(GRAPH_PATH_GRAPH),
+      nodeId: external_exports.string().optional().describe("Node identifier. Omit for a graph-level URL; provide for a node deeplink."),
+      section: external_exports.string().optional().describe("Section anchor for node deeplinks (e.g., 'annotations', 'content').")
+    },
+    async ({ graphPath, nodeId, section }) => {
+      try {
+        const result = await ops.getViewerLink({ graphPath, nodeId, section });
+        return {
+          content: [
+            {
+              type: "text",
+              text: JSON.stringify(result, null, 2)
+            }
+          ]
+        };
+      } catch (err) {
+        const message = err instanceof Error ? err.message : "Unknown error";
+        return {
+          content: [{ type: "text", text: message }],
+          isError: true
+        };
+      }
     }
   );
   server.tool(
@@ -47336,6 +47393,14 @@ function createDirectOps(workspaceDir2, _repoRoot, baseUrl, knownWorkspaces, wat
       const _links = buildNodeLinks(deeplinkConfig, graphPath, nodeId, knownWorkspaces);
       return { ...node2, _links };
     },
+    getViewerLink: async ({ graphPath, nodeId, section }) => {
+      const { workspace, at } = parseGraphPath(graphPath, knownWorkspaces);
+      if (!workspace) {
+        throw new Error("Cannot resolve workspace from graphPath");
+      }
+      const url = nodeId ? buildNodeDeeplink(deeplinkConfig, { workspace, nodeId, at, section }) : buildGraphDeeplink(deeplinkConfig, { workspace, at });
+      return { url };
+    },
     readNodeFingerprint: async (nodeId, graphPath) => {
       return readNodeFingerprint(resolveGraphDir(graphPath), nodeId, graphPath);
     },
@@ -47586,6 +47651,14 @@ function createHttpOps(apiUrl) {
         )
       );
       if (res.status === 404) return null;
+      return handleResponse(res);
+    },
+    getViewerLink: async ({ graphPath, nodeId, section }) => {
+      const params = {};
+      if (graphPath) params["path"] = graphPath;
+      if (nodeId) params["nodeId"] = nodeId;
+      if (section) params["section"] = section;
+      const res = await fetch(buildUrl("/api/viewer-link", params));
       return handleResponse(res);
     },
     searchNodes: async (args) => {

@@ -10,6 +10,30 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [3.5.0] - 2026-04-12
+
+### qino
+
+A bundled-server release carrying two qino-os improvements that landed in `qinolabs-repo` since the v3.4.0 sync (iterations 37 + inline-index fix).
+
+#### Added
+
+- **`get_viewer_link` tool** — a cheap MCP tool that builds scoped viewer deeplinks without loading node contents. One tool call instead of three for "show me the link" requests. Useful for agents that want to hand the user a viewer URL without paying the cost of `read_node`.
+
+#### Changed
+
+- **MCP instructions audit** — drop false `search_nodes` `_links` claim, remove redundant Links section, complete the Tools list (6 tools were missing from the documentation section), ungate "search_nodes before grep" guidance for reader mode, document the messages section in `read_activity`, replace retired navigator example type.
+- **Inline index previews sorted by recency** — the node detail page's inline index now sorts the combined file list by mtime so recently-edited unnumbered notes surface ahead of stale numbered files. The full index dialog still groups by ordered/unordered for taxonomy browsing.
+
+### Graph
+
+#### Added
+
+- **`knowledge-layers` reference node** — tracks the 2026-04-08 memory-to-graph principle promotion audit. Six edges to destination nodes where principles were placed (dialogue-quality, agentic-substrate-inquiry, docs, evaluation-loop, metalogue-writing-pipeline, ecosystem-design-principles).
+- **Annotation on `qino-os-mcp-frictions`** — documents the viewer link friction pattern where agents need a full `read_node` call just to get a URL, motivating the `get_viewer_link` tool above.
+
+---
+
 ## [3.4.0] - 2026-04-09
 
 ### cf-monorepo-base
