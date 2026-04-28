@@ -18,6 +18,11 @@ description: |
   ACTIVATE for setup:
   - "/qino setup", "set up qino", "initialize workspace"
 
+  ACTIVATE for qino-practice briefing:
+  - "compose a briefing", "morning briefing", "today's briefing", "tomorrow's briefing"
+  - "/qino brief", "/qino briefing"
+  - "what's the briefing", "prepare for tomorrow", "compose tomorrow's reading"
+
   ACTIVATE when in a qino workspace (has `.claude/qino-config.json`).
 ---
 
@@ -77,7 +82,17 @@ Build workflows involve heavy file reading, code changes, and scaffolding. They 
 
 Os agent reads `workflows/setup.md` and `references/workspaces.md`, then facilitates the conversational onboarding in the main thread.
 
-### 3. Everything else → os agent (inject mode)
+### 3. Briefing intent → spawn `qino:brief`
+
+**Signals:** "compose a briefing", "morning briefing", "today's briefing", "tomorrow's briefing", "/qino brief", "/qino briefing", "what's the briefing", "prepare for tomorrow", "compose tomorrow's reading".
+
+| Intent | Workflow |
+|--------|----------|
+| Compose today's or tomorrow's briefing | `workflows/briefing.md` |
+
+The brief agent composes a single-screen morning briefing for the qino-practice — pre-resolves the day's reading into a form that survives mobile attention. Spawned as an isolated subagent. Writes the file to `qinolabs-repo/implementations/qino-practice/briefings/YYYY-MM-DD.md` and stages (does not commit) — practitioner reviews before committing.
+
+### 4. Everything else → os agent (inject mode)
 
 The os agent handles all graph work through MCP tools and persona principles:
 
@@ -101,8 +116,9 @@ No workflow file needed. The agent reads the graph and responds. Dialogue happen
 |-------|---------------|------|
 | OS Agent | `qino:os` | inject (main conversation) |
 | Build Agent | `qino:build` | spawn (isolated subagent) |
+| Brief Agent | `qino:brief` | spawn (isolated subagent) |
 
-Agent definitions: `agents/os.md`, `agents/build.md`, `agents/protocol-structure.md`
+Agent definitions: `agents/os.md`, `agents/build.md`, `agents/protocol-structure.md`, `agents/brief.md`
 
 ---
 
