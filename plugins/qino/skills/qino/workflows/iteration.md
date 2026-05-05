@@ -8,6 +8,7 @@
 - `references/build/repo-conventions.md` — Implementation repo structure patterns
 - `references/build/home-pattern.md` — Arrival pattern for generated commands
 - `references/build/template-guidance.md` — How to capture learnings through colocation
+- `references/build/disciplines.md` — Numbered iteration disciplines (1, 2, 3, 5-9, 11-19) for refactor / compression / extraction iterations. Cite by number when the practice fires.
 
 ---
 

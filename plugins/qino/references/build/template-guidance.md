@@ -6,6 +6,14 @@ How to use iteration and implementation templates to capture learnings through c
 
 **Learnings live where work happens** - no separate systems to maintain.
 
+## Two iteration shapes
+
+The official `iteration-template.md` (Scope / Goals / Test / Status / Technical Decisions / Learnings) covers **feature iterations** — building a new capability, checking off goals, capturing what shifted.
+
+**Refactor / compression / extraction iterations** (where byte-equivalence and grep-driven gates carry the work) typically grow toward a richer shape with: Stage 0 baselines, Premise-check, numbered Stages with explicit gate criteria, numbered Disciplines, Closure log table with pre/post deltas, Forward pointer. This shape emerged through the qino-world iter 100+ refactor arc — see `disciplines.md` for the numbered practices it invokes (1, 2, 3, 5-9, 11-19), and the iter 113-116 archive at `qinolabs-repo/implementations/qino-world/content/` for mature exemplars (iter 116 is the most recent).
+
+The richer shape is descriptive, not prescriptive — let the work earn the structure. A small refactor doesn't need 19 disciplines invoked; a multi-stage compression iteration earns them.
+
 ## Iteration Template Usage
 
 ### When to Use
