@@ -51,5 +51,28 @@
       "context": "These frictions were discovered while testing workspace setup during the gesture review session",
       "created": "2026-04-06"
     }
+  ],
+  "nodes": [
+    {
+      "id": "gesture-review",
+      "title": "Gesture Review",
+      "type": "reference",
+      "status": "active",
+      "dir": "gesture-review"
+    },
+    {
+      "id": "knowledge-layers",
+      "title": "Knowledge Layers — Memory, Concepts, Rules, and Durable Knowledge",
+      "type": "reference",
+      "status": "active",
+      "dir": "knowledge-layers"
+    },
+    {
+      "id": "qino-os-mcp-frictions",
+      "title": "qino-os MCP Frictions",
+      "type": "reference",
+      "status": "active",
+      "dir": "qino-os-mcp-frictions"
+    }
   ]
 }
