@@ -3222,8 +3222,8 @@ var require_utils = __commonJS({
       }
       return ind;
     }
-    function removeDotSegments(path6) {
-      let input = path6;
+    function removeDotSegments(path7) {
+      let input = path7;
       const output = [];
       let nextSlash = -1;
       let len = 0;
@@ -3422,8 +3422,8 @@ var require_schemes = __commonJS({
         wsComponent.secure = void 0;
       }
       if (wsComponent.resourceName) {
-        const [path6, query] = wsComponent.resourceName.split("?");
-        wsComponent.path = path6 && path6 !== "/" ? path6 : void 0;
+        const [path7, query] = wsComponent.resourceName.split("?");
+        wsComponent.path = path7 && path7 !== "/" ? path7 : void 0;
         wsComponent.query = query;
         wsComponent.resourceName = void 0;
       }
@@ -12480,12 +12480,12 @@ var require_dist = __commonJS({
         throw new Error(`Unknown format "${name}"`);
       return f;
     };
-    function addFormats(ajv, list4, fs5, exportName) {
+    function addFormats(ajv, list4, fs6, exportName) {
       var _a;
       var _b;
       (_a = (_b = ajv.opts.code).formats) !== null && _a !== void 0 ? _a : _b.formats = (0, codegen_1._)`require("ajv-formats/dist/formats").${exportName}`;
       for (const f of list4)
-        ajv.addFormat(f, fs5[f]);
+        ajv.addFormat(f, fs6[f]);
     }
     module.exports = exports = formatsPlugin;
     Object.defineProperty(exports, "__esModule", { value: true });
@@ -12585,7 +12585,7 @@ var require_extend = __commonJS({
 });
 
 // src/server/index.ts
-import path5 from "path";
+import path6 from "path";
 import { fileURLToPath as fileURLToPath2 } from "url";
 
 // ../../node_modules/zod/v3/external.js
@@ -13066,8 +13066,8 @@ function getErrorMap() {
 
 // ../../node_modules/zod/v3/helpers/parseUtil.js
 var makeIssue = (params) => {
-  const { data, path: path6, errorMaps, issueData } = params;
-  const fullPath = [...path6, ...issueData.path || []];
+  const { data, path: path7, errorMaps, issueData } = params;
+  const fullPath = [...path7, ...issueData.path || []];
   const fullIssue = {
     ...issueData,
     path: fullPath
@@ -13183,11 +13183,11 @@ var errorUtil;
 
 // ../../node_modules/zod/v3/types.js
 var ParseInputLazyPath = class {
-  constructor(parent, value, path6, key) {
+  constructor(parent, value, path7, key) {
     this._cachedPath = [];
     this.parent = parent;
     this.data = value;
-    this._path = path6;
+    this._path = path7;
     this._key = key;
   }
   get path() {
@@ -16824,10 +16824,10 @@ function assignProp(target, prop, value) {
     configurable: true
   });
 }
-function getElementAtPath(obj, path6) {
-  if (!path6)
+function getElementAtPath(obj, path7) {
+  if (!path7)
     return obj;
-  return path6.reduce((acc, key) => acc?.[key], obj);
+  return path7.reduce((acc, key) => acc?.[key], obj);
 }
 function promiseAllObject(promisesObj) {
   const keys = Object.keys(promisesObj);
@@ -17147,11 +17147,11 @@ function aborted(x, startIndex = 0) {
   }
   return false;
 }
-function prefixIssues(path6, issues) {
+function prefixIssues(path7, issues) {
   return issues.map((iss) => {
     var _a;
     (_a = iss).path ?? (_a.path = []);
-    iss.path.unshift(path6);
+    iss.path.unshift(path7);
     return iss;
   });
 }
@@ -28024,7 +28024,7 @@ var serve = (options, listeningListener) => {
 };
 
 // src/server/http-api.ts
-import fs2 from "fs/promises";
+import fs3 from "fs/promises";
 import nodePath from "path";
 
 // ../../node_modules/hono/dist/compose.js
@@ -28147,26 +28147,26 @@ var handleParsingNestedValues = (form, key, value) => {
 };
 
 // ../../node_modules/hono/dist/utils/url.js
-var splitPath = (path6) => {
-  const paths = path6.split("/");
+var splitPath = (path7) => {
+  const paths = path7.split("/");
   if (paths[0] === "") {
     paths.shift();
   }
   return paths;
 };
 var splitRoutingPath = (routePath) => {
-  const { groups, path: path6 } = extractGroupsFromPath(routePath);
-  const paths = splitPath(path6);
+  const { groups, path: path7 } = extractGroupsFromPath(routePath);
+  const paths = splitPath(path7);
   return replaceGroupMarks(paths, groups);
 };
-var extractGroupsFromPath = (path6) => {
+var extractGroupsFromPath = (path7) => {
   const groups = [];
-  path6 = path6.replace(/\{[^}]+\}/g, (match2, index2) => {
+  path7 = path7.replace(/\{[^}]+\}/g, (match2, index2) => {
     const mark = `@${index2}`;
     groups.push([mark, match2]);
     return mark;
   });
-  return { groups, path: path6 };
+  return { groups, path: path7 };
 };
 var replaceGroupMarks = (paths, groups) => {
   for (let i = groups.length - 1; i >= 0; i--) {
@@ -28223,8 +28223,8 @@ var getPath = (request) => {
       const queryIndex = url.indexOf("?", i);
       const hashIndex = url.indexOf("#", i);
       const end = queryIndex === -1 ? hashIndex === -1 ? void 0 : hashIndex : hashIndex === -1 ? queryIndex : Math.min(queryIndex, hashIndex);
-      const path6 = url.slice(start, end);
-      return tryDecodeURI(path6.includes("%25") ? path6.replace(/%25/g, "%2525") : path6);
+      const path7 = url.slice(start, end);
+      return tryDecodeURI(path7.includes("%25") ? path7.replace(/%25/g, "%2525") : path7);
     } else if (charCode === 63 || charCode === 35) {
       break;
     }
@@ -28241,11 +28241,11 @@ var mergePath = (base, sub, ...rest) => {
   }
   return `${base?.[0] === "/" ? "" : "/"}${base}${sub === "/" ? "" : `${base?.at(-1) === "/" ? "" : "/"}${sub?.[0] === "/" ? sub.slice(1) : sub}`}`;
 };
-var checkOptionalParameter = (path6) => {
-  if (path6.charCodeAt(path6.length - 1) !== 63 || !path6.includes(":")) {
+var checkOptionalParameter = (path7) => {
+  if (path7.charCodeAt(path7.length - 1) !== 63 || !path7.includes(":")) {
     return null;
   }
-  const segments = path6.split("/");
+  const segments = path7.split("/");
   const results = [];
   let basePath = "";
   segments.forEach((segment) => {
@@ -28386,9 +28386,9 @@ var HonoRequest = class {
    */
   path;
   bodyCache = {};
-  constructor(request, path6 = "/", matchResult = [[]]) {
+  constructor(request, path7 = "/", matchResult = [[]]) {
     this.raw = request;
-    this.path = path6;
+    this.path = path7;
     this.#matchResult = matchResult;
     this.#validatedData = {};
   }
@@ -29125,8 +29125,8 @@ var Hono = class _Hono {
         return this;
       };
     });
-    this.on = (method, path6, ...handlers) => {
-      for (const p of [path6].flat()) {
+    this.on = (method, path7, ...handlers) => {
+      for (const p of [path7].flat()) {
         this.#path = p;
         for (const m of [method].flat()) {
           handlers.map((handler) => {
@@ -29183,8 +29183,8 @@ var Hono = class _Hono {
    * app.route("/api", app2) // GET /api/user
    * ```
    */
-  route(path6, app) {
-    const subApp = this.basePath(path6);
+  route(path7, app) {
+    const subApp = this.basePath(path7);
     app.routes.map((r) => {
       let handler;
       if (app.errorHandler === errorHandler) {
@@ -29210,9 +29210,9 @@ var Hono = class _Hono {
    * const api = new Hono().basePath('/api')
    * ```
    */
-  basePath(path6) {
+  basePath(path7) {
     const subApp = this.#clone();
-    subApp._basePath = mergePath(this._basePath, path6);
+    subApp._basePath = mergePath(this._basePath, path7);
     return subApp;
   }
   /**
@@ -29286,7 +29286,7 @@ var Hono = class _Hono {
    * })
    * ```
    */
-  mount(path6, applicationHandler, options) {
+  mount(path7, applicationHandler, options) {
     let replaceRequest;
     let optionHandler;
     if (options) {
@@ -29313,7 +29313,7 @@ var Hono = class _Hono {
       return [c.env, executionContext];
     };
     replaceRequest ||= (() => {
-      const mergedPath = mergePath(this._basePath, path6);
+      const mergedPath = mergePath(this._basePath, path7);
       const pathPrefixLength = mergedPath === "/" ? 0 : mergedPath.length;
       return (request) => {
         const url = new URL(request.url);
@@ -29328,14 +29328,14 @@ var Hono = class _Hono {
       }
       await next();
     };
-    this.#addRoute(METHOD_NAME_ALL, mergePath(path6, "*"), handler);
+    this.#addRoute(METHOD_NAME_ALL, mergePath(path7, "*"), handler);
     return this;
   }
-  #addRoute(method, path6, handler) {
+  #addRoute(method, path7, handler) {
     method = method.toUpperCase();
-    path6 = mergePath(this._basePath, path6);
-    const r = { basePath: this._basePath, path: path6, method, handler };
-    this.router.add(method, path6, [handler, r]);
+    path7 = mergePath(this._basePath, path7);
+    const r = { basePath: this._basePath, path: path7, method, handler };
+    this.router.add(method, path7, [handler, r]);
     this.routes.push(r);
   }
   #handleError(err, c) {
@@ -29348,10 +29348,10 @@ var Hono = class _Hono {
     if (method === "HEAD") {
       return (async () => new Response(null, await this.#dispatch(request, executionCtx, env, "GET")))();
     }
-    const path6 = this.getPath(request, { env });
-    const matchResult = this.router.match(method, path6);
+    const path7 = this.getPath(request, { env });
+    const matchResult = this.router.match(method, path7);
     const c = new Context(request, {
-      path: path6,
+      path: path7,
       matchResult,
       env,
       executionCtx,
@@ -29451,7 +29451,7 @@ var Hono = class _Hono {
 
 // ../../node_modules/hono/dist/router/reg-exp-router/matcher.js
 var emptyParam = [];
-function match(method, path6) {
+function match(method, path7) {
   const matchers = this.buildAllMatchers();
   const match2 = ((method2, path22) => {
     const matcher = matchers[method2] || matchers[METHOD_NAME_ALL];
@@ -29467,7 +29467,7 @@ function match(method, path6) {
     return [matcher[1][index2], match3];
   });
   this.match = match2;
-  return match2(method, path6);
+  return match2(method, path7);
 }
 
 // ../../node_modules/hono/dist/router/reg-exp-router/node.js
@@ -29582,12 +29582,12 @@ var Node = class _Node {
 var Trie = class {
   #context = { varIndex: 0 };
   #root = new Node();
-  insert(path6, index2, pathErrorCheckOnly) {
+  insert(path7, index2, pathErrorCheckOnly) {
     const paramAssoc = [];
     const groups = [];
     for (let i = 0; ; ) {
       let replaced = false;
-      path6 = path6.replace(/\{[^}]+\}/g, (m) => {
+      path7 = path7.replace(/\{[^}]+\}/g, (m) => {
         const mark = `@\\${i}`;
         groups[i] = [mark, m];
         i++;
@@ -29598,7 +29598,7 @@ var Trie = class {
         break;
       }
     }
-    const tokens = path6.match(/(?::[^\/]+)|(?:\/\*$)|./g) || [];
+    const tokens = path7.match(/(?::[^\/]+)|(?:\/\*$)|./g) || [];
     for (let i = groups.length - 1; i >= 0; i--) {
       const [mark] = groups[i];
       for (let j = tokens.length - 1; j >= 0; j--) {
@@ -29637,9 +29637,9 @@ var Trie = class {
 // ../../node_modules/hono/dist/router/reg-exp-router/router.js
 var nullMatcher = [/^$/, [], /* @__PURE__ */ Object.create(null)];
 var wildcardRegExpCache = /* @__PURE__ */ Object.create(null);
-function buildWildcardRegExp(path6) {
-  return wildcardRegExpCache[path6] ??= new RegExp(
-    path6 === "*" ? "" : `^${path6.replace(
+function buildWildcardRegExp(path7) {
+  return wildcardRegExpCache[path7] ??= new RegExp(
+    path7 === "*" ? "" : `^${path7.replace(
       /\/\*$|([.\\+*[^\]$()])/g,
       (_, metaChar) => metaChar ? `\\${metaChar}` : "(?:|/.*)"
     )}$`
@@ -29661,17 +29661,17 @@ function buildMatcherFromPreprocessedRoutes(routes) {
   );
   const staticMap = /* @__PURE__ */ Object.create(null);
   for (let i = 0, j = -1, len = routesWithStaticPathFlag.length; i < len; i++) {
-    const [pathErrorCheckOnly, path6, handlers] = routesWithStaticPathFlag[i];
+    const [pathErrorCheckOnly, path7, handlers] = routesWithStaticPathFlag[i];
     if (pathErrorCheckOnly) {
-      staticMap[path6] = [handlers.map(([h]) => [h, /* @__PURE__ */ Object.create(null)]), emptyParam];
+      staticMap[path7] = [handlers.map(([h]) => [h, /* @__PURE__ */ Object.create(null)]), emptyParam];
     } else {
       j++;
     }
     let paramAssoc;
     try {
-      paramAssoc = trie.insert(path6, j, pathErrorCheckOnly);
+      paramAssoc = trie.insert(path7, j, pathErrorCheckOnly);
     } catch (e) {
-      throw e === PATH_ERROR ? new UnsupportedPathError(path6) : e;
+      throw e === PATH_ERROR ? new UnsupportedPathError(path7) : e;
     }
     if (pathErrorCheckOnly) {
       continue;
@@ -29705,12 +29705,12 @@ function buildMatcherFromPreprocessedRoutes(routes) {
   }
   return [regexp, handlerMap, staticMap];
 }
-function findMiddleware(middleware, path6) {
+function findMiddleware(middleware, path7) {
   if (!middleware) {
     return void 0;
   }
   for (const k of Object.keys(middleware).sort((a, b) => b.length - a.length)) {
-    if (buildWildcardRegExp(k).test(path6)) {
+    if (buildWildcardRegExp(k).test(path7)) {
       return [...middleware[k]];
     }
   }
@@ -29724,7 +29724,7 @@ var RegExpRouter = class {
     this.#middleware = { [METHOD_NAME_ALL]: /* @__PURE__ */ Object.create(null) };
     this.#routes = { [METHOD_NAME_ALL]: /* @__PURE__ */ Object.create(null) };
   }
-  add(method, path6, handler) {
+  add(method, path7, handler) {
     const middleware = this.#middleware;
     const routes = this.#routes;
     if (!middleware || !routes) {
@@ -29739,18 +29739,18 @@ var RegExpRouter = class {
         });
       });
     }
-    if (path6 === "/*") {
-      path6 = "*";
+    if (path7 === "/*") {
+      path7 = "*";
     }
-    const paramCount = (path6.match(/\/:/g) || []).length;
-    if (/\*$/.test(path6)) {
-      const re = buildWildcardRegExp(path6);
+    const paramCount = (path7.match(/\/:/g) || []).length;
+    if (/\*$/.test(path7)) {
+      const re = buildWildcardRegExp(path7);
       if (method === METHOD_NAME_ALL) {
         Object.keys(middleware).forEach((m) => {
-          middleware[m][path6] ||= findMiddleware(middleware[m], path6) || findMiddleware(middleware[METHOD_NAME_ALL], path6) || [];
+          middleware[m][path7] ||= findMiddleware(middleware[m], path7) || findMiddleware(middleware[METHOD_NAME_ALL], path7) || [];
         });
       } else {
-        middleware[method][path6] ||= findMiddleware(middleware[method], path6) || findMiddleware(middleware[METHOD_NAME_ALL], path6) || [];
+        middleware[method][path7] ||= findMiddleware(middleware[method], path7) || findMiddleware(middleware[METHOD_NAME_ALL], path7) || [];
       }
       Object.keys(middleware).forEach((m) => {
         if (method === METHOD_NAME_ALL || method === m) {
@@ -29768,7 +29768,7 @@ var RegExpRouter = class {
       });
       return;
     }
-    const paths = checkOptionalParameter(path6) || [path6];
+    const paths = checkOptionalParameter(path7) || [path7];
     for (let i = 0, len = paths.length; i < len; i++) {
       const path22 = paths[i];
       Object.keys(routes).forEach((m) => {
@@ -29795,13 +29795,13 @@ var RegExpRouter = class {
     const routes = [];
     let hasOwnRoute = method === METHOD_NAME_ALL;
     [this.#middleware, this.#routes].forEach((r) => {
-      const ownRoute = r[method] ? Object.keys(r[method]).map((path6) => [path6, r[method][path6]]) : [];
+      const ownRoute = r[method] ? Object.keys(r[method]).map((path7) => [path7, r[method][path7]]) : [];
       if (ownRoute.length !== 0) {
         hasOwnRoute ||= true;
         routes.push(...ownRoute);
       } else if (method !== METHOD_NAME_ALL) {
         routes.push(
-          ...Object.keys(r[METHOD_NAME_ALL]).map((path6) => [path6, r[METHOD_NAME_ALL][path6]])
+          ...Object.keys(r[METHOD_NAME_ALL]).map((path7) => [path7, r[METHOD_NAME_ALL][path7]])
         );
       }
     });
@@ -29821,13 +29821,13 @@ var SmartRouter = class {
   constructor(init) {
     this.#routers = init.routers;
   }
-  add(method, path6, handler) {
+  add(method, path7, handler) {
     if (!this.#routes) {
       throw new Error(MESSAGE_MATCHER_IS_ALREADY_BUILT);
     }
-    this.#routes.push([method, path6, handler]);
+    this.#routes.push([method, path7, handler]);
   }
-  match(method, path6) {
+  match(method, path7) {
     if (!this.#routes) {
       throw new Error("Fatal error");
     }
@@ -29842,7 +29842,7 @@ var SmartRouter = class {
         for (let i2 = 0, len2 = routes.length; i2 < len2; i2++) {
           router.add(...routes[i2]);
         }
-        res = router.match(method, path6);
+        res = router.match(method, path7);
       } catch (e) {
         if (e instanceof UnsupportedPathError) {
           continue;
@@ -29892,10 +29892,10 @@ var Node2 = class _Node2 {
     }
     this.#patterns = [];
   }
-  insert(method, path6, handler) {
+  insert(method, path7, handler) {
     this.#order = ++this.#order;
     let curNode = this;
-    const parts = splitRoutingPath(path6);
+    const parts = splitRoutingPath(path7);
     const possibleKeys = [];
     for (let i = 0, len = parts.length; i < len; i++) {
       const p = parts[i];
@@ -29944,12 +29944,12 @@ var Node2 = class _Node2 {
       }
     }
   }
-  search(method, path6) {
+  search(method, path7) {
     const handlerSets = [];
     this.#params = emptyParams;
     const curNode = this;
     let curNodes = [curNode];
-    const parts = splitPath(path6);
+    const parts = splitPath(path7);
     const curNodesQueue = [];
     const len = parts.length;
     let partOffsets = null;
@@ -29991,13 +29991,13 @@ var Node2 = class _Node2 {
           if (matcher instanceof RegExp) {
             if (partOffsets === null) {
               partOffsets = new Array(len);
-              let offset = path6[0] === "/" ? 1 : 0;
+              let offset = path7[0] === "/" ? 1 : 0;
               for (let p = 0; p < len; p++) {
                 partOffsets[p] = offset;
                 offset += parts[p].length + 1;
               }
             }
-            const restPathString = path6.substring(partOffsets[i]);
+            const restPathString = path7.substring(partOffsets[i]);
             const m = matcher.exec(restPathString);
             if (m) {
               params[name] = m[0];
@@ -30050,18 +30050,18 @@ var TrieRouter = class {
   constructor() {
     this.#node = new Node2();
   }
-  add(method, path6, handler) {
-    const results = checkOptionalParameter(path6);
+  add(method, path7, handler) {
+    const results = checkOptionalParameter(path7);
     if (results) {
       for (let i = 0, len = results.length; i < len; i++) {
         this.#node.insert(method, results[i], handler);
       }
       return;
     }
-    this.#node.insert(method, path6, handler);
+    this.#node.insert(method, path7, handler);
   }
-  match(method, path6) {
-    return this.#node.search(method, path6);
+  match(method, path7) {
+    return this.#node.search(method, path7);
   }
 };
 
@@ -30319,8 +30319,8 @@ var streamSSE = (c, cb, onError) => {
 
 // src/server/protocol-reader.ts
 import { execFile } from "child_process";
-import fs from "fs/promises";
-import path from "path";
+import fs2 from "fs/promises";
+import path2 from "path";
 import { promisify } from "util";
 
 // src/server/revision.ts
@@ -30339,6 +30339,99 @@ function canonicalStringify(value) {
 }
 function sha256Hex(text6) {
   return createHash("sha256").update(text6, "utf-8").digest("hex");
+}
+
+// src/server/git-quiescence.ts
+import fs from "fs/promises";
+import path from "path";
+var DEFAULT_GIT_QUIESCENCE_MS = 2e3;
+var gitDirCache = /* @__PURE__ */ new Map();
+function getQuiescenceWindowMs() {
+  const raw2 = process.env.QINO_GIT_QUIESCENCE_MS;
+  if (!raw2) return DEFAULT_GIT_QUIESCENCE_MS;
+  const parsed = Number.parseInt(raw2, 10);
+  return Number.isFinite(parsed) && parsed >= 0 ? parsed : DEFAULT_GIT_QUIESCENCE_MS;
+}
+async function pathExists(p) {
+  try {
+    await fs.access(p);
+    return true;
+  } catch {
+    return false;
+  }
+}
+async function resolveGitFile(gitFilePath, containingDir) {
+  try {
+    const raw2 = await fs.readFile(gitFilePath, "utf-8");
+    const match2 = raw2.match(/^gitdir:\s*(.+)$/m);
+    const target = match2?.[1]?.trim();
+    if (!target) return null;
+    return path.isAbsolute(target) ? target : path.resolve(containingDir, target);
+  } catch {
+    return null;
+  }
+}
+async function findGitDir(startDir) {
+  const cached2 = gitDirCache.get(startDir);
+  if (cached2 !== void 0) return cached2;
+  let current = path.resolve(startDir);
+  const root2 = path.parse(current).root;
+  while (true) {
+    const candidate = path.join(current, ".git");
+    try {
+      const stat = await fs.stat(candidate);
+      if (stat.isDirectory()) {
+        gitDirCache.set(startDir, candidate);
+        return candidate;
+      }
+      if (stat.isFile()) {
+        const resolved = await resolveGitFile(candidate, current);
+        gitDirCache.set(startDir, resolved);
+        return resolved;
+      }
+    } catch {
+    }
+    if (current === root2) break;
+    const parent = path.dirname(current);
+    if (parent === current) break;
+    current = parent;
+  }
+  gitDirCache.set(startDir, null);
+  return null;
+}
+async function recentMtime(p, withinMs) {
+  try {
+    const stat = await fs.stat(p);
+    return Date.now() - stat.mtimeMs < withinMs;
+  } catch {
+    return false;
+  }
+}
+async function isGitQuiescent(startDir) {
+  const gitDir = await findGitDir(startDir);
+  if (!gitDir) return true;
+  const stateFiles = [
+    "index.lock",
+    "MERGE_HEAD",
+    "CHERRY_PICK_HEAD",
+    "REBASE_HEAD",
+    "REVERT_HEAD"
+  ];
+  for (const name of stateFiles) {
+    if (await pathExists(path.join(gitDir, name))) return false;
+  }
+  const stateDirs = ["rebase-merge", "rebase-apply"];
+  for (const name of stateDirs) {
+    if (await pathExists(path.join(gitDir, name))) return false;
+  }
+  const window = getQuiescenceWindowMs();
+  if (window > 0) {
+    const recencyTargets = ["HEAD", "index", "ORIG_HEAD", "FETCH_HEAD"];
+    for (const name of recencyTargets) {
+      if (await recentMtime(path.join(gitDir, name), window)) return false;
+    }
+  }
+  return true;
 }
 
 // src/shared/protocol-time.ts
@@ -30397,7 +30490,7 @@ function throwNoGraphError(graphDir) {
 }
 async function readJsonFile(filePath) {
   try {
-    const raw2 = await fs.readFile(filePath, "utf-8");
+    const raw2 = await fs2.readFile(filePath, "utf-8");
     return JSON.parse(raw2);
   } catch {
     return null;
@@ -30405,7 +30498,7 @@ async function readJsonFile(filePath) {
 }
 async function fileExists(filePath) {
   try {
-    await fs.access(filePath);
+    await fs2.access(filePath);
     return true;
   } catch {
     return false;
@@ -30416,14 +30509,14 @@ function normalizeLlmEscapes(text6) {
 }
 async function readTextFile(filePath) {
   try {
-    return await fs.readFile(filePath, "utf-8");
+    return await fs2.readFile(filePath, "utf-8");
   } catch {
     return null;
   }
 }
 async function listDir(dirPath) {
   try {
-    return await fs.readdir(dirPath);
+    return await fs2.readdir(dirPath);
   } catch {
     return [];
   }
@@ -30464,7 +30557,7 @@ async function readAnnotationsFromDir(dirPath) {
   const mdFiles = files.filter((f) => f.endsWith(".md")).sort();
   const annotations = [];
   for (const file of mdFiles) {
-    const raw2 = await readTextFile(path.join(dirPath, file));
+    const raw2 = await readTextFile(path2.join(dirPath, file));
     if (!raw2) continue;
     const parsed = parseAnnotation(raw2);
     if (parsed) {
@@ -30488,7 +30581,7 @@ async function collectActionItems(annotationsDir, nodeId, nodeTitle, graphPath, 
     const preview = ann.content.split("\n").map((l) => l.trim()).find((l) => l.length > 0)?.slice(0, 120) ?? "";
     let modified;
     try {
-      const stat = await fs.stat(path.join(annotationsDir, ann.filename));
+      const stat = await fs2.stat(path2.join(annotationsDir, ann.filename));
       modified = stat.mtimeMs;
     } catch {
     }
@@ -30512,7 +30605,7 @@ async function collectActionItems(annotationsDir, nodeId, nodeTitle, graphPath, 
 async function collectDeepActionItems(graphDir, graphPath, workspaceName, maxDepth = 8) {
   if (maxDepth <= 0) return [];
   const graphData = await readJsonFile(
-    path.join(graphDir, "graph.json")
+    path2.join(graphDir, "graph.json")
   );
   if (!graphData) return [];
   const nodesDir = graphData.nodesDir ?? "nodes";
@@ -30520,10 +30613,10 @@ async function collectDeepActionItems(graphDir, graphPath, workspaceName, maxDep
   const items = [];
   for (const node2 of nodes) {
     if (node2.type === "arc") continue;
-    const nodeDir = path.join(graphDir, nodesDir, node2.dir);
+    const nodeDir = path2.join(graphDir, nodesDir, node2.dir);
     if (node2.type !== "navigator") {
       const annItems = await collectActionItems(
-        path.join(nodeDir, "annotations"),
+        path2.join(nodeDir, "annotations"),
         node2.id,
         node2.title,
         graphPath,
@@ -30543,7 +30636,7 @@ async function collectDeepActionItems(graphDir, graphPath, workspaceName, maxDep
         });
       }
     }
-    const hasSubGraph = await fileExists(path.join(nodeDir, "graph.json"));
+    const hasSubGraph = await fileExists(path2.join(nodeDir, "graph.json"));
     if (hasSubGraph) {
       const subGraphPath = `${graphPath}/${nodesDir}/${node2.dir}`;
       const subItems = await collectDeepActionItems(
@@ -30567,7 +30660,7 @@ async function collectAnnotationsForDate(annotationsDir, nodeId, nodeTitle, sinc
     const preview = ann.content.split("\n").map((l) => l.trim()).find((l) => l.length > 0)?.slice(0, 120) ?? "";
     let modified;
     try {
-      const stat = await fs.stat(path.join(annotationsDir, ann.filename));
+      const stat = await fs2.stat(path2.join(annotationsDir, ann.filename));
       modified = stat.mtimeMs;
     } catch {
     }
@@ -30593,7 +30686,7 @@ async function collectAnnotationsForDate(annotationsDir, nodeId, nodeTitle, sinc
 async function collectDeepAnnotationsForDate(graphDir, graphPath, workspaceName, sinceDate, maxDepth = 8) {
   if (maxDepth <= 0) return [];
   const graphData = await readJsonFile(
-    path.join(graphDir, "graph.json")
+    path2.join(graphDir, "graph.json")
   );
   if (!graphData) return [];
   const nodesDir = graphData.nodesDir ?? "nodes";
@@ -30601,9 +30694,9 @@ async function collectDeepAnnotationsForDate(graphDir, graphPath, workspaceName,
   const items = [];
   for (const node2 of nodes) {
     if (node2.type === "arc") continue;
-    const nodeDir = path.join(graphDir, nodesDir, node2.dir);
+    const nodeDir = path2.join(graphDir, nodesDir, node2.dir);
     const annItems = await collectAnnotationsForDate(
-      path.join(nodeDir, "annotations"),
+      path2.join(nodeDir, "annotations"),
       node2.id,
       node2.title,
       sinceDate,
@@ -30612,7 +30705,7 @@ async function collectDeepAnnotationsForDate(graphDir, graphPath, workspaceName,
       node2.type
     );
     items.push(...annItems);
-    const hasSubGraph = await fileExists(path.join(nodeDir, "graph.json"));
+    const hasSubGraph = await fileExists(path2.join(nodeDir, "graph.json"));
     if (hasSubGraph) {
       const subGraphPath = `${graphPath}/${nodesDir}/${node2.dir}`;
       const subItems = await collectDeepAnnotationsForDate(
@@ -30631,12 +30724,12 @@ async function readContentFiles(contentDir) {
   const files = await listDir(contentDir);
   const contentFiles = [];
   for (const filename of files.sort()) {
-    const filePath = path.join(contentDir, filename);
+    const filePath = path2.join(contentDir, filename);
     const content3 = await readTextFile(filePath);
     if (content3 !== null) {
       let modified;
       try {
-        const stat = await fs.stat(filePath);
+        const stat = await fs2.stat(filePath);
         modified = stat.mtimeMs;
       } catch {
       }
@@ -30651,7 +30744,7 @@ async function readDataFileIndex(dataDir) {
   for (const filename of files.sort()) {
     if (!filename.endsWith(".json")) continue;
     try {
-      const stat = await fs.stat(path.join(dataDir, filename));
+      const stat = await fs2.stat(path2.join(dataDir, filename));
       entries.push({ filename, size: stat.size });
     } catch {
     }
@@ -30707,7 +30800,7 @@ async function collectConnectedSignals(graphDir, graphData, nodeId, workspaceDir
       targetGraphDir = graphDir;
     }
     const targetGraph = await readJsonFile(
-      path.join(targetGraphDir, "graph.json")
+      path2.join(targetGraphDir, "graph.json")
     );
     if (!targetGraph) continue;
     const targetNode = (targetGraph.nodes ?? []).find((n) => n.id === parsed.nodeId);
@@ -30722,7 +30815,7 @@ async function collectConnectedSignals(graphDir, graphData, nodeId, workspaceDir
     );
     if (!targetNodeDir) continue;
     const annotations = await readAnnotationsFromDir(
-      path.join(targetNodeDir, "annotations")
+      path2.join(targetNodeDir, "annotations")
     );
     for (const ann of annotations) {
       if (!signalTypes.has(ann.meta.signal)) continue;
@@ -30775,7 +30868,7 @@ async function collectRecentSignals(graphDir, nodesDir, discoveredNodes, config2
   const cutoffIso = localDateString(cutoff);
   const signals = [];
   for (const node2 of discoveredNodes) {
-    const annotationsDir = path.join(graphDir, nodesDir, node2.dir, "annotations");
+    const annotationsDir = path2.join(graphDir, nodesDir, node2.dir, "annotations");
     const annotations = await readAnnotationsFromDir(annotationsDir);
     for (const ann of annotations) {
       if (!signalTypes.has(ann.meta.signal)) continue;
@@ -30808,7 +30901,7 @@ function findLastActualizationAnchor(annotations) {
 }
 async function collectSignalDots(nodeDir) {
   const annotations = await readAnnotationsFromDir(
-    path.join(nodeDir, "annotations")
+    path2.join(nodeDir, "annotations")
   );
   const anchor = findLastActualizationAnchor(annotations);
   const anchorCreated = anchor?.meta.created ?? null;
@@ -30824,65 +30917,97 @@ async function collectSignalDots(nodeDir) {
   return { dots, overflow, lastActualizedAt: anchorCreated };
 }
 function resolveWorkspaceRelativePath(graphDir, workspaceDir2, graphPath) {
-  return path.join(workspaceDir2, graphPath);
+  return path2.join(workspaceDir2, graphPath);
 }
 function resolveNodesDir(graphData) {
   return graphData.nodesDir ?? "nodes";
 }
 async function discoverNodes(graphDir, nodesDir) {
-  const nodesDirPath = path.join(graphDir, nodesDir);
+  const nodesDirPath = path2.join(graphDir, nodesDir);
   let entries;
   try {
-    entries = await fs.readdir(nodesDirPath);
+    entries = await fs2.readdir(nodesDirPath);
   } catch {
     return [];
   }
   const nodes = [];
   for (const entry of entries) {
-    const nodeJsonPath = path.join(nodesDirPath, entry, "node.json");
+    const nodeDir = path2.join(nodesDirPath, entry);
+    const nodeJsonPath = path2.join(nodeDir, "node.json");
     const identity = await readJsonFile(nodeJsonPath);
     if (!identity) continue;
+    const ownUpdated = typeof identity.updated === "string" ? identity.updated : void 0;
+    const subtreeUpdated = await computeSubtreeUpdated(nodeDir, ownUpdated);
     nodes.push({
       id: entry,
       dir: entry,
       title: identity.title,
       ...identity.type ? { type: identity.type } : {},
       ...identity.status ? { status: identity.status } : {},
-      ...identity.created ? { created: identity.created } : {}
+      ...identity.created ? { created: identity.created } : {},
+      ...ownUpdated ? { updated: ownUpdated } : {},
+      ...subtreeUpdated ? { subtreeUpdated } : {}
     });
   }
   return nodes.sort((a, b) => a.id.localeCompare(b.id));
 }
+async function computeSubtreeUpdated(nodeDir, ownUpdated) {
+  let maxUpdated = ownUpdated;
+  const subGraphPath = path2.join(nodeDir, "graph.json");
+  const subGraph = await readJsonFile(subGraphPath);
+  if (!subGraph) return maxUpdated;
+  const subNodesDir = resolveNodesDir(subGraph);
+  const subNodesDirPath = path2.join(nodeDir, subNodesDir);
+  let subEntries;
+  try {
+    subEntries = await fs2.readdir(subNodesDirPath);
+  } catch {
+    return maxUpdated;
+  }
+  for (const entry of subEntries) {
+    const childDir = path2.join(subNodesDirPath, entry);
+    const childIdentity = await readJsonFile(
+      path2.join(childDir, "node.json")
+    );
+    if (!childIdentity) continue;
+    const childOwn = typeof childIdentity.updated === "string" ? childIdentity.updated : void 0;
+    const childSubtree = await computeSubtreeUpdated(childDir, childOwn);
+    if (childSubtree && (!maxUpdated || childSubtree > maxUpdated)) {
+      maxUpdated = childSubtree;
+    }
+  }
+  return maxUpdated;
+}
 async function resolveNodeDir(graphDir, nodesDir, nodeId) {
-  const nodeDir = path.join(graphDir, nodesDir, nodeId);
+  const nodeDir = path2.join(graphDir, nodesDir, nodeId);
   const identity = await readJsonFile(
-    path.join(nodeDir, "node.json")
+    path2.join(nodeDir, "node.json")
   );
   return identity ? nodeDir : null;
 }
 async function resolveTargetPath(workspaceDir2, opts) {
-  const graphDir = opts.graphPath ? path.join(workspaceDir2, opts.graphPath) : workspaceDir2;
+  const graphDir = opts.graphPath ? path2.join(workspaceDir2, opts.graphPath) : workspaceDir2;
   if (!opts.nodeId) {
-    const target = opts.file ? path.join(graphDir, opts.file) : graphDir;
+    const target = opts.file ? path2.join(graphDir, opts.file) : graphDir;
     return await fileExists(opts.file ? graphDir : target) ? target : null;
   }
   const graphData = await readJsonFile(
-    path.join(graphDir, "graph.json")
+    path2.join(graphDir, "graph.json")
   );
   if (!graphData) return null;
   const nodesDir = resolveNodesDir(graphData);
   const nodeDir = await resolveNodeDir(graphDir, nodesDir, opts.nodeId);
   if (!nodeDir) return null;
-  return opts.file ? path.join(nodeDir, opts.file) : nodeDir;
+  return opts.file ? path2.join(nodeDir, opts.file) : nodeDir;
 }
 async function readConfig(workspaceDir2) {
   const config2 = await readJsonFile(
-    path.join(workspaceDir2, ".claude", "qino-config.json")
+    path2.join(workspaceDir2, ".claude", "qino-config.json")
   );
   return config2 ?? {};
 }
 async function updateConfig(workspaceDir2, updates) {
-  const configPath = path.join(workspaceDir2, ".claude", "qino-config.json");
+  const configPath = path2.join(workspaceDir2, ".claude", "qino-config.json");
   const existing = await readJsonFile(configPath) ?? {};
   const merged = { ...existing };
   for (const key of ["name", "color", "repoType", "landingTitle", "editor"]) {
@@ -30903,12 +31028,12 @@ async function updateConfig(workspaceDir2, updates) {
     const existingStatuses = existing.statuses ?? {};
     merged.statuses = { ...existingStatuses, ...updates.statuses };
   }
-  await fs.writeFile(configPath, JSON.stringify(merged, null, 2) + "\n", "utf-8");
+  await fs2.writeFile(configPath, JSON.stringify(merged, null, 2) + "\n", "utf-8");
   return { success: true, config: merged };
 }
 async function readGraph(graphDir, workspaceDir2) {
   const graphData = await readJsonFile(
-    path.join(graphDir, "graph.json")
+    path2.join(graphDir, "graph.json")
   );
   if (!graphData) {
     return null;
@@ -30918,12 +31043,12 @@ async function readGraph(graphDir, workspaceDir2) {
   const actionItems = [];
   const discoveredNodes = await discoverNodes(graphDir, nodesDir);
   for (const node2 of discoveredNodes) {
-    const nodeDir = path.join(graphDir, nodesDir, node2.dir);
+    const nodeDir = path2.join(graphDir, nodesDir, node2.dir);
     const mtime = await getNodeMtime(nodeDir);
     if (mtime) {
       node2.modified = mtime;
     }
-    const annotationsDir = path.join(nodeDir, "annotations");
+    const annotationsDir = path2.join(nodeDir, "annotations");
     const annotations = await readAnnotationsFromDir(annotationsDir);
     if (annotations.length > 0) {
       const signals = [...new Set(annotations.map((a) => a.meta.signal))];
@@ -30936,12 +31061,12 @@ async function readGraph(graphDir, workspaceDir2) {
     );
     actionItems.push(...nodeActionItems);
     try {
-      await fs.access(path.join(nodeDir, "graph.json"));
+      await fs2.access(path2.join(nodeDir, "graph.json"));
       node2.hasSubGraph = true;
     } catch {
     }
     try {
-      await fs.access(path.join(nodeDir, "view.json"));
+      await fs2.access(path2.join(nodeDir, "view.json"));
       node2.hasView = true;
     } catch {
     }
@@ -30979,8 +31104,8 @@ async function readNodeFromSubGraphs(graphDir, nodesDir, nodeId, subPath, worksp
   if (maxDepth <= 0) return null;
   const discoveredNodes = await discoverNodes(graphDir, nodesDir);
   for (const node2 of discoveredNodes) {
-    const nodeDir = path.join(graphDir, nodesDir, node2.dir);
-    const hasSubGraph = await fileExists(path.join(nodeDir, "graph.json"));
+    const nodeDir = path2.join(graphDir, nodesDir, node2.dir);
+    const hasSubGraph = await fileExists(path2.join(nodeDir, "graph.json"));
     if (!hasSubGraph) continue;
     const subGraphPath = subPath ? `${subPath}/${nodesDir}/${node2.dir}` : `${nodesDir}/${node2.dir}`;
     const result = await readNode(nodeDir, nodeId, subGraphPath, workspaceDir2);
@@ -30990,7 +31115,7 @@ async function readNodeFromSubGraphs(graphDir, nodesDir, nodeId, subPath, worksp
 }
 async function readNode(graphDir, nodeId, subPath, workspaceDir2) {
   const graphData = await readJsonFile(
-    path.join(graphDir, "graph.json")
+    path2.join(graphDir, "graph.json")
   );
   if (!graphData) {
     return null;
@@ -31009,20 +31134,20 @@ async function readNode(graphDir, nodeId, subPath, workspaceDir2) {
     return fallbackResult;
   }
   const [identity, story, view] = await Promise.all([
-    readJsonFile(path.join(nodeDir, "node.json")),
-    readTextFile(path.join(nodeDir, "story.md")),
-    readJsonFile(path.join(nodeDir, "view.json"))
+    readJsonFile(path2.join(nodeDir, "node.json")),
+    readTextFile(path2.join(nodeDir, "story.md")),
+    readJsonFile(path2.join(nodeDir, "view.json"))
   ]);
   const [contentFiles, dataFiles, modified] = await Promise.all([
-    readContentFiles(path.join(nodeDir, "content")),
-    readDataFileIndex(path.join(nodeDir, "data")),
+    readContentFiles(path2.join(nodeDir, "content")),
+    readDataFileIndex(path2.join(nodeDir, "data")),
     getNodeMtime(nodeDir)
   ]);
   const annotations = await readAnnotationsFromDir(
-    path.join(nodeDir, "annotations")
+    path2.join(nodeDir, "annotations")
   );
   const subGraph = await readJsonFile(
-    path.join(nodeDir, "graph.json")
+    path2.join(nodeDir, "graph.json")
   );
   const hasSubGraph = subGraph !== null;
   const subGraphPath = hasSubGraph ? `${nodesDir}/${nodeId}` : void 0;
@@ -31030,16 +31155,16 @@ async function readNode(graphDir, nodeId, subPath, workspaceDir2) {
   let parentNodeId;
   let parentNodeTitle;
   let parentAt;
-  const parentGraphDir = path.dirname(path.dirname(graphDir));
+  const parentGraphDir = path2.dirname(path2.dirname(graphDir));
   const parentGraph = await readJsonFile(
-    path.join(parentGraphDir, "graph.json")
+    path2.join(parentGraphDir, "graph.json")
   );
   if (parentGraph) {
-    const currentSubGraphDir = path.basename(graphDir);
+    const currentSubGraphDir = path2.basename(graphDir);
     const parentNodesDir = resolveNodesDir(parentGraph);
     const parentNodeDir = await resolveNodeDir(parentGraphDir, parentNodesDir, currentSubGraphDir);
     if (parentNodeDir) {
-      const parentIdentity = await readJsonFile(path.join(parentNodeDir, "node.json"));
+      const parentIdentity = await readJsonFile(path2.join(parentNodeDir, "node.json"));
       parentNodeId = currentSubGraphDir;
       parentNodeTitle = parentIdentity?.title ?? currentSubGraphDir;
       if (subPath) {
@@ -31053,10 +31178,10 @@ async function readNode(graphDir, nodeId, subPath, workspaceDir2) {
   let workspaceTitle = graphData.title;
   let currentDir = graphDir;
   while (true) {
-    const upTwo = path.dirname(path.dirname(currentDir));
-    const upGraph = await readJsonFile(path.join(upTwo, "graph.json"));
+    const upTwo = path2.dirname(path2.dirname(currentDir));
+    const upGraph = await readJsonFile(path2.join(upTwo, "graph.json"));
     if (!upGraph) {
-      const rootGraph = await readJsonFile(path.join(currentDir, "graph.json"));
+      const rootGraph = await readJsonFile(path2.join(currentDir, "graph.json"));
       if (rootGraph) workspaceTitle = rootGraph.title;
       break;
     }
@@ -31109,7 +31234,7 @@ async function readNode(graphDir, nodeId, subPath, workspaceDir2) {
           parsed.graphPath
         );
         const targetGraph = await readJsonFile(
-          path.join(targetGraphDir, "graph.json")
+          path2.join(targetGraphDir, "graph.json")
         );
         if (targetGraph) {
           const nodes = targetGraph.nodes ?? [];
@@ -31158,14 +31283,14 @@ async function readNode(graphDir, nodeId, subPath, workspaceDir2) {
 }
 async function readNodeFingerprint(graphDir, nodeId, graphPath) {
   const graphData = await readJsonFile(
-    path.join(graphDir, "graph.json")
+    path2.join(graphDir, "graph.json")
   );
   if (!graphData) return null;
   const nodesDir = resolveNodesDir(graphData);
   const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
   if (!nodeDir) return null;
   const nodeData = await readJsonFile(
-    path.join(nodeDir, "node.json")
+    path2.join(nodeDir, "node.json")
   );
   if (!nodeData) return null;
   const storedHash = typeof nodeData.contentHash === "string" && nodeData.contentHash.length > 0 ? nodeData.contentHash : null;
@@ -31183,7 +31308,7 @@ async function readNodeFingerprint(graphDir, nodeId, graphPath) {
   };
 }
 async function getNodeMtime(nodeDir) {
-  const nodeJsonPath = path.join(nodeDir, "node.json");
+  const nodeJsonPath = path2.join(nodeDir, "node.json");
   const nodeData = await readJsonFile(nodeJsonPath);
   const parsedUpdated = nodeData?.updated && typeof nodeData.updated === "string" ? parseProtocolDate(nodeData.updated) : null;
   if (parsedUpdated !== null) {
@@ -31192,22 +31317,22 @@ async function getNodeMtime(nodeDir) {
   let latest = 0;
   for (const filename of ["story.md", "node.json", "graph.json"]) {
     try {
-      const stat = await fs.stat(path.join(nodeDir, filename));
+      const stat = await fs2.stat(path2.join(nodeDir, filename));
       if (stat.mtimeMs > latest) latest = stat.mtimeMs;
     } catch {
     }
   }
   for (const subdir of ["content", "annotations"]) {
-    const dir = path.join(nodeDir, subdir);
+    const dir = path2.join(nodeDir, subdir);
     let entries;
     try {
-      entries = await fs.readdir(dir);
+      entries = await fs2.readdir(dir);
     } catch {
       continue;
     }
     for (const entry of entries) {
       try {
-        const stat = await fs.stat(path.join(dir, entry));
+        const stat = await fs2.stat(path2.join(dir, entry));
         if (stat.mtimeMs > latest) latest = stat.mtimeMs;
       } catch {
       }
@@ -31230,21 +31355,21 @@ async function discoverSubGraphs(baseDir, relativeTo, maxDepth = 4) {
     if (depth > maxDepth) return;
     let entries;
     try {
-      entries = await fs.readdir(dir);
+      entries = await fs2.readdir(dir);
     } catch {
       return;
     }
     if (entries.includes("graph.json")) {
-      const graphPath = path.join(dir, "graph.json");
+      const graphPath = path2.join(dir, "graph.json");
       const graph = await readJsonFile(graphPath);
       if (graph) {
         if (dir !== baseDir) {
-          const relPath = path.relative(relativeTo, dir);
+          const relPath = path2.relative(relativeTo, dir);
           const nodesDir = graph.nodesDir ?? "nodes";
           const discovered = await discoverNodes(dir, nodesDir);
           let latestMtime = 0;
           for (const node2 of discovered) {
-            const nodeDir = path.join(dir, nodesDir, node2.dir);
+            const nodeDir = path2.join(dir, nodesDir, node2.dir);
             const mtime = await getNodeMtime(nodeDir);
             if (mtime > latestMtime) latestMtime = mtime;
           }
@@ -31260,9 +31385,9 @@ async function discoverSubGraphs(baseDir, relativeTo, maxDepth = 4) {
     }
     for (const entry of entries) {
       if (excludeDirs.has(entry)) continue;
-      const fullPath = path.join(dir, entry);
+      const fullPath = path2.join(dir, entry);
       try {
-        const stat = await fs.stat(fullPath);
+        const stat = await fs2.stat(fullPath);
         if (stat.isDirectory()) {
           await walk(fullPath, depth + 1);
         }
@@ -31280,10 +31405,10 @@ async function readWorkspaces(workspaceDir2) {
   const entries = [];
   let totalNodeCount = 0;
   for (const [name, ws] of Object.entries(workspacesMap)) {
-    const wsDir = path.join(workspaceDir2, ws.path);
+    const wsDir = path2.join(workspaceDir2, ws.path);
     const childConfig = await readConfig(wsDir);
     const childGraph = await readJsonFile(
-      path.join(wsDir, "graph.json")
+      path2.join(wsDir, "graph.json")
     );
     const childNodesDir = childGraph?.nodesDir ?? "nodes";
     const childNodes = childGraph ? await discoverNodes(wsDir, childNodesDir) : [];
@@ -31311,24 +31436,24 @@ async function readWorkspaces(workspaceDir2) {
   return entries;
 }
 async function detectGraphHealth(graphDir, workspaceName, graphPath, workspaceDir2) {
-  const graphFilePath = path.join(graphDir, "graph.json");
+  const graphFilePath = path2.join(graphDir, "graph.json");
   const graphData = await readJsonFile(graphFilePath);
   if (!graphData) return null;
   const nodesDir = resolveNodesDir(graphData);
-  const nodesDirPath = path.join(graphDir, nodesDir);
+  const nodesDirPath = path2.join(graphDir, nodesDir);
   const registeredIds = new Set(
     (graphData.nodes ?? []).map((n) => n.id)
   );
   let discoveredDirs;
   try {
-    discoveredDirs = await fs.readdir(nodesDirPath);
+    discoveredDirs = await fs2.readdir(nodesDirPath);
   } catch {
     discoveredDirs = [];
   }
   let orphanedNodes = 0;
   for (const entry of discoveredDirs) {
     try {
-      await fs.access(path.join(nodesDirPath, entry, "node.json"));
+      await fs2.access(path2.join(nodesDirPath, entry, "node.json"));
       if (!registeredIds.has(entry)) {
         orphanedNodes++;
       }
@@ -31338,7 +31463,7 @@ async function detectGraphHealth(graphDir, workspaceName, graphPath, workspaceDi
   let danglingEdges = 0;
   let example;
   for (const entry of discoveredDirs) {
-    const nodeJsonPath = path.join(nodesDirPath, entry, "node.json");
+    const nodeJsonPath = path2.join(nodesDirPath, entry, "node.json");
     const nodeData = await readJsonFile(nodeJsonPath);
     if (!nodeData) continue;
     const edges = nodeData.edges;
@@ -31356,7 +31481,7 @@ async function detectGraphHealth(graphDir, workspaceName, graphPath, workspaceDi
             parsed.graphPath
           );
           const targetGraph = await readJsonFile(
-            path.join(targetGraphDir, "graph.json")
+            path2.join(targetGraphDir, "graph.json")
           );
           if (!targetGraph) {
             danglingEdges++;
@@ -31413,7 +31538,7 @@ async function readLandingData(workspaceDir2, opts = {}) {
   const scopedWorkspace = opts.workspace;
   const workspaces = await readWorkspaces(workspaceDir2);
   const rootGraph = await readJsonFile(
-    path.join(workspaceDir2, "graph.json")
+    path2.join(workspaceDir2, "graph.json")
   );
   const rootNodesDir = rootGraph?.nodesDir ?? "nodes";
   const rootNodes = rootGraph ? await discoverNodes(workspaceDir2, rootNodesDir) : [];
@@ -31430,10 +31555,10 @@ async function readLandingData(workspaceDir2, opts = {}) {
   for (const n of rootNodes) {
     if (n.type === "arc" || n.type === "navigator" || n.type === "deck") continue;
     if (scopedWorkspace) continue;
-    const nodeDir = path.join(workspaceDir2, rootNodesDir, n.dir);
+    const nodeDir = path2.join(workspaceDir2, rootNodesDir, n.dir);
     const modified = await getNodeMtime(nodeDir);
     try {
-      await fs.access(path.join(nodeDir, "graph.json"));
+      await fs2.access(path2.join(nodeDir, "graph.json"));
       n.hasSubGraph = true;
     } catch {
     }
@@ -31449,17 +31574,17 @@ async function readLandingData(workspaceDir2, opts = {}) {
   for (const ws of workspaces) {
     if (!ws.path) continue;
     const isInScope = !scopedWorkspace || ws.path === scopedWorkspace;
-    const wsDir = path.join(workspaceDir2, ws.path);
+    const wsDir = path2.join(workspaceDir2, ws.path);
     const wsGraph = await readJsonFile(
-      path.join(wsDir, "graph.json")
+      path2.join(wsDir, "graph.json")
     );
     if (!wsGraph) continue;
     const wsNodesDir = wsGraph.nodesDir ?? "nodes";
     const wsNodes = await discoverNodes(wsDir, wsNodesDir);
     for (const node2 of wsNodes) {
-      const wsNodeDir = path.join(wsDir, wsNodesDir, node2.dir);
+      const wsNodeDir = path2.join(wsDir, wsNodesDir, node2.dir);
       try {
-        await fs.access(path.join(wsNodeDir, "graph.json"));
+        await fs2.access(path2.join(wsNodeDir, "graph.json"));
         node2.hasSubGraph = true;
       } catch {
       }
@@ -31470,7 +31595,7 @@ async function readLandingData(workspaceDir2, opts = {}) {
       wsEdgeCounts.set(edge.target, (wsEdgeCounts.get(edge.target) ?? 0) + 1);
     }
     for (const node2 of wsNodes) {
-      knownNodePaths.add(path.join(ws.path, wsNodesDir, node2.dir));
+      knownNodePaths.add(path2.join(ws.path, wsNodesDir, node2.dir));
       if (node2.type === "view" || node2.type === "navigator") continue;
       if (node2.type === "deck") {
         if (node2.status !== "composted" && node2.status !== "completed") {
@@ -31480,7 +31605,7 @@ async function readLandingData(workspaceDir2, opts = {}) {
       }
       if (node2.type === "arc") continue;
       if (!isInScope) continue;
-      const nodeDir = path.join(wsDir, wsNodesDir, node2.dir);
+      const nodeDir = path2.join(wsDir, wsNodesDir, node2.dir);
       const modified = await getNodeMtime(nodeDir);
       const edgeCount = wsEdgeCounts.get(node2.id) ?? 0;
       recentNodes.push({
@@ -31498,11 +31623,11 @@ async function readLandingData(workspaceDir2, opts = {}) {
   for (const ws of workspaces) {
     if (!ws.path) continue;
     if (scopedWorkspace && ws.path !== scopedWorkspace) continue;
-    const wsDir = path.join(workspaceDir2, ws.path);
+    const wsDir = path2.join(workspaceDir2, ws.path);
     const wsSubGraphs = await discoverSubGraphs(wsDir, workspaceDir2);
     for (const sg of wsSubGraphs) {
       if (knownNodePaths.has(sg.path)) continue;
-      const pathSegments = sg.path.split(path.sep);
+      const pathSegments = sg.path.split(path2.sep);
       const implIndex = pathSegments.indexOf("implementations");
       const appName = implIndex !== -1 && pathSegments[implIndex + 1] ? pathSegments[implIndex + 1] : void 0;
       recentNodes.push({
@@ -31521,18 +31646,18 @@ async function readLandingData(workspaceDir2, opts = {}) {
         workspaceName: ws.name,
         appName
       });
-      const sgDir = path.join(workspaceDir2, sg.path);
+      const sgDir = path2.join(workspaceDir2, sg.path);
       const sgGraph = await readJsonFile(
-        path.join(sgDir, "graph.json")
+        path2.join(sgDir, "graph.json")
       );
       if (sgGraph) {
         const sgNodesDir = sgGraph.nodesDir ?? "nodes";
         const sgNodes = await discoverNodes(sgDir, sgNodesDir);
         for (const node2 of sgNodes) {
           if (node2.type === "arc" || node2.type === "navigator" || node2.type === "deck") continue;
-          const relNodePath = path.relative(workspaceDir2, path.join(sgDir, sgNodesDir, node2.dir));
+          const relNodePath = path2.relative(workspaceDir2, path2.join(sgDir, sgNodesDir, node2.dir));
           if (knownNodePaths.has(relNodePath)) continue;
-          const nodeDir = path.join(sgDir, sgNodesDir, node2.dir);
+          const nodeDir = path2.join(sgDir, sgNodesDir, node2.dir);
           const modified = await getNodeMtime(nodeDir);
           recentNodes.push({
             ...node2,
@@ -31557,7 +31682,7 @@ async function readLandingData(workspaceDir2, opts = {}) {
   for (const ws of workspaces) {
     if (!ws.path) continue;
     if (scopedWorkspace && ws.path !== scopedWorkspace) continue;
-    const wsDir = path.join(workspaceDir2, ws.path);
+    const wsDir = path2.join(workspaceDir2, ws.path);
     const wsItems = await collectDeepActionItems(wsDir, ws.path, ws.name);
     actionItems.push(...wsItems);
   }
@@ -31581,7 +31706,7 @@ async function readLandingData(workspaceDir2, opts = {}) {
   for (const ws of workspaces) {
     if (!ws.path) continue;
     if (scopedWorkspace && ws.path !== scopedWorkspace) continue;
-    const wsDir = path.join(workspaceDir2, ws.path);
+    const wsDir = path2.join(workspaceDir2, ws.path);
     const wsItems = await collectDeepAnnotationsForDate(
       wsDir,
       ws.path,
@@ -31609,7 +31734,7 @@ async function readLandingData(workspaceDir2, opts = {}) {
   for (const ws of workspaces) {
     if (!ws.path) continue;
     if (scopedWorkspace && ws.path !== scopedWorkspace) continue;
-    const wsDir = path.join(workspaceDir2, ws.path);
+    const wsDir = path2.join(workspaceDir2, ws.path);
     const wsHealth = await detectGraphHealth(wsDir, ws.name, ws.path, workspaceDir2);
     if (wsHealth) health.push(wsHealth);
   }
@@ -31617,18 +31742,18 @@ async function readLandingData(workspaceDir2, opts = {}) {
   await Promise.all(
     pinnedNodes.map(async (node2) => {
       const graphPath = node2.graphPath === "_root" ? "" : node2.graphPath ?? "";
-      const graphDir = graphPath ? path.join(workspaceDir2, graphPath) : workspaceDir2;
+      const graphDir = graphPath ? path2.join(workspaceDir2, graphPath) : workspaceDir2;
       const wsGraphData = await readJsonFile(
-        path.join(graphDir, "graph.json")
+        path2.join(graphDir, "graph.json")
       );
       const nodesDir = wsGraphData?.nodesDir ?? "nodes";
-      const nodeDir = path.join(graphDir, nodesDir, node2.dir);
+      const nodeDir = path2.join(graphDir, nodesDir, node2.dir);
       const deltaSignals = await collectSignalDots(nodeDir);
       node2.deltaSignalDots = deltaSignals.dots;
       node2.deltaSignalOverflow = deltaSignals.overflow;
       node2.lastActualizedAt = deltaSignals.lastActualizedAt ?? void 0;
       const identity = await readJsonFile(
-        path.join(nodeDir, "node.json")
+        path2.join(nodeDir, "node.json")
       );
       const edges = identity?.edges ?? [];
       node2.memberCount = edges.filter((e) => e.label === "composes").length;
@@ -31659,74 +31784,9 @@ async function resolveGitRoot(fromDir) {
     return null;
   }
 }
-async function autoCreateEdgeFromConnection(graphDir, graphData, nodeId, body) {
-  const nodes = graphData.nodes ?? [];
-  const nodeIds = new Set(nodes.map((n) => n.id));
-  const titleToId = /* @__PURE__ */ new Map();
-  for (const node2 of nodes) {
-    titleToId.set(node2.title.toLowerCase(), node2.id);
-  }
-  const referencedNodeIds = [];
-  for (const id of nodeIds) {
-    if (id === nodeId) continue;
-    if (body.includes(id)) {
-      referencedNodeIds.push(id);
-    }
-  }
-  const matchedIds = new Set(referencedNodeIds);
-  for (const [title, id] of titleToId) {
-    if (id === nodeId || matchedIds.has(id)) continue;
-    if (title.length >= 4 && body.toLowerCase().includes(title)) {
-      referencedNodeIds.push(id);
-      matchedIds.add(id);
-    }
-  }
-  if (referencedNodeIds.length === 0) return;
-  const boldMatch = body.match(/\*\*(.+?)\*\*/);
-  const label = boldMatch?.[1] ? boldMatch[1].slice(0, 60).toLowerCase() : (body.split(/[.!?\n]/)[0] ?? body).slice(0, 60).toLowerCase();
-  const sentences = body.replace(/\*\*.*?\*\*\s*/, "").split(/[.!?\n]/).filter((s) => s.trim().length > 10);
-  const context = sentences[0]?.trim().slice(0, 200) || label;
-  const nodesDir = resolveNodesDir(graphData);
-  const sourceDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
-  let nodeData = null;
-  let nodeJsonPath = "";
-  if (sourceDir) {
-    nodeJsonPath = path.join(sourceDir, "node.json");
-    nodeData = await readJsonFile(nodeJsonPath);
-  }
-  const existingNodeEdges = nodeData?.edges ?? [];
-  const created = isoLocalNow();
-  let addedAny = false;
-  for (const targetId of referencedNodeIds) {
-    const existsInNode = existingNodeEdges.some(
-      (e) => e.to === targetId
-    );
-    const existsInGraph = graphData.edges.some(
-      (e) => e.source === nodeId && e.target === targetId || e.source === targetId && e.target === nodeId
-    );
-    if (existsInNode || existsInGraph) continue;
-    existingNodeEdges.push({
-      to: targetId,
-      label,
-      context,
-      created
-    });
-    addedAny = true;
-  }
-  if (!addedAny) return;
-  if (nodeData && nodeJsonPath) {
-    nodeData.edges = existingNodeEdges;
-    await fs.writeFile(
-      nodeJsonPath,
-      JSON.stringify(nodeData, null, 2) + "\n",
-      "utf-8"
-    );
-  }
-  await rebuildGraphIndex(graphDir);
-}
 async function writeAnnotation(graphDir, nodeId, signal, body, target, kind) {
   const graphData = await readJsonFile(
-    path.join(graphDir, "graph.json")
+    path2.join(graphDir, "graph.json")
   );
   if (!graphData) {
     throwNoGraphError(graphDir);
@@ -31734,10 +31794,10 @@ async function writeAnnotation(graphDir, nodeId, signal, body, target, kind) {
   const nodesDir = resolveNodesDir(graphData);
   const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
   if (!nodeDir) {
-    throw new Error(`Node not found: ${nodeId} (searched ${path.join(graphDir, nodesDir, nodeId)})`);
+    throw new Error(`Node not found: ${nodeId} (searched ${path2.join(graphDir, nodesDir, nodeId)})`);
   }
-  const annotationsDir = path.join(nodeDir, "annotations");
-  await fs.mkdir(annotationsDir, { recursive: true });
+  const annotationsDir = path2.join(nodeDir, "annotations");
+  await fs2.mkdir(annotationsDir, { recursive: true });
   const existingFiles = await listDir(annotationsDir);
   const mdFiles = existingFiles.filter((f) => f.endsWith(".md")).sort();
   const nextNum = String(mdFiles.length + 1).padStart(3, "0");
@@ -31756,18 +31816,12 @@ ${targetLine}${kindLine}created: ${now}
 ---
 ${normalizedBody}
 `;
-  await fs.writeFile(path.join(annotationsDir, filename), content3, "utf-8");
-  if (signal === "connection") {
-    try {
-      await autoCreateEdgeFromConnection(graphDir, graphData, nodeId, body);
-    } catch {
-    }
-  }
+  await fs2.writeFile(path2.join(annotationsDir, filename), content3, "utf-8");
   return { success: true, filename };
 }
 async function resolveAnnotation(graphDir, nodeId, filename, status) {
   const graphData = await readJsonFile(
-    path.join(graphDir, "graph.json")
+    path2.join(graphDir, "graph.json")
   );
   if (!graphData) {
     throwNoGraphError(graphDir);
@@ -31775,9 +31829,9 @@ async function resolveAnnotation(graphDir, nodeId, filename, status) {
   const nodesDir = resolveNodesDir(graphData);
   const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
   if (!nodeDir) {
-    throw new Error(`Node not found: ${nodeId} (searched ${path.join(graphDir, nodesDir, nodeId)})`);
+    throw new Error(`Node not found: ${nodeId} (searched ${path2.join(graphDir, nodesDir, nodeId)})`);
   }
-  const annotationPath = path.join(nodeDir, "annotations", filename);
+  const annotationPath = path2.join(nodeDir, "annotations", filename);
   const raw2 = await readTextFile(annotationPath);
   if (!raw2) {
     throw new Error(`Annotation not found: ${filename}`);
@@ -31806,11 +31860,11 @@ ${fmLines.join("\n")}
 ---
 ${parsed.content}
 `;
-  await fs.writeFile(annotationPath, newContent, "utf-8");
+  await fs2.writeFile(annotationPath, newContent, "utf-8");
   return { success: true, meta: updatedMeta };
 }
 async function createNode(graphDir, opts) {
-  const graphPath = path.join(graphDir, "graph.json");
+  const graphPath = path2.join(graphDir, "graph.json");
   const graphData = await readJsonFile(graphPath);
   if (!graphData) {
     throwNoGraphError(graphDir);
@@ -31826,8 +31880,8 @@ async function createNode(graphDir, opts) {
       `dir must be a single directory name, not a path: "${effectiveDir}". Use graphPath to target a sub-graph instead.`
     );
   }
-  const nodeDir = path.join(graphDir, nodesDir, effectiveDir);
-  await fs.mkdir(nodeDir, { recursive: true });
+  const nodeDir = path2.join(graphDir, nodesDir, effectiveDir);
+  await fs2.mkdir(nodeDir, { recursive: true });
   const resolvedStatus = opts.status ?? "active";
   const created = isoLocalNow();
   const nodeJsonEdges = [];
@@ -31860,30 +31914,47 @@ async function createNode(graphDir, opts) {
     updated: created,
     ...nodeJsonEdges.length > 0 ? { edges: nodeJsonEdges } : {}
   };
-  await fs.writeFile(
-    path.join(nodeDir, "node.json"),
+  await fs2.writeFile(
+    path2.join(nodeDir, "node.json"),
     JSON.stringify(identity, null, 2) + "\n",
     "utf-8"
   );
-  await fs.writeFile(
-    path.join(nodeDir, "story.md"),
+  await fs2.writeFile(
+    path2.join(nodeDir, "story.md"),
     normalizeLlmEscapes(opts.story),
     "utf-8"
   );
   if (opts.view) {
-    await fs.writeFile(
-      path.join(nodeDir, "view.json"),
+    await fs2.writeFile(
+      path2.join(nodeDir, "view.json"),
       JSON.stringify(opts.view, null, 2),
       "utf-8"
     );
   }
+  const nodeEntry = {
+    id: opts.id,
+    title: opts.title,
+    ...opts.type ? { type: opts.type } : {},
+    status: resolvedStatus,
+    dir: effectiveDir
+  };
+  const existingEntries = graphData.nodes ?? [];
+  if (!existingEntries.some((n) => n.id === opts.id)) {
+    existingEntries.push(nodeEntry);
+  }
+  graphData.nodes = existingEntries;
+  await fs2.writeFile(
+    graphPath,
+    JSON.stringify(graphData, null, 2) + "\n",
+    "utf-8"
+  );
   if (nodeJsonEdges.length > 0) {
     await rebuildGraphIndex(graphDir);
   }
   return { success: true, nodeId: opts.id, applied: { status: resolvedStatus } };
 }
 async function updateView(graphDir, nodeId, opts) {
-  const graphPath = path.join(graphDir, "graph.json");
+  const graphPath = path2.join(graphDir, "graph.json");
   const graphData = await readJsonFile(graphPath);
   if (!graphData) {
     throwNoGraphError(graphDir);
@@ -31891,9 +31962,9 @@ async function updateView(graphDir, nodeId, opts) {
   const nodesDir = resolveNodesDir(graphData);
   const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
   if (!nodeDir) {
-    throw new Error(`Node not found: ${nodeId} (searched ${path.join(graphDir, nodesDir, nodeId)})`);
+    throw new Error(`Node not found: ${nodeId} (searched ${path2.join(graphDir, nodesDir, nodeId)})`);
   }
-  const viewPath = path.join(nodeDir, "view.json");
+  const viewPath = path2.join(nodeDir, "view.json");
   const existingView = await readJsonFile(viewPath);
   if (!existingView) {
     throw new Error(`Node ${nodeId} is not a view (no view.json)`);
@@ -31902,8 +31973,8 @@ async function updateView(graphDir, nodeId, opts) {
     focal: opts.focal,
     includes: opts.includes
   };
-  await fs.writeFile(viewPath, JSON.stringify(viewData, null, 2), "utf-8");
-  const nodeJsonPath = path.join(nodeDir, "node.json");
+  await fs2.writeFile(viewPath, JSON.stringify(viewData, null, 2), "utf-8");
+  const nodeJsonPath = path2.join(nodeDir, "node.json");
   const nodeData = await readJsonFile(nodeJsonPath);
   if (nodeData) {
     const existingEdges = nodeData.edges ?? [];
@@ -31916,7 +31987,7 @@ async function updateView(graphDir, nodeId, opts) {
       created
     }));
     nodeData.edges = [...nonCuratesEdges, ...curatesEdges];
-    await fs.writeFile(
+    await fs2.writeFile(
       nodeJsonPath,
       JSON.stringify(nodeData, null, 2) + "\n",
       "utf-8"
@@ -31927,7 +31998,7 @@ async function updateView(graphDir, nodeId, opts) {
 }
 async function readData(graphDir, nodeId, filename) {
   const graphData = await readJsonFile(
-    path.join(graphDir, "graph.json")
+    path2.join(graphDir, "graph.json")
   );
   if (!graphData) {
     throwNoGraphError(graphDir);
@@ -31935,12 +32006,12 @@ async function readData(graphDir, nodeId, filename) {
   const nodesDir = resolveNodesDir(graphData);
   const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
   if (!nodeDir) {
-    throw new Error(`Node not found: ${nodeId} (searched ${path.join(graphDir, nodesDir, nodeId)})`);
+    throw new Error(`Node not found: ${nodeId} (searched ${path2.join(graphDir, nodesDir, nodeId)})`);
   }
-  const dataDir = path.join(nodeDir, "data");
-  const schemaContent = await readTextFile(path.join(dataDir, "schema.json"));
+  const dataDir = path2.join(nodeDir, "data");
+  const schemaContent = await readTextFile(path2.join(dataDir, "schema.json"));
   if (filename) {
-    const content3 = await readTextFile(path.join(dataDir, filename));
+    const content3 = await readTextFile(path2.join(dataDir, filename));
     if (content3 === null) {
       throw new Error(`Data file not found: ${filename}`);
     }
@@ -31954,7 +32025,7 @@ async function readData(graphDir, nodeId, filename) {
   for (const file of files.sort()) {
     if (!file.endsWith(".json")) continue;
     if (file === "schema.json") continue;
-    const content3 = await readTextFile(path.join(dataDir, file));
+    const content3 = await readTextFile(path2.join(dataDir, file));
     if (content3 !== null) {
       dataFiles.push({ filename: file, content: content3 });
     }
@@ -31966,7 +32037,7 @@ async function readData(graphDir, nodeId, filename) {
 }
 async function readContent(graphDir, nodeId, filename) {
   const graphData = await readJsonFile(
-    path.join(graphDir, "graph.json")
+    path2.join(graphDir, "graph.json")
   );
   if (!graphData) {
     throwNoGraphError(graphDir);
@@ -31974,11 +32045,11 @@ async function readContent(graphDir, nodeId, filename) {
   const nodesDir = resolveNodesDir(graphData);
   const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
   if (!nodeDir) {
-    throw new Error(`Node not found: ${nodeId} (searched ${path.join(graphDir, nodesDir, nodeId)})`);
+    throw new Error(`Node not found: ${nodeId} (searched ${path2.join(graphDir, nodesDir, nodeId)})`);
   }
-  const contentDir = path.join(nodeDir, "content");
+  const contentDir = path2.join(nodeDir, "content");
   if (filename) {
-    const content3 = await readTextFile(path.join(contentDir, filename));
+    const content3 = await readTextFile(path2.join(contentDir, filename));
     if (content3 === null) {
       throw new Error(`Content file not found: ${filename}`);
     }
@@ -31987,7 +32058,7 @@ async function readContent(graphDir, nodeId, filename) {
   const files = await listDir(contentDir);
   const contentFiles = [];
   for (const file of files.sort()) {
-    const content3 = await readTextFile(path.join(contentDir, file));
+    const content3 = await readTextFile(path2.join(contentDir, file));
     if (content3 !== null) {
       contentFiles.push({ filename: file, content: content3 });
     }
@@ -31996,7 +32067,7 @@ async function readContent(graphDir, nodeId, filename) {
 }
 async function writeData(graphDir, nodeId, filename, data) {
   const graphData = await readJsonFile(
-    path.join(graphDir, "graph.json")
+    path2.join(graphDir, "graph.json")
   );
   if (!graphData) {
     throwNoGraphError(graphDir);
@@ -32004,16 +32075,16 @@ async function writeData(graphDir, nodeId, filename, data) {
   const nodesDir = resolveNodesDir(graphData);
   const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
   if (!nodeDir) {
-    throw new Error(`Node not found: ${nodeId} (searched ${path.join(graphDir, nodesDir, nodeId)})`);
+    throw new Error(`Node not found: ${nodeId} (searched ${path2.join(graphDir, nodesDir, nodeId)})`);
   }
   try {
     JSON.parse(data);
   } catch {
     throw new Error(`Invalid JSON data for file: ${filename}`);
   }
-  const dataDir = path.join(nodeDir, "data");
-  await fs.mkdir(dataDir, { recursive: true });
-  await fs.writeFile(path.join(dataDir, filename), data, "utf-8");
+  const dataDir = path2.join(nodeDir, "data");
+  await fs2.mkdir(dataDir, { recursive: true });
+  await fs2.writeFile(path2.join(dataDir, filename), data, "utf-8");
   return { success: true, filename };
 }
 async function searchNodes(workspaceDir2, args) {
@@ -32022,7 +32093,7 @@ async function searchNodes(workspaceDir2, args) {
   async function searchInGraph(graphDir, graphPath, depth) {
     if (depth > 3) return;
     const graphData = await readJsonFile(
-      path.join(graphDir, "graph.json")
+      path2.join(graphDir, "graph.json")
     );
     if (!graphData) return;
     const nodesDir = resolveNodesDir(graphData);
@@ -32065,8 +32136,8 @@ async function searchNodes(workspaceDir2, args) {
       });
     }
     for (const node2 of discoveredNodes) {
-      const nodeDir = path.join(graphDir, nodesDir, node2.dir);
-      const hasSubGraph = await fileExists(path.join(nodeDir, "graph.json"));
+      const nodeDir = path2.join(graphDir, nodesDir, node2.dir);
+      const hasSubGraph = await fileExists(path2.join(nodeDir, "graph.json"));
       if (hasSubGraph) {
         const subGraphPath = graphPath ? `${graphPath}/${nodesDir}/${node2.dir}` : `${nodesDir}/${node2.dir}`;
         await searchInGraph(nodeDir, subGraphPath, depth + 1);
@@ -32077,7 +32148,7 @@ async function searchNodes(workspaceDir2, args) {
   const config2 = await readConfig(workspaceDir2);
   if (config2.workspaces) {
     for (const [, ws] of Object.entries(config2.workspaces)) {
-      const wsDir = path.join(workspaceDir2, ws.path);
+      const wsDir = path2.join(workspaceDir2, ws.path);
       await searchInGraph(wsDir, ws.path, 0);
     }
   }
@@ -32095,22 +32166,22 @@ function nodeJsonEdgeToGraphEdge(sourceId, edge) {
   };
 }
 async function rebuildGraphIndex(graphDir) {
-  const graphPath = path.join(graphDir, "graph.json");
+  const graphPath = path2.join(graphDir, "graph.json");
   const graphData = await readJsonFile(graphPath);
   if (!graphData) {
     throwNoGraphError(graphDir);
   }
   const nodesDir = resolveNodesDir(graphData);
-  const nodesDirPath = path.join(graphDir, nodesDir);
+  const nodesDirPath = path2.join(graphDir, nodesDir);
   let entries;
   try {
-    entries = await fs.readdir(nodesDirPath);
+    entries = await fs2.readdir(nodesDirPath);
   } catch {
     entries = [];
   }
   const assembledEdges = [];
   for (const entry of entries) {
-    const nodeJsonPath = path.join(nodesDirPath, entry, "node.json");
+    const nodeJsonPath = path2.join(nodesDirPath, entry, "node.json");
     const nodeData = await readJsonFile(nodeJsonPath);
     if (!nodeData) continue;
     const nodeEdges = nodeData.edges;
@@ -32123,10 +32194,10 @@ async function rebuildGraphIndex(graphDir) {
     ...graphData,
     edges: assembledEdges
   };
-  await fs.writeFile(graphPath, JSON.stringify(rebuilt, null, 2) + "\n", "utf-8");
+  await fs2.writeFile(graphPath, JSON.stringify(rebuilt, null, 2) + "\n", "utf-8");
 }
 async function addEdge(graphDir, opts, workspaceDir2) {
-  const graphPath = path.join(graphDir, "graph.json");
+  const graphPath = path2.join(graphDir, "graph.json");
   const graphData = await readJsonFile(graphPath);
   if (!graphData) {
     throwNoGraphError(graphDir);
@@ -32143,7 +32214,7 @@ async function addEdge(graphDir, opts, workspaceDir2) {
     }
     const targetGraphDir = resolveWorkspaceRelativePath(graphDir, workspaceDir2, parsed.graphPath);
     const targetGraph = await readJsonFile(
-      path.join(targetGraphDir, "graph.json")
+      path2.join(targetGraphDir, "graph.json")
     );
     if (!targetGraph) {
       throw new Error(`Target graph not found: ${parsed.graphPath}`);
@@ -32159,7 +32230,7 @@ async function addEdge(graphDir, opts, workspaceDir2) {
       throw new Error(`Target node not found: ${opts.target}`);
     }
   }
-  const nodeJsonPath = path.join(sourceDir, "node.json");
+  const nodeJsonPath = path2.join(sourceDir, "node.json");
   const nodeData = await readJsonFile(nodeJsonPath);
   if (!nodeData) {
     throw new Error(`Cannot read node.json for source: ${opts.source}`);
@@ -32179,12 +32250,12 @@ async function addEdge(graphDir, opts, workspaceDir2) {
   };
   nodeData.edges = [...existingEdges, nodeJsonEdge];
   nodeData.updated = created;
-  await fs.writeFile(nodeJsonPath, JSON.stringify(nodeData, null, 2) + "\n", "utf-8");
+  await fs2.writeFile(nodeJsonPath, JSON.stringify(nodeData, null, 2) + "\n", "utf-8");
   await rebuildGraphIndex(graphDir);
   return { success: true };
 }
 async function touchNode(graphDir, nodeId, date3, at) {
-  const graphPath = path.join(graphDir, "graph.json");
+  const graphPath = path2.join(graphDir, "graph.json");
   const graphData = await readJsonFile(graphPath);
   if (!graphData) {
     throwNoGraphError(graphDir);
@@ -32194,23 +32265,23 @@ async function touchNode(graphDir, nodeId, date3, at) {
   if (!nodeDir) {
     throw new Error(`Node not found: ${nodeId}`);
   }
-  const nodeJsonPath = path.join(nodeDir, "node.json");
+  const nodeJsonPath = path2.join(nodeDir, "node.json");
   const nodeData = await readJsonFile(nodeJsonPath);
   if (!nodeData) {
     throw new Error(`Cannot read node.json for: ${nodeId}`);
   }
   const updated = at ?? date3 ?? isoLocalNow();
   nodeData.updated = updated;
-  await fs.writeFile(nodeJsonPath, JSON.stringify(nodeData, null, 2) + "\n", "utf-8");
+  await fs2.writeFile(nodeJsonPath, JSON.stringify(nodeData, null, 2) + "\n", "utf-8");
   return { success: true, updated };
 }
 async function hashGraphJson(graphDir) {
-  const raw2 = await readTextFile(path.join(graphDir, "graph.json"));
+  const raw2 = await readTextFile(path2.join(graphDir, "graph.json"));
   if (raw2 === null) return null;
   return sha256Hex(raw2);
 }
 async function computeContentHash(graphDir, nodeId) {
-  const graphData = await readJsonFile(path.join(graphDir, "graph.json"));
+  const graphData = await readJsonFile(path2.join(graphDir, "graph.json"));
   if (!graphData) {
     throwNoGraphError(graphDir);
   }
@@ -32219,79 +32290,76 @@ async function computeContentHash(graphDir, nodeId) {
   if (!nodeDir) {
     throw new Error(`Node not found: ${nodeId}`);
   }
-  const story = await readTextFile(path.join(nodeDir, "story.md")) ?? "";
-  const contentDir = path.join(nodeDir, "content");
+  const story = await readTextFile(path2.join(nodeDir, "story.md")) ?? "";
+  const contentDir = path2.join(nodeDir, "content");
   const contentNames = (await listDir(contentDir)).filter((f) => f.endsWith(".md")).sort();
   const content3 = [];
   for (const filename of contentNames) {
-    const text6 = await readTextFile(path.join(contentDir, filename)) ?? "";
+    const text6 = await readTextFile(path2.join(contentDir, filename)) ?? "";
     content3.push({ filename, text: text6 });
   }
-  const annotationsDir = path.join(nodeDir, "annotations");
+  const annotationsDir = path2.join(nodeDir, "annotations");
   const annotationNames = (await listDir(annotationsDir)).filter((f) => f.endsWith(".md")).sort();
   const annotations = [];
   for (const filename of annotationNames) {
-    const text6 = await readTextFile(path.join(annotationsDir, filename)) ?? "";
+    const text6 = await readTextFile(path2.join(annotationsDir, filename)) ?? "";
     annotations.push({ filename, text: text6 });
   }
-  const nodeData = await readJsonFile(
-    path.join(nodeDir, "node.json")
-  );
-  const edges = nodeData?.edges ?? [];
-  const input = canonicalStringify({ story, content: content3, annotations, edges });
+  const input = canonicalStringify({ story, content: content3, annotations });
   return sha256Hex(input);
 }
 async function bumpNodeUpdated(graphDir, nodeId, newHash) {
-  const graphData = await readJsonFile(path.join(graphDir, "graph.json"));
+  const graphData = await readJsonFile(path2.join(graphDir, "graph.json"));
   if (!graphData) return;
   const nodesDir = resolveNodesDir(graphData);
   const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
   if (!nodeDir) return;
-  const nodeJsonPath = path.join(nodeDir, "node.json");
+  const nodeJsonPath = path2.join(nodeDir, "node.json");
   const nodeData = await readJsonFile(nodeJsonPath);
   if (!nodeData) return;
   nodeData.updated = isoLocalNow();
   nodeData.contentHash = newHash;
-  await fs.writeFile(
+  await fs2.writeFile(
     nodeJsonPath,
     JSON.stringify(nodeData, null, 2) + "\n",
     "utf-8"
   );
 }
 async function seedContentHash(graphDir, nodeId, hash) {
-  const graphData = await readJsonFile(path.join(graphDir, "graph.json"));
+  const graphData = await readJsonFile(path2.join(graphDir, "graph.json"));
   if (!graphData) return;
   const nodesDir = resolveNodesDir(graphData);
   const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
   if (!nodeDir) return;
-  const nodeJsonPath = path.join(nodeDir, "node.json");
+  const nodeJsonPath = path2.join(nodeDir, "node.json");
   const nodeData = await readJsonFile(nodeJsonPath);
   if (!nodeData) return;
   nodeData.contentHash = hash;
-  await fs.writeFile(
+  await fs2.writeFile(
     nodeJsonPath,
     JSON.stringify(nodeData, null, 2) + "\n",
     "utf-8"
   );
 }
 async function findEnclosingGraphDir(nodeDir) {
-  let candidate = path.dirname(path.dirname(nodeDir));
-  const root2 = path.parse(candidate).root;
+  let candidate = path2.dirname(path2.dirname(nodeDir));
+  const root2 = path2.parse(candidate).root;
   while (true) {
-    if (await fileExists(path.join(candidate, "graph.json"))) {
+    if (await fileExists(path2.join(candidate, "graph.json"))) {
       return candidate;
     }
     if (candidate === root2) return null;
-    const parent = path.dirname(candidate);
+    const parent = path2.dirname(candidate);
     if (parent === candidate) return null;
     candidate = parent;
   }
 }
+var lastSuppressionLogMs = /* @__PURE__ */ new Map();
 async function handleAutoBumpEvent(opts) {
   try {
     const graphDir = await findEnclosingGraphDir(opts.nodeDir);
     if (!graphDir) return;
-    const nodeJsonPath = path.join(opts.nodeDir, "node.json");
+    const nodeJsonPath = path2.join(opts.nodeDir, "node.json");
     const nodeData = await readJsonFile(nodeJsonPath);
     if (!nodeData) return;
     const stored = typeof nodeData.contentHash === "string" && nodeData.contentHash.length > 0 ? nodeData.contentHash : void 0;
@@ -32301,6 +32369,17 @@ async function handleAutoBumpEvent(opts) {
       return;
     }
     if (stored === current) {
+      return;
+    }
+    if (!await isGitQuiescent(opts.nodeDir)) {
+      const now = Date.now();
+      const last = lastSuppressionLogMs.get(opts.nodeId) ?? 0;
+      if (now - last >= 1e3) {
+        lastSuppressionLogMs.set(opts.nodeId, now);
+        console.error(
+          `[auto-bump] suppressed nodeId=${opts.nodeId} reason=git-not-quiescent`
+        );
+      }
       return;
     }
     await bumpNodeUpdated(graphDir, opts.nodeId, current);
@@ -32319,18 +32398,18 @@ async function scanAndSeedHashes(workspaceDir2) {
   };
   const seenNodePaths = /* @__PURE__ */ new Set();
   async function scanGraphDir(graphDir) {
-    const graphData = await readJsonFile(path.join(graphDir, "graph.json"));
+    const graphData = await readJsonFile(path2.join(graphDir, "graph.json"));
     if (!graphData) return;
     const nodesDir = resolveNodesDir(graphData);
     const discovered = await discoverNodes(graphDir, nodesDir);
     for (const node2 of discovered) {
-      const nodeDir = path.join(graphDir, nodesDir, node2.dir);
-      const physicalKey = path.resolve(nodeDir);
+      const nodeDir = path2.join(graphDir, nodesDir, node2.dir);
+      const physicalKey = path2.resolve(nodeDir);
       if (seenNodePaths.has(physicalKey)) continue;
       seenNodePaths.add(physicalKey);
       result.scanned += 1;
       try {
-        const nodeJsonPath = path.join(nodeDir, "node.json");
+        const nodeJsonPath = path2.join(nodeDir, "node.json");
         const nodeData = await readJsonFile(nodeJsonPath);
         if (!nodeData) {
           result.errors += 1;
@@ -32350,8 +32429,8 @@ async function scanAndSeedHashes(workspaceDir2) {
         );
       }
       try {
-        const subGraphPath = path.join(nodeDir, "graph.json");
-        await fs.access(subGraphPath);
+        const subGraphPath = path2.join(nodeDir, "graph.json");
+        await fs2.access(subGraphPath);
         await scanGraphDir(nodeDir);
       } catch {
       }
@@ -32361,7 +32440,7 @@ async function scanAndSeedHashes(workspaceDir2) {
   try {
     const wsSubGraphs = await discoverSubGraphs(workspaceDir2, workspaceDir2);
     for (const sg of wsSubGraphs) {
-      const sgDir = path.join(workspaceDir2, sg.path);
+      const sgDir = path2.join(workspaceDir2, sg.path);
       await scanGraphDir(sgDir);
     }
   } catch (err) {
@@ -32372,12 +32451,12 @@ async function scanAndSeedHashes(workspaceDir2) {
     if (wsConfig.workspaces) {
       for (const ws of Object.values(wsConfig.workspaces)) {
         if (!ws.path) continue;
-        const childDir = path.join(workspaceDir2, ws.path);
+        const childDir = path2.join(workspaceDir2, ws.path);
         await scanGraphDir(childDir);
         try {
           const childSubGraphs = await discoverSubGraphs(childDir, workspaceDir2);
           for (const sg of childSubGraphs) {
-            const sgDir = path.join(workspaceDir2, sg.path);
+            const sgDir = path2.join(workspaceDir2, sg.path);
             await scanGraphDir(sgDir);
           }
         } catch (err) {
@@ -32457,7 +32536,7 @@ async function initWorkspace(workspaceDir2, opts) {
       );
     }
   }
-  const graphJsonPath = path.join(workspaceDir2, "graph.json");
+  const graphJsonPath = path2.join(workspaceDir2, "graph.json");
   if (await fileExists(graphJsonPath)) {
     throw new Error("Workspace already initialized \u2014 graph.json already exists.");
   }
@@ -32471,21 +32550,21 @@ async function initWorkspace(workspaceDir2, opts) {
   if (effectiveNodesDir !== "nodes") {
     graphData.nodesDir = effectiveNodesDir;
   }
-  await fs.writeFile(graphJsonPath, JSON.stringify(graphData, null, 2) + "\n", "utf-8");
+  await fs2.writeFile(graphJsonPath, JSON.stringify(graphData, null, 2) + "\n", "utf-8");
   created.push("graph.json");
-  const claudeDir = path.join(workspaceDir2, ".claude");
-  await fs.mkdir(claudeDir, { recursive: true });
-  const configPath = path.join(claudeDir, "qino-config.json");
+  const claudeDir = path2.join(workspaceDir2, ".claude");
+  await fs2.mkdir(claudeDir, { recursive: true });
+  const configPath = path2.join(claudeDir, "qino-config.json");
   const template = opts.template ? workspaceTemplates[opts.template] : void 0;
   const configData = { name: opts.name };
   if (template) {
     configData.color = template.color;
     configData.types = template.types;
   }
-  await fs.writeFile(configPath, JSON.stringify(configData, null, 2) + "\n", "utf-8");
+  await fs2.writeFile(configPath, JSON.stringify(configData, null, 2) + "\n", "utf-8");
   created.push(".claude/qino-config.json");
-  const nodesDirPath = path.join(workspaceDir2, effectiveNodesDir);
-  await fs.mkdir(nodesDirPath, { recursive: true });
+  const nodesDirPath = path2.join(workspaceDir2, effectiveNodesDir);
+  await fs2.mkdir(nodesDirPath, { recursive: true });
   created.push(effectiveNodesDir + "/");
   return {
     created,
@@ -32493,7 +32572,7 @@ async function initWorkspace(workspaceDir2, opts) {
   };
 }
 async function deleteNode(graphDir, nodeId) {
-  const graphPath = path.join(graphDir, "graph.json");
+  const graphPath = path2.join(graphDir, "graph.json");
   const graphData = await readJsonFile(graphPath);
   if (!graphData) {
     throwNoGraphError(graphDir);
@@ -32503,23 +32582,31 @@ async function deleteNode(graphDir, nodeId) {
   if (!nodeDir) {
     throw new Error(`Node not found: ${nodeId}`);
   }
-  await fs.rm(nodeDir, { recursive: true, force: true });
+  await fs2.rm(nodeDir, { recursive: true, force: true });
   const siblingNodes = await discoverNodes(graphDir, nodesDir);
   for (const sibling of siblingNodes) {
     if (sibling.id === nodeId) continue;
-    const siblingNodeJsonPath = path.join(graphDir, nodesDir, sibling.dir, "node.json");
+    const siblingNodeJsonPath = path2.join(graphDir, nodesDir, sibling.dir, "node.json");
     const siblingData = await readJsonFile(siblingNodeJsonPath);
     if (!siblingData) continue;
     const edges = siblingData.edges ?? [];
     const filtered = edges.filter((e) => e.to !== nodeId);
     if (filtered.length !== edges.length) {
       siblingData.edges = filtered;
-      await fs.writeFile(
+      await fs2.writeFile(
         siblingNodeJsonPath,
         JSON.stringify(siblingData, null, 2) + "\n",
         "utf-8"
       );
     }
+  }
+  if (graphData.nodes) {
+    graphData.nodes = graphData.nodes.filter((n) => n.id !== nodeId);
+    await fs2.writeFile(
+      graphPath,
+      JSON.stringify(graphData, null, 2) + "\n",
+      "utf-8"
+    );
   }
   await rebuildGraphIndex(graphDir);
   return { success: true, nodeId };
@@ -32528,7 +32615,7 @@ async function deleteNode(graphDir, nodeId) {
 // src/server/shell-actions.ts
 import { exec, execSync, spawn } from "child_process";
 import { statSync } from "fs";
-import path3 from "path";
+import path4 from "path";
 
 // ../../node_modules/mdast-util-to-string/lib/index.js
 var emptyOptions = {};
@@ -41592,13 +41679,13 @@ var VFile = class {
    * @returns {undefined}
    *   Nothing.
    */
-  set path(path6) {
-    if (isUrl(path6)) {
-      path6 = fileURLToPath(path6);
+  set path(path7) {
+    if (isUrl(path7)) {
+      path7 = fileURLToPath(path7);
     }
-    assertNonEmpty(path6, "path");
-    if (this.path !== path6) {
-      this.history.push(path6);
+    assertNonEmpty(path7, "path");
+    if (this.path !== path7) {
+      this.history.push(path7);
     }
   }
   /**
@@ -41865,8 +41952,8 @@ function assertNonEmpty(part, name) {
     throw new Error("`" + name + "` cannot be empty");
   }
 }
-function assertPath(path6, name) {
-  if (!path6) {
+function assertPath(path7, name) {
+  if (!path7) {
     throw new Error("Setting `" + name + "` requires `path` to be set too");
   }
 }
@@ -42750,7 +42837,7 @@ function transformGfmAutolinkLiterals(tree) {
     { ignore: ["link", "linkReference"] }
   );
 }
-function findUrl(_, protocol, domain2, path6, match2) {
+function findUrl(_, protocol, domain2, path7, match2) {
   let prefix = "";
   if (!previous2(match2)) {
     return false;
@@ -42763,7 +42850,7 @@ function findUrl(_, protocol, domain2, path6, match2) {
   if (!isCorrectDomain(domain2)) {
     return false;
   }
-  const parts = splitUrl(domain2 + path6);
+  const parts = splitUrl(domain2 + path7);
   if (!parts[0]) return false;
   const result = {
     type: "link",
@@ -43385,7 +43472,7 @@ var domain = {
   tokenize: tokenizeDomain,
   partial: true
 };
-var path2 = {
+var path3 = {
   tokenize: tokenizePath,
   partial: true
 };
@@ -43491,7 +43578,7 @@ function tokenizeWwwAutolink(effects, ok3, nok) {
     }
     effects.enter("literalAutolink");
     effects.enter("literalAutolinkWww");
-    return effects.check(wwwPrefix, effects.attempt(domain, effects.attempt(path2, wwwAfter), nok), nok)(code3);
+    return effects.check(wwwPrefix, effects.attempt(domain, effects.attempt(path3, wwwAfter), nok), nok)(code3);
   }
   function wwwAfter(code3) {
     effects.exit("literalAutolinkWww");
@@ -43541,7 +43628,7 @@ function tokenizeProtocolAutolink(effects, ok3, nok) {
     return nok(code3);
   }
   function afterProtocol(code3) {
-    return code3 === null || asciiControl(code3) || markdownLineEndingOrSpace(code3) || unicodeWhitespace(code3) || unicodePunctuation(code3) ? nok(code3) : effects.attempt(domain, effects.attempt(path2, protocolAfter), nok)(code3);
+    return code3 === null || asciiControl(code3) || markdownLineEndingOrSpace(code3) || unicodeWhitespace(code3) || unicodePunctuation(code3) ? nok(code3) : effects.attempt(domain, effects.attempt(path3, protocolAfter), nok)(code3);
   }
   function protocolAfter(code3) {
     effects.exit("literalAutolinkHttp");
@@ -44885,9 +44972,9 @@ function stripMarkdownForSpeech(md) {
 
 // src/server/shell-actions.ts
 function assertWithinWorkspace(targetPath, workspaceRoot) {
-  const resolved = path3.resolve(targetPath);
-  const root2 = path3.resolve(workspaceRoot);
-  if (!resolved.startsWith(root2 + path3.sep) && resolved !== root2) {
+  const resolved = path4.resolve(targetPath);
+  const root2 = path4.resolve(workspaceRoot);
+  if (!resolved.startsWith(root2 + path4.sep) && resolved !== root2) {
     throw new Error(
       `Path "${resolved}" is outside the workspace root "${root2}"`
     );
@@ -44912,7 +44999,7 @@ function revealInExplorer(targetPath) {
     } else if (platform === "win32") {
       cmd = isDir ? `explorer ${quote(targetPath)}` : `explorer /select,${quote(targetPath)}`;
     } else {
-      cmd = isDir ? `xdg-open ${quote(targetPath)}` : `xdg-open ${quote(path3.dirname(targetPath))}`;
+      cmd = isDir ? `xdg-open ${quote(targetPath)}` : `xdg-open ${quote(path4.dirname(targetPath))}`;
     }
     exec(cmd, (err) => {
       if (err) {
@@ -45631,7 +45718,7 @@ function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces,
       const reqPath = url.pathname === "/" ? "/index.html" : url.pathname;
       const filePath = nodePath.join(staticDir, reqPath);
       try {
-        const content3 = await fs2.readFile(filePath);
+        const content3 = await fs3.readFile(filePath);
         const ext = nodePath.extname(filePath);
         const contentType = MIME_TYPES[ext] ?? "application/octet-stream";
         return new Response(content3, {
@@ -45641,7 +45728,7 @@ function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces,
         if (nodePath.extname(reqPath)) {
           return c.notFound();
         }
-        const html2 = await fs2.readFile(
+        const html2 = await fs3.readFile(
           nodePath.join(staticDir, "index.html"),
           "utf-8"
         );
@@ -45653,7 +45740,7 @@ function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces,
 }
 
 // src/server/message-store.ts
-import fs3 from "fs/promises";
+import fs4 from "fs/promises";
 import nodePath2 from "path";
 import crypto3 from "crypto";
 var MESSAGES_DIR = ".qino-os/messages";
@@ -45667,11 +45754,11 @@ var MessageStore = class {
   async loadSaved() {
     const dir = nodePath2.join(this.workspaceDir, MESSAGES_DIR);
     try {
-      const files = await fs3.readdir(dir);
+      const files = await fs4.readdir(dir);
       for (const file of files) {
         if (!file.endsWith(".json")) continue;
         try {
-          const content3 = await fs3.readFile(nodePath2.join(dir, file), "utf-8");
+          const content3 = await fs4.readFile(nodePath2.join(dir, file), "utf-8");
           const message = JSON.parse(content3);
           if (message.id) {
             this.messages.set(message.id, message);
@@ -45694,8 +45781,8 @@ var MessageStore = class {
     };
     this.messages.set(message.id, message);
     const dir = nodePath2.join(this.workspaceDir, MESSAGES_DIR);
-    await fs3.mkdir(dir, { recursive: true });
-    await fs3.writeFile(
+    await fs4.mkdir(dir, { recursive: true });
+    await fs4.writeFile(
       nodePath2.join(dir, `${message.id}.json`),
       JSON.stringify(message, null, 2)
     );
@@ -45716,7 +45803,7 @@ var MessageStore = class {
     for (const msg of messages) {
       this.messages.delete(msg.id);
       try {
-        await fs3.unlink(nodePath2.join(dir, `${msg.id}.json`));
+        await fs4.unlink(nodePath2.join(dir, `${msg.id}.json`));
       } catch {
       }
     }
@@ -45728,7 +45815,7 @@ var MessageStore = class {
     this.messages.delete(id);
     const dir = nodePath2.join(this.workspaceDir, MESSAGES_DIR);
     try {
-      await fs3.unlink(nodePath2.join(dir, `${id}.json`));
+      await fs4.unlink(nodePath2.join(dir, `${id}.json`));
     } catch {
     }
     return true;
@@ -45750,7 +45837,7 @@ var MessageStore = class {
     const dir = nodePath2.join(this.workspaceDir, MESSAGES_DIR);
     for (const msg of this.messages.values()) {
       try {
-        await fs3.unlink(nodePath2.join(dir, `${msg.id}.json`));
+        await fs4.unlink(nodePath2.join(dir, `${msg.id}.json`));
       } catch {
       }
     }
@@ -45759,8 +45846,8 @@ var MessageStore = class {
 };
 
 // src/server/file-watcher.ts
-import fs4 from "fs";
-import path4 from "path";
+import fs5 from "fs";
+import path5 from "path";
 function categorizeWithDir(relativePath) {
   if (/(?:^|\/)(?:\.git|node_modules)\//.test(relativePath)) return null;
   const parts = relativePath.split("/");
@@ -45836,7 +45923,7 @@ function createFileWatcher(workspaceDir2) {
     const relativePath = filename.replace(/\\/g, "/");
     const result = categorizeWithDir(relativePath);
     if (!result) return;
-    const event = result.relativeNodeDir ? { ...result.event, nodeDir: path4.join(workspaceDir2, result.relativeNodeDir) } : result.event;
+    const event = result.relativeNodeDir ? { ...result.event, nodeDir: path5.join(workspaceDir2, result.relativeNodeDir) } : result.event;
     const key = debounceKey(event);
     const existing = timers.get(key);
     if (existing) clearTimeout(existing);
@@ -45850,7 +45937,7 @@ function createFileWatcher(workspaceDir2) {
   }
   let watcher;
   try {
-    watcher = fs4.watch(
+    watcher = fs5.watch(
       workspaceDir2,
       { recursive: true },
       handleFsChange
@@ -47583,8 +47670,8 @@ function createDirectOps(workspaceDir2, _repoRoot, baseUrl, knownWorkspaces, wat
   };
 }
 function createHttpOps(apiUrl) {
-  const buildUrl = (path6, params) => {
-    const url = new URL(path6, apiUrl);
+  const buildUrl = (path7, params) => {
+    const url = new URL(path7, apiUrl);
     if (params) {
       for (const [key, value] of Object.entries(params)) {
         if (value !== void 0) {
@@ -47919,7 +48006,7 @@ function openBrowser(url) {
 }
 
 // src/server/index.ts
-var __dirname = path5.dirname(fileURLToPath2(import.meta.url));
+var __dirname = path6.dirname(fileURLToPath2(import.meta.url));
 var workspaceDir = process.env.WORKSPACE_DIR ?? getCliArg("--workspace-dir") ?? process.cwd();
 var port = Number(process.env.PORT ?? getCliArg("--port") ?? "4020");
 var repoRootOverride = process.env.REPO_ROOT ?? getCliArg("--repo-root");
@@ -47928,13 +48015,13 @@ var noBrowser = process.argv.includes("--no-browser");
 var modeArg = process.env.QINO_MODE ?? getCliArg("--mode") ?? "full";
 var mode = modeArg === "reader" ? "reader" : "full";
 var viewerUrl = process.env.QINO_VIEWER_URL ?? getCliArg("--viewer-url");
-var packageRoot = path5.resolve(__dirname, "../..");
-var distUiDir = path5.resolve(packageRoot, "dist/ui");
+var packageRoot = path6.resolve(__dirname, "../..");
+var distUiDir = path6.resolve(packageRoot, "dist/ui");
 async function hasBuiltSpa() {
   try {
-    const fs5 = await import("fs/promises");
-    const html2 = await fs5.readFile(
-      path5.join(distUiDir, "index.html"),
+    const fs6 = await import("fs/promises");
+    const html2 = await fs6.readFile(
+      path6.join(distUiDir, "index.html"),
       "utf-8"
     );
     return html2.includes("/assets/");
