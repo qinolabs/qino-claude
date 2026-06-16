@@ -514,7 +514,7 @@ async function generateWithNanoBananaPro(
   parts.push({ text: prompt });
 
   const response = await ai.models.generateContent({
-    model: "gemini-3-pro-image-preview",
+    model: "gemini-3-pro-image",
     contents: [{ parts }],
     config: {
       responseModalities: ["TEXT", "IMAGE"],
