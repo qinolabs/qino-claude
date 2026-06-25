@@ -1470,12 +1470,12 @@ var require_applicability = __commonJS({
     }
     exports.schemaHasRulesForType = schemaHasRulesForType;
     function shouldUseGroup(schema, group) {
-      return group.rules.some((rule) => shouldUseRule(schema, rule));
+      return group.rules.some((rule2) => shouldUseRule(schema, rule2));
     }
     exports.shouldUseGroup = shouldUseGroup;
-    function shouldUseRule(schema, rule) {
+    function shouldUseRule(schema, rule2) {
       var _a;
-      return schema[rule.keyword] !== void 0 || ((_a = rule.definition.implements) === null || _a === void 0 ? void 0 : _a.some((kwd) => schema[kwd] !== void 0));
+      return schema[rule2.keyword] !== void 0 || ((_a = rule2.definition.implements) === null || _a === void 0 ? void 0 : _a.some((kwd) => schema[kwd] !== void 0));
     }
     exports.shouldUseRule = shouldUseRule;
   }
@@ -2527,9 +2527,9 @@ var require_validate = __commonJS({
       if (useDefaults)
         (0, defaults_1.assignDefaults)(it, group.type);
       gen.block(() => {
-        for (const rule of group.rules) {
-          if ((0, applicability_1.shouldUseRule)(schema, rule)) {
-            keywordCode(it, rule.keyword, rule.definition, group.type);
+        for (const rule2 of group.rules) {
+          if ((0, applicability_1.shouldUseRule)(schema, rule2)) {
+            keywordCode(it, rule2.keyword, rule2.definition, group.type);
           }
         }
       });
@@ -2564,9 +2564,9 @@ var require_validate = __commonJS({
     function checkKeywordTypes(it, ts) {
       const rules = it.self.RULES.all;
       for (const keyword in rules) {
-        const rule = rules[keyword];
-        if (typeof rule == "object" && (0, applicability_1.shouldUseRule)(it.schema, rule)) {
-          const { type } = rule.definition;
+        const rule2 = rules[keyword];
+        if (typeof rule2 == "object" && (0, applicability_1.shouldUseRule)(it.schema, rule2)) {
+          const { type } = rule2.definition;
           if (type.length && !type.some((t) => hasApplicableType(ts, t))) {
             strictTypesError(it, `missing type "${type.join(",")}" for keyword "${keyword}"`);
           }
@@ -3222,8 +3222,8 @@ var require_utils = __commonJS({
       }
       return ind;
     }
-    function removeDotSegments(path7) {
-      let input = path7;
+    function removeDotSegments(path10) {
+      let input = path10;
       const output = [];
       let nextSlash = -1;
       let len = 0;
@@ -3422,8 +3422,8 @@ var require_schemes = __commonJS({
         wsComponent.secure = void 0;
       }
       if (wsComponent.resourceName) {
-        const [path7, query] = wsComponent.resourceName.split("?");
-        wsComponent.path = path7 && path7 !== "/" ? path7 : void 0;
+        const [path10, query] = wsComponent.resourceName.split("?");
+        wsComponent.path = path10 && path10 !== "/" ? path10 : void 0;
         wsComponent.query = query;
         wsComponent.resourceName = void 0;
       }
@@ -4199,8 +4199,8 @@ var require_core = __commonJS({
         return this;
       }
       getKeyword(keyword) {
-        const rule = this.RULES.all[keyword];
-        return typeof rule == "object" ? rule.definition : !!rule;
+        const rule2 = this.RULES.all[keyword];
+        return typeof rule2 == "object" ? rule2.definition : !!rule2;
       }
       // Remove keyword
       removeKeyword(keyword) {
@@ -4208,7 +4208,7 @@ var require_core = __commonJS({
         delete RULES.keywords[keyword];
         delete RULES.all[keyword];
         for (const group of RULES.rules) {
-          const i = group.rules.findIndex((rule) => rule.keyword === keyword);
+          const i = group.rules.findIndex((rule2) => rule2.keyword === keyword);
           if (i >= 0)
             group.rules.splice(i, 1);
         }
@@ -4235,10 +4235,10 @@ var require_core = __commonJS({
           for (const seg of segments)
             keywords = keywords[seg];
           for (const key in rules) {
-            const rule = rules[key];
-            if (typeof rule != "object")
+            const rule2 = rules[key];
+            if (typeof rule2 != "object")
               continue;
-            const { $data } = rule.definition;
+            const { $data } = rule2.definition;
             const schema = keywords[key];
             if ($data && schema)
               keywords[key] = schemaOrData(schema);
@@ -4402,7 +4402,7 @@ var require_core = __commonJS({
       RULES.keywords[keyword] = true;
       if (!definition3)
         return;
-      const rule = {
+      const rule2 = {
         keyword,
         definition: {
           ...definition3,
@@ -4411,18 +4411,18 @@ var require_core = __commonJS({
         }
       };
       if (definition3.before)
-        addBeforeRule.call(this, ruleGroup, rule, definition3.before);
+        addBeforeRule.call(this, ruleGroup, rule2, definition3.before);
       else
-        ruleGroup.rules.push(rule);
-      RULES.all[keyword] = rule;
+        ruleGroup.rules.push(rule2);
+      RULES.all[keyword] = rule2;
       (_a = definition3.implements) === null || _a === void 0 ? void 0 : _a.forEach((kwd) => this.addKeyword(kwd));
     }
-    function addBeforeRule(ruleGroup, rule, before) {
+    function addBeforeRule(ruleGroup, rule2, before) {
       const i = ruleGroup.rules.findIndex((_rule) => _rule.keyword === before);
       if (i >= 0) {
-        ruleGroup.rules.splice(i, 0, rule);
+        ruleGroup.rules.splice(i, 0, rule2);
       } else {
-        ruleGroup.rules.push(rule);
+        ruleGroup.rules.push(rule2);
         this.logger.warn(`rule ${before} is not defined`);
       }
     }
@@ -8125,12 +8125,12 @@ var require_applicability2 = __commonJS({
     }
     exports.schemaHasRulesForType = schemaHasRulesForType;
     function shouldUseGroup(schema, group) {
-      return group.rules.some((rule) => shouldUseRule(schema, rule));
+      return group.rules.some((rule2) => shouldUseRule(schema, rule2));
     }
     exports.shouldUseGroup = shouldUseGroup;
-    function shouldUseRule(schema, rule) {
+    function shouldUseRule(schema, rule2) {
       var _a;
-      return schema[rule.keyword] !== void 0 || ((_a = rule.definition.implements) === null || _a === void 0 ? void 0 : _a.some((kwd) => schema[kwd] !== void 0));
+      return schema[rule2.keyword] !== void 0 || ((_a = rule2.definition.implements) === null || _a === void 0 ? void 0 : _a.some((kwd) => schema[kwd] !== void 0));
     }
     exports.shouldUseRule = shouldUseRule;
   }
@@ -9147,9 +9147,9 @@ var require_validate2 = __commonJS({
       if (useDefaults)
         (0, defaults_1.assignDefaults)(it, group.type);
       gen.block(() => {
-        for (const rule of group.rules) {
-          if ((0, applicability_1.shouldUseRule)(schema, rule)) {
-            keywordCode(it, rule.keyword, rule.definition, group.type);
+        for (const rule2 of group.rules) {
+          if ((0, applicability_1.shouldUseRule)(schema, rule2)) {
+            keywordCode(it, rule2.keyword, rule2.definition, group.type);
           }
         }
       });
@@ -9184,9 +9184,9 @@ var require_validate2 = __commonJS({
     function checkKeywordTypes(it, ts) {
       const rules = it.self.RULES.all;
       for (const keyword in rules) {
-        const rule = rules[keyword];
-        if (typeof rule == "object" && (0, applicability_1.shouldUseRule)(it.schema, rule)) {
-          const { type } = rule.definition;
+        const rule2 = rules[keyword];
+        if (typeof rule2 == "object" && (0, applicability_1.shouldUseRule)(it.schema, rule2)) {
+          const { type } = rule2.definition;
           if (type.length && !type.some((t) => hasApplicableType(ts, t))) {
             strictTypesError(it, `missing type "${type.join(",")}" for keyword "${keyword}"`);
           }
@@ -10097,8 +10097,8 @@ var require_core3 = __commonJS({
         return this;
       }
       getKeyword(keyword) {
-        const rule = this.RULES.all[keyword];
-        return typeof rule == "object" ? rule.definition : !!rule;
+        const rule2 = this.RULES.all[keyword];
+        return typeof rule2 == "object" ? rule2.definition : !!rule2;
       }
       // Remove keyword
       removeKeyword(keyword) {
@@ -10106,7 +10106,7 @@ var require_core3 = __commonJS({
         delete RULES.keywords[keyword];
         delete RULES.all[keyword];
         for (const group of RULES.rules) {
-          const i = group.rules.findIndex((rule) => rule.keyword === keyword);
+          const i = group.rules.findIndex((rule2) => rule2.keyword === keyword);
           if (i >= 0)
             group.rules.splice(i, 1);
         }
@@ -10133,10 +10133,10 @@ var require_core3 = __commonJS({
           for (const seg of segments)
             keywords = keywords[seg];
           for (const key in rules) {
-            const rule = rules[key];
-            if (typeof rule != "object")
+            const rule2 = rules[key];
+            if (typeof rule2 != "object")
               continue;
-            const { $data } = rule.definition;
+            const { $data } = rule2.definition;
             const schema = keywords[key];
             if ($data && schema)
               keywords[key] = schemaOrData(schema);
@@ -10300,7 +10300,7 @@ var require_core3 = __commonJS({
       RULES.keywords[keyword] = true;
       if (!definition3)
         return;
-      const rule = {
+      const rule2 = {
         keyword,
         definition: {
           ...definition3,
@@ -10309,18 +10309,18 @@ var require_core3 = __commonJS({
         }
       };
       if (definition3.before)
-        addBeforeRule.call(this, ruleGroup, rule, definition3.before);
+        addBeforeRule.call(this, ruleGroup, rule2, definition3.before);
       else
-        ruleGroup.rules.push(rule);
-      RULES.all[keyword] = rule;
+        ruleGroup.rules.push(rule2);
+      RULES.all[keyword] = rule2;
       (_a = definition3.implements) === null || _a === void 0 ? void 0 : _a.forEach((kwd) => this.addKeyword(kwd));
     }
-    function addBeforeRule(ruleGroup, rule, before) {
+    function addBeforeRule(ruleGroup, rule2, before) {
       const i = ruleGroup.rules.findIndex((_rule) => _rule.keyword === before);
       if (i >= 0) {
-        ruleGroup.rules.splice(i, 0, rule);
+        ruleGroup.rules.splice(i, 0, rule2);
       } else {
-        ruleGroup.rules.push(rule);
+        ruleGroup.rules.push(rule2);
         this.logger.warn(`rule ${before} is not defined`);
       }
     }
@@ -12480,12 +12480,12 @@ var require_dist = __commonJS({
         throw new Error(`Unknown format "${name}"`);
       return f;
     };
-    function addFormats(ajv, list4, fs6, exportName) {
+    function addFormats(ajv, list4, fs7, exportName) {
       var _a;
       var _b;
       (_a = (_b = ajv.opts.code).formats) !== null && _a !== void 0 ? _a : _b.formats = (0, codegen_1._)`require("ajv-formats/dist/formats").${exportName}`;
       for (const f of list4)
-        ajv.addFormat(f, fs6[f]);
+        ajv.addFormat(f, fs7[f]);
     }
     module.exports = exports = formatsPlugin;
     Object.defineProperty(exports, "__esModule", { value: true });
@@ -12585,7 +12585,7 @@ var require_extend = __commonJS({
 });
 
 // src/server/index.ts
-import path6 from "path";
+import path9 from "path";
 import { fileURLToPath as fileURLToPath2 } from "url";
 
 // ../../node_modules/zod/v3/external.js
@@ -13066,8 +13066,8 @@ function getErrorMap() {
 
 // ../../node_modules/zod/v3/helpers/parseUtil.js
 var makeIssue = (params) => {
-  const { data, path: path7, errorMaps, issueData } = params;
-  const fullPath = [...path7, ...issueData.path || []];
+  const { data, path: path10, errorMaps, issueData } = params;
+  const fullPath = [...path10, ...issueData.path || []];
   const fullIssue = {
     ...issueData,
     path: fullPath
@@ -13183,11 +13183,11 @@ var errorUtil;
 
 // ../../node_modules/zod/v3/types.js
 var ParseInputLazyPath = class {
-  constructor(parent, value, path7, key) {
+  constructor(parent, value, path10, key) {
     this._cachedPath = [];
     this.parent = parent;
     this.data = value;
-    this._path = path7;
+    this._path = path10;
     this._key = key;
   }
   get path() {
@@ -16824,10 +16824,10 @@ function assignProp(target, prop, value) {
     configurable: true
   });
 }
-function getElementAtPath(obj, path7) {
-  if (!path7)
+function getElementAtPath(obj, path10) {
+  if (!path10)
     return obj;
-  return path7.reduce((acc, key) => acc?.[key], obj);
+  return path10.reduce((acc, key) => acc?.[key], obj);
 }
 function promiseAllObject(promisesObj) {
   const keys = Object.keys(promisesObj);
@@ -17147,11 +17147,11 @@ function aborted(x, startIndex = 0) {
   }
   return false;
 }
-function prefixIssues(path7, issues) {
+function prefixIssues(path10, issues) {
   return issues.map((iss) => {
     var _a;
     (_a = iss).path ?? (_a.path = []);
-    iss.path.unshift(path7);
+    iss.path.unshift(path10);
     return iss;
   });
 }
@@ -28024,7 +28024,7 @@ var serve = (options, listeningListener) => {
 };
 
 // src/server/http-api.ts
-import fs3 from "fs/promises";
+import fs4 from "fs/promises";
 import nodePath from "path";
 
 // ../../node_modules/hono/dist/compose.js
@@ -28147,26 +28147,26 @@ var handleParsingNestedValues = (form, key, value) => {
 };
 
 // ../../node_modules/hono/dist/utils/url.js
-var splitPath = (path7) => {
-  const paths = path7.split("/");
+var splitPath = (path10) => {
+  const paths = path10.split("/");
   if (paths[0] === "") {
     paths.shift();
   }
   return paths;
 };
 var splitRoutingPath = (routePath) => {
-  const { groups, path: path7 } = extractGroupsFromPath(routePath);
-  const paths = splitPath(path7);
+  const { groups, path: path10 } = extractGroupsFromPath(routePath);
+  const paths = splitPath(path10);
   return replaceGroupMarks(paths, groups);
 };
-var extractGroupsFromPath = (path7) => {
+var extractGroupsFromPath = (path10) => {
   const groups = [];
-  path7 = path7.replace(/\{[^}]+\}/g, (match2, index2) => {
+  path10 = path10.replace(/\{[^}]+\}/g, (match2, index2) => {
     const mark = `@${index2}`;
     groups.push([mark, match2]);
     return mark;
   });
-  return { groups, path: path7 };
+  return { groups, path: path10 };
 };
 var replaceGroupMarks = (paths, groups) => {
   for (let i = groups.length - 1; i >= 0; i--) {
@@ -28223,8 +28223,8 @@ var getPath = (request) => {
       const queryIndex = url.indexOf("?", i);
       const hashIndex = url.indexOf("#", i);
       const end = queryIndex === -1 ? hashIndex === -1 ? void 0 : hashIndex : hashIndex === -1 ? queryIndex : Math.min(queryIndex, hashIndex);
-      const path7 = url.slice(start, end);
-      return tryDecodeURI(path7.includes("%25") ? path7.replace(/%25/g, "%2525") : path7);
+      const path10 = url.slice(start, end);
+      return tryDecodeURI(path10.includes("%25") ? path10.replace(/%25/g, "%2525") : path10);
     } else if (charCode === 63 || charCode === 35) {
       break;
     }
@@ -28241,11 +28241,11 @@ var mergePath = (base, sub, ...rest) => {
   }
   return `${base?.[0] === "/" ? "" : "/"}${base}${sub === "/" ? "" : `${base?.at(-1) === "/" ? "" : "/"}${sub?.[0] === "/" ? sub.slice(1) : sub}`}`;
 };
-var checkOptionalParameter = (path7) => {
-  if (path7.charCodeAt(path7.length - 1) !== 63 || !path7.includes(":")) {
+var checkOptionalParameter = (path10) => {
+  if (path10.charCodeAt(path10.length - 1) !== 63 || !path10.includes(":")) {
     return null;
   }
-  const segments = path7.split("/");
+  const segments = path10.split("/");
   const results = [];
   let basePath = "";
   segments.forEach((segment) => {
@@ -28386,9 +28386,9 @@ var HonoRequest = class {
    */
   path;
   bodyCache = {};
-  constructor(request, path7 = "/", matchResult = [[]]) {
+  constructor(request, path10 = "/", matchResult = [[]]) {
     this.raw = request;
-    this.path = path7;
+    this.path = path10;
     this.#matchResult = matchResult;
     this.#validatedData = {};
   }
@@ -29125,8 +29125,8 @@ var Hono = class _Hono {
         return this;
       };
     });
-    this.on = (method, path7, ...handlers) => {
-      for (const p of [path7].flat()) {
+    this.on = (method, path10, ...handlers) => {
+      for (const p of [path10].flat()) {
         this.#path = p;
         for (const m of [method].flat()) {
           handlers.map((handler) => {
@@ -29183,8 +29183,8 @@ var Hono = class _Hono {
    * app.route("/api", app2) // GET /api/user
    * ```
    */
-  route(path7, app) {
-    const subApp = this.basePath(path7);
+  route(path10, app) {
+    const subApp = this.basePath(path10);
     app.routes.map((r) => {
       let handler;
       if (app.errorHandler === errorHandler) {
@@ -29210,9 +29210,9 @@ var Hono = class _Hono {
    * const api = new Hono().basePath('/api')
    * ```
    */
-  basePath(path7) {
+  basePath(path10) {
     const subApp = this.#clone();
-    subApp._basePath = mergePath(this._basePath, path7);
+    subApp._basePath = mergePath(this._basePath, path10);
     return subApp;
   }
   /**
@@ -29286,7 +29286,7 @@ var Hono = class _Hono {
    * })
    * ```
    */
-  mount(path7, applicationHandler, options) {
+  mount(path10, applicationHandler, options) {
     let replaceRequest;
     let optionHandler;
     if (options) {
@@ -29313,7 +29313,7 @@ var Hono = class _Hono {
       return [c.env, executionContext];
     };
     replaceRequest ||= (() => {
-      const mergedPath = mergePath(this._basePath, path7);
+      const mergedPath = mergePath(this._basePath, path10);
       const pathPrefixLength = mergedPath === "/" ? 0 : mergedPath.length;
       return (request) => {
         const url = new URL(request.url);
@@ -29328,14 +29328,14 @@ var Hono = class _Hono {
       }
       await next();
     };
-    this.#addRoute(METHOD_NAME_ALL, mergePath(path7, "*"), handler);
+    this.#addRoute(METHOD_NAME_ALL, mergePath(path10, "*"), handler);
     return this;
   }
-  #addRoute(method, path7, handler) {
+  #addRoute(method, path10, handler) {
     method = method.toUpperCase();
-    path7 = mergePath(this._basePath, path7);
-    const r = { basePath: this._basePath, path: path7, method, handler };
-    this.router.add(method, path7, [handler, r]);
+    path10 = mergePath(this._basePath, path10);
+    const r = { basePath: this._basePath, path: path10, method, handler };
+    this.router.add(method, path10, [handler, r]);
     this.routes.push(r);
   }
   #handleError(err, c) {
@@ -29348,10 +29348,10 @@ var Hono = class _Hono {
     if (method === "HEAD") {
       return (async () => new Response(null, await this.#dispatch(request, executionCtx, env, "GET")))();
     }
-    const path7 = this.getPath(request, { env });
-    const matchResult = this.router.match(method, path7);
+    const path10 = this.getPath(request, { env });
+    const matchResult = this.router.match(method, path10);
     const c = new Context(request, {
-      path: path7,
+      path: path10,
       matchResult,
       env,
       executionCtx,
@@ -29451,7 +29451,7 @@ var Hono = class _Hono {
 
 // ../../node_modules/hono/dist/router/reg-exp-router/matcher.js
 var emptyParam = [];
-function match(method, path7) {
+function match(method, path10) {
   const matchers = this.buildAllMatchers();
   const match2 = ((method2, path22) => {
     const matcher = matchers[method2] || matchers[METHOD_NAME_ALL];
@@ -29467,7 +29467,7 @@ function match(method, path7) {
     return [matcher[1][index2], match3];
   });
   this.match = match2;
-  return match2(method, path7);
+  return match2(method, path10);
 }
 
 // ../../node_modules/hono/dist/router/reg-exp-router/node.js
@@ -29582,12 +29582,12 @@ var Node = class _Node {
 var Trie = class {
   #context = { varIndex: 0 };
   #root = new Node();
-  insert(path7, index2, pathErrorCheckOnly) {
+  insert(path10, index2, pathErrorCheckOnly) {
     const paramAssoc = [];
     const groups = [];
     for (let i = 0; ; ) {
       let replaced = false;
-      path7 = path7.replace(/\{[^}]+\}/g, (m) => {
+      path10 = path10.replace(/\{[^}]+\}/g, (m) => {
         const mark = `@\\${i}`;
         groups[i] = [mark, m];
         i++;
@@ -29598,7 +29598,7 @@ var Trie = class {
         break;
       }
     }
-    const tokens = path7.match(/(?::[^\/]+)|(?:\/\*$)|./g) || [];
+    const tokens = path10.match(/(?::[^\/]+)|(?:\/\*$)|./g) || [];
     for (let i = groups.length - 1; i >= 0; i--) {
       const [mark] = groups[i];
       for (let j = tokens.length - 1; j >= 0; j--) {
@@ -29637,9 +29637,9 @@ var Trie = class {
 // ../../node_modules/hono/dist/router/reg-exp-router/router.js
 var nullMatcher = [/^$/, [], /* @__PURE__ */ Object.create(null)];
 var wildcardRegExpCache = /* @__PURE__ */ Object.create(null);
-function buildWildcardRegExp(path7) {
-  return wildcardRegExpCache[path7] ??= new RegExp(
-    path7 === "*" ? "" : `^${path7.replace(
+function buildWildcardRegExp(path10) {
+  return wildcardRegExpCache[path10] ??= new RegExp(
+    path10 === "*" ? "" : `^${path10.replace(
       /\/\*$|([.\\+*[^\]$()])/g,
       (_, metaChar) => metaChar ? `\\${metaChar}` : "(?:|/.*)"
     )}$`
@@ -29661,17 +29661,17 @@ function buildMatcherFromPreprocessedRoutes(routes) {
   );
   const staticMap = /* @__PURE__ */ Object.create(null);
   for (let i = 0, j = -1, len = routesWithStaticPathFlag.length; i < len; i++) {
-    const [pathErrorCheckOnly, path7, handlers] = routesWithStaticPathFlag[i];
+    const [pathErrorCheckOnly, path10, handlers] = routesWithStaticPathFlag[i];
     if (pathErrorCheckOnly) {
-      staticMap[path7] = [handlers.map(([h]) => [h, /* @__PURE__ */ Object.create(null)]), emptyParam];
+      staticMap[path10] = [handlers.map(([h]) => [h, /* @__PURE__ */ Object.create(null)]), emptyParam];
     } else {
       j++;
     }
     let paramAssoc;
     try {
-      paramAssoc = trie.insert(path7, j, pathErrorCheckOnly);
+      paramAssoc = trie.insert(path10, j, pathErrorCheckOnly);
     } catch (e) {
-      throw e === PATH_ERROR ? new UnsupportedPathError(path7) : e;
+      throw e === PATH_ERROR ? new UnsupportedPathError(path10) : e;
     }
     if (pathErrorCheckOnly) {
       continue;
@@ -29705,12 +29705,12 @@ function buildMatcherFromPreprocessedRoutes(routes) {
   }
   return [regexp, handlerMap, staticMap];
 }
-function findMiddleware(middleware, path7) {
+function findMiddleware(middleware, path10) {
   if (!middleware) {
     return void 0;
   }
   for (const k of Object.keys(middleware).sort((a, b) => b.length - a.length)) {
-    if (buildWildcardRegExp(k).test(path7)) {
+    if (buildWildcardRegExp(k).test(path10)) {
       return [...middleware[k]];
     }
   }
@@ -29724,7 +29724,7 @@ var RegExpRouter = class {
     this.#middleware = { [METHOD_NAME_ALL]: /* @__PURE__ */ Object.create(null) };
     this.#routes = { [METHOD_NAME_ALL]: /* @__PURE__ */ Object.create(null) };
   }
-  add(method, path7, handler) {
+  add(method, path10, handler) {
     const middleware = this.#middleware;
     const routes = this.#routes;
     if (!middleware || !routes) {
@@ -29739,18 +29739,18 @@ var RegExpRouter = class {
         });
       });
     }
-    if (path7 === "/*") {
-      path7 = "*";
+    if (path10 === "/*") {
+      path10 = "*";
     }
-    const paramCount = (path7.match(/\/:/g) || []).length;
-    if (/\*$/.test(path7)) {
-      const re = buildWildcardRegExp(path7);
+    const paramCount = (path10.match(/\/:/g) || []).length;
+    if (/\*$/.test(path10)) {
+      const re = buildWildcardRegExp(path10);
       if (method === METHOD_NAME_ALL) {
         Object.keys(middleware).forEach((m) => {
-          middleware[m][path7] ||= findMiddleware(middleware[m], path7) || findMiddleware(middleware[METHOD_NAME_ALL], path7) || [];
+          middleware[m][path10] ||= findMiddleware(middleware[m], path10) || findMiddleware(middleware[METHOD_NAME_ALL], path10) || [];
         });
       } else {
-        middleware[method][path7] ||= findMiddleware(middleware[method], path7) || findMiddleware(middleware[METHOD_NAME_ALL], path7) || [];
+        middleware[method][path10] ||= findMiddleware(middleware[method], path10) || findMiddleware(middleware[METHOD_NAME_ALL], path10) || [];
       }
       Object.keys(middleware).forEach((m) => {
         if (method === METHOD_NAME_ALL || method === m) {
@@ -29768,7 +29768,7 @@ var RegExpRouter = class {
       });
       return;
     }
-    const paths = checkOptionalParameter(path7) || [path7];
+    const paths = checkOptionalParameter(path10) || [path10];
     for (let i = 0, len = paths.length; i < len; i++) {
       const path22 = paths[i];
       Object.keys(routes).forEach((m) => {
@@ -29795,13 +29795,13 @@ var RegExpRouter = class {
     const routes = [];
     let hasOwnRoute = method === METHOD_NAME_ALL;
     [this.#middleware, this.#routes].forEach((r) => {
-      const ownRoute = r[method] ? Object.keys(r[method]).map((path7) => [path7, r[method][path7]]) : [];
+      const ownRoute = r[method] ? Object.keys(r[method]).map((path10) => [path10, r[method][path10]]) : [];
       if (ownRoute.length !== 0) {
         hasOwnRoute ||= true;
         routes.push(...ownRoute);
       } else if (method !== METHOD_NAME_ALL) {
         routes.push(
-          ...Object.keys(r[METHOD_NAME_ALL]).map((path7) => [path7, r[METHOD_NAME_ALL][path7]])
+          ...Object.keys(r[METHOD_NAME_ALL]).map((path10) => [path10, r[METHOD_NAME_ALL][path10]])
         );
       }
     });
@@ -29821,13 +29821,13 @@ var SmartRouter = class {
   constructor(init) {
     this.#routers = init.routers;
   }
-  add(method, path7, handler) {
+  add(method, path10, handler) {
     if (!this.#routes) {
       throw new Error(MESSAGE_MATCHER_IS_ALREADY_BUILT);
     }
-    this.#routes.push([method, path7, handler]);
+    this.#routes.push([method, path10, handler]);
   }
-  match(method, path7) {
+  match(method, path10) {
     if (!this.#routes) {
       throw new Error("Fatal error");
     }
@@ -29842,7 +29842,7 @@ var SmartRouter = class {
         for (let i2 = 0, len2 = routes.length; i2 < len2; i2++) {
           router.add(...routes[i2]);
         }
-        res = router.match(method, path7);
+        res = router.match(method, path10);
       } catch (e) {
         if (e instanceof UnsupportedPathError) {
           continue;
@@ -29892,10 +29892,10 @@ var Node2 = class _Node2 {
     }
     this.#patterns = [];
   }
-  insert(method, path7, handler) {
+  insert(method, path10, handler) {
     this.#order = ++this.#order;
     let curNode = this;
-    const parts = splitRoutingPath(path7);
+    const parts = splitRoutingPath(path10);
     const possibleKeys = [];
     for (let i = 0, len = parts.length; i < len; i++) {
       const p = parts[i];
@@ -29944,12 +29944,12 @@ var Node2 = class _Node2 {
       }
     }
   }
-  search(method, path7) {
+  search(method, path10) {
     const handlerSets = [];
     this.#params = emptyParams;
     const curNode = this;
     let curNodes = [curNode];
-    const parts = splitPath(path7);
+    const parts = splitPath(path10);
     const curNodesQueue = [];
     const len = parts.length;
     let partOffsets = null;
@@ -29991,13 +29991,13 @@ var Node2 = class _Node2 {
           if (matcher instanceof RegExp) {
             if (partOffsets === null) {
               partOffsets = new Array(len);
-              let offset = path7[0] === "/" ? 1 : 0;
+              let offset = path10[0] === "/" ? 1 : 0;
               for (let p = 0; p < len; p++) {
                 partOffsets[p] = offset;
                 offset += parts[p].length + 1;
               }
             }
-            const restPathString = path7.substring(partOffsets[i]);
+            const restPathString = path10.substring(partOffsets[i]);
             const m = matcher.exec(restPathString);
             if (m) {
               params[name] = m[0];
@@ -30050,18 +30050,18 @@ var TrieRouter = class {
   constructor() {
     this.#node = new Node2();
   }
-  add(method, path7, handler) {
-    const results = checkOptionalParameter(path7);
+  add(method, path10, handler) {
+    const results = checkOptionalParameter(path10);
     if (results) {
       for (let i = 0, len = results.length; i < len; i++) {
         this.#node.insert(method, results[i], handler);
       }
       return;
     }
-    this.#node.insert(method, path7, handler);
+    this.#node.insert(method, path10, handler);
   }
-  match(method, path7) {
-    return this.#node.search(method, path7);
+  match(method, path10) {
+    return this.#node.search(method, path10);
   }
 };
 
@@ -30317,28 +30317,105 @@ var streamSSE = (c, cb, onError) => {
   return c.newResponse(stream2.responseReadable);
 };
 
+// src/server/deeplinks.ts
+var ROOT_WORKSPACE = "_root";
+function parseGraphPath(graphPath, knownWorkspaces) {
+  if (!graphPath) return { workspace: ROOT_WORKSPACE };
+  const segments = graphPath.split("/");
+  const firstSegment = segments[0];
+  if (knownWorkspaces && !knownWorkspaces.has(firstSegment)) {
+    return { workspace: ROOT_WORKSPACE, at: graphPath };
+  }
+  return {
+    workspace: firstSegment,
+    at: segments.length > 1 ? segments.slice(1).join("/") : void 0
+  };
+}
+function resolveBaseUrl(config2) {
+  return config2.viewerBaseUrl ?? config2.baseUrl;
+}
+function buildGraphDeeplink(config2, params) {
+  const url = new URL(
+    `/${encodeURIComponent(params.workspace)}/graph`,
+    resolveBaseUrl(config2)
+  );
+  if (params.at) url.searchParams.set("at", params.at);
+  if (params.highlight?.length)
+    url.searchParams.set("highlight", params.highlight.join(","));
+  if (params.view) url.searchParams.set("view", params.view);
+  return url.toString();
+}
+function buildNodeDeeplink(config2, params) {
+  const url = new URL(
+    `/${encodeURIComponent(params.workspace)}/node/${encodeURIComponent(params.nodeId)}`,
+    resolveBaseUrl(config2)
+  );
+  if (params.at) url.searchParams.set("at", params.at);
+  if (params.section) url.searchParams.set("section", params.section);
+  return url.toString();
+}
+function buildGraphLinks(config2, graphPath, nodeIds, knownWorkspaces) {
+  const { workspace, at } = parseGraphPath(graphPath, knownWorkspaces);
+  if (!workspace) {
+    return { self: "", nodes: {} };
+  }
+  const self = buildGraphDeeplink(config2, { workspace, at });
+  const nodes = {};
+  for (const nodeId of nodeIds) {
+    nodes[nodeId] = buildNodeDeeplink(config2, { workspace, nodeId, at });
+  }
+  return { self, nodes };
+}
+function buildNodeLinks(config2, graphPath, nodeId, knownWorkspaces) {
+  const { workspace, at } = parseGraphPath(graphPath, knownWorkspaces);
+  if (!workspace) {
+    return { self: "", graph: "" };
+  }
+  return {
+    self: buildNodeDeeplink(config2, { workspace, nodeId, at }),
+    graph: buildGraphDeeplink(config2, { workspace, at })
+  };
+}
+
 // src/server/protocol-reader.ts
 import { execFile } from "child_process";
 import fs2 from "fs/promises";
 import path2 from "path";
 import { promisify } from "util";
 
-// src/server/revision.ts
-import { createHash } from "crypto";
-function canonicalStringify(value) {
-  if (value === null || typeof value !== "object") {
-    return JSON.stringify(value);
-  }
-  if (Array.isArray(value)) {
-    return "[" + value.map(canonicalStringify).join(",") + "]";
-  }
-  const obj = value;
-  const keys = Object.keys(obj).sort();
-  const parts = keys.map((k) => JSON.stringify(k) + ":" + canonicalStringify(obj[k]));
-  return "{" + parts.join(",") + "}";
+// src/shared/protocol-time.ts
+function isoLocalNow() {
+  return formatIsoLocal(/* @__PURE__ */ new Date());
 }
-function sha256Hex(text6) {
-  return createHash("sha256").update(text6, "utf-8").digest("hex");
+function formatIsoLocal(d) {
+  const pad2 = (n) => String(n).padStart(2, "0");
+  const year = d.getFullYear();
+  const month = pad2(d.getMonth() + 1);
+  const day = pad2(d.getDate());
+  const hour = pad2(d.getHours());
+  const minute = pad2(d.getMinutes());
+  const second = pad2(d.getSeconds());
+  const tzMin = -d.getTimezoneOffset();
+  const tzSign = tzMin >= 0 ? "+" : "-";
+  const tzHour = pad2(Math.floor(Math.abs(tzMin) / 60));
+  const tzMinute = pad2(Math.abs(tzMin) % 60);
+  return `${year}-${month}-${day}T${hour}:${minute}:${second}${tzSign}${tzHour}:${tzMinute}`;
+}
+function parseProtocolDate(s) {
+  if (s === void 0 || s === null || s === "") return null;
+  const bareDatePattern = /^\d{4}-\d{2}-\d{2}$/;
+  if (bareDatePattern.test(s)) {
+    const y = Number(s.slice(0, 4));
+    const mo = Number(s.slice(5, 7));
+    const d = Number(s.slice(8, 10));
+    return new Date(y, mo - 1, d);
+  }
+  const parsed = new Date(s);
+  return Number.isNaN(parsed.getTime()) ? null : parsed;
+}
+function localDateString(d) {
+  const pad2 = (n) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`;
 }
 
 // src/server/git-quiescence.ts
@@ -30434,39 +30511,22 @@ async function isGitQuiescent(startDir) {
   return true;
 }
 
-// src/shared/protocol-time.ts
-function isoLocalNow() {
-  return formatIsoLocal(/* @__PURE__ */ new Date());
-}
-function formatIsoLocal(d) {
-  const pad2 = (n) => String(n).padStart(2, "0");
-  const year = d.getFullYear();
-  const month = pad2(d.getMonth() + 1);
-  const day = pad2(d.getDate());
-  const hour = pad2(d.getHours());
-  const minute = pad2(d.getMinutes());
-  const second = pad2(d.getSeconds());
-  const tzMin = -d.getTimezoneOffset();
-  const tzSign = tzMin >= 0 ? "+" : "-";
-  const tzHour = pad2(Math.floor(Math.abs(tzMin) / 60));
-  const tzMinute = pad2(Math.abs(tzMin) % 60);
-  return `${year}-${month}-${day}T${hour}:${minute}:${second}${tzSign}${tzHour}:${tzMinute}`;
-}
-function parseProtocolDate(s) {
-  if (s === void 0 || s === null || s === "") return null;
-  const bareDatePattern = /^\d{4}-\d{2}-\d{2}$/;
-  if (bareDatePattern.test(s)) {
-    const y = Number(s.slice(0, 4));
-    const mo = Number(s.slice(5, 7));
-    const d = Number(s.slice(8, 10));
-    return new Date(y, mo - 1, d);
+// src/server/revision.ts
+import { createHash } from "crypto";
+function canonicalStringify(value) {
+  if (value === null || typeof value !== "object") {
+    return JSON.stringify(value);
   }
-  const parsed = new Date(s);
-  return Number.isNaN(parsed.getTime()) ? null : parsed;
+  if (Array.isArray(value)) {
+    return "[" + value.map(canonicalStringify).join(",") + "]";
+  }
+  const obj = value;
+  const keys = Object.keys(obj).sort();
+  const parts = keys.map((k) => JSON.stringify(k) + ":" + canonicalStringify(obj[k]));
+  return "{" + parts.join(",") + "}";
 }
-function localDateString(d) {
-  const pad2 = (n) => String(n).padStart(2, "0");
-  return `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`;
+function sha256Hex(text6) {
+  return createHash("sha256").update(text6, "utf-8").digest("hex");
 }
 
 // src/server/protocol-reader.ts
@@ -30754,7 +30814,12 @@ async function readDataFileIndex(dataDir) {
 var DEFAULT_RECENCY_DAYS = 7;
 var DEFAULT_MAX_HOPS = 20;
 var MAX_SIGNAL_DOTS = 8;
-var DEFAULT_SIGNAL_TYPES = /* @__PURE__ */ new Set(["reading", "connection", "tension", "proposal"]);
+var DEFAULT_SIGNAL_TYPES = /* @__PURE__ */ new Set([
+  "reading",
+  "connection",
+  "tension",
+  "proposal"
+]);
 var MAX_BODY_LENGTH = 500;
 var MAX_RECENT_SIGNALS = 50;
 function parseEdgeTarget(target) {
@@ -30795,7 +30860,11 @@ async function collectConnectedSignals(graphDir, graphData, nodeId, workspaceDir
     const parsed = parseEdgeTarget(ref);
     let targetGraphDir;
     if (parsed.graphPath) {
-      targetGraphDir = resolveWorkspaceRelativePath(graphDir, workspaceDir2, parsed.graphPath);
+      targetGraphDir = resolveWorkspaceRelativePath(
+        graphDir,
+        workspaceDir2,
+        parsed.graphPath
+      );
     } else {
       targetGraphDir = graphDir;
     }
@@ -30803,9 +30872,14 @@ async function collectConnectedSignals(graphDir, graphData, nodeId, workspaceDir
       path2.join(targetGraphDir, "graph.json")
     );
     if (!targetGraph) continue;
-    const targetNode = (targetGraph.nodes ?? []).find((n) => n.id === parsed.nodeId);
+    const targetNode = (targetGraph.nodes ?? []).find(
+      (n) => n.id === parsed.nodeId
+    );
     if (targetNode) {
-      titlesByRef.set(raw2, parsed.graphPath ? `${targetNode.title} (${targetGraph.title})` : targetNode.title);
+      titlesByRef.set(
+        raw2,
+        parsed.graphPath ? `${targetNode.title} (${targetGraph.title})` : targetNode.title
+      );
     }
     const targetNodesDir = resolveNodesDir(targetGraph);
     const targetNodeDir = await resolveNodeDir(
@@ -30819,7 +30893,8 @@ async function collectConnectedSignals(graphDir, graphData, nodeId, workspaceDir
     );
     for (const ann of annotations) {
       if (!signalTypes.has(ann.meta.signal)) continue;
-      if (ann.meta.status === "resolved" || ann.meta.status === "dismissed") continue;
+      if (ann.meta.status === "resolved" || ann.meta.status === "dismissed")
+        continue;
       const created = ann.meta.created.slice(0, 10);
       if (created < cutoffIso) continue;
       const dedupeKey = `${raw2}:${ann.filename}`;
@@ -30868,11 +30943,17 @@ async function collectRecentSignals(graphDir, nodesDir, discoveredNodes, config2
   const cutoffIso = localDateString(cutoff);
   const signals = [];
   for (const node2 of discoveredNodes) {
-    const annotationsDir = path2.join(graphDir, nodesDir, node2.dir, "annotations");
+    const annotationsDir = path2.join(
+      graphDir,
+      nodesDir,
+      node2.dir,
+      "annotations"
+    );
     const annotations = await readAnnotationsFromDir(annotationsDir);
     for (const ann of annotations) {
       if (!signalTypes.has(ann.meta.signal)) continue;
-      if (ann.meta.status === "resolved" || ann.meta.status === "dismissed") continue;
+      if (ann.meta.status === "resolved" || ann.meta.status === "dismissed")
+        continue;
       const created = ann.meta.created.slice(0, 10);
       if (created < cutoffIso) continue;
       signals.push({
@@ -30907,7 +30988,8 @@ async function collectSignalDots(nodeDir) {
   const anchorCreated = anchor?.meta.created ?? null;
   const deltaSignals = [];
   for (const ann of annotations) {
-    if (ann.meta.status === "resolved" || ann.meta.status === "dismissed") continue;
+    if (ann.meta.status === "resolved" || ann.meta.status === "dismissed")
+      continue;
     if (ann.meta.kind === ACTUALIZATION_KIND) continue;
     if (anchorCreated !== null && ann.meta.created <= anchorCreated) continue;
     deltaSignals.push(ann.meta.signal);
@@ -31010,7 +31092,13 @@ async function updateConfig(workspaceDir2, updates) {
   const configPath = path2.join(workspaceDir2, ".claude", "qino-config.json");
   const existing = await readJsonFile(configPath) ?? {};
   const merged = { ...existing };
-  for (const key of ["name", "color", "repoType", "landingTitle", "editor"]) {
+  for (const key of [
+    "name",
+    "color",
+    "repoType",
+    "landingTitle",
+    "editor"
+  ]) {
     if (key in updates) {
       const value = updates[key];
       if (value === null || value === void 0) {
@@ -31028,7 +31116,11 @@ async function updateConfig(workspaceDir2, updates) {
     const existingStatuses = existing.statuses ?? {};
     merged.statuses = { ...existingStatuses, ...updates.statuses };
   }
-  await fs2.writeFile(configPath, JSON.stringify(merged, null, 2) + "\n", "utf-8");
+  await fs2.writeFile(
+    configPath,
+    JSON.stringify(merged, null, 2) + "\n",
+    "utf-8"
+  );
   return { success: true, config: merged };
 }
 async function readGraph(graphDir, workspaceDir2) {
@@ -31162,9 +31254,15 @@ async function readNode(graphDir, nodeId, subPath, workspaceDir2) {
   if (parentGraph) {
     const currentSubGraphDir = path2.basename(graphDir);
     const parentNodesDir = resolveNodesDir(parentGraph);
-    const parentNodeDir = await resolveNodeDir(parentGraphDir, parentNodesDir, currentSubGraphDir);
+    const parentNodeDir = await resolveNodeDir(
+      parentGraphDir,
+      parentNodesDir,
+      currentSubGraphDir
+    );
     if (parentNodeDir) {
-      const parentIdentity = await readJsonFile(path2.join(parentNodeDir, "node.json"));
+      const parentIdentity = await readJsonFile(
+        path2.join(parentNodeDir, "node.json")
+      );
       parentNodeId = currentSubGraphDir;
       parentNodeTitle = parentIdentity?.title ?? currentSubGraphDir;
       if (subPath) {
@@ -31179,9 +31277,13 @@ async function readNode(graphDir, nodeId, subPath, workspaceDir2) {
   let currentDir = graphDir;
   while (true) {
     const upTwo = path2.dirname(path2.dirname(currentDir));
-    const upGraph = await readJsonFile(path2.join(upTwo, "graph.json"));
+    const upGraph = await readJsonFile(
+      path2.join(upTwo, "graph.json")
+    );
     if (!upGraph) {
-      const rootGraph = await readJsonFile(path2.join(currentDir, "graph.json"));
+      const rootGraph = await readJsonFile(
+        path2.join(currentDir, "graph.json")
+      );
       if (rootGraph) workspaceTitle = rootGraph.title;
       break;
     }
@@ -31441,9 +31543,7 @@ async function detectGraphHealth(graphDir, workspaceName, graphPath, workspaceDi
   if (!graphData) return null;
   const nodesDir = resolveNodesDir(graphData);
   const nodesDirPath = path2.join(graphDir, nodesDir);
-  const registeredIds = new Set(
-    (graphData.nodes ?? []).map((n) => n.id)
-  );
+  const registeredIds = new Set((graphData.nodes ?? []).map((n) => n.id));
   let discoveredDirs;
   try {
     discoveredDirs = await fs2.readdir(nodesDirPath);
@@ -31543,17 +31643,26 @@ async function readLandingData(workspaceDir2, opts = {}) {
   const rootNodesDir = rootGraph?.nodesDir ?? "nodes";
   const rootNodes = rootGraph ? await discoverNodes(workspaceDir2, rootNodesDir) : [];
   const arcs = rootNodes.filter((n) => n.type === "arc");
-  const deckNodes = rootNodes.filter((n) => n.type === "deck" && n.status !== "composted" && n.status !== "completed").map((n) => ({ ...n, graphPath: "_root" }));
+  const deckNodes = rootNodes.filter(
+    (n) => n.type === "deck" && n.status !== "composted" && n.status !== "completed"
+  ).map((n) => ({ ...n, graphPath: "_root" }));
   const recentNodes = [];
   const rootEdgeCounts = /* @__PURE__ */ new Map();
   if (rootGraph) {
     for (const edge of rootGraph.edges) {
-      rootEdgeCounts.set(edge.source, (rootEdgeCounts.get(edge.source) ?? 0) + 1);
-      rootEdgeCounts.set(edge.target, (rootEdgeCounts.get(edge.target) ?? 0) + 1);
+      rootEdgeCounts.set(
+        edge.source,
+        (rootEdgeCounts.get(edge.source) ?? 0) + 1
+      );
+      rootEdgeCounts.set(
+        edge.target,
+        (rootEdgeCounts.get(edge.target) ?? 0) + 1
+      );
     }
   }
   for (const n of rootNodes) {
-    if (n.type === "arc" || n.type === "navigator" || n.type === "deck") continue;
+    if (n.type === "arc" || n.type === "navigator" || n.type === "deck")
+      continue;
     if (scopedWorkspace) continue;
     const nodeDir = path2.join(workspaceDir2, rootNodesDir, n.dir);
     const modified = await getNodeMtime(nodeDir);
@@ -31571,9 +31680,27 @@ async function readLandingData(workspaceDir2, opts = {}) {
     });
   }
   const knownNodePaths = /* @__PURE__ */ new Set();
-  for (const ws of workspaces) {
+  const registeredPaths = new Set(workspaces.map((w) => w.path));
+  const effectiveWorkspaces = [...workspaces];
+  if (scopedWorkspace && !registeredPaths.has(scopedWorkspace)) {
+    const scopedDir = path2.join(workspaceDir2, scopedWorkspace);
+    const scopedGraph = await readJsonFile(
+      path2.join(scopedDir, "graph.json")
+    );
+    if (scopedGraph) {
+      const scopedConfig = await readConfig(scopedDir);
+      effectiveWorkspaces.push({
+        name: scopedConfig.name ?? scopedWorkspace,
+        path: scopedWorkspace,
+        color: scopedConfig.color,
+        repoType: scopedConfig.repoType
+      });
+    }
+  }
+  for (const ws of effectiveWorkspaces) {
     if (!ws.path) continue;
     const isInScope = !scopedWorkspace || ws.path === scopedWorkspace;
+    const isAdHocScope = !registeredPaths.has(ws.path);
     const wsDir = path2.join(workspaceDir2, ws.path);
     const wsGraph = await readJsonFile(
       path2.join(wsDir, "graph.json")
@@ -31598,7 +31725,7 @@ async function readLandingData(workspaceDir2, opts = {}) {
       knownNodePaths.add(path2.join(ws.path, wsNodesDir, node2.dir));
       if (node2.type === "view" || node2.type === "navigator") continue;
       if (node2.type === "deck") {
-        if (node2.status !== "composted" && node2.status !== "completed") {
+        if (!isAdHocScope && node2.status !== "composted" && node2.status !== "completed") {
           deckNodes.push({ ...node2, graphPath: ws.path });
         }
         continue;
@@ -31620,7 +31747,7 @@ async function readLandingData(workspaceDir2, opts = {}) {
       });
     }
   }
-  for (const ws of workspaces) {
+  for (const ws of effectiveWorkspaces) {
     if (!ws.path) continue;
     if (scopedWorkspace && ws.path !== scopedWorkspace) continue;
     const wsDir = path2.join(workspaceDir2, ws.path);
@@ -31654,8 +31781,12 @@ async function readLandingData(workspaceDir2, opts = {}) {
         const sgNodesDir = sgGraph.nodesDir ?? "nodes";
         const sgNodes = await discoverNodes(sgDir, sgNodesDir);
         for (const node2 of sgNodes) {
-          if (node2.type === "arc" || node2.type === "navigator" || node2.type === "deck") continue;
-          const relNodePath = path2.relative(workspaceDir2, path2.join(sgDir, sgNodesDir, node2.dir));
+          if (node2.type === "arc" || node2.type === "navigator" || node2.type === "deck")
+            continue;
+          const relNodePath = path2.relative(
+            workspaceDir2,
+            path2.join(sgDir, sgNodesDir, node2.dir)
+          );
           if (knownNodePaths.has(relNodePath)) continue;
           const nodeDir = path2.join(sgDir, sgNodesDir, node2.dir);
           const modified = await getNodeMtime(nodeDir);
@@ -31676,10 +31807,14 @@ async function readLandingData(workspaceDir2, opts = {}) {
   const actionItems = [];
   const rootWs = workspaces.find((ws) => !ws.path);
   if (!scopedWorkspace) {
-    const rootItems = await collectDeepActionItems(workspaceDir2, "_root", rootWs?.name);
+    const rootItems = await collectDeepActionItems(
+      workspaceDir2,
+      "_root",
+      rootWs?.name
+    );
     actionItems.push(...rootItems);
   }
-  for (const ws of workspaces) {
+  for (const ws of effectiveWorkspaces) {
     if (!ws.path) continue;
     if (scopedWorkspace && ws.path !== scopedWorkspace) continue;
     const wsDir = path2.join(workspaceDir2, ws.path);
@@ -31687,7 +31822,8 @@ async function readLandingData(workspaceDir2, opts = {}) {
     actionItems.push(...wsItems);
   }
   actionItems.sort((a, b) => {
-    if (a.modified != null && b.modified != null) return b.modified - a.modified;
+    if (a.modified != null && b.modified != null)
+      return b.modified - a.modified;
     if (a.modified != null) return -1;
     if (b.modified != null) return 1;
     return (b.created ?? "").localeCompare(a.created ?? "");
@@ -31703,7 +31839,7 @@ async function readLandingData(workspaceDir2, opts = {}) {
     );
     annotations.push(...rootAnnotationItems);
   }
-  for (const ws of workspaces) {
+  for (const ws of effectiveWorkspaces) {
     if (!ws.path) continue;
     if (scopedWorkspace && ws.path !== scopedWorkspace) continue;
     const wsDir = path2.join(workspaceDir2, ws.path);
@@ -31716,7 +31852,8 @@ async function readLandingData(workspaceDir2, opts = {}) {
     annotations.push(...wsItems);
   }
   annotations.sort((a, b) => {
-    if (a.modified != null && b.modified != null) return b.modified - a.modified;
+    if (a.modified != null && b.modified != null)
+      return b.modified - a.modified;
     if (a.modified != null) return -1;
     if (b.modified != null) return 1;
     return (b.created ?? "").localeCompare(a.created ?? "");
@@ -31731,11 +31868,16 @@ async function readLandingData(workspaceDir2, opts = {}) {
     );
     if (rootHealth) health.push(rootHealth);
   }
-  for (const ws of workspaces) {
+  for (const ws of effectiveWorkspaces) {
     if (!ws.path) continue;
     if (scopedWorkspace && ws.path !== scopedWorkspace) continue;
     const wsDir = path2.join(workspaceDir2, ws.path);
-    const wsHealth = await detectGraphHealth(wsDir, ws.name, ws.path, workspaceDir2);
+    const wsHealth = await detectGraphHealth(
+      wsDir,
+      ws.name,
+      ws.path,
+      workspaceDir2
+    );
     if (wsHealth) health.push(wsHealth);
   }
   const pinnedNodes = [...deckNodes];
@@ -31794,7 +31936,9 @@ async function writeAnnotation(graphDir, nodeId, signal, body, target, kind) {
   const nodesDir = resolveNodesDir(graphData);
   const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
   if (!nodeDir) {
-    throw new Error(`Node not found: ${nodeId} (searched ${path2.join(graphDir, nodesDir, nodeId)})`);
+    throw new Error(
+      `Node not found: ${nodeId} (searched ${path2.join(graphDir, nodesDir, nodeId)})`
+    );
   }
   const annotationsDir = path2.join(nodeDir, "annotations");
   await fs2.mkdir(annotationsDir, { recursive: true });
@@ -31829,7 +31973,9 @@ async function resolveAnnotation(graphDir, nodeId, filename, status) {
   const nodesDir = resolveNodesDir(graphData);
   const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
   if (!nodeDir) {
-    throw new Error(`Node not found: ${nodeId} (searched ${path2.join(graphDir, nodesDir, nodeId)})`);
+    throw new Error(
+      `Node not found: ${nodeId} (searched ${path2.join(graphDir, nodesDir, nodeId)})`
+    );
   }
   const annotationPath = path2.join(nodeDir, "annotations", filename);
   const raw2 = await readTextFile(annotationPath);
@@ -31951,7 +32097,11 @@ async function createNode(graphDir, opts) {
   if (nodeJsonEdges.length > 0) {
     await rebuildGraphIndex(graphDir);
   }
-  return { success: true, nodeId: opts.id, applied: { status: resolvedStatus } };
+  return {
+    success: true,
+    nodeId: opts.id,
+    applied: { status: resolvedStatus }
+  };
 }
 async function updateView(graphDir, nodeId, opts) {
   const graphPath = path2.join(graphDir, "graph.json");
@@ -31962,7 +32112,9 @@ async function updateView(graphDir, nodeId, opts) {
   const nodesDir = resolveNodesDir(graphData);
   const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
   if (!nodeDir) {
-    throw new Error(`Node not found: ${nodeId} (searched ${path2.join(graphDir, nodesDir, nodeId)})`);
+    throw new Error(
+      `Node not found: ${nodeId} (searched ${path2.join(graphDir, nodesDir, nodeId)})`
+    );
   }
   const viewPath = path2.join(nodeDir, "view.json");
   const existingView = await readJsonFile(viewPath);
@@ -32006,7 +32158,9 @@ async function readData(graphDir, nodeId, filename) {
   const nodesDir = resolveNodesDir(graphData);
   const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
   if (!nodeDir) {
-    throw new Error(`Node not found: ${nodeId} (searched ${path2.join(graphDir, nodesDir, nodeId)})`);
+    throw new Error(
+      `Node not found: ${nodeId} (searched ${path2.join(graphDir, nodesDir, nodeId)})`
+    );
   }
   const dataDir = path2.join(nodeDir, "data");
   const schemaContent = await readTextFile(path2.join(dataDir, "schema.json"));
@@ -32045,7 +32199,9 @@ async function readContent(graphDir, nodeId, filename) {
   const nodesDir = resolveNodesDir(graphData);
   const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
   if (!nodeDir) {
-    throw new Error(`Node not found: ${nodeId} (searched ${path2.join(graphDir, nodesDir, nodeId)})`);
+    throw new Error(
+      `Node not found: ${nodeId} (searched ${path2.join(graphDir, nodesDir, nodeId)})`
+    );
   }
   const contentDir = path2.join(nodeDir, "content");
   if (filename) {
@@ -32075,7 +32231,9 @@ async function writeData(graphDir, nodeId, filename, data) {
   const nodesDir = resolveNodesDir(graphData);
   const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
   if (!nodeDir) {
-    throw new Error(`Node not found: ${nodeId} (searched ${path2.join(graphDir, nodesDir, nodeId)})`);
+    throw new Error(
+      `Node not found: ${nodeId} (searched ${path2.join(graphDir, nodesDir, nodeId)})`
+    );
   }
   try {
     JSON.parse(data);
@@ -32144,6 +32302,10 @@ async function searchNodes(workspaceDir2, args) {
       }
     }
   }
+  if (args.scope) {
+    await searchInGraph(path2.join(workspaceDir2, args.scope), args.scope, 0);
+    return results;
+  }
   await searchInGraph(workspaceDir2, "", 0);
   const config2 = await readConfig(workspaceDir2);
   if (config2.workspaces) {
@@ -32194,7 +32356,11 @@ async function rebuildGraphIndex(graphDir) {
     ...graphData,
     edges: assembledEdges
   };
-  await fs2.writeFile(graphPath, JSON.stringify(rebuilt, null, 2) + "\n", "utf-8");
+  await fs2.writeFile(
+    graphPath,
+    JSON.stringify(rebuilt, null, 2) + "\n",
+    "utf-8"
+  );
 }
 async function addEdge(graphDir, opts, workspaceDir2) {
   const graphPath = path2.join(graphDir, "graph.json");
@@ -32210,9 +32376,15 @@ async function addEdge(graphDir, opts, workspaceDir2) {
   const parsed = parseEdgeTarget(opts.target);
   if (parsed.graphPath) {
     if (!workspaceDir2) {
-      throw new Error("Cannot resolve cross-graph target without workspace context");
+      throw new Error(
+        "Cannot resolve cross-graph target without workspace context"
+      );
     }
-    const targetGraphDir = resolveWorkspaceRelativePath(graphDir, workspaceDir2, parsed.graphPath);
+    const targetGraphDir = resolveWorkspaceRelativePath(
+      graphDir,
+      workspaceDir2,
+      parsed.graphPath
+    );
     const targetGraph = await readJsonFile(
       path2.join(targetGraphDir, "graph.json")
     );
@@ -32220,7 +32392,11 @@ async function addEdge(graphDir, opts, workspaceDir2) {
       throw new Error(`Target graph not found: ${parsed.graphPath}`);
     }
     const targetNodesDir = resolveNodesDir(targetGraph);
-    const targetNodeDir = await resolveNodeDir(targetGraphDir, targetNodesDir, parsed.nodeId);
+    const targetNodeDir = await resolveNodeDir(
+      targetGraphDir,
+      targetNodesDir,
+      parsed.nodeId
+    );
     if (!targetNodeDir) {
       throw new Error(`Target node not found: ${opts.target}`);
     }
@@ -32250,7 +32426,11 @@ async function addEdge(graphDir, opts, workspaceDir2) {
   };
   nodeData.edges = [...existingEdges, nodeJsonEdge];
   nodeData.updated = created;
-  await fs2.writeFile(nodeJsonPath, JSON.stringify(nodeData, null, 2) + "\n", "utf-8");
+  await fs2.writeFile(
+    nodeJsonPath,
+    JSON.stringify(nodeData, null, 2) + "\n",
+    "utf-8"
+  );
   await rebuildGraphIndex(graphDir);
   return { success: true };
 }
@@ -32272,7 +32452,11 @@ async function touchNode(graphDir, nodeId, date3, at) {
   }
   const updated = at ?? date3 ?? isoLocalNow();
   nodeData.updated = updated;
-  await fs2.writeFile(nodeJsonPath, JSON.stringify(nodeData, null, 2) + "\n", "utf-8");
+  await fs2.writeFile(
+    nodeJsonPath,
+    JSON.stringify(nodeData, null, 2) + "\n",
+    "utf-8"
+  );
   return { success: true, updated };
 }
 async function hashGraphJson(graphDir) {
@@ -32281,7 +32465,9 @@ async function hashGraphJson(graphDir) {
   return sha256Hex(raw2);
 }
 async function computeContentHash(graphDir, nodeId) {
-  const graphData = await readJsonFile(path2.join(graphDir, "graph.json"));
+  const graphData = await readJsonFile(
+    path2.join(graphDir, "graph.json")
+  );
   if (!graphData) {
     throwNoGraphError(graphDir);
   }
@@ -32309,7 +32495,9 @@ async function computeContentHash(graphDir, nodeId) {
   return sha256Hex(input);
 }
 async function bumpNodeUpdated(graphDir, nodeId, newHash) {
-  const graphData = await readJsonFile(path2.join(graphDir, "graph.json"));
+  const graphData = await readJsonFile(
+    path2.join(graphDir, "graph.json")
+  );
   if (!graphData) return;
   const nodesDir = resolveNodesDir(graphData);
   const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
@@ -32326,7 +32514,9 @@ async function bumpNodeUpdated(graphDir, nodeId, newHash) {
   );
 }
 async function seedContentHash(graphDir, nodeId, hash) {
-  const graphData = await readJsonFile(path2.join(graphDir, "graph.json"));
+  const graphData = await readJsonFile(
+    path2.join(graphDir, "graph.json")
+  );
   if (!graphData) return;
   const nodesDir = resolveNodesDir(graphData);
   const nodeDir = await resolveNodeDir(graphDir, nodesDir, nodeId);
@@ -32398,7 +32588,9 @@ async function scanAndSeedHashes(workspaceDir2) {
   };
   const seenNodePaths = /* @__PURE__ */ new Set();
   async function scanGraphDir(graphDir) {
-    const graphData = await readJsonFile(path2.join(graphDir, "graph.json"));
+    const graphData = await readJsonFile(
+      path2.join(graphDir, "graph.json")
+    );
     if (!graphData) return;
     const nodesDir = resolveNodesDir(graphData);
     const discovered = await discoverNodes(graphDir, nodesDir);
@@ -32444,7 +32636,9 @@ async function scanAndSeedHashes(workspaceDir2) {
       await scanGraphDir(sgDir);
     }
   } catch (err) {
-    console.error(`[scan] sub-graph discovery failed in ${workspaceDir2}: ${err.message}`);
+    console.error(
+      `[scan] sub-graph discovery failed in ${workspaceDir2}: ${err.message}`
+    );
   }
   try {
     const wsConfig = await readConfig(workspaceDir2);
@@ -32454,7 +32648,10 @@ async function scanAndSeedHashes(workspaceDir2) {
         const childDir = path2.join(workspaceDir2, ws.path);
         await scanGraphDir(childDir);
         try {
-          const childSubGraphs = await discoverSubGraphs(childDir, workspaceDir2);
+          const childSubGraphs = await discoverSubGraphs(
+            childDir,
+            workspaceDir2
+          );
           for (const sg of childSubGraphs) {
             const sgDir = path2.join(workspaceDir2, sg.path);
             await scanGraphDir(sgDir);
@@ -32467,7 +32664,9 @@ async function scanAndSeedHashes(workspaceDir2) {
       }
     }
   } catch (err) {
-    console.error(`[scan] workspace config read failed: ${err.message}`);
+    console.error(
+      `[scan] workspace config read failed: ${err.message}`
+    );
   }
   return result;
 }
@@ -32477,20 +32676,41 @@ var workspaceTemplates = {
     description: "Open-ended inquiry \u2014 ask questions, run sessions, capture findings",
     color: "cyan",
     types: {
-      inquiry: { color: "violet", hint: "Open question or investigation thread" },
-      finding: { color: "teal", hint: "Settled insight from research \u2014 something we now know" },
-      session: { color: "amber", hint: "Time-bounded research session with specific focus" },
-      reference: { color: "cyan", hint: "External source or settled knowledge" }
+      inquiry: {
+        color: "violet",
+        hint: "Open question or investigation thread"
+      },
+      finding: {
+        color: "teal",
+        hint: "Settled insight from research \u2014 something we now know"
+      },
+      session: {
+        color: "amber",
+        hint: "Time-bounded research session with specific focus"
+      },
+      reference: {
+        color: "cyan",
+        hint: "External source or settled knowledge"
+      }
     }
   },
   concepts: {
     description: "Concept exploration \u2014 vision, design, and architecture for products and ideas",
     color: "emerald",
     types: {
-      app: { color: "indigo", hint: "App concept \u2014 vision and design for a product" },
+      app: {
+        color: "indigo",
+        hint: "App concept \u2014 vision and design for a product"
+      },
       tool: { color: "amber", hint: "Tool or utility concept" },
-      ecosystem: { color: "blue", hint: "Cross-cutting ecosystem pattern or principle" },
-      capture: { color: "rose", hint: "In-the-moment thought or observation worth preserving" }
+      ecosystem: {
+        color: "blue",
+        hint: "Cross-cutting ecosystem pattern or principle"
+      },
+      capture: {
+        color: "rose",
+        hint: "In-the-moment thought or observation worth preserving"
+      }
     }
   },
   implementation: {
@@ -32500,25 +32720,46 @@ var workspaceTemplates = {
       app: { color: "indigo", hint: "A product with its own identity" },
       package: { color: "violet", hint: "Shared library consumed by apps" },
       tool: { color: "amber", hint: "Developer tooling or CLI utility" },
-      infra: { color: "orange", hint: "Infrastructure service or deployment config" },
-      reference: { color: "cyan", hint: "Documentation or settled architectural pattern" }
+      infra: {
+        color: "orange",
+        hint: "Infrastructure service or deployment config"
+      },
+      reference: {
+        color: "cyan",
+        hint: "Documentation or settled architectural pattern"
+      }
     }
   },
   evaluation: {
     description: "Quality assessment \u2014 evaluations, comparisons, simulations, and snapshots",
     color: "pink",
     types: {
-      evaluation: { color: "pink", hint: "Quality assessment of a specific artifact or experience" },
-      comparison: { color: "violet", hint: "Side-by-side analysis across models, versions, or approaches" },
-      simulation: { color: "cyan", hint: "Automated run with structured output for scoring" },
-      snapshot: { color: "teal", hint: "Point-in-time capture of system state for later reference" }
+      evaluation: {
+        color: "pink",
+        hint: "Quality assessment of a specific artifact or experience"
+      },
+      comparison: {
+        color: "violet",
+        hint: "Side-by-side analysis across models, versions, or approaches"
+      },
+      simulation: {
+        color: "cyan",
+        hint: "Automated run with structured output for scoring"
+      },
+      snapshot: {
+        color: "teal",
+        hint: "Point-in-time capture of system state for later reference"
+      }
     }
   },
   general: {
     description: "Flexible workspace \u2014 start here when the shape isn't clear yet",
     color: "teal",
     types: {
-      reference: { color: "cyan", hint: "External source or settled knowledge" },
+      reference: {
+        color: "cyan",
+        hint: "External source or settled knowledge"
+      },
       exploration: { color: "teal", hint: "Open-ended exploration of a topic" }
     }
   }
@@ -32538,7 +32779,9 @@ async function initWorkspace(workspaceDir2, opts) {
   }
   const graphJsonPath = path2.join(workspaceDir2, "graph.json");
   if (await fileExists(graphJsonPath)) {
-    throw new Error("Workspace already initialized \u2014 graph.json already exists.");
+    throw new Error(
+      "Workspace already initialized \u2014 graph.json already exists."
+    );
   }
   const effectiveNodesDir = opts.nodesDir ?? "nodes";
   const created = [];
@@ -32550,7 +32793,11 @@ async function initWorkspace(workspaceDir2, opts) {
   if (effectiveNodesDir !== "nodes") {
     graphData.nodesDir = effectiveNodesDir;
   }
-  await fs2.writeFile(graphJsonPath, JSON.stringify(graphData, null, 2) + "\n", "utf-8");
+  await fs2.writeFile(
+    graphJsonPath,
+    JSON.stringify(graphData, null, 2) + "\n",
+    "utf-8"
+  );
   created.push("graph.json");
   const claudeDir = path2.join(workspaceDir2, ".claude");
   await fs2.mkdir(claudeDir, { recursive: true });
@@ -32561,14 +32808,20 @@ async function initWorkspace(workspaceDir2, opts) {
     configData.color = template.color;
     configData.types = template.types;
   }
-  await fs2.writeFile(configPath, JSON.stringify(configData, null, 2) + "\n", "utf-8");
+  await fs2.writeFile(
+    configPath,
+    JSON.stringify(configData, null, 2) + "\n",
+    "utf-8"
+  );
   created.push(".claude/qino-config.json");
   const nodesDirPath = path2.join(workspaceDir2, effectiveNodesDir);
   await fs2.mkdir(nodesDirPath, { recursive: true });
   created.push(effectiveNodesDir + "/");
   return {
     created,
-    next_steps: template ? `Workspace initialized with '${opts.template}' template (${template.description}). ${Object.keys(template.types).length} node types seeded: ${Object.keys(template.types).map((t) => `${t} \u2014 ${template.types[t].hint}`).join("; ")}. Use update_config to add more types or adjust colors.` : "Workspace initialized. Use update_config to set type colors, workspace color, and status treatments. Pass a 'template' to init_workspace next time for sensible defaults. See read_protocol('setup') for configurable fields."
+    next_steps: template ? `Workspace initialized with '${opts.template}' template (${template.description}). ${Object.keys(template.types).length} node types seeded: ${Object.keys(
+      template.types
+    ).map((t) => `${t} \u2014 ${template.types[t].hint}`).join("; ")}. Use update_config to add more types or adjust colors.` : "Workspace initialized. Use update_config to set type colors, workspace color, and status treatments. Pass a 'template' to init_workspace next time for sensible defaults. See read_protocol('setup') for configurable fields."
   };
 }
 async function deleteNode(graphDir, nodeId) {
@@ -32586,7 +32839,12 @@ async function deleteNode(graphDir, nodeId) {
   const siblingNodes = await discoverNodes(graphDir, nodesDir);
   for (const sibling of siblingNodes) {
     if (sibling.id === nodeId) continue;
-    const siblingNodeJsonPath = path2.join(graphDir, nodesDir, sibling.dir, "node.json");
+    const siblingNodeJsonPath = path2.join(
+      graphDir,
+      nodesDir,
+      sibling.dir,
+      "node.json"
+    );
     const siblingData = await readJsonFile(siblingNodeJsonPath);
     if (!siblingData) continue;
     const edges = siblingData.edges ?? [];
@@ -41679,13 +41937,13 @@ var VFile = class {
    * @returns {undefined}
    *   Nothing.
    */
-  set path(path7) {
-    if (isUrl(path7)) {
-      path7 = fileURLToPath(path7);
+  set path(path10) {
+    if (isUrl(path10)) {
+      path10 = fileURLToPath(path10);
     }
-    assertNonEmpty(path7, "path");
-    if (this.path !== path7) {
-      this.history.push(path7);
+    assertNonEmpty(path10, "path");
+    if (this.path !== path10) {
+      this.history.push(path10);
     }
   }
   /**
@@ -41952,8 +42210,8 @@ function assertNonEmpty(part, name) {
     throw new Error("`" + name + "` cannot be empty");
   }
 }
-function assertPath(path7, name) {
-  if (!path7) {
+function assertPath(path10, name) {
+  if (!path10) {
     throw new Error("Setting `" + name + "` requires `path` to be set too");
   }
 }
@@ -42837,7 +43095,7 @@ function transformGfmAutolinkLiterals(tree) {
     { ignore: ["link", "linkReference"] }
   );
 }
-function findUrl(_, protocol, domain2, path7, match2) {
+function findUrl(_, protocol, domain2, path10, match2) {
   let prefix = "";
   if (!previous2(match2)) {
     return false;
@@ -42850,7 +43108,7 @@ function findUrl(_, protocol, domain2, path7, match2) {
   if (!isCorrectDomain(domain2)) {
     return false;
   }
-  const parts = splitUrl(domain2 + path7);
+  const parts = splitUrl(domain2 + path10);
   if (!parts[0]) return false;
   const result = {
     type: "link",
@@ -44949,6 +45207,14 @@ var processor = remark().use(remarkGfm).use(stripMarkdown, {
 });
 function stripMarkdownForSpeech(md) {
   let text6 = String(processor.processSync(md));
+  text6 = text6.replace(
+    /&#x([0-9a-fA-F]+);/g,
+    (_m, hex) => String.fromCodePoint(parseInt(hex, 16))
+  ).replace(
+    /&#(\d+);/g,
+    (_m, dec) => String.fromCodePoint(parseInt(dec, 10))
+  ).replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&amp;/g, "&");
+  text6 = text6.replace(/\\([\\`*_{}[\]()#+\-.!<>|~"])/g, "$1");
   text6 = text6.replace(/→/g, " to ");
   text6 = text6.replace(/←/g, " from ");
   text6 = text6.replace(/↔/g, " between ");
@@ -44966,6 +45232,8 @@ function stripMarkdownForSpeech(md) {
   text6 = text6.replace(/https?:\/\/[^\s)>\]]+/g, "link omitted");
   text6 = text6.replace(/\.(\s*\.)+/g, ".");
   text6 = text6.replace(/\n{3,}/g, "\n\n");
+  text6 = text6.replace(/[ \t]*(?<!\n)\n(?!\n)[ \t]*/g, " ");
+  text6 = text6.replace(/[ \t]{2,}/g, " ");
   text6 = text6.trim();
   return text6;
 }
@@ -45147,64 +45415,361 @@ function quote(p) {
   return `"${p.replace(/"/g, '\\"')}"`;
 }
 
-// src/server/deeplinks.ts
-var ROOT_WORKSPACE = "_root";
-function parseGraphPath(graphPath, knownWorkspaces) {
-  if (!graphPath) return { workspace: ROOT_WORKSPACE };
-  const segments = graphPath.split("/");
-  const firstSegment = segments[0];
-  if (knownWorkspaces && !knownWorkspaces.has(firstSegment)) {
-    return { workspace: ROOT_WORKSPACE, at: graphPath };
+// src/server/worktree-options.ts
+import path6 from "path";
+
+// src/server/worktree-registry.ts
+import { execFile as execFile2 } from "child_process";
+import fs3 from "fs/promises";
+import path5 from "path";
+import { promisify as promisify2 } from "util";
+var execFileAsync2 = promisify2(execFile2);
+var GIT_MAX_BUFFER = 16 * 1024 * 1024;
+async function git(cwd, args) {
+  const { stdout } = await execFileAsync2("git", args, {
+    cwd,
+    maxBuffer: GIT_MAX_BUFFER
+  });
+  return stdout.trim();
+}
+async function gitSafe(cwd, args) {
+  try {
+    return await git(cwd, args);
+  } catch {
+    return null;
   }
+}
+function classifySlot(input) {
+  const { ahead, behind, dirty, isBase, unrelated } = input;
+  if (isBase) return "base";
+  if (unrelated) return "unrelated";
+  if (dirty > 0) return "active";
+  if (ahead > 0 && behind > 0) return "diverged";
+  if (ahead > 0) return "mergeable";
+  if (behind > 0) return "stale";
+  return "free";
+}
+function computeOverlaps(slots) {
+  const overlaps = [];
+  for (let i = 0; i < slots.length; i++) {
+    for (let j = i + 1; j < slots.length; j++) {
+      const a = slots[i];
+      const b = slots[j];
+      if (!a || !b) continue;
+      const bSet = new Set(b.changedFiles);
+      const shared = a.changedFiles.filter((f) => bSet.has(f));
+      if (shared.length > 0) {
+        const first = a.name < b.name ? a.name : b.name;
+        const second = a.name < b.name ? b.name : a.name;
+        overlaps.push({ a: first, b: second, files: shared.sort() });
+      }
+    }
+  }
+  return overlaps;
+}
+function iterationNodesFromFiles(files) {
+  const seen = /* @__PURE__ */ new Map();
+  for (const f of files) {
+    const segs = f.split("/");
+    const node2 = segs[1];
+    if (segs[0] === "implementations" && node2) {
+      const dir = `implementations/${node2}`;
+      if (!seen.has(dir)) seen.set(dir, { node: node2, dir });
+    }
+  }
+  return [...seen.values()];
+}
+function touchedAreasFromFiles(files) {
+  const counts = /* @__PURE__ */ new Map();
+  for (const f of files) {
+    const segs = f.split("/");
+    const top = segs[0] ?? f;
+    const area = segs.length >= 2 && segs[1] ? `${top}/${segs[1]}` : top;
+    counts.set(area, (counts.get(area) ?? 0) + 1);
+  }
+  return [...counts.entries()].map(([area, count]) => ({ area, count })).sort((x, y) => y.count - x.count);
+}
+function parseWorktreeList(porcelain) {
+  const blocks = porcelain.split(/\n\n+/).map((b) => b.trim()).filter(Boolean);
+  const result = [];
+  for (const block of blocks) {
+    let wtPath = "";
+    let head = "";
+    let branch = null;
+    let detached = false;
+    let bare = false;
+    for (const line of block.split("\n")) {
+      if (line.startsWith("worktree ")) wtPath = line.slice("worktree ".length);
+      else if (line.startsWith("HEAD ")) head = line.slice("HEAD ".length);
+      else if (line.startsWith("branch ")) {
+        branch = line.slice("branch ".length).replace(/^refs\/heads\//, "");
+      } else if (line === "detached") detached = true;
+      else if (line === "bare") bare = true;
+    }
+    if (wtPath) result.push({ path: wtPath, head, branch, detached, bare });
+  }
+  return result;
+}
+function normalizeBaseBranch(base) {
+  return base.replace(/^origin\//, "");
+}
+async function resolveBase(top, explicit) {
+  if (explicit) return explicit;
+  for (const candidate of ["main", "master"]) {
+    const ok3 = await gitSafe(top, [
+      "rev-parse",
+      "--verify",
+      "--quiet",
+      candidate
+    ]);
+    if (ok3 !== null) return candidate;
+  }
+  const originHead = await gitSafe(top, [
+    "symbolic-ref",
+    "--quiet",
+    "refs/remotes/origin/HEAD"
+  ]);
+  if (originHead) return originHead.replace(/^refs\/remotes\//, "");
+  return null;
+}
+async function resolveNodeTitle(slotPath, nodeDir) {
+  try {
+    const raw2 = await fs3.readFile(
+      path5.join(slotPath, nodeDir, "node.json"),
+      "utf-8"
+    );
+    const parsed = JSON.parse(raw2);
+    if (parsed && typeof parsed === "object" && "title" in parsed) {
+      const title = parsed.title;
+      return typeof title === "string" ? title : null;
+    }
+  } catch {
+  }
+  return null;
+}
+async function computeSlot(wt, base) {
+  const slotPath = wt.path;
+  const dirtyOut = await gitSafe(slotPath, ["status", "--porcelain"]);
+  const dirty = dirtyOut ? dirtyOut.split("\n").filter((l) => l.trim().length > 0).length : 0;
+  let ahead = 0;
+  let behind = 0;
+  let unrelated = false;
+  let changedFiles = [];
+  if (base) {
+    const mergeBase = await gitSafe(slotPath, ["merge-base", base, "HEAD"]);
+    if (!mergeBase) {
+      unrelated = true;
+    } else {
+      const ab = await gitSafe(slotPath, [
+        "rev-list",
+        "--left-right",
+        "--count",
+        `${base}...HEAD`
+      ]);
+      if (ab) {
+        const [b, a] = ab.split(/\s+/);
+        behind = Number.parseInt(b ?? "0", 10) || 0;
+        ahead = Number.parseInt(a ?? "0", 10) || 0;
+      }
+      const diff = await gitSafe(slotPath, [
+        "diff",
+        "--name-only",
+        mergeBase,
+        "HEAD"
+      ]);
+      changedFiles = diff ? diff.split("\n").map((s) => s.trim()).filter(Boolean) : [];
+    }
+  }
+  const isBase = wt.branch !== null && base !== null && normalizeBaseBranch(wt.branch) === normalizeBaseBranch(base);
+  const nodeRefs = iterationNodesFromFiles(changedFiles);
+  const iterationNodes = await Promise.all(
+    nodeRefs.map(async (ref) => ({
+      ...ref,
+      title: await resolveNodeTitle(slotPath, ref.dir)
+    }))
+  );
   return {
-    workspace: firstSegment,
-    at: segments.length > 1 ? segments.slice(1).join("/") : void 0
+    path: slotPath,
+    name: path5.basename(slotPath),
+    branch: wt.branch,
+    detached: wt.detached,
+    head: wt.head.slice(0, 8),
+    ahead,
+    behind,
+    dirty,
+    changedFiles,
+    iterationNodes,
+    touchedAreas: touchedAreasFromFiles(changedFiles),
+    state: classifySlot({ ahead, behind, dirty, isBase, unrelated })
   };
 }
-function resolveBaseUrl(config2) {
-  return config2.viewerBaseUrl ?? config2.baseUrl;
-}
-function buildGraphDeeplink(config2, params) {
-  const url = new URL(
-    `/${encodeURIComponent(params.workspace)}/graph`,
-    resolveBaseUrl(config2)
-  );
-  if (params.at) url.searchParams.set("at", params.at);
-  if (params.highlight?.length)
-    url.searchParams.set("highlight", params.highlight.join(","));
-  if (params.view) url.searchParams.set("view", params.view);
-  return url.toString();
-}
-function buildNodeDeeplink(config2, params) {
-  const url = new URL(
-    `/${encodeURIComponent(params.workspace)}/node/${encodeURIComponent(params.nodeId)}`,
-    resolveBaseUrl(config2)
-  );
-  if (params.at) url.searchParams.set("at", params.at);
-  if (params.section) url.searchParams.set("section", params.section);
-  return url.toString();
-}
-function buildGraphLinks(config2, graphPath, nodeIds, knownWorkspaces) {
-  const { workspace, at } = parseGraphPath(graphPath, knownWorkspaces);
-  if (!workspace) {
-    return { self: "", nodes: {} };
+function buildConsolidation(slots, overlaps) {
+  const notes = [];
+  const mergeable = slots.filter((s) => s.state === "mergeable");
+  for (const s of mergeable) {
+    notes.push({
+      kind: "mergeable",
+      message: `${s.branch ?? s.name} is ${s.ahead} ahead, 0 behind, clean \u2014 land it now and free ${s.name}.`
+    });
   }
-  const self = buildGraphDeeplink(config2, { workspace, at });
-  const nodes = {};
-  for (const nodeId of nodeIds) {
-    nodes[nodeId] = buildNodeDeeplink(config2, { workspace, nodeId, at });
+  const diverged = slots.filter((s) => s.state === "diverged");
+  for (const s of diverged) {
+    notes.push({
+      kind: "diverged",
+      message: `${s.branch ?? s.name} diverged (${s.ahead} ahead / ${s.behind} behind, ${s.changedFiles.length} files) \u2014 rebase onto base before it can land.`
+    });
   }
-  return { self, nodes };
+  const free = slots.filter((s) => s.state === "free" || s.state === "stale");
+  if (free.length > 0) {
+    notes.push({
+      kind: "free",
+      message: `Available slots for new work: ${free.map((s) => s.name).join(", ")}.`
+    });
+  }
+  for (const o of overlaps) {
+    notes.push({
+      kind: "overlap",
+      message: `${o.a} and ${o.b} share ${o.files.length} file(s) \u2014 land one before the other to avoid a merge collision.`
+    });
+  }
+  return notes;
 }
-function buildNodeLinks(config2, graphPath, nodeId, knownWorkspaces) {
-  const { workspace, at } = parseGraphPath(graphPath, knownWorkspaces);
-  if (!workspace) {
-    return { self: "", graph: "" };
+async function readWorktreeRegistry(opts) {
+  const { startDir } = opts;
+  const repoRoot = await gitSafe(startDir, ["rev-parse", "--show-toplevel"]);
+  if (!repoRoot) {
+    return {
+      kind: "not-a-repo",
+      startDir,
+      reason: `${startDir} is not inside a git repository \u2014 no worktrees to report.`
+    };
   }
+  const porcelain = await gitSafe(repoRoot, [
+    "worktree",
+    "list",
+    "--porcelain"
+  ]);
+  if (porcelain === null) {
+    return {
+      kind: "not-a-repo",
+      startDir,
+      reason: `Could not list worktrees for ${repoRoot}.`
+    };
+  }
+  const base = await resolveBase(repoRoot, opts.base);
+  const worktrees = parseWorktreeList(porcelain).filter((w) => !w.bare);
+  const slots = await Promise.all(worktrees.map((wt) => computeSlot(wt, base)));
+  const overlaps = computeOverlaps(slots);
+  const consolidation = buildConsolidation(slots, overlaps);
   return {
-    self: buildNodeDeeplink(config2, { workspace, nodeId, at }),
-    graph: buildGraphDeeplink(config2, { workspace, at })
+    kind: "ok",
+    repoRoot,
+    base,
+    startDir,
+    slots,
+    overlaps,
+    consolidation
   };
+}
+var STATE_LABEL = {
+  base: "base",
+  active: "active",
+  diverged: "diverged",
+  mergeable: "mergeable",
+  free: "free",
+  stale: "stale",
+  unrelated: "unrelated"
+};
+function rule(width = 78) {
+  return "=".repeat(width);
+}
+function renderRegistryText(registry2) {
+  const lines = [];
+  lines.push(rule());
+  lines.push(
+    `SLOT REGISTRY  \xB7  ${registry2.slots.length} worktree(s)  \xB7  base=${registry2.base ?? "(none)"}`
+  );
+  lines.push(`repo: ${registry2.repoRoot}`);
+  lines.push(rule());
+  for (const s of registry2.slots) {
+    const branch = s.branch ?? `(detached ${s.head})`;
+    lines.push("");
+    lines.push(`\u25B8 ${s.name.padEnd(24)} [${STATE_LABEL[s.state]}]  ${branch}`);
+    lines.push(
+      `    merge   : ${s.ahead} ahead / ${s.behind} behind   dirty=${s.dirty}   changed=${s.changedFiles.length}`
+    );
+    if (s.iterationNodes.length > 0) {
+      const nodes = s.iterationNodes.map((n) => n.title ? `${n.node} ("${n.title}")` : n.node).join(", ");
+      lines.push(`    iter    : ${nodes}`);
+    }
+    if (s.touchedAreas.length > 0) {
+      const areas = s.touchedAreas.slice(0, 4).map((a) => `${a.area} (${a.count})`).join(", ");
+      lines.push(`    touches : ${areas}`);
+    }
+  }
+  lines.push("");
+  lines.push(rule());
+  lines.push("FILE OVERLAP  (collision / merge-ordering signal)");
+  lines.push(rule());
+  if (registry2.overlaps.length === 0) {
+    lines.push("  (no file overlap between any two slots \u2014 clean separation)");
+  } else {
+    for (const o of registry2.overlaps) {
+      lines.push("");
+      lines.push(`\u26A0 ${o.a}  \xD7  ${o.b}  \u2014  ${o.files.length} shared file(s)`);
+      for (const f of o.files.slice(0, 8)) lines.push(`    ${f}`);
+      if (o.files.length > 8) lines.push(`    \u2026 +${o.files.length - 8} more`);
+    }
+  }
+  if (registry2.consolidation.length > 0) {
+    lines.push("");
+    lines.push(rule());
+    lines.push("CONSOLIDATION  (advisory \u2014 a reading, not a command)");
+    lines.push(rule());
+    for (const note of registry2.consolidation)
+      lines.push(`  \u2022 ${note.message}`);
+  }
+  return lines.join("\n");
+}
+
+// src/server/worktree-options.ts
+function isUnderRoot(relPath) {
+  return relPath !== "" && !relPath.startsWith("..") && !path6.isAbsolute(relPath);
+}
+function projectWorktrees(registry2, workspaceDir2, workspacePath) {
+  if (registry2.kind !== "ok") return [];
+  const options = [];
+  for (const slot of registry2.slots) {
+    const relPath = path6.relative(workspaceDir2, slot.path);
+    if (!isUnderRoot(relPath)) continue;
+    options.push({
+      relPath,
+      name: slot.name,
+      branch: slot.branch,
+      state: slot.state,
+      dirty: slot.dirty,
+      ahead: slot.ahead,
+      behind: slot.behind,
+      isBase: relPath === workspacePath
+    });
+  }
+  return options;
+}
+async function worktreesForWorkspace(workspaceDir2, workspacePath) {
+  const startDir = path6.join(workspaceDir2, workspacePath);
+  const registry2 = await readWorktreeRegistry({ startDir });
+  return projectWorktrees(registry2, workspaceDir2, workspacePath);
+}
+async function readWorktreeOptions(workspaceDir2) {
+  const config2 = await readConfig(workspaceDir2);
+  const registered = config2.workspaces ? Object.values(config2.workspaces).map((w) => w.path) : [];
+  const workspaces = await Promise.all(
+    registered.map(async (workspacePath) => ({
+      workspace: workspacePath,
+      worktrees: await worktreesForWorkspace(workspaceDir2, workspacePath)
+    }))
+  );
+  return { workspaces };
 }
 
 // src/server/http-api.ts
@@ -45270,6 +45835,9 @@ function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces,
     });
     return c.json(landing);
   });
+  app.get("/api/worktrees", async (c) => {
+    return c.json(await readWorktreeOptions(workspaceDir2));
+  });
   app.get("/api/graph", async (c) => {
     const graphPath = resolveApiPath(c.req.query("path"));
     const graphDir = graphPath ? nodePath.join(workspaceDir2, graphPath) : workspaceDir2;
@@ -45288,7 +45856,12 @@ function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces,
     }
     const deeplinkConfig = getDeeplinkConfig(c.req.url);
     const nodeIds = graph.nodes.map((n) => n.id);
-    const _links = buildGraphLinks(deeplinkConfig, graphPath, nodeIds, knownWorkspaces);
+    const _links = buildGraphLinks(
+      deeplinkConfig,
+      graphPath,
+      nodeIds,
+      knownWorkspaces
+    );
     const pendingMessages = messageStore ? messageStore.countByNode() : void 0;
     return c.json({ ...graph, _links, pendingMessages });
   });
@@ -45301,7 +45874,12 @@ function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces,
       return c.json({ error: "Node not found" }, 404);
     }
     const deeplinkConfig = getDeeplinkConfig(c.req.url);
-    const _links = buildNodeLinks(deeplinkConfig, graphPath, nodeId, knownWorkspaces);
+    const _links = buildNodeLinks(
+      deeplinkConfig,
+      graphPath,
+      nodeId,
+      knownWorkspaces
+    );
     return c.json({ ...node2, _links });
   });
   app.get("/api/nodes/:nodeId/fingerprint", async (c) => {
@@ -45333,10 +45911,12 @@ function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces,
     }
     const type = c.req.query("type");
     const status = c.req.query("status");
+    const scope = c.req.query("scope");
     const results = await searchNodes(workspaceDir2, {
       query,
       type: type || void 0,
-      status: status || void 0
+      status: status || void 0,
+      scope: scope || void 0
     });
     return c.json(results);
   });
@@ -45411,7 +45991,10 @@ function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces,
     const graphDir = graphPath ? nodePath.join(workspaceDir2, graphPath) : workspaceDir2;
     const body = await c.req.json();
     if (!body.id || !body.title || !body.story) {
-      return c.json({ error: "Missing required fields: id, title, story" }, 400);
+      return c.json(
+        { error: "Missing required fields: id, title, story" },
+        400
+      );
     }
     try {
       const result = await createNode(graphDir, body);
@@ -45468,7 +46051,11 @@ function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces,
     const body = await c.req.json();
     try {
       const result = await touchNode(graphDir, nodeId, body.date, body.at);
-      watcher?.push({ type: "node", nodeId, graphPath: graphPath ?? void 0 });
+      watcher?.push({
+        type: "node",
+        nodeId,
+        graphPath: graphPath ?? void 0
+      });
       return c.json(result);
     } catch (err) {
       const message = err instanceof Error ? err.message : "Unknown error";
@@ -45695,9 +46282,16 @@ function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces,
       landing.deckNodes.map(async (node2) => {
         const graphPath = node2.graphPath === "_root" ? void 0 : node2.graphPath;
         const graphDir = graphPath ? nodePath.join(workspaceDir2, graphPath) : workspaceDir2;
-        const detail = await readNode(graphDir, node2.id, graphPath, workspaceDir2);
+        const detail = await readNode(
+          graphDir,
+          node2.id,
+          graphPath,
+          workspaceDir2
+        );
         const story = detail?.story ? detail.story.slice(0, 500) : void 0;
-        const memberRefs = detail ? detail.neighborhood.filter((n) => n.direction === "outgoing" && n.label === "composes").map((n) => n.nodeId) : [];
+        const memberRefs = detail ? detail.neighborhood.filter(
+          (n) => n.direction === "outgoing" && n.label === "composes"
+        ).map((n) => n.nodeId) : [];
         return {
           id: node2.id,
           title: node2.title,
@@ -45718,7 +46312,7 @@ function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces,
       const reqPath = url.pathname === "/" ? "/index.html" : url.pathname;
       const filePath = nodePath.join(staticDir, reqPath);
       try {
-        const content3 = await fs3.readFile(filePath);
+        const content3 = await fs4.readFile(filePath);
         const ext = nodePath.extname(filePath);
         const contentType = MIME_TYPES[ext] ?? "application/octet-stream";
         return new Response(content3, {
@@ -45728,7 +46322,7 @@ function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces,
         if (nodePath.extname(reqPath)) {
           return c.notFound();
         }
-        const html2 = await fs3.readFile(
+        const html2 = await fs4.readFile(
           nodePath.join(staticDir, "index.html"),
           "utf-8"
         );
@@ -45740,7 +46334,7 @@ function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces,
 }
 
 // src/server/message-store.ts
-import fs4 from "fs/promises";
+import fs5 from "fs/promises";
 import nodePath2 from "path";
 import crypto3 from "crypto";
 var MESSAGES_DIR = ".qino-os/messages";
@@ -45754,11 +46348,11 @@ var MessageStore = class {
   async loadSaved() {
     const dir = nodePath2.join(this.workspaceDir, MESSAGES_DIR);
     try {
-      const files = await fs4.readdir(dir);
+      const files = await fs5.readdir(dir);
       for (const file of files) {
         if (!file.endsWith(".json")) continue;
         try {
-          const content3 = await fs4.readFile(nodePath2.join(dir, file), "utf-8");
+          const content3 = await fs5.readFile(nodePath2.join(dir, file), "utf-8");
           const message = JSON.parse(content3);
           if (message.id) {
             this.messages.set(message.id, message);
@@ -45781,8 +46375,8 @@ var MessageStore = class {
     };
     this.messages.set(message.id, message);
     const dir = nodePath2.join(this.workspaceDir, MESSAGES_DIR);
-    await fs4.mkdir(dir, { recursive: true });
-    await fs4.writeFile(
+    await fs5.mkdir(dir, { recursive: true });
+    await fs5.writeFile(
       nodePath2.join(dir, `${message.id}.json`),
       JSON.stringify(message, null, 2)
     );
@@ -45803,7 +46397,7 @@ var MessageStore = class {
     for (const msg of messages) {
       this.messages.delete(msg.id);
       try {
-        await fs4.unlink(nodePath2.join(dir, `${msg.id}.json`));
+        await fs5.unlink(nodePath2.join(dir, `${msg.id}.json`));
       } catch {
       }
     }
@@ -45815,7 +46409,7 @@ var MessageStore = class {
     this.messages.delete(id);
     const dir = nodePath2.join(this.workspaceDir, MESSAGES_DIR);
     try {
-      await fs4.unlink(nodePath2.join(dir, `${id}.json`));
+      await fs5.unlink(nodePath2.join(dir, `${id}.json`));
     } catch {
     }
     return true;
@@ -45837,7 +46431,7 @@ var MessageStore = class {
     const dir = nodePath2.join(this.workspaceDir, MESSAGES_DIR);
     for (const msg of this.messages.values()) {
       try {
-        await fs4.unlink(nodePath2.join(dir, `${msg.id}.json`));
+        await fs5.unlink(nodePath2.join(dir, `${msg.id}.json`));
       } catch {
       }
     }
@@ -45846,8 +46440,8 @@ var MessageStore = class {
 };
 
 // src/server/file-watcher.ts
-import fs5 from "fs";
-import path5 from "path";
+import fs6 from "fs";
+import path7 from "path";
 function categorizeWithDir(relativePath) {
   if (/(?:^|\/)(?:\.git|node_modules)\//.test(relativePath)) return null;
   const parts = relativePath.split("/");
@@ -45923,7 +46517,7 @@ function createFileWatcher(workspaceDir2) {
     const relativePath = filename.replace(/\\/g, "/");
     const result = categorizeWithDir(relativePath);
     if (!result) return;
-    const event = result.relativeNodeDir ? { ...result.event, nodeDir: path5.join(workspaceDir2, result.relativeNodeDir) } : result.event;
+    const event = result.relativeNodeDir ? { ...result.event, nodeDir: path7.join(workspaceDir2, result.relativeNodeDir) } : result.event;
     const key = debounceKey(event);
     const existing = timers.get(key);
     if (existing) clearTimeout(existing);
@@ -45937,7 +46531,7 @@ function createFileWatcher(workspaceDir2) {
   }
   let watcher;
   try {
-    watcher = fs5.watch(
+    watcher = fs6.watch(
       workspaceDir2,
       { recursive: true },
       handleFsChange
@@ -46027,6 +46621,14 @@ function buildServerInstructions(options) {
   );
   lines.push(
     "",
+    "## Worktrees & branch scope",
+    "",
+    "Read tools (read_node, search_nodes, read_activity, read_graph, read_content) read the branch currently checked out on disk. A node committed on a *different* branch or git worktree will NOT appear, even though it exists in the repo \u2014 so if a node you expect is missing, it may simply live on another branch, not be absent.",
+    "",
+    `Use read_slots for an operational overview of the repo's git worktrees ("slots"): each slot's branch, state (base | active | diverged | mergeable | free | stale | unrelated), uncommitted count, cross-slot file overlaps, and the iteration node(s) each branch touches. read_slots tells you WHICH branch a node is being worked on; it does not fetch cross-branch content \u2014 check out that branch/worktree to read the node itself.`
+  );
+  lines.push(
+    "",
     "## Workspace Paths",
     "",
     'Tools that target nodes accept a `graphPath` parameter. Use the workspace `path` from read_activity as graphPath \u2014 e.g., if read_activity shows path "qinolabs-repo", use graphPath: "qinolabs-repo" for nodes in that workspace.',
@@ -46049,8 +46651,9 @@ function buildServerInstructions(options) {
   lines.push(
     "Discovery: read_config, read_activity, read_graph, read_node, read_node_fingerprint, read_content, read_data, read_decks, read_messages, read_protocol, search_nodes, get_viewer_link"
   );
+  lines.push("Worktrees: read_slots");
   if (mode2 === "full") {
-    lines.push("Initialization: init_workspace");
+    lines.push("Initialization: init_workspace, update_config");
     lines.push("Creation: create_node, add_edge");
     lines.push("Signals: write_annotation, resolve_annotation");
     lines.push("Curation: update_view, write_data, touch_node");
@@ -46058,6 +46661,9 @@ function buildServerInstructions(options) {
   }
   return lines.join("\n");
 }
+
+// src/server/mcp-tools.ts
+import path8 from "path";
 
 // src/server/protocol-guide.ts
 var GUIDE_SECTIONS = {
@@ -46390,6 +46996,7 @@ WHEN TO USE:
 - Session check-in \u2014 what changed recently, what needs attention
 - Finding where to start \u2014 deck nodes and arcs point to active lines of work
 - Discovering workspaces \u2014 what paths exist for read_graph calls
+- Reading a worktree's in-progress state \u2014 pass workspace: '<worktree-path>' to orient as that branch sees it
 
 WHEN NOT TO USE:
 - Exploring one graph's structure \u2192 read_graph(graphPath)
@@ -46424,10 +47031,13 @@ ARRIVAL PATTERN: Call read_activity first. Deck nodes are composed thread ensemb
       ),
       limit: external_exports.number().optional().describe(
         "Cap recentNodes count (default: 25, max: 200). Lower values for quick orientation; higher for full ecosystem search."
+      ),
+      workspace: external_exports.string().optional().describe(
+        "Scope orientation to one workspace or worktree path (e.g. 'qinolabs-repo-wt3'). Omit for full ecosystem orientation. Scopes recentNodes, actionItems, annotations, and health to that path's working tree; the workspaces map stays global."
       )
     },
-    async ({ sections, limit }) => {
-      const landing = await ops.readLanding();
+    async ({ sections, limit, workspace }) => {
+      const landing = await ops.readLanding(workspace);
       const effectiveLimit = Math.min(limit ?? 25, 200);
       const include = sections ? new Set(sections) : null;
       const result = {};
@@ -46507,6 +47117,54 @@ ARRIVAL PATTERN: Call read_activity first. Deck nodes are composed thread ensemb
           {
             type: "text",
             text: JSON.stringify(result, null, 2)
+          }
+        ]
+      };
+    }
+  );
+  server.tool(
+    "read_slots",
+    `Operational overview of the git worktrees ("slots") backing a repo \u2014 slot state, merge-readiness, file overlap, and the iteration node each branch touches.
+
+WHEN TO USE:
+- Coordinating parallel work across many warm worktrees \u2014 "what's where, what's mergeable, which slot is free?"
+- Before starting new work \u2014 see which branches must land first and which slots collide on the same files
+- Consolidation triage \u2014 which branches are ready to merge, which diverged and need a rebase
+
+WHEN NOT TO USE:
+- Reading the durable graph (nodes, activity, annotations) \u2192 read_activity / read_node. This tool reads git only.
+
+REPO TARGETING: In a multi-repo workspace, pass \`repo\` (e.g. 'qinolabs-repo') to target a specific child repository; the server's own workspace dir may be a parent meta-repo with only one worktree. Omit to inspect the workspace's enclosing repo.
+
+RETURNS (per slot): branch, state (base | active | diverged | mergeable | free | stale | unrelated), ahead/behind base, dirty count, changed files, linked iteration node(s), touched areas. Plus cross-slot file overlaps and advisory consolidation notes.
+
+BOUNDARY: Read-only and stateless \u2014 recomputed live from git on every call, so it can never be stale. Nothing about slot state is written to the durable graph (worktree layout is machine-local; the graph is shared). The consolidation notes are a reading, never a gate.`,
+    {
+      repo: external_exports.string().optional().describe(
+        "Child repository to inspect \u2014 absolute path, or a name/path relative to the workspace dir (e.g. 'qinolabs-repo'). Omit to inspect the enclosing repo."
+      ),
+      base: external_exports.string().optional().describe(
+        "Base ref to measure ahead/behind against. Default: auto-detect main \u2192 master \u2192 origin/HEAD."
+      )
+    },
+    async ({ repo, base }) => {
+      const cwd = process.cwd();
+      let startDir = optWorkspaceDir ?? cwd;
+      if (repo) {
+        startDir = path8.isAbsolute(repo) ? repo : path8.join(optWorkspaceDir ?? cwd, repo);
+      }
+      const registry2 = await readWorktreeRegistry({ startDir, base });
+      if (registry2.kind === "not-a-repo") {
+        return {
+          content: [{ type: "text", text: registry2.reason }],
+          isError: true
+        };
+      }
+      return {
+        content: [
+          {
+            type: "text",
+            text: renderRegistryText(registry2) + "\n\n--- structured ---\n" + JSON.stringify(registry2, null, 2)
           }
         ]
       };
@@ -46653,14 +47311,21 @@ WHEN TO USE:
 
 RETURNS: Array of matches, each with id, title, type, status, graphPath, and edges[] (neighborhood context showing connected nodes with titles and edge labels).
 
-Filters: optional type and status filters narrow results.`,
+Filters: optional type and status filters narrow results.
+
+SCOPE: pass scope (a workspace or worktree path, e.g. 'qinolabs-repo-wt3') to search only that tree \u2014 finds nodes as they exist in that branch's worktree. Omit to search all registered workspaces. A node committed on another branch or worktree you have not scoped to will not be found \u2014 if an expected node is missing, it may live on another branch rather than not exist; use read_slots to see which branch is working which node.`,
     {
-      query: external_exports.string().describe("Search term \u2014 matched against node ID and title (case-insensitive substring)"),
+      query: external_exports.string().describe(
+        "Search term \u2014 matched against node ID and title (case-insensitive substring)"
+      ),
       type: external_exports.string().optional().describe("Filter by node type (e.g., 'concept', 'deck', 'reference')"),
-      status: external_exports.string().optional().describe("Filter by node status (e.g., 'active', 'composted')")
+      status: external_exports.string().optional().describe("Filter by node status (e.g., 'active', 'composted')"),
+      scope: external_exports.string().optional().describe(
+        "Limit search to one workspace or worktree path (e.g. 'qinolabs-repo-wt3'). Omit to search all registered workspaces."
+      )
     },
-    async ({ query, type, status }) => {
-      const results = await ops.searchNodes({ query, type, status });
+    async ({ query, type, status, scope }) => {
+      const results = await ops.searchNodes({ query, type, status, scope });
       return {
         content: [
           {
@@ -46692,8 +47357,12 @@ EXAMPLES:
 - get_viewer_link({ graphPath: "qinolabs-repo", nodeId: "my-node", section: "annotations" }) \u2192 node with section anchor`,
     {
       graphPath: external_exports.string().optional().describe(GRAPH_PATH_GRAPH),
-      nodeId: external_exports.string().optional().describe("Node identifier. Omit for a graph-level URL; provide for a node deeplink."),
-      section: external_exports.string().optional().describe("Section anchor for node deeplinks (e.g., 'annotations', 'content').")
+      nodeId: external_exports.string().optional().describe(
+        "Node identifier. Omit for a graph-level URL; provide for a node deeplink."
+      ),
+      section: external_exports.string().optional().describe(
+        "Section anchor for node deeplinks (e.g., 'annotations', 'content')."
+      )
     },
     async ({ graphPath, nodeId, section }) => {
       try {
@@ -46815,12 +47484,22 @@ RETURNS: { dataFiles: [{ filename, content }], schema?: string }`,
       nodeId: external_exports.string().optional().describe("Filter by node ID. Omit to read all.")
     },
     async ({ nodeId }) => {
-      const { messages, total } = await ops.readMessages({ nodeId, consume: true });
+      const { messages, total } = await ops.readMessages({
+        nodeId,
+        consume: true
+      });
       if (messages.length === 0) {
-        return { content: [{ type: "text", text: "No pending messages." }] };
+        return {
+          content: [{ type: "text", text: "No pending messages." }]
+        };
       }
       return {
-        content: [{ type: "text", text: JSON.stringify({ messages, total }, null, 2) }]
+        content: [
+          {
+            type: "text",
+            text: JSON.stringify({ messages, total }, null, 2)
+          }
+        ]
       };
     }
   );
@@ -46869,7 +47548,9 @@ SECTIONS:
 - edges: Edge fields, context sentences as primary meaning carrier, cross-graph references
 - annotations: Four signal types (reading/connection/tension/proposal), file format, lifecycle`,
     {
-      section: external_exports.enum(["setup", "structure", "edges", "annotations"]).optional().default("setup").describe("Which aspect of the protocol to learn about. Defaults to setup.")
+      section: external_exports.enum(["setup", "structure", "edges", "annotations"]).optional().default("setup").describe(
+        "Which aspect of the protocol to learn about. Defaults to setup."
+      )
     },
     async ({ section }) => {
       const content3 = GUIDE_SECTIONS[section];
@@ -46904,16 +47585,33 @@ WHEN TO USE:
 - After read_protocol("setup") has explained the protocol structure
 - When read_activity shows status "uninitialized"`,
       {
-        name: external_exports.string().describe("Workspace name (lowercase, hyphens, underscores). Becomes the graph ID."),
+        name: external_exports.string().describe(
+          "Workspace name (lowercase, hyphens, underscores). Becomes the graph ID."
+        ),
         title: external_exports.string().optional().describe("Display title. Defaults to name."),
         nodesDir: external_exports.string().optional().describe("Directory name for nodes. Defaults to 'nodes'."),
-        template: external_exports.enum(["research", "concepts", "implementation", "evaluation", "general"]).optional().describe("Workspace template \u2014 seeds node types with colors and usage hints. Describe the options to the user before choosing. Recommend 'general' when unsure.")
+        template: external_exports.enum([
+          "research",
+          "concepts",
+          "implementation",
+          "evaluation",
+          "general"
+        ]).optional().describe(
+          "Workspace template \u2014 seeds node types with colors and usage hints. Describe the options to the user before choosing. Recommend 'general' when unsure."
+        )
       },
       async ({ name, title, nodesDir, template }) => {
         try {
-          const result = await ops.initWorkspace({ name, title, nodesDir, template });
+          const result = await ops.initWorkspace({
+            name,
+            title,
+            nodesDir,
+            template
+          });
           return {
-            content: [{ type: "text", text: JSON.stringify(result, null, 2) }]
+            content: [
+              { type: "text", text: JSON.stringify(result, null, 2) }
+            ]
           };
         } catch (err) {
           const message = err instanceof Error ? err.message : "Unknown error";
@@ -46943,25 +47641,41 @@ VALID TREATMENTS for statuses: "faded" (reduces node opacity)
 VALID REPO TYPES: concepts, implementation, research, evaluation, tool`,
       {
         name: external_exports.string().optional().describe("Workspace display name"),
-        color: external_exports.string().optional().describe("Workspace identity color: blue, orange, emerald, red, violet, pink, cyan, amber, rose, teal, indigo, zinc"),
-        repoType: external_exports.string().optional().describe("Workspace category: concepts, implementation, research, evaluation, tool"),
+        color: external_exports.string().optional().describe(
+          "Workspace identity color: blue, orange, emerald, red, violet, pink, cyan, amber, rose, teal, indigo, zinc"
+        ),
+        repoType: external_exports.string().optional().describe(
+          "Workspace category: concepts, implementation, research, evaluation, tool"
+        ),
         landingTitle: external_exports.string().optional().describe("Title shown on the landing page"),
         editor: external_exports.string().optional().describe("Preferred editor: cursor, zed, or code (default)"),
         types: external_exports.record(
           external_exports.object({
-            color: external_exports.string().optional().describe("Named color: blue, orange, emerald, red, violet, pink, cyan, amber, rose, teal, indigo, zinc"),
-            hint: external_exports.string().optional().describe("Short description of when to use this type \u2014 surfaced to agents via read_config")
+            color: external_exports.string().optional().describe(
+              "Named color: blue, orange, emerald, red, violet, pink, cyan, amber, rose, teal, indigo, zinc"
+            ),
+            hint: external_exports.string().optional().describe(
+              "Short description of when to use this type \u2014 surfaced to agents via read_config"
+            )
           })
-        ).optional().describe("Node type \u2192 visual config + usage hint. Each entry maps a type name to its display color and an optional hint describing when to use it."),
+        ).optional().describe(
+          "Node type \u2192 visual config + usage hint. Each entry maps a type name to its display color and an optional hint describing when to use it."
+        ),
         statuses: external_exports.record(
-          external_exports.object({ treatment: external_exports.string().optional().describe("Visual treatment: 'faded' reduces node opacity") })
-        ).optional().describe("Status \u2192 visual config. Each entry maps a status to its display treatment.")
+          external_exports.object({
+            treatment: external_exports.string().optional().describe("Visual treatment: 'faded' reduces node opacity")
+          })
+        ).optional().describe(
+          "Status \u2192 visual config. Each entry maps a status to its display treatment."
+        )
       },
       async (args) => {
         try {
           const result = await ops.updateConfig(args);
           return {
-            content: [{ type: "text", text: JSON.stringify(result, null, 2) }]
+            content: [
+              { type: "text", text: JSON.stringify(result, null, 2) }
+            ]
           };
         } catch (err) {
           const message = err instanceof Error ? err.message : "Unknown error";
@@ -46997,8 +47711,12 @@ LIFECYCLE: After acting on an accepted proposal or addressing a tension, use res
         nodeId: external_exports.string().describe("The node identifier from graph.json"),
         signal: external_exports.enum(["reading", "connection", "tension", "proposal"]).describe("The signal type for this annotation"),
         body: external_exports.string().describe("The annotation content"),
-        target: external_exports.string().optional().describe("Optional target reference (e.g., 'story.md:3' or 'content/arc.md#essence')"),
-        kind: external_exports.string().optional().describe('Optional structural discriminator. Use `kind: "actualization"` when writing a deck actualization reading \u2014 this lets qino-os recognize the annotation as the deck\'s temporal anchor for the delta indicator.'),
+        target: external_exports.string().optional().describe(
+          "Optional target reference (e.g., 'story.md:3' or 'content/arc.md#essence')"
+        ),
+        kind: external_exports.string().optional().describe(
+          'Optional structural discriminator. Use `kind: "actualization"` when writing a deck actualization reading \u2014 this lets qino-os recognize the annotation as the deck\'s temporal anchor for the delta indicator.'
+        ),
         graphPath: external_exports.string().optional().describe(GRAPH_PATH_NODE)
       },
       async ({ nodeId, signal, body, target, kind, graphPath }) => {
@@ -47050,22 +47768,28 @@ Example: [{ "target": "some-node", "label": "coherence frontier", "context": "Ca
         type: external_exports.string().optional().describe(
           "Node type from workspace vocabulary \u2014 call read_config to see declared types with colors and hints (e.g. 'concept', 'app', 'tool'). Types not in config render without color on the graph."
         ),
-        status: external_exports.string().optional().describe("Lifecycle status. Defaults to 'active'. Common values: 'active', 'composted', 'proposed', 'dormant'."),
+        status: external_exports.string().optional().describe(
+          "Lifecycle status. Defaults to 'active'. Common values: 'active', 'composted', 'proposed', 'dormant'."
+        ),
         story: external_exports.string().describe(
           "The impulse \u2014 why this node exists. Markdown formatted. Brief nodes can be 1-3 sentences; longer research or implementation nodes should use headers, lists, and emphasis for structure."
         ),
         edges: external_exports.array(
           external_exports.object({
             target: external_exports.string().describe("Target node ID"),
-            label: external_exports.string().optional().describe("The insight this edge carries, in 2-4 words. What makes it meaningful depends on the nodes it connects."),
+            label: external_exports.string().optional().describe(
+              "The insight this edge carries, in 2-4 words. What makes it meaningful depends on the nodes it connects."
+            ),
             context: external_exports.string().optional().describe("Sentence explaining why this connection exists"),
-            weight: external_exports.number().optional().describe("Visual priority: 1 = quiet, 2 = normal (default), 3 = prominent")
+            weight: external_exports.number().optional().describe(
+              "Visual priority: 1 = quiet, 2 = normal (default), 3 = prominent"
+            )
           })
-        ).optional().describe("Array of edge objects: [{ target, label?, context?, weight? }]"),
+        ).optional().describe(
+          "Array of edge objects: [{ target, label?, context?, weight? }]"
+        ),
         view: external_exports.object({
-          focal: external_exports.string().describe(
-            "The focal node ID \u2014 the primary subject of this view"
-          ),
+          focal: external_exports.string().describe("The focal node ID \u2014 the primary subject of this view"),
           includes: external_exports.array(external_exports.string()).describe(
             "All node IDs included in this view (including the focal)"
           )
@@ -47074,7 +47798,17 @@ Example: [{ "target": "some-node", "label": "coherence frontier", "context": "Ca
         ),
         graphPath: external_exports.string().optional().describe(GRAPH_PATH_NODE)
       },
-      async ({ id, dir, title, type, status, story, edges, view, graphPath }) => {
+      async ({
+        id,
+        dir,
+        title,
+        type,
+        status,
+        story,
+        edges,
+        view,
+        graphPath
+      }) => {
         const result = await ops.createNode({
           id,
           dir,
@@ -47116,10 +47850,16 @@ EDGE FIELDS:
 - weight: visual priority (1 = quiet, 2 = normal, 3 = prominent)`,
       {
         source: external_exports.string().describe("Source node ID (must exist in this graph)"),
-        target: external_exports.string().describe("Target node ID. For cross-graph: 'graphPath:nodeId' (e.g., 'qino-concepts:qino-world')"),
-        label: external_exports.string().optional().describe("Short edge label \u2014 the insight this connection carries (2-4 words)"),
+        target: external_exports.string().describe(
+          "Target node ID. For cross-graph: 'graphPath:nodeId' (e.g., 'qino-concepts:qino-world')"
+        ),
+        label: external_exports.string().optional().describe(
+          "Short edge label \u2014 the insight this connection carries (2-4 words)"
+        ),
         context: external_exports.string().optional().describe("Sentence explaining why this connection exists"),
-        weight: external_exports.number().optional().describe("Visual priority: 1 = quiet, 2 = normal (default), 3 = prominent"),
+        weight: external_exports.number().optional().describe(
+          "Visual priority: 1 = quiet, 2 = normal (default), 3 = prominent"
+        ),
         graphPath: external_exports.string().optional().describe(GRAPH_PATH_NODE)
       },
       async ({ source, target, label, context, weight, graphPath }) => {
@@ -47160,7 +47900,7 @@ WHEN TO USE:
 
 WHEN NOT TO USE:
 - After create_node or add_edge \u2014 these already set updated automatically
-- After write_annotation \u2014 annotations don't affect node recency
+- After write_annotation \u2014 the file watcher already bumps updated automatically when the annotation lands (annotation files are part of the node's content hash, so they do affect recency)
 
 WHY THIS EXISTS:
 Content writes happen through filesystem tools (Write, Edit), not protocol tools.
@@ -47279,14 +48019,17 @@ RETURNS: { success: true, filename }`,
         filename: external_exports.string().describe(
           "Data file name (e.g., 'scores.json', 'schema.json'). Must end in .json."
         ),
-        data: external_exports.string().describe(
-          "The JSON string to write. Must be valid JSON."
-        ),
+        data: external_exports.string().describe("The JSON string to write. Must be valid JSON."),
         graphPath: external_exports.string().optional().describe(GRAPH_PATH_NODE)
       },
       async ({ nodeId, filename, data, graphPath }) => {
         try {
-          const result = await ops.writeData({ nodeId, filename, data, graphPath });
+          const result = await ops.writeData({
+            nodeId,
+            filename,
+            data,
+            graphPath
+          });
           return {
             content: [
               {
@@ -47359,15 +48102,19 @@ BEHAVIOR:
 
 SECURITY: Only paths within the workspace root are allowed.`,
       {
-        graphPath: external_exports.string().optional().describe(
-          GRAPH_PATH_GRAPH
+        graphPath: external_exports.string().optional().describe(GRAPH_PATH_GRAPH),
+        nodeId: external_exports.string().optional().describe(
+          "Node identifier \u2014 reveals the node's directory instead of the graph directory"
         ),
-        nodeId: external_exports.string().optional().describe("Node identifier \u2014 reveals the node's directory instead of the graph directory"),
         file: external_exports.string().optional().describe("Specific file within the resolved directory to reveal")
       },
       async ({ graphPath, nodeId, file }) => {
         try {
-          const result = await ops.revealInExplorer({ graphPath, nodeId, file });
+          const result = await ops.revealInExplorer({
+            graphPath,
+            nodeId,
+            file
+          });
           return {
             content: [
               {
@@ -47407,16 +48154,23 @@ BEHAVIOR:
 
 SECURITY: Only paths within the workspace root are allowed.`,
       {
-        graphPath: external_exports.string().optional().describe(
-          GRAPH_PATH_GRAPH
+        graphPath: external_exports.string().optional().describe(GRAPH_PATH_GRAPH),
+        nodeId: external_exports.string().optional().describe(
+          "Node identifier \u2014 opens the node's directory instead of the graph directory"
         ),
-        nodeId: external_exports.string().optional().describe("Node identifier \u2014 opens the node's directory instead of the graph directory"),
         file: external_exports.string().optional().describe("Specific file within the resolved directory to open"),
-        line: external_exports.number().optional().describe("Line number to jump to (requires file). Uses editor's --goto flag.")
+        line: external_exports.number().optional().describe(
+          "Line number to jump to (requires file). Uses editor's --goto flag."
+        )
       },
       async ({ graphPath, nodeId, file, line }) => {
         try {
-          const result = await ops.openInEditor({ graphPath, nodeId, file, line });
+          const result = await ops.openInEditor({
+            graphPath,
+            nodeId,
+            file,
+            line
+          });
           return {
             content: [
               {
@@ -47437,17 +48191,26 @@ SECURITY: Only paths within the workspace root are allowed.`,
     server.tool(
       "speak_text",
       "Speak text aloud using system TTS. Blocks until speech finishes. Cancel the request to stop speech mid-utterance. Strips markdown automatically. Only one speech at a time \u2014 new call interrupts ongoing speech.",
-      { text: external_exports.string().describe("The text to speak. Markdown is stripped automatically.") },
+      {
+        text: external_exports.string().describe("The text to speak. Markdown is stripped automatically.")
+      },
       async ({ text: text6 }, extra) => {
         try {
           await ops.speakText({ text: text6 }, extra.signal);
-          return { content: [{ type: "text", text: "Done speaking." }] };
+          return {
+            content: [{ type: "text", text: "Done speaking." }]
+          };
         } catch (err) {
           if (extra.signal.aborted) {
-            return { content: [{ type: "text", text: "Speech cancelled." }] };
+            return {
+              content: [{ type: "text", text: "Speech cancelled." }]
+            };
           }
           const message = err instanceof Error ? err.message : "Failed to speak";
-          return { content: [{ type: "text", text: message }], isError: true };
+          return {
+            content: [{ type: "text", text: message }],
+            isError: true
+          };
         }
       }
     );
@@ -47460,7 +48223,7 @@ function createDirectOps(workspaceDir2, _repoRoot, baseUrl, knownWorkspaces, wat
   const deeplinkConfig = { baseUrl, viewerBaseUrl };
   return {
     readConfig: () => readConfig(workspaceDir2),
-    readLanding: () => readLandingData(workspaceDir2),
+    readLanding: (scope) => readLandingData(workspaceDir2, scope ? { workspace: scope } : void 0),
     initWorkspace: async (args) => {
       return initWorkspace(workspaceDir2, args);
     },
@@ -47471,13 +48234,28 @@ function createDirectOps(workspaceDir2, _repoRoot, baseUrl, knownWorkspaces, wat
       const graph = await readGraph(resolveGraphDir(graphPath), workspaceDir2);
       if (!graph) return null;
       const nodeIds = graph.nodes.map((n) => n.id);
-      const _links = buildGraphLinks(deeplinkConfig, graphPath, nodeIds, knownWorkspaces);
+      const _links = buildGraphLinks(
+        deeplinkConfig,
+        graphPath,
+        nodeIds,
+        knownWorkspaces
+      );
       return { ...graph, _links };
     },
     readNode: async (nodeId, graphPath) => {
-      const node2 = await readNode(resolveGraphDir(graphPath), nodeId, graphPath, workspaceDir2);
+      const node2 = await readNode(
+        resolveGraphDir(graphPath),
+        nodeId,
+        graphPath,
+        workspaceDir2
+      );
       if (!node2) return null;
-      const _links = buildNodeLinks(deeplinkConfig, graphPath, nodeId, knownWorkspaces);
+      const _links = buildNodeLinks(
+        deeplinkConfig,
+        graphPath,
+        nodeId,
+        knownWorkspaces
+      );
       return { ...node2, _links };
     },
     getViewerLink: async ({ graphPath, nodeId, section }) => {
@@ -47489,7 +48267,11 @@ function createDirectOps(workspaceDir2, _repoRoot, baseUrl, knownWorkspaces, wat
       return { url };
     },
     readNodeFingerprint: async (nodeId, graphPath) => {
-      return readNodeFingerprint(resolveGraphDir(graphPath), nodeId, graphPath);
+      return readNodeFingerprint(
+        resolveGraphDir(graphPath),
+        nodeId,
+        graphPath
+      );
     },
     searchNodes: (args) => searchNodes(workspaceDir2, args),
     writeAnnotation: async (args) => {
@@ -47502,7 +48284,11 @@ function createDirectOps(workspaceDir2, _repoRoot, baseUrl, knownWorkspaces, wat
         args.target,
         args.kind
       );
-      watcher?.push({ type: "annotation", nodeId: args.nodeId, graphPath: args.graphPath });
+      watcher?.push({
+        type: "annotation",
+        nodeId: args.nodeId,
+        graphPath: args.graphPath
+      });
       return result;
     },
     createNode: async (args) => {
@@ -47542,20 +48328,33 @@ function createDirectOps(workspaceDir2, _repoRoot, baseUrl, knownWorkspaces, wat
     },
     addEdge: async (args) => {
       const graphDir = resolveGraphDir(args.graphPath);
-      const result = await addEdge(graphDir, {
-        source: args.source,
-        target: args.target,
-        label: args.label,
-        context: args.context,
-        weight: args.weight
-      }, workspaceDir2);
+      const result = await addEdge(
+        graphDir,
+        {
+          source: args.source,
+          target: args.target,
+          label: args.label,
+          context: args.context,
+          weight: args.weight
+        },
+        workspaceDir2
+      );
       watcher?.push({ type: "graph", graphPath: args.graphPath });
       return result;
     },
     touchNode: async (args) => {
       const graphDir = resolveGraphDir(args.graphPath);
-      const result = await touchNode(graphDir, args.nodeId, args.date, args.at);
-      watcher?.push({ type: "node", nodeId: args.nodeId, graphPath: args.graphPath });
+      const result = await touchNode(
+        graphDir,
+        args.nodeId,
+        args.date,
+        args.at
+      );
+      watcher?.push({
+        type: "node",
+        nodeId: args.nodeId,
+        graphPath: args.graphPath
+      });
       return result;
     },
     updateView: async (args) => {
@@ -47564,7 +48363,11 @@ function createDirectOps(workspaceDir2, _repoRoot, baseUrl, knownWorkspaces, wat
         focal: args.focal,
         includes: args.includes
       });
-      watcher?.push({ type: "node", nodeId: args.nodeId, graphPath: args.graphPath });
+      watcher?.push({
+        type: "node",
+        nodeId: args.nodeId,
+        graphPath: args.graphPath
+      });
       return result;
     },
     resolveAnnotation: async (args) => {
@@ -47575,7 +48378,11 @@ function createDirectOps(workspaceDir2, _repoRoot, baseUrl, knownWorkspaces, wat
         args.filename,
         args.status
       );
-      watcher?.push({ type: "annotation", nodeId: args.nodeId, graphPath: args.graphPath });
+      watcher?.push({
+        type: "annotation",
+        nodeId: args.nodeId,
+        graphPath: args.graphPath
+      });
       return result;
     },
     readContent: async (args) => {
@@ -47588,8 +48395,17 @@ function createDirectOps(workspaceDir2, _repoRoot, baseUrl, knownWorkspaces, wat
     },
     writeData: async (args) => {
       const graphDir = resolveGraphDir(args.graphPath);
-      const result = await writeData(graphDir, args.nodeId, args.filename, args.data);
-      watcher?.push({ type: "node", nodeId: args.nodeId, graphPath: args.graphPath });
+      const result = await writeData(
+        graphDir,
+        args.nodeId,
+        args.filename,
+        args.data
+      );
+      watcher?.push({
+        type: "node",
+        nodeId: args.nodeId,
+        graphPath: args.graphPath
+      });
       return result;
     },
     revealInExplorer: async (args) => {
@@ -47652,7 +48468,9 @@ function createDirectOps(workspaceDir2, _repoRoot, baseUrl, knownWorkspaces, wat
             workspaceDir2
           );
           const story = detail?.story ? detail.story.slice(0, 500) : void 0;
-          const memberRefs = detail ? detail.neighborhood.filter((n) => n.direction === "outgoing" && n.label === "composes").map((n) => n.nodeId) : [];
+          const memberRefs = detail ? detail.neighborhood.filter(
+            (n) => n.direction === "outgoing" && n.label === "composes"
+          ).map((n) => n.nodeId) : [];
           return {
             id: node2.id,
             title: node2.title,
@@ -47670,8 +48488,8 @@ function createDirectOps(workspaceDir2, _repoRoot, baseUrl, knownWorkspaces, wat
   };
 }
 function createHttpOps(apiUrl) {
-  const buildUrl = (path7, params) => {
-    const url = new URL(path7, apiUrl);
+  const buildUrl = (path10, params) => {
+    const url = new URL(path10, apiUrl);
     if (params) {
       for (const [key, value] of Object.entries(params)) {
         if (value !== void 0) {
@@ -47693,8 +48511,10 @@ function createHttpOps(apiUrl) {
       const res = await fetch(buildUrl("/api/config"));
       return handleResponse(res);
     },
-    readLanding: async () => {
-      const res = await fetch(buildUrl("/api/landing"));
+    readLanding: async (scope) => {
+      const res = await fetch(
+        buildUrl("/api/landing", scope ? { workspace: scope } : void 0)
+      );
       return handleResponse(res);
     },
     initWorkspace: async (args) => {
@@ -47752,6 +48572,7 @@ function createHttpOps(apiUrl) {
       const params = { q: args.query };
       if (args.type) params["type"] = args.type;
       if (args.status) params["status"] = args.status;
+      if (args.scope) params["scope"] = args.scope;
       const res = await fetch(buildUrl("/api/search", params));
       return handleResponse(res);
     },
@@ -47940,7 +48761,9 @@ function createHttpOps(apiUrl) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(args)
       });
-      return handleResponse(res);
+      return handleResponse(
+        res
+      );
     },
     speakText: async (args) => {
       const res = await fetch(buildUrl("/api/speak"), {
@@ -47959,7 +48782,9 @@ function createHttpOps(apiUrl) {
       return handleResponse(res);
     },
     resumeSpeaking: async () => {
-      const res = await fetch(buildUrl("/api/speak/resume"), { method: "POST" });
+      const res = await fetch(buildUrl("/api/speak/resume"), {
+        method: "POST"
+      });
       return handleResponse(res);
     },
     isSpeaking: async () => {
@@ -47979,7 +48804,12 @@ function createHttpOps(apiUrl) {
       const params = {};
       if (args?.nodeId) params["nodeId"] = args.nodeId;
       if (args?.consume) params["consume"] = "true";
-      const res = await fetch(buildUrl("/api/messages", Object.keys(params).length > 0 ? params : void 0));
+      const res = await fetch(
+        buildUrl(
+          "/api/messages",
+          Object.keys(params).length > 0 ? params : void 0
+        )
+      );
       return handleResponse(res);
     },
     messageCount: async () => {
@@ -48006,7 +48836,7 @@ function openBrowser(url) {
 }
 
 // src/server/index.ts
-var __dirname = path6.dirname(fileURLToPath2(import.meta.url));
+var __dirname = path9.dirname(fileURLToPath2(import.meta.url));
 var workspaceDir = process.env.WORKSPACE_DIR ?? getCliArg("--workspace-dir") ?? process.cwd();
 var port = Number(process.env.PORT ?? getCliArg("--port") ?? "4020");
 var repoRootOverride = process.env.REPO_ROOT ?? getCliArg("--repo-root");
@@ -48015,13 +48845,13 @@ var noBrowser = process.argv.includes("--no-browser");
 var modeArg = process.env.QINO_MODE ?? getCliArg("--mode") ?? "full";
 var mode = modeArg === "reader" ? "reader" : "full";
 var viewerUrl = process.env.QINO_VIEWER_URL ?? getCliArg("--viewer-url");
-var packageRoot = path6.resolve(__dirname, "../..");
-var distUiDir = path6.resolve(packageRoot, "dist/ui");
+var packageRoot = path9.resolve(__dirname, "../..");
+var distUiDir = path9.resolve(packageRoot, "dist/ui");
 async function hasBuiltSpa() {
   try {
-    const fs6 = await import("fs/promises");
-    const html2 = await fs6.readFile(
-      path6.join(distUiDir, "index.html"),
+    const fs7 = await import("fs/promises");
+    const html2 = await fs7.readFile(
+      path9.join(distUiDir, "index.html"),
       "utf-8"
     );
     return html2.includes("/assets/");
