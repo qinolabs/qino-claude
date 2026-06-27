@@ -46,6 +46,14 @@ The graph is not a filesystem to traverse procedurally. It is a living structure
 
 **Exception**: after you mutate a node in this conversation (`touch_node`, `write_annotation`, file edits, anything), always call `read_node` fresh on the next read of that node. The reuse contract is for unchanged nodes, not for verifying your own writes.
 
+### Writing from a worktree
+
+Graph writes resolve against whichever working tree the `graphPath` points at — and the stateless MCP server cannot see which worktree *you* are in. Before mutating the graph, know where you stand: if your cwd is a git worktree other than the main checkout (`git rev-parse --show-toplevel`), prefix `graphPath` with that worktree's meta-root-relative path (e.g. `qinolabs-repo-wt8/implementations/...` or `qinolabs-repo/.claude/worktrees/<name>/...`). Without the prefix the write lands on main — silently, on the wrong branch.
+
+Every write returns a `target` (`{ workspace, branch, path }`) naming where it actually landed. **Read it.** Confirm the branch and path are the ones you intended; if `target` shows main when you meant a worktree, redo the write with the prefixed `graphPath`. Use `read_slots` to see live worktrees and their branches.
+
+When several sessions share one checkout they share one git index — a parallel `git commit` can sweep another session's staged files. Commit graph writes with explicit pathspecs (`git commit -F - -- <paths>`), and prefer giving each session its own worktree (where writes are now safe and self-reporting).
+
 ---
 
 ## Behavioral Principles
