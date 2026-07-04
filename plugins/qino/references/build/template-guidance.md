@@ -6,13 +6,53 @@ How to use iteration and implementation templates to capture learnings through c
 
 **Learnings live where work happens** - no separate systems to maintain.
 
-## Two iteration shapes
+## Three iteration shapes
 
-The official `iteration-template.md` (Scope / Goals / Test / Status / Technical Decisions / Learnings) covers **feature iterations** — building a new capability, checking off goals, capturing what shifted.
+Three iteration shapes have emerged in practice. The shape is descriptive — *let the work earn the structure*. Don't impose a heavyweight shape on a small change.
 
-**Refactor / compression / extraction iterations** (where byte-equivalence and grep-driven gates carry the work) typically grow toward a richer shape with: Stage 0 baselines, Premise-check, numbered Stages with explicit gate criteria, numbered Disciplines, Closure log table with pre/post deltas, Forward pointer. This shape emerged through the qino-world iter 100+ refactor arc — see `disciplines.md` for the numbered practices it invokes (1, 2, 3, 5-9, 11-19), and the iter 113-116 archive at `qinolabs-repo/implementations/qino-world/content/` for mature exemplars (iter 116 is the most recent).
+### Feature iteration
 
-The richer shape is descriptive, not prescriptive — let the work earn the structure. A small refactor doesn't need 19 disciplines invoked; a multi-stage compression iteration earns them.
+The lightweight shape — building a new capability, checking off concrete goals. The official `iteration-template.md` originally documented this shape (Scope / Goals / Test / Status / Technical Decisions / Learnings). Suitable for: small new features, bug fixes with non-trivial design, UI work with clear acceptance criteria.
+
+Even feature iters should carry `## The story` at the top — see below. Story scales down (a paragraph is enough for a small feature) but doesn't disappear.
+
+### Refactor / compression / extraction iteration
+
+Where byte-equivalence and grep-driven gates carry the work. Grows toward a richer shape: Stage 0 baselines, Premise-check, numbered Stages with explicit gate criteria, numbered Disciplines, Closure log table with pre/post deltas, Forward pointer. This shape emerged through the qino-world iter 100+ refactor arc — see `disciplines.md` for the numbered practices (1, 2, 3, 5-9, 11-19) and `qinolabs-repo:implementations/qino-world/content/` iter 113-116 for mature exemplars (iter 116 is the most recent).
+
+### Judgment-laden iteration
+
+Where the design depends on judgment surfaces (LLM-driven extraction, mixed-initiative dialogue, anything where the same input could produce different outputs). The current full shape of `iteration-template.md`: The story / Why this is the right cut / Out of scope / Positioning decisions / Design / Realistic cases / Tests / Changes / Boundaries / Open questions / Reference / Scope expansion outlook / Technical Decisions / Learnings.
+
+This shape emerged through the mention-maturation arc (127 / 128a / 128b / 129a). It carries the three methodological patterns from `qinolabs-repo:.claude/rules/research-and-design.md` — multi-perspective audit, realistic-cases-first, five-dimension positioning records. Exemplar: `qinolabs-repo:implementations/qino-world/content/129a-mention-maturation-coreference-foundation.md`.
+
+## The story section
+
+**`## The story` sits at the top of every iter file, regardless of shape.** It is the orienting layer — what becomes possible in the world after this iter ships, told in experiential register. Read first by humans; read first by agents.
+
+### Why it's load-bearing
+
+The story is not documentation. It is **cognitive scaffolding for orchestrator work**:
+
+- **Story rides along when technical writing doesn't.** When an iter is referenced in agent chats ("after iter 129a established X..."), the story-shaped texture survives summarization, partial recall, and prompt-build flattening. Technical detail does not — it requires spotlight attention to be useful. Story can be held peripherally; technical writing requires the cognitive foreground.
+- **Story is felt-quality, not feature list.** Not "implements coreference + nullable schema" — *"the world starts recognizing itself; the substrate layer learns to hold uncertainty without yet knowing the name."* Use the ecosystem's domain language (Figures, Substrate, Awakening, Rubbing Area). Connect to the arc the iter sits inside.
+- **Texture-dense, not detail-dense.** The reader (or agent) leaves with the *shape* of what this enables, not a list of files. That shape is what informs intuitions in subsequent work.
+
+### Where it sits in the file
+
+Between the status header and `## Why this is the right cut`. Encountered first when the file is opened, first when an agent reads it for context, first when it's summarized into a chat.
+
+### How to write it
+
+- **Forward-shaped at plan time.** Write before the technical sections. The act of writing it surfaces design intuitions the technical work then carries.
+- **Lightly revised at commit.** If learnings reshaped the story, refine it. Note the deltas in *Learnings → Story refinements*.
+- **Use scenes when possible.** Concrete moments (a figure noticing something; a player encountering something new; the world doing something it couldn't before) carry texture better than abstract claims.
+- **Name the trade-offs.** Where the design accepts a friction-collapse, register-shift, or porosity-over-friction trade-off, surface it in the story. Future readers should encounter the trade-offs as part of what the iter *means*, not buried in design notes.
+- **Connect to the arc.** Where does this iter sit relative to predecessors and successors? What does it set up for the next iter? What did the prior iter set up that this consumes?
+
+### When reading an iter for context
+
+Start with `## The story`. The rest of the file is reference; the story is orientation. When briefing a subagent against past iter work, lead with the story sections of the relevant iters.
 
 ## Iteration Template Usage
 
