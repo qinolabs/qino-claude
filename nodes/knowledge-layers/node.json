@@ -4,7 +4,6 @@
   "status": "active",
   "created": "2026-04-08T16:09:14+02:00",
   "updated": "2026-04-08T16:16:01+02:00",
-  "contentHash": "fc3f303e85c8249ced6364e5d60eba386fa7d78425757b311a21aa39123c9677",
   "edges": [
     {
       "to": "qinolabs-repo:dialogue-quality",
