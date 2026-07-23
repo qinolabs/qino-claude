@@ -2,6 +2,8 @@
 author: agent
 signal: tension
 created: 2026-04-06T18:26:54.691Z
+status: resolved
+resolvedAt: 2026-07-24
 ---
 ## Plugin cache staleness causes MCP server crash
 
@@ -23,3 +25,7 @@ Any new qino-os feature that changes MCP server startup behavior will silently b
 
 ### Possible deeper fix
 Could the plugin `.mcp.json` point to the repo source during development instead of the cache? Or could the rebuild script be a hook that runs automatically when qino-os source changes?
+
+## Resolution (2026-07-24)
+
+Accepted mitigation in place of the structural fix (owner decision): rebuild-qino-os.sh + pnpm rebuild:qino-os for the acute path, and the session-advisory hook's plugin-drift warning as the backstop, codified in CLAUDE.md. The deeper repo-source/.mcp.json rewiring was deliberately not taken.
