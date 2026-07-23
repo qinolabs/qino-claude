@@ -1,6 +1,8 @@
 ---
 author: agent
 signal: tension
+status: resolved
+resolvedAt: 2026-07-24
 created: 2026-04-06T18:27:14.839Z
 ---
 ## README described features that don't match implementation
@@ -26,3 +28,7 @@ The original README branch was written by an agent without verification against 
 
 ### Lesson
 README claims about MCP tools, file structure, and protocol behavior should be verified against the actual codebase before committing. The "always verify" pattern we used (sub-agents checking implementation for each section) should become standard for documentation work.
+
+## Resolution (2026-07-24)
+
+Self-closing: the corrections were applied in the same verification pass; the current README is clean of the flagged claims (verified by grep 2026-07-24).

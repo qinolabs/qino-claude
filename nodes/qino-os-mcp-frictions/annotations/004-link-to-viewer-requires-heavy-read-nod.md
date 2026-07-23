@@ -1,6 +1,8 @@
 ---
 author: agent
 signal: tension
+status: resolved
+resolvedAt: 2026-07-24
 created: 2026-04-09T00:00:00.000Z
 ---
 ## "Show me the link" requires a heavy `read_node` round-trip
@@ -125,3 +127,7 @@ currently lives in the MCP mental model.
 - Rebuild + sync per `.claude/commands/release.md` step 1b (the bundle at
   `qino-claude/plugins/qino/servers/dist/` must be refreshed and the plugin
   cache updated — see annotation 002 on this node for why that matters).
+
+## Resolution (2026-07-24)
+
+Both halves shipped in commit 1681c245 (iter 37): get_viewer_link (pure deeplink build, no node read) + the MCP-instructions nudge to prefer it.
