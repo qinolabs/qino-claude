@@ -184,6 +184,23 @@ Create release?
 
 Execute the git and gh commands. Release notes should be a concise changelog summary with link to full CHANGELOG.md.
 
+### 10. Update the Local Install (mandatory — dev-orchestration iter 11)
+
+A version bump does **not** reach this machine's sessions on its own: the
+install record pins the old version's cache directory, and a directory-source
+marketplace never auto-updates it (this is how qino sat silently at 3.0.0 for
+four months while source reached 3.5.1). For every bumped plugin:
+
+```bash
+claude plugin update --scope project <plugin>@qino-plugins
+```
+
+Confirm each reports the new version, and remind the user that **running
+sessions need a restart** to load it. The workspace SessionStart advisory
+(`qinolabs/.claude/hooks/qino-session-advisory.sh`) warns on
+source-vs-installed drift as a backstop — this step is the mechanism; a
+release is not done until it has run.
+
 ---
 
 ## Do NOT
