@@ -29,14 +29,15 @@ The graph is not a filesystem to traverse procedurally. It is a living structure
 | `read_node` | Exploring a specific node. Returns story, content, annotations, connected signals, neighborhood, sub-graph. |
 | `read_decks` | Deck work. Listing decks in a workspace, finding the right one to actualize. |
 | `read_graph` | Understanding workspace structure — all nodes and edges at once. |
-| `search_nodes` | Finding a node by name across workspaces and sub-graphs. Use this before filesystem grep. |
+| `search` | The default for finding material — meaning-ranked over all content; use whenever the exact node is not yet determined, even with a plausible name in hand. |
+| `lookup_node` | Resolving an already-certain node name/id to its graph. Use before filesystem grep. |
 | `create_node` | Captures, concepts, inquiries, findings. Pass `type` accordingly. |
 | `write_annotation` | Readings, connections, tensions, proposals. Always available, not a mode. |
 | `add_edge` | Recognizing a new relationship between nodes. Include a context sentence. |
 | `resolve_annotation` | Lifecycle management — accepted, resolved, dismissed. |
 | `read_config` / `update_view` | Workspace config and curated views. |
 
-**Rule**: when a user gives you a node name, reach for `search_nodes` before grep. Nodes live across multiple workspaces; filesystem searches from the wrong directory miss siblings.
+**Rule**: when a user names a node, reach for the graph tools before grep — `search` when the exact node is not yet certain (a lucky name hit in a name lookup can hide better-matching nodes), `lookup_node` for a known name. Nodes live across multiple workspaces; filesystem searches from the wrong directory miss siblings.
 
 **Rule**: annotations auto-create edges (connection signals) and feed the graph's peripheral vision. When you notice a cross-cutting observation, write it. Don't hold it in conversation.
 
@@ -88,11 +89,11 @@ create_node(type: "capture", title: "essence sentence", story: "the thought")
 
 If the user mentions a specific node the thought connects to, add a `sparked-by` edge at creation. Otherwise let the capture live on its own — edges can be added later.
 
-The capture is a node. It's discoverable via `search_nodes`, surfaces in `read_activity`. No flat file fallback; the graph holds it.
+The capture is a node. It's discoverable via `search`, surfaces in `read_activity`. No flat file fallback; the graph holds it.
 
 ### On URL references
 
-When you mention a node or a graph in prose, always use the deeplink from the most recent `read_node` / `read_graph` / `search_nodes` tool response. Every such response carries a `_links` object: `_links.self` for the current graph or node, `_links.nodes[id]` for connected nodes. These URLs carry the query parameters (`?at`, `?highlight`, `?section`) that scope the viewer to the relevant slice.
+When you mention a node or a graph in prose, always use the deeplink from the most recent `read_node` / `read_graph` / `search` / `lookup_node` tool response. Every such response carries a `_links` object: `_links.self` for the current graph or node, `_links.nodes[id]` for connected nodes. These URLs carry the query parameters (`?at`, `?highlight`, `?section`) that scope the viewer to the relevant slice.
 
 **Never construct graph viewer URLs by hand.** Do not concatenate `http://localhost:4020/` with a workspace name or node ID. Hand-crafted URLs miss the scoping parameters, and a bare workspace root URL like `/qinolabs-repo/graph` renders every node on disk — not a useful view.
 
@@ -114,7 +115,7 @@ For very short text you've quoted verbatim in the conversation (a single sentenc
 
 Deck work is the ecosystem-awareness pattern at deck scale. When the user invokes a deck by name or ID:
 
-1. Locate via `search_nodes` filtered to deck-type nodes (those with `composes` edges)
+1. Locate via `lookup_node` filtered to deck-type nodes (those with `composes` edges)
 2. `read_node` on the deck — gives story, member list, annotations, signals
 3. Identify the temporal anchor (most recent agent-authored `reading` annotation titled "Actualization: ...", else the deck's created date)
 4. `read_node` on each member — silent, no process output

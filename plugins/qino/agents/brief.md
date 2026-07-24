@@ -61,7 +61,7 @@ Roughly 200–400 words total. Single-screen depth on a phone. No preamble, no g
 Use the qino-os MCP server (`mcp__plugin_qino_qino-os__*`) — you have it. Begin with:
 
 - `read_activity` — workspaces, recent changes (last 3–7 days), action items, arcs
-- `search_nodes` for any active iteration referenced in recent activity, then `read_node` to read its current state
+- `lookup_node` for any active iteration referenced in recent activity, then `read_node` to read its current state
 - `read_graph` selectively when neighborhood matters
 
 You do not need to read everything. You need enough to find the held thread and three openings. Stop reading when those are clear.

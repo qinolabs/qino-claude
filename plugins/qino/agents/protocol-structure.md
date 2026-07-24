@@ -116,7 +116,7 @@ Content.
 Captures are graph nodes with `type: "capture"`. Created via `create_node` in the current workspace's graph.
 
 - `create_node(type: "capture", title: "essence", story: "the thought")`
-- Discoverable via `search_nodes`, surface in `read_activity`
+- Discoverable via `search`, surface in `read_activity`
 - Edges can be added at creation (e.g., `sparked-by` if the user mentions a specific node) or later
 - No special path resolution — captures live in whatever graph the agent is working in
 
