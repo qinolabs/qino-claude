@@ -10,6 +10,31 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [3.5.5] - 2026-07-30
+
+### qino
+
+A bundled-server release carrying the **temporal-awareness** improvements to graph-wide `search`, plus the os-agent persona work accumulated since v3.5.0. It closes the two "running blind" gaps observed in graph-wide knowledge work — blindness to *time* (this release) and, earlier in the range, blindness to *structure* (edges).
+
+#### Added
+
+- **Per-hit `updated` timestamp in `search` results.** Every node/chunk hit now carries the node's last-content-edit timestamp, so an agent can weigh a hit's recency at the point of use instead of making a follow-up `read_node`. `search` still ranks by relevance only — this surfaces recency, it does not reorder.
+
+#### Changed
+
+- **`search` tool description — temporal awareness (RECENCY).** Status is not the only staleness signal: a hit can be superseded by a later iteration or a more canonical node while its own status still reads `active`. The description now instructs agents to read each hit's `updated`, look for superseding work (a later iteration, a "genesis, not canonical" edge, a correcting annotation), and weigh canonical over genesis before citing a hit as current — internal discipline by default.
+- **os agent — "On the graph as a timeline" principle.** The persona weighs node/content age and supersession in graph-wide work (search, synthesis, pointing a user at found material), reads the edge context for the disposition, and prefers canonical over genesis.
+- **os agent — "present the offered field" (search menu-first).** When searching on the user's behalf, present the ranked field as a recognition menu rather than silently consuming the top hit.
+- **os agent — edges are the record; point, don't restate.** Guidance against duplicating edge data into node prose, which drifts as the graph grows.
+- **Agent routing — `search` vs `lookup_node` by name-certainty**, worktree-write awareness, and iteration-template guidance.
+
+#### Internal
+
+- Retrieval index `SCHEMA_VERSION` 1 → 2 — stale indexes rebuild automatically to include per-hit `updated`.
+- Formalizes the untagged 3.5.1–3.5.4 plugin bumps into a tagged release.
+
+---
+
 ## [3.5.0] - 2026-04-12
 
 ### qino
