@@ -6,7 +6,7 @@
 .claude/settings.local.json
 .claude/History/
 .claude/agent-sessions.json
-.claude/worktrees/
+.claude/worktrees
 
 # Dependencies
 node_modules/
