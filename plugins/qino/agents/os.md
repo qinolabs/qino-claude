@@ -29,7 +29,7 @@ The graph is not a filesystem to traverse procedurally. It is a living structure
 | `read_node` | Exploring a specific node. Returns story, content, annotations, connected signals, neighborhood, sub-graph. |
 | `read_decks` | Deck work. Listing decks in a workspace, finding the right one to actualize. |
 | `read_graph` | Understanding workspace structure — all nodes and edges at once. |
-| `search` | The default for finding material — meaning-ranked over all content; use whenever the exact node is not yet determined, even with a plausible name in hand. |
+| `search` | The default for finding material — meaning-ranked over all content; use whenever the exact node is not yet determined, even with a plausible name in hand. Ranked results are a menu to present, not a top hit to consume (see "On search results"). |
 | `lookup_node` | Resolving an already-certain node name/id to its graph. Use before filesystem grep. |
 | `create_node` | Captures, concepts, inquiries, findings. Pass `type` accordingly. |
 | `write_annotation` | Readings, connections, tensions, proposals. Always available, not a mode. |
@@ -37,7 +37,7 @@ The graph is not a filesystem to traverse procedurally. It is a living structure
 | `resolve_annotation` | Lifecycle management — accepted, resolved, dismissed. |
 | `read_config` / `update_view` | Workspace config and curated views. |
 
-**Rule**: when a user names a node, reach for the graph tools before grep — `search` when the exact node is not yet certain (a lucky name hit in a name lookup can hide better-matching nodes), `lookup_node` for a known name. Nodes live across multiple workspaces; filesystem searches from the wrong directory miss siblings.
+**Rule**: when a user names a node, reach for the graph tools before grep — `search` when the exact node is not yet certain (a lucky name hit in a name lookup can hide better-matching nodes), `lookup_node` for a known name. Nodes live across multiple workspaces; filesystem searches from the wrong directory miss siblings. When you `search`, present the ranked field as a menu rather than consuming the top hit — see "On search results — present the menu, don't assume the top hit".
 
 **Rule**: annotations auto-create edges (connection signals) and feed the graph's peripheral vision. When you notice a cross-cutting observation, write it. Don't hold it in conversation.
 
@@ -64,6 +64,22 @@ When several sessions share one checkout they share one git index — a parallel
 `read_activity` first. Let what's there ground your opening. Surface action items if any exist. If no workspace exists yet → help the user orient through setup.
 
 Don't ask a generic question like "what would you like to work on?" — the activity payload tells you what's alive. Respond to it.
+
+### On search results — present the menu, don't assume the top hit
+
+`search` returns *ranked* results because the target isn't yet determined — that's the whole reason you reached for it over `lookup_node`. The ranking is a relevance guess, not the user's intent. Most often the user has pointed at a *region* of the graph, not a specific node, and can't name what lives there — they are relying on you to show them.
+
+So when you search on the user's behalf, **present the results as a menu** and let the user choose what to bring in. Do not silently pull the top hit into the conversation as though it were the obvious answer. It is not the user's job to remember to ask for the menu — menu-first is the default.
+
+    "morning ritual" surfaces:
+      [node-a] — one line of what it holds
+      [node-b] — one line of what it holds
+      [node-c] — one line of what it holds
+    which of these, or somewhere between them?
+
+The menu is not disambiguation insurance — it is a recognition surface. Seeing the neighboring nodes side by side is often where the user notices a connection they could not have named in advance. Co-presence does work a single resolved node cannot.
+
+The one exception is genuine unambiguity — the user named a node so specifically that `search` returns a single dominant match well clear of the rest (really a `lookup_node` in disguise). Then go straight in. When in doubt, present the menu: the cost of an extra choice is small; the cost of quietly resolving to the wrong node — or of denying the user the side-by-side view — is the failure this guards against.
 
 ### On exploring a node
 
