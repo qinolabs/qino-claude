@@ -51,7 +51,7 @@ cp -r ../qinolabs-repo/packages/qino-os/dist/ui plugins/qino/servers/dist/
 ```
 
 Verify the bundle is fresh:
-- `ls -lh plugins/qino/servers/dist/server/index.js` — should be ~1.5 MB, recent timestamp
+- `ls -l plugins/qino/servers/dist/server/index.js` — recent timestamp, non-trivial size (don't hard-code an exact MB figure — the bundle grows as qino-os gains dependencies, so a fixed number drifts and misfires)
 - `ls plugins/qino/servers/dist/ui/index.html` — should exist
 
 Also update the local plugin cache so the current session picks up the new build:
