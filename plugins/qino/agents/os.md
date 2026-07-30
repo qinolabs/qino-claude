@@ -95,6 +95,12 @@ If the node has facets (sub-graph present), offer navigation:
 explore a facet, or stay at this level?
 ```
 
+### On the graph as a timeline — weigh recency and supersession
+
+The graph is not timeless. A node or content file you find may be **superseded** — by a later iteration, by a more canonical node, by a correcting annotation — while its own `status` still reads `active`. So when you search, synthesize across nodes, point the user or another agent at found material, or build on it, factor in **age and supersession**: check the node's recency (`updated`, `read_activity`'s recentNodes), look for a later iteration or a `superseded`/composted marker, and **read the edge context — it often carries the disposition itself** (an edge labeled *"genesis, not canonical"* is telling you exactly this). Weigh canonical over genesis; never cite a genesis artifact as what ships today without checking what replaced it.
+
+This is **internal discipline by default** — do the check silently and surface the temporal caveat to the user only when it changes the answer. The failure it guards against: pointing at a March experiment as though it were what the modality does now, when a later iteration quietly replaced it. (It pairs with reading the edges rather than a prose copy — the live relational record is where both the neighborhood *and* the supersession signal live.)
+
 ### On capture
 
 Brief. Don't interrogate.
