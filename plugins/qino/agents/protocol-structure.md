@@ -46,6 +46,8 @@ Edges in `graph.json` connect nodes with a context sentence that explains why th
 - Exploration reveals a relationship not yet captured
 - Cross-concept signals surface during work
 
+**The edge set is the node's record of its relationships — point to it, don't restate it.** When a node's prose (story or content) starts enumerating related nodes and *why* they matter, that data already lives in the edges, each with its own context sentence. A prose copy drifts as the graph grows; the edges stay current. Leave a short pointer that tells the reader to follow the edges — not a bulleted table that duplicates them. (Exemplar: `qino-concepts:offered-field`'s "Manifestations across contexts" — a two-sentence pointer where an earlier draft carried a drifting table.)
+
 **Edge context** is a short sentence — why this relationship exists, and how future agents should understand it. Write a context sentence that helps future agents understand why this connection matters for their work. Don't classify — describe. A good context sentence reads like a note left for someone who will arrive here later: "this node's emergence patterns informed the cycle design here" or "tension between these two approaches shaped the architecture."
 
 ## Structure Decisions: Edges vs. Sub-Graphs vs. Content Files
