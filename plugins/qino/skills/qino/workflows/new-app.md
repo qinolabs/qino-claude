@@ -315,7 +315,7 @@ If no existing keys found, **ask the user**:
 After creating environment files, verify the app starts:
 
 ```bash
-pnpm -F @malao/<app>-backend -F @malao/<app> dev
+pnpm -F @qinolabs/<app>-backend -F @qinolabs/<app> dev
 ```
 
 Common errors if environment is missing:
