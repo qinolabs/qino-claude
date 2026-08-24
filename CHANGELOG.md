@@ -10,6 +10,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [3.5.6] - 2026-08-24
+
+### qino
+
+A bundled-server release carrying two qino-os changes that landed in `qinolabs-repo` since the v3.5.5 sync: annotation writes now move a node's recency, and the viewer's type is aligned with qino-world.
+
+#### Fixed
+
+- **`write_annotation` / `resolve_annotation` now bump the node's `updated`.** Both wrote the annotation file and returned without ever touching `node.json`, so annotation activity never moved recency — even though the protocol's own pre-commit stamp scope already counts `annotations/*.md`. The effect was worst in the hookless workspaces (`qino-concepts`, `qino-research`, `qino-evaluation`, root `nodes/`), where no commit hook exists and this is the *only* stamp: annotation-led capture nodes — whose entire live surface between distillation sittings is annotations by design — read as dormant on every "what moved lately" surface (`read_activity`, `subtreeUpdated` grouping) precisely while most active. The stamp now lands at write time, tied to the annotation's own timestamp, through a single primitive shared with the pre-commit hook so the two can't drift on format or timestamp source. (`create_node` was audited and was already correct.)
+
+#### Changed
+
+- **Viewer type aligned with qino-world** — SUSE Mono for display, Overpass Mono for body, replacing Plus Jakarta Sans. The graph viewer now reads in the same typographic register as the rest of the ecosystem.
+
+---
+
 ## [3.5.5] - 2026-07-30
 
 ### qino
