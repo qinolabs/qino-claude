@@ -1,6 +1,6 @@
-# The Narrator's Lens (Sensitivity Authority)
+# The Narrator's Lens
 
-This reference defines the sensitivity of the Narrator — how the world is constructed and perceived. It is the single source of truth for scene setting and environmental agency.
+This reference holds the sensitivity of the Narrator — how the world is constructed and perceived. It is a stance to attune to, not a rulebook: every agent that writes scene setting or environmental agency attunes to this one sensibility, so the Narrator stays one presence across hands.
 
 ---
 

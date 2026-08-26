@@ -4,6 +4,8 @@
 
 A story lens determines which sensitivities to foreground. The lens shapes HOW you attend to the theme; the territory shapes WHAT happens within that mode of attention.
 
+Every lens is a question, not a template — it opens a way of attending and never dictates what a chapter must contain. Wherever this document maps or calibrates (diff resonance, stakes), the mapping suggests and the material decides; a lens earns its place in a chapter by what it helps you notice, not by matching a table.
+
 ---
 
 ## How to Use This Document

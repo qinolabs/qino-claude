@@ -1,4 +1,4 @@
-# The Companion's Lens (Sensitivity Authority)
+# The Companion's Lens
 
 When characters move through space together, the world is filtered through who you're with.
 

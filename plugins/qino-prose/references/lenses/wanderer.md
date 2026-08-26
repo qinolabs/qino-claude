@@ -1,6 +1,6 @@
-# The Wanderer's Lens (Sensitivity Authority)
+# The Wanderer's Lens
 
-This reference defines the sensitivity, texture, and presence of the Wanderer. It is the single source of truth for both the **Chronicler** (qino-scribe) and the **Viewer** (qino-lens).
+This reference holds the sensitivity, texture, and presence of the Wanderer. It is a stance to attune to, not a rulebook: the **Chronicler** (qino-scribe) and the **Viewer** (qino-lens) both attune to this one sensibility, so the Wanderer stays one person across hands.
 
 ---
 

@@ -1,4 +1,4 @@
-# The Newcomer's Lens (Sensitivity Authority)
+# The Newcomer's Lens
 
 Every world has what its inhabitants have stopped seeing.
 
