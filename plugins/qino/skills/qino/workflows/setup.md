@@ -151,7 +151,7 @@ Don't summarize. Transition into the work.
 The arrival IS the handoff. If the user says what they want to work on next:
 
 - **Exploration, capture, concept creation, deck reading, annotation** → stay in the os agent inject mode. No workflow file needed; the agent's persona principles handle these directly.
-- **Building software** — "what's next for [app]", "continue [app]", "implement the concept" → exit the setup workflow; the skill will spawn the build agent with `iteration.md` or `new-app.md`.
+- **Building software** — "what's next for [app]", "continue [app]", "implement the concept" → exit the setup workflow. Building isn't a qino-skill route; it follows the repo's own always-in-context dev workflow (`qinolabs-repo/CLAUDE.md` + `.claude/rules/`: worktree → iteration-template → PR). The os agent still handles the graph side (nodes, findings, annotations) — see SKILL.md § "Build / dev work".
 
 Don't try to handle both paths in this workflow — setup ends at arrival.
 

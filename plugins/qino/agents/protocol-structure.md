@@ -1,10 +1,8 @@
 # Protocol Structure Supplement
 
-Read this alongside `agents/os.md` or `agents/build.md` when `protocol: "qino"` is detected in the workspace config.
+Read this alongside `agents/os.md` when `protocol: "qino"` is detected in the workspace config.
 
 **For os agent workflows:** These sections **replace** the File Structure Awareness, Facets, and Ecosystem Work sections in os.md — all other principles (alive thread, mirror/echo, momentum, tone, reasoning, draft awareness, core intent) remain unchanged.
-
-**For build agent workflows:** The "Dev Structure (Protocol)" section below supplements `agents/build.md` — replacing legacy path references with protocol equivalents.
 
 **For operational decisions** (when to journal, when to create nodes, when to add edges), consult `references/protocol/protocol.md` — Part 1: Operations.
 
@@ -32,7 +30,6 @@ Nodes have types that shape how you engage:
 | `ecosystem` | Cross-cutting system-level work | Hold questions longer — distinction-making, not just development |
 | `facet` | A navigable aspect of a parent concept | Same depth as concept, but awareness of parent context |
 | `arc` | A temporal container tracking emergence | Read for context; arcs accumulate naturally |
-| `navigator` | An orientation document for building | Reference for terrain; not actively explored like concepts |
 
 **Ecosystem nodes** follow the same principle as ecosystem work in concept.md: distinction-making that shapes the whole. Hold the diverging movement longer.
 
@@ -139,69 +136,3 @@ Same principle as legacy — offer without reading, hold without pushing. But he
 **Offer when**: user's response echoes a held thread's theme, or user seems stuck with relevant threads nearby.
 
 **Never**: read or surface held threads unprompted. Offer gently, accept decline immediately.
-
----
-
-## Dev Structure (Protocol)
-
-Read this section alongside `agents/build.md` when `protocol: "qino"` is detected. These translations replace legacy paths throughout the build agent's workflows.
-
-### Path Translations
-
-| Legacy Path | Protocol Path | Notes |
-|-------------|---------------|-------|
-| `implementations/[app]/implementation.md` | `{nodesDir}/{app}/story.md` | Technical context, stack, boundaries, flags |
-| `implementations/[app]/iterations/` | `{nodesDir}/{app}/content/` | Iteration files with `NN-name.md` pattern |
-| `implementations/[app]/iterations/01-foundation.md` | `{nodesDir}/{app}/content/01-foundation.md` | Same naming convention, different parent |
-| `implementations/graph.json` (manual entries) | `graph.json` with `nodesDir` (auto-discovery) | No manual node registration needed |
-| `manifest.json` (concept `last_touched`) | Git log on concept path | No stored timestamps |
-| `concepts/[id]/concept.md` | `{conceptsWorkspace}/nodes/{concept-id}/story.md` | Concept impulse + content/ for developed material |
-
-### Key Protocol Files per App
-
-```
-{nodesDir}/{app}/
-  node.json         # Identity: title, type, status, created
-  story.md          # Technical context (replaces implementation.md)
-  content/          # Iteration files (replaces iterations/)
-    01-foundation.md
-    02-feature-name.md
-  annotations/      # Proposals, observations (if present)
-```
-
-### Concept Sync (Edge-Based)
-
-On arrival at an implementation node:
-1. Read the implementation graph's edges for the current app node
-2. Find edges with label `"concept grounds"` — the target is a cross-graph reference (e.g., `"qino-concepts:qino-world"`)
-3. Parse the target: prefix is the workspace path, suffix is the concept node ID
-4. Resolve the concept workspace path relative to the root workspace
-5. `git -C {conceptsPath} log -1 --format=%ci -- {nodesDir}/{concept-id}/` → last concept change
-6. `git log -1 --format=%ci -- {nodesDir}/{app}/` → last implementation work
-7. If concept is more recent, surface a brief diff summary
-8. Offer: Review / Reconcile / Acknowledge
-
-If no `"concept grounds"` edge exists, the implementation has no linked concept — skip sync.
-
-### Cross-Repo Resolution
-
-- Concept impulse: `{conceptsWorkspace}/nodes/{concept-id}/story.md`
-- Concept content: `{conceptsWorkspace}/nodes/{concept-id}/content/`
-- Concept metadata: `{conceptsWorkspace}/nodes/{concept-id}/node.json`
-- Resolve concept workspace from `"concept grounds"` edge target prefix (may be relative path like `"qino-concepts"`)
-
-### Iteration Discovery
-
-- Scan `{nodesDir}/{app}/content/` directory
-- Sort files by prefix number (`01-`, `02-`, etc.)
-- Read status from each file (look for status markers: Not started / In progress / Complete)
-- Current iteration = first file without "Complete" status
-- No graph.json iteration array needed — content/ IS the source of truth
-
-### Drift → Concept Update
-
-When drift is detected and user chooses to update the concept:
-- Invoke os agent with context about the drift
-- Os agent edits `story.md` or files in `content/` at `{conceptsWorkspace}/nodes/{concept-id}/`
-- Control returns to dev context
-- No stored timestamp to update — git tracks the change automatically
