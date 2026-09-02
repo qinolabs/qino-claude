@@ -6799,12 +6799,12 @@ var require_dist = __commonJS({
         throw new Error(`Unknown format "${name}"`);
       return f4;
     };
-    function addFormats(ajv, list4, fs21, exportName) {
+    function addFormats(ajv, list4, fs24, exportName) {
       var _a11;
       var _b3;
       (_a11 = (_b3 = ajv.opts.code).formats) !== null && _a11 !== void 0 ? _a11 : _b3.formats = (0, codegen_1._)`require("ajv-formats/dist/formats").${exportName}`;
       for (const f4 of list4)
-        ajv.addFormat(f4, fs21[f4]);
+        ajv.addFormat(f4, fs24[f4]);
     }
     module.exports = exports = formatsPlugin;
     Object.defineProperty(exports, "__esModule", { value: true });
@@ -8649,7 +8649,7 @@ function Oe(e7) {
     if (/\.(?:cjs|cts)$/i.test(e7)) return Pi;
   }
 }
-function fs3(e7) {
+function fs4(e7) {
   let { message: t37, loc: i } = e7;
   if (!i) return e7;
   let { line: r5, column: s } = i;
@@ -8664,7 +8664,7 @@ function xs(e7, t37) {
   try {
     s = Te(r5);
   } catch ({ errors: [n4] }) {
-    throw fs3(n4);
+    throw fs4(n4);
   }
   return Ne(s, { text: e7 });
 }
@@ -11877,7 +11877,7 @@ function gt2(t37) {
     return delete n4.comments, t37 === mt2 && n4.type !== "NGChainedExpression" && (n4 = { ...n4, type: "NGChainedExpression", expressions: [n4] }), rr2({ type: "NGRoot", expression: n4, comments: s, text: e7 });
   }, locStart: ie2, locEnd: re2 };
 }
-var lr2, cr2, ur2, kn, _n, vt2, z3, De, wt2, w2, In, or2, Cn, ra, x, K2, Ln, hr2, Bs, $n, yt2, Mn, Rn, On, Dn, Bn, Fn, Vn, Hn, Un, Wn, qn, jn, zn, p, y, Et2, Ct2, bt2, Tt2, kt2, He2, _t2, It2, S, Nt2, At2, Pt2, Lt2, $t2, Mt2, pe, he2, Rt2, Ue2, We2, Ot2, Gn, o, c, vr2, Dt2, oa, Xn, ee2, v, Le2, N, fe2, Bt2, Ft2, Vt2, ke2, Ht2, qe2, Ut2, _e2, Wt2, A2, qt2, jt2, zt2, Sr2, E, Ie2, je2, ze2, Ge2, Gt2, Xe2, Xt2, Qe2, Je2, Ye2, $e, Qt2, Jt2, Yt2, D2, U2, de, Me2, Kt2, Qn, Jn, M2, Yn, xr2, Ee2, Fs, Ve2, yr2, Er2, Cr2, Vs, br2, Hs, Tr, un, kr2, es2, Us, Q2, L2, ts2, Ws, V2, qs, G2, Ke2, J2, Te2, _r2, C2, ns2, ss2, Ir, Nr, pn, Ar2, hn, ce2, St2, Z2, Pr, at3, js, Lr2, $r2, Mr2, Rr2, Or2, Dr2, Br2, zs, Ne2, is2, oe2, Gs, Zt2, Ze2, et2, tt2, nt2, Re2, os2, as2, ls2, Vr2, Xs, Hr2, tn, Ur2, Wr2, fn, ca, ua, qr2, pa, jr2, ha, Qs, fa, da, zr2, Gr2, Xr2, ma, ga, va, l, te2, cs2, us2, R2, ps2, hs2, fs4, ds2, O2, ms2, gs2, nn, Jr2, Yr2, Js, ve2, lt2, wa, Sa, xa, me2, ne2, vs2, ws2, Ss2, xs2, ys2, q2, ya, Es2, Cs2, Ea, Ca, ba, Ta, ka, _a3, Ia, Zr2, eo, bs2, Ys, Na, Aa, f2, W2, to, Oe2, I2, Ae2, be2, rn, on, an, ge2, ae2, _s2, Y2, ln, mo, go, cn, vo, wo, So, xo, yo, Ks, Eo, it2, Pa, La, $a, Ma, Ra, Oa, Da, Ba, Fa, Va, Is, Ha, Ns, As2, Zs, Ua2, Wa, Ps, Ls, qa, $s, Ms, Rs, Os, Ds, To, ja, za, Ga, ko, _o, Io, ct2, si2, ii, ri, oi2, ai2, ut2, li2, ci2, ui2, Ao, pi2, hi2, Po, fi2, Lo, $o, di2, mi2, gi2, vi2, wi2, Si2, xi2, yi2, Ei2, Mo, Ro, Oo, Do, pt2, Ci2, bi2, Ti2, ki2, _i2, Ii2, Ni2, Ai2, Pi2, Li2, $i2, Mi2, Ri2, dn, Oi2, Di2, Bi2, Fi2, Bo, Vi2, Hi2, Ui2, ht2, Wi2, qi2, ji2, zi2, Vo, ft2, we2, se2, m, Qi2, T2, gn, vn, wn, Ji2, Yi2, Ki2, Zi2, Se2, Ho, dt2, mt2, Sn, Uo, xn, yn, tr2, qo, jo, zo, sr2, Go, ir2, Xo, Qo, rr2, Ko, Zo, ea, ta;
+var lr2, cr2, ur2, kn, _n, vt2, z3, De, wt2, w2, In, or2, Cn, ra, x, K2, Ln, hr2, Bs, $n, yt2, Mn, Rn, On, Dn, Bn, Fn, Vn, Hn, Un, Wn, qn, jn, zn, p, y, Et2, Ct2, bt2, Tt2, kt2, He2, _t2, It2, S, Nt2, At2, Pt2, Lt2, $t2, Mt2, pe, he2, Rt2, Ue2, We2, Ot2, Gn, o, c, vr2, Dt2, oa, Xn, ee2, v, Le2, N, fe2, Bt2, Ft2, Vt2, ke2, Ht2, qe2, Ut2, _e2, Wt2, A2, qt2, jt2, zt2, Sr2, E, Ie2, je2, ze2, Ge2, Gt2, Xe2, Xt2, Qe2, Je2, Ye2, $e, Qt2, Jt2, Yt2, D2, U2, de, Me2, Kt2, Qn, Jn, M2, Yn, xr2, Ee2, Fs, Ve2, yr2, Er2, Cr2, Vs, br2, Hs, Tr, un, kr2, es2, Us, Q2, L2, ts2, Ws, V2, qs, G2, Ke2, J2, Te2, _r2, C2, ns2, ss2, Ir, Nr, pn, Ar2, hn, ce2, St2, Z2, Pr, at3, js, Lr2, $r2, Mr2, Rr2, Or2, Dr2, Br2, zs, Ne2, is2, oe2, Gs, Zt2, Ze2, et2, tt2, nt2, Re2, os2, as2, ls2, Vr2, Xs, Hr2, tn, Ur2, Wr2, fn, ca, ua, qr2, pa, jr2, ha, Qs, fa, da, zr2, Gr2, Xr2, ma, ga, va, l, te2, cs2, us2, R2, ps2, hs2, fs5, ds2, O2, ms2, gs2, nn, Jr2, Yr2, Js, ve2, lt2, wa, Sa, xa, me2, ne2, vs2, ws2, Ss2, xs2, ys2, q2, ya, Es2, Cs2, Ea, Ca, ba, Ta, ka, _a3, Ia, Zr2, eo, bs2, Ys, Na, Aa, f2, W2, to, Oe2, I2, Ae2, be2, rn, on, an, ge2, ae2, _s2, Y2, ln, mo, go, cn, vo, wo, So, xo, yo, Ks, Eo, it2, Pa, La, $a, Ma, Ra, Oa, Da, Ba, Fa, Va, Is, Ha, Ns, As2, Zs, Ua2, Wa, Ps, Ls, qa, $s, Ms, Rs, Os, Ds, To, ja, za, Ga, ko, _o, Io, ct2, si2, ii, ri, oi2, ai2, ut2, li2, ci2, ui2, Ao, pi2, hi2, Po, fi2, Lo, $o, di2, mi2, gi2, vi2, wi2, Si2, xi2, yi2, Ei2, Mo, Ro, Oo, Do, pt2, Ci2, bi2, Ti2, ki2, _i2, Ii2, Ni2, Ai2, Pi2, Li2, $i2, Mi2, Ri2, dn, Oi2, Di2, Bi2, Fi2, Bo, Vi2, Hi2, Ui2, ht2, Wi2, qi2, ji2, zi2, Vo, ft2, we2, se2, m, Qi2, T2, gn, vn, wn, Ji2, Yi2, Ki2, Zi2, Se2, Ho, dt2, mt2, Sn, Uo, xn, yn, tr2, qo, jo, zo, sr2, Go, ir2, Xo, Qo, rr2, Ko, Zo, ea, ta;
 var init_angular = __esm({
   "../../node_modules/prettier/plugins/angular.mjs"() {
     "use strict";
@@ -13310,7 +13310,7 @@ var init_angular = __esm({
     })(hs2 || (hs2 = {}));
     (function(t37) {
       t37[t37.None = 0] = "None", t37[t37.ElementTag = 1] = "ElementTag", t37[t37.TemplateTag = 2] = "TemplateTag", t37[t37.OpenTag = 4] = "OpenTag", t37[t37.CloseTag = 8] = "CloseTag", t37[t37.ExpressionIndex = 16] = "ExpressionIndex";
-    })(fs4 || (fs4 = {}));
+    })(fs5 || (fs5 = {}));
     (function(t37) {
       t37[t37.HTML = 0] = "HTML", t37[t37.SVG = 1] = "SVG", t37[t37.Math = 2] = "Math";
     })(ds2 || (ds2 = {}));
@@ -15745,7 +15745,7 @@ function Sr3(a4, e7) {
 }
 function Cr3(a4, e7) {
   let t37 = null, s = e7;
-  for (; s !== t37; ) t37 = s, s = fs5(a4, s), s = ms3(a4, s), s = Ps2(a4, s), s = xs3(a4, s);
+  for (; s !== t37; ) t37 = s, s = fs6(a4, s), s = ms3(a4, s), s = Ps2(a4, s), s = xs3(a4, s);
   return s;
 }
 function Ts3(a4) {
@@ -16092,7 +16092,7 @@ function ht3(a4) {
       throw H3(a4, `'${a4.type}'`);
   }
 }
-var si3, qt3, ei2, De2, X3, ii2, ri2, U3, ai3, lt3, L3, st3, Fe3, ni3, Be3, wt3, oi3, hi3, ci3, li3, pi3, ui3, l2, yi3, A3, y2, $t3, pt3, V3, xi3, kt3, Pe3, mt3, ge3, Te3, be3, Ae3, Se3, Ce3, Pi3, Q3, w3, Ze3, Ni3, ts3, ki3, vi3, Li3, we3, Di3, Mi3, Oi3, Ri3, yt3, xt3, Yt3, Qt3, _i3, ji3, P2, qi3, zi3, Hi3, Ki3, St3, zt3, Ht3, Ji3, _2, Gi3, Zt3, te3, ee3, se3, ie3, Yi3, qe3, Ct3, tr3, ae3, Et3, ne3, oe3, he3, it3, vt3, ce3, le3, pe2, et3, K3, ze3, ue3, fe3, de2, me3, Kt3, rr3, ar2, Wt3, ye3, Jt3, or3, m2, lr3, dr3, We3, mr3, yr3, Je3, Ge3, us3, Pr2, Lt3, Ba2, Xe3, Ua3, fs5, _a4, ds3, ms3, ys3, xs3, Ps2, gs3, Ft3, wr2, Ir2, bs3, Bt3, kr3, As3, vr3, Lr3, Dr3, Ss3, Mr3, Cs3, Or3, Ie3, at4, Es3, Fr3, Is2, Ur3, ks3, Ds2, gt3, qr3, Ms2, u2, Os2, zr3, Fs2, Bs2, so2, Us2, Ut3, _s3, _t3, Gr3, Xr3, Yr3, Qr3, js2, Zr3, Vs2, ta2, ea2, zs2, Hs2, G3, jt3, Le3, Vt3, ot3, ra2, Xs2, Ys2, j2, aa, ca2, la, Qs2, pa2, ua2, fa2, da2, Zs2, ma2, Oe3, Me3, ti3, Pa2, ga2, Ta2, ba2, Aa2;
+var si3, qt3, ei2, De2, X3, ii2, ri2, U3, ai3, lt3, L3, st3, Fe3, ni3, Be3, wt3, oi3, hi3, ci3, li3, pi3, ui3, l2, yi3, A3, y2, $t3, pt3, V3, xi3, kt3, Pe3, mt3, ge3, Te3, be3, Ae3, Se3, Ce3, Pi3, Q3, w3, Ze3, Ni3, ts3, ki3, vi3, Li3, we3, Di3, Mi3, Oi3, Ri3, yt3, xt3, Yt3, Qt3, _i3, ji3, P2, qi3, zi3, Hi3, Ki3, St3, zt3, Ht3, Ji3, _2, Gi3, Zt3, te3, ee3, se3, ie3, Yi3, qe3, Ct3, tr3, ae3, Et3, ne3, oe3, he3, it3, vt3, ce3, le3, pe2, et3, K3, ze3, ue3, fe3, de2, me3, Kt3, rr3, ar2, Wt3, ye3, Jt3, or3, m2, lr3, dr3, We3, mr3, yr3, Je3, Ge3, us3, Pr2, Lt3, Ba2, Xe3, Ua3, fs6, _a4, ds3, ms3, ys3, xs3, Ps2, gs3, Ft3, wr2, Ir2, bs3, Bt3, kr3, As3, vr3, Lr3, Dr3, Ss3, Mr3, Cs3, Or3, Ie3, at4, Es3, Fr3, Is2, Ur3, ks3, Ds2, gt3, qr3, Ms2, u2, Os2, zr3, Fs2, Bs2, so2, Us2, Ut3, _s3, _t3, Gr3, Xr3, Yr3, Qr3, js2, Zr3, Vs2, ta2, ea2, zs2, Hs2, G3, jt3, Le3, Vt3, ot3, ra2, Xs2, Ys2, j2, aa, ca2, la, Qs2, pa2, ua2, fa2, da2, Zs2, ma2, Oe3, Me3, ti3, Pa2, ga2, Ta2, ba2, Aa2;
 var init_babel = __esm({
   "../../node_modules/prettier/plugins/babel.mjs"() {
     "use strict";
@@ -22371,7 +22371,7 @@ var init_babel = __esm({
     Ba2 = gr3(Pi3);
     Xe3 = /* @__PURE__ */ new Map();
     Ua3 = Ot3(/\s/);
-    fs5 = Ot3(" 	");
+    fs6 = Ot3(" 	");
     _a4 = Ot3(",; 	");
     ds3 = Ot3(/[^\n\r]/);
     ms3 = br3;
@@ -22732,13 +22732,13 @@ function Bo2(e7, t37) {
   return K4(So2(e7, t37) ? e7.types[0] : e7, t37.comment), true;
 }
 function _c(e7) {
-  return [bo2, fs6, is4, ps4, Rc, zr4, en2, Zr4, os4, ss4, $r4, Hc, Xc, Po2, ls4, Kc, us4, cs4, Wc, rl, Io2, ko2, ys4].some((t37) => t37(e7));
+  return [bo2, fs7, is4, ps4, Rc, zr4, en2, Zr4, os4, ss4, $r4, Hc, Xc, Po2, ls4, Kc, us4, cs4, Wc, rl, Io2, ko2, ys4].some((t37) => t37(e7));
 }
 function Nc(e7) {
   return [bo2, vc, ps4, is4, ls4, zr4, en2, Zr4, os4, ss4, $r4, cs4, Yc, Vc, Po2, ms4, el, tl, nl, Io2, sl, Ds3, ol, ko2].some((t37) => t37(e7));
 }
 function jc(e7) {
-  return [bo2, fs6, zr4, en2, Zr4, $r4, us4, Po2, ms4, Io2, Uc, Gc, zc, Ds3, ko2, ys4].some((t37) => t37(e7));
+  return [bo2, fs7, zr4, en2, Zr4, $r4, us4, Po2, ms4, Io2, Uc, Gc, zc, Ds3, ko2, ys4].some((t37) => t37(e7));
 }
 function vc({ comment: e7, followingNode: t37 }) {
   return t37 && nr4(e7) ? (K4(t37, e7), true) : false;
@@ -22835,7 +22835,7 @@ function ms4(e7) {
 function zc({ comment: e7, enclosingNode: t37, precedingNode: r5, followingNode: n4, text: o4 }) {
   return !n4 && (t37?.type === "TSMethodSignature" || t37?.type === "TSDeclareFunction" || t37?.type === "TSAbstractMethodDefinition") && (!r5 || r5 !== t37.returnType) && Je4(o4, S3(e7)) === ";" ? (X4(t37, e7), true) : false;
 }
-function fs6({ comment: e7, enclosingNode: t37, followingNode: r5 }) {
+function fs7({ comment: e7, enclosingNode: t37, followingNode: r5 }) {
   if (yt4(e7) && t37?.type === "TSMappedType" && r5 === t37.key) return t37.prettierIgnore = true, e7.unignore = true, true;
 }
 function Zc(e7, t37, r5) {
@@ -32027,7 +32027,7 @@ var init_flow = __esm({
         let I9 = A9;
         return I9.id == null && Array.isArray(I9.declarations) && ((g5 = I9.declarations[0]) == null ? void 0 : g5.id) != null && (I9.id = I9.declarations[0].id), delete I9.declarations, delete I9.kind, delete I9.implicitDeclare, I9;
       }
-      function fs21(A9) {
+      function fs24(A9) {
         return A9.openingElement.typeArguments != null && delete A9.openingElement.typeArguments, A9;
       }
       function kI(A9) {
@@ -32093,7 +32093,7 @@ var init_flow = __esm({
           case "DeclareVariable":
             return ms10(A9);
           case "JSXElement":
-            return fs21(A9);
+            return fs24(A9);
           case "Literal":
             return Ps10(A9);
           case "ChainExpression":
@@ -32632,7 +32632,7 @@ function Qe5(e7, t37) {
 function ps5(e7) {
   return /^\[.*\]$/.test(e7) ? e7.substring(1, e7.length - 1) : e7;
 }
-function fs7(e7, t37) {
+function fs8(e7, t37) {
   return { open: e7.charAt(2) === "~", close: t37.charAt(t37.length - 3) === "~" };
 }
 function ms5(e7) {
@@ -33934,7 +33934,7 @@ Expecting ` + Qt13.join(", ") + ", got '" + (this.terminals_[L8] || L8) + "'" : 
     };
     jr5 = G5;
     Ft5 = {};
-    Oe5(Ft5, { SourceLocation: () => Qe5, id: () => ps5, prepareBlock: () => ys5, prepareMustache: () => gs5, preparePartialBlock: () => ks5, preparePath: () => ds5, prepareProgram: () => Ss5, prepareRawBlock: () => bs5, stripComment: () => ms5, stripFlags: () => fs7 });
+    Oe5(Ft5, { SourceLocation: () => Qe5, id: () => ps5, prepareBlock: () => ys5, prepareMustache: () => gs5, preparePartialBlock: () => ks5, preparePath: () => ds5, prepareProgram: () => Ss5, prepareRawBlock: () => bs5, stripComment: () => ms5, stripFlags: () => fs8 });
     hs5 = function(e7, t37, r5) {
       if (r5 || arguments.length === 2) for (var s = 0, n4 = t37.length, i; s < n4; s++) (i || !(s in t37)) && (i || (i = Array.prototype.slice.call(t37, 0, s)), i[s] = t37[s]);
       return e7.concat(i || Array.prototype.slice.call(t37));
@@ -35907,7 +35907,7 @@ function ri5(e7) {
   }
   return t37.comments = ti6(t37), t37;
 }
-var Et6, ae5, ht6, Ae4, Tt6, xt5, X5, yt5, ce6, Ie6, ge6, Se6, H6, Oe6, O5, J6, pe5, S4, u3, Nt6, l4, Ri5, z5, ve6, ke6, Ce5, Z5, Re6, At5, T5, le6, Le5, K6, St5, be6, D5, Fe6, vt6, Pe5, ee6, te6, we4, Ve6, Me6, Ue6, Be6, Ge6, Ke6, je6, Ye6, wt6, qe6, Qe6, $e5, Vt6, Xe6, _e5, He6, Ut6, R6, Bt6, et6, Y5, V6, M6, c2, Gt6, Kt6, jt5, Yt6, qt6, Qt5, $t6, Xt6, Ht6, Jt6, Wt6, zt6, Zt6, en4, tn4, nn4, rn4, sn4, on4, an4, cn4, pn4, un4, ln4, dn4, fn4, mn4, hn4, En4, Tn3, xn4, yn4, Nn4, Dn4, _n4, An4, In4, gn4, Sn4, On4, vn4, kn4, Cn4, Rn4, Ln4, bn3, Fn3, Pn4, wn4, Vn3, ye6, b4, Ne5, ds6, fs8, ms6, hs6, Es6, Ts6, Bn4, o2, Q6, ut6, B5, De3, mt6, ni6, si6, oi6;
+var Et6, ae5, ht6, Ae4, Tt6, xt5, X5, yt5, ce6, Ie6, ge6, Se6, H6, Oe6, O5, J6, pe5, S4, u3, Nt6, l4, Ri5, z5, ve6, ke6, Ce5, Z5, Re6, At5, T5, le6, Le5, K6, St5, be6, D5, Fe6, vt6, Pe5, ee6, te6, we4, Ve6, Me6, Ue6, Be6, Ge6, Ke6, je6, Ye6, wt6, qe6, Qe6, $e5, Vt6, Xe6, _e5, He6, Ut6, R6, Bt6, et6, Y5, V6, M6, c2, Gt6, Kt6, jt5, Yt6, qt6, Qt5, $t6, Xt6, Ht6, Jt6, Wt6, zt6, Zt6, en4, tn4, nn4, rn4, sn4, on4, an4, cn4, pn4, un4, ln4, dn4, fn4, mn4, hn4, En4, Tn3, xn4, yn4, Nn4, Dn4, _n4, An4, In4, gn4, Sn4, On4, vn4, kn4, Cn4, Rn4, Ln4, bn3, Fn3, Pn4, wn4, Vn3, ye6, b4, Ne5, ds6, fs9, ms6, hs6, Es6, Ts6, Bn4, o2, Q6, ut6, B5, De3, mt6, ni6, si6, oi6;
 var init_graphql = __esm({
   "../../node_modules/prettier/plugins/graphql.mjs"() {
     "use strict";
@@ -36099,7 +36099,7 @@ ${e7}`;
     b4 = Un3();
     Ne5 = b4?.tracingChannel("graphql:parse");
     ds6 = b4?.tracingChannel("graphql:validate");
-    fs8 = b4?.tracingChannel("graphql:execute");
+    fs9 = b4?.tracingChannel("graphql:execute");
     ms6 = b4?.tracingChannel("graphql:execute:variableCoercion");
     hs6 = b4?.tracingChannel("graphql:execute:rootSelectionSet");
     Es6 = b4?.tracingChannel("graphql:subscribe");
@@ -36716,7 +36716,7 @@ function R7(e7, t37) {
   return r5;
 }
 function Wr6(e7, t37) {
-  let { preferred: r5, alternate: n4 } = t37 === true || t37 === "'" ? ms7 : fs9, { length: i } = e7, s = 0, a4 = 0;
+  let { preferred: r5, alternate: n4 } = t37 === true || t37 === "'" ? ms7 : fs10, { length: i } = e7, s = 0, a4 = 0;
   for (let o4 = 0; o4 < i; o4++) {
     let l5 = e7.charCodeAt(o4);
     l5 === r5.codePoint ? s++ : l5 === n4.codePoint && a4++;
@@ -37973,7 +37973,7 @@ function st7(e7) {
   let t37 = Bt7(e7), r5 = t37.name === "vue" ? Ji5 : Lr6;
   return { parse: (n4, i) => Ar5(n4, r5, t37, i), hasPragma: Jn4, hasIgnorePragma: Zn4, astFormat: "html", locStart: F6, locEnd: J7 };
 }
-var Nr4, Dr6, es6, Ir5, Wt7, ts6, qe7, Rr6, Zi5, ke7, rs6, ns6, T6, ss6, I5, as6, He7, Fe7, Ve7, ot6, be7, we5, lt6, Te6, ye7, Ee7, xe4, ct6, ut7, z6, pt7, Le6, ht7, ft7, ls6, zt7, Or6, D6, dt7, Br5, qr5, G6, S5, y4, ps6, k4, hs7, Mr6, Vr6, Ur6, ms7, fs9, jt6, zr6, ds7, gs6, P4, Yt7, Gr6, $r6, Ss6, se7, vs6, Cs6, jr6, bs6, Kr6, Qr6, X6, xs6, _t7, St6, ae6, vt7, Ue7, Qt6, Zr6, Xt7, en5, Jt7, oe7, Rs5, Zt7, tn5, js5, Sn5, vn5, ir6, Ks5, kn5, bn4, wn5, sr6, Js5, Tn4, yn5, En5, xn5, ea4, ta4, ra4, na3, Pn5, ia3, Nn5, Dn5, In5, aa3, On5, Mn5, oa4, H7, ua4, Vn4, ma4, Un4, F6, J7, Wn4, Pt6, ba4, Gn5, Qe7, Ta4, $n5, Je7, jn5, Ea3, Yn5, xa4, La3, Kn5, Qn5, Xn5, Jn4, Zn4, ei6, ti7, Aa4, Pa4, lr6, et7, Ia3, pr6, hr6, mr6, Oa3, hi6, Ma3, Ba4, qa3, Ha3, Fa3, mi6, Va3, fi6, m5, di6, tt7, De4, rt7, p3, Wa3, te7, de6, _i5, Si6, vi6, Ci5, ki5, bi6, re7, wi5, Ti6, ge7, U5, yi6, fr6, dr6, gr6, _e6, za3, Ga3, ja3, it7, Ya2, Ka2, Qa2, Ii5, io3, Cr5, x3, so4, Bi5, ao3, Hi5, kr5, oo3, Fi5, bo3, Vi5, Ui5, br5, Wi5, wo4, zi5, Pr4, Gi5, yo3, qt7, $i5, Ht7, ji5, ne7, Tr4, yr6, Me7, Ft7, xo4, Er5, Vt7, Fo2, Vo3, Uo3, Wo3, zo3, Go3, $o3;
+var Nr4, Dr6, es6, Ir5, Wt7, ts6, qe7, Rr6, Zi5, ke7, rs6, ns6, T6, ss6, I5, as6, He7, Fe7, Ve7, ot6, be7, we5, lt6, Te6, ye7, Ee7, xe4, ct6, ut7, z6, pt7, Le6, ht7, ft7, ls6, zt7, Or6, D6, dt7, Br5, qr5, G6, S5, y4, ps6, k4, hs7, Mr6, Vr6, Ur6, ms7, fs10, jt6, zr6, ds7, gs6, P4, Yt7, Gr6, $r6, Ss6, se7, vs6, Cs6, jr6, bs6, Kr6, Qr6, X6, xs6, _t7, St6, ae6, vt7, Ue7, Qt6, Zr6, Xt7, en5, Jt7, oe7, Rs5, Zt7, tn5, js5, Sn5, vn5, ir6, Ks5, kn5, bn4, wn5, sr6, Js5, Tn4, yn5, En5, xn5, ea4, ta4, ra4, na3, Pn5, ia3, Nn5, Dn5, In5, aa3, On5, Mn5, oa4, H7, ua4, Vn4, ma4, Un4, F6, J7, Wn4, Pt6, ba4, Gn5, Qe7, Ta4, $n5, Je7, jn5, Ea3, Yn5, xa4, La3, Kn5, Qn5, Xn5, Jn4, Zn4, ei6, ti7, Aa4, Pa4, lr6, et7, Ia3, pr6, hr6, mr6, Oa3, hi6, Ma3, Ba4, qa3, Ha3, Fa3, mi6, Va3, fi6, m5, di6, tt7, De4, rt7, p3, Wa3, te7, de6, _i5, Si6, vi6, Ci5, ki5, bi6, re7, wi5, Ti6, ge7, U5, yi6, fr6, dr6, gr6, _e6, za3, Ga3, ja3, it7, Ya2, Ka2, Qa2, Ii5, io3, Cr5, x3, so4, Bi5, ao3, Hi5, kr5, oo3, Fi5, bo3, Vi5, Ui5, br5, Wi5, wo4, zi5, Pr4, Gi5, yo3, qt7, $i5, Ht7, ji5, ne7, Tr4, yr6, Me7, Ft7, xo4, Er5, Vt7, Fo2, Vo3, Uo3, Wo3, zo3, Go3, $o3;
 var init_html = __esm({
   "../../node_modules/prettier/plugins/html.mjs"() {
     "use strict";
@@ -38045,7 +38045,7 @@ var init_html = __esm({
     Vr6 = Object.freeze({ character: "'", codePoint: 39 });
     Ur6 = Object.freeze({ character: '"', codePoint: 34 });
     ms7 = Object.freeze({ preferred: Vr6, alternate: Ur6 });
-    fs9 = Object.freeze({ preferred: Ur6, alternate: Vr6 });
+    fs10 = Object.freeze({ preferred: Ur6, alternate: Vr6 });
     jt6 = class {
       #e;
       constructor(t37) {
@@ -44287,9 +44287,9 @@ $$`;
       nn10[Rt11] = ls10;
       nn10[Gi7] = cx;
       nn10[Vi7] = fx;
-      var cs10 = 1, fs21 = 2, ps10 = 3, hs11 = 4, ms10 = 5, Hi8 = 6, Ds9 = 7, at12 = {};
+      var cs10 = 1, fs24 = 2, ps10 = 3, hs11 = 4, ms10 = 5, Hi8 = 6, Ds9 = 7, at12 = {};
       at12[cs10] = "Named character references must be terminated by a semicolon";
-      at12[fs21] = "Numeric character references must be terminated by a semicolon";
+      at12[fs24] = "Numeric character references must be terminated by a semicolon";
       at12[ps10] = "Named character references cannot be empty";
       at12[hs11] = "Numeric character references cannot be empty";
       at12[ms10] = "Named character references must be known";
@@ -44309,7 +44309,7 @@ $$`;
             continue;
           }
           for (O10 = m7 + 1, R11 = O10, Y10 = O10, y8 === bx ? (Y10 = ++R11, y8 = e7.charCodeAt(Y10), y8 === Ex || y8 === wx ? (z11 = Vi7, Y10 = ++R11) : z11 = Gi7) : z11 = Rt11, C8 = "", T9 = "", d5 = "", N9 = nn10[z11], Y10--; ++Y10 < h4 && (y8 = e7.charCodeAt(Y10), !!N9(y8)); ) d5 += Nt11(y8), z11 === Rt11 && hx.call(is12, d5) && (C8 = d5, T9 = is12[d5]);
-          w9 = e7.charCodeAt(Y10) === xx, w9 && (Y10++, S8 = z11 === Rt11 ? px(d5) : false, S8 && (C8 = d5, T9 = S8)), p5 = 1 + Y10 - O10, !w9 && !n4 || (d5 ? z11 === Rt11 ? (w9 && !T9 ? b6(ms10, 1) : (C8 !== d5 && (Y10 = R11 + C8.length, p5 = 1 + Y10 - R11, w9 = false), w9 || (_8 = C8 ? cs10 : ps10, t37.attribute ? (y8 = e7.charCodeAt(Y10), y8 === Fx ? (b6(_8, p5), T9 = null) : ls10(y8) ? T9 = null : b6(_8, p5)) : b6(_8, p5))), L8 = T9) : (w9 || b6(fs21, p5), L8 = parseInt(d5, Wi8[z11]), Ax(L8) ? (b6(Ds9, p5), L8 = Nt11(Cx)) : L8 in as10 ? (b6(Hi8, p5), L8 = as10[L8]) : (I9 = "", Tx(L8) && b6(Hi8, p5), L8 > 65535 && (L8 -= 65536, I9 += Nt11(L8 >>> 10 | 55296), L8 = 56320 | L8 & 1023), L8 = I9 + Nt11(L8))) : z11 !== Rt11 && b6(hs11, p5)), L8 ? (ee11(), W8 = ie12(), m7 = Y10 - 1, x7 += Y10 - O10 + 1, E5.push(L8), ne11 = ie12(), ne11.offset++, u4 && u4.call(s, L8, { start: W8, end: ne11 }, e7.slice(O10 - 1, Y10)), W8 = ne11) : (d5 = e7.slice(O10 - 1, Y10), k7 += d5, x7 += d5.length, m7 = Y10 - 1);
+          w9 = e7.charCodeAt(Y10) === xx, w9 && (Y10++, S8 = z11 === Rt11 ? px(d5) : false, S8 && (C8 = d5, T9 = S8)), p5 = 1 + Y10 - O10, !w9 && !n4 || (d5 ? z11 === Rt11 ? (w9 && !T9 ? b6(ms10, 1) : (C8 !== d5 && (Y10 = R11 + C8.length, p5 = 1 + Y10 - R11, w9 = false), w9 || (_8 = C8 ? cs10 : ps10, t37.attribute ? (y8 = e7.charCodeAt(Y10), y8 === Fx ? (b6(_8, p5), T9 = null) : ls10(y8) ? T9 = null : b6(_8, p5)) : b6(_8, p5))), L8 = T9) : (w9 || b6(fs24, p5), L8 = parseInt(d5, Wi8[z11]), Ax(L8) ? (b6(Ds9, p5), L8 = Nt11(Cx)) : L8 in as10 ? (b6(Hi8, p5), L8 = as10[L8]) : (I9 = "", Tx(L8) && b6(Hi8, p5), L8 > 65535 && (L8 -= 65536, I9 += Nt11(L8 >>> 10 | 55296), L8 = 56320 | L8 & 1023), L8 = I9 + Nt11(L8))) : z11 !== Rt11 && b6(hs11, p5)), L8 ? (ee11(), W8 = ie12(), m7 = Y10 - 1, x7 += Y10 - O10 + 1, E5.push(L8), ne11 = ie12(), ne11.offset++, u4 && u4.call(s, L8, { start: W8, end: ne11 }, e7.slice(O10 - 1, Y10)), W8 = ne11) : (d5 = e7.slice(O10 - 1, Y10), k7 += d5, x7 += d5.length, m7 = Y10 - 1);
         } else v5 === 10 && (g5++, D9++, x7 = 0), v5 === v5 ? (k7 += Nt11(v5), x7++) : ee11();
         return E5.join("");
         function ie12() {
@@ -50073,7 +50073,7 @@ function Ci7(t37) {
 function qc2(t37) {
   return t37.length === 1 ? t37 : t37.toLowerCase().replace(/^([+-]?[\d.]+e)(?:\+|(-))?0*(?=\d)/, "$1$2").replace(/^([+-]?[\d.]+)e[+-]?0+$/, "$1").replace(/^([+-])?\./, "$10.").replace(/(\.\d+?)0+(?=e|$)/, "$1").replace(/\.(?=e|$)/, "");
 }
-function fs10(t37) {
+function fs11(t37) {
   let e7 = t37.toLowerCase();
   return zt9.has(e7) ? zt9.get(e7) : t37;
 }
@@ -50085,7 +50085,7 @@ function Ii7(t37, e7) {
   return n4 && ({ value: t37, flag: r5 } = n4.groups), (t37.includes('"') || t37.includes("'") ? t37 : s + t37 + s) + (r5 ? ` ${r5}` : "");
 }
 function Te9(t37) {
-  return T7(0, t37, Uc3, (e7, s, r5, n4, i) => !r5 && n4 && (i ?? (i = ""), i = i.toLowerCase(), !i || i === "n" || zt9.has(i)) ? ps7(n4) + (i ? fs10(i) : "") : e7);
+  return T7(0, t37, Uc3, (e7, s, r5, n4, i) => !r5 && n4 && (i ?? (i = ""), i = i.toLowerCase(), !i || i === "n" || zt9.has(i)) ? ps7(n4) + (i ? fs11(i) : "") : e7);
 }
 function ps7(t37) {
   return Pi7(t37).replace(/\.0(?=$|e)/, "");
@@ -50286,7 +50286,7 @@ function Kc3(t37, e7, s) {
     case "value-paren":
       return r5.value;
     case "value-number":
-      return [ps7(r5.value), fs10(r5.unit)];
+      return [ps7(r5.value), fs11(r5.unit)];
     case "value-operator":
       return r5.value;
     case "value-word":
@@ -57835,7 +57835,7 @@ function Pf2(e7, t37) {
     return s();
   }, get converters() {
     return f4();
-  }, baseFactory: t37, flags: e7, createNodeArray: me11, createNumericLiteral: V11, createBigIntLiteral: oe11, createStringLiteral: mt13, createStringLiteralFromNode: ir11, createRegularExpressionLiteral: gn9, createLiteralLikeNode: ar10, createIdentifier: He12, createTempVariable: sr9, createLoopVariable: jr11, createUniqueName: Lt12, getGeneratedNameForNode: qn9, createPrivateIdentifier: jt12, createUniquePrivateName: Ke13, getGeneratedPrivateNameForNode: Fn8, createToken: ct9, createSuper: st13, createThis: qt13, createNull: Jt12, createTrue: lt10, createFalse: _r8, createModifier: ht12, createModifiersFromModifierFlags: vn9, createQualifiedName: bt9, updateQualifiedName: ln11, createComputedPropertyName: it13, updateComputedPropertyName: Ft12, createTypeParameterDeclaration: sn9, updateTypeParameterDeclaration: or10, createParameterDeclaration: br7, updateParameterDeclaration: vr8, createDecorator: zn9, updateDecorator: Vn9, createPropertySignature: Jr10, updatePropertySignature: Wn9, createPropertyDeclaration: xr7, updatePropertyDeclaration: L8, createMethodSignature: se11, updateMethodSignature: de10, createMethodDeclaration: Se12, updateMethodDeclaration: $e12, createConstructorDeclaration: ut12, updateConstructorDeclaration: Rr9, createGetAccessorDeclaration: Mn10, updateGetAccessorDeclaration: Gn10, createSetAccessorDeclaration: U10, updateSetAccessorDeclaration: K12, createCallSignature: we10, updateCallSignature: ke11, createConstructSignature: Ee13, updateConstructSignature: he11, createIndexSignature: Ye10, updateIndexSignature: tt13, createClassStaticBlockDeclaration: _t10, updateClassStaticBlockDeclaration: Pt10, createTemplateLiteralTypeSpan: Xe12, updateTemplateLiteralTypeSpan: De9, createKeywordTypeNode: xn9, createTypePredicateNode: at12, updateTypePredicateNode: un10, createTypeReferenceNode: ei11, updateTypeReferenceNode: O10, createFunctionTypeNode: qe12, updateFunctionTypeNode: u4, createConstructorTypeNode: je13, updateConstructorTypeNode: _n10, createTypeQueryNode: Nt11, updateTypeQueryNode: Et11, createTypeLiteralNode: It13, updateTypeLiteralNode: zt12, createArrayTypeNode: Yn10, updateArrayTypeNode: Ai10, createTupleTypeNode: pn9, updateTupleTypeNode: Y10, createNamedTupleMember: le13, updateNamedTupleMember: Ve12, createOptionalTypeNode: Te11, updateOptionalTypeNode: j9, createRestTypeNode: yt11, updateRestTypeNode: wt11, createUnionTypeNode: Gl3, updateUnionTypeNode: M_, createIntersectionTypeNode: Ur9, updateIntersectionTypeNode: Je12, createConditionalTypeNode: ft11, updateConditionalTypeNode: Yl3, createInferTypeNode: Hn9, updateInferTypeNode: Hl3, createImportTypeNode: cr9, updateImportTypeNode: ua6, createParenthesizedType: en9, updateParenthesizedType: Dt12, createThisTypeNode: D9, createTypeOperatorNode: Yt13, updateTypeOperatorNode: Br8, createIndexedAccessTypeNode: lr10, updateIndexedAccessTypeNode: as10, createMappedTypeNode: vt10, updateMappedTypeNode: Ut10, createLiteralTypeNode: ti12, updateLiteralTypeNode: Sr8, createTemplateLiteralType: Gt11, updateTemplateLiteralType: Xl3, createObjectBindingPattern: L_, updateObjectBindingPattern: $l4, createArrayBindingPattern: qr9, updateArrayBindingPattern: Ql3, createBindingElement: pa8, updateBindingElement: ni12, createArrayLiteralExpression: ss10, updateArrayLiteralExpression: j_, createObjectLiteralExpression: Ci9, updateObjectLiteralExpression: Kl3, createPropertyAccessExpression: e7 & 4 ? (r5, i) => setEmitFlags(ur11(r5, i), 262144) : ur11, updatePropertyAccessExpression: Zl4, createPropertyAccessChain: e7 & 4 ? (r5, i, _8) => setEmitFlags(Di9(r5, i, _8), 262144) : Di9, updatePropertyAccessChain: fa6, createElementAccessExpression: Pi9, updateElementAccessExpression: eu5, createElementAccessChain: U_, updateElementAccessChain: _s10, createCallExpression: Ni9, updateCallExpression: da6, createCallChain: os10, updateCallChain: q_, createNewExpression: Tn9, updateNewExpression: cs10, createTaggedTemplateExpression: ma7, updateTaggedTemplateExpression: F_, createTypeAssertion: z_, updateTypeAssertion: V_, createParenthesizedExpression: ls10, updateParenthesizedExpression: W_, createFunctionExpression: us10, updateFunctionExpression: G_, createArrowFunction: ps10, updateArrowFunction: Y_, createDeleteExpression: H_, updateDeleteExpression: X_, createTypeOfExpression: ha6, updateTypeOfExpression: dn10, createVoidExpression: fs21, updateVoidExpression: pr9, createAwaitExpression: $_, updateAwaitExpression: Fr8, createPrefixUnaryExpression: zr9, updatePrefixUnaryExpression: tu4, createPostfixUnaryExpression: ri10, updatePostfixUnaryExpression: nu5, createBinaryExpression: ya6, updateBinaryExpression: ru5, createConditionalExpression: K_, updateConditionalExpression: Z_, createTemplateExpression: eo6, updateTemplateExpression: Xn10, createTemplateHead: no6, createTemplateMiddle: ga6, createTemplateTail: ds11, createNoSubstitutionTemplateLiteral: au4, createTemplateLiteralLikeNode: ai10, createYieldExpression: ms10, updateYieldExpression: su4, createSpreadElement: ro6, updateSpreadElement: _u4, createClassExpression: io6, updateClassExpression: hs11, createOmittedExpression: ys10, createExpressionWithTypeArguments: ao6, updateExpressionWithTypeArguments: so7, createAsExpression: mn10, updateAsExpression: ba6, createNonNullExpression: _o6, updateNonNullExpression: oo6, createSatisfiesExpression: gs9, updateSatisfiesExpression: co7, createNonNullChain: bs9, updateNonNullChain: Ln10, createMetaProperty: lo6, updateMetaProperty: vs9, createTemplateSpan: $n10, updateTemplateSpan: va6, createSemicolonClassElement: uo6, createBlock: Vr9, updateBlock: ou5, createVariableStatement: xs9, updateVariableStatement: po6, createEmptyStatement: fo8, createExpressionStatement: Oi7, updateExpressionStatement: mo7, createIfStatement: ho7, updateIfStatement: yo5, createDoStatement: go6, updateDoStatement: bo5, createWhileStatement: vo5, updateWhileStatement: cu5, createForStatement: xo7, updateForStatement: To6, createForInStatement: Ts10, updateForInStatement: lu3, createForOfStatement: So5, updateForOfStatement: uu5, createContinueStatement: wo6, updateContinueStatement: pu5, createBreakStatement: Ss9, updateBreakStatement: ko5, createReturnStatement: ws9, updateReturnStatement: fu4, createWithStatement: ks11, updateWithStatement: Eo4, createSwitchStatement: Es11, updateSwitchStatement: si11, createLabeledStatement: Ao6, updateLabeledStatement: Co5, createThrowStatement: Do7, updateThrowStatement: du3, createTryStatement: Po5, updateTryStatement: mu4, createDebuggerStatement: No5, createVariableDeclaration: xa7, updateVariableDeclaration: Io5, createVariableDeclarationList: As10, updateVariableDeclarationList: hu3, createFunctionDeclaration: Oo6, updateFunctionDeclaration: Cs9, createClassDeclaration: Mo6, updateClassDeclaration: Ta7, createInterfaceDeclaration: Lo6, updateInterfaceDeclaration: jo6, createTypeAliasDeclaration: ot10, updateTypeAliasDeclaration: wr7, createEnumDeclaration: Ds9, updateEnumDeclaration: kr7, createModuleDeclaration: Jo4, updateModuleDeclaration: At12, createModuleBlock: Er7, updateModuleBlock: Vt12, createCaseBlock: Ro5, updateCaseBlock: gu3, createNamespaceExportDeclaration: Uo6, updateNamespaceExportDeclaration: Bo7, createImportEqualsDeclaration: qo6, updateImportEqualsDeclaration: Fo6, createImportDeclaration: zo5, updateImportDeclaration: Vo6, createImportClause: Wo6, updateImportClause: Go5, createAssertClause: Ps10, updateAssertClause: vu4, createAssertEntry: Mi8, updateAssertEntry: Yo6, createImportTypeAssertionContainer: Ns8, updateImportTypeAssertionContainer: Ho5, createImportAttributes: Xo3, updateImportAttributes: Is9, createImportAttribute: $o5, updateImportAttribute: Qo6, createNamespaceImport: Ko5, updateNamespaceImport: xu4, createNamespaceExport: Zo5, updateNamespaceExport: Tu4, createNamedImports: ec4, updateNamedImports: tc4, createImportSpecifier: Ar8, updateImportSpecifier: Su4, createExportAssignment: Sa6, updateExportAssignment: Li8, createExportDeclaration: wa6, updateExportDeclaration: nc5, createNamedExports: Os8, updateNamedExports: wu5, createExportSpecifier: ka7, updateExportSpecifier: ku4, createMissingDeclaration: Eu4, createExternalModuleReference: Ms9, updateExternalModuleReference: Au4, get createJSDocAllType() {
+  }, baseFactory: t37, flags: e7, createNodeArray: me11, createNumericLiteral: V11, createBigIntLiteral: oe11, createStringLiteral: mt13, createStringLiteralFromNode: ir11, createRegularExpressionLiteral: gn9, createLiteralLikeNode: ar10, createIdentifier: He12, createTempVariable: sr9, createLoopVariable: jr11, createUniqueName: Lt12, getGeneratedNameForNode: qn9, createPrivateIdentifier: jt12, createUniquePrivateName: Ke13, getGeneratedPrivateNameForNode: Fn8, createToken: ct9, createSuper: st13, createThis: qt13, createNull: Jt12, createTrue: lt10, createFalse: _r8, createModifier: ht12, createModifiersFromModifierFlags: vn9, createQualifiedName: bt9, updateQualifiedName: ln11, createComputedPropertyName: it13, updateComputedPropertyName: Ft12, createTypeParameterDeclaration: sn9, updateTypeParameterDeclaration: or10, createParameterDeclaration: br7, updateParameterDeclaration: vr8, createDecorator: zn9, updateDecorator: Vn9, createPropertySignature: Jr10, updatePropertySignature: Wn9, createPropertyDeclaration: xr7, updatePropertyDeclaration: L8, createMethodSignature: se11, updateMethodSignature: de10, createMethodDeclaration: Se12, updateMethodDeclaration: $e12, createConstructorDeclaration: ut12, updateConstructorDeclaration: Rr9, createGetAccessorDeclaration: Mn10, updateGetAccessorDeclaration: Gn10, createSetAccessorDeclaration: U10, updateSetAccessorDeclaration: K12, createCallSignature: we10, updateCallSignature: ke11, createConstructSignature: Ee13, updateConstructSignature: he11, createIndexSignature: Ye10, updateIndexSignature: tt13, createClassStaticBlockDeclaration: _t10, updateClassStaticBlockDeclaration: Pt10, createTemplateLiteralTypeSpan: Xe12, updateTemplateLiteralTypeSpan: De9, createKeywordTypeNode: xn9, createTypePredicateNode: at12, updateTypePredicateNode: un10, createTypeReferenceNode: ei11, updateTypeReferenceNode: O10, createFunctionTypeNode: qe12, updateFunctionTypeNode: u4, createConstructorTypeNode: je13, updateConstructorTypeNode: _n10, createTypeQueryNode: Nt11, updateTypeQueryNode: Et11, createTypeLiteralNode: It13, updateTypeLiteralNode: zt12, createArrayTypeNode: Yn10, updateArrayTypeNode: Ai10, createTupleTypeNode: pn9, updateTupleTypeNode: Y10, createNamedTupleMember: le13, updateNamedTupleMember: Ve12, createOptionalTypeNode: Te11, updateOptionalTypeNode: j9, createRestTypeNode: yt11, updateRestTypeNode: wt11, createUnionTypeNode: Gl3, updateUnionTypeNode: M_, createIntersectionTypeNode: Ur9, updateIntersectionTypeNode: Je12, createConditionalTypeNode: ft11, updateConditionalTypeNode: Yl3, createInferTypeNode: Hn9, updateInferTypeNode: Hl3, createImportTypeNode: cr9, updateImportTypeNode: ua6, createParenthesizedType: en9, updateParenthesizedType: Dt12, createThisTypeNode: D9, createTypeOperatorNode: Yt13, updateTypeOperatorNode: Br8, createIndexedAccessTypeNode: lr10, updateIndexedAccessTypeNode: as10, createMappedTypeNode: vt10, updateMappedTypeNode: Ut10, createLiteralTypeNode: ti12, updateLiteralTypeNode: Sr8, createTemplateLiteralType: Gt11, updateTemplateLiteralType: Xl3, createObjectBindingPattern: L_, updateObjectBindingPattern: $l4, createArrayBindingPattern: qr9, updateArrayBindingPattern: Ql3, createBindingElement: pa8, updateBindingElement: ni12, createArrayLiteralExpression: ss10, updateArrayLiteralExpression: j_, createObjectLiteralExpression: Ci9, updateObjectLiteralExpression: Kl3, createPropertyAccessExpression: e7 & 4 ? (r5, i) => setEmitFlags(ur11(r5, i), 262144) : ur11, updatePropertyAccessExpression: Zl4, createPropertyAccessChain: e7 & 4 ? (r5, i, _8) => setEmitFlags(Di9(r5, i, _8), 262144) : Di9, updatePropertyAccessChain: fa6, createElementAccessExpression: Pi9, updateElementAccessExpression: eu5, createElementAccessChain: U_, updateElementAccessChain: _s10, createCallExpression: Ni9, updateCallExpression: da6, createCallChain: os10, updateCallChain: q_, createNewExpression: Tn9, updateNewExpression: cs10, createTaggedTemplateExpression: ma7, updateTaggedTemplateExpression: F_, createTypeAssertion: z_, updateTypeAssertion: V_, createParenthesizedExpression: ls10, updateParenthesizedExpression: W_, createFunctionExpression: us10, updateFunctionExpression: G_, createArrowFunction: ps10, updateArrowFunction: Y_, createDeleteExpression: H_, updateDeleteExpression: X_, createTypeOfExpression: ha6, updateTypeOfExpression: dn10, createVoidExpression: fs24, updateVoidExpression: pr9, createAwaitExpression: $_, updateAwaitExpression: Fr8, createPrefixUnaryExpression: zr9, updatePrefixUnaryExpression: tu4, createPostfixUnaryExpression: ri10, updatePostfixUnaryExpression: nu5, createBinaryExpression: ya6, updateBinaryExpression: ru5, createConditionalExpression: K_, updateConditionalExpression: Z_, createTemplateExpression: eo6, updateTemplateExpression: Xn10, createTemplateHead: no6, createTemplateMiddle: ga6, createTemplateTail: ds11, createNoSubstitutionTemplateLiteral: au4, createTemplateLiteralLikeNode: ai10, createYieldExpression: ms10, updateYieldExpression: su4, createSpreadElement: ro6, updateSpreadElement: _u4, createClassExpression: io6, updateClassExpression: hs11, createOmittedExpression: ys10, createExpressionWithTypeArguments: ao6, updateExpressionWithTypeArguments: so7, createAsExpression: mn10, updateAsExpression: ba6, createNonNullExpression: _o6, updateNonNullExpression: oo6, createSatisfiesExpression: gs9, updateSatisfiesExpression: co7, createNonNullChain: bs9, updateNonNullChain: Ln10, createMetaProperty: lo6, updateMetaProperty: vs9, createTemplateSpan: $n10, updateTemplateSpan: va6, createSemicolonClassElement: uo6, createBlock: Vr9, updateBlock: ou5, createVariableStatement: xs9, updateVariableStatement: po6, createEmptyStatement: fo8, createExpressionStatement: Oi7, updateExpressionStatement: mo7, createIfStatement: ho7, updateIfStatement: yo5, createDoStatement: go6, updateDoStatement: bo5, createWhileStatement: vo5, updateWhileStatement: cu5, createForStatement: xo7, updateForStatement: To6, createForInStatement: Ts10, updateForInStatement: lu3, createForOfStatement: So5, updateForOfStatement: uu5, createContinueStatement: wo6, updateContinueStatement: pu5, createBreakStatement: Ss9, updateBreakStatement: ko5, createReturnStatement: ws9, updateReturnStatement: fu4, createWithStatement: ks11, updateWithStatement: Eo4, createSwitchStatement: Es11, updateSwitchStatement: si11, createLabeledStatement: Ao6, updateLabeledStatement: Co5, createThrowStatement: Do7, updateThrowStatement: du3, createTryStatement: Po5, updateTryStatement: mu4, createDebuggerStatement: No5, createVariableDeclaration: xa7, updateVariableDeclaration: Io5, createVariableDeclarationList: As10, updateVariableDeclarationList: hu3, createFunctionDeclaration: Oo6, updateFunctionDeclaration: Cs9, createClassDeclaration: Mo6, updateClassDeclaration: Ta7, createInterfaceDeclaration: Lo6, updateInterfaceDeclaration: jo6, createTypeAliasDeclaration: ot10, updateTypeAliasDeclaration: wr7, createEnumDeclaration: Ds9, updateEnumDeclaration: kr7, createModuleDeclaration: Jo4, updateModuleDeclaration: At12, createModuleBlock: Er7, updateModuleBlock: Vt12, createCaseBlock: Ro5, updateCaseBlock: gu3, createNamespaceExportDeclaration: Uo6, updateNamespaceExportDeclaration: Bo7, createImportEqualsDeclaration: qo6, updateImportEqualsDeclaration: Fo6, createImportDeclaration: zo5, updateImportDeclaration: Vo6, createImportClause: Wo6, updateImportClause: Go5, createAssertClause: Ps10, updateAssertClause: vu4, createAssertEntry: Mi8, updateAssertEntry: Yo6, createImportTypeAssertionContainer: Ns8, updateImportTypeAssertionContainer: Ho5, createImportAttributes: Xo3, updateImportAttributes: Is9, createImportAttribute: $o5, updateImportAttribute: Qo6, createNamespaceImport: Ko5, updateNamespaceImport: xu4, createNamespaceExport: Zo5, updateNamespaceExport: Tu4, createNamedImports: ec4, updateNamedImports: tc4, createImportSpecifier: Ar8, updateImportSpecifier: Su4, createExportAssignment: Sa6, updateExportAssignment: Li8, createExportDeclaration: wa6, updateExportDeclaration: nc5, createNamedExports: Os8, updateNamedExports: wu5, createExportSpecifier: ka7, updateExportSpecifier: ku4, createMissingDeclaration: Eu4, createExternalModuleReference: Ms9, updateExternalModuleReference: Au4, get createJSDocAllType() {
     return l5(313);
   }, get createJSDocUnknownType() {
     return l5(314);
@@ -58641,12 +58641,12 @@ function Pf2(e7, t37) {
   function dn10(r5, i) {
     return r5.expression !== i ? J11(ha6(i), r5) : r5;
   }
-  function fs21(r5) {
+  function fs24(r5) {
     let i = I9(223);
     return i.expression = s().parenthesizeOperandOfPrefixUnary(r5), i.transformFlags |= z8(i.expression), i;
   }
   function pr9(r5, i) {
-    return r5.expression !== i ? J11(fs21(i), r5) : r5;
+    return r5.expression !== i ? J11(fs24(i), r5) : r5;
   }
   function $_(r5) {
     let i = I9(224);
@@ -59648,7 +59648,7 @@ function Pf2(e7, t37) {
     return Ni9(ps10(void 0, void 0, i ? [i] : [], void 0, void 0, Vr9(r5, true)), void 0, _8 ? [_8] : []);
   }
   function qi9() {
-    return fs21(V11("0"));
+    return fs24(V11("0"));
   }
   function Zc2(r5) {
     return Sa6(void 0, false, r5);
@@ -63819,14 +63819,14 @@ ${je13.join(`
             }
             if (x7.push(ee11), Q10 = t37.getTokenStart(), Je12(28)) continue;
             if (Q10 = -1, da6(o4)) break;
-            j9(28, fs21(o4)), m7 && u4() === 27 && !t37.hasPrecedingLineBreak() && B10(), _e10 === t37.getTokenFullStart() && B10();
+            j9(28, fs24(o4)), m7 && u4() === 27 && !t37.hasPrecedingLineBreak() && B10(), _e10 === t37.getTokenFullStart() && B10();
             continue;
           }
           if (da6(o4) || X_(o4)) break;
         }
         return bt9 = g5, Dt12(x7, P8, void 0, Q10 >= 0);
       }
-      function fs21(o4) {
+      function fs24(o4) {
         return o4 === 6 ? E3.An_enum_member_name_must_be_followed_by_a_or : void 0;
       }
       function pr9() {
@@ -68146,8 +68146,8 @@ function qo5(t37, e7, n4) {
 }
 function Fo5(t37, e7) {
   let n4 = e7 - 1;
-  n4 = cs8(t37, n4, { backwards: true }), n4 = fs11(t37, n4, { backwards: true }), n4 = cs8(t37, n4, { backwards: true });
-  let s = fs11(t37, n4, { backwards: true });
+  n4 = cs8(t37, n4, { backwards: true }), n4 = fs12(t37, n4, { backwards: true }), n4 = cs8(t37, n4, { backwards: true });
+  let s = fs12(t37, n4, { backwards: true });
   return n4 !== s;
 }
 function lr8(t37, e7) {
@@ -71030,7 +71030,7 @@ function al3(t37) {
   }
   return delete e7.comments, e7;
 }
-var Oo5, Qt11, To5, Ht10, Io4, V10, Lo5, Po4, Jt10, vo4, dt11, gt9, yt9, Wt12, Xt10, Ue10, zt10, je11, Ve10, Ge9, Zt9, Qe10, en7, ke10, tn7, He10, nn8, rn8, xo6, os8, Zs7, re11, on7, tr9, nr10, kt12, Se11, ln9, Bo6, O9, Ro4, wt10, bc3, cs8, kc4, Sc3, or8, fs11, us8, ps8, ar8, cr7, Et10, Ko4, fr8, P7, ur9, Uo5, pr7, Nt10, mr7, hr8, dr8, gr8, yr9, wr6, br6, kr6, Sr7, We9, Go4, _r7, Ir8, Lr9, ia5, Pr7, vr7, dn8, oa7, Dr8, Xs5, Ot11, Gs7, wn8, bn6, oe10, bs7, ee10, Ne10, G10, H11, ne10, U9, T8, C7, J10, kn7, W7, ni11, me10, ma6, ha5, he10, xe7, de9, Cn9, y7, da5, nt11, tt11, ai9, ge11, Es9, Nn10, vt9, Tn8, On9, Ns6, Ln9, le11, fi11, v3, x5, ce10, F9, fe9, $e10, Ke11, Mt10, Mn9, $n9, Bn10, Rn10, Os6, qn8, Fn7, Kn9, mi10, Yn9, Na5, Aa6, di10, $t12, Bt12, it11, Rt10, Ls7, Ps8, yi10, wi9, bi10, qt11, ki9, Si10, Ei9, Ci8, ot8, Ft11, jn9, Vn8, at9, xs7, Ai9, Ti10, Oi6, Ta5, lt9, ye10, ft10, te9, ut10, Kt12, Ii8, Ms7, $s7, Da5, Ba7, _e9, Us7, Yi7, Ks7, Fa5, Ui7, jt10, Vt10, Gt10, pt10, Ka5, Ya5, Vi6, ja7, Zn9, Va6, js7, mt11, qe11, Ie11, Zi7, Ha6, mo6, Ao5, ol2, ll4, cl3, fl5;
+var Oo5, Qt11, To5, Ht10, Io4, V10, Lo5, Po4, Jt10, vo4, dt11, gt9, yt9, Wt12, Xt10, Ue10, zt10, je11, Ve10, Ge9, Zt9, Qe10, en7, ke10, tn7, He10, nn8, rn8, xo6, os8, Zs7, re11, on7, tr9, nr10, kt12, Se11, ln9, Bo6, O9, Ro4, wt10, bc3, cs8, kc4, Sc3, or8, fs12, us8, ps8, ar8, cr7, Et10, Ko4, fr8, P7, ur9, Uo5, pr7, Nt10, mr7, hr8, dr8, gr8, yr9, wr6, br6, kr6, Sr7, We9, Go4, _r7, Ir8, Lr9, ia5, Pr7, vr7, dn8, oa7, Dr8, Xs5, Ot11, Gs7, wn8, bn6, oe10, bs7, ee10, Ne10, G10, H11, ne10, U9, T8, C7, J10, kn7, W7, ni11, me10, ma6, ha5, he10, xe7, de9, Cn9, y7, da5, nt11, tt11, ai9, ge11, Es9, Nn10, vt9, Tn8, On9, Ns6, Ln9, le11, fi11, v3, x5, ce10, F9, fe9, $e10, Ke11, Mt10, Mn9, $n9, Bn10, Rn10, Os6, qn8, Fn7, Kn9, mi10, Yn9, Na5, Aa6, di10, $t12, Bt12, it11, Rt10, Ls7, Ps8, yi10, wi9, bi10, qt11, ki9, Si10, Ei9, Ci8, ot8, Ft11, jn9, Vn8, at9, xs7, Ai9, Ti10, Oi6, Ta5, lt9, ye10, ft10, te9, ut10, Kt12, Ii8, Ms7, $s7, Da5, Ba7, _e9, Us7, Yi7, Ks7, Fa5, Ui7, jt10, Vt10, Gt10, pt10, Ka5, Ya5, Vi6, ja7, Zn9, Va6, js7, mt11, qe11, Ie11, Zi7, Ha6, mo6, Ao5, ol2, ll4, cl3, fl5;
 var init_yaml = __esm({
   "../../node_modules/prettier/plugins/yaml.mjs"() {
     "use strict";
@@ -71097,7 +71097,7 @@ var init_yaml = __esm({
     Sc3 = cn8(/[^\n\r]/);
     or8 = (t37) => t37 === `
 ` || t37 === "\r" || t37 === "\u2028" || t37 === "\u2029";
-    fs11 = qo5;
+    fs12 = qo5;
     us8 = Fo5;
     ps8 = class extends Error {
       name = "UnexpectedNodeError";
@@ -72855,14 +72855,14 @@ import { createRequire as __prettierCreateRequire } from "module";
 import { fileURLToPath as __prettierFileUrlToPath } from "url";
 import { dirname as __prettierDirname } from "path";
 import path12 from "path";
-import * as path3 from "path";
+import * as path4 from "path";
 import * as url2 from "url";
 import path7 from "path";
-import * as fs12 from "fs";
+import * as fs13 from "fs";
 import * as path32 from "path";
 import * as path6 from "path";
 import * as fs22 from "fs/promises";
-import * as path4 from "path";
+import * as path42 from "path";
 import process22 from "process";
 import * as path5 from "path";
 import process32 from "process";
@@ -73771,7 +73771,7 @@ async function getConfig(filepath, options7) {
     }
   }
   const contents = await new Promise((resolve4) => {
-    fs12.readFile(filepath, (_8, buf) => {
+    fs13.readFile(filepath, (_8, buf) => {
       resolve4(buf);
     });
   });
@@ -73860,7 +73860,7 @@ async function findInternal(targetOrTargets, filterOrOptions, optionsWithoutFilt
     if (typeof target === "string") {
       target = { name: target };
     }
-    const fileOrDirectory = path4.join(directory, target.name);
+    const fileOrDirectory = path42.join(directory, target.name);
     const stats2 = await safeStat(fileOrDirectory, allowSymlinks);
     if (!stats2) {
       continue;
@@ -75455,7 +75455,7 @@ function tryStatSync(path172) {
   } catch {
   }
 }
-function fileExists(url32) {
+function fileExists2(url32) {
   const stats2 = statSync(url32, { throwIfNoEntry: false });
   const isFile = stats2 ? stats2.isFile() : void 0;
   return isFile === null || isFile === void 0 ? false : isFile;
@@ -75464,7 +75464,7 @@ function legacyMainResolve(packageJsonUrl, packageConfig, base) {
   let guess;
   if (packageConfig.main !== void 0) {
     guess = new URL(packageConfig.main, packageJsonUrl);
-    if (fileExists(guess)) return guess;
+    if (fileExists2(guess)) return guess;
     const tries2 = [
       `./${packageConfig.main}.js`,
       `./${packageConfig.main}.json`,
@@ -75476,7 +75476,7 @@ function legacyMainResolve(packageJsonUrl, packageConfig, base) {
     let i23 = -1;
     while (++i23 < tries2.length) {
       guess = new URL(tries2[i23], packageJsonUrl);
-      if (fileExists(guess)) break;
+      if (fileExists2(guess)) break;
       guess = void 0;
     }
     if (guess) {
@@ -75493,7 +75493,7 @@ function legacyMainResolve(packageJsonUrl, packageConfig, base) {
   let i = -1;
   while (++i < tries.length) {
     guess = new URL(tries[i], packageJsonUrl);
-    if (fileExists(guess)) break;
+    if (fileExists2(guess)) break;
     guess = void 0;
   }
   if (guess) {
@@ -86828,7 +86828,7 @@ var init_prettier = __esm({
     isUrlString = (value) => typeof value === "string" && value.startsWith(URL_STRING_PREFIX);
     isUrl = (urlOrPath) => isUrlInstance(urlOrPath) || isUrlString(urlOrPath);
     toPath = (urlOrPath) => isUrl(urlOrPath) ? url2.fileURLToPath(urlOrPath) : urlOrPath;
-    toAbsolutePath = (urlOrPath) => urlOrPath ? path3.resolve(toPath(urlOrPath)) : urlOrPath;
+    toAbsolutePath = (urlOrPath) => urlOrPath ? path4.resolve(toPath(urlOrPath)) : urlOrPath;
     balanced = (a4, b6, str) => {
       const ma7 = a4 instanceof RegExp ? maybeMatch(a4, str) : a4;
       const mb2 = b6 instanceof RegExp ? maybeMatch(b6, str) : b6;
@@ -93868,27 +93868,27 @@ var require_process = __commonJS({
 var require_filesystem = __commonJS({
   "../../node_modules/detect-libc/lib/filesystem.js"(exports, module) {
     "use strict";
-    var fs21 = __require("fs");
+    var fs24 = __require("fs");
     var LDD_PATH = "/usr/bin/ldd";
     var SELF_PATH = "/proc/self/exe";
     var MAX_LENGTH = 2048;
     var readFileSync = (path31) => {
-      const fd3 = fs21.openSync(path31, "r");
+      const fd3 = fs24.openSync(path31, "r");
       const buffer3 = Buffer.alloc(MAX_LENGTH);
-      const bytesRead = fs21.readSync(fd3, buffer3, 0, MAX_LENGTH, 0);
-      fs21.close(fd3, () => {
+      const bytesRead = fs24.readSync(fd3, buffer3, 0, MAX_LENGTH, 0);
+      fs24.close(fd3, () => {
       });
       return buffer3.subarray(0, bytesRead);
     };
     var readFile3 = (path31) => new Promise((resolve4, reject) => {
-      fs21.open(path31, "r", (err, fd3) => {
+      fs24.open(path31, "r", (err, fd3) => {
         if (err) {
           reject(err);
         } else {
           const buffer3 = Buffer.alloc(MAX_LENGTH);
-          fs21.read(fd3, buffer3, 0, MAX_LENGTH, 0, (_8, bytesRead) => {
+          fs24.read(fd3, buffer3, 0, MAX_LENGTH, 0, (_8, bytesRead) => {
             resolve4(buffer3.subarray(0, bytesRead));
-            fs21.close(fd3, () => {
+            fs24.close(fd3, () => {
             });
           });
         }
@@ -102234,7 +102234,7 @@ __export(transformers_node_exports, {
   zeros: () => zeros,
   zeros_like: () => zeros_like
 });
-import fs15 from "fs";
+import fs16 from "fs";
 import path20 from "path";
 import url3 from "url";
 import fs23 from "fs";
@@ -109378,7 +109378,7 @@ var init_transformers_node = __esm({
     };
     VERSION = "4.2.0";
     HAS_SELF = typeof self !== "undefined";
-    IS_FS_AVAILABLE = !isEmpty(fs15);
+    IS_FS_AVAILABLE = !isEmpty(fs16);
     IS_PATH_AVAILABLE = !isEmpty(path20);
     IS_WEB_CACHE_AVAILABLE = HAS_SELF && "caches" in self;
     IS_DENO_RUNTIME = typeof globalThis.Deno !== "undefined";
@@ -160596,7 +160596,7 @@ function createFileWatcher(workspaceDir2) {
 }
 
 // src/server/http-api.ts
-import fs19 from "fs/promises";
+import fs20 from "fs/promises";
 import nodePath from "path";
 
 // ../../node_modules/hono/dist/compose.js
@@ -162951,7 +162951,7 @@ function buildNodeLinks(config2, graphPath, nodeId, knownWorkspaces) {
 
 // src/server/protocol-reader.ts
 import { execFile as execFile2, execSync } from "child_process";
-import fs13 from "fs/promises";
+import fs14 from "fs/promises";
 import path17 from "path";
 import { promisify as promisify2 } from "util";
 
@@ -162990,10 +162990,77 @@ function localDateString(d5) {
   return `${d5.getFullYear()}-${pad2(d5.getMonth() + 1)}-${pad2(d5.getDate())}`;
 }
 
+// src/server/content-selection.ts
+import fs2 from "fs/promises";
+import path2 from "path";
+var CONTENT_STORY_FILE = "story.md";
+var CONTENT_SUBDIRS = ["content", "annotations"];
+function isIndexedContentFile(nodeRelPath) {
+  const segments = nodeRelPath.split(/[/\\]+/).filter((s) => s.length > 0);
+  if (segments.length === 1) {
+    return segments[0] === CONTENT_STORY_FILE;
+  }
+  if (segments.length === 2) {
+    const subdir = segments[0];
+    const name = segments[1];
+    return subdir !== void 0 && name !== void 0 && CONTENT_SUBDIRS.includes(subdir) && name.endsWith(".md");
+  }
+  return false;
+}
+async function enumerateContentFiles(nodeDir) {
+  const entries = [];
+  const storyAbs = path2.join(nodeDir, CONTENT_STORY_FILE);
+  if (await fileExists(storyAbs)) {
+    entries.push({
+      kind: "story",
+      relPath: CONTENT_STORY_FILE,
+      absPath: storyAbs
+    });
+  }
+  for (const subdir of CONTENT_SUBDIRS) {
+    const dir = path2.join(nodeDir, subdir);
+    let names;
+    try {
+      names = (await fs2.readdir(dir)).sort();
+    } catch {
+      continue;
+    }
+    for (const name of names) {
+      const relPath = `${subdir}/${name}`;
+      if (!isIndexedContentFile(relPath)) continue;
+      entries.push({
+        kind: subdir,
+        relPath,
+        absPath: path2.join(dir, name)
+      });
+    }
+  }
+  return entries;
+}
+function nodeDirForContentFile(filePath) {
+  const parent = path2.dirname(filePath);
+  if (isIndexedContentFile(path2.relative(parent, filePath))) {
+    return parent;
+  }
+  const grandparent = path2.dirname(parent);
+  if (isIndexedContentFile(path2.relative(grandparent, filePath))) {
+    return grandparent;
+  }
+  return null;
+}
+async function fileExists(filePath) {
+  try {
+    await fs2.access(filePath);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 // src/server/git-content-date.ts
 import { execFile } from "child_process";
-import * as fs2 from "fs/promises";
-import * as path2 from "path";
+import * as fs3 from "fs/promises";
+import * as path3 from "path";
 import { promisify } from "util";
 var execFileAsync = promisify(execFile);
 var stampsUpdatedCache = /* @__PURE__ */ new Map();
@@ -163017,7 +163084,7 @@ async function repoStampsUpdated(graphDir) {
   if (cached2 !== void 0) return cached2;
   let stamps = false;
   try {
-    const lefthook = await fs2.readFile(path2.join(root3, "lefthook.yml"), "utf8");
+    const lefthook = await fs3.readFile(path3.join(root3, "lefthook.yml"), "utf8");
     stamps = lefthook.includes("stamp:updated");
   } catch {
   }
@@ -163037,9 +163104,9 @@ function parseLogIntoNodeDates(stdout, repoTop) {
       continue;
     }
     if (currentMs === null) continue;
-    const nodeDir = nodeDirForContentFile(path2.resolve(repoTop, line3));
+    const nodeDir = nodeDirForContentFile(path3.resolve(repoTop, line3));
     if (!nodeDir) continue;
-    const resolved = path2.resolve(nodeDir);
+    const resolved = path3.resolve(nodeDir);
     if (!dates.has(resolved)) dates.set(resolved, currentMs);
   }
   return dates;
@@ -163064,9 +163131,9 @@ async function gitContentDateForNode(nodeDir) {
   const repoTop = await gitRoot(nodeDir);
   if (repoTop === null) return void 0;
   const paths = [
-    path2.join(nodeDir, "story.md"),
-    path2.join(nodeDir, "content"),
-    path2.join(nodeDir, "annotations")
+    path3.join(nodeDir, "story.md"),
+    path3.join(nodeDir, "content"),
+    path3.join(nodeDir, "annotations")
   ];
   try {
     const { stdout } = await execFileAsync(
@@ -163124,15 +163191,15 @@ function throwNoGraphError(graphDir) {
 }
 async function readJsonFile(filePath) {
   try {
-    const raw3 = await fs13.readFile(filePath, "utf-8");
+    const raw3 = await fs14.readFile(filePath, "utf-8");
     return JSON.parse(raw3);
   } catch {
     return null;
   }
 }
-async function fileExists2(filePath) {
+async function fileExists3(filePath) {
   try {
-    await fs13.access(filePath);
+    await fs14.access(filePath);
     return true;
   } catch {
     return false;
@@ -163143,14 +163210,14 @@ function normalizeLlmEscapes(text6) {
 }
 async function readTextFile(filePath) {
   try {
-    return await fs13.readFile(filePath, "utf-8");
+    return await fs14.readFile(filePath, "utf-8");
   } catch {
     return null;
   }
 }
 async function listDir(dirPath) {
   try {
-    return await fs13.readdir(dirPath);
+    return await fs14.readdir(dirPath);
   } catch {
     return [];
   }
@@ -163215,7 +163282,7 @@ async function collectActionItems(annotationsDir, nodeId, nodeTitle, graphPath, 
     const preview = ann.content.split("\n").map((l5) => l5.trim()).find((l5) => l5.length > 0)?.slice(0, 120) ?? "";
     let modified;
     try {
-      const stat2 = await fs13.stat(path17.join(annotationsDir, ann.filename));
+      const stat2 = await fs14.stat(path17.join(annotationsDir, ann.filename));
       modified = stat2.mtimeMs;
     } catch {
     }
@@ -163294,7 +163361,7 @@ async function collectAnnotationsForDate(annotationsDir, nodeId, nodeTitle, sinc
     const preview = ann.content.split("\n").map((l5) => l5.trim()).find((l5) => l5.length > 0)?.slice(0, 120) ?? "";
     let modified;
     try {
-      const stat2 = await fs13.stat(path17.join(annotationsDir, ann.filename));
+      const stat2 = await fs14.stat(path17.join(annotationsDir, ann.filename));
       modified = stat2.mtimeMs;
     } catch {
     }
@@ -163363,7 +163430,7 @@ async function readContentFiles(contentDir) {
     if (content3 !== null) {
       let modified;
       try {
-        const stat2 = await fs13.stat(filePath);
+        const stat2 = await fs14.stat(filePath);
         modified = stat2.mtimeMs;
       } catch {
       }
@@ -163378,7 +163445,7 @@ async function readDataFileIndex(dataDir) {
   for (const filename of files.sort()) {
     if (!filename.endsWith(".json")) continue;
     try {
-      const stat2 = await fs13.stat(path17.join(dataDir, filename));
+      const stat2 = await fs14.stat(path17.join(dataDir, filename));
       entries.push({ filename, size: stat2.size });
     } catch {
     }
@@ -163580,7 +163647,7 @@ async function readGraphMeta(graphDir) {
   return readJsonFile(path17.join(graphDir, GRAPH_META_FILE));
 }
 async function nodeHasSubGraph(nodeDir) {
-  return fileExists2(path17.join(nodeDir, GRAPH_META_FILE));
+  return fileExists3(path17.join(nodeDir, GRAPH_META_FILE));
 }
 function resolveNodesDir(graphData) {
   return graphData.nodesDir ?? "nodes";
@@ -163589,7 +163656,7 @@ async function discoverNodes(graphDir, nodesDir) {
   const nodesDirPath = path17.join(graphDir, nodesDir);
   let entries;
   try {
-    entries = await fs13.readdir(nodesDirPath);
+    entries = await fs14.readdir(nodesDirPath);
   } catch {
     return [];
   }
@@ -163623,7 +163690,7 @@ async function computeSubtreeUpdated(nodeDir, ownUpdated) {
   const subNodesDirPath = path17.join(nodeDir, subNodesDir);
   let subEntries;
   try {
-    subEntries = await fs13.readdir(subNodesDirPath);
+    subEntries = await fs14.readdir(subNodesDirPath);
   } catch {
     return maxUpdated;
   }
@@ -163652,7 +163719,7 @@ async function resolveTargetPath(workspaceDir2, opts2) {
   const graphDir = opts2.graphPath ? path17.join(workspaceDir2, opts2.graphPath) : workspaceDir2;
   if (!opts2.nodeId) {
     const target = opts2.file ? path17.join(graphDir, opts2.file) : graphDir;
-    return await fileExists2(opts2.file ? graphDir : target) ? target : null;
+    return await fileExists3(opts2.file ? graphDir : target) ? target : null;
   }
   const graphData = await readJsonFile(
     path17.join(graphDir, "graph.json")
@@ -163697,7 +163764,7 @@ async function updateConfig(workspaceDir2, updates) {
     const existingStatuses = existing.statuses ?? {};
     merged.statuses = { ...existingStatuses, ...updates.statuses };
   }
-  await fs13.writeFile(
+  await fs14.writeFile(
     configPath,
     JSON.stringify(merged, null, 2) + "\n",
     "utf-8"
@@ -163751,7 +163818,7 @@ async function readGraph(graphDir, workspaceDir2) {
       node2.hasSubGraph = true;
     }
     try {
-      await fs13.access(path17.join(nodeDir, "view.json"));
+      await fs14.access(path17.join(nodeDir, "view.json"));
       node2.hasView = true;
     } catch {
     }
@@ -164010,26 +164077,11 @@ async function readNodeFingerprint(graphDir, nodeId, graphPath) {
 }
 async function getContentFilesMtime(nodeDir) {
   let latest = 0;
-  try {
-    const stat2 = await fs13.stat(path17.join(nodeDir, CONTENT_STORY_FILE));
-    if (stat2.mtimeMs > latest) latest = stat2.mtimeMs;
-  } catch {
-  }
-  for (const subdir of CONTENT_SUBDIRS) {
-    const dir = path17.join(nodeDir, subdir);
-    let entries;
+  for (const entry of await enumerateContentFiles(nodeDir)) {
     try {
-      entries = await fs13.readdir(dir);
+      const stat2 = await fs14.stat(entry.absPath);
+      if (stat2.mtimeMs > latest) latest = stat2.mtimeMs;
     } catch {
-      continue;
-    }
-    for (const entry of entries) {
-      if (!entry.endsWith(".md")) continue;
-      try {
-        const stat2 = await fs13.stat(path17.join(dir, entry));
-        if (stat2.mtimeMs > latest) latest = stat2.mtimeMs;
-      } catch {
-      }
     }
   }
   return latest;
@@ -164051,7 +164103,7 @@ async function getNodeMtime(nodeDir, dirty = false, gitContentDateMs) {
   let latest = gitContentDateMs ?? 0;
   for (const filename of ["story.md", "node.json", "graph.json"]) {
     try {
-      const stat2 = await fs13.stat(path17.join(nodeDir, filename));
+      const stat2 = await fs14.stat(path17.join(nodeDir, filename));
       if (stat2.mtimeMs > latest) latest = stat2.mtimeMs;
     } catch {
     }
@@ -164060,13 +164112,13 @@ async function getNodeMtime(nodeDir, dirty = false, gitContentDateMs) {
     const dir = path17.join(nodeDir, subdir);
     let entries;
     try {
-      entries = await fs13.readdir(dir);
+      entries = await fs14.readdir(dir);
     } catch {
       continue;
     }
     for (const entry of entries) {
       try {
-        const stat2 = await fs13.stat(path17.join(dir, entry));
+        const stat2 = await fs14.stat(path17.join(dir, entry));
         if (stat2.mtimeMs > latest) latest = stat2.mtimeMs;
       } catch {
       }
@@ -164112,7 +164164,7 @@ async function discoverSubGraphs(baseDir, relativeTo, maxDepth = 4) {
     if (depth > maxDepth) return;
     let entries;
     try {
-      entries = await fs13.readdir(dir);
+      entries = await fs14.readdir(dir);
     } catch {
       return;
     }
@@ -164141,7 +164193,7 @@ async function discoverSubGraphs(baseDir, relativeTo, maxDepth = 4) {
       if (excludeDirs.has(entry)) continue;
       const fullPath = path17.join(dir, entry);
       try {
-        const stat2 = await fs13.stat(fullPath);
+        const stat2 = await fs14.stat(fullPath);
         if (stat2.isDirectory()) {
           await walk(fullPath, depth + 1);
         }
@@ -164200,14 +164252,14 @@ async function detectGraphHealth(graphDir, workspaceName, graphPath, workspaceDi
   const registeredIds = new Set((graphData.nodes ?? []).map((n4) => n4.id));
   let discoveredDirs;
   try {
-    discoveredDirs = await fs13.readdir(nodesDirPath);
+    discoveredDirs = await fs14.readdir(nodesDirPath);
   } catch {
     discoveredDirs = [];
   }
   let orphanedNodes = 0;
   for (const entry of discoveredDirs) {
     try {
-      await fs13.access(path17.join(nodesDirPath, entry, "node.json"));
+      await fs14.access(path17.join(nodesDirPath, entry, "node.json"));
       if (!registeredIds.has(entry)) {
         orphanedNodes++;
       }
@@ -164607,7 +164659,7 @@ async function writeAnnotation(graphDir, nodeId, signal, body, target, kind) {
     );
   }
   const annotationsDir = path17.join(nodeDir, "annotations");
-  await fs13.mkdir(annotationsDir, { recursive: true });
+  await fs14.mkdir(annotationsDir, { recursive: true });
   const existingFiles = await listDir(annotationsDir);
   const mdFiles = existingFiles.filter((f4) => f4.endsWith(".md")).sort();
   const nextNum = String(mdFiles.length + 1).padStart(3, "0");
@@ -164626,7 +164678,7 @@ ${targetLine}${kindLine}created: ${now}
 ---
 ${normalizedBody}
 `;
-  await fs13.writeFile(path17.join(annotationsDir, filename), content3, "utf-8");
+  await fs14.writeFile(path17.join(annotationsDir, filename), content3, "utf-8");
   await stampNodeUpdated(nodeDir, now);
   return { success: true, filename };
 }
@@ -164673,7 +164725,7 @@ ${fmLines.join("\n")}
 ---
 ${parsed.content}
 `;
-  await fs13.writeFile(annotationPath, newContent, "utf-8");
+  await fs14.writeFile(annotationPath, newContent, "utf-8");
   await stampNodeUpdated(nodeDir, resolvedAt);
   return { success: true, meta: updatedMeta };
 }
@@ -164695,7 +164747,7 @@ async function createNode(graphDir, opts2) {
     );
   }
   const nodeDir = path17.join(graphDir, nodesDir, effectiveDir);
-  await fs13.mkdir(nodeDir, { recursive: true });
+  await fs14.mkdir(nodeDir, { recursive: true });
   const resolvedStatus = opts2.status ?? "active";
   const created = isoLocalNow();
   const nodeJsonEdges = [];
@@ -164728,18 +164780,18 @@ async function createNode(graphDir, opts2) {
     updated: created,
     ...nodeJsonEdges.length > 0 ? { edges: nodeJsonEdges } : {}
   };
-  await fs13.writeFile(
+  await fs14.writeFile(
     path17.join(nodeDir, "node.json"),
     JSON.stringify(identity, null, 2) + "\n",
     "utf-8"
   );
-  await fs13.writeFile(
+  await fs14.writeFile(
     path17.join(nodeDir, "story.md"),
     normalizeLlmEscapes(opts2.story),
     "utf-8"
   );
   if (opts2.view) {
-    await fs13.writeFile(
+    await fs14.writeFile(
       path17.join(nodeDir, "view.json"),
       JSON.stringify(opts2.view, null, 2),
       "utf-8"
@@ -164757,7 +164809,7 @@ async function createNode(graphDir, opts2) {
     existingEntries.push(nodeEntry);
   }
   graphData.nodes = existingEntries;
-  await fs13.writeFile(
+  await fs14.writeFile(
     graphPath,
     JSON.stringify(graphData, null, 2) + "\n",
     "utf-8"
@@ -164793,7 +164845,7 @@ async function updateView(graphDir, nodeId, opts2) {
     focal: opts2.focal,
     includes: opts2.includes
   };
-  await fs13.writeFile(viewPath, JSON.stringify(viewData, null, 2), "utf-8");
+  await fs14.writeFile(viewPath, JSON.stringify(viewData, null, 2), "utf-8");
   const nodeJsonPath = path17.join(nodeDir, "node.json");
   const nodeData = await readJsonFile(nodeJsonPath);
   if (nodeData) {
@@ -164807,7 +164859,7 @@ async function updateView(graphDir, nodeId, opts2) {
       created
     }));
     nodeData.edges = [...nonCuratesEdges, ...curatesEdges];
-    await fs13.writeFile(
+    await fs14.writeFile(
       nodeJsonPath,
       JSON.stringify(nodeData, null, 2) + "\n",
       "utf-8"
@@ -164909,8 +164961,8 @@ async function writeData(graphDir, nodeId, filename, data) {
     throw new Error(`Invalid JSON data for file: ${filename}`);
   }
   const dataDir = path17.join(nodeDir, "data");
-  await fs13.mkdir(dataDir, { recursive: true });
-  await fs13.writeFile(path17.join(dataDir, filename), data, "utf-8");
+  await fs14.mkdir(dataDir, { recursive: true });
+  await fs14.writeFile(path17.join(dataDir, filename), data, "utf-8");
   return { success: true, filename };
 }
 async function searchNodes(workspaceDir2, args) {
@@ -165008,7 +165060,7 @@ function serializeGraphData(data) {
 async function assembleEdgesFromDisk(nodesDirPath) {
   let entries;
   try {
-    entries = await fs13.readdir(nodesDirPath);
+    entries = await fs14.readdir(nodesDirPath);
   } catch {
     entries = [];
   }
@@ -165040,7 +165092,7 @@ async function rebuildGraphIndex(graphDir) {
     ...graphData,
     edges: assembledEdges
   };
-  await fs13.writeFile(graphPath, serializeGraphData(rebuilt), "utf-8");
+  await fs14.writeFile(graphPath, serializeGraphData(rebuilt), "utf-8");
 }
 async function buildGraphFromDisk(graphDir) {
   const meta3 = await readGraphMeta(graphDir);
@@ -165061,12 +165113,12 @@ async function buildGraphFromDisk(graphDir) {
 async function hasNodeJsonUnder(nodesDirPath) {
   let entries;
   try {
-    entries = await fs13.readdir(nodesDirPath);
+    entries = await fs14.readdir(nodesDirPath);
   } catch {
     return false;
   }
   for (const entry of entries) {
-    if (await fileExists2(path17.join(nodesDirPath, entry, "node.json"))) {
+    if (await fileExists3(path17.join(nodesDirPath, entry, "node.json"))) {
       return true;
     }
   }
@@ -165076,21 +165128,21 @@ async function isGraphStale(graphDir, nodesDir) {
   const graphPath = path17.join(graphDir, "graph.json");
   let graphMtime;
   try {
-    graphMtime = (await fs13.stat(graphPath)).mtimeMs;
+    graphMtime = (await fs14.stat(graphPath)).mtimeMs;
   } catch {
     return true;
   }
   const nodesDirPath = path17.join(graphDir, nodesDir);
   let entries;
   try {
-    entries = await fs13.readdir(nodesDirPath);
+    entries = await fs14.readdir(nodesDirPath);
   } catch {
     return false;
   }
   for (const entry of entries) {
     const nodeJsonPath = path17.join(nodesDirPath, entry, "node.json");
     try {
-      const st13 = await fs13.stat(nodeJsonPath);
+      const st13 = await fs14.stat(nodeJsonPath);
       if (st13.mtimeMs > graphMtime) return true;
     } catch {
     }
@@ -165099,7 +165151,7 @@ async function isGraphStale(graphDir, nodesDir) {
 }
 async function persistRebuiltGraph(graphDir) {
   const built = await buildGraphFromDisk(graphDir);
-  await fs13.writeFile(
+  await fs14.writeFile(
     path17.join(graphDir, "graph.json"),
     serializeGraphData(built),
     "utf-8"
@@ -165107,10 +165159,16 @@ async function persistRebuiltGraph(graphDir) {
   return built;
 }
 function discoverGraphDirs(workspaceRoot) {
-  const out = execSync(
-    `find ${JSON.stringify(workspaceRoot)} -name ${JSON.stringify(GRAPH_META_FILE)} -not -path '*/node_modules/*' -not -path '*/.git/*' -not -path ${JSON.stringify(path17.join(workspaceRoot, ".claude", "worktrees", "*"))}`,
-    { encoding: "utf-8" }
-  );
+  const worktreesDir = path17.join(workspaceRoot, ".claude", "worktrees");
+  const cmd = `find ${JSON.stringify(workspaceRoot)} \\( -path ${JSON.stringify(worktreesDir)} -o -name node_modules -o -name .git \\) -prune -o -name ${JSON.stringify(GRAPH_META_FILE)} -print`;
+  let out;
+  try {
+    out = execSync(cmd, { encoding: "utf-8" });
+  } catch (err) {
+    const stdout = err.stdout;
+    if (typeof stdout !== "string") throw err;
+    out = stdout;
+  }
   return out.split("\n").map((s) => s.trim()).filter((s) => s.length > 0).map((metaPath) => path17.dirname(metaPath));
 }
 async function ensureGraphCurrent(graphDir) {
@@ -165201,7 +165259,7 @@ async function addEdge(graphDir, opts2, workspaceDir2) {
   };
   nodeData.edges = [...existingEdges, nodeJsonEdge];
   nodeData.updated = created;
-  await fs13.writeFile(
+  await fs14.writeFile(
     nodeJsonPath,
     JSON.stringify(nodeData, null, 2) + "\n",
     "utf-8"
@@ -165227,27 +165285,12 @@ async function touchNode(graphDir, nodeId, date5, at12) {
   }
   const updated = at12 ?? date5 ?? isoLocalNow();
   nodeData.updated = updated;
-  await fs13.writeFile(
+  await fs14.writeFile(
     nodeJsonPath,
     JSON.stringify(nodeData, null, 2) + "\n",
     "utf-8"
   );
   return { success: true, updated };
-}
-var CONTENT_STORY_FILE = "story.md";
-var CONTENT_SUBDIRS = ["content", "annotations"];
-function nodeDirForContentFile(filePath) {
-  const base = path17.basename(filePath);
-  if (!base.endsWith(".md")) return null;
-  const parent = path17.dirname(filePath);
-  const parentBase = path17.basename(parent);
-  if (CONTENT_SUBDIRS.includes(parentBase)) {
-    return path17.dirname(parent);
-  }
-  if (base === CONTENT_STORY_FILE) {
-    return parent;
-  }
-  return null;
 }
 async function hashGraphJson(graphDir) {
   const raw3 = await readTextFile(path17.join(graphDir, "graph.json"));
@@ -165255,20 +165298,18 @@ async function hashGraphJson(graphDir) {
   return sha256Hex(raw3);
 }
 async function computeContentHashForDir(nodeDir) {
-  const story = await readTextFile(path17.join(nodeDir, CONTENT_STORY_FILE)) ?? "";
-  const contentDir = path17.join(nodeDir, CONTENT_SUBDIRS[0]);
-  const contentNames = (await listDir(contentDir)).filter((f4) => f4.endsWith(".md")).sort();
+  let story = "";
   const content3 = [];
-  for (const filename of contentNames) {
-    const text6 = await readTextFile(path17.join(contentDir, filename)) ?? "";
-    content3.push({ filename, text: text6 });
-  }
-  const annotationsDir = path17.join(nodeDir, CONTENT_SUBDIRS[1]);
-  const annotationNames = (await listDir(annotationsDir)).filter((f4) => f4.endsWith(".md")).sort();
   const annotations = [];
-  for (const filename of annotationNames) {
-    const text6 = await readTextFile(path17.join(annotationsDir, filename)) ?? "";
-    annotations.push({ filename, text: text6 });
+  for (const entry of await enumerateContentFiles(nodeDir)) {
+    const text6 = await readTextFile(entry.absPath) ?? "";
+    if (entry.kind === "story") {
+      story = text6;
+    } else if (entry.kind === "content") {
+      content3.push({ filename: path17.basename(entry.relPath), text: text6 });
+    } else {
+      annotations.push({ filename: path17.basename(entry.relPath), text: text6 });
+    }
   }
   const input = canonicalStringify({ story, content: content3, annotations });
   return sha256Hex(input);
@@ -165300,7 +165341,7 @@ async function stampNodeUpdated(nodeDir, now = isoLocalNow()) {
   const nodeJsonPath = path17.join(nodeDir, "node.json");
   let raw3;
   try {
-    raw3 = await fs13.readFile(nodeJsonPath, "utf-8");
+    raw3 = await fs14.readFile(nodeJsonPath, "utf-8");
   } catch {
     return false;
   }
@@ -165315,7 +165356,7 @@ async function stampNodeUpdated(nodeDir, now = isoLocalNow()) {
   }
   const nodeData = parsed;
   nodeData.updated = now;
-  await fs13.writeFile(nodeJsonPath, await serializeNodeJson(nodeData), "utf-8");
+  await fs14.writeFile(nodeJsonPath, await serializeNodeJson(nodeData), "utf-8");
   return true;
 }
 var VALID_NAME_RE = /^[a-z0-9][a-z0-9_-]*$/;
@@ -165426,7 +165467,7 @@ async function initWorkspace(workspaceDir2, opts2) {
     }
   }
   const graphJsonPath = path17.join(workspaceDir2, "graph.json");
-  if (await fileExists2(graphJsonPath)) {
+  if (await fileExists3(graphJsonPath)) {
     throw new Error(
       "Workspace already initialized \u2014 graph.json already exists."
     );
@@ -165441,7 +165482,7 @@ async function initWorkspace(workspaceDir2, opts2) {
   if (effectiveNodesDir !== "nodes") {
     graphData.nodesDir = effectiveNodesDir;
   }
-  await fs13.writeFile(
+  await fs14.writeFile(
     graphJsonPath,
     JSON.stringify(graphData, null, 2) + "\n",
     "utf-8"
@@ -165452,14 +165493,14 @@ async function initWorkspace(workspaceDir2, opts2) {
     title: opts2.title ?? opts2.name
   };
   if (effectiveNodesDir !== "nodes") graphMeta.nodesDir = effectiveNodesDir;
-  await fs13.writeFile(
+  await fs14.writeFile(
     path17.join(workspaceDir2, GRAPH_META_FILE),
     JSON.stringify(graphMeta, null, 2) + "\n",
     "utf-8"
   );
   created.push(GRAPH_META_FILE);
   const claudeDir = path17.join(workspaceDir2, ".claude");
-  await fs13.mkdir(claudeDir, { recursive: true });
+  await fs14.mkdir(claudeDir, { recursive: true });
   const configPath = path17.join(claudeDir, "qino-config.json");
   const template = opts2.template ? workspaceTemplates[opts2.template] : void 0;
   const configData = { name: opts2.name };
@@ -165467,14 +165508,14 @@ async function initWorkspace(workspaceDir2, opts2) {
     configData.color = template.color;
     configData.types = template.types;
   }
-  await fs13.writeFile(
+  await fs14.writeFile(
     configPath,
     JSON.stringify(configData, null, 2) + "\n",
     "utf-8"
   );
   created.push(".claude/qino-config.json");
   const nodesDirPath = path17.join(workspaceDir2, effectiveNodesDir);
-  await fs13.mkdir(nodesDirPath, { recursive: true });
+  await fs14.mkdir(nodesDirPath, { recursive: true });
   created.push(effectiveNodesDir + "/");
   return {
     created,
@@ -165494,7 +165535,7 @@ async function deleteNode(graphDir, nodeId) {
   if (!nodeDir) {
     throw new Error(`Node not found: ${nodeId}`);
   }
-  await fs13.rm(nodeDir, { recursive: true, force: true });
+  await fs14.rm(nodeDir, { recursive: true, force: true });
   const siblingNodes = await discoverNodes(graphDir, nodesDir);
   for (const sibling of siblingNodes) {
     if (sibling.id === nodeId) continue;
@@ -165510,7 +165551,7 @@ async function deleteNode(graphDir, nodeId) {
     const filtered = edges.filter((e7) => e7.to !== nodeId);
     if (filtered.length !== edges.length) {
       siblingData.edges = filtered;
-      await fs13.writeFile(
+      await fs14.writeFile(
         siblingNodeJsonPath,
         JSON.stringify(siblingData, null, 2) + "\n",
         "utf-8"
@@ -165519,7 +165560,7 @@ async function deleteNode(graphDir, nodeId) {
   }
   if (graphData.nodes) {
     graphData.nodes = graphData.nodes.filter((n4) => n4.id !== nodeId);
-    await fs13.writeFile(
+    await fs14.writeFile(
       graphPath,
       JSON.stringify(graphData, null, 2) + "\n",
       "utf-8"
@@ -165530,13 +165571,13 @@ async function deleteNode(graphDir, nodeId) {
 }
 
 // src/server/retrieval/corpus.ts
-import fs14 from "fs/promises";
+import fs15 from "fs/promises";
 import path18 from "path";
 var ROOT_WORKSPACE2 = "_root";
 var GRAPH_META_FILE2 = ".qino-graph.json";
 async function readJsonFile2(filePath) {
   try {
-    return JSON.parse(await fs14.readFile(filePath, "utf8"));
+    return JSON.parse(await fs15.readFile(filePath, "utf8"));
   } catch {
     return null;
   }
@@ -165552,7 +165593,7 @@ async function discoverWorkspaces(metaRoot) {
     );
     const nodesDir = meta3?.nodesDir ?? graph?.nodesDir ?? "nodes";
     try {
-      const stat2 = await fs14.stat(path18.join(dir, nodesDir));
+      const stat2 = await fs15.stat(path18.join(dir, nodesDir));
       if (stat2.isDirectory()) workspaces.push({ workspace, dir, nodesDir });
     } catch {
     }
@@ -165586,7 +165627,7 @@ async function loadNodes(metaRoot) {
     const base = path18.join(ws9.dir, ws9.nodesDir);
     let entries;
     try {
-      entries = await fs14.readdir(base, { withFileTypes: true });
+      entries = await fs15.readdir(base, { withFileTypes: true });
     } catch {
       continue;
     }
@@ -165615,7 +165656,7 @@ async function loadNodes(metaRoot) {
 }
 async function readTextFile2(filePath) {
   try {
-    return await fs14.readFile(filePath, "utf8");
+    return await fs15.readFile(filePath, "utf8");
   } catch {
     return null;
   }
@@ -165635,21 +165676,9 @@ async function loadDocs(nodes) {
         text: text6
       });
     };
-    const story = await readTextFile2(path18.join(node2.dir, "story.md"));
-    if (story !== null) push3("story", "story.md", story);
-    for (const sub of ["content", "annotations"]) {
-      const subDir = path18.join(node2.dir, sub);
-      let names;
-      try {
-        names = (await fs14.readdir(subDir)).sort();
-      } catch {
-        continue;
-      }
-      for (const name of names) {
-        if (!name.endsWith(".md")) continue;
-        const text6 = await readTextFile2(path18.join(subDir, name));
-        if (text6 !== null) push3(sub, `${sub}/${name}`, text6);
-      }
+    for (const entry of await enumerateContentFiles(node2.dir)) {
+      const text6 = await readTextFile2(entry.absPath);
+      if (text6 !== null) push3(entry.kind, entry.relPath, text6);
     }
   }
   return docs;
@@ -165661,7 +165690,7 @@ async function scanContentStamps(metaRoot) {
     let max2 = 0;
     const consider = async (target) => {
       try {
-        const stat2 = await fs14.stat(target);
+        const stat2 = await fs15.stat(target);
         if (stat2.mtimeMs > max2) max2 = stat2.mtimeMs;
       } catch {
       }
@@ -165669,7 +165698,7 @@ async function scanContentStamps(metaRoot) {
     await consider(base);
     let entries;
     try {
-      entries = await fs14.readdir(base, { withFileTypes: true });
+      entries = await fs15.readdir(base, { withFileTypes: true });
     } catch {
       stamps[ws9.workspace] = max2;
       continue;
@@ -165689,7 +165718,7 @@ async function scanContentStamps(metaRoot) {
 }
 
 // src/server/retrieval/index.ts
-import fs17 from "fs/promises";
+import fs18 from "fs/promises";
 import path24 from "path";
 
 // src/server/retrieval/chunker.ts
@@ -165807,13 +165836,13 @@ function buildEdgeDocs(nodes) {
 }
 
 // src/server/retrieval/embedder.ts
-import fs16 from "fs/promises";
+import fs17 from "fs/promises";
 import path21 from "path";
 var POTION_MODEL_ID = "minishlab/potion-retrieval-32M";
 var MODEL_ONNX_URL = `https://huggingface.co/${POTION_MODEL_ID}/resolve/main/onnx/model.onnx`;
-async function fileExists3(filePath) {
+async function fileExists4(filePath) {
   try {
-    await fs16.stat(filePath);
+    await fs17.stat(filePath);
     return true;
   } catch {
     return false;
@@ -165824,8 +165853,8 @@ function potionModelPath(cacheDir) {
 }
 async function ensureModelFile(cacheDir) {
   const modelPath = potionModelPath(cacheDir);
-  if (await fileExists3(modelPath)) return modelPath;
-  await fs16.mkdir(path21.dirname(modelPath), { recursive: true });
+  if (await fileExists4(modelPath)) return modelPath;
+  await fs17.mkdir(path21.dirname(modelPath), { recursive: true });
   const res = await fetch(MODEL_ONNX_URL);
   if (!res.ok) {
     throw new Error(
@@ -165834,8 +165863,8 @@ async function ensureModelFile(cacheDir) {
   }
   const bytes = Buffer.from(await res.arrayBuffer());
   const tmpPath = `${modelPath}.download`;
-  await fs16.writeFile(tmpPath, bytes);
-  await fs16.rename(tmpPath, modelPath);
+  await fs17.writeFile(tmpPath, bytes);
+  await fs17.rename(tmpPath, modelPath);
   return modelPath;
 }
 async function createPotionEmbedder(cacheDir) {
@@ -167799,8 +167828,8 @@ function stampsEqual(a4, b6) {
 }
 async function writeFileAtomic(filePath, data) {
   const tmpPath = `${filePath}.tmp`;
-  await fs17.writeFile(tmpPath, data);
-  await fs17.rename(tmpPath, filePath);
+  await fs18.writeFile(tmpPath, data);
+  await fs18.rename(tmpPath, filePath);
 }
 async function embedBatched(embedder, texts) {
   let dim = 0;
@@ -167866,16 +167895,16 @@ var RetrievalService = class {
     const paths = indexPaths(this.metaRoot);
     try {
       const meta3 = JSON.parse(
-        await fs17.readFile(paths.meta, "utf8")
+        await fs18.readFile(paths.meta, "utf8")
       );
       if (meta3.schemaVersion !== SCHEMA_VERSION) return null;
       if (meta3.modelId !== POTION_MODEL_ID) return null;
-      const vecBuf = await fs17.readFile(paths.vectors);
+      const vecBuf = await fs18.readFile(paths.vectors);
       if (vecBuf.byteLength !== meta3.nChunks * meta3.dim * 4) return null;
-      const edgeBuf = await fs17.readFile(paths.edgeVectors);
+      const edgeBuf = await fs18.readFile(paths.edgeVectors);
       if (edgeBuf.byteLength !== meta3.edges.length * meta3.dim * 4) return null;
       const lexical = loadLexicalIndex(
-        await fs17.readFile(paths.lexical, "utf8")
+        await fs18.readFile(paths.lexical, "utf8")
       );
       return {
         meta: meta3,
@@ -167942,7 +167971,7 @@ var RetrievalService = class {
       edges: edgeDocs
     };
     const paths = indexPaths(this.metaRoot);
-    await fs17.mkdir(paths.dir, { recursive: true });
+    await fs18.mkdir(paths.dir, { recursive: true });
     await writeFileAtomic(
       paths.vectors,
       Buffer.from(vectors.buffer, vectors.byteOffset, vectors.byteLength)
@@ -180816,7 +180845,7 @@ import path28 from "path";
 
 // src/server/worktree-registry.ts
 import { execFile as execFile3 } from "child_process";
-import fs18 from "fs/promises";
+import fs19 from "fs/promises";
 import path27 from "path";
 import { promisify as promisify3 } from "util";
 var execFileAsync3 = promisify3(execFile3);
@@ -180933,7 +180962,7 @@ async function resolveBase(top, explicit) {
 }
 async function resolveNodeTitle(slotPath, nodeDir) {
   try {
-    const raw3 = await fs18.readFile(
+    const raw3 = await fs19.readFile(
       path27.join(slotPath, nodeDir, "node.json"),
       "utf-8"
     );
@@ -181811,7 +181840,7 @@ function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces,
       const reqPath = url4.pathname === "/" ? "/index.html" : url4.pathname;
       const filePath = nodePath.join(staticDir, reqPath);
       try {
-        const content3 = await fs19.readFile(filePath);
+        const content3 = await fs20.readFile(filePath);
         const ext2 = nodePath.extname(filePath);
         const contentType = MIME_TYPES[ext2] ?? "application/octet-stream";
         return new Response(content3, {
@@ -181821,7 +181850,7 @@ function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces,
         if (nodePath.extname(reqPath)) {
           return c5.notFound();
         }
-        const html2 = await fs19.readFile(
+        const html2 = await fs20.readFile(
           nodePath.join(staticDir, "index.html"),
           "utf-8"
         );
@@ -183612,7 +183641,7 @@ SECURITY: Only paths within the workspace root are allowed.`,
 
 // src/server/message-store.ts
 import crypto3 from "crypto";
-import fs20 from "fs/promises";
+import fs21 from "fs/promises";
 import nodePath2 from "path";
 var MESSAGES_DIR = ".qino-os/messages";
 var MessageStore = class {
@@ -183625,11 +183654,11 @@ var MessageStore = class {
   async loadSaved() {
     const dir = nodePath2.join(this.workspaceDir, MESSAGES_DIR);
     try {
-      const files = await fs20.readdir(dir);
+      const files = await fs21.readdir(dir);
       for (const file2 of files) {
         if (!file2.endsWith(".json")) continue;
         try {
-          const content3 = await fs20.readFile(nodePath2.join(dir, file2), "utf-8");
+          const content3 = await fs21.readFile(nodePath2.join(dir, file2), "utf-8");
           const message = JSON.parse(content3);
           if (message.id) {
             this.messages.set(message.id, message);
@@ -183652,8 +183681,8 @@ var MessageStore = class {
     };
     this.messages.set(message.id, message);
     const dir = nodePath2.join(this.workspaceDir, MESSAGES_DIR);
-    await fs20.mkdir(dir, { recursive: true });
-    await fs20.writeFile(
+    await fs21.mkdir(dir, { recursive: true });
+    await fs21.writeFile(
       nodePath2.join(dir, `${message.id}.json`),
       JSON.stringify(message, null, 2)
     );
@@ -183674,7 +183703,7 @@ var MessageStore = class {
     for (const msg of messages2) {
       this.messages.delete(msg.id);
       try {
-        await fs20.unlink(nodePath2.join(dir, `${msg.id}.json`));
+        await fs21.unlink(nodePath2.join(dir, `${msg.id}.json`));
       } catch {
       }
     }
@@ -183686,7 +183715,7 @@ var MessageStore = class {
     this.messages.delete(id3);
     const dir = nodePath2.join(this.workspaceDir, MESSAGES_DIR);
     try {
-      await fs20.unlink(nodePath2.join(dir, `${id3}.json`));
+      await fs21.unlink(nodePath2.join(dir, `${id3}.json`));
     } catch {
     }
     return true;
@@ -183708,7 +183737,7 @@ var MessageStore = class {
     const dir = nodePath2.join(this.workspaceDir, MESSAGES_DIR);
     for (const msg of this.messages.values()) {
       try {
-        await fs20.unlink(nodePath2.join(dir, `${msg.id}.json`));
+        await fs21.unlink(nodePath2.join(dir, `${msg.id}.json`));
       } catch {
       }
     }
@@ -184404,8 +184433,8 @@ var packageRoot = path30.resolve(__dirname3, "../..");
 var distUiDir = path30.resolve(packageRoot, "dist/ui");
 async function hasBuiltSpa() {
   try {
-    const fs21 = await import("fs/promises");
-    const html2 = await fs21.readFile(path30.join(distUiDir, "index.html"), "utf-8");
+    const fs24 = await import("fs/promises");
+    const html2 = await fs24.readFile(path30.join(distUiDir, "index.html"), "utf-8");
     return html2.includes("/assets/");
   } catch {
     return false;
