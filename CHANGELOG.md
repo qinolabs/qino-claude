@@ -10,6 +10,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [3.5.12] - 2026-09-08
+
+### qino
+
+A bundled-server release making qino-os startup robust, after Claude Desktop and Claude Code sessions hit "server disconnected" errors that traced to the bundled server's cold boot (qinolabs-repo#727; `implementations/qino-os` startup-robustness iteration).
+
+#### Fixed
+
+- **The MCP handshake no longer races the graph build.** The bundled server used to run its whole graph.json ensure + semantic-retrieval-index load *before* answering the client, and the index load has a long synchronous stretch that starved the event loop for ~15s on a cold boot — longer than the client's connect timeout, so the connection was dropped ("restart before the graph builds → disconnect"). The server now binds and connects the MCP transport first, then warms the index behind it; a cold standalone handshake lands in well under a second (measured ~0.5s, was ~15s). Tools that need the index report "unavailable" until it warms.
+- **A contended port no longer crashes the server.** When the UI port (4020) was already held — by a warm dev server or a parallel session's instance — and the probe missed it, the HTTP server's `EADDRINUSE` was unhandled and killed the whole process, surfacing as a bare "Server disconnected". It's now caught: a standalone stdio server reads the filesystem directly and needs no HTTP server of its own, so it keeps serving and only forgoes its local UI port.
+
+#### Changed
+
+- **Startup emits an immediate diagnostic banner** on stderr — mode, workspace dir, port, and per-phase `(+Nms)` timings — so a slow or misconfigured boot names its cause instead of failing silently.
+- **Semantic search degrades cleanly in the bundle.** The native embedding backend (`onnxruntime-node`) can't be inlined into the single-file plugin bundle, so semantic search is unavailable there by design; the server now says so plainly (graph + lexical search stay active; run a dev server for semantic search) instead of leaking a raw `listSupportedBackends is not a function`.
+
+---
+
 ## [3.5.6] - 2026-08-24
 
 ### qino

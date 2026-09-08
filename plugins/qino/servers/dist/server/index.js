@@ -190211,6 +190211,11 @@ async function probeExistingServer(targetPort) {
   return void 0;
 }
 async function main() {
+  const bootT0 = Date.now();
+  const sinceBoot = () => `(+${Date.now() - bootT0}ms)`;
+  console.error(
+    `[qino-os] starting \u2014 mode=${isStdio ? "stdio" : "http"} workspace-dir=${workspaceDir} port=${port} ${sinceBoot()}`
+  );
   const repoRoot = repoRootOverride ?? await resolveGitRoot(workspaceDir);
   const log2 = isStdio ? console.error : console.log;
   let apiUrl = explicitApiUrl;
@@ -190231,6 +190236,9 @@ async function main() {
       if (ws9.path) knownWorkspaces.add(ws9.path);
     }
   }
+  console.error(
+    `[qino-os] repo-root=${repoRoot ?? "(none)"} ${isClientMode ? `client-mode \u2192 delegating to ${apiUrl}` : "standalone"} ${sinceBoot()}`
+  );
   const baseUrl = `http://localhost:${port}`;
   const instructions = buildServerInstructions({
     mode,
@@ -190242,21 +190250,6 @@ async function main() {
     watcher = createFileWatcher(workspaceDir);
     messageStore = new MessageStore(workspaceDir);
     await messageStore.loadSaved();
-    const graphEnsureRoot = repoRoot ?? workspaceDir;
-    void ensureAllGraphsCurrent(graphEnsureRoot).then((result) => {
-      log2(
-        `[graph:ensure] root=${graphEnsureRoot} graphs=${result.total} rebuilt=${result.rebuilt} errors=${result.errors}`
-      );
-    }).catch((err) => {
-      log2(`[graph:ensure] failed: ${err.message}`);
-    });
-    void ensureRetrievalIndex(workspaceDir).then((result) => {
-      log2(
-        `[retrieval:ensure] chunks=${result.index.meta.nChunks} edges=${result.index.meta.edges.length} rebuilt=${result.rebuilt}`
-      );
-    }).catch((err) => {
-      log2(`[retrieval:ensure] failed: ${err.message}`);
-    });
     const serveSpa = await hasBuiltSpa();
     const staticDir = serveSpa ? distUiDir : void 0;
     const api = createApi(
@@ -190293,7 +190286,9 @@ async function main() {
       return response;
     });
     const httpServer = serve({ fetch: api.fetch, port }, () => {
-      log2(`[qino-os] HTTP server listening on http://localhost:${port}`);
+      log2(
+        `[qino-os] HTTP server listening on http://localhost:${port} ${sinceBoot()}`
+      );
       log2(`[qino-os] Workspace dir: ${workspaceDir}`);
       log2(`[qino-os] Repo root: ${repoRoot ?? "(not in a git repo)"}`);
       log2(`[qino-os] Mode: ${mode}`);
@@ -190301,6 +190296,15 @@ async function main() {
       if (viewerUrl) log2(`[qino-os] Viewer URL: ${viewerUrl}`);
       if (!noBrowser && !isStdio) {
         openBrowser(`http://localhost:${port}`);
+      }
+    });
+    httpServer.on("error", (err) => {
+      if (err.code === "EADDRINUSE") {
+        log2(
+          `[qino-os] port ${port} already in use \u2014 another qino-os owns the UI; this instance continues as a direct MCP server without its own HTTP server. ${sinceBoot()}`
+        );
+      } else {
+        log2(`[qino-os] HTTP server error: ${err.message}`);
       }
     });
     if (isStdio) {
@@ -190334,6 +190338,28 @@ async function main() {
     transport.onclose = () => {
       process.exit(0);
     };
+  }
+  const BOOT_WORK_DELAY_MS = 500;
+  if (!isClientMode) {
+    setTimeout(() => {
+      const graphEnsureRoot = repoRoot ?? workspaceDir;
+      void ensureAllGraphsCurrent(graphEnsureRoot).then((result) => {
+        log2(
+          `[graph:ensure] root=${graphEnsureRoot} graphs=${result.total} rebuilt=${result.rebuilt} errors=${result.errors} ${sinceBoot()}`
+        );
+      }).catch((err) => {
+        log2(`[graph:ensure] failed: ${err.message}`);
+      });
+      void ensureRetrievalIndex(workspaceDir).then((result) => {
+        log2(
+          `[retrieval:ensure] chunks=${result.index.meta.nChunks} edges=${result.index.meta.edges.length} rebuilt=${result.rebuilt} ${sinceBoot()}`
+        );
+      }).catch((err) => {
+        log2(
+          `[qino-os] semantic search unavailable \u2014 embedding backend did not load (${err.message}). Graph + lexical search are active; run the dev server (pnpm dev:os) for semantic search. ${sinceBoot()}`
+        );
+      });
+    }, BOOT_WORK_DELAY_MS);
   }
 }
 main().catch((err) => {
