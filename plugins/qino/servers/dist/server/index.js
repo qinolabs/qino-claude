@@ -173823,20 +173823,37 @@ async function ensureIndex(metaRoot) {
     throw new Error(`index unavailable: ${reason}`);
   }
 }
+async function tryEmbedQuery(metaRoot, query) {
+  try {
+    const embedder = await getRetrievalService(metaRoot).getEmbedder();
+    const q11 = await embedder.embed([query], { isQuery: true });
+    return q11.data;
+  } catch (err) {
+    const reason = err instanceof Error ? err.message : String(err);
+    console.error(
+      `[qino-os] semantic search unavailable \u2014 embedding backend did not load (${reason}). Falling back to lexical-only results; run the dev server (pnpm dev:os) for semantic search.`
+    );
+    return null;
+  }
+}
 async function semanticSearch(metaRoot, args) {
   const scope = args.scope ?? "auto";
   const limit = Math.max(1, Math.min(args.limit ?? 10, 50));
   const { index: index2, rebuilt } = await ensureIndex(metaRoot);
-  const embedder = await getRetrievalService(metaRoot).getEmbedder();
-  const q11 = await embedder.embed([args.query], { isQuery: true });
-  const qvec = q11.data;
+  const qvec = await tryEmbedQuery(metaRoot, args.query);
+  const semanticDegraded = qvec === null;
+  if (scope === "edges" && semanticDegraded) {
+    throw new Error(
+      'edges scope needs semantic search, and the embedding backend is unavailable. Try scope "auto" or "nodes" for lexical-only results, or run the dev server (pnpm dev:os) for semantic search.'
+    );
+  }
   const nodes = nodeMetaMap(index2);
   const allow = args.workspace ? (nodeKey) => nodes.get(nodeKey)?.workspace === args.workspace : void 0;
   const { chunks } = index2.meta;
   const { dim } = index2.meta;
-  const dense = denseNodeRanking(chunks, index2.vectors, dim, qvec, {
+  const dense = qvec ? denseNodeRanking(chunks, index2.vectors, dim, qvec, {
     ...allow ? { allow } : {}
-  });
+  }) : [];
   const toNodeHit = (key2, score) => {
     const meta3 = nodes.get(key2);
     const denseEntry = dense.find((d5) => d5.key === key2);
@@ -173857,7 +173874,7 @@ async function semanticSearch(metaRoot, args) {
   let results;
   if (scope === "auto" || scope === "nodes") {
     const storyOnly = scope === "nodes";
-    const denseLeg = storyOnly ? denseNodeRanking(chunks, index2.vectors, dim, qvec, {
+    const denseLeg = storyOnly && qvec ? denseNodeRanking(chunks, index2.vectors, dim, qvec, {
       storyOnly: true,
       ...allow ? { allow } : {}
     }) : dense;
@@ -173869,15 +173886,17 @@ async function semanticSearch(metaRoot, args) {
     results = fused.slice(0, limit).map((r5) => toNodeHit(r5.key, r5.score));
   } else if (scope === "chunks") {
     const denseChunks = [];
-    for (let i = 0; i < chunks.length; i++) {
-      const chunk2 = chunks[i];
-      if (!chunk2) continue;
-      if (allow && !allow(chunk2.nodeKey)) continue;
-      let s = 0;
-      const off = i * dim;
-      for (let d5 = 0; d5 < dim; d5++)
-        s += (index2.vectors[off + d5] ?? 0) * (qvec[d5] ?? 0);
-      denseChunks.push({ key: String(i), score: s, chunk: i });
+    if (qvec) {
+      for (let i = 0; i < chunks.length; i++) {
+        const chunk2 = chunks[i];
+        if (!chunk2) continue;
+        if (allow && !allow(chunk2.nodeKey)) continue;
+        let s = 0;
+        const off = i * dim;
+        for (let d5 = 0; d5 < dim; d5++)
+          s += (index2.vectors[off + d5] ?? 0) * (qvec[d5] ?? 0);
+        denseChunks.push({ key: String(i), score: s, chunk: i });
+      }
     }
     denseChunks.sort((a4, b6) => b6.score - a4.score);
     const bmChunks = bm25ChunkRanks(index2.lexical, args.query, {
@@ -173903,6 +173922,11 @@ async function semanticSearch(metaRoot, args) {
       ];
     });
   } else {
+    if (!qvec) {
+      throw new Error(
+        "edges scope needs semantic search, and the embedding backend is unavailable."
+      );
+    }
     const { edges } = index2.meta;
     const endpoint = (key2) => {
       const meta3 = nodes.get(key2);
@@ -173951,7 +173975,10 @@ async function semanticSearch(metaRoot, args) {
     scope,
     results,
     evidence,
-    index: indexInfo(index2)
+    index: indexInfo(index2),
+    ...semanticDegraded ? {
+      warning: "semantic search unavailable (embedding backend did not load) \u2014 results are lexical-only (BM25); run the dev server (pnpm dev:os) for full ranking"
+    } : {}
   };
 }
 function indexAgeSeconds(index2) {
