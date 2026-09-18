@@ -10,6 +10,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [3.5.14] - 2026-09-18
+
+### qino
+
+A bundled-server release making the retrieval layer's failure mode audible, and giving the source dev server precedence on :4020 (qinolabs-repo#842; `implementations/qino-os` iteration 65, annotation 031).
+
+#### Fixed
+
+- **`pnpm dev:os` can take :4020 back from a plugin instance.** The bundled server decided its transport from a stdin-TTY heuristic that `concurrently` defeats (the child's stdin is a pipe), so a source dev server booted believing it was a stdio MCP server, found the plugin instance on :4020, and delegated to it instead of binding — leaving every session on the bundle's lexical-only search. Transport is now explicit (`--stdio` / `--http`, or `QINO_TRANSPORT`; the plugin's `.mcp.json` passes `--stdio`), and an http-mode server that finds its port held asks the holder to yield: a stdio instance releases the port and continues as a direct MCP server, sessions delegating to :4020 land on the dev server transparently, and anything that will not yield is named before the newcomer exits.
+- **A cold boot whose on-disk index is stale serves it** instead of answering the first search with `index unavailable` — the bundle has no embedder to rebuild with, and a stale answer beats none.
+
+#### Changed
+
+- **Semantic degradation is loud, everywhere an agent reads.** The MCP instructions open with a *Retrieval status* section (ON / **OFF** with the classified reason and the remedy / UNKNOWN when delegating to an older server); every `search` response leads with a `retrieval` block naming the ranking that actually ran, and the tool output prepends a prose banner when it is lexical-only; the boot log says why. The trailing `warning` field that nobody noticed is gone. Permanent embedder failures are cached instead of re-parsing the tokenizer on every degraded search.
+- **`GET /api/server-info`** reports the answering instance (pid, transport, source build, uptime, workspace, retrieval status); the delegation log line now says who it is delegating to and whether semantic ranking is on there.
+
+---
+
 ## [3.5.12] - 2026-09-08
 
 ### qino

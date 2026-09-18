@@ -163116,11 +163116,11 @@ var Protocol = class {
    *
    * The Protocol object assumes ownership of the Transport, replacing any callbacks that have already been set, and expects that it is the only user of the Transport instance going forward.
    */
-  async connect(transport) {
+  async connect(transport2) {
     if (this._transport) {
       throw new Error("Already connected to a transport. Call close() before connecting to a new transport, or use a separate Protocol instance per connection.");
     }
-    this._transport = transport;
+    this._transport = transport2;
     const _onclose = this.transport?.onclose;
     this._transport.onclose = () => {
       _onclose?.();
@@ -164710,8 +164710,8 @@ var McpServer = class {
    *
    * The `server` object assumes ownership of the Transport, replacing any callbacks that have already been set, and expects that it is the only user of the Transport instance going forward.
    */
-  async connect(transport) {
-    return await this.server.connect(transport);
+  async connect(transport2) {
+    return await this.server.connect(transport2);
   }
   /**
    * Closes the connection.
@@ -166293,6 +166293,21 @@ function createFileWatcher(workspaceDir2) {
 // src/server/http-api.ts
 import fs20 from "fs/promises";
 import nodePath from "path";
+
+// ../../node_modules/@hono/node-server/dist/conninfo.mjs
+var getConnInfo = (c5) => {
+  const bindings = c5.env.server ? c5.env.server : c5.env;
+  const address = bindings.incoming.socket.remoteAddress;
+  const port2 = bindings.incoming.socket.remotePort;
+  const family = bindings.incoming.socket.remoteFamily;
+  return {
+    remote: {
+      address,
+      port: port2,
+      addressType: family === "IPv4" ? "IPv4" : family === "IPv6" ? "IPv6" : void 0
+    }
+  };
+};
 
 // ../../node_modules/hono/dist/compose.js
 var compose = (middleware, onError, onNotFound) => {
@@ -168644,6 +168659,82 @@ function buildNodeLinks(config2, graphPath, nodeId, knownWorkspaces) {
   };
 }
 
+// src/server/server-info.ts
+function isServerInfo(value) {
+  if (typeof value !== "object" || value === null) return false;
+  const v5 = value;
+  return v5["name"] === "qino-os" && typeof v5["pid"] === "number" && (v5["transport"] === "stdio" || v5["transport"] === "http");
+}
+function detectSource(moduleUrl) {
+  return /\/src\/server\//.test(moduleUrl) ? "src" : "dist";
+}
+
+// src/server/port-claim.ts
+var PROBE_TIMEOUT_MS = 1e3;
+async function describePortHolder(port2, fetchImpl = fetch) {
+  const base = `http://localhost:${port2}`;
+  try {
+    const res = await fetchImpl(`${base}/api/server-info`, {
+      signal: AbortSignal.timeout(PROBE_TIMEOUT_MS)
+    });
+    if (res.ok) {
+      const body = await res.json();
+      if (isServerInfo(body)) return { kind: "qino-os", info: body };
+      return { kind: "unknown", detail: "server-info payload not recognised" };
+    }
+    const legacy = await fetchImpl(`${base}/api/config`, {
+      signal: AbortSignal.timeout(PROBE_TIMEOUT_MS)
+    });
+    if (legacy.ok) {
+      return {
+        kind: "unknown",
+        detail: "a qino-os older than iter 65 (no /api/server-info)"
+      };
+    }
+    return {
+      kind: "unknown",
+      detail: `HTTP ${res.status} from /api/server-info`
+    };
+  } catch {
+    return { kind: "none" };
+  }
+}
+async function requestYield(port2, fetchImpl = fetch) {
+  try {
+    const res = await fetchImpl(`http://localhost:${port2}/api/yield-port`, {
+      method: "POST",
+      signal: AbortSignal.timeout(PROBE_TIMEOUT_MS)
+    });
+    const body = await res.json().catch(() => ({}));
+    return {
+      yielded: res.ok && body.yielded === true,
+      detail: body.detail ?? `HTTP ${res.status}`
+    };
+  } catch (err) {
+    return {
+      yielded: false,
+      detail: err instanceof Error ? err.message : String(err)
+    };
+  }
+}
+async function negotiatePort(port2, fetchImpl = fetch) {
+  const holder = await describePortHolder(port2, fetchImpl);
+  if (holder.kind === "none") return { outcome: "silent" };
+  if (holder.kind === "unknown") {
+    return { outcome: "held-unknown", detail: holder.detail };
+  }
+  if (holder.info.transport === "http") {
+    return { outcome: "held-by-http", holder: holder.info };
+  }
+  const result = await requestYield(port2, fetchImpl);
+  if (result.yielded) return { outcome: "yielded", holder: holder.info };
+  return { outcome: "refused", holder: holder.info, detail: result.detail };
+}
+function isLoopbackAddress(address) {
+  if (!address) return false;
+  return address === "127.0.0.1" || address === "::1" || address === "::ffff:127.0.0.1" || address.startsWith("127.");
+}
+
 // src/server/protocol-reader.ts
 import { execFile as execFile2, execSync } from "child_process";
 import fs14 from "fs/promises";
@@ -168847,6 +168938,31 @@ async function gitContentDatesForGraph(graphDir) {
   } catch {
     return /* @__PURE__ */ new Map();
   }
+}
+var contentDateCache = /* @__PURE__ */ new Map();
+async function gitHead(repoTop) {
+  try {
+    const { stdout } = await execFileAsync("git", ["rev-parse", "HEAD"], {
+      cwd: repoTop
+    });
+    const sha = stdout.trim();
+    return sha.length > 0 ? sha : null;
+  } catch {
+    return null;
+  }
+}
+async function gitContentDatesForGraphCached(graphDir) {
+  if (await repoStampsUpdated(graphDir)) return /* @__PURE__ */ new Map();
+  const repoTop = await gitRoot(graphDir);
+  if (repoTop === null) return /* @__PURE__ */ new Map();
+  const head = await gitHead(repoTop);
+  if (head === null) return gitContentDatesForGraph(graphDir);
+  const key2 = `${repoTop}\0${graphDir}`;
+  const hit = contentDateCache.get(key2);
+  if (hit && hit.head === head) return hit.dates;
+  const dates = await gitContentDatesForGraph(graphDir);
+  contentDateCache.set(key2, { head, dates });
+  return dates;
 }
 async function gitContentDateForNode(nodeDir) {
   if (await repoStampsUpdated(nodeDir)) return void 0;
@@ -169143,20 +169259,35 @@ async function collectDeepAnnotationsForDate(graphDir, graphPath, workspaceName,
   }
   return items;
 }
-async function readContentFiles(contentDir) {
+async function readContentFiles(contentDir, options7 = {}) {
+  const bodies = options7.bodies ?? true;
   const files = await listDir(contentDir);
   const contentFiles = [];
   for (const filename of files.sort()) {
     const filePath = path17.join(contentDir, filename);
+    let stat2;
+    try {
+      stat2 = await fs14.stat(filePath);
+    } catch {
+    }
+    if (!bodies) {
+      if (stat2?.isFile()) {
+        contentFiles.push({
+          filename,
+          content: "",
+          size: stat2.size,
+          modified: stat2.mtimeMs
+        });
+      }
+      continue;
+    }
     const content3 = await readTextFile(filePath);
     if (content3 !== null) {
-      let modified;
-      try {
-        const stat2 = await fs14.stat(filePath);
-        modified = stat2.mtimeMs;
-      } catch {
-      }
-      contentFiles.push({ filename, content: content3, modified });
+      contentFiles.push({
+        filename,
+        content: content3,
+        ...stat2 ? { size: stat2.size, modified: stat2.mtimeMs } : {}
+      });
     }
   }
   return contentFiles;
@@ -169574,7 +169705,7 @@ async function readGraph(graphDir, workspaceDir2) {
     revision
   };
 }
-async function readNodeFromSubGraphs(graphDir, nodesDir, nodeId, subPath, workspaceDir2, maxDepth = 3) {
+async function readNodeFromSubGraphs(graphDir, nodesDir, nodeId, subPath, workspaceDir2, options7 = {}, maxDepth = 3) {
   if (maxDepth <= 0) return null;
   const discoveredNodes = await discoverNodes(graphDir, nodesDir);
   for (const node2 of discoveredNodes) {
@@ -169582,12 +169713,208 @@ async function readNodeFromSubGraphs(graphDir, nodesDir, nodeId, subPath, worksp
     const hasSubGraph = await nodeHasSubGraph(nodeDir);
     if (!hasSubGraph) continue;
     const subGraphPath = subPath ? `${subPath}/${nodesDir}/${node2.dir}` : `${nodesDir}/${node2.dir}`;
-    const result = await readNode(nodeDir, nodeId, subGraphPath, workspaceDir2);
+    const result = await readNode(
+      nodeDir,
+      nodeId,
+      subGraphPath,
+      workspaceDir2,
+      options7
+    );
     if (result) return result;
   }
   return null;
 }
-async function readNode(graphDir, nodeId, subPath, workspaceDir2) {
+var GIST_SKIP_RE = /^(?:\*\*|__)?\s*(?:linked|status|formerly|renamed|concept sources?|genesis|for essence questions)\b/i;
+function storyGist(text6) {
+  const paragraphs = text6.split(/\n\s*\n/).map(
+    (p5) => p5.split("\n").map((l5) => l5.trim().replace(/^>\s?/, "")).filter((l5) => l5.length > 0)
+  ).filter((lines) => lines.length > 0);
+  for (const lines of paragraphs) {
+    if (lines.every((l5) => l5.startsWith("#"))) continue;
+    const first = lines[0] ?? "";
+    if (/^(!\[|\||<!--|[-*+]\s|\d+\.\s)/.test(first)) continue;
+    const joined = lines.join(" ").replace(/\s+/g, " ").trim();
+    const italic = /^(\*|_)(?!\1).*\1$/.test(joined) && !/^\*\*/.test(joined);
+    if (italic) continue;
+    if (GIST_SKIP_RE.test(joined.replace(/^[*_(]+/, ""))) continue;
+    const unwrapped = joined.replace(/^\*\*(.*)\*\*$/, "$1");
+    if (unwrapped.length === 0) continue;
+    return unwrapped.length > 160 ? `${unwrapped.slice(0, 160)}\u2026` : unwrapped;
+  }
+  return "";
+}
+function memoized(map5, key2, make) {
+  let hit = map5.get(key2);
+  if (!hit) {
+    hit = make();
+    map5.set(key2, hit);
+  }
+  return hit;
+}
+async function graphInfoFor(graphDir) {
+  const [meta3, graph] = await Promise.all([
+    readGraphMeta(graphDir),
+    readJsonFile(path17.join(graphDir, "graph.json"))
+  ]);
+  if (!meta3 && !graph) return null;
+  return {
+    title: meta3?.title ?? graph?.title ?? path17.basename(graphDir),
+    nodesDir: meta3?.nodesDir ?? graph?.nodesDir ?? "nodes"
+  };
+}
+async function registeredGraphs(workspaceDir2) {
+  const config2 = await readConfig(workspaceDir2);
+  const out = [{ graphPath: "", graphDir: workspaceDir2 }];
+  for (const ws9 of Object.values(config2.workspaces ?? {})) {
+    if (ws9.path)
+      out.push({
+        graphPath: ws9.path,
+        graphDir: path17.join(workspaceDir2, ws9.path)
+      });
+  }
+  return out;
+}
+async function buildNeighborhood(graphDir, graphData, nodesDir, nodeId, subPath, workspaceDir2, options7) {
+  const now = options7.now ?? Date.now();
+  const memo = {
+    graphInfo: /* @__PURE__ */ new Map(),
+    edges: /* @__PURE__ */ new Map(),
+    identities: /* @__PURE__ */ new Map(),
+    stories: /* @__PURE__ */ new Map(),
+    contentDates: /* @__PURE__ */ new Map()
+  };
+  const infoFor = (dir) => memoized(memo.graphInfo, dir, () => graphInfoFor(dir));
+  const edgesFor = (dir, nd2) => memoized(memo.edges, dir, () => assembleEdgesFromDisk(path17.join(dir, nd2)));
+  const ownGraphTitle = graphData.title;
+  const selfRef = subPath ? `${subPath}:${nodeId}` : void 0;
+  const raw3 = [];
+  const seen = /* @__PURE__ */ new Set();
+  const push3 = (r5) => {
+    const nodeIdForm = r5.neighborGraphPath === void 0 ? r5.neighborId : `${r5.neighborGraphPath}:${r5.neighborId}`;
+    const key2 = `${r5.direction}|${nodeIdForm}|${r5.edge.label ?? ""}|${r5.edge.context ?? ""}`;
+    if (seen.has(key2)) return;
+    seen.add(key2);
+    raw3.push(r5);
+  };
+  for (const edge of await edgesFor(graphDir, nodesDir)) {
+    if (edge.source === nodeId) {
+      const parsed = parseEdgeTarget(edge.target);
+      if (!parsed.graphPath) {
+        push3({
+          edge,
+          direction: "outgoing",
+          neighborGraphDir: graphDir,
+          neighborGraphPath: void 0,
+          neighborId: parsed.nodeId
+        });
+      } else if (workspaceDir2) {
+        push3({
+          edge,
+          direction: "outgoing",
+          neighborGraphDir: resolveWorkspaceRelativePath(
+            graphDir,
+            workspaceDir2,
+            parsed.graphPath
+          ),
+          neighborGraphPath: parsed.graphPath,
+          neighborId: parsed.nodeId
+        });
+      } else {
+        push3({
+          edge,
+          direction: "outgoing",
+          neighborGraphDir: "",
+          neighborGraphPath: parsed.graphPath,
+          neighborId: parsed.nodeId
+        });
+      }
+    } else if (edge.target === nodeId || selfRef !== void 0 && edge.target === selfRef) {
+      push3({
+        edge,
+        direction: "incoming",
+        neighborGraphDir: graphDir,
+        neighborGraphPath: void 0,
+        neighborId: edge.source
+      });
+    }
+  }
+  if (selfRef !== void 0 && workspaceDir2) {
+    for (const g5 of await registeredGraphs(workspaceDir2)) {
+      if (path17.resolve(g5.graphDir) === path17.resolve(graphDir)) continue;
+      const info = await infoFor(g5.graphDir);
+      if (!info) continue;
+      for (const edge of await edgesFor(g5.graphDir, info.nodesDir)) {
+        if (edge.target !== selfRef) continue;
+        push3({
+          edge,
+          direction: "incoming",
+          neighborGraphDir: g5.graphDir,
+          neighborGraphPath: g5.graphPath,
+          neighborId: edge.source
+        });
+      }
+    }
+  }
+  const out = [];
+  for (const r5 of raw3) {
+    const nodeIdForm = r5.neighborGraphPath === void 0 ? r5.neighborId : `${r5.neighborGraphPath}:${r5.neighborId}`;
+    const entry = {
+      nodeId: nodeIdForm,
+      title: nodeIdForm,
+      direction: r5.direction,
+      label: r5.edge.label,
+      context: r5.edge.context,
+      ...r5.edge.created ? { edgeCreated: r5.edge.created } : {},
+      ...r5.edge.weight !== void 0 ? { weight: r5.edge.weight } : {}
+    };
+    if (r5.neighborGraphDir) {
+      const info = r5.neighborGraphPath === void 0 ? { title: ownGraphTitle, nodesDir } : await infoFor(r5.neighborGraphDir);
+      if (info) {
+        const neighborDir = path17.join(
+          r5.neighborGraphDir,
+          info.nodesDir,
+          r5.neighborId
+        );
+        const identity = await memoized(
+          memo.identities,
+          neighborDir,
+          () => readJsonFile(path17.join(neighborDir, "node.json"))
+        );
+        if (identity) {
+          const title = identity.title ?? r5.neighborId;
+          entry.title = r5.neighborGraphPath === void 0 ? title : `${title} (${info.title})`;
+          if (typeof identity.status === "string")
+            entry.status = identity.status;
+          const story = await memoized(
+            memo.stories,
+            neighborDir,
+            () => readTextFile(path17.join(neighborDir, "story.md"))
+          );
+          const gist = story ? storyGist(story) : "";
+          if (gist) entry.gist = gist;
+          const updatedMs = typeof identity.updated === "string" ? parseProtocolDate(identity.updated)?.getTime() ?? void 0 : void 0;
+          const dates = await memoized(
+            memo.contentDates,
+            r5.neighborGraphDir,
+            () => gitContentDatesForGraphCached(r5.neighborGraphDir)
+          );
+          const gitMs = dates.get(path17.resolve(neighborDir));
+          const lastMoved = updatedMs !== void 0 && gitMs !== void 0 ? Math.max(updatedMs, gitMs) : updatedMs ?? gitMs;
+          if (lastMoved !== void 0) {
+            entry.lastMoved = new Date(lastMoved).toISOString();
+            entry.ageDays = Math.max(
+              0,
+              Math.floor((now - lastMoved) / 864e5)
+            );
+          }
+        }
+      }
+    }
+    out.push(entry);
+  }
+  return out;
+}
+async function readNode(graphDir, nodeId, subPath, workspaceDir2, options7 = {}) {
   const graphData = await readJsonFile(
     path17.join(graphDir, "graph.json")
   );
@@ -169603,6 +169930,7 @@ async function readNode(graphDir, nodeId, subPath, workspaceDir2) {
       nodeId,
       subPath,
       workspaceDir2,
+      options7,
       3
     );
     return fallbackResult;
@@ -169617,7 +169945,9 @@ async function readNode(graphDir, nodeId, subPath, workspaceDir2) {
     gitContentDateForNode(nodeDir)
   ]);
   const [contentFiles, dataFiles, modified] = await Promise.all([
-    readContentFiles(path17.join(nodeDir, "content")),
+    readContentFiles(path17.join(nodeDir, "content"), {
+      bodies: options7.contentBodies ?? true
+    }),
     readDataFileIndex(path17.join(nodeDir, "data")),
     getNodeMtime(
       nodeDir,
@@ -169698,50 +170028,15 @@ async function readNode(graphDir, nodeId, subPath, workspaceDir2) {
       wsConfig.signals
     );
   }
-  const neighborhood2 = [];
-  for (const edge of graphData.edges) {
-    let connectedId;
-    let direction;
-    if (edge.source === nodeId) {
-      connectedId = edge.target;
-      direction = "outgoing";
-    } else if (edge.target === nodeId) {
-      connectedId = edge.source;
-      direction = "incoming";
-    }
-    if (!connectedId || !direction) continue;
-    const parsed = parseEdgeTarget(connectedId);
-    let title = connectedId;
-    if (!parsed.graphPath) {
-      const nodes = graphData.nodes ?? [];
-      const node2 = nodes.find((n4) => n4.id === parsed.nodeId);
-      if (node2) title = node2.title;
-    } else if (workspaceDir2) {
-      try {
-        const targetGraphDir = resolveWorkspaceRelativePath(
-          graphDir,
-          workspaceDir2,
-          parsed.graphPath
-        );
-        const targetGraph = await readJsonFile(
-          path17.join(targetGraphDir, "graph.json")
-        );
-        if (targetGraph) {
-          const nodes = targetGraph.nodes ?? [];
-          const node2 = nodes.find((n4) => n4.id === parsed.nodeId);
-          if (node2) title = `${node2.title} (${targetGraph.title})`;
-        }
-      } catch {
-      }
-    }
-    neighborhood2.push({
-      nodeId: connectedId,
-      title,
-      direction,
-      label: edge.label,
-      context: edge.context
-    });
-  }
+  const neighborhood2 = await buildNeighborhood(
+    graphDir,
+    graphData,
+    nodesDir,
+    nodeId,
+    subPath,
+    workspaceDir2,
+    options7
+  );
   const storedHash = await computeContentHashForDir(nodeDir);
   const workspaceRevision = await hashGraphJson(graphDir);
   const revision = {
@@ -170881,9 +171176,8 @@ async function persistRebuiltGraph(graphDir) {
   return built;
 }
 function discoverGraphDirs(workspaceRoot) {
-  const worktreesDir = path17.join(workspaceRoot, ".claude", "worktrees");
   const out = execSync(
-    `find ${JSON.stringify(workspaceRoot)} \\( \\( -name node_modules -o -name .git \\) -o -path ${JSON.stringify(worktreesDir)} \\) -prune -o -name ${JSON.stringify(GRAPH_META_FILE)} -print`,
+    `find ${JSON.stringify(workspaceRoot)} \\( \\( -name node_modules -o -name .git \\) -o -path "*/.claude/worktrees" \\) -prune -o -name ${JSON.stringify(GRAPH_META_FILE)} -print`,
     { encoding: "utf-8" }
   );
   return out.split("\n").map((s) => s.trim()).filter((s) => s.length > 0).map((metaPath) => path17.dirname(metaPath));
@@ -171450,6 +171744,135 @@ async function considerContentDirs(dir, consider) {
   }
 }
 
+// src/server/retrieval/embedder.ts
+import fs17 from "fs/promises";
+import path21 from "path";
+var POTION_MODEL_ID = "minishlab/potion-retrieval-32M";
+var MODEL_ONNX_URL = `https://huggingface.co/${POTION_MODEL_ID}/resolve/main/onnx/model.onnx`;
+async function fileExists4(filePath) {
+  try {
+    await fs17.stat(filePath);
+    return true;
+  } catch {
+    return false;
+  }
+}
+function potionModelPath(cacheDir) {
+  return path21.join(cacheDir, POTION_MODEL_ID, "onnx", "model.onnx");
+}
+async function ensureModelFile(cacheDir) {
+  const modelPath = potionModelPath(cacheDir);
+  if (await fileExists4(modelPath)) return modelPath;
+  await fs17.mkdir(path21.dirname(modelPath), { recursive: true });
+  const res = await fetch(MODEL_ONNX_URL);
+  if (!res.ok) {
+    throw new Error(
+      `model download failed: HTTP ${res.status} ${MODEL_ONNX_URL}`
+    );
+  }
+  const bytes = Buffer.from(await res.arrayBuffer());
+  const tmpPath = `${modelPath}.download`;
+  await fs17.writeFile(tmpPath, bytes);
+  await fs17.rename(tmpPath, modelPath);
+  return modelPath;
+}
+var NATIVE_BACKEND_MISSING_REASON = "the native onnxruntime-node backend is not loadable in this build \u2014 the plugin bundle inlines its JS but not the native binding (qino-os annotations/031)";
+var SEMANTIC_REMEDY = "Start the source dev server (`pnpm dev:os` in qinolabs-repo): it takes over :4020 and carries the native backend. Sessions already delegating to :4020 get semantic ranking on their next search; a session serving its own bundled index needs a restart.";
+function classifyEmbedderFailure(err) {
+  const message = err instanceof Error ? err.message : String(err);
+  if (/listSupportedBackends|onnxruntime_binding|onnxruntime-node|\.node\b|Cannot find module|Dynamic require of/.test(
+    message
+  )) {
+    return { reason: NATIVE_BACKEND_MISSING_REASON, permanent: true };
+  }
+  if (/model download failed|fetch failed|ENOTFOUND|ECONNREFUSED|ECONNRESET|ETIMEDOUT|HTTP \d{3}/.test(
+    message
+  )) {
+    return {
+      reason: `the embedding model files could not be fetched (offline, or huggingface.co unreachable): ${message}`,
+      permanent: false
+    };
+  }
+  return {
+    reason: `embedding backend failed to load: ${message}`,
+    permanent: false
+  };
+}
+async function probeNativeBackend() {
+  try {
+    const ort = await Promise.resolve().then(() => __toESM(require_dist2(), 1));
+    const list4 = ort.listSupportedBackends;
+    if (typeof list4 !== "function") {
+      return { ok: false, reason: NATIVE_BACKEND_MISSING_REASON };
+    }
+    return { ok: true };
+  } catch (err) {
+    return { ok: false, reason: classifyEmbedderFailure(err).reason };
+  }
+}
+async function createPotionEmbedder(cacheDir) {
+  const { AutoTokenizer: AutoTokenizer2 } = await Promise.resolve().then(() => (init_transformers_node(), transformers_node_exports));
+  const ort = await Promise.resolve().then(() => __toESM(require_dist2(), 1));
+  const tokenizer = await AutoTokenizer2.from_pretrained(POTION_MODEL_ID, {
+    cache_dir: cacheDir
+  });
+  const modelPath = await ensureModelFile(cacheDir);
+  const session = await ort.InferenceSession.create(modelPath);
+  return {
+    id: POTION_MODEL_ID,
+    // potion uses identity query/doc formats — the isQuery flag exists for
+    // interface parity with instruction-tuned embedders.
+    async embed(texts, _opts) {
+      const seqs = texts.map(
+        (t37) => tokenizer.encode(t37, { add_special_tokens: false })
+      );
+      const flat = [];
+      const offsets = [];
+      for (const ids of seqs) {
+        offsets.push(flat.length);
+        if (ids.length) flat.push(...ids);
+        else flat.push(0);
+      }
+      const feeds = {
+        input_ids: new ort.Tensor(
+          "int64",
+          BigInt64Array.from(flat.map(BigInt)),
+          [flat.length]
+        ),
+        offsets: new ort.Tensor(
+          "int64",
+          BigInt64Array.from(offsets.map(BigInt)),
+          [offsets.length]
+        )
+      };
+      const out = await session.run(feeds);
+      const outputName = session.outputNames[0];
+      const emb = outputName !== void 0 ? out[outputName] : void 0;
+      if (!emb) throw new Error("embedding session returned no output");
+      const [n4, dim] = emb.dims;
+      if (typeof n4 !== "number" || typeof dim !== "number") {
+        throw new Error(
+          `unexpected embedding dims: ${JSON.stringify(emb.dims)}`
+        );
+      }
+      const rawData = emb.data;
+      if (!(rawData instanceof Float32Array)) {
+        throw new Error(`expected float32 embedding output, got ${emb.type}`);
+      }
+      const data = Float32Array.from(rawData);
+      for (let i = 0; i < n4; i++) {
+        let norm = 0;
+        for (let d5 = 0; d5 < dim; d5++) norm += (data[i * dim + d5] ?? 0) ** 2;
+        norm = Math.sqrt(norm) || 1;
+        for (let d5 = 0; d5 < dim; d5++) {
+          data[i * dim + d5] = (data[i * dim + d5] ?? 0) / norm;
+        }
+      }
+      return { n: n4, dim, data };
+    }
+  };
+}
+
 // src/server/retrieval/index.ts
 import fs18 from "fs/promises";
 import path24 from "path";
@@ -171497,12 +171920,12 @@ function splitOversized(body) {
   if (cur) parts.push(cur);
   return parts;
 }
-function contextualPrefix(doc, headingPath, storyGist) {
+function contextualPrefix(doc, headingPath, storyGist2) {
   const bits = [
     `workspace: ${doc.workspace}`,
     `node: ${doc.title} (${doc.type}, ${doc.status})`
   ];
-  if (doc.kind !== "story" && storyGist) bits.push(`about: ${storyGist}`);
+  if (doc.kind !== "story" && storyGist2) bits.push(`about: ${storyGist2}`);
   if (doc.kind !== "story") bits.push(`file: ${doc.file}`);
   if (headingPath.length) bits.push(`section: ${headingPath.join(" > ")}`);
   return bits.join(" | ");
@@ -171566,101 +171989,6 @@ function buildEdgeDocs(nodes) {
     }
   }
   return edges;
-}
-
-// src/server/retrieval/embedder.ts
-import fs17 from "fs/promises";
-import path21 from "path";
-var POTION_MODEL_ID = "minishlab/potion-retrieval-32M";
-var MODEL_ONNX_URL = `https://huggingface.co/${POTION_MODEL_ID}/resolve/main/onnx/model.onnx`;
-async function fileExists4(filePath) {
-  try {
-    await fs17.stat(filePath);
-    return true;
-  } catch {
-    return false;
-  }
-}
-function potionModelPath(cacheDir) {
-  return path21.join(cacheDir, POTION_MODEL_ID, "onnx", "model.onnx");
-}
-async function ensureModelFile(cacheDir) {
-  const modelPath = potionModelPath(cacheDir);
-  if (await fileExists4(modelPath)) return modelPath;
-  await fs17.mkdir(path21.dirname(modelPath), { recursive: true });
-  const res = await fetch(MODEL_ONNX_URL);
-  if (!res.ok) {
-    throw new Error(
-      `model download failed: HTTP ${res.status} ${MODEL_ONNX_URL}`
-    );
-  }
-  const bytes = Buffer.from(await res.arrayBuffer());
-  const tmpPath = `${modelPath}.download`;
-  await fs17.writeFile(tmpPath, bytes);
-  await fs17.rename(tmpPath, modelPath);
-  return modelPath;
-}
-async function createPotionEmbedder(cacheDir) {
-  const { AutoTokenizer: AutoTokenizer2 } = await Promise.resolve().then(() => (init_transformers_node(), transformers_node_exports));
-  const ort = await Promise.resolve().then(() => __toESM(require_dist2(), 1));
-  const tokenizer = await AutoTokenizer2.from_pretrained(POTION_MODEL_ID, {
-    cache_dir: cacheDir
-  });
-  const modelPath = await ensureModelFile(cacheDir);
-  const session = await ort.InferenceSession.create(modelPath);
-  return {
-    id: POTION_MODEL_ID,
-    // potion uses identity query/doc formats — the isQuery flag exists for
-    // interface parity with instruction-tuned embedders.
-    async embed(texts, _opts) {
-      const seqs = texts.map(
-        (t37) => tokenizer.encode(t37, { add_special_tokens: false })
-      );
-      const flat = [];
-      const offsets = [];
-      for (const ids of seqs) {
-        offsets.push(flat.length);
-        if (ids.length) flat.push(...ids);
-        else flat.push(0);
-      }
-      const feeds = {
-        input_ids: new ort.Tensor(
-          "int64",
-          BigInt64Array.from(flat.map(BigInt)),
-          [flat.length]
-        ),
-        offsets: new ort.Tensor(
-          "int64",
-          BigInt64Array.from(offsets.map(BigInt)),
-          [offsets.length]
-        )
-      };
-      const out = await session.run(feeds);
-      const outputName = session.outputNames[0];
-      const emb = outputName !== void 0 ? out[outputName] : void 0;
-      if (!emb) throw new Error("embedding session returned no output");
-      const [n4, dim] = emb.dims;
-      if (typeof n4 !== "number" || typeof dim !== "number") {
-        throw new Error(
-          `unexpected embedding dims: ${JSON.stringify(emb.dims)}`
-        );
-      }
-      const rawData = emb.data;
-      if (!(rawData instanceof Float32Array)) {
-        throw new Error(`expected float32 embedding output, got ${emb.type}`);
-      }
-      const data = Float32Array.from(rawData);
-      for (let i = 0; i < n4; i++) {
-        let norm = 0;
-        for (let d5 = 0; d5 < dim; d5++) norm += (data[i * dim + d5] ?? 0) ** 2;
-        norm = Math.sqrt(norm) || 1;
-        for (let d5 = 0; d5 < dim; d5++) {
-          data[i * dim + d5] = (data[i * dim + d5] ?? 0) / norm;
-        }
-      }
-      return { n: n4, dim, data };
-    }
-  };
 }
 
 // ../../node_modules/minisearch/dist/es/index.js
@@ -173581,6 +173909,7 @@ async function embedBatched(embedder, texts) {
   }
   return { dim, data: all2 };
 }
+var EMBEDDER_RETRY_MS = 6e4;
 var RetrievalService = class {
   metaRoot;
   // `protected` (not private) so the serve-stale spec can prime it on a
@@ -173588,17 +173917,47 @@ var RetrievalService = class {
   current = null;
   inflight = null;
   embedder = null;
+  embedderFailure = null;
+  nativeProbe = null;
   triedDiskLoad = false;
   constructor(metaRoot) {
     this.metaRoot = metaRoot;
   }
   async getEmbedder() {
-    if (!this.embedder) {
+    if (this.embedder) return this.embedder;
+    const failure = this.embedderFailure;
+    if (failure && (failure.permanent || Date.now() - failure.at < EMBEDDER_RETRY_MS)) {
+      throw new Error(failure.reason);
+    }
+    try {
       this.embedder = await createPotionEmbedder(
         indexPaths(this.metaRoot).models
       );
+      this.embedderFailure = null;
+      return this.embedder;
+    } catch (err) {
+      const classified = classifyEmbedderFailure(err);
+      this.embedderFailure = { ...classified, at: Date.now() };
+      throw new Error(classified.reason);
     }
-    return this.embedder;
+  }
+  /**
+   * Semantic availability without forcing a model load. Answers from a real
+   * load (success or failure) when one has happened; otherwise from the cheap
+   * native-backend probe, cached for the process lifetime.
+   */
+  async embedderStatus() {
+    if (this.embedder) return { semantic: true, basis: "loaded" };
+    if (this.embedderFailure) {
+      return {
+        semantic: false,
+        basis: "load-failed",
+        reason: this.embedderFailure.reason
+      };
+    }
+    this.nativeProbe ??= probeNativeBackend();
+    const probe = await this.nativeProbe;
+    return probe.ok ? { semantic: true, basis: "native-probe" } : { semantic: false, basis: "native-probe", reason: probe.reason };
   }
   /**
    * Ensure the index exists and reflects current content. Loads a persisted
@@ -173629,7 +173988,12 @@ var RetrievalService = class {
       void this.ensure().catch(() => void 0);
       return { index: this.current, rebuilt: false };
     }
-    return this.ensure();
+    try {
+      return await this.ensure();
+    } catch (err) {
+      if (this.current) return { index: this.current, rebuilt: false };
+      throw err;
+    }
   }
   async ensureInner() {
     const stamps = await scanContentStamps(this.metaRoot);
@@ -173762,6 +174126,9 @@ var CANDIDATE_POOL = 30;
 function isSearchScope(value) {
   return value === "auto" || value === "nodes" || value === "chunks" || value === "edges";
 }
+var HYBRID_RANKING = "hybrid \u2014 BM25 + dense (potion-retrieval-32M), RRF-fused";
+var LEXICAL_ONLY_RANKING = "LEXICAL-ONLY (BM25) \u2014 SEMANTIC RANKING IS OFF";
+var LEXICAL_ONLY_CAVEAT = "Only exact-word matches are ranked: paraphrases and meaning-matches are missing, scores are BM25 rank-fusion (not cosine), and evidence.topScore/zTop/gapP90 are null. Do NOT conclude a topic is absent from the graph on this response.";
 function rrfFuse(lists, k7 = K_RRF) {
   const score = /* @__PURE__ */ new Map();
   for (const list4 of lists) {
@@ -173827,24 +174194,31 @@ async function tryEmbedQuery(metaRoot, query) {
   try {
     const embedder = await getRetrievalService(metaRoot).getEmbedder();
     const q11 = await embedder.embed([query], { isQuery: true });
-    return q11.data;
+    return { qvec: q11.data };
   } catch (err) {
     const reason = err instanceof Error ? err.message : String(err);
     console.error(
-      `[qino-os] semantic search unavailable \u2014 embedding backend did not load (${reason}). Falling back to lexical-only results; run the dev server (pnpm dev:os) for semantic search.`
+      `[qino-os] SEMANTIC RANKING OFF for this search \u2014 ${reason}. Results are lexical-only (BM25). ${SEMANTIC_REMEDY}`
     );
-    return null;
+    return { qvec: null, reason };
   }
 }
 async function semanticSearch(metaRoot, args) {
   const scope = args.scope ?? "auto";
   const limit = Math.max(1, Math.min(args.limit ?? 10, 50));
   const { index: index2, rebuilt } = await ensureIndex(metaRoot);
-  const qvec = await tryEmbedQuery(metaRoot, args.query);
-  const semanticDegraded = qvec === null;
-  if (scope === "edges" && semanticDegraded) {
+  const embedded = await tryEmbedQuery(metaRoot, args.query);
+  const qvec = embedded.qvec;
+  const retrieval = embedded.qvec === null ? {
+    semantic: false,
+    ranking: LEXICAL_ONLY_RANKING,
+    reason: embedded.reason,
+    remedy: SEMANTIC_REMEDY,
+    caveat: LEXICAL_ONLY_CAVEAT
+  } : { semantic: true, ranking: HYBRID_RANKING };
+  if (scope === "edges" && qvec === null) {
     throw new Error(
-      'edges scope needs semantic search, and the embedding backend is unavailable. Try scope "auto" or "nodes" for lexical-only results, or run the dev server (pnpm dev:os) for semantic search.'
+      `edges scope needs semantic search, and semantic ranking is OFF in this process (${embedded.reason}). Try scope "auto" or "nodes" for lexical-only results. ${SEMANTIC_REMEDY}`
     );
   }
   const nodes = nodeMetaMap(index2);
@@ -173924,7 +174298,7 @@ async function semanticSearch(metaRoot, args) {
   } else {
     if (!qvec) {
       throw new Error(
-        "edges scope needs semantic search, and the embedding backend is unavailable."
+        "edges scope needs semantic search, and semantic ranking is OFF in this process."
       );
     }
     const { edges } = index2.meta;
@@ -173971,14 +174345,12 @@ async function semanticSearch(metaRoot, args) {
     rebuilt
   };
   return {
+    retrieval,
     query: args.query,
     scope,
     results,
     evidence,
-    index: indexInfo(index2),
-    ...semanticDegraded ? {
-      warning: "semantic search unavailable (embedding backend did not load) \u2014 results are lexical-only (BM25); run the dev server (pnpm dev:os) for full ranking"
-    } : {}
+    index: indexInfo(index2)
   };
 }
 function indexAgeSeconds(index2) {
@@ -187007,8 +187379,23 @@ var MIME_TYPES = {
   ".svg": "image/svg+xml",
   ".ico": "image/x-icon"
 };
-function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces, watcher, viewerBaseUrl, messageStore) {
+function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces, watcher, viewerBaseUrl, messageStore, runtime) {
   const app = new Hono2();
+  app.get("/api/server-info", async (c5) => {
+    if (!runtime) return c5.json({ error: "server-info not available" }, 404);
+    return c5.json(await runtime.serverInfo());
+  });
+  app.post("/api/yield-port", (c5) => {
+    const address = getConnInfo(c5).remote.address;
+    if (!isLoopbackAddress(address)) {
+      return c5.json({ yielded: false, detail: "loopback only" }, 403);
+    }
+    if (!runtime) {
+      return c5.json({ yielded: false, detail: "no runtime hooks" }, 409);
+    }
+    const result = runtime.yieldPort();
+    return c5.json(result, result.yielded ? 200 : 409);
+  });
   const getDeeplinkConfig = (requestUrl) => {
     if (baseUrl) return { baseUrl, viewerBaseUrl };
     if (requestUrl) {
@@ -187090,7 +187477,10 @@ function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces,
     const nodeId = c5.req.param("nodeId");
     const graphPath = resolveApiPath(c5.req.query("path"));
     const graphDir = graphPath ? nodePath.join(workspaceDir2, graphPath) : workspaceDir2;
-    const node2 = await readNode(graphDir, nodeId, graphPath, workspaceDir2);
+    const contentBodies = c5.req.query("contentBodies") !== "false";
+    const node2 = await readNode(graphDir, nodeId, graphPath, workspaceDir2, {
+      contentBodies
+    });
     if (!node2) {
       return c5.json({ error: "Node not found" }, 404);
     }
@@ -187643,11 +188033,32 @@ function createApi(workspaceDir2, repoRoot, staticDir, baseUrl, knownWorkspaces,
 
 // src/server/mcp-instructions.ts
 function buildServerInstructions(options7) {
-  const { mode: mode2, viewerUrl: viewerUrl2 } = options7;
+  const { mode: mode2, viewerUrl: viewerUrl2, retrieval } = options7;
   const lines = [];
   lines.push(
     "qino-os is an MCP server for exploring qino-protocol knowledge graphs \u2014 interconnected nodes of concepts, plans, tools, and research."
   );
+  if (retrieval) {
+    lines.push("", "## Retrieval status", "");
+    const via = retrieval.delegatedTo ? ` (delegating to the qino-os at ${retrieval.delegatedTo})` : "";
+    if (retrieval.semantic === true) {
+      lines.push(
+        `Semantic ranking: ON${via} \u2014 \`search\` is hybrid BM25 + dense (potion-retrieval-32M).`
+      );
+    } else if (retrieval.semantic === false) {
+      lines.push(
+        `**\u26A0 SEMANTIC RANKING IS OFF IN THIS SESSION${via}.** \`search\` returns lexical-only (BM25) results: only exact-word matches rank, paraphrases and meaning-matches are missing, the evidence block is null, and a weak or empty result is NOT evidence that a topic is absent from the graph. Scope \`edges\` is unavailable. Every search response repeats this in its \`retrieval\` block.`,
+        "",
+        `Reason: ${retrieval.reason ?? "unknown"}`,
+        "",
+        `Remedy: ${retrieval.remedy ?? "restart against a qino-os with the native embedding backend."}`
+      );
+    } else {
+      lines.push(
+        `Semantic ranking: UNKNOWN${via} \u2014 the server on the other end predates the status report. Read the \`retrieval\` block of the first search response before trusting a weak result as absence.`
+      );
+    }
+  }
   if (viewerUrl2) {
     lines.push(
       "",
@@ -188311,7 +188722,7 @@ WHEN TO USE:
 - Checking for sub-graph \u2014 node might have facets
 - Reading annotations \u2014 see what's been noticed about this node
 
-RETURNS: identity (title, type, status, tags, held_threads), story (the impulse), contentFiles[] (filename + size \u2014 use read_content to fetch bodies), annotations[] (each includes meta.status \u2014 accepted proposals should be acted on), connectedSignals[] (recent signals from connected nodes), neighborhood[] (edges with resolved titles \u2014 shows what this node connects to and why), hasSubGraph, breadcrumb[].
+RETURNS: identity (title, type, status, tags, held_threads), story (the impulse), contentFiles[] (filename + size \u2014 use read_content to fetch bodies), annotations[] (each includes meta.status \u2014 accepted proposals should be acted on), connectedSignals[] (recent signals from connected nodes), neighborhood[] (edges with resolved titles, in both directions across graphs \u2014 each entry carries the neighbor's gist (its story's opening: its current claim), lastMoved/ageDays, status, and the edge's edgeCreated/weight; read the context sentence as a dated recognition beside a live claim, not as the claim itself), hasSubGraph, breadcrumb[].
 
 NOTE: contentFiles returns metadata only (filename + size in bytes), not file content. Use read_content(nodeId, filename) to fetch specific content files. This keeps read_node lightweight for nodes with many content files.
 
@@ -188325,7 +188736,9 @@ Each response includes a \`revision.contentHash\`. **If you have a prior \`read_
       graphPath: external_exports.string().optional().describe(GRAPH_PATH_NODE)
     },
     async ({ nodeId, graphPath }) => {
-      const node2 = await ops.readNode(nodeId, graphPath);
+      const node2 = await ops.readNode(nodeId, graphPath, {
+        contentBodies: false
+      });
       if (!node2) {
         return {
           content: [
@@ -188341,7 +188754,7 @@ Each response includes a \`revision.contentHash\`. **If you have a prior \`read_
         ...node2,
         contentFiles: node2.contentFiles.map((f4) => ({
           filename: f4.filename,
-          size: new TextEncoder().encode(f4.content).byteLength
+          size: f4.size ?? new TextEncoder().encode(f4.content).byteLength
         }))
       };
       return {
@@ -188427,6 +188840,8 @@ SCOPES:
 - chunks: individual content sections, returned with file + heading path
 - edges: searches the human-written edge context sentences; returns edges with their context and endpoint nodes
 
+RETRIEVAL STATUS \u2014 the response's first field, retrieval, says which ranking actually ran. retrieval.semantic=false means the dense leg did not run and the results are lexical-only (BM25): paraphrases are missing, the evidence block is null, and the response cannot support an absence claim \u2014 follow retrieval.remedy before concluding anything is missing.
+
 EVIDENCE \u2014 weak evidence is NOT absence: there is no server-side "absent" verdict. Read the evidence block and judge. Scores near or below absenceFloorHint suggest the topic may not be in the graph, but genuinely related material can score low \u2014 a gradient, not a gate. nearestMisses lists the closest below-floor nodes; indexAgeSeconds and rebuilt report index currency (stale indexes rebuild automatically before answering). Composted/deprecated nodes appear with status shown \u2014 weigh them below live counterparts.
 
 RECENCY \u2014 status is not the only staleness signal, and ranking is by relevance only (never by recency). Each node/chunk hit carries updated (ISO timestamp of the node's last content edit; absent if unset) \u2014 read it. A hit can be superseded by a later iteration or a more canonical node while its own status still reads 'active', so an old updated, or an updated far behind sibling hits, is a prompt to check whether later work replaces it: a superseding iteration, a "genesis, not canonical" edge, a correcting annotation (neighborhood / read_node surface these). Weigh canonical over genesis; before treating a hit as current \u2014 or pointing a user or agent at it as canonical \u2014 never cite a genesis artifact as what ships today without checking what replaced it. Internal discipline by default \u2014 surface the temporal caveat only when it changes the answer.`,
@@ -188450,14 +188865,18 @@ RECENCY \u2014 status is not the only staleness signal, and ranking is by releva
           limit,
           workspace
         });
-        return {
-          content: [
-            {
-              type: "text",
-              text: JSON.stringify(result, null, 2)
-            }
-          ]
-        };
+        const content3 = [];
+        if (result.retrieval && !result.retrieval.semantic) {
+          content3.push({
+            type: "text",
+            text: `\u26A0 SEMANTIC RANKING OFF \u2014 these results are lexical-only (BM25). ${result.retrieval.caveat ?? ""} Reason: ${result.retrieval.reason ?? "unknown"}. Remedy: ${result.retrieval.remedy ?? "run a qino-os with the native embedding backend"}`
+          });
+        }
+        content3.push({
+          type: "text",
+          text: JSON.stringify(result, null, 2)
+        });
+        return { content: content3 };
       } catch (err) {
         const message = err instanceof Error ? err.message : "Unknown error";
         return {
@@ -189562,12 +189981,13 @@ function createDirectOps(workspaceDir2, _repoRoot, baseUrl, knownWorkspaces, wat
       );
       return { ...graph, _links };
     },
-    readNode: async (nodeId, graphPath) => {
+    readNode: async (nodeId, graphPath, options7) => {
       const node2 = await readNode(
         resolveGraphDir(graphPath),
         nodeId,
         graphPath,
-        workspaceDir2
+        workspaceDir2,
+        { contentBodies: options7?.contentBodies ?? true }
       );
       if (!node2) return null;
       const _links = buildNodeLinks(
@@ -189827,7 +190247,8 @@ function createDirectOps(workspaceDir2, _repoRoot, baseUrl, knownWorkspaces, wat
             graphPath ? `${workspaceDir2}/${graphPath}` : workspaceDir2,
             node2.id,
             graphPath,
-            workspaceDir2
+            workspaceDir2,
+            { contentBodies: false }
           );
           const story = detail?.story ? detail.story.slice(0, 500) : void 0;
           const memberRefs = detail ? detail.neighborhood.filter(
@@ -189902,11 +190323,14 @@ function createHttpOps(apiUrl) {
       if (res.status === 404) return null;
       return handleResponse(res);
     },
-    readNode: async (nodeId, graphPath) => {
+    readNode: async (nodeId, graphPath, options7) => {
+      const params = {};
+      if (graphPath) params["path"] = graphPath;
+      if (options7?.contentBodies === false) params["contentBodies"] = "false";
       const res = await fetch(
         buildUrl(
           `/api/nodes/${encodeURIComponent(nodeId)}`,
-          graphPath ? { path: graphPath } : void 0
+          Object.keys(params).length > 0 ? params : void 0
         )
       );
       if (res.status === 404) return null;
@@ -190199,6 +190623,40 @@ function createHttpOps(apiUrl) {
   };
 }
 
+// src/server/transport-mode.ts
+function resolveTransport(input) {
+  const wantsStdio = input.argv.includes("--stdio");
+  const wantsHttp = input.argv.includes("--http");
+  if (wantsStdio && wantsHttp) {
+    throw new Error("--stdio and --http are mutually exclusive");
+  }
+  if (wantsStdio) return { transport: "stdio", basis: "flag" };
+  if (wantsHttp) return { transport: "http", basis: "flag" };
+  const fromEnv = input.env["QINO_TRANSPORT"];
+  if (fromEnv === "stdio" || fromEnv === "http") {
+    return { transport: fromEnv, basis: "env" };
+  }
+  if (fromEnv !== void 0 && fromEnv !== "") {
+    throw new Error(
+      `QINO_TRANSPORT must be "stdio" or "http" (got ${JSON.stringify(fromEnv)})`
+    );
+  }
+  return {
+    transport: input.stdinIsTTY ? "http" : "stdio",
+    basis: "heuristic"
+  };
+}
+function describeTransportBasis(r5) {
+  switch (r5.basis) {
+    case "flag":
+      return `--${r5.transport}`;
+    case "env":
+      return `QINO_TRANSPORT=${r5.transport}`;
+    case "heuristic":
+      return r5.transport === "stdio" ? "heuristic: stdin is not a TTY \u2014 pass --stdio/--http to be explicit" : "heuristic: stdin is a TTY \u2014 pass --stdio/--http to be explicit";
+  }
+}
+
 // src/server/index.ts
 var __dirname3 = path30.dirname(fileURLToPath7(import.meta.url));
 var workspaceDir = process.env.WORKSPACE_DIR ?? getCliArg("--workspace-dir") ?? process.cwd();
@@ -190227,31 +190685,50 @@ function getCliArg(flag) {
   }
   return void 0;
 }
-var isStdio = !process.stdin.isTTY;
+var transportResolution = resolveTransport({
+  argv: process.argv,
+  env: process.env,
+  stdinIsTTY: process.stdin.isTTY
+});
+var transport = transportResolution.transport;
+var isStdio = transport === "stdio";
 async function probeExistingServer(targetPort) {
-  try {
-    const url4 = `http://localhost:${targetPort}/api/config`;
-    const res = await fetch(url4, { signal: AbortSignal.timeout(1e3) });
-    if (res.ok) return `http://localhost:${targetPort}`;
-  } catch {
-  }
-  return void 0;
+  const holder = await describePortHolder(targetPort);
+  if (holder.kind === "none") return void 0;
+  const url4 = `http://localhost:${targetPort}`;
+  return holder.kind === "qino-os" ? { url: url4, info: holder.info } : { url: url4 };
 }
+function listenOnce(fetchHandler, targetPort) {
+  return new Promise((resolve4) => {
+    const server = serve(
+      { fetch: fetchHandler, port: targetPort },
+      () => resolve4({ server })
+    );
+    server.once("error", (error51) => resolve4({ error: error51 }));
+  });
+}
+var BIND_RETRY_MS = 250;
+var BIND_RETRIES_AFTER_YIELD = 20;
 async function main() {
   const bootT0 = Date.now();
+  const bootedAt = new Date(bootT0).toISOString();
   const sinceBoot = () => `(+${Date.now() - bootT0}ms)`;
+  const source2 = detectSource(import.meta.url);
   console.error(
-    `[qino-os] starting \u2014 mode=${isStdio ? "stdio" : "http"} workspace-dir=${workspaceDir} port=${port} ${sinceBoot()}`
+    `[qino-os] starting \u2014 transport=${transport} (${describeTransportBasis(transportResolution)}) source=${source2} pid=${process.pid} workspace-dir=${workspaceDir} port=${port} ${sinceBoot()}`
   );
   const repoRoot = repoRootOverride ?? await resolveGitRoot(workspaceDir);
   const log2 = isStdio ? console.error : console.log;
   let apiUrl = explicitApiUrl;
+  let delegateInfo;
   if (!apiUrl && isStdio) {
     const existing = await probeExistingServer(port);
     if (existing) {
-      apiUrl = existing;
+      apiUrl = existing.url;
+      delegateInfo = existing.info;
+      const who = delegateInfo ? `${delegateInfo.transport}-mode ${delegateInfo.source} build, pid ${delegateInfo.pid}, semantic ranking ${delegateInfo.retrieval.semantic ? "ON" : "OFF"}` : "an older qino-os (no self-report)";
       log2(
-        `[qino-os] Detected running qino-os on :${port} \u2014 delegating to dev server`
+        `[qino-os] Detected running qino-os on :${port} \u2014 delegating to it (${who})`
       );
     }
   }
@@ -190267,9 +190744,29 @@ async function main() {
     `[qino-os] repo-root=${repoRoot ?? "(none)"} ${isClientMode ? `client-mode \u2192 delegating to ${apiUrl}` : "standalone"} ${sinceBoot()}`
   );
   const baseUrl = `http://localhost:${port}`;
+  let retrievalInstructions;
+  if (isClientMode) {
+    retrievalInstructions = delegateInfo ? {
+      semantic: delegateInfo.retrieval.semantic,
+      ...delegateInfo.retrieval.reason !== void 0 ? { reason: delegateInfo.retrieval.reason } : {},
+      remedy: SEMANTIC_REMEDY,
+      delegatedTo: apiUrl
+    } : { semantic: null, delegatedTo: apiUrl };
+  } else {
+    const status = await getRetrievalService(workspaceDir).embedderStatus();
+    retrievalInstructions = {
+      semantic: status.semantic,
+      ...status.reason !== void 0 ? { reason: status.reason } : {},
+      remedy: SEMANTIC_REMEDY
+    };
+  }
+  console.error(
+    retrievalInstructions.semantic === true ? `[qino-os] retrieval: semantic ranking ON ${sinceBoot()}` : retrievalInstructions.semantic === false ? `[qino-os] retrieval: SEMANTIC RANKING OFF \u2014 ${retrievalInstructions.reason ?? "unknown"}. search is lexical-only (BM25). ${SEMANTIC_REMEDY} ${sinceBoot()}` : `[qino-os] retrieval: semantic ranking UNKNOWN (delegate predates the status report) ${sinceBoot()}`
+  );
   const instructions = buildServerInstructions({
     mode,
-    viewerUrl: viewerUrl ?? baseUrl
+    viewerUrl: viewerUrl ?? baseUrl,
+    retrieval: retrievalInstructions
   });
   let watcher;
   let messageStore;
@@ -190279,6 +190776,43 @@ async function main() {
     await messageStore.loadSaved();
     const serveSpa = await hasBuiltSpa();
     const staticDir = serveSpa ? distUiDir : void 0;
+    let httpServer;
+    const runtime = {
+      serverInfo: async () => ({
+        name: "qino-os",
+        pid: process.pid,
+        transport,
+        source: source2,
+        bootedAt,
+        uptimeSeconds: Math.round((Date.now() - bootT0) / 1e3),
+        workspaceDir,
+        retrieval: await getRetrievalService(workspaceDir).embedderStatus()
+      }),
+      yieldPort: () => {
+        if (!isStdio) {
+          return {
+            yielded: false,
+            detail: `pid ${process.pid} is an http-mode qino-os; it owns this port`
+          };
+        }
+        const server = httpServer;
+        if (!server) {
+          return { yielded: false, detail: "no HTTP server bound" };
+        }
+        httpServer = void 0;
+        setTimeout(() => {
+          if ("closeAllConnections" in server) server.closeAllConnections();
+          server.close();
+          log2(
+            `[qino-os] yielded port ${port} to a source dev server \u2014 continuing as a direct MCP server without a local UI port ${sinceBoot()}`
+          );
+        }, 100);
+        return {
+          yielded: true,
+          detail: `pid ${process.pid} (stdio) is releasing port ${port}`
+        };
+      }
+    };
     const api = createApi(
       workspaceDir,
       repoRoot,
@@ -190287,7 +190821,8 @@ async function main() {
       knownWorkspaces,
       watcher,
       viewerUrl,
-      messageStore
+      messageStore,
+      runtime
     );
     const httpOps = createDirectOps(
       workspaceDir,
@@ -190299,7 +190834,7 @@ async function main() {
       messageStore
     );
     api.all("/mcp", async (c5) => {
-      const transport = new WebStandardStreamableHTTPServerTransport({
+      const transport2 = new WebStandardStreamableHTTPServerTransport({
         sessionIdGenerator: void 0
         // stateless
       });
@@ -190308,11 +190843,11 @@ async function main() {
         { instructions }
       );
       registerTools(server, httpOps, { mode, workspaceDir });
-      await server.connect(transport);
-      const response = await transport.handleRequest(c5.req.raw);
+      await server.connect(transport2);
+      const response = await transport2.handleRequest(c5.req.raw);
       return response;
     });
-    const httpServer = serve({ fetch: api.fetch, port }, () => {
+    const onListening = () => {
       log2(
         `[qino-os] HTTP server listening on http://localhost:${port} ${sinceBoot()}`
       );
@@ -190324,20 +190859,49 @@ async function main() {
       if (!noBrowser && !isStdio) {
         openBrowser(`http://localhost:${port}`);
       }
-    });
-    httpServer.on("error", (err) => {
-      if (err.code === "EADDRINUSE") {
+    };
+    let attempt = await listenOnce(api.fetch, port);
+    if ("error" in attempt && attempt.error.code === "EADDRINUSE" && !isStdio) {
+      const claim = await negotiatePort(port);
+      if (claim.outcome === "yielded") {
         log2(
-          `[qino-os] port ${port} already in use \u2014 another qino-os owns the UI; this instance continues as a direct MCP server without its own HTTP server. ${sinceBoot()}`
+          `[qino-os] port ${port} was held by a stdio qino-os (pid ${claim.holder.pid}, ${claim.holder.source} build) \u2014 it agreed to yield; rebinding ${sinceBoot()}`
         );
+        for (let i = 0; i < BIND_RETRIES_AFTER_YIELD && "error" in attempt; i++) {
+          await new Promise((r5) => setTimeout(r5, BIND_RETRY_MS));
+          attempt = await listenOnce(api.fetch, port);
+        }
       } else {
-        log2(`[qino-os] HTTP server error: ${err.message}`);
+        const why = claim.outcome === "held-by-http" ? `another http-mode qino-os (pid ${claim.holder.pid}, ${claim.holder.source} build, up ${claim.holder.uptimeSeconds}s) owns it and will not yield \u2014 stop it, or run this one with --port <other>` : claim.outcome === "refused" ? `the stdio qino-os holding it (pid ${claim.holder.pid}) refused to yield: ${claim.detail}` : claim.outcome === "held-unknown" ? `${claim.detail} \u2014 it cannot be asked to yield; stop it (lsof -nP -iTCP:${port} -sTCP:LISTEN) or run this one with --port <other>` : `something holds it but does not answer HTTP \u2014 find it with lsof -nP -iTCP:${port} -sTCP:LISTEN`;
+        console.error(
+          `[qino-os] FATAL: port ${port} is in use \u2014 ${why}. An http-mode server without its port serves nobody, so exiting. ${sinceBoot()}`
+        );
+        process.exit(1);
       }
-    });
+    }
+    if ("server" in attempt) {
+      httpServer = attempt.server;
+      onListening();
+      httpServer.on("error", (err) => {
+        log2(`[qino-os] HTTP server error: ${err.message}`);
+      });
+    } else if (attempt.error.code === "EADDRINUSE") {
+      if (!isStdio) {
+        console.error(
+          `[qino-os] FATAL: port ${port} still in use after the holder yielded \u2014 a third instance may have grabbed it; retry. ${sinceBoot()}`
+        );
+        process.exit(1);
+      }
+      log2(
+        `[qino-os] port ${port} already in use \u2014 another qino-os owns the UI; this instance continues as a direct MCP server without its own HTTP server. ${sinceBoot()}`
+      );
+    } else {
+      log2(`[qino-os] HTTP server error: ${attempt.error.message}`);
+    }
     if (isStdio) {
       process.on("exit", () => {
         watcher?.close();
-        httpServer.close();
+        httpServer?.close();
       });
     }
   } else {
@@ -190360,9 +190924,9 @@ async function main() {
       messageStore
     );
     registerTools(mcpServer, ops, { mode, workspaceDir });
-    const transport = new StdioServerTransport();
-    await mcpServer.connect(transport);
-    transport.onclose = () => {
+    const transport2 = new StdioServerTransport();
+    await mcpServer.connect(transport2);
+    transport2.onclose = () => {
       process.exit(0);
     };
   }
@@ -190383,7 +190947,7 @@ async function main() {
         );
       }).catch((err) => {
         log2(
-          `[qino-os] semantic search unavailable \u2014 embedding backend did not load (${err.message}). Graph + lexical search are active; run the dev server (pnpm dev:os) for semantic search. ${sinceBoot()}`
+          `[qino-os] retrieval index not built \u2014 ${err.message}. Graph + lexical (BM25) search stay active; SEMANTIC RANKING IS OFF in this process. ${SEMANTIC_REMEDY} ${sinceBoot()}`
         );
       });
     }, BOOT_WORK_DELAY_MS);
