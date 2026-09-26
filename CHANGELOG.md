@@ -10,6 +10,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [3.5.15] - 2026-09-26
+
+### qino
+
+A bundled-server release that makes graph discovery agree everywhere: search, the landing and the graph build now find the same graphs, by walking the node tree (qinolabs-repo#928, #933; `implementations/qino-os` annotations 033–035). Bundle rebuilt from qinolabs-repo main `a4b125de3`.
+
+#### Fixed
+
+- **`search` reaches sub-graph nodes.** The semantic index read only one level deep, so 149 nodes in sub-graphs were invisible to search: docs children, concept facets, explorations (#928).
+- **`read_activity` and the viewer landing no longer list session worktrees.** The landing found sub-graphs with a filesystem scan that walked into `.claude/worktrees`, so 5,782 of 6,206 rows were worktree duplicates. It also showed a duplicate "Implementations" graph row from a leftover marker. The landing now lists sub-graph nodes at their own sub-graph `graphPath`: 576 rows, 455 KB instead of 2.66 MB (#933).
+- **Tool docs give a real sub-graph address.** The `graphPath` example in every node and graph tool still named `qinolabs-repo/implementations/sound-lab/explorations`, an address gone since iter 47. It is now `qinolabs-repo/implementations/sound-lab`.
+
+#### Changed
+
+- **The graph build builds only what a reader can reach.** The server's startup pass and `graph:build --all` discover graphs by the node tree instead of a filesystem-wide search for markers. `graph:build --all` warns about any `.qino-graph.json` no reader reaches, unless it is inside another checkout or declared under the new `offTreeGraphs` config key (#933).
+- **Sub-graph nodes appear among recent nodes** in `read_activity` and on the landing, for the first time.
+
+---
+
 ## [3.5.14] - 2026-09-18
 
 ### qino
