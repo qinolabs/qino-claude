@@ -10,6 +10,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [3.5.16] - 2026-09-27
+
+### qino
+
+A security release for the bundled qino-os server. The server has no authentication, and until now it listened on every network interface and answered cross-site browser requests. It now listens on this machine only (qinolabs-repo#976; `implementations/qino-os` annotation 038). Bundle rebuilt from qinolabs-repo main `74809161f`.
+
+#### Security
+
+- **The server binds loopback only** (`127.0.0.1` and `::1`). Before this release, anyone on the same network could reach the viewer, the read-write `/api/*` routes and every MCP tool at `/mcp`: creating and deleting nodes, writing annotations, and posting to the agent message channel. To expose it on purpose, pass `--host <addr>` or set `QINO_HOST`; the server logs a warning when you do.
+- **Cross-site and DNS-rebinding requests get a 403.** A request whose `Host` isn't localhost is refused, and so is a browser request from any origin other than the server's own or the dev UI (`localhost:3020`). The wildcard `Access-Control-Allow-Origin: *` is gone, and no CORS headers are sent at all.
+
+#### Changed
+
+- **A source dev server asks a running plugin instance to yield before it binds.** Binding `127.0.0.1` doesn't collide with an older instance on the wildcard address, so without asking first the dev server would never trigger the port yield, and the old, exposed instance would keep running beside it.
+
+**After updating, restart every session.** Each running session's plugin instance keeps the old wildcard listener until it restarts.
+
+---
+
 ## [3.5.15] - 2026-09-26
 
 ### qino
