@@ -28,6 +28,7 @@ The agent reads these files at startup to calibrate its relevance judgment:
 - `.claude/rules/git-workflow.md` — commit staging rules (explicit paths, never `-A` / `.`, never `--no-verify`)
 - `.claude/rules/testing.md` — testing tool conventions (to flag high-risk upgrades)
 - `.claude/tech-debt.md` — known deferred upgrades, so the agent doesn't re-propose them
+- `implementations/dependency-landscape-watch/` (optional) — a scheduled watch's usage profiles, latest report and open proposals; when present, relevance is judged against the profiles instead of a keyword set, and the agent advances the watch's `notesReadThrough` after a bump
 
 If these files don't exist in the consuming repo, the agent runs but with reduced relevance filtering. The `.claude/rules/dependencies.md` rule file is the most important — without it, the agent can't cite the catalog policy authoritatively when proposing catalog edits.
 
