@@ -59,7 +59,7 @@ In parallel where possible:
    - `watchlist.json`: its clusters, tiers and, for core clusters, a `usage` profile (`uses` with file counts, `notUsed`, `conventions`). Where a cluster has a profile, it replaces the keyword set from step 4 for that cluster's packages.
    - The latest `reports/*.md`: what the watch already characterized for each gap (breaking changes, exposure, adoption verdicts).
    - `state/catalog-state.json`: `notesReadThrough` per core package, the last version whose release notes were read. You don't need to re-read notes up to that version unless the user asks.
-   - Open proposal annotations the watch wrote: `grep -rl 'source: dependency-landscape-watch' implementations/*/annotations/` and keep those with `status: open`. These are `adopt` items and material findings waiting on a session like this one. Name them per group in the Phase 3 Notes column.
+   - Open proposal annotations the watch wrote: `grep -rl 'source: dependency-landscape-watch' implementations/*/annotations/` and keep those with `status: open`. These are `adopt` items and material findings waiting on a session like this one. Name them per group in the Phase 3 survey.
    No watch, no change: everything below works from the catalog alone.
 
 6. **Do NOT run `pnpm install`** at startup. The catalog is the source of truth; what's actually installed can lag. You will run `install` only after the user approves catalog edits in Phase 6.
@@ -116,30 +116,11 @@ Grouping algorithm (low-maintenance, no hardcoded lists):
 
 ### Phase 3: Present + await group choice (END TURN)
 
-Output format:
+**Present the drift survey as a consultation, not a reference dump.** Open with a one-line orientation that gives the reader a mental model — how the catalog splits, where the action is, how many groups are deferrable. Cluster by the organizing principle that best fits *this* catalog (namespace, upstream repo, lockstep-coupled set, release-cycle family — pick the axis that helps the reader form a mental model fast). Surface hygiene findings as their own breakout, not table-footer notes — they're a different kind of finding than version drift. When a dependency watch is present, name each group's open watch proposals with the group. End with a focused "which group?" prompt.
 
-```
-Dependency drift survey — <YYYY-MM-DD>
+Use a table only when columnar comparison genuinely helps. Don't default to ASCII tables as the primary shape. Don't bury hygiene findings inside version-drift tables.
 
-Catalog: <N> entries · Drifting: <M> · Up-to-date: <N-M-deferred>
-Deferred (in tech-debt): <comma-sep DEBT IDs>
-
-Groups (sorted by severity, then package count):
-
- # │ Group                         │ Packages behind │ Severity │ Notes
-───┼───────────────────────────────┼─────────────────┼──────────┼─────────────────────────────────
- 1 │ cloudflare/workers-sdk        │ 3               │ medium   │ vitest-pool-workers deferred (DEBT-004)
- 2 │ TanStack (tanstack/*)         │ 5               │ low      │ all same-major
- 3 │ facebook/react                │ 2               │ low      │ react + react-dom in lockstep
- ... etc ...
-
-Catalog hygiene check: <OK | N violations found>
-  <if violations, list them with suggested fix>
-
-Which group do you want to focus on this session? (number, group name, or 'exit')
-```
-
-Then **STOP and await the user's choice.** Do not proceed.
+Stop and await the user's choice.
 
 ### Phase 4: Deep-dive the chosen group
 
@@ -164,26 +145,18 @@ For each drifting package in the chosen group:
    - **Opportunity** — new feature that's not critical but would simplify an existing pattern
    - **Skip** — dependency bumps, internal refactors, framework/feature we don't use
 
-5. **For each package, prepare a decision record:**
-   ```
-   Package: <name>
-     Classification: <same-major-additive | cross-minor-0.x | cross-major | deferred>
-     Bump: <currentRange> → <proposed new range (pinned to latest.major.minor.patch with ^ prefix)>
+5. **For each package, prepare a decision record that reads as consultation, not reference.** Qualities to exhibit:
 
-     Breaking:
-       - <item> (PR/link)
-     Bug fixes relevant to us:
-       - <item>
-     New features relevant to us:
-       - <item>
-     Opportunities:
-       - <item>
-     Open watch proposals:
-       - <annotation path, one line; or "none">
+   - Lead with classification and bump — the safety signal first.
+   - Group packages by sub-cluster when the tier has internal structure (named upstream, release-coupled set, lockstep pair). Name the sub-cluster explicitly.
+   - Prose intro per package, then bullets — not code-fence data dumps.
+   - Surface what changed *that matters for our usage* — filter by relevance (step 3: the watch's usage profile where there is one, else the keyword set). Don't enumerate every changelog entry.
+   - Give each Breaking item its measured exposure (step 3).
+   - Name any open watch proposal for the package, with its annotation path.
+   - Bold the recommendation (`update` / `defer-to-tech-debt` / `skip`).
+   - Skip empty categories — don't print "Breaking: none." Absence is signal; the silence reads correctly.
 
-     Recommendation: <update | defer-to-tech-debt | skip>
-     Reason: <one line>
-   ```
+   The user reads this to decide, not to audit. Optimize for actionability.
 
 ### Phase 5: Consult per-package + await decisions (END TURN)
 
@@ -194,9 +167,10 @@ For each package above, tell me:
   - "update <name>" to approve the bump
   - "defer <name>" to write a DEBT entry and skip
   - "skip <name>" to leave as-is this session (no DEBT entry)
+  - "propose <name>: <text>" to write a proposal annotation on the consumer node(s) for that package, capturing an opportunity worth carrying forward into iteration planning
   - "all safe" to approve every package I classified as same-major-additive with no breaking items
 
-You can mix and match. I'll execute after you respond.
+Multiple "propose" decisions per package are allowed. I'll execute after you respond.
 ```
 
 Then **STOP and await.**
@@ -231,6 +205,15 @@ For each package the user asked to `defer <name>`:
    - Resolution (what a future iteration would need to do)
    Use the highest existing `DEBT-NNN` number + 1. Match the format of existing DEBT entries.
 
+For each package the user asked to `propose <name>: <text>`:
+
+1. Identify the consumer node(s) for `<name>` by grep — search for imports of the package in `apps/*/src/` and `packages/*/src/`. The set of unique `implementations/{node}/` directories matching those consumers is the targeting set.
+2. For each consumer node, write a new annotation file at `implementations/{node}/annotations/NNN-{slug}.md` with frontmatter `signal: proposal`, `created: <YYYY-MM-DD>`, `status: open`, `target: <package-name>@<new-version>`. Body is the user's `<text>` plus a one-line context note ("Surfaced from dependency-steward session bumping <name> from <currentRange> to <newRange>").
+3. Use the highest existing NNN in that node's `annotations/` directory + 1.
+4. Stage the annotation file(s) alongside the catalog/lockfile edits for the final commit.
+
+Multiple `propose` decisions for the same package can produce multiple annotations across multiple consumer nodes.
+
 ### Phase 7: Propose commit + await approval (END TURN)
 
 Draft a commit message based on what was actually changed. Prefer the repo's existing commit style (check `git log --oneline -10` if unclear). Format:
@@ -243,13 +226,15 @@ Draft commit message:
 <1-3 paragraph body describing what changed and why, covering:
   - which packages were bumped
   - any notable features/fixes the bumps unlocked
-  - any deferred items added to tech-debt>
+  - any deferred items added to tech-debt
+  - any proposal annotations written and which nodes they landed on>
 
 Files to stage:
   - pnpm-workspace.yaml
   - pnpm-lock.yaml
   - .claude/tech-debt.md (if DEBT entries were added)
   - implementations/dependency-landscape-watch/state/catalog-state.json (if notesReadThrough was advanced)
+  - implementations/<node>/annotations/NNN-*.md (if proposal annotations were written)
 
 Commit this? (y / n / edit)
 ```
@@ -282,7 +267,7 @@ On `n`: abort cleanly. The catalog edits stay on disk (unstaged) for the user to
 6. **Never silently skip a deferred package.** If a DEBT entry exists, note it in the presentation so the user knows why you're not proposing the bump.
 7. **Never commit without explicit user approval** (a "y" to the Phase 7 prompt).
 8. **Never run `pnpm install` between incremental catalog edits within the same group.** Batch all the group's edits, then install once.
-9. **Never touch files outside the approved scope** for this session: `pnpm-workspace.yaml`, `pnpm-lock.yaml`, `.claude/tech-debt.md`, and the `notesReadThrough` fields of a dependency watch's state file (Phase 6 step 8). No package.json, no source code, no test files, no README updates — those belong to follow-up iterations.
+9. **Never touch files outside the approved scope** for this session: `pnpm-workspace.yaml`, `pnpm-lock.yaml`, `.claude/tech-debt.md`, the `notesReadThrough` fields of a dependency watch's state file (Phase 6 step 8), and new proposal annotations the user asked for with `propose` (Phase 6). No package.json, no source code, no test files, no README updates — those belong to follow-up iterations.
 10. **Never trust a catalog entry's current range as the installed version.** `^4.54.0` could resolve to `4.80.0` if someone ran `pnpm install` recently. Always read the installed version from `pnpm outdated` or `pnpm list -r`.
 
 ---
@@ -341,6 +326,7 @@ Packages deferred:  <list with DEBT IDs added>
 Packages skipped:   <list>
 Commit:             <sha or 'not committed'>
 Tech-debt entries:  <IDs added or 'none'>
+Proposals written:  <annotation paths or 'none'>
 
 Follow-ups suggested:
   <any notes for a future session — other groups with drift, cascading deferrals, etc.>
