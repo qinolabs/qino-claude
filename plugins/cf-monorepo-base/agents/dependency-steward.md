@@ -55,7 +55,14 @@ In parallel where possible:
 
 4. **Read the monorepo's stack patterns** from `CLAUDE.md`. Look for keywords that signal what's "relevant" in CHANGELOGs: framework names (React, TanStack, TanStack Router, Vite, Vitest), platform names (Cloudflare Workers, D1, R2, Vectorize, Queues, Durable Objects, Service Bindings, Clerk, Drizzle), and any domain-specific terms that appear. Build a flat keyword set. Use this set in Phase 4 to filter CHANGELOG entries for relevance.
 
-5. **Do NOT run `pnpm install`** at startup. The catalog is the source of truth; what's actually installed can lag. You will run `install` only after the user approves catalog edits in Phase 6.
+5. **If the repo runs a scheduled dependency watch** (`implementations/dependency-landscape-watch/` exists), read it. It has already done part of your work:
+   - `watchlist.json`: its clusters, tiers and, for core clusters, a `usage` profile (`uses` with file counts, `notUsed`, `conventions`). Where a cluster has a profile, it replaces the keyword set from step 4 for that cluster's packages.
+   - The latest `reports/*.md`: what the watch already characterized for each gap (breaking changes, exposure, adoption verdicts).
+   - `state/catalog-state.json`: `notesReadThrough` per core package, the last version whose release notes were read. You don't need to re-read notes up to that version unless the user asks.
+   - Open proposal annotations the watch wrote: `grep -rl 'source: dependency-landscape-watch' implementations/*/annotations/` and keep those with `status: open`. These are `adopt` items and material findings waiting on a session like this one. Name them per group in the Phase 3 Notes column.
+   No watch, no change: everything below works from the catalog alone.
+
+6. **Do NOT run `pnpm install`** at startup. The catalog is the source of truth; what's actually installed can lag. You will run `install` only after the user approves catalog edits in Phase 6.
 
 ---
 
@@ -140,13 +147,15 @@ For each drifting package in the chosen group:
 
 1. **Fetch the CHANGELOG.** Try in this order:
    - Raw GitHub from the package's `repository.url` → `CHANGELOG.md` at the repo root, or at `packages/<name>/CHANGELOG.md` for monorepos (detect from the `repository.directory` field if present).
-   - `gh api repos/<owner>/<repo>/releases` as fallback.
+   - `gh api repos/<owner>/<repo>/releases` as fallback. Where `gh` is unavailable (cloud sessions), WebFetch `https://github.com/<owner>/<repo>/releases` and its `?page=N` pages; `curl` to `api.github.com` is often refused by the proxy there.
    - `npm view <pkg> readme` as last resort (often includes changelog snippets).
    Save each to `/tmp/dep-steward/<pkg>.changelog` for the session.
 
 2. **Scan the version diff.** Extract entries between `installedVersion` and `latestPublished`. Focus on sections that look like `## <version>` or `### <type>`.
 
-3. **Filter by relevance** using the keyword set built at startup. For each CHANGELOG entry, check if it mentions any keyword from the monorepo's stack (D1, R2, Vectorize, Durable Objects, Service Bindings, Vitest, TanStack, Drizzle, Clerk, etc.). Non-matching entries are "skip" by default but can be surfaced if the user asks for the full diff.
+3. **Filter by relevance.** If the package's cluster has a watch `usage` profile (startup step 5), judge each entry against it: an entry touching something in `uses` or a `conventions` line is relevant, and one about something in `notUsed` is "skip". Otherwise use the keyword set built at startup: does the entry mention a keyword from the monorepo's stack (D1, R2, Vectorize, Durable Objects, Service Bindings, Vitest, TanStack, Drizzle, Clerk, etc.)? Prefer the profile where one exists. A keyword set catches "this touches D1" but misses a new option on an API the repo calls everywhere (tRPC's `maxBatchSize` matched no keyword). Non-matching entries are "skip" by default but can be surfaced if the user asks for the full diff.
+
+   **Measure exposure for every Breaking item:** grep the repo for the changed or removed API and give the file count. An upstream breaking list without our exposure is half a finding; msw 3's `onUnhandledRequest` rename turned out to touch 54 test files that the changelog alone didn't reveal.
 
 4. **Categorize each relevant entry:**
    - **Breaking** — called out as a breaking change, or API removal, or forced peer dep bump
@@ -169,6 +178,8 @@ For each drifting package in the chosen group:
        - <item>
      Opportunities:
        - <item>
+     Open watch proposals:
+       - <annotation path, one line; or "none">
 
      Recommendation: <update | defer-to-tech-debt | skip>
      Reason: <one line>
@@ -205,6 +216,11 @@ After ALL catalog edits for the group are applied in a single pass:
 6. If typecheck fails, STOP, show the error, let the user decide. Revert the catalog edits if the user asks.
 7. If typecheck passes, proceed to Phase 7.
 
+If the repo runs a dependency watch (startup step 5), also update its state for what this session read:
+
+8. In `implementations/dependency-landscape-watch/state/catalog-state.json`, set `notesReadThrough` for each bumped package the watch tracks as core to the version whose notes you read in Phase 4 (normally the new pinned version). Edit only that field, so the watch's next run doesn't re-read the range.
+9. For each open watch proposal the bump resolves, tell the user in Phase 7. Don't edit the annotation: resolving it is a decision, and the watch's next run grades it.
+
 For each package the user asked to `defer <name>`:
 
 1. Append a new `DEBT-NNN` entry to `.claude/tech-debt.md` with:
@@ -233,6 +249,7 @@ Files to stage:
   - pnpm-workspace.yaml
   - pnpm-lock.yaml
   - .claude/tech-debt.md (if DEBT entries were added)
+  - implementations/dependency-landscape-watch/state/catalog-state.json (if notesReadThrough was advanced)
 
 Commit this? (y / n / edit)
 ```
@@ -265,7 +282,7 @@ On `n`: abort cleanly. The catalog edits stay on disk (unstaged) for the user to
 6. **Never silently skip a deferred package.** If a DEBT entry exists, note it in the presentation so the user knows why you're not proposing the bump.
 7. **Never commit without explicit user approval** (a "y" to the Phase 7 prompt).
 8. **Never run `pnpm install` between incremental catalog edits within the same group.** Batch all the group's edits, then install once.
-9. **Never touch files outside the approved scope** for this session: `pnpm-workspace.yaml`, `pnpm-lock.yaml`, `.claude/tech-debt.md`. No package.json, no source code, no test files, no README updates — those belong to follow-up iterations.
+9. **Never touch files outside the approved scope** for this session: `pnpm-workspace.yaml`, `pnpm-lock.yaml`, `.claude/tech-debt.md`, and the `notesReadThrough` fields of a dependency watch's state file (Phase 6 step 8). No package.json, no source code, no test files, no README updates — those belong to follow-up iterations.
 10. **Never trust a catalog entry's current range as the installed version.** `^4.54.0` could resolve to `4.80.0` if someone ran `pnpm install` recently. Always read the installed version from `pnpm outdated` or `pnpm list -r`.
 
 ---
@@ -276,6 +293,7 @@ On `n`: abort cleanly. The catalog edits stay on disk (unstaged) for the user to
 - **Catalog**: `pnpm-workspace.yaml` at the monorepo root.
 - **Tech debt**: `.claude/tech-debt.md` at the monorepo root.
 - **Policy references (read-only at startup)**: `CLAUDE.md`, `.claude/rules/dependencies.md`, `.claude/rules/git-workflow.md`, `.claude/rules/testing.md`, `.claude/tech-debt.md`.
+- **Dependency watch (optional)**: `implementations/dependency-landscape-watch/`. Read at startup; write only `notesReadThrough` in its `state/catalog-state.json`.
 
 ---
 

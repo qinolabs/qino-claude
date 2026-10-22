@@ -8,6 +8,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### cf-monorepo-base 3.5.0
+
+`dependency-steward` now works from a repo's scheduled dependency watch when it has one (`implementations/dependency-landscape-watch/`, overhauled 2026-10-22 in qinolabs-repo). Without a watch, nothing changes.
+
+#### Changed
+
+- **Startup reads the watch**: its usage profiles, latest report, `notesReadThrough` state, and the open proposal annotations it wrote. Open proposals show up per group in the survey and in each package's decision record.
+- **Relevance comes from the usage profile, where a cluster has one.** The stack-keyword filter stays as the fallback. A keyword set catches "this touches D1" but misses a new option on an API the repo calls everywhere: tRPC's `maxBatchSize` matched no keyword.
+- **Every Breaking item gets a measured exposure**: a grep of the changed API with a file count.
+- **After a bump, the steward advances `notesReadThrough`** in the watch's state, so the next run doesn't re-read the same release notes. It is the one write the steward makes outside the catalog, the lockfile and `tech-debt.md`.
+- **Changelog fetch falls back to WebFetch on GitHub release pages** where `gh` is unavailable.
+
 ---
 
 ## [3.5.16] - 2026-09-27
