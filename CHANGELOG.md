@@ -8,6 +8,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### cf-monorepo-base 3.6.0
+
+The decisions from the May 2026 dependency-steward experiment, which until now lived only in a hand-placed local copy of the agent (`qinolabs-repo/implementations/cf-monorepo-base/content/dependency-steward-experiment-synthesis.md`). The plugin had shipped the control arm's format, the one the owner found unworkable.
+
+#### Changed
+
+- **The drift survey and per-package records read as consultation, not reference.** They're described as qualities, not a fixed template: a one-line orientation, clustering by whichever axis fits the catalog, hygiene findings in their own breakout, prose then bullets, the recommendation in bold, and no empty categories. Tables appear only where columns compare something.
+
+#### Added
+
+- **`propose <name>: <text>`** in the per-package consultation. It writes a `signal: proposal` annotation on each consumer node of the package, for an opportunity worth carrying into iteration planning. Safety invariant 9 and the session summary now name these annotations.
+
 ### cf-monorepo-base 3.5.0
 
 `dependency-steward` now works from a repo's scheduled dependency watch when it has one (`implementations/dependency-landscape-watch/`, overhauled 2026-10-22 in qinolabs-repo). Without a watch, nothing changes.
