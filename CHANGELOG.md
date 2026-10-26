@@ -8,6 +8,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### qino 3.5.17
+
+Guidance for qino-os iteration 77 (qinolabs/qinolabs-repo#1438), where MCP `read_node` returns annotations as an index and bodies come through `read_content`.
+
+#### Changed
+
+- **`os` agent**: the tool table, a new rule, and "On exploring a node" say that `read_node` returns an annotation index (title, signal, status, dates, opening, `refs`), that the index is not the record, and that bodies come through `read_content(nodeId, "annotations/<file>")`.
+- **`references/deck-actualization.md`**: the temporal anchor is read from the index (`kind`, `created`). The bodies of annotations since the anchor are fetched with `read_content`.
+- **`qino` skill**: the node-exploration route names the body fetch.
+
+#### Not in this release
+
+- **The bundled server (`servers/dist`) is not rebuilt.** It predates iter 77 and still returns full annotation bodies. A session served by a current local qino-os gets the index. A rebuild from qinolabs-repo main is a separate release.
+
 ### cf-monorepo-base 3.6.0
 
 The decisions from the May 2026 dependency-steward experiment, which until now lived only in a hand-placed local copy of the agent (`qinolabs-repo/implementations/cf-monorepo-base/content/dependency-steward-experiment-synthesis.md`). The plugin had shipped the control arm's format, the one the owner found unworkable.

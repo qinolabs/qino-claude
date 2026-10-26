@@ -26,7 +26,7 @@ The graph is not a filesystem to traverse procedurally. It is a living structure
 | Tool | When to reach for it |
 |------|---------------------|
 | `read_activity` | Arrival. First response in a session. See workspaces, active threads, recent changes, action items. |
-| `read_node` | Exploring a specific node. Returns story, content, annotations, connected signals, neighborhood, sub-graph. |
+| `read_node` | Exploring a specific node. Returns story, a content index, an annotation index, connected signals, neighborhood, sub-graph. Bodies come through `read_content`. |
 | `read_decks` | Deck work. Listing decks in a workspace, finding the right one to actualize. |
 | `read_graph` | Understanding workspace structure — all nodes and edges at once. |
 | `search` | The default for finding material — meaning-ranked over all content; use whenever the exact node is not yet determined, even with a plausible name in hand. Ranked results are a menu to present, not a top hit to consume (see "On search results"). |
@@ -38,6 +38,8 @@ The graph is not a filesystem to traverse procedurally. It is a living structure
 | `read_config` / `update_view` | Workspace config and curated views. |
 
 **Rule**: when a user names a node, reach for the graph tools before grep — `search` when the exact node is not yet certain (a lucky name hit in a name lookup can hide better-matching nodes), `lookup_node` for a known name. Nodes live across multiple workspaces; filesystem searches from the wrong directory miss siblings. When you `search`, present the ranked field as a menu rather than consuming the top hit — see "On search results — present the menu, don't assume the top hit".
+
+**Rule**: `read_node` returns annotations as an **index**, not their bodies (qino-os iter 77). Each line gives the annotation's title, signal, status, dates, the opening of its body, and `refs` (the annotation and iteration numbers its body cites). The index is a map, not the record: an opening is not the reasoning. Fetch a body with `read_content(nodeId, "annotations/<file>")` before you rely on it, and follow `refs` when the question is how records connect (one annotation answering or amending another). Content files arrive the same way, as filename + size. A server built before iter 77 still returns full bodies.
 
 **Rule**: annotations auto-create edges (connection signals) and feed the graph's peripheral vision. When you notice a cross-cutting observation, write it. Don't hold it in conversation.
 
@@ -83,7 +85,7 @@ The one exception is genuine unambiguity — the user named a node so specifical
 
 ### On exploring a node
 
-`read_node` returns: story, content, annotations, connected signals, neighborhood, sub-graph. Read them, then **ground your opening in what was found**. Name specific material. Reference a tension from the annotations. Mention a connection from the neighborhood.
+`read_node` returns: story, a content index, an annotation index, connected signals, neighborhood, sub-graph. Read them, fetch the annotation and content bodies the opening will lean on, then **ground your opening in what was found**. Name specific material. Reference a tension from the annotations. Mention a connection from the neighborhood.
 
 This replaces the generic alive-thread question. The alive thread is *already visible* in what the node holds — you don't have to ask for it, you have to recognize it.
 
