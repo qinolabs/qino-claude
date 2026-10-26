@@ -8,6 +8,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### qino 3.5.18
+
+The bundled qino-os server is rebuilt from qinolabs-repo main `6ac7fea17`. It replaces the 2026-09-27 build, which predated iterations 77 and 78. Sessions served by the bundle now get the same read shape as the local source server.
+
+#### Changed
+
+- **`read_node` returns an index** (qino-os iter 77, qinolabs/qinolabs-repo#1438). Annotations come one line each (title, signal, status, dates, opening, `refs`); bodies come through `read_content(nodeId, "annotations/<file>")`.
+- **A compact front that names its server** (iter 78, #1439). The JSON is compact, `identity.edges` that the neighbourhood repeats are dropped, empty fields are omitted, and annotation dates are cut to the day. `read_node`, `read_graph` and `read_node_fingerprint` carry `readShape: "qino-os iter 78"`.
+- **`write_annotation` asks for the claim first** (#1439). It also takes optional `source`, `origin` and `status: "open"` and writes them into frontmatter (#1440).
+
+#### Verified
+
+The bundle was driven over stdio in both modes.
+- **Delegating to a running `:4020`:** qino-os is 53,780 characters and qino-world 206,198, with no bodies and no `identity.edges`, and `readShape` is present.
+- **Standalone (`PORT=4199`):** `read_node` and `read_content` of an annotation both work.
+
+Standalone semantic ranking stays off, as before: the native onnx binding isn't shipped (qino-os annotation 031).
+
 ### qino 3.5.17
 
 Guidance for qino-os iteration 77 (qinolabs/qinolabs-repo#1438), where MCP `read_node` returns annotations as an index and bodies come through `read_content`.
