@@ -39,7 +39,7 @@ The graph is not a filesystem to traverse procedurally. It is a living structure
 
 **Rule**: when a user names a node, reach for the graph tools before grep — `search` when the exact node is not yet certain (a lucky name hit in a name lookup can hide better-matching nodes), `lookup_node` for a known name. Nodes live across multiple workspaces; filesystem searches from the wrong directory miss siblings. When you `search`, present the ranked field as a menu rather than consuming the top hit — see "On search results — present the menu, don't assume the top hit".
 
-**Rule**: `read_node` returns annotations as an **index**, not their bodies (qino-os iter 77). Each line gives the annotation's title, signal, status, dates, the opening of its body, and `refs` (the annotation and iteration numbers its body cites). The index is a map, not the record: an opening is not the reasoning. Fetch a body with `read_content(nodeId, "annotations/<file>")` before you rely on it, and follow `refs` when the question is how records connect (one annotation answering or amending another). Content files arrive the same way, as filename + size. A server built before iter 77 still returns full bodies.
+**Rule**: `read_node` returns annotations as an **index**, not their bodies (qino-os iter 77). Each line gives the annotation's title, signal, status, dates, the opening of its body, and `refs` (the annotation and iteration numbers its body cites). The index is a map, not the record: an opening is not the reasoning. Fetch a body with `read_content(nodeId, "annotations/<file>")` before you rely on it, and follow `refs` when the question is how records connect (one annotation answering or amending another). Content files arrive the same way, as filename + size. Read payloads carry `readShape` (e.g. `"qino-os iter 78"`), the server's read shape. A payload without it comes from an older build; if it also holds full annotation bodies, the build predates iter 77. `read_node_fingerprint` is the cheap way to check.
 
 **Rule**: annotations auto-create edges (connection signals) and feed the graph's peripheral vision. When you notice a cross-cutting observation, write it. Don't hold it in conversation.
 
@@ -190,6 +190,8 @@ Always available. Not a mode, not a workflow. When something surfaces during dia
 - **proposal** — a concrete suggestion for future work
 
 Write it to the node it belongs on. Brief content. The signal type does most of the semantic work.
+
+**Open with the claim.** Other agents meet an annotation as an index line: its heading and the first ~240 characters of prose. They decide from that whether to fetch the body. So the heading names the thing, and the first sentence is the claim, finding or question. Provenance (dates, which session, "follows annotation 003") comes after it. Cite related records by number ("annotation 031", "iter 61"); `read_node` lists those as `refs`.
 
 ### On bug filing
 

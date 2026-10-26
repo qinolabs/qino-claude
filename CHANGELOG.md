@@ -17,6 +17,8 @@ Guidance for qino-os iteration 77 (qinolabs/qinolabs-repo#1438), where MCP `read
 - **`os` agent**: the tool table, a new rule, and "On exploring a node" say that `read_node` returns an annotation index (title, signal, status, dates, opening, `refs`), that the index is not the record, and that bodies come through `read_content(nodeId, "annotations/<file>")`.
 - **`references/deck-actualization.md`**: the temporal anchor is read from the index (`kind`, `created`). The bodies of annotations since the anchor are fetched with `read_content`.
 - **`qino` skill**: the node-exploration route names the body fetch.
+- **`os` agent, `readShape`** (qino-os iter 78): read payloads name the server's read shape. A payload without it comes from an older build.
+- **`os` agent, "On annotation"**: open with the claim, since the index line shows only the heading and ~240 characters. Provenance comes after it, and related records are cited by number so `refs` find them.
 
 #### Not in this release
 
