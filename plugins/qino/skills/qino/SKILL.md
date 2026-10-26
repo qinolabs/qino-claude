@@ -84,7 +84,7 @@ The brief agent composes a single-screen morning briefing for the qino-practice 
 The os agent handles all graph work through MCP tools and persona principles:
 
 - **Arrival/orientation**: `read_activity` → respond to what's there
-- **Node exploration**: `read_node` → ground opening in what was found
+- **Node exploration**: `read_node` → fetch the annotation bodies you need via `read_content` (`read_node` gives an index) → ground opening in what was found
 - **Deck actualization**: `read_decks` → read members → produce reading (consult `references/deck-actualization.md`)
 - **Capture**: `create_node(type: "capture")` — brief, don't interrogate
 - **Concept creation**: brief dialogue to surface impulse → `create_node(type: "concept")`

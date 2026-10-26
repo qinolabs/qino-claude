@@ -27,14 +27,14 @@ Read in this order — all reading happens silently, no process output.
 `read_node` on the deck. This gives:
 - **story** — the practitioner's current articulation of why these threads belong together
 - **neighborhood** — member list via `composes` edges, each with a context sentence
-- **annotations** — the accumulated conversation: prior actualization readings, practitioner notes, candidate articulations
+- **annotations** — the accumulated conversation: prior actualization readings, practitioner notes, candidate articulations. They arrive as an index (title, signal, status, `created`, `kind`, opening, `refs`); fetch a body with `read_content(nodeId, "annotations/<file>")`
 - **connectedSignals** — recent signals from member threads
 
 ### 2. Identify the temporal anchor
 
 Find the most recent actualization reading among the deck's annotations — look for agent-authored annotations with `kind: actualization` in their frontmatter. (The body still starts with `## Actualization: YYYY-MM-DD` as the visible header on the deck detail page, but the *machine* discriminator is the frontmatter `kind` field — that's what qino-os reads to compute the deck delta indicator on the landing page.)
 
-- If found: its `created` timestamp is the temporal anchor (last visit).
+- If found: its `created` timestamp is the temporal anchor (last visit). `kind` and `created` are on the index line, so the anchor needs no body fetch; read the prior reading's body when you compare against it.
 - If not found: use the deck node's `created` date (first visit).
 
 ### 3. Read member threads
@@ -42,7 +42,7 @@ Find the most recent actualization reading among the deck's annotations — look
 `read_node` on each member (from the deck's neighborhood, direction: outgoing, edge label contains "composes" or similar). For each member:
 - Current status
 - Story (skim — you're looking for what's alive, not summarizing)
-- Recent annotations (especially those created after the temporal anchor)
+- Recent annotations (especially those created after the temporal anchor). Pick them from the index by `created`, then fetch their bodies with `read_content`
 - Neighborhood (for reaching-in detection)
 
 ### 4. Compute the delta
