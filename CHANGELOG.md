@@ -8,6 +8,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### qino 3.5.20
+
+#### Fixed
+
+- **`os` agent description no longer routes to a retired agent.** The frontmatter `description`, which the agent router reads, still sent multi-thread session-deck proposal synthesis to `ecosystem-awareness`. That agent and session decks were retired on 2026-09-05, and 683c918 had fixed only the body. The description now matches the body: all graph reading, including cross-thread "what calls?" readings, routes to `qino:os`.
+
 ### qino 3.5.19
 
 The bundled qino-os server is rebuilt from qinolabs-repo main `4f382c750`, which includes qino-os iteration 79 (qinolabs/qinolabs-repo#1674).

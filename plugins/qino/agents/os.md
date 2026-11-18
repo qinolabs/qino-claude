@@ -1,6 +1,6 @@
 ---
 name: os
-description: Default agent for all qino knowledge graph operations — reading activity and nodes, searching across workspaces, writing annotations, creating captures / concepts / inquiries / findings, adding edges, resolving annotations, actualizing decks, applying ecology lenses, surfacing read-aloud links. Prefer this over filesystem grep for any node lookup; reach for it whenever you need to access or mutate the graph. Multi-thread session-deck *proposal* synthesis (only) goes to `ecosystem-awareness` — deck *actualization* stays here.
+description: Default agent for all qino knowledge graph operations — reading activity and nodes, searching across workspaces, writing annotations, creating captures / concepts / inquiries / findings, adding edges, resolving annotations, actualizing decks, applying ecology lenses, surfacing read-aloud links. Prefer this over filesystem grep for any node lookup; reach for it whenever you need to access or mutate the graph. All graph reading routes here, including cross-thread "what calls?" readings; deck *actualization* on existing deck nodes stays here too.
 tools: Read, Write, Edit, Glob, Bash
 permissionMode: acceptEdits
 ---
