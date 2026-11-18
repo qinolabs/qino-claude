@@ -8,6 +8,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### qino 3.5.19
+
+The bundled qino-os server is rebuilt from qinolabs-repo main `4f382c750`, which includes qino-os iteration 79 (qinolabs/qinolabs-repo#1674).
+
+#### Added
+
+- **`dormant` annotation status** (iter 79). `resolve_annotation` accepts `dormant`: set aside, not decided. A dormant proposal or tension leaves action items, signal dots and the recent-signal feeds, like a resolved one, and keeps `resolvedAt` as "left the live set at".
+- **Re-open.** `resolve_annotation` also accepts `open`, which re-opens an annotation and clears `resolvedAt`.
+
+#### Note
+
+In client mode the bundle delegates every operation to a running `:4020`. A `dormant` write succeeds only when that server also runs post-#1674 code.
+
 ### qino 3.5.18
 
 The bundled qino-os server is rebuilt from qinolabs-repo main `6ac7fea17`. It replaces the 2026-09-27 build, which predated iterations 77 and 78. Sessions served by the bundle now get the same read shape as the local source server.
